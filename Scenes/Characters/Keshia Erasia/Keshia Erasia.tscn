@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://Scripts/CharacterCommon.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/MovementCollisionHandler.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Character Skills/KeshiaGomeSkills.gd" type="Script" id=3]
+[ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia Sprites.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 50.1527, 95.1673 )
+
+[node name="Keshia Erasia" type="Node2D"]
+
+transform/pos = Vector2( -1.24109, -127.002 )
+script/script = ExtResource( 1 )
+player_constants_filepath = "res://Scripts/Constants/KeshiaErasiaConstants.gd"
+
+[node name="Collision Handler" type="Area2D" parent="." groups=[
+"player_collider",
+]]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/mask = 6
+script/script = ExtResource( 2 )
+
+[node name="Collision Box" type="CollisionShape2D" parent="Collision Handler"]
+
+shape = SubResource( 1 )
+trigger = true
+_update_shape_index = 0
+
+[node name="Combo Handler" type="Node2D" parent="."]
+
+script/script = ExtResource( 3 )
+
+[node name="Keshia Erasia Sprites" parent="." instance=ExtResource( 4 )]
+
+editor/display_folded = false
+transform/pos = Vector2( 0, 100 )
+
+
