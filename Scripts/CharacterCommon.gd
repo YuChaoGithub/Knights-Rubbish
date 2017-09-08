@@ -2,8 +2,26 @@ extends Node2D
 
 export(String, FILE) var player_constants_filepath
 
-# Loaded in ready().
+# The amount of time (in seconds) to play idle animation.
+const TIME_TO_IDLE_ANIMATION = 5
+
+# Loaded in _ready().
 var player_constants
+
+# Controls the basic animations (walk, jump, idle, etc.) of characters.
+# The name of the default animator is defined in player_constants.
+# Loaded in _ready().
+var animator
+
+# Record the time which the player is idle.
+var idle_timestamp
+
+# Sprite node (the parent node of the animator).
+# Loaded in _ready().
+var sprite
+
+# If an animation of player's skill is currently being played.
+var animating_skill = false
 
 # Hit points. When reaches zero, the character dies.
 var health setget set_health
@@ -83,17 +101,37 @@ func _ready():
 	recalculate_horizontal_movement_variables()
 	recalculate_vertical_movement_variables()
 
+	# Default animator.
+	sprite = get_node("Sprite")
+	animator = sprite.get_node(player_constants.default_animator_path)
+
+	# Initialize timestamp.
+	idle_timestamp = OS.get_unix_time()
+
 	set_process(true)
 
 func _process(delta):
 	check_combo_and_perform()
 	update_movement(delta)
 
-# Move by keyboard inputs.
+# Move by keyboard inputs. Also play movement animations.
 # Calculate the movement and pass it to Collision Handler. Set the position as the returned value and update the camera.
 func update_movement(delta):
+	# The movement animation name (key) supposed to be played.
+	var animation_key = null
+
+	var landed_on_ground = collision_handler.collided_sides[collision_handler.BOTTOM]
+
+	# Play the "Still" animation if the player is currently landed on the ground.
+	# Else, play the "Jump" animation (when in air).
+	if landed_on_ground:
+		animation_key = "Still"
+	else:
+		animation_key = "Jump"
+		idle_timestamp = OS.get_unix_time()
+
 	# If hit above or hit below, reset velocity.
-	if collision_handler.collided_sides[collision_handler.TOP] or collision_handler.collided_sides[collision_handler.BOTTOM]:
+	if collision_handler.collided_sides[collision_handler.TOP] or landed_on_ground:
 		velocity.y = 0
 	
 	var horizontal_movement = 0
@@ -104,17 +142,35 @@ func update_movement(delta):
 			horizontal_movement -= 1
 		if Input.is_action_pressed("player_right"):
 			horizontal_movement += 1
+
+		# Override the "Still" animation if the character is walking (on the ground).
+		if horizontal_movement != 0 and landed_on_ground:
+			animation_key = "Walk"
+			idle_timestamp = OS.get_unix_time()
 			
 		# Jumping.
 		if Input.is_action_pressed("player_jump") and collision_handler.collided_sides[collision_handler.BOTTOM]:
 			velocity.y += jump_speed
-		
+	
+	# Change the x scale of the sprite according to which side the character is facing.
+	if horizontal_movement != 0 and sign(sprite.get_scale().x) != horizontal_movement:
+		sprite.set_scale(Vector2(sprite.get_scale().x * -1, sprite.get_scale().y))
+
 	velocity.x = horizontal_movement * speed
 	velocity.y += gravity * delta
 	
 	# Pass to the collision handler, and get the collision-modified movement from its return value.
 	translate(collision_handler.movement_after_collision(velocity * delta))
-	
+
+	# Play the movement animation if no skill animation is currently being played.
+	if not animating_skill and animation_key != null:
+
+		# Play idle animation if the character waits too long.
+		if OS.get_unix_time() - idle_timestamp >= TIME_TO_IDLE_ANIMATION:
+			play_animation("Idle")
+		else:
+			play_animation(animation_key)
+
 	# Update following camera.
 	following_camera.check_camera_update(get_global_pos())
 	
@@ -168,3 +224,8 @@ func register_timer(tag, timer):
 # Unregister the timer when the timer ends.
 func unregister_timer(tag):
 	active_timers.erase(tag)
+
+# Play the animation if it isn't played currently.
+func play_animation(key):
+	if not animator.get_current_animation() == key:
+		animator.play(key)

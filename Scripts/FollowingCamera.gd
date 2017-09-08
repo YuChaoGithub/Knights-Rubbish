@@ -1,7 +1,7 @@
 extends Node2D
 
 const CAMERA_SMOOTH = 3.0
-const ZOOM_FACTOR = 3.0
+const ZOOM_FACTOR = 2.0
 
 # Drag margins (from 0 to 1).
 export(float) var drag_margin_right = 0.5

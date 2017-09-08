@@ -8,11 +8,10 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 50.1527, 95.1673 )
+extents = Vector2( 49.8041, 99.671 )
 
 [node name="Keshia Erasia" type="Node2D"]
 
-transform/pos = Vector2( -1.24109, -127.002 )
 script/script = ExtResource( 1 )
 player_constants_filepath = "res://Scripts/Constants/KeshiaErasiaConstants.gd"
 
@@ -24,7 +23,7 @@ editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = true
+shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
@@ -35,16 +34,13 @@ script/script = ExtResource( 2 )
 [node name="Collision Box" type="CollisionShape2D" parent="Collision Handler"]
 
 shape = SubResource( 1 )
-trigger = true
+trigger = false
 _update_shape_index = 0
 
 [node name="Combo Handler" type="Node2D" parent="."]
 
 script/script = ExtResource( 3 )
 
-[node name="Keshia Erasia Sprites" parent="." instance=ExtResource( 4 )]
-
-editor/display_folded = false
-transform/pos = Vector2( 0, 100 )
+[node name="Sprite" parent="." instance=ExtResource( 4 )]
 
 
