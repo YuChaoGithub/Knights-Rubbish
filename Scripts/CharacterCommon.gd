@@ -20,9 +20,6 @@ var idle_timestamp
 # Loaded in _ready().
 var sprite
 
-# If an animation of player's skill is currently being played.
-var animating_skill = false
-
 # Hit points. When reaches zero, the character dies.
 var health setget set_health
 
@@ -41,15 +38,23 @@ var defense_modifier = 1.0
 # Current velocity of the character.
 var velocity = Vector2(0, 0)
 
-# Whether the player can move or not.
-var can_move = true
+# The status of the character commonly used by timers.
+# A {tag:String -> Bool} dictionary.
+var status = {
+	can_move = true,
+	can_jump = true,
+	can_cast_skill = true,
+	animate_movement = true,
+	invincible = false,
+	no_movement = false
+}
 
-# Player won't take damage if invincible is true.
-var invincible = false
+# Calculated in every frame. Some skills may use the value.
+var landed_on_ground = false
 
 # Active timers for power ups.
-# For cancelling timers for conflicting power ups.
-# The data should be saved as dictionaries {tag(String): CountdownTimer}.
+# For cancelling timers for conflicting power ups/state changes.
+# The data should be saved as dictionaries {tag:String -> CountdownTimer}.
 var active_timers = {}
 
 # Child nodes.
@@ -117,10 +122,17 @@ func _process(delta):
 # Move by keyboard inputs. Also play movement animations.
 # Calculate the movement and pass it to Collision Handler. Set the position as the returned value and update the camera.
 func update_movement(delta):
+	# For debugging only.
+	if Input.is_action_pressed("debug_stun"):
+		stunned(2)
+
+	if status.no_movement:
+		return
+
 	# The movement animation name (key) supposed to be played.
 	var animation_key = null
 
-	var landed_on_ground = collision_handler.collided_sides[collision_handler.BOTTOM]
+	landed_on_ground = collision_handler.collided_sides[collision_handler.BOTTOM]
 
 	# Play the "Still" animation if the player is currently landed on the ground.
 	# Else, play the "Jump" animation (when in air).
@@ -128,7 +140,6 @@ func update_movement(delta):
 		animation_key = "Still"
 	else:
 		animation_key = "Jump"
-		idle_timestamp = OS.get_unix_time()
 
 	# If hit above or hit below, reset velocity.
 	if collision_handler.collided_sides[collision_handler.TOP] or landed_on_ground:
@@ -136,7 +147,7 @@ func update_movement(delta):
 	
 	var horizontal_movement = 0
 	
-	if can_move:
+	if status.can_move:
 		# Horizontal keyboard input.
 		if Input.is_action_pressed("player_left"):
 			horizontal_movement -= 1
@@ -146,10 +157,9 @@ func update_movement(delta):
 		# Override the "Still" animation if the character is walking (on the ground).
 		if horizontal_movement != 0 and landed_on_ground:
 			animation_key = "Walk"
-			idle_timestamp = OS.get_unix_time()
 			
 		# Jumping.
-		if Input.is_action_pressed("player_jump") and collision_handler.collided_sides[collision_handler.BOTTOM]:
+		if Input.is_action_pressed("player_jump") and status.can_jump and collision_handler.collided_sides[collision_handler.BOTTOM]:
 			velocity.y += jump_speed
 	
 	# Change the x scale of the sprite according to which side the character is facing.
@@ -163,7 +173,7 @@ func update_movement(delta):
 	translate(collision_handler.movement_after_collision(velocity * delta))
 
 	# Play the movement animation if no skill animation is currently being played.
-	if not animating_skill and animation_key != null:
+	if status.animate_movement and animation_key != null:
 
 		# Play idle animation if the character waits too long.
 		if OS.get_unix_time() - idle_timestamp >= TIME_TO_IDLE_ANIMATION:
@@ -178,24 +188,16 @@ func update_movement(delta):
 func check_combo_and_perform():
 	if Input.is_action_pressed("player_attack"):
 		# Attack.
-		if Input.is_action_pressed("player_left"):
-			combo_handler.left_attack()
-		elif Input.is_action_pressed("player_right"):
-			combo_handler.right_attack()
-		elif Input.is_action_pressed("player_up"):
-			combo_handler.up_attack()
-		elif Input.is_action_pressed("player_down"):
-			combo_handler.down_attack()
-		elif Input.is_action_pressed("player_skill"):
+		if Input.is_action_pressed("player_skill"):
 			combo_handler.ult()
 		else:
 			combo_handler.basic_attack()
 	elif Input.is_action_pressed("player_skill"):
 		# Skill.
 		if Input.is_action_pressed("player_left"):
-			combo_handler.left_skill()
+			combo_handler.horizontal_skill(-1)
 		elif Input.is_action_pressed("player_right"):
-			combo_handler.right_skill()
+			combo_handler.horizontal_skill(1)
 		elif Input.is_action_pressed("player_up"):
 			combo_handler.up_skill()
 		elif Input.is_action_pressed("player_down"):
@@ -229,3 +231,49 @@ func unregister_timer(tag):
 func play_animation(key):
 	if not animator.get_current_animation() == key:
 		animator.play(key)
+
+		# Rest idle timer if the animation currently played isn't idle itself.
+		if key != "Idle":
+			idle_timestamp = OS.get_unix_time()
+
+# Register and unregister common timers for character states.
+func set_status(status_tag, boolean, duration):
+	register_timer(status_tag, preload("res://Scripts/Utils/CountdownTimer.gd").new(duration, self, "reset_status", [status_tag, not boolean]))
+	status[status_tag] = boolean
+
+# The arguments are [status_tag, boolean]
+func reset_status(args):
+	status[args[0]] = args[1]
+	unregister_timer(args[0])
+
+# Change the facing of the sprite. (1: right, -1: left)
+func change_sprite_facing(side):
+	sprite.set_scale(Vector2(abs(sprite.get_scale().x) * side, sprite.get_scale().y))
+
+# Common abnormal status.
+func stunned(duration):
+	# Can't be stunned while invincible.
+	if status.invincible:
+		return
+
+	# Set status.
+	set_status("can_move", false, duration)
+	set_status("can_cast_skill", false, duration)
+	set_status("can_jump", false, duration)
+	set_status("animate_movement", false, duration)
+
+	# Disable verticle inertia.
+	velocity.y = 0
+
+	# Timeout no_movement timers.
+	if active_timers.has("no_movement"):
+		active_timers["no_movement"].time_out()
+		active_timers.erase("no_movement")
+
+	# Interrupt skills if any.
+	if active_timers.has("interruptable_skill"):
+		active_timers["interruptable_skill"].destroy_timer()
+		active_timers.erase("interruptable_skill")
+
+	# Play animation.
+	play_animation("Stunned")

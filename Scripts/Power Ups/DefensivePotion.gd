@@ -1,6 +1,6 @@
 extends Node2D
 
-const TAG = "defensive_potion"
+const TAG = "defense_change"
 const DEFENSE_MODIFIER = 0.5
 const DURATION = 5.0
 

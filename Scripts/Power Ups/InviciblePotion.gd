@@ -1,7 +1,7 @@
 extends Node2D
 
 const DURATION = 10.0
-const TAG = "invincible_potion"
+const TAG = "invincible"
 
 var movement_pattern
 

@@ -18,7 +18,7 @@
 [ext_resource path="res://Graphics/Characters/Othox Codox/Big Wheel.png" type="Texture" id=16]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=17]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 
 resource/name = "Hurt"
 length = 0.1
@@ -555,10 +555,9 @@ tracks/52/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 
-resource/name = "Idle"
-length = 3.0
+length = 4.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
@@ -1092,7 +1091,7 @@ tracks/52/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 
 resource/name = "Jump"
 length = 0.1
@@ -1629,7 +1628,7 @@ tracks/52/keys = {
 "values": [ ExtResource( 4 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=4]
 
 resource/name = "Still"
 length = 0.1
@@ -3348,10 +3347,10 @@ remote_path = NodePath("../../Small Wheel")
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Hurt = SubResource( 3 )
-anims/Idle = SubResource( 1 )
-anims/Jump = SubResource( 4 )
-anims/Still = SubResource( 7 )
+anims/Hurt = SubResource( 1 )
+anims/Idle = SubResource( 2 )
+anims/Jump = SubResource( 3 )
+anims/Still = SubResource( 4 )
 anims/Stunned = SubResource( 5 )
 anims/Walk = SubResource( 6 )
 playback/active = true

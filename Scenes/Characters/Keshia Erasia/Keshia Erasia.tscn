@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/CharacterCommon.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/MovementCollisionHandler.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/Character Skills/KeshiaGomeSkills.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Character Skills/KeshiaErasiaSkills.gd" type="Script" id=3]
 [ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia Sprites.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -42,5 +42,9 @@ _update_shape_index = 0
 script/script = ExtResource( 3 )
 
 [node name="Sprite" parent="." instance=ExtResource( 4 )]
+
+[node name="Pencil Toss Pos" type="Position2D" parent="."]
+
+transform/pos = Vector2( 75, -70 )
 
 

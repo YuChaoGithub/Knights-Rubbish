@@ -33,9 +33,6 @@
 [ext_resource path="res://Graphics/Characters/Bro SS/Big Bro Right Hair Pieces 2.png" type="Texture" id=31]
 [ext_resource path="res://Graphics/Characters/Bro SS/Big Bro Right Hair Pieces 3.png" type="Texture" id=32]
 [ext_resource path="res://Graphics/Characters/Bro SS/Big Bro Hat.png" type="Texture" id=33]
-[ext_resource path="res://Animations/Characters/Sirurueruerue.tres" type="Animation" id=34]
-[ext_resource path="res://Animations/Characters/Sugsesugsem.tres" type="Animation" id=35]
-[ext_resource path="res://Animations/Characters/Big Bro.tres" type="Animation" id=36]
 
 [sub_resource type="Animation" id=1]
 
@@ -951,6 +948,473 @@ tracks/43/keys = {
 }
 tracks/44/type = "value"
 tracks/44/path = NodePath("Animation/Sir/Body/Face/Left Eye:visibility/visible")
+tracks/44/interp = 1
+tracks/44/imported = false
+tracks/44/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/45/type = "value"
+tracks/45/path = NodePath("Animation/Sir:visibility/visible")
+tracks/45/interp = 1
+tracks/45/imported = false
+tracks/45/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=13]
+
+resource/name = "Jump"
+length = 0.5
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Animation/Sug:visibility/visible")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Animation/Big Bro:visibility/visible")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Animation/Sir/Body:transform/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Animation/Sir/Body:transform/rot")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Animation/Sir/Body:transform/scale")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Animation/Sir/Body/Left Foot:transform/pos")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -26.0426, 152.237 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Animation/Sir/Body/Left Foot:transform/rot")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ -49.6082 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Animation/Sir/Body/Left Foot:transform/scale")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Animation/Sir/Body/Right Foot:transform/pos")
+tracks/8/interp = 1
+tracks/8/imported = false
+tracks/8/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 16.9591, 145.472 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Animation/Sir/Body/Right Foot:transform/rot")
+tracks/9/interp = 1
+tracks/9/imported = false
+tracks/9/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 53.4063 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Animation/Sir/Body/Right Foot:transform/scale")
+tracks/10/interp = 1
+tracks/10/imported = false
+tracks/10/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Animation/Sir/Body/Face:transform/pos")
+tracks/11/interp = 1
+tracks/11/imported = false
+tracks/11/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Animation/Sir/Body/Face:transform/rot")
+tracks/12/interp = 1
+tracks/12/imported = false
+tracks/12/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Animation/Sir/Body/Face:transform/scale")
+tracks/13/interp = 1
+tracks/13/imported = false
+tracks/13/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Animation/Sir/Body/Face/Left Eyebrow:transform/pos")
+tracks/14/interp = 1
+tracks/14/imported = false
+tracks/14/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -19.6604, -98.1412 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Animation/Sir/Body/Face/Left Eyebrow:transform/rot")
+tracks/15/interp = 1
+tracks/15/imported = false
+tracks/15/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 15.2007 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Animation/Sir/Body/Face/Left Eyebrow:transform/scale")
+tracks/16/interp = 1
+tracks/16/imported = false
+tracks/16/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Animation/Sir/Body/Face/Right Eyebrow:transform/pos")
+tracks/17/interp = 1
+tracks/17/imported = false
+tracks/17/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 19.9967, -94.8101 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Animation/Sir/Body/Face/Right Eyebrow:transform/rot")
+tracks/18/interp = 1
+tracks/18/imported = false
+tracks/18/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 12.6756 ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Animation/Sir/Body/Face/Right Eyebrow:transform/scale")
+tracks/19/interp = 1
+tracks/19/imported = false
+tracks/19/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Animation/Sir/Body/Face/Left Eye:transform/pos")
+tracks/20/interp = 1
+tracks/20/imported = false
+tracks/20/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -20.48, -91.2476 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Animation/Sir/Body/Face/Left Eye:transform/rot")
+tracks/21/interp = 1
+tracks/21/imported = false
+tracks/21/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Animation/Sir/Body/Face/Left Eye:transform/scale")
+tracks/22/interp = 1
+tracks/22/imported = false
+tracks/22/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Animation/Sir/Body/Face/Right Eye:transform/pos")
+tracks/23/interp = 1
+tracks/23/imported = false
+tracks/23/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 19.19, -87.9173 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Animation/Sir/Body/Face/Right Eye:transform/rot")
+tracks/24/interp = 1
+tracks/24/imported = false
+tracks/24/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Animation/Sir/Body/Face/Right Eye:transform/scale")
+tracks/25/interp = 1
+tracks/25/imported = false
+tracks/25/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Animation/Sir/Body/Face/Scar:transform/pos")
+tracks/26/interp = 1
+tracks/26/imported = false
+tracks/26/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -30.5395, -51.6687 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Animation/Sir/Body/Face/Scar:transform/rot")
+tracks/27/interp = 1
+tracks/27/imported = false
+tracks/27/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Animation/Sir/Body/Face/Scar:transform/scale")
+tracks/28/interp = 1
+tracks/28/imported = false
+tracks/28/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("Animation/Sir/Body/Face/Mouth:transform/pos")
+tracks/29/interp = 1
+tracks/29/imported = false
+tracks/29/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.196, -32.3151 ) ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("Animation/Sir/Body/Face/Mouth:transform/rot")
+tracks/30/interp = 1
+tracks/30/imported = false
+tracks/30/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("Animation/Sir/Body/Face/Mouth:transform/scale")
+tracks/31/interp = 1
+tracks/31/imported = false
+tracks/31/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/32/type = "value"
+tracks/32/path = NodePath("Animation/Sir/Cap:transform/pos")
+tracks/32/interp = 1
+tracks/32/imported = false
+tracks/32/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 18.0267, -167.856 ) ]
+}
+tracks/33/type = "value"
+tracks/33/path = NodePath("Animation/Sir/Cap:transform/rot")
+tracks/33/interp = 1
+tracks/33/imported = false
+tracks/33/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/34/type = "value"
+tracks/34/path = NodePath("Animation/Sir/Cap:transform/scale")
+tracks/34/interp = 1
+tracks/34/imported = false
+tracks/34/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/35/type = "value"
+tracks/35/path = NodePath("Animation/Sir/Body/Screen Cover:transform/pos")
+tracks/35/interp = 1
+tracks/35/imported = false
+tracks/35/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -2.36691, -60.8158 ) ]
+}
+tracks/36/type = "value"
+tracks/36/path = NodePath("Animation/Sir/Body/Screen Cover:transform/rot")
+tracks/36/interp = 1
+tracks/36/imported = false
+tracks/36/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/37/type = "value"
+tracks/37/path = NodePath("Animation/Sir/Body/Screen Cover:transform/scale")
+tracks/37/interp = 1
+tracks/37/imported = false
+tracks/37/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/38/type = "value"
+tracks/38/path = NodePath("Animation/Sir/Sug:transform/pos")
+tracks/38/interp = 1
+tracks/38/imported = false
+tracks/38/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -100.468, 18.7402 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("Animation/Sir/Sug:transform/rot")
+tracks/39/interp = 1
+tracks/39/imported = false
+tracks/39/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 11.7001 ]
+}
+tracks/40/type = "value"
+tracks/40/path = NodePath("Animation/Sir/Sug:transform/scale")
+tracks/40/interp = 1
+tracks/40/imported = false
+tracks/40/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/41/type = "value"
+tracks/41/path = NodePath("Animation/Sir/Body/Face/Stunned Left Eye:visibility/visible")
+tracks/41/interp = 1
+tracks/41/imported = false
+tracks/41/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/42/type = "value"
+tracks/42/path = NodePath("Animation/Sir/Body/Face/Stunned Right Eye:visibility/visible")
+tracks/42/interp = 1
+tracks/42/imported = false
+tracks/42/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/43/type = "value"
+tracks/43/path = NodePath("Animation/Sir/Body/Face/Left Eye:visibility/visible")
+tracks/43/interp = 1
+tracks/43/imported = false
+tracks/43/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/44/type = "value"
+tracks/44/path = NodePath("Animation/Sir/Body/Face/Right Eye:visibility/visible")
 tracks/44/interp = 1
 tracks/44/imported = false
 tracks/44/keys = {
@@ -4373,7 +4837,384 @@ tracks/42/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=14]
+
+resource/name = "Walk"
+length = 1.0
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Animation/Sir:visibility/visible")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Animation/Sug:visibility/visible")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Animation/Sug/Body/Left Foot:transform/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -27.1173, 119.204 ), Vector2( -4.56712, 134.083 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Animation/Sug/Body/Left Foot:transform/rot")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ -15.4328, 40.4046 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Animation/Sug/Body/Left Foot:transform/scale")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Animation/Sug/Body/Right Foot:transform/pos")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 27.9994, 124.303 ), Vector2( 9.15406, 119.064 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Animation/Sug/Body/Right Foot:transform/rot")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 48.6221, -31.6183 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Animation/Sug/Body/Right Foot:transform/scale")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.15, 1.15 ), Vector2( 1.15, 1.15 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Animation/Sug/Body/Face:transform/pos")
+tracks/8/interp = 1
+tracks/8/imported = false
+tracks/8/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Animation/Sug/Body/Face:transform/rot")
+tracks/9/interp = 1
+tracks/9/imported = false
+tracks/9/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Animation/Sug/Body/Face:transform/scale")
+tracks/10/interp = 1
+tracks/10/imported = false
+tracks/10/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Animation/Sug/Body/Face/Glasses:transform/pos")
+tracks/11/interp = 1
+tracks/11/imported = false
+tracks/11/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 5.84094, -50.946 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Animation/Sug/Body/Face/Glasses:transform/rot")
+tracks/12/interp = 1
+tracks/12/imported = false
+tracks/12/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Animation/Sug/Body/Face/Glasses:transform/scale")
+tracks/13/interp = 1
+tracks/13/imported = false
+tracks/13/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Animation/Sug/Body/Face/Left Eyebrow:transform/pos")
+tracks/14/interp = 1
+tracks/14/imported = false
+tracks/14/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -6.21793, -71.028 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Animation/Sug/Body/Face/Left Eyebrow:transform/rot")
+tracks/15/interp = 1
+tracks/15/imported = false
+tracks/15/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Animation/Sug/Body/Face/Left Eyebrow:transform/scale")
+tracks/16/interp = 1
+tracks/16/imported = false
+tracks/16/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Animation/Sug/Body/Face/Right Eyebrow:transform/pos")
+tracks/17/interp = 1
+tracks/17/imported = false
+tracks/17/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 24.1543, -67.4407 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Animation/Sug/Body/Face/Right Eyebrow:transform/rot")
+tracks/18/interp = 1
+tracks/18/imported = false
+tracks/18/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Animation/Sug/Body/Face/Right Eyebrow:transform/scale")
+tracks/19/interp = 1
+tracks/19/imported = false
+tracks/19/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Animation/Sug/Body/Face/Mouth:transform/pos")
+tracks/20/interp = 1
+tracks/20/imported = false
+tracks/20/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 6.69626, -15.3057 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Animation/Sug/Body/Face/Mouth:transform/rot")
+tracks/21/interp = 1
+tracks/21/imported = false
+tracks/21/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Animation/Sug/Body/Face/Mouth:transform/scale")
+tracks/22/interp = 1
+tracks/22/imported = false
+tracks/22/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Animation/Sug/Hat:transform/pos")
+tracks/23/interp = 1
+tracks/23/imported = false
+tracks/23/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5.78696, -94.7811 ), Vector2( 6.86856, -114.226 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Animation/Sug/Hat:transform/rot")
+tracks/24/interp = 1
+tracks/24/imported = false
+tracks/24/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Animation/Sug/Hat:transform/scale")
+tracks/25/interp = 1
+tracks/25/imported = false
+tracks/25/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Animation/Sug/Body/Cover:transform/pos")
+tracks/26/interp = 1
+tracks/26/imported = false
+tracks/26/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 5.65265, -21.8226 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Animation/Sug/Body/Cover:transform/rot")
+tracks/27/interp = 1
+tracks/27/imported = false
+tracks/27/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Animation/Sug/Body/Cover:transform/scale")
+tracks/28/interp = 1
+tracks/28/imported = false
+tracks/28/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("Animation/Sug/Body/Face/Stunned Eye Left:visibility/visible")
+tracks/29/interp = 1
+tracks/29/imported = false
+tracks/29/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("Animation/Sug/Body/Face/Stunned Eye Right:visibility/visible")
+tracks/30/interp = 1
+tracks/30/imported = false
+tracks/30/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("Animation/Sug/Sir:transform/pos")
+tracks/31/interp = 1
+tracks/31/imported = false
+tracks/31/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -93.1013, 95.795 ), Vector2( -91.4103, 101.112 ) ]
+}
+tracks/32/type = "value"
+tracks/32/path = NodePath("Animation/Sug/Sir:transform/rot")
+tracks/32/interp = 1
+tracks/32/imported = false
+tracks/32/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ -24.7845, -14.0087 ]
+}
+tracks/33/type = "value"
+tracks/33/path = NodePath("Animation/Sug/Sir:transform/scale")
+tracks/33/interp = 1
+tracks/33/imported = false
+tracks/33/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+tracks/34/type = "value"
+tracks/34/path = NodePath("Animation/Sug/Body:transform/pos")
+tracks/34/interp = 1
+tracks/34/imported = false
+tracks/34/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1.41168, 29 ), Vector2( -1.41168, 19 ) ]
+}
+tracks/35/type = "value"
+tracks/35/path = NodePath("Animation/Sug/Body:transform/rot")
+tracks/35/interp = 1
+tracks/35/imported = false
+tracks/35/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/36/type = "value"
+tracks/36/path = NodePath("Animation/Sug/Body:transform/scale")
+tracks/36/interp = 1
+tracks/36/imported = false
+tracks/36/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
 
 resource/name = "Jump"
 length = 0.1
@@ -5207,6 +6048,423 @@ tracks/40/keys = {
 "values": [ 0.0 ]
 }
 
+[sub_resource type="Animation" id=15]
+
+resource/name = "Walk"
+length = 2.0
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Animation/Sir:visibility/visible")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Animation/Sug:visibility/visible")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Animation/Big Bro:visibility/visible")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Animation/Big Bro/Hair/Right Hair 1:transform/pos")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0, 0.7 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 95.8944, -153.912 ), Vector2( 95.8944, -153.912 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Animation/Big Bro/Hair/Right Hair 1:transform/rot")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 0.7 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 9.76998 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Animation/Big Bro/Hair/Right Hair 2:transform/pos")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 93.0327, -162.201 ), Vector2( 93.0327, -162.201 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Animation/Big Bro/Hair/Right Hair 2:transform/rot")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 8.53309 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Animation/Big Bro/Hair/Right Hair 3:transform/pos")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0, 1.4 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 98.8421, -156.887 ), Vector2( 98.8421, -156.887 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Animation/Big Bro/Hair/Right Hair 3:transform/rot")
+tracks/8/interp = 1
+tracks/8/imported = false
+tracks/8/keys = {
+"times": FloatArray( 0, 1.4 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 6.72305 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Animation/Big Bro/Body/Right Wheel:transform/pos")
+tracks/9/interp = 1
+tracks/9/imported = false
+tracks/9/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 57.4582, 145.356 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Animation/Big Bro/Body/Right Wheel:transform/rot")
+tracks/10/interp = 1
+tracks/10/imported = false
+tracks/10/keys = {
+"times": FloatArray( 0, 1, 2 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -180.0, -360.0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Animation/Big Bro/Body/Face:transform/pos")
+tracks/11/interp = 1
+tracks/11/imported = false
+tracks/11/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Animation/Big Bro/Body/Face:transform/rot")
+tracks/12/interp = 1
+tracks/12/imported = false
+tracks/12/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Animation/Big Bro/Hair:transform/pos")
+tracks/13/interp = 1
+tracks/13/imported = false
+tracks/13/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Animation/Big Bro/Hair:transform/rot")
+tracks/14/interp = 1
+tracks/14/imported = false
+tracks/14/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Animation/Big Bro/Hair/Left Hair 1:transform/pos")
+tracks/15/interp = 1
+tracks/15/imported = false
+tracks/15/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -33.5695, -190.879 ), Vector2( -33.5695, -190.879 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Animation/Big Bro/Hair/Left Hair 1:transform/rot")
+tracks/16/interp = 1
+tracks/16/imported = false
+tracks/16/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ -1.38265, -9.68303 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Animation/Big Bro/Hair/Left Hair 2:transform/pos")
+tracks/17/interp = 1
+tracks/17/imported = false
+tracks/17/keys = {
+"times": FloatArray( 0, 0.7 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -22.9262, -192.539 ), Vector2( -22.9262, -192.539 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Animation/Big Bro/Hair/Left Hair 2:transform/rot")
+tracks/18/interp = 1
+tracks/18/imported = false
+tracks/18/keys = {
+"times": FloatArray( 0, 0.7 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -7.58655 ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Animation/Big Bro/Hair/Left Hair 3:transform/pos")
+tracks/19/interp = 1
+tracks/19/imported = false
+tracks/19/keys = {
+"times": FloatArray( 0, 1.35 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -6.92692, -190.553 ), Vector2( -6.92692, -190.553 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Animation/Big Bro/Hair/Left Hair 3:transform/rot")
+tracks/20/interp = 1
+tracks/20/imported = false
+tracks/20/keys = {
+"times": FloatArray( 0, 1.35 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -4.50981 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Animation/Big Bro:transform/pos")
+tracks/21/interp = 1
+tracks/21/imported = false
+tracks/21/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Animation/Big Bro:transform/rot")
+tracks/22/interp = 1
+tracks/22/imported = false
+tracks/22/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Animation/Big Bro/Right Wheel:transform/pos")
+tracks/23/interp = 1
+tracks/23/imported = false
+tracks/23/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 57.8091, 132.91 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Animation/Big Bro/Right Wheel:transform/rot")
+tracks/24/interp = 1
+tracks/24/imported = false
+tracks/24/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Animation/Big Bro/Body:transform/pos")
+tracks/25/interp = 1
+tracks/25/imported = false
+tracks/25/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.350891, -12.4457 ) ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Animation/Big Bro/Body:transform/rot")
+tracks/26/interp = 1
+tracks/26/imported = false
+tracks/26/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Animation/Big Bro/Body/Left Wheel:transform/pos")
+tracks/27/interp = 1
+tracks/27/imported = false
+tracks/27/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -107.728, 145.977 ) ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Animation/Big Bro/Body/Left Wheel:transform/rot")
+tracks/28/interp = 1
+tracks/28/imported = false
+tracks/28/keys = {
+"times": FloatArray( 0, 1, 2 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -180.0, -360.0 ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("Animation/Big Bro/Tam O Shanter:transform/pos")
+tracks/29/interp = 1
+tracks/29/imported = false
+tracks/29/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 35.7295, -185.293 ) ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("Animation/Big Bro/Tam O Shanter:transform/rot")
+tracks/30/interp = 1
+tracks/30/imported = false
+tracks/30/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("Animation/Big Bro/Body/Face/Brow:transform/pos")
+tracks/31/interp = 1
+tracks/31/imported = false
+tracks/31/keys = {
+"times": FloatArray( 0, 1.2, 1.3, 1.4 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 39.4171, -123.256 ), Vector2( 39.4171, -123.256 ), Vector2( 41.2126, -127.989 ), Vector2( 39.4171, -123.256 ) ]
+}
+tracks/32/type = "value"
+tracks/32/path = NodePath("Animation/Big Bro/Body/Face/Brow:transform/rot")
+tracks/32/interp = 1
+tracks/32/imported = false
+tracks/32/keys = {
+"times": FloatArray( 0, 1.2, 1.3, 1.4 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.520668, 0.0 ]
+}
+tracks/33/type = "value"
+tracks/33/path = NodePath("Animation/Big Bro/Body/Face/Goatee:transform/pos")
+tracks/33/interp = 1
+tracks/33/imported = false
+tracks/33/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 17.5567, -10.2832 ) ]
+}
+tracks/34/type = "value"
+tracks/34/path = NodePath("Animation/Big Bro/Body/Face/Goatee:transform/rot")
+tracks/34/interp = 1
+tracks/34/imported = false
+tracks/34/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/35/type = "value"
+tracks/35/path = NodePath("Animation/Big Bro/Body/Face/Glasses:transform/pos")
+tracks/35/interp = 1
+tracks/35/imported = false
+tracks/35/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 28.4588, -96.549 ) ]
+}
+tracks/36/type = "value"
+tracks/36/path = NodePath("Animation/Big Bro/Body/Face/Glasses:transform/rot")
+tracks/36/interp = 1
+tracks/36/imported = false
+tracks/36/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/37/type = "value"
+tracks/37/path = NodePath("Animation/Big Bro/Body/Face/Mouth:transform/pos")
+tracks/37/interp = 1
+tracks/37/imported = false
+tracks/37/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 24.8102, -64.4325 ) ]
+}
+tracks/38/type = "value"
+tracks/38/path = NodePath("Animation/Big Bro/Body/Face/Mouth:transform/rot")
+tracks/38/interp = 1
+tracks/38/imported = false
+tracks/38/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("Animation/Big Bro/Body/Face/Wrinkles:transform/pos")
+tracks/39/interp = 1
+tracks/39/imported = false
+tracks/39/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 25.9211, -67.7652 ), Vector2( 25.9211, -67.7652 ) ]
+}
+tracks/40/type = "value"
+tracks/40/path = NodePath("Animation/Big Bro/Body/Face/Wrinkles:transform/rot")
+tracks/40/interp = 1
+tracks/40/imported = false
+tracks/40/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -5.90849 ]
+}
+
 [node name="Bro SS Sprites" type="Node2D"]
 
 [node name="Animation" type="Node2D" parent="."]
@@ -5271,14 +6529,14 @@ texture = ExtResource( 7 )
 
 visibility/visible = false
 transform/pos = Vector2( -18.3475, -85.4901 )
-transform/rot = -16.632
+transform/rot = 9.78962
 texture = ExtResource( 8 )
 
 [node name="Stunned Left Eye" type="Sprite" parent="Animation/Sir/Body/Face"]
 
 visibility/visible = false
 transform/pos = Vector2( 17.0795, -69.9949 )
-transform/rot = 255.207
+transform/rot = 224.57
 texture = ExtResource( 8 )
 
 [node name="Screen Cover" type="Sprite" parent="Animation/Sir/Body"]
@@ -5327,19 +6585,19 @@ editor/display_folded = true
 
 visibility/visible = false
 transform/pos = Vector2( -7.25636, -52.1636 )
-transform/rot = 157.953
+transform/rot = 75.454
 texture = ExtResource( 8 )
 
 [node name="Stunned Eye Right" type="Sprite" parent="Animation/Sug/Body/Face"]
 
 visibility/visible = false
-transform/pos = Vector2( 23.5991, -49.3421 )
-transform/rot = -106.538
+transform/pos = Vector2( 23.8914, -52.0454 )
+transform/rot = -25.2168
 texture = ExtResource( 8 )
 
 [node name="Glasses" type="Sprite" parent="Animation/Sug/Body/Face"]
 
-transform/pos = Vector2( 6.10536, -45.393 )
+transform/pos = Vector2( 5.84094, -50.946 )
 texture = ExtResource( 14 )
 
 [node name="Left Eyebrow" type="Sprite" parent="Animation/Sug/Body/Face"]
@@ -5354,8 +6612,7 @@ texture = ExtResource( 15 )
 
 [node name="Mouth" type="Sprite" parent="Animation/Sug/Body/Face"]
 
-transform/pos = Vector2( 3.79768, -13.8564 )
-transform/rot = -130.595
+transform/pos = Vector2( 6.69626, -15.3057 )
 texture = ExtResource( 16 )
 
 [node name="Cover" type="Sprite" parent="Animation/Sug/Body"]
@@ -5365,14 +6622,13 @@ texture = ExtResource( 17 )
 
 [node name="Hat" type="Sprite" parent="Animation/Sug"]
 
-transform/pos = Vector2( 27.8699, -88.0383 )
-transform/rot = -6.97738
+transform/pos = Vector2( 7.30121, -101.487 )
 texture = ExtResource( 18 )
 
 [node name="Sir" type="Sprite" parent="Animation/Sug"]
 
-transform/pos = Vector2( -101.401, 140.716 )
-transform/rot = 89.5903
+transform/pos = Vector2( -92.5787, 101.544 )
+transform/rot = 0.400856
 texture = ExtResource( 19 )
 
 [node name="Big Bro" type="Node2D" parent="Animation"]
@@ -5382,7 +6638,7 @@ visibility/visible = false
 [node name="Right Wheel" type="Sprite" parent="Animation/Big Bro"]
 
 transform/pos = Vector2( 57.8091, 132.91 )
-transform/rot = -99.6373
+transform/rot = -70.7301
 texture = ExtResource( 20 )
 
 [node name="Body" type="Sprite" parent="Animation/Big Bro"]
@@ -5393,13 +6649,13 @@ texture = ExtResource( 21 )
 [node name="Left Wheel" type="Sprite" parent="Animation/Big Bro/Body"]
 
 transform/pos = Vector2( -107.728, 145.977 )
-transform/rot = -99.6373
+transform/rot = -70.7301
 texture = ExtResource( 20 )
 
 [node name="Right Wheel" type="RemoteTransform2D" parent="Animation/Big Bro/Body"]
 
 transform/pos = Vector2( 57.4582, 145.356 )
-transform/rot = -99.6373
+transform/rot = -70.7301
 remote_path = NodePath("../../Right Wheel")
 
 [node name="Face" type="Node2D" parent="Animation/Big Bro/Body"]
@@ -5427,7 +6683,7 @@ texture = ExtResource( 25 )
 [node name="Wrinkles" type="Sprite" parent="Animation/Big Bro/Body/Face"]
 
 transform/pos = Vector2( 25.9211, -67.7652 )
-transform/rot = -3.27059
+transform/rot = -2.32171
 texture = ExtResource( 26 )
 
 [node name="Hair" type="Node2D" parent="Animation/Big Bro"]
@@ -5435,42 +6691,42 @@ texture = ExtResource( 26 )
 [node name="Left Hair 1" type="Sprite" parent="Animation/Big Bro/Hair"]
 
 transform/pos = Vector2( -33.5695, -190.879 )
-transform/rot = -5.97725
+transform/rot = -4.64424
 texture = ExtResource( 27 )
 offset = Vector2( -35.001, 91.9433 )
 
 [node name="Left Hair 2" type="Sprite" parent="Animation/Big Bro/Hair"]
 
 transform/pos = Vector2( -22.9262, -192.539 )
-transform/rot = -5.99923
+transform/rot = -4.25871
 texture = ExtResource( 28 )
 offset = Vector2( -54.0573, 88.122 )
 
 [node name="Left Hair 3" type="Sprite" parent="Animation/Big Bro/Hair"]
 
 transform/pos = Vector2( -6.92692, -190.553 )
-transform/rot = -1.84916
+transform/rot = -1.31267
 texture = ExtResource( 29 )
 offset = Vector2( -41.1785, 103.375 )
 
 [node name="Right Hair 1" type="Sprite" parent="Animation/Big Bro/Hair"]
 
 transform/pos = Vector2( 95.8944, -153.912 )
-transform/rot = 7.72583
+transform/rot = 5.48438
 texture = ExtResource( 30 )
 offset = Vector2( 4.94482, 92.2317 )
 
 [node name="Right Hair 2" type="Sprite" parent="Animation/Big Bro/Hair"]
 
 transform/pos = Vector2( 93.0327, -162.201 )
-transform/rot = 4.72341
+transform/rot = 3.35303
 texture = ExtResource( 31 )
 offset = Vector2( -13.2609, 82.7912 )
 
 [node name="Right Hair 3" type="Sprite" parent="Animation/Big Bro/Hair"]
 
 transform/pos = Vector2( 98.8421, -156.887 )
-transform/rot = 2.6582
+transform/rot = 1.88699
 texture = ExtResource( 32 )
 offset = Vector2( 0.396469, 103.774 )
 
@@ -5486,7 +6742,7 @@ playback/default_blend_time = 0.0
 root/root = NodePath("..")
 anims/Hurt = SubResource( 1 )
 anims/Idle = SubResource( 2 )
-anims/Jump = ExtResource( 34 )
+anims/Jump = SubResource( 13 )
 anims/Still = SubResource( 3 )
 anims/Stunned = SubResource( 4 )
 anims/Walk = SubResource( 5 )
@@ -5505,7 +6761,7 @@ anims/Idle = SubResource( 7 )
 anims/Jump = SubResource( 8 )
 anims/Still = SubResource( 9 )
 anims/Stunned = SubResource( 10 )
-anims/Walk = ExtResource( 35 )
+anims/Walk = SubResource( 14 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -5516,9 +6772,9 @@ autoplay = "Still"
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Jump = SubResource( 13 )
+anims/Jump = SubResource( 11 )
 anims/Still = SubResource( 12 )
-anims/Walk = ExtResource( 36 )
+anims/Walk = SubResource( 15 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]

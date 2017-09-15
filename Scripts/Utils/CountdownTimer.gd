@@ -7,9 +7,13 @@ var parent
 # The function being called when time out.
 var time_out_func_name
 
-func _init(duration, target, time_out_method_name):
+# The arguments for the time out function.
+var args
+
+func _init(duration, target, time_out_method_name, args = null):
 	self.parent = target
 	self.time_out_func_name = time_out_method_name
+	self.args = args
 	
 	timer = Timer.new()
 	timer.set_one_shot(true)
@@ -20,4 +24,12 @@ func _init(duration, target, time_out_method_name):
 	
 func time_out():
 	timer.queue_free()
-	parent.call(time_out_func_name)
+	if args == null:
+		parent.call(time_out_func_name)
+	else:
+		parent.call(time_out_func_name, args)
+
+# Stop the timer and remove it from parent.
+func destroy_timer():
+	timer.stop()
+	timer.queue_free()

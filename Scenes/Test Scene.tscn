@@ -10,7 +10,7 @@
 [ext_resource path="res://Scenes/Characters/Othox Codox/Othox Codox Sprites.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Characters/Wendy Vista/Wendy Vista Sprites.tscn" type="PackedScene" id=9]
 
-[node name="Test Scene" type="Node2D"]
+[node name="Game Level" type="Node2D"]
 
 [node name="Following Camera" parent="." instance=ExtResource( 1 )]
 
@@ -20,28 +20,36 @@ transform/pos = Vector2( -153.562, -124.912 )
 
 [node name="Wooden Platform 400x100" parent="." instance=ExtResource( 3 )]
 
+transform/pos = Vector2( -0.14115, 68.3408 )
+
 [node name="Bro SS Sprites" parent="." instance=ExtResource( 4 )]
 
+visibility/visible = false
 transform/pos = Vector2( 310.538, -22.5998 )
 
 [node name="Waitie Changie Sprites" parent="." instance=ExtResource( 5 )]
 
+visibility/visible = false
 transform/pos = Vector2( -407.999, 1.33133 )
 
 [node name="Ranawato Plato Sprites" parent="." instance=ExtResource( 6 )]
 
+visibility/visible = false
 transform/pos = Vector2( 583.41, -69.4736 )
 
 [node name="Socklataaz Sockrateez Sprites" parent="." instance=ExtResource( 7 )]
 
+visibility/visible = false
 transform/pos = Vector2( 975.623, -51.3041 )
 
 [node name="Othox Codox Sprites" parent="." instance=ExtResource( 8 )]
 
+visibility/visible = false
 transform/pos = Vector2( 1294.61, -21.4441 )
 
 [node name="Wendy Vista Sprites" parent="." instance=ExtResource( 9 )]
 
+visibility/visible = false
 transform/pos = Vector2( 59.2704, 22.8768 )
 
 
