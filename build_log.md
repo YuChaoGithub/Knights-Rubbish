@@ -50,3 +50,30 @@
 * Completed `PencilDart.gd` and its scene for horizontal skill of Keshia Erasia.
 
 **Commit**
+
+[2017.09.18]
+* Completed "Up Skill", "Down Skill" and "Down Skill Resume" animations for Keshia Erasia.
+* Completed the up skill of Keshia Erasia. Phew.
+
+[2017.09.19]
+* Completed the down skill of Keshia Erasia.
+* Fix a bug in the basic skill.
+
+[2017.09.20]
+* Redesign the structure of character scenes (now the animation part isn't saved in a separate scene).
+* Change layer names in Globals for the sake of consistency.
+* Add more layers to Globals such as Enemy Layer, Friendly Fire Layer, Enemy Fire Layer, etc.
+* Figured out the collision mechanics between Enemy, Character, Enemy Fire, Friendly Fire.
+* Finished implementing the actual damge code for Keshia's basic attack.
+* Created a dummy target enemy for debugging and testing.
+
+[2017.09.21]
+* Fix a bug that Keshia's basic attack would hit multiple targets.
+* Implemented the hit box & target hit of Keshia's basic skill, horizontal skill, up skill.
+
+[2017.09.22]
+* Apply a snap grid of 50px times 50px.
+* Rework some graphics so that they are 50px multiple in sizes.
+* Level design research.
+
+**Commit**

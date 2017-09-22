@@ -27,7 +27,7 @@ enum { LEFT, TOP, RIGHT, BOTTOM }
 var collided_sides = { LEFT: false, TOP: false, RIGHT: false, BOTTOM: false }
 
 # Get the global node for collision masks.
-onready var collision_layers = Globals.get("platform_layer") | Globals.get("camera_bounds_layer")
+onready var collision_layers = Globals.get("Platform Layer") | Globals.get("Camera Bounds Layer")
 
 # The collision 2D child node.
 onready var collision_box = get_node("Collision Box")

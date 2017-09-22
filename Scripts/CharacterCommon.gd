@@ -35,8 +35,18 @@ var jump_height_modifier = 1.0 setget set_jump_height_modifier
 var damage_modifier = 1.0
 var defense_modifier = 1.0
 
+# Speed modifier for horizontal movement skills.
+var speed_modifier_x = 0
+
+# Velocity replacement for verticle movement skills (note that the velocity would only be replaced once).
+var velocity_replacement_y = null
+
 # Current velocity of the character.
 var velocity = Vector2(0, 0)
+
+# Functions which would be called when jumping.
+# Should be in the form of [Object, "func_name"].
+var jump_event = []
 
 # The status of the character commonly used by timers.
 # A {tag:String -> Bool} dictionary.
@@ -161,12 +171,23 @@ func update_movement(delta):
 		# Jumping.
 		if Input.is_action_pressed("player_jump") and status.can_jump and collision_handler.collided_sides[collision_handler.BOTTOM]:
 			velocity.y += jump_speed
+			
+			# Triggers events when jumping.
+			for obj_func in jump_event:
+				obj_func[0].call(obj_func[1])
 	
 	# Change the x scale of the sprite according to which side the character is facing.
 	if horizontal_movement != 0 and sign(sprite.get_scale().x) != horizontal_movement:
 		sprite.set_scale(Vector2(sprite.get_scale().x * -1, sprite.get_scale().y))
 
-	velocity.x = horizontal_movement * speed
+	# Apply vertical velocity modifier if there is one.
+	if velocity_replacement_y != null:
+		velocity.y = velocity_replacement_y
+
+		# Only apply this velocity once.
+		velocity_replacement_y = null
+	
+	velocity.x = horizontal_movement * speed + speed_modifier_x
 	velocity.y += gravity * delta
 	
 	# Pass to the collision handler, and get the collision-modified movement from its return value.
@@ -186,14 +207,11 @@ func update_movement(delta):
 	
 # Perform combo by its function name.
 func check_combo_and_perform():
-	if Input.is_action_pressed("player_attack"):
-		# Attack.
-		if Input.is_action_pressed("player_skill"):
-			combo_handler.ult()
-		else:
-			combo_handler.basic_attack()
+	if Input.is_action_pressed("player_ult"):
+		# Ult.
+		combo_handler.ult()
 	elif Input.is_action_pressed("player_skill"):
-		# Skill.
+		# Skills.
 		if Input.is_action_pressed("player_left"):
 			combo_handler.horizontal_skill(-1)
 		elif Input.is_action_pressed("player_right"):
@@ -204,6 +222,9 @@ func check_combo_and_perform():
 			combo_handler.down_skill()
 		else:
 			combo_handler.basic_skill()
+	elif Input.is_action_pressed("player_attack"):
+		# Attack.
+		combo_handler.basic_attack()
 
 # Configure movement related variables.
 func recalculate_horizontal_movement_variables():
@@ -265,10 +286,12 @@ func stunned(duration):
 	# Disable verticle inertia.
 	velocity.y = 0
 
-	# Timeout no_movement timers.
-	if active_timers.has("no_movement"):
-		active_timers["no_movement"].time_out()
-		active_timers.erase("no_movement")
+	# Timeout these timers.
+	var timeout_tags = ["no_movement", "movement_skill"]
+	for timeout_tag in timeout_tags:
+		if active_timers.has(timeout_tag):
+			active_timers[timeout_tag].time_out()
+			# The key (in the dictionary) should be erased by the time_out() function call.
 
 	# Interrupt skills if any.
 	if active_timers.has("interruptable_skill"):

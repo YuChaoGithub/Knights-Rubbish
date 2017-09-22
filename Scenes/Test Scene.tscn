@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn" type="PackedScene" id=2]
@@ -9,6 +9,13 @@
 [ext_resource path="res://Scenes/Characters/Socklataaz Sockrateez/Socklataaz Sockrateez Sprites.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Characters/Othox Codox/Othox Codox Sprites.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Characters/Wendy Vista/Wendy Vista Sprites.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scripts/Enemies/DummyTarget.gd" type="Script" id=10]
+[ext_resource path="res://Graphics/icon.png" type="Texture" id=11]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 63.8375, 63.778 )
 
 [node name="Game Level" type="Node2D"]
 
@@ -16,7 +23,7 @@
 
 [node name="Keshia Erasia" parent="." instance=ExtResource( 2 )]
 
-transform/pos = Vector2( -153.562, -124.912 )
+transform/pos = Vector2( -18.7637, -134.145 )
 
 [node name="Wooden Platform 400x100" parent="." instance=ExtResource( 3 )]
 
@@ -51,5 +58,67 @@ transform/pos = Vector2( 1294.61, -21.4441 )
 
 visibility/visible = false
 transform/pos = Vector2( 59.2704, 22.8768 )
+
+[node name="Dummy Target" type="Node2D" parent="."]
+
+transform/pos = Vector2( 57.2574, -460.684 )
+script/script = ExtResource( 10 )
+
+[node name="Trigger Area" type="Area2D" parent="Dummy Target" groups=[
+"enemy_collider",
+]]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 16
+collision/mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dummy Target/Trigger Area"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Sprite" type="Sprite" parent="Dummy Target"]
+
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+
+[node name="Dummy Target1" type="Node2D" parent="."]
+
+transform/pos = Vector2( 151.659, -461.761 )
+script/script = ExtResource( 10 )
+
+[node name="Trigger Area" type="Area2D" parent="Dummy Target1" groups=[
+"enemy_collider",
+]]
+
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 16
+collision/mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dummy Target1/Trigger Area"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Sprite" type="Sprite" parent="Dummy Target1"]
+
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
 
 
