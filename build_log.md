@@ -77,3 +77,23 @@
 * Level design research.
 
 **Commit**
+
+[2017.09.23]
+* Reorganize the file structures of Graphics directory.
+* Completed "Attack", "Still", "Searching", "Hurt", "Stunned", "Walk" animations of CD Punch.
+* Completed "Still" animation of Dark Earspider.
+
+[2017.09.27]
+* Completed "Swing", "Hurt", "Die", "Clap", "Spin Silk", "Stunned" animations of Dark Earspider.
+* Completed "Die" animation of CD Punch.
+* Completed "Still", "Die", "Count Down", "Explode" animations of Red Earspider.
+* Completed graphics of Mouse.
+
+[2017.09.28]
+* Completed "Die", "Hurt", "Spawn Mousy", "Stunned", "Walk", "Still" animations of Mouse.
+* Completed Mousy Bomb graphics.
+
+[2017.09.29]
+* Completed graphics of Amazlet, Paranoid Android, Harddies, Calcasio, Sonmera.
+
+**Commit**

@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://Scenes/Platforms/Wooden Platform 400x100.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Enemies/Computer Room/CD Punch.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Dark Earspider.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Red Earspider.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Mouse.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Mousy Bomb.tscn" type="PackedScene" id=8]
 
 [node name="Game Level" type="Node2D"]
 
@@ -42,5 +47,25 @@ transform/pos = Vector2( -50, -250 )
 [node name="Following Camera" parent="." instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 750, -200 )
+
+[node name="CD Punch" parent="." instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 550, -200 )
+
+[node name="Dark Earspider" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 650, -500 )
+
+[node name="Red Earspider" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1100, -600 )
+
+[node name="Mouse" parent="." instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 300, -100 )
+
+[node name="Mousy Bomb" parent="." instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 600, -50 )
 
 
