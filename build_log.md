@@ -97,3 +97,18 @@
 * Completed graphics of Amazlet, Paranoid Android, Harddies, Calcasio, Sonmera.
 
 **Commit**
+
+[2017.10.02]
+* I played TOO MUCH Overwatch these weeks, so I don't have much time to work on my projects, BAD!
+* Completed graphics of Canmera, Batterio, Sockute, Laserphone, Radiogugu.
+
+[2017.10.03]
+* Completed graphics of Eelo Puncher, Eelo Kicker, Latortrans, ASCII Bomber, ASCII Gunner.
+
+[2017.10.05]
+* Completed graphics of Cliffy, Flaggomine, iSnail, Windy Meteory, Chromoghast, Clockword Fox.
+
+[2017.10.06]
+* Completed graphics of Godotbos, Eyemac, Floopy, Plugobra.
+
+**Commit**
