@@ -1,0 +1,102 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Graphics/Enemies/Computer Room/Cliffy/Paperclip.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=8]
+
+resource/name = "Blinking"
+length = 0.4
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:transform/scale")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.9, 0.9 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+
+resource/name = "Traveling"
+length = 0.4
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:transform/scale")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.9, 0.9 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:transform/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0, 0.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -155.836, -162.155 ), Vector2( -155.836, -162.155 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite:transform/rot")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0, 0.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ -69.9345, -103.378 ]
+}
+
+[node name="Cliffy Clip Shuriken" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/pos = Vector2( -155.836, -162.155 )
+transform/rot = -93.1085
+transform/scale = Vector2( 0.930707, 0.930707 )
+texture = ExtResource( 1 )
+offset = Vector2( -0.422621, -42.7782 )
+modulate = Color( 1, 0.307065, 0.307065, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/Blinking = SubResource( 8 )
+anims/Traveling = SubResource( 9 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+

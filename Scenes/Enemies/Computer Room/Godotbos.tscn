@@ -1,0 +1,202 @@
+[gd_scene load_steps=22 format=1]
+
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Body.png" type="Texture" id=1]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Head.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Jaw.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Eye.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Eyeball.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Nose.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Left Shoulder.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Left Arm.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Left Forearm.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Left Hand.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Right Shoulder.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Right Arm.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Right Forearm.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Right Hand.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Square Light.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Pelvis.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Left Thigh.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Left Leg.png" type="Texture" id=18]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Foot.png" type="Texture" id=19]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Right Thigh.png" type="Texture" id=20]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Right Leg.png" type="Texture" id=21]
+
+[node name="Godotbos" type="Node2D"]
+
+[node name="Animation" type="Node2D" parent="."]
+
+transform/scale = Vector2( 2.25, 2.25 )
+
+[node name="Body" type="Sprite" parent="Animation"]
+
+transform/pos = Vector2( -1.51196, -0.792202 )
+texture = ExtResource( 1 )
+offset = Vector2( 1.51196, 0.792202 )
+
+[node name="Head" type="Sprite" parent="Animation/Body"]
+
+editor/display_folded = true
+transform/pos = Vector2( -1.51728, -88.4548 )
+texture = ExtResource( 2 )
+
+[node name="Jaw" type="Sprite" parent="Animation/Body/Head"]
+
+transform/pos = Vector2( 1.37984, 32.2337 )
+texture = ExtResource( 3 )
+
+[node name="Left Eye" type="Sprite" parent="Animation/Body/Head"]
+
+editor/display_folded = true
+transform/pos = Vector2( -16.9766, 8.93412 )
+texture = ExtResource( 4 )
+
+[node name="Eyeball" type="Sprite" parent="Animation/Body/Head/Left Eye"]
+
+transform/pos = Vector2( -1.22227, 0.366089 )
+texture = ExtResource( 5 )
+
+[node name="Right Eye" type="Sprite" parent="Animation/Body/Head"]
+
+editor/display_folded = true
+transform/pos = Vector2( 19.6701, 8.69338 )
+texture = ExtResource( 4 )
+
+[node name="Eyeball" type="Sprite" parent="Animation/Body/Head/Right Eye"]
+
+transform/pos = Vector2( -1.18101, 0.140106 )
+texture = ExtResource( 5 )
+
+[node name="Nose" type="Sprite" parent="Animation/Body/Head"]
+
+transform/pos = Vector2( 0.986803, 12.9271 )
+texture = ExtResource( 6 )
+
+[node name="Left Shoulder" type="Sprite" parent="Animation/Body/Head"]
+
+editor/display_folded = true
+transform/pos = Vector2( -25.4572, 82.1605 )
+texture = ExtResource( 7 )
+offset = Vector2( -16.4223, -2.83238 )
+
+[node name="Left Arm" type="Sprite" parent="Animation/Body/Head/Left Shoulder"]
+
+transform/pos = Vector2( -27.3055, 6.89463 )
+texture = ExtResource( 8 )
+offset = Vector2( 10.4983, 20.7795 )
+
+[node name="Left Forearm" type="Sprite" parent="Animation/Body/Head/Left Shoulder/Left Arm"]
+
+transform/pos = Vector2( -18.2587, 45.2787 )
+texture = ExtResource( 9 )
+offset = Vector2( -6.35187, 22.3457 )
+
+[node name="Left Hand" type="Sprite" parent="Animation/Body/Head/Left Shoulder/Left Arm/Left Forearm"]
+
+transform/pos = Vector2( -17.1308, 49.501 )
+texture = ExtResource( 10 )
+offset = Vector2( -3.49029, 7.53899 )
+
+[node name="Right Shoulder" type="Sprite" parent="Animation/Body/Head"]
+
+editor/display_folded = true
+transform/pos = Vector2( 30.5505, 83.2179 )
+texture = ExtResource( 11 )
+offset = Vector2( 15.1757, -6.46402 )
+
+[node name="Right Arm" type="Sprite" parent="Animation/Body/Head/Right Shoulder"]
+
+transform/pos = Vector2( 19.2282, 3.15383 )
+texture = ExtResource( 12 )
+offset = Vector2( 10.2923, 19.6822 )
+
+[node name="Right Forearm" type="Sprite" parent="Animation/Body/Head/Right Shoulder/Right Arm"]
+
+transform/pos = Vector2( 17.9056, 42.0171 )
+texture = ExtResource( 13 )
+offset = Vector2( 7.8337, 22.382 )
+
+[node name="Sprite" type="Sprite" parent="Animation/Body/Head/Right Shoulder/Right Arm/Right Forearm"]
+
+transform/pos = Vector2( 19.3235, 49.5612 )
+texture = ExtResource( 14 )
+offset = Vector2( 2.87928, 8.3002 )
+
+[node name="Chest Lights" type="Node2D" parent="Animation/Body"]
+
+editor/display_folded = true
+transform/pos = Vector2( 1.51196, 0.792202 )
+
+[node name="1" type="Sprite" parent="Animation/Body/Chest Lights"]
+
+transform/pos = Vector2( -14.5074, -23.2349 )
+texture = ExtResource( 15 )
+
+[node name="2" type="Sprite" parent="Animation/Body/Chest Lights"]
+
+transform/pos = Vector2( -5.70345, -23.3114 )
+texture = ExtResource( 15 )
+
+[node name="3" type="Sprite" parent="Animation/Body/Chest Lights"]
+
+transform/pos = Vector2( 5.43551, -23.1583 )
+texture = ExtResource( 15 )
+
+[node name="Sprite" type="Sprite" parent="Animation/Body/Chest Lights"]
+
+transform/pos = Vector2( 14.3161, -23.2349 )
+texture = ExtResource( 15 )
+
+[node name="Pelvis" type="Sprite" parent="Animation/Body"]
+
+transform/pos = Vector2( -0.442071, 42.1786 )
+texture = ExtResource( 16 )
+offset = Vector2( -0.134942, 15.0158 )
+
+[node name="Left Thigh" type="Sprite" parent="Animation/Body/Pelvis"]
+
+transform/pos = Vector2( -15.5005, 24.8824 )
+texture = ExtResource( 17 )
+offset = Vector2( -12.5802, 16.7753 )
+
+[node name="Left Leg" type="Sprite" parent="Animation/Body/Pelvis/Left Thigh"]
+
+transform/pos = Vector2( -17.8206, 42.0492 )
+texture = ExtResource( 18 )
+offset = Vector2( -2.39715, 26.8496 )
+
+[node name="Left Foot" type="Sprite" parent="Animation/Body/Pelvis/Left Thigh/Left Leg"]
+
+transform/pos = Vector2( -4.56112, 57.3675 )
+texture = ExtResource( 19 )
+offset = Vector2( -12.3328, 7.89297 )
+
+[node name="Right Thigh" type="Sprite" parent="Animation/Body/Pelvis"]
+
+transform/pos = Vector2( 15.1549, 25.2677 )
+texture = ExtResource( 20 )
+offset = Vector2( 8.18058, 14.9776 )
+
+[node name="Right Leg" type="Sprite" parent="Animation/Body/Pelvis/Right Thigh"]
+
+transform/pos = Vector2( 8.00397, 45.7691 )
+texture = ExtResource( 21 )
+offset = Vector2( -0.225477, 24.4628 )
+
+[node name="Right Foot" type="Sprite" parent="Animation/Body/Pelvis/Right Thigh/Right Leg"]
+
+transform/pos = Vector2( -0.789131, 53.6603 )
+texture = ExtResource( 19 )
+offset = Vector2( -11.9496, 7.7785 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+

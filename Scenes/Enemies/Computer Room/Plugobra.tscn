@@ -1,0 +1,107 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://Graphics/Enemies/Computer Room/Plugobra/Charger Plug.png" type="Texture" id=1]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Plugobra/First Segment.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Plugobra/Normal Segment.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Plugobra/Tail.png" type="Texture" id=4]
+
+[node name="Plugobra" type="Node2D"]
+
+[node name="Animation" type="Node2D" parent="."]
+
+[node name="Body" type="Sprite" parent="Animation"]
+
+texture = ExtResource( 1 )
+
+[node name="1" type="Sprite" parent="Animation/Body"]
+
+transform/pos = Vector2( -2.17916, 66.4837 )
+texture = ExtResource( 2 )
+offset = Vector2( 0.736832, 8.56041 )
+
+[node name="2" type="Sprite" parent="Animation/Body/1"]
+
+transform/pos = Vector2( 0.926796, 22.1963 )
+texture = ExtResource( 3 )
+offset = Vector2( 0.144123, 2.7644 )
+
+[node name="3" type="Sprite" parent="Animation/Body/1/2"]
+
+transform/pos = Vector2( 0.576653, 10.1326 )
+texture = ExtResource( 3 )
+offset = Vector2( 0.391258, 3.01153 )
+
+[node name="4" type="Sprite" parent="Animation/Body/1/2/3"]
+
+transform/pos = Vector2( 0.823784, 9.72065 )
+transform/rot = 10.0509
+texture = ExtResource( 3 )
+offset = Vector2( 0.144123, 3.01154 )
+
+[node name="5" type="Sprite" parent="Animation/Body/1/2/3/4"]
+
+transform/pos = Vector2( 1.09877, 10.9136 )
+transform/rot = 14.5333
+texture = ExtResource( 3 )
+offset = Vector2( 0.59747, 2.84624 )
+
+[node name="6" type="Sprite" parent="Animation/Body/1/2/3/4/5"]
+
+transform/pos = Vector2( 2.43532, 11.3214 )
+transform/rot = 20.3676
+texture = ExtResource( 3 )
+offset = Vector2( 0.666128, 2.80632 )
+
+[node name="7" type="Sprite" parent="Animation/Body/1/2/3/4/5/6"]
+
+transform/pos = Vector2( 1.68121, 10.6022 )
+transform/rot = 18.6598
+texture = ExtResource( 3 )
+offset = Vector2( 0.15306, 3.04818 )
+
+[node name="8" type="Sprite" parent="Animation/Body/1/2/3/4/5/6/7"]
+
+transform/pos = Vector2( 1.85149, 10.844 )
+transform/rot = 21.9166
+texture = ExtResource( 3 )
+offset = Vector2( 0.0213581, 3.30956 )
+
+[node name="9" type="Sprite" parent="Animation/Body/1/2/3/4/5/6/7/8"]
+
+transform/pos = Vector2( 0.271332, 10.913 )
+transform/rot = 7.27977
+texture = ExtResource( 3 )
+offset = Vector2( 0.0263265, 2.97845 )
+
+[node name="10" type="Sprite" parent="Animation/Body/1/2/3/4/5/6/7/8/9"]
+
+transform/pos = Vector2( 0.316925, 10.6966 )
+transform/rot = 7.92575
+texture = ExtResource( 3 )
+offset = Vector2( -0.0202169, 3.26747 )
+
+[node name="11" type="Sprite" parent="Animation/Body/1/2/3/4/5/6/7/8/9/10"]
+
+transform/pos = Vector2( 0.91748, 11.5196 )
+transform/rot = 14.695
+texture = ExtResource( 3 )
+offset = Vector2( -0.0457826, 3.28541 )
+
+[node name="12" type="Sprite" parent="Animation/Body/1/2/3/4/5/6/7/8/9/10/11"]
+
+transform/pos = Vector2( 2.28456, 12.0733 )
+transform/rot = 18.1319
+texture = ExtResource( 4 )
+offset = Vector2( -1.00981, 15.3464 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+

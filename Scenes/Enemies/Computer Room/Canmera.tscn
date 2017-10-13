@@ -1,0 +1,292 @@
+[gd_scene load_steps=10 format=1]
+
+[ext_resource path="res://Graphics/Enemies/Computer Room/Canmera/Cannon Body.png" type="Texture" id=1]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Canmera/3.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Canmera/2.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Canmera/1.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Canmera/Face.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Canmera/Stand.png" type="Texture" id=6]
+
+[sub_resource type="Animation" id=1]
+
+resource/name = "Die"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Stand Remote Transform/Body:modulate")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.784314, 0.784314, 1 ), Color( 0, 0, 0, 0.196078 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Stand Remote Transform/Body/3:modulate")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.784314, 0.784314, 1 ), Color( 0, 0, 0, 0.196078 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Stand Remote Transform/Body/2:modulate")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.784314, 0.784314, 1 ), Color( 0, 0, 0, 0.196078 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Stand Remote Transform/Body/1:modulate")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.784314, 0.784314, 1 ), Color( 0, 0, 0, 0.196078 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Stand Remote Transform/Body/Face:modulate")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0.784314, 0.784314, 1 ), Color( 0, 0, 0, 0.196078 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Stand Remote Transform/Body:transform/rot")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 15.8513 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Stand Remote Transform/Body:transform/pos")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.47516, -21.5943 ), Vector2( 3.18509, -1.29005 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "Hurt"
+length = 0.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Stand Remote Transform/Body:modulate")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Stand Remote Transform/Body/3:modulate")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Stand Remote Transform/Body/2:modulate")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Stand Remote Transform/Body/1:modulate")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Stand Remote Transform/Body/Face:modulate")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Stand Remote Transform/Body:transform/pos")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.47516, -21.5943 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Stand Remote Transform/Body:transform/rot")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource/name = "Still"
+length = 0.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Stand Remote Transform/Body:modulate")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Stand Remote Transform/Body/3:modulate")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Stand Remote Transform/Body/2:modulate")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Stand Remote Transform/Body/1:modulate")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Stand Remote Transform/Body/Face:modulate")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Stand Remote Transform/Body:transform/pos")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.47516, -21.5943 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Stand Remote Transform/Body:transform/rot")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[node name="Canmera" type="Node2D"]
+
+[node name="Animation" type="Node2D" parent="."]
+
+[node name="Stand Remote Transform" type="RemoteTransform2D" parent="Animation"]
+
+remote_path = NodePath("../Stand")
+
+[node name="Body" type="Sprite" parent="Animation/Stand Remote Transform"]
+
+transform/pos = Vector2( 3.47516, -21.5943 )
+texture = ExtResource( 1 )
+offset = Vector2( -53.4752, -28.4057 )
+
+[node name="3" type="Sprite" parent="Animation/Stand Remote Transform/Body"]
+
+transform/pos = Vector2( -104.884, -49.3829 )
+texture = ExtResource( 2 )
+
+[node name="2" type="Sprite" parent="Animation/Stand Remote Transform/Body"]
+
+transform/pos = Vector2( -66.6761, -46.778 )
+texture = ExtResource( 3 )
+
+[node name="1" type="Sprite" parent="Animation/Stand Remote Transform/Body"]
+
+transform/pos = Vector2( -39.2144, -42.1235 )
+texture = ExtResource( 4 )
+
+[node name="Face" type="Sprite" parent="Animation/Stand Remote Transform/Body"]
+
+transform/pos = Vector2( -0.698181, -42.5889 )
+texture = ExtResource( 5 )
+
+[node name="Stand" type="Sprite" parent="Animation"]
+
+texture = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/Die = SubResource( 1 )
+anims/Hurt = SubResource( 2 )
+anims/Still = SubResource( 3 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
+

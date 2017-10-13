@@ -112,3 +112,20 @@
 * Completed graphics of Godotbos, Eyemac, Floopy, Plugobra.
 
 **Commit**
+
+[2017.10.09]
+* Assembled graphics of Amazlet, Paranoid Android, Harddies, Calcasio, Sonmera, Canmera, Batterio, Sockute, Laserphone, Radiogugu, Eelo Puncher, Eelo Kicker, Latortrans, ASCII Gunner, ASCII Bomber, Cliffy, Flaggomine, Windy Meteory, Chromoghast, Clockwork Fox, iSnail, Godotbos to scenes.
+
+[2017.10.10]
+* Assembled graphics of Floopy, Plugobra, eyeMac to scenes.
+
+[2017.10.11]
+* Completed animations of Paranoid Android, ASCII Bomber, ASCII Gunner, Batterio, Calcasio.
+
+[2017.10.12]
+* Completed animations of Canmera, Chromoghast, Cliffy.
+
+[2017.10.13]
+* Completed animations of Clockwork Fox, Eelo Puncher, Eelo Kicker, Flaggomine, Floopy.
+
+**Commit**
