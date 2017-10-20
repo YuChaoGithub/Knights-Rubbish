@@ -129,3 +129,15 @@
 * Completed animations of Clockwork Fox, Eelo Puncher, Eelo Kicker, Flaggomine, Floopy.
 
 **Commit**
+
+[2017.10.16]
+* Completed animations of Harddies, Laserphone, Plugobra, Sockute, Sonmera, Windy Meteory, iSnail.
+
+[2017.10.17]
+* Completed animations of Amazlet, Radiogugu.
+
+[2017.10.20]
+* Completed animations of Latortrans, eyeMac, Godotbos.
+Milestone: Finally completed all animations of the enemies of Computer Room.
+
+**Commit**
