@@ -71,7 +71,10 @@ var active_timers = {}
 onready var collision_handler = get_node("Collision Handler")
 onready var combo_handler = get_node("Combo Handler")
 
-# Camera
+# Character Average Position (used to control the following camera.)
+onready var char_average_pos = get_node("../Character Average Position")
+
+# Camera. For clamping within view bounds.
 onready var following_camera = get_node("../Following Camera")
 
 # Getters and setters.
@@ -122,6 +125,10 @@ func _ready():
 
 	# Initialize timestamp.
 	idle_timestamp = OS.get_unix_time()
+
+	# Register itself to character average position.
+	char_average_pos.characters.push_back(self)
+	char_average_pos.add_character(get_global_pos())
 
 	set_process(true)
 
@@ -191,19 +198,25 @@ func update_movement(delta):
 	velocity.y += gravity * delta
 	
 	# Pass to the collision handler, and get the collision-modified movement from its return value.
-	translate(collision_handler.movement_after_collision(velocity * delta))
+	var final_pos = get_global_pos() + collision_handler.movement_after_collision(velocity * delta)
+
+	# Pass to the following camera, so that the character won't go beyond the camera.
+	final_pos = following_camera.clamp_pos_within_cam_bounds(final_pos)
+	
+	# Update Character Average Position (so that the camera is updated).
+	char_average_pos.update_pos(get_global_pos(), final_pos)
+
+	# Update the position of the character.
+	set_global_pos(final_pos)
 
 	# Play the movement animation if no skill animation is currently being played.
 	if status.animate_movement and animation_key != null:
 
-		# Play idle animation if the character waits too long.
+		# Play idle animation if the character waits for too long.
 		if OS.get_unix_time() - idle_timestamp >= TIME_TO_IDLE_ANIMATION:
 			play_animation("Idle")
 		else:
 			play_animation(animation_key)
-
-	# Update following camera.
-	following_camera.check_camera_update(get_global_pos())
 	
 # Perform combo by its function name.
 func check_combo_and_perform():
@@ -250,12 +263,12 @@ func unregister_timer(tag):
 
 # Play the animation if it isn't played currently.
 func play_animation(key):
+	# Rest idle timer if the animation currently played isn't idle itself.
+	if key != "Idle" && key != "Still":
+		idle_timestamp = OS.get_unix_time()
+
 	if not animator.get_current_animation() == key:
 		animator.play(key)
-
-		# Rest idle timer if the animation currently played isn't idle itself.
-		if key != "Idle":
-			idle_timestamp = OS.get_unix_time()
 
 # Register and unregister common timers for character states.
 func set_status(status_tag, boolean, duration):

@@ -1,6 +1,8 @@
 extends Node2D
 
 const CAMERA_SMOOTH = 3.0
+
+# The larger the zoom factor is, the more view the camera will cover.
 const ZOOM_FACTOR = 2.0
 
 # Drag margins (from 0 to 1).
@@ -14,12 +16,6 @@ var right_limit = 1000000
 var left_limit = -1000000
 var top_limit = -1000000
 var bottom_limit = 1000000
-
-# Limit the character from going back to the edge it comes from.
-var is_limiting_right = false
-var is_limiting_left = false
-var is_limiting_top = false
-var is_limiting_bottom = false
 
 # The target position for the camera.
 onready var target_pos = get_global_pos()
@@ -70,20 +66,16 @@ func check_camera_update(character_pos):
 	new_camera_pos.x = clamp(new_camera_pos.x, left_limit + screen_size.width * 0.5 * ZOOM_FACTOR, right_limit - screen_size.width * 0.5 * ZOOM_FACTOR)
 	new_camera_pos.y = clamp(new_camera_pos.y, top_limit + screen_size.height * 0.5 * ZOOM_FACTOR, bottom_limit - screen_size.height * 0.5 * ZOOM_FACTOR)
 	
-	# Check if the character is limited from going backwards. If it is, update the limit to the current camera edge.
-	if is_limiting_right:
-		right_limit = new_camera_pos.x + screen_size.width * 0.5 * ZOOM_FACTOR
-	if is_limiting_left:
-		left_limit = new_camera_pos.x - screen_size.width * 0.5 * ZOOM_FACTOR
-	if is_limiting_top:
-		top_limit = new_camera_pos.y - screen_size.height * 0.5 * ZOOM_FACTOR
-	if is_limiting_bottom:
-		bottom_limit = new_camera_pos.y + screen_size.height * 0.5 * ZOOM_FACTOR
-	
 	target_pos = new_camera_pos
-	
+
 # Actually scroll the screen (update the viewport according to the position of the camera).
 func update_viewport():
 	var canvas_tranform = get_viewport().get_canvas_transform()
 	canvas_tranform.o = -get_global_pos() / ZOOM_FACTOR + screen_size / 2.0
 	get_viewport().set_canvas_transform(canvas_tranform)
+
+# Pass in the intended position of an object. Returns the position clamped within the viewing bounds of the camera.
+func clamp_pos_within_cam_bounds(pos):
+	pos.x = clamp(pos.x, get_global_pos().x - screen_size.width * ZOOM_FACTOR * 0.5, get_global_pos().x + screen_size.width * ZOOM_FACTOR * 0.5)
+	pos.y = clamp(pos.y, get_global_pos().y - screen_size.height * ZOOM_FACTOR * 0.5, get_global_pos().y + screen_size.height * ZOOM_FACTOR * 0.5)
+	return pos

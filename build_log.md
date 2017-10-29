@@ -141,3 +141,23 @@
 Milestone: Finally completed all animations of the enemies of Computer Room.
 
 **Commit**
+
+[2017.10.24]
+* Played a lot of HotS and Overwatch today without working on my game, feeling guilty now. :P
+* Well, at least I did some research on "enemy distance check" and "Placeholder Scenes in Godot". Also scheduled the next sprint.
+
+[2017.10.25]
+* Fixed the bug that "Idle" animation would be played when moving in a same direction too long.
+* Deleted unneeded variables and `if` conditions in `FollowingCamera.gd`.
+* Implemented `func clamp_pos_within_cam_bounds(pos)` so that no boundary colliders are needed in the following camera. More elegant, yeah!
+* Delcared some essentail variables in `LevelPartCommon.gd`.
+* Implemented `CharacterAveragePosition.gd`. Now the following camera is controlled by the average positions of each character. This makes multiplayer mode easier to implement.
+
+[2017.10.26]
+* Implemented the triggering event when the player enters the level part so that previous level part will be destroyed, the next level part will be instanced, and the camera controlling scheme will be updated.
+
+[2017.10.27]
+* Implemented `ActivateDetection.gd` and `NearestTargetDetection.gd`.
+* Trying to figure out how to implement each enemy and how to reduce repeat code in each enemy script.
+
+**Commit**

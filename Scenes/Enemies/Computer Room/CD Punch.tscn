@@ -1,20 +1,25 @@
-[gd_scene load_steps=19 format=1]
+[gd_scene load_steps=21 format=1]
 
-[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/CDPuncher01.png" type="Texture" id=1]
-[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/Eye.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/Tear.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/CDPuncher02.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/CDPuncher03.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/CDPuncher04.png" type="Texture" id=6]
-[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/CDPuncher05.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/CDPuncher06.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/Die Eye.png" type="Texture" id=9]
-[ext_resource path="res://Graphics/Characters/Bro SS/Big Bro Eyebrow.png" type="Texture" id=10]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=11]
+[ext_resource path="res://Scripts/Enemies/Computer Room/CDPunch.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/CDPuncher01.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/Eye.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/Tear.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/CDPuncher02.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/CDPuncher03.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/CDPuncher04.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/CDPuncher05.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/CDPuncher06.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/Die Eye.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Characters/Bro SS/Big Bro Eyebrow.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=12]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="RectangleShape2D" id=1]
 
-resource/name = "Attack"
+custom_solver_bias = 0.0
+extents = Vector2( 133.71, 121.517 )
+
+[sub_resource type="Animation" id=2]
+
 length = 0.65
 loop = false
 step = 0.05
@@ -86,7 +91,7 @@ tracks/6/keys = {
 "times": FloatArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65 ),
 "transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 4 ), ExtResource( 1 ) ]
+"values": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 2 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Body/Eye:texture")
@@ -96,7 +101,7 @@ tracks/7/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Body/Tear:visibility/visible")
@@ -119,9 +124,8 @@ tracks/9/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource/name = "Die"
 length = 0.5
 loop = false
 step = 0.05
@@ -193,7 +197,7 @@ tracks/6/keys = {
 "times": FloatArray( 0, 0.1, 0.15, 0.2, 0.25 ),
 "transitions": FloatArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ]
+"values": [ ExtResource( 2 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Body/Eye:texture")
@@ -203,7 +207,7 @@ tracks/7/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 10 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Body/Tear:visibility/visible")
@@ -226,7 +230,7 @@ tracks/9/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.206549 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
 length = 0.1
 loop = false
@@ -299,7 +303,7 @@ tracks/6/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 5 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Body/Eye:texture")
@@ -309,7 +313,7 @@ tracks/7/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 10 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Body/Tear:visibility/visible")
@@ -332,7 +336,7 @@ tracks/9/keys = {
 "values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 
 length = 3.8
 loop = false
@@ -405,7 +409,7 @@ tracks/6/keys = {
 "times": FloatArray( 0, 3.5, 3.6 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ) ]
+"values": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Body/Eye:texture")
@@ -415,7 +419,7 @@ tracks/7/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Body/Tear:visibility/visible")
@@ -438,7 +442,7 @@ tracks/9/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 
 length = 0.1
 loop = false
@@ -511,7 +515,7 @@ tracks/6/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Body/Eye:texture")
@@ -521,7 +525,7 @@ tracks/7/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Body/Tear:visibility/visible")
@@ -544,7 +548,7 @@ tracks/9/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 
 length = 0.8
 loop = true
@@ -617,7 +621,7 @@ tracks/6/keys = {
 "times": FloatArray( 0, 0.2, 0.3, 0.6 ),
 "transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 6 ) ]
+"values": [ ExtResource( 2 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 7 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Body/Eye:texture")
@@ -627,7 +631,7 @@ tracks/7/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Body/Tear:visibility/visible")
@@ -650,7 +654,7 @@ tracks/9/keys = {
 "values": [ Color( 1, 1, 0.784314, 1 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 
 length = 1.6
 loop = true
@@ -723,7 +727,7 @@ tracks/6/keys = {
 "times": FloatArray( 0, 0.1, 0.2, 0.9, 1 ),
 "transitions": FloatArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ) ]
+"values": [ ExtResource( 6 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ) ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Body/Eye:texture")
@@ -733,7 +737,7 @@ tracks/7/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Body/Tear:visibility/visible")
@@ -756,37 +760,54 @@ tracks/9/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="CD Punch" type="Node2D"]
+[node name="CD Punch" type="KinematicBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 104.828, 27.8954 )
+shapes/0/trigger = false
+collision/layers = 16
+collision/mask = 2
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( 104.828, 27.8954 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
 
 [node name="Animation" type="Node2D" parent="."]
 
 [node name="Body" type="Sprite" parent="Animation"]
 
-texture = ExtResource( 1 )
+editor/display_folded = true
+texture = ExtResource( 2 )
 
 [node name="Eye" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( 21.746, -27.0201 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="Tear" type="Sprite" parent="Animation/Body"]
 
 visibility/visible = false
 transform/pos = Vector2( 62.9021, 28.6538 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Attack = SubResource( 1 )
-anims/Die = SubResource( 2 )
-anims/Hurt = SubResource( 3 )
-anims/Searching = SubResource( 4 )
-anims/Still = SubResource( 5 )
-anims/Stunned = SubResource( 6 )
-anims/Walk = SubResource( 7 )
+anims/Attack = SubResource( 2 )
+anims/Die = SubResource( 3 )
+anims/Hurt = SubResource( 4 )
+anims/Searching = SubResource( 5 )
+anims/Still = SubResource( 6 )
+anims/Stunned = SubResource( 7 )
+anims/Walk = SubResource( 8 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
