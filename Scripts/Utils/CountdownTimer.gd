@@ -23,11 +23,12 @@ func _init(duration, target, time_out_method_name, args = null):
 	timer.start()
 	
 func time_out():
-	timer.queue_free()
 	if args == null:
 		parent.call(time_out_func_name)
 	else:
 		parent.call(time_out_func_name, args)
+
+	timer.queue_free()
 
 # Stop the timer and remove it from parent.
 func destroy_timer():

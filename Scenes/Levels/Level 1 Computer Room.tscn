@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=1]
+[gd_scene load_steps=40 format=1]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Levels/Computer Room Subscenes/Part 1 Scene.tscn" type="PackedScene" id=2]
@@ -38,6 +38,7 @@
 [ext_resource path="res://Scenes/Enemies/Computer Room/Eye Mac.tscn" type="PackedScene" id=36]
 [ext_resource path="res://Scripts/CharacterAveragePosition.gd" type="Script" id=37]
 [ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=39]
 
 [node name="Game Level" type="Node2D"]
 
@@ -49,10 +50,13 @@ drag_margin_left = 0.0
 
 [node name="Part 1" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="Scene" parent="Part 1" instance=ExtResource( 2 )]
 
 [node name="Part 2" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 3950, -300 )
 
 [node name="Scene" parent="Part 2" instance=ExtResource( 3 )]
@@ -62,11 +66,14 @@ part_to_instance = NodePath("../../Part 3/Scene")
 
 [node name="Part 3" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 7400, -500 )
 
 [node name="Scene" parent="Part 3" instance_placeholder="res://Scenes/Levels/Computer Room Subscenes/Part 3 Scene.tscn"]
 
 [node name="Enemies" type="Node2D" parent="."]
+
+editor/display_folded = true
 
 [node name="Dark Earspider" parent="Enemies" instance=ExtResource( 4 )]
 
@@ -207,5 +214,7 @@ script/script = ExtResource( 37 )
 [node name="Keshia Erasia" parent="." instance=ExtResource( 38 )]
 
 transform/pos = Vector2( 200, -250 )
+
+[node name="Mob Health Bar" parent="." instance=ExtResource( 39 )]
 
 

@@ -1,5 +1,5 @@
 # Return the nearest target from the given array.
-func get_nearest(from_node, targets):
+static func get_nearest(from_node, targets):
     var min_distance = 1000000
     var min_distance_index = -1
     var from_pos = from_node.get_global_pos()

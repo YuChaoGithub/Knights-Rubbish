@@ -12,7 +12,7 @@ const BASIC_SKILL_HOP_DURATION = 0.6
 const BASIC_SKILL_LAND_DURATION = 0.25
 const BASIC_SKILL_HIT_BOX_DURATION = 0.1
 const BASIC_SKILL_COOLDOWN = 0.1
-const BASIC_SKILL_STUN_DURATION = 1
+const BASIC_SKILL_STUN_DURATION = 2
 
 const HORIZONTAL_SKILL_DURATION = 0.8
 const HORIZONTAL_SKILL_TOSS_TIME = 0.6
@@ -118,7 +118,7 @@ func basic_attack_strikes():
 func on_basic_attack_hit(area):
 	if not basic_attack_hit and area.is_in_group("enemy_collider"):
 		# Damage the enemy.
-		var enemy_node = area.get_node("..")
+		var enemy_node = area.get_node("../..")
 		enemy_node.damaged(BASIC_ATTACK_DAMAGE)
 
 		# Avoid hitting multiple target.
@@ -188,7 +188,7 @@ func turn_off_basic_skill_hit_box():
 func on_basic_skill_hit(area):
 	if area.is_in_group("enemy_collider"):
 		# Stun the enemy.
-		area.get_node("..").stunned(BASIC_SKILL_STUN_DURATION)
+		area.get_node("../..").stunned(BASIC_SKILL_STUN_DURATION)
 
 # ================
 # Horizontal Skill: Short range poke. (toss the pencil).
@@ -266,7 +266,7 @@ func up_skill_ended():
 # Will be signalled by the hit box of up skill.
 func on_up_skill_hit(area):
 	if area.is_in_group("enemy_collider"):
-		area.get_node("..").damaged(UP_SKILL_DAMAGE)
+		area.get_node("../..").damaged(UP_SKILL_DAMAGE)
 	
 # ==========
 # Down Skill: Petrify himself, immobile but invicible. Press skill/attack/jump key to resume from petrification.

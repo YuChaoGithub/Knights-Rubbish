@@ -161,3 +161,29 @@ Milestone: Finally completed all animations of the enemies of Computer Room.
 * Trying to figure out how to implement each enemy and how to reduce repeat code in each enemy script.
 
 **Commit**
+
+[2017.10.30]
+* Implemented `HorizontalMovementWithGravity.gd`.
+* Completed CDPunch's movement.
+
+[2017.10.31]
+* Completed CDPunch's animation & attack pattern.
+* Implemented `HealthSystem.gd` for enemies' health management.
+* Implemented `MultiTickTimer.gd` for damge over time.
+
+[2017.11.01]
+* Tested and fixed bugs in `HealthSystem.gd` and `MultiTickTimer.gd`.
+* Healing, damage taking, and dying system is completed for CDPunch.
+
+[2017.11.02]
+* Completed scripting CDPunch's damaged, stunned, die animations.
+* Replaced the health system of `CharacterCommon.gd` with `HealthSystem.gd`.
+
+[2017.11.03]
+* Staggered CDPunch's turn so that they won't all turn at the same time.
+* Shorten CDPunch's Searching animation length.
+* Scripted hurt animation in `CharacterCommon.gd`.
+* Make Pencil Dart of Keshia Erasia affected by gravity.
+* Made Mob Health Bar graphics, scene, scripts.
+
+**Commit**

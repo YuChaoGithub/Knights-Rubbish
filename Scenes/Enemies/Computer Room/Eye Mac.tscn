@@ -28,7 +28,7 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 2.png" type="Texture" id=26]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 3.png" type="Texture" id=27]
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=1]
 
 resource/name = "Die"
 length = 2.0
@@ -505,7 +505,7 @@ tracks/46/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 
 resource/name = "Hurt"
 length = 0.1
@@ -982,9 +982,8 @@ tracks/46/keys = {
 "values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource/name = "Hurt Me Appear"
 length = 1.0
 loop = false
 step = 0.1
@@ -1459,7 +1458,7 @@ tracks/46/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 
 resource/name = "Hurt Me Disappear"
 length = 0.8
@@ -1936,9 +1935,8 @@ tracks/46/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 
-resource/name = "Hurt Me Screen"
 length = 2.0
 loop = true
 step = 0.1
@@ -2890,7 +2888,7 @@ tracks/46/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 
 resource/name = "Music Note Disappear"
 length = 0.5
@@ -3367,9 +3365,8 @@ tracks/46/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 
-resource/name = "Music Note Screen"
 length = 2.0
 loop = true
 step = 0.1
@@ -3844,7 +3841,7 @@ tracks/46/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=9]
 
 resource/name = "Pump Harddies Appear"
 length = 1.5
@@ -4321,7 +4318,7 @@ tracks/46/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=10]
 
 resource/name = "Pump Harddies Screen"
 length = 2.0
@@ -4798,9 +4795,8 @@ tracks/46/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=11]
 
-resource/name = "Shoot Mouse Appear"
 length = 0.5
 loop = false
 step = 0.1
@@ -5275,9 +5271,8 @@ tracks/46/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 
-resource/name = "Shoot Mouse Disappear"
 length = 0.5
 loop = false
 step = 0.1
@@ -5752,9 +5747,8 @@ tracks/46/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=13]
 
-resource/name = "Shoot Mouse Screen"
 length = 2.0
 loop = true
 step = 0.1
@@ -6229,9 +6223,8 @@ tracks/46/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=14]
 
-resource/name = "Still"
 length = 0.1
 loop = false
 step = 0.1
@@ -6704,10 +6697,7 @@ transform/scale = Vector2( 1.75, 1.75 )
 
 [node name="Screen" type="Sprite" parent="Animation"]
 
-transform/pos = Vector2( -19.7065, 50.4979 )
-transform/rot = 15.5711
 texture = ExtResource( 1 )
-modulate = Color( 1, 1, 1, 0 )
 
 [node name="Broken Screen" type="Sprite" parent="Animation/Screen"]
 
@@ -6717,33 +6707,30 @@ transform/pos = Vector2( 3.58478, -49.1627 )
 
 transform/pos = Vector2( 4.81488, -6.74084 )
 texture = ExtResource( 2 )
-modulate = Color( 1, 1, 1, 0 )
 
 [node name="Totem" type="Node2D" parent="Animation/Screen"]
+
+editor/display_folded = true
 
 [node name="1" type="Sprite" parent="Animation/Screen/Totem"]
 
 transform/pos = Vector2( 0.518585, 174.246 )
 texture = ExtResource( 3 )
-modulate = Color( 1, 1, 1, 0 )
 
 [node name="2" type="Sprite" parent="Animation/Screen/Totem"]
 
 transform/pos = Vector2( 5.70447, 178.914 )
 texture = ExtResource( 4 )
-modulate = Color( 1, 1, 1, 0 )
 
 [node name="3" type="Sprite" parent="Animation/Screen/Totem"]
 
 transform/pos = Vector2( 15.5577, 177.358 )
 texture = ExtResource( 5 )
-modulate = Color( 1, 1, 1, 0 )
 
 [node name="Eye" type="Sprite" parent="Animation/Screen"]
 
 editor/display_folded = true
-transform/pos = Vector2( -18.8662, 272.683 )
-transform/rot = -17.1998
+transform/pos = Vector2( -2.59296, 174.765 )
 texture = ExtResource( 6 )
 
 [node name="Eyeball" type="Sprite" parent="Animation/Screen/Eye"]
@@ -6763,6 +6750,8 @@ modulate = Color( 1, 1, 1, 0 )
 
 [node name="Hurt Me Screen" type="Node2D" parent="Animation/Screen"]
 
+editor/display_folded = true
+
 [node name="Text" type="Sprite" parent="Animation/Screen/Hurt Me Screen"]
 
 transform/pos = Vector2( 6.59912, -117.88 )
@@ -6773,7 +6762,7 @@ modulate = Color( 1, 1, 1, 0 )
 
 transform/pos = Vector2( 5.60605, -118.91 )
 texture = ExtResource( 10 )
-modulate = Color( 1, 0, 0, 0 )
+modulate = Color( 1, 1, 1, 0 )
 
 [node name="Heart" type="Node2D" parent="Animation/Screen/Hurt Me Screen"]
 
@@ -6781,9 +6770,8 @@ transform/pos = Vector2( 47.1506, 54.7223 )
 
 [node name="Heart" type="Sprite" parent="Animation/Screen/Hurt Me Screen/Heart"]
 
-transform/scale = Vector2( 2, 2 )
 texture = ExtResource( 11 )
-modulate = Color( 1, 0.492188, 0.492188, 0 )
+modulate = Color( 1, 1, 1, 0 )
 
 [node name="Frame" type="Sprite" parent="Animation/Screen/Hurt Me Screen/Heart"]
 
@@ -6814,12 +6802,9 @@ modulate = Color( 1, 1, 1, 0 )
 
 [node name="Pump Harddies Screen" type="Node2D" parent="Animation/Screen"]
 
-editor/display_folded = true
-
 [node name="Light2D" type="Light2D" parent="Animation/Screen/Pump Harddies Screen"]
 
 transform/pos = Vector2( 11.0494, -201.987 )
-transform/scale = Vector2( 1, 1 )
 enabled = true
 editor_only = false
 texture = ExtResource( 16 )
@@ -6868,7 +6853,6 @@ modulate = Color( 1, 1, 1, 0 )
 
 [node name="Stand" type="Sprite" parent="Animation"]
 
-visibility/visible = false
 transform/pos = Vector2( 0, 285.145 )
 texture = ExtResource( 21 )
 
@@ -6876,37 +6860,36 @@ texture = ExtResource( 21 )
 
 [node name="Top" type="Sprite" parent="Animation/Broken stand"]
 
-transform/pos = Vector2( 3.91678, 342.633 )
-transform/rot = 28.3339
+visibility/visible = false
+transform/pos = Vector2( -8.71497, 282.768 )
 texture = ExtResource( 22 )
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="Bottom" type="Sprite" parent="Animation/Broken stand"]
 
-transform/pos = Vector2( 126.371, 286.676 )
-transform/rot = -0.158618
+visibility/visible = false
+transform/pos = Vector2( -0.144676, 288.267 )
 texture = ExtResource( 23 )
-modulate = Color( 1, 1, 1, 0 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Die = SubResource( 14 )
-anims/Hurt = SubResource( 4 )
-"anims/Hurt Me Appear" = SubResource( 2 )
-"anims/Hurt Me Disappear" = SubResource( 5 )
-"anims/Hurt Me Screen" = SubResource( 3 )
+anims/Die = SubResource( 1 )
+anims/Hurt = SubResource( 2 )
+"anims/Hurt Me Appear" = SubResource( 3 )
+"anims/Hurt Me Disappear" = SubResource( 4 )
+"anims/Hurt Me Screen" = SubResource( 5 )
 "anims/Music Note Appear" = SubResource( 6 )
-"anims/Music Note Disappear" = SubResource( 8 )
-"anims/Music Note Screen" = SubResource( 7 )
-"anims/Pump Harddies Appear" = SubResource( 12 )
-"anims/Pump Harddies Screen" = SubResource( 13 )
-"anims/Shoot Mouse Appear" = SubResource( 9 )
-"anims/Shoot Mouse Disappear" = SubResource( 11 )
-"anims/Shoot Mouse Screen" = SubResource( 10 )
-anims/Still = SubResource( 1 )
+"anims/Music Note Disappear" = SubResource( 7 )
+"anims/Music Note Screen" = SubResource( 8 )
+"anims/Pump Harddies Appear" = SubResource( 9 )
+"anims/Pump Harddies Screen" = SubResource( 10 )
+"anims/Shoot Mouse Appear" = SubResource( 11 )
+"anims/Shoot Mouse Disappear" = SubResource( 12 )
+"anims/Shoot Mouse Screen" = SubResource( 13 )
+anims/Still = SubResource( 14 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]

@@ -5,8 +5,7 @@ export(String, FILE) var player_constants_filepath
 # The amount of time (in seconds) to play idle animation.
 const TIME_TO_IDLE_ANIMATION = 5
 
-# Loaded in _ready().
-var player_constants
+const HURT_ANIMATION_DURATION = 0.3
 
 # Controls the basic animations (walk, jump, idle, etc.) of characters.
 # The name of the default animator is defined in player_constants.
@@ -19,9 +18,6 @@ var idle_timestamp
 # Sprite node (the parent node of the animator).
 # Loaded in _ready().
 var sprite
-
-# Hit points. When reaches zero, the character dies.
-var health setget set_health
 
 # Calculated values, so that movement could be done more conveniently.
 var gravity
@@ -77,6 +73,12 @@ onready var char_average_pos = get_node("../Character Average Position")
 # Camera. For clamping within view bounds.
 onready var following_camera = get_node("../Following Camera")
 
+# Character stats.
+onready var player_constants = load(player_constants_filepath)
+
+# Manages healing, damaging, dying.
+onready var health_system = preload("res://Scripts/Utils/HealthSystem.gd").new(self, player_constants.full_health)
+
 # Getters and setters.
 func set_movement_speed_modifier(value):
 	movement_speed_modifier = value
@@ -94,27 +96,8 @@ func set_size_modifier(value):
 	
 	# Reset collision raycast origins.
 	collision_handler.calculate_ray_spacings()
-	
-# Set the value of health. (eg. Being attacked, being healed.)
-func set_health(value):
-	var new_health
-	
-	# More than max health.
-	if value > player_constants.full_health:
-		new_health = player_constants.full_health
-	elif value <= 0:
-		# Die.
-		new_health = 0
-		
-	# Set the health.
-	health = new_health
 
 func _ready():
-	player_constants = load(player_constants_filepath)
-	
-	# Set to full health.
-	health = player_constants.full_health
-	
 	# Configure movement related variables.
 	recalculate_horizontal_movement_variables()
 	recalculate_vertical_movement_variables()
@@ -267,7 +250,7 @@ func play_animation(key):
 	if key != "Idle" && key != "Still":
 		idle_timestamp = OS.get_unix_time()
 
-	if not animator.get_current_animation() == key:
+	if animator.get_current_animation() != key:
 		animator.play(key)
 
 # Register and unregister common timers for character states.
@@ -313,3 +296,28 @@ func stunned(duration):
 
 	# Play animation.
 	play_animation("Stunned")
+
+func damaged(val):
+	if status.invincible:
+		return
+
+	# Damaged animation.
+	set_status("animate_movement", false, HURT_ANIMATION_DURATION)
+	play_animation("Hurt")
+
+	health_system.change_health_by(-val)
+
+func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
+	if status.invincible:
+		return
+	
+	health_system.change_health_over_time_by(time_per_tick, total_ticks, -damage_per_tick)
+
+func healed(val):
+	health_system.change_health_by(val)
+
+func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
+	health_system.change_health_over_time_by(time_per_tick, total_ticks, heal_per_tick)
+
+func die():
+	print("I died. QQ")
