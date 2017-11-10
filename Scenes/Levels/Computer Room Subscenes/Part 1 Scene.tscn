@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://Scenes/Enemies/Computer Room/CD Punch.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Platforms/Wooden Platform 400x100.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Dark Earspider.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Platforms/Wooden Platform 400x100.tscn" type="PackedScene" id=3]
 
 [node name="Part 1 Scene" type="Node2D"]
 
@@ -11,51 +12,61 @@
 
 transform/pos = Vector2( 1650, -450 )
 
-[node name="Wooden Platform 400x100" parent="." instance=ExtResource( 2 )]
+[node name="Dark Earspider" parent="Enemies" instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 2250, -1150 )
+left_bound = 200
+right_bound = 1000
+
+[node name="Platforms" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="Wooden Platform 400x100" parent="Platforms" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 200, -50 )
 
-[node name="Wooden Platform 400x101" parent="." instance=ExtResource( 2 )]
+[node name="Wooden Platform 400x101" parent="Platforms" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 550, -50 )
 
-[node name="Wooden Platform 400x102" parent="." instance=ExtResource( 2 )]
+[node name="Wooden Platform 400x102" parent="Platforms" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 950, -50 )
 
-[node name="Wooden Platform 400x103" parent="." instance=ExtResource( 2 )]
+[node name="Wooden Platform 400x103" parent="Platforms" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 1350, -100 )
 
-[node name="Wooden Platform 400x104" parent="." instance=ExtResource( 2 )]
+[node name="Wooden Platform 400x104" parent="Platforms" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 1750, -100 )
 
-[node name="Wooden Platform 400x105" parent="." instance=ExtResource( 2 )]
+[node name="Wooden Platform 400x105" parent="Platforms" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 2150, -50 )
 
-[node name="Wooden Platform 400x106" parent="." instance=ExtResource( 2 )]
+[node name="Wooden Platform 400x106" parent="Platforms" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 2550, -50 )
 
-[node name="Wooden Platform 400x107" parent="." instance=ExtResource( 2 )]
+[node name="Wooden Platform 400x107" parent="Platforms" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 2800, -150 )
 
-[node name="Wooden Platform 400x108" parent="." instance=ExtResource( 2 )]
+[node name="Wooden Platform 400x108" parent="Platforms" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 3050, -250 )
 
-[node name="Wooden Platform 400x109" parent="." instance=ExtResource( 2 )]
+[node name="Wooden Platform 400x109" parent="Platforms" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 3300, -350 )
 
-[node name="Wooden Platform 400x110" parent="." instance=ExtResource( 2 )]
+[node name="Wooden Platform 400x110" parent="Platforms" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 3700, -350 )
 
-[node name="Wooden Platform 400x111" parent="." instance=ExtResource( 2 )]
+[node name="Wooden Platform 400x111" parent="Platforms" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 4800, -1000 )
 

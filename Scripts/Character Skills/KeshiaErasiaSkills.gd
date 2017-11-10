@@ -6,7 +6,7 @@ const TIMER_PATH = "res://Scripts/Utils/CountdownTimer.gd"
 const BASIC_ATTACK_DURATION = 0.3
 const BASIC_ATTACK_STRIKES_TIME = 0.15
 const BASIC_ATTACK_COOLDOWN = 0.15
-const BASIC_ATTACK_DAMAGE = 5
+const BASIC_ATTACK_DAMAGE = 29
 
 const BASIC_SKILL_HOP_DURATION = 0.6
 const BASIC_SKILL_LAND_DURATION = 0.25
@@ -43,6 +43,7 @@ var detecting_landing = false
 # Can only cast Up Skill one time unless Keshia landed on the ground.
 var up_skill_available = true
 var up_skill_available_timer = null
+var up_skill_targets = []
 
 # The time when up skill is casted.
 # Is used to produce some latency between landed on ground detection.
@@ -250,6 +251,8 @@ func up_skill():
 		# Turn on the damging hit box.
 		up_skill_hit_box.set_collision_mask(Globals.get("Enemy Layer"))
 
+		up_skill_targets.clear()
+
 		# Jump up and damage enemies with the pencil when the timer is on.
 		var jump_timer = preload(TIMER_PATH).new(UP_SKILL_DURATION, self, "up_skill_ended")
 		character.register_timer("movement_skill", jump_timer)
@@ -266,7 +269,10 @@ func up_skill_ended():
 # Will be signalled by the hit box of up skill.
 func on_up_skill_hit(area):
 	if area.is_in_group("enemy_collider"):
-		area.get_node("../..").damaged(UP_SKILL_DAMAGE)
+		# Can't hit the same object twice.
+		if !(area in up_skill_targets):
+			area.get_node("../..").damaged(UP_SKILL_DAMAGE)
+			up_skill_targets.push_back(area)
 	
 # ==========
 # Down Skill: Petrify himself, immobile but invicible. Press skill/attack/jump key to resume from petrification.

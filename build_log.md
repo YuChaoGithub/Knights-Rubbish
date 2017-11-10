@@ -187,3 +187,27 @@ Milestone: Finally completed all animations of the enemies of Computer Room.
 * Made Mob Health Bar graphics, scene, scripts.
 
 **Commit**
+
+[2017.11.06]
+* Completed `MobHealthBar.gd` and integration with CDPunch.
+* Reposition CDPunch's sprites and animations so that it turns correctly.
+* Refactored CDPunch's script using principles of Clean Code. Well, probably.
+* Change Keshia Erasia's hurt animation to modulating (blink red) only. Otherwise, it looked extremely awkward to switch between Hurt and Basic Skill animations.
+* Drew digits 0 to 9 for damage indicator.
+Murmur: I spent so much time scripting a single mob (CDPunch), and it contains 200+ lines of code. How will I ever complete the game. *sigh*
+
+[2017.11.07]
+* Implemented `NumberIndicator.gd` and integrate it with CDPunch and `CharacterCommon.gd`.
+* Shrinked Keshia Erasia's Up Skill's hit box so that it won't hit enemies below Keshia's head.
+* Fixed a bug that CDPunch won't recover from its hurt animation. I don't know how I solved this though...It just works now.
+* Drew "Stunned" text and integrate it with `NumberIndicator.gd`.
+
+[2017.11.09]
+* Implemented `EnemyCommon.gd` to take out some common code for damage, stun, animation, health and health bar from CDPunch.
+* Merged `AnimatorPlayer.gd`, `ActivateDetection.gd` into `EnemyCommon.gd`.
+Comment: **I AM A CODE REFACTORING KING!!!**
+
+[2017.11.10]
+* Started to implement `DarkEarspider.gd`. The code is now full with bugs. Will clean them up next week.
+
+**Commit**

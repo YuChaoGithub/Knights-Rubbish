@@ -6,6 +6,9 @@ export(String, FILE) var player_constants_filepath
 const TIME_TO_IDLE_ANIMATION = 5
 
 const HURT_ANIMATION_DURATION = 0.3
+const DAMAGE_NUMBER_COLOR = Color(255.0 / 255.0, 0.0 / 255.0, 210.0 / 255.0)
+const HEAL_NUMBER_COLOR = Color(110.0 / 255.0, 240.0 / 255.0, 15.0 / 255.0)
+const STUNNED_TEXT_COLOR = Color(180.0 / 255.0, 180.0 / 255.0, 0.0 / 255.0)
 
 # Controls the basic animations (walk, jump, idle, etc.) of characters.
 # The name of the default animator is defined in player_constants.
@@ -78,6 +81,10 @@ onready var player_constants = load(player_constants_filepath)
 
 # Manages healing, damaging, dying.
 onready var health_system = preload("res://Scripts/Utils/HealthSystem.gd").new(self, player_constants.full_health)
+
+# Damage, heal numbers indicator.
+var number_indicator = preload("res://Scenes/Utils/Numbers/Number Indicator.tscn")
+onready var number_spawn_pos = get_node("Number Spawn Pos")
 
 # Getters and setters.
 func set_movement_speed_modifier(value):
@@ -273,6 +280,10 @@ func stunned(duration):
 	if status.invincible:
 		return
 
+	# Spawn stunned text.
+	var stunned_text = number_indicator.instance()
+	stunned_text.initialize(-1, STUNNED_TEXT_COLOR, number_spawn_pos, self)
+
 	# Set status.
 	set_status("can_move", false, duration)
 	set_status("can_cast_skill", false, duration)
@@ -305,6 +316,10 @@ func damaged(val):
 	set_status("animate_movement", false, HURT_ANIMATION_DURATION)
 	play_animation("Hurt")
 
+	# Number indicator.
+	var num = number_indicator.instance()
+	num.initialize(val, DAMAGE_NUMBER_COLOR, number_spawn_pos, self)
+
 	health_system.change_health_by(-val)
 
 func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
@@ -315,6 +330,10 @@ func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
 
 func healed(val):
 	health_system.change_health_by(val)
+
+	# Number indicator.
+	var num = number_indicator.instance()
+	num.initialize(val, HEAL_NUMBER_COLOR, number_spawn_pos, self)
 
 func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
 	health_system.change_health_over_time_by(time_per_tick, total_ticks, heal_per_tick)

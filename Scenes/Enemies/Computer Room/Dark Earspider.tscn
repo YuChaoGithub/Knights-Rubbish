@@ -1,14 +1,21 @@
-[gd_scene load_steps=17 format=1]
+[gd_scene load_steps=20 format=1]
 
-[ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider01.png" type="Texture" id=1]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider Eye.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider Flat Mouth.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider02.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider03.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider04.png" type="Texture" id=6]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider Die Eye.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider O Mouth.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/Characters/Bro SS/Sirurueruerue Stunned Eye.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/Enemies/Computer Room/DarkEarspider.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider01.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider Eye.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider Flat Mouth.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider02.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider03.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider04.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider Die Eye.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider O Mouth.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Characters/Bro SS/Sirurueruerue Stunned Eye.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=11]
+
+[sub_resource type="CircleShape2D" id=8]
+
+custom_solver_bias = 0.0
+radius = 162.672
 
 [sub_resource type="Animation" id=1]
 
@@ -144,7 +151,7 @@ tracks/12/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body/Right Eye:texture")
@@ -154,7 +161,7 @@ tracks/13/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("Body/Mouth:texture")
@@ -164,7 +171,7 @@ tracks/14/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body:texture")
@@ -174,7 +181,7 @@ tracks/15/keys = {
 "times": FloatArray( 0, 0.05, 0.1, 0.15, 0.35, 0.4, 0.45, 0.5 ),
 "transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 1 ) ]
+"values": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 5 ), ExtResource( 2 ) ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Body:modulate")
@@ -321,7 +328,7 @@ tracks/12/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body/Right Eye:texture")
@@ -331,7 +338,7 @@ tracks/13/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("Body/Mouth:texture")
@@ -341,7 +348,7 @@ tracks/14/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body:texture")
@@ -351,7 +358,7 @@ tracks/15/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Body:modulate")
@@ -498,7 +505,7 @@ tracks/12/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body/Right Eye:texture")
@@ -508,7 +515,7 @@ tracks/13/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("Body/Mouth:texture")
@@ -518,7 +525,7 @@ tracks/14/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body:texture")
@@ -528,7 +535,7 @@ tracks/15/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 6 ) ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Body:modulate")
@@ -675,7 +682,7 @@ tracks/12/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body/Right Eye:texture")
@@ -685,7 +692,7 @@ tracks/13/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("Body/Mouth:texture")
@@ -695,7 +702,7 @@ tracks/14/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body:texture")
@@ -705,7 +712,7 @@ tracks/15/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 5 ) ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Body:modulate")
@@ -851,7 +858,7 @@ tracks/12/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body/Right Eye:texture")
@@ -861,7 +868,7 @@ tracks/13/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("Body/Mouth:texture")
@@ -871,7 +878,7 @@ tracks/14/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body:texture")
@@ -881,7 +888,7 @@ tracks/15/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Body:modulate")
@@ -1028,7 +1035,7 @@ tracks/12/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 10 ) ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body/Right Eye:texture")
@@ -1038,7 +1045,7 @@ tracks/13/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 10 ) ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("Body/Mouth:texture")
@@ -1048,7 +1055,7 @@ tracks/14/keys = {
 "times": FloatArray( 0, 0.25, 0.55, 0.75 ),
 "transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ), ExtResource( 3 ), ExtResource( 8 ), ExtResource( 3 ) ]
+"values": [ ExtResource( 9 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 4 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body:texture")
@@ -1058,7 +1065,7 @@ tracks/15/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Body:modulate")
@@ -1204,7 +1211,7 @@ tracks/12/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body/Right Eye:texture")
@@ -1214,7 +1221,7 @@ tracks/13/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("Body/Mouth:texture")
@@ -1224,7 +1231,7 @@ tracks/14/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body:texture")
@@ -1234,7 +1241,7 @@ tracks/15/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Body:modulate")
@@ -1249,12 +1256,39 @@ tracks/16/keys = {
 
 [node name="Dark Earspider" type="Node2D"]
 
+script/script = ExtResource( 1 )
+left_bound = null
+right_bound = null
+
 [node name="Animation" type="Node2D" parent="."]
+
+[node name="Damage Area" type="Area2D" parent="Animation"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 5.85117, 17.1879 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 16
+collision/mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area"]
+
+transform/pos = Vector2( 5.85117, 17.1879 )
+shape = SubResource( 8 )
+trigger = false
+_update_shape_index = 0
 
 [node name="Body" type="Sprite" parent="Animation"]
 
+editor/display_folded = true
 transform/pos = Vector2( 2.17136, -105.474 )
-texture = ExtResource( 1 )
+transform/rot = -5.01146
+texture = ExtResource( 2 )
 offset = Vector2( -2.17136, 105.474 )
 
 [node name="Silk Pos" type="Position2D" parent="Animation/Body"]
@@ -1263,19 +1297,19 @@ transform/pos = Vector2( -0.0494385, 0.0191803 )
 
 [node name="Left Eye" type="Sprite" parent="Animation/Body"]
 
-transform/pos = Vector2( -21.8123, 10.7808 )
-texture = ExtResource( 2 )
+transform/pos = Vector2( -23.0864, 20.1981 )
+texture = ExtResource( 3 )
 
 [node name="Right Eye" type="Sprite" parent="Animation/Body"]
 
-transform/pos = Vector2( 22.9633, 8.92098 )
+transform/pos = Vector2( 22.2901, 16.9471 )
 transform/rot = -7.63926
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="Mouth" type="Sprite" parent="Animation/Body"]
 
-transform/pos = Vector2( -0.495605, 25.2761 )
-texture = ExtResource( 3 )
+transform/pos = Vector2( -0.249197, 30.1441 )
+texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
 
@@ -1293,5 +1327,13 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
+
+[node name="Mob Health Bar" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 0, -170 )
+
+[node name="Number Spawn Pos" type="Position2D" parent="."]
+
+transform/pos = Vector2( 0, -170 )
 
 

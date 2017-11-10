@@ -6,7 +6,7 @@ var side
 const SPEED_X = 2250
 const GRAVITY = 1200
 const LIFE_TIME = 0.1
-const DAMAGE = 5
+const DAMAGE = 214
 
 # Initialized in _ready().
 var movement_pattern
