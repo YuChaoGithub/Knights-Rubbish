@@ -1,21 +1,561 @@
-[gd_scene load_steps=19 format=1]
+[gd_scene load_steps=26 format=1]
 
-[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/Mouse Body.png" type="Texture" id=1]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/Mouse Ear.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/White Tear.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/Mouse Eye White.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/Mouse Eye.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/Mouse Nose.png" type="Texture" id=6]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/Mouse Whisker.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/Mouse Tail Segment.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/Mouse Mouth.png" type="Texture" id=9]
-[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/Die Eye.png" type="Texture" id=10]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Mouth.png" type="Texture" id=11]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=12]
+[ext_resource path="res://Scripts/Enemies/Computer Room/Mouse.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/Mousy Bomb.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/Mouse Body.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/Mouse Ear.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/White Tear.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/Mouse Eye White.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/Mouse Eye.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/Mouse Nose.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/Mouse Whisker.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/Mouse Tail Segment.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/Mouse Mouth.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/Die Eye.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Mouth.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=15]
+[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=16]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="RectangleShape2D" id=1]
 
-resource/name = "Die"
+custom_solver_bias = 0.0
+extents = Vector2( 82.3215, 22.2797 )
+
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 93.7292, 40.888 )
+
+[sub_resource type="Animation" id=16]
+
+resource/name = "Close Lid"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Mouth:visibility/visible")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Nose:transform/pos")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -93.4909, 18.7706 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body/Nose:transform/rot")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body/Tail/1/2/3:transform/pos")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 11.0356, -0.166096 ), Vector2( 11.0356, -0.166096 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Body/Tail/1/2/3:transform/rot")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ -2.40347, 10.3619 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Body/Whiskers/Bot:transform/pos")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0, 0.7 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -42.8548, 31.4732 ), Vector2( -42.8548, 31.4732 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Body/Whiskers/Bot:transform/rot")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0, 0.7 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 5.91217, -10.5917 ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Body/Ear:transform/pos")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -24.0475, -30.3368 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Body/Ear:transform/rot")
+tracks/8/interp = 1
+tracks/8/imported = false
+tracks/8/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Body/Eye:transform/pos")
+tracks/9/interp = 1
+tracks/9/imported = false
+tracks/9/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -70.8223, -0.503559 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Body/Eye:transform/rot")
+tracks/10/interp = 1
+tracks/10/imported = false
+tracks/10/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Body:transform/pos")
+tracks/11/interp = 1
+tracks/11/imported = false
+tracks/11/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 16.2802, -29.3783 ), Vector2( 0, 0 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Body:transform/rot")
+tracks/12/interp = 1
+tracks/12/imported = false
+tracks/12/keys = {
+"times": FloatArray( 0, 0.4 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ -25.3023, 0.0 ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Body/Tail/1/2/3/4/5/6/7/8/9/10/11:transform/pos")
+tracks/13/interp = 1
+tracks/13/imported = false
+tracks/13/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 12.0292, 0.199987 ), Vector2( 12.0292, 0.199987 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Body/Tail/1/2/3/4/5/6/7/8/9/10/11:transform/rot")
+tracks/14/interp = 1
+tracks/14/imported = false
+tracks/14/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 43.8202, 0.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Body/Whiskers/Top:transform/pos")
+tracks/15/interp = 1
+tracks/15/imported = false
+tracks/15/keys = {
+"times": FloatArray( 0, 0.6 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -42.0575, 20.7511 ), Vector2( -42.0575, 20.7511 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Body/Whiskers/Top:transform/rot")
+tracks/16/interp = 1
+tracks/16/imported = false
+tracks/16/keys = {
+"times": FloatArray( 0, 0.6 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 17.7004, 0.0 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Body/Tail/1/2:transform/pos")
+tracks/17/interp = 1
+tracks/17/imported = false
+tracks/17/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 11.8398, 0.224972 ), Vector2( 11.8398, 0.224972 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Body/Tail/1/2:transform/rot")
+tracks/18/interp = 1
+tracks/18/imported = false
+tracks/18/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 12.0399, 23.7285 ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Body/Tail/1/2/3/4/5/6/7/8/9/10:transform/pos")
+tracks/19/interp = 1
+tracks/19/imported = false
+tracks/19/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 12.4647, -0.118343 ), Vector2( 12.4647, -0.118343 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Body/Tail/1/2/3/4/5/6/7/8/9/10:transform/rot")
+tracks/20/interp = 1
+tracks/20/imported = false
+tracks/20/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 25.3897, -21.6761 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Body/Tail/1/2/3/4/5/6:transform/pos")
+tracks/21/interp = 1
+tracks/21/imported = false
+tracks/21/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 6.57635, -0.233982 ), Vector2( 6.57635, -0.233982 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Body/Tail/1/2/3/4/5/6:transform/rot")
+tracks/22/interp = 1
+tracks/22/imported = false
+tracks/22/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ -4.79195, -14.9502 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Body/Tail/1/2/3/4/5/6/7/8/9/10/11/12:transform/pos")
+tracks/23/interp = 1
+tracks/23/imported = false
+tracks/23/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 11.5502, 0.128357 ), Vector2( 11.5502, 0.128357 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Body/Tail/1/2/3/4/5/6/7/8/9/10/11/12:transform/rot")
+tracks/24/interp = 1
+tracks/24/imported = false
+tracks/24/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 53.0926, 10.5366 ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Body/Tail/1/2/3/4:transform/pos")
+tracks/25/interp = 1
+tracks/25/imported = false
+tracks/25/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 11.5236, 0.148762 ), Vector2( 11.5236, 0.148762 ) ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Body/Tail/1/2/3/4:transform/rot")
+tracks/26/interp = 1
+tracks/26/imported = false
+tracks/26/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ -4.6833, -12.4722 ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Body/Whiskers/Mid:transform/pos")
+tracks/27/interp = 1
+tracks/27/imported = false
+tracks/27/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -41.2952, 25.9302 ), Vector2( -41.2952, 25.9302 ) ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Body/Whiskers/Mid:transform/rot")
+tracks/28/interp = 1
+tracks/28/imported = false
+tracks/28/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 10.6014, -6.42017 ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("Body/Tail/1/2/3/4/5:transform/pos")
+tracks/29/interp = 1
+tracks/29/imported = false
+tracks/29/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 6.08702, 1.05785 ), Vector2( 6.08702, 1.05785 ) ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("Body/Tail/1/2/3/4/5:transform/rot")
+tracks/30/interp = 1
+tracks/30/imported = false
+tracks/30/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 13.2867, 11.2994 ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("Body/Tail/1/2/3/4/5/6/7/8:transform/pos")
+tracks/31/interp = 1
+tracks/31/imported = false
+tracks/31/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 11.6182, 0.105991 ), Vector2( 11.6182, 0.105991 ) ]
+}
+tracks/32/type = "value"
+tracks/32/path = NodePath("Body/Tail/1/2/3/4/5/6/7/8:transform/rot")
+tracks/32/interp = 1
+tracks/32/imported = false
+tracks/32/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 5.55935, -21.6409 ]
+}
+tracks/33/type = "value"
+tracks/33/path = NodePath("Body/Tail/1/2/3/4/5/6/7/8/9:transform/pos")
+tracks/33/interp = 1
+tracks/33/imported = false
+tracks/33/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 12.321, 0.167255 ), Vector2( 12.321, 0.167255 ) ]
+}
+tracks/34/type = "value"
+tracks/34/path = NodePath("Body/Tail/1/2/3/4/5/6/7/8/9:transform/rot")
+tracks/34/interp = 1
+tracks/34/imported = false
+tracks/34/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 4.96859, 20.8047 ]
+}
+tracks/35/type = "value"
+tracks/35/path = NodePath("Body/Tail/1/2/3/4/5/6/7:transform/pos")
+tracks/35/interp = 1
+tracks/35/imported = false
+tracks/35/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 11.0629, -0.00820541 ), Vector2( 11.0629, -0.00820541 ) ]
+}
+tracks/36/type = "value"
+tracks/36/path = NodePath("Body/Tail/1/2/3/4/5/6/7:transform/rot")
+tracks/36/interp = 1
+tracks/36/imported = false
+tracks/36/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ -14.2541, 18.4944 ]
+}
+tracks/37/type = "value"
+tracks/37/path = NodePath("Body/Tail/1:transform/pos")
+tracks/37/interp = 1
+tracks/37/imported = false
+tracks/37/keys = {
+"times": FloatArray( 0, 0.3, 0.6, 0.7, 0.8, 1 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 92.4614, 30.2668 ), Vector2( 92.4614, 30.2668 ), Vector2( 92.4614, 30.2668 ), Vector2( 92.4614, 30.2668 ), Vector2( 92.4614, 30.2668 ), Vector2( 92.4614, 30.2668 ) ]
+}
+tracks/38/type = "value"
+tracks/38/path = NodePath("Body/Tail/1:transform/rot")
+tracks/38/interp = 1
+tracks/38/imported = false
+tracks/38/keys = {
+"times": FloatArray( 0, 0.3, 0.6, 0.7, 0.8, 1 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 16.6623, 12.1321, 7.23827, -2.30121, -11.099, -28.6063 ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("Body/Tail/1/2/3/4/5/6/7/8/9/10/11/12/13:transform/pos")
+tracks/39/interp = 1
+tracks/39/imported = false
+tracks/39/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 11.9107, 0.136154 ), Vector2( 11.9107, 0.136154 ) ]
+}
+tracks/40/type = "value"
+tracks/40/path = NodePath("Body/Tail/1/2/3/4/5/6/7/8/9/10/11/12/13:transform/rot")
+tracks/40/interp = 1
+tracks/40/imported = false
+tracks/40/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 70.3549, 0.0 ]
+}
+tracks/41/type = "value"
+tracks/41/path = NodePath("Body/Eye/Eyeball:transform/pos")
+tracks/41/interp = 1
+tracks/41/imported = false
+tracks/41/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2.69975, 1.07127 ), Vector2( -2.40617, -0.277634 ) ]
+}
+tracks/42/type = "value"
+tracks/42/path = NodePath("Body/Eye/Eyeball:transform/rot")
+tracks/42/interp = 1
+tracks/42/imported = false
+tracks/42/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/43/type = "value"
+tracks/43/path = NodePath("Body/Eye/Eyeball:transform/scale")
+tracks/43/interp = 1
+tracks/43/imported = false
+tracks/43/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/44/type = "value"
+tracks/44/path = NodePath("Body/Eye:transform/scale")
+tracks/44/interp = 1
+tracks/44/imported = false
+tracks/44/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/45/type = "value"
+tracks/45/path = NodePath("Body/Eye/Eyeball:texture")
+tracks/45/interp = 1
+tracks/45/imported = false
+tracks/45/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ) ]
+}
+tracks/46/type = "value"
+tracks/46/path = NodePath("Body:modulate")
+tracks/46/interp = 1
+tracks/46/imported = false
+tracks/46/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Body/Tear:visibility/visible")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Body/Nose:transform/scale")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Body/Mouth:transform/pos")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": FloatArray( 0, 0.4, 1 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 14.5279, 36.4965 ), Vector2( 14.5279, 36.4965 ), Vector2( 14.5279, 36.4965 ) ]
+}
+tracks/50/type = "value"
+tracks/50/path = NodePath("Body/Mouth:transform/rot")
+tracks/50/interp = 1
+tracks/50/imported = false
+tracks/50/keys = {
+"times": FloatArray( 0, 0.4, 1 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 42.2864, 1.47457, 1.47457 ]
+}
+tracks/51/type = "value"
+tracks/51/path = NodePath("Mousy Bomb:visibility/visible")
+tracks/51/interp = 1
+tracks/51/imported = false
+tracks/51/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=12]
+
 length = 0.5
 loop = false
 step = 0.1
@@ -477,7 +1017,7 @@ tracks/45/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 10 ) ]
+"values": [ ExtResource( 13 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Body:modulate")
@@ -529,10 +1069,19 @@ tracks/50/keys = {
 "update": 0,
 "values": [ 1.47457 ]
 }
+tracks/51/type = "value"
+tracks/51/path = NodePath("Mousy Bomb:visibility/visible")
+tracks/51/interp = 1
+tracks/51/imported = false
+tracks/51/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=13]
 
-resource/name = "Hurt"
 length = 0.1
 loop = false
 step = 0.1
@@ -994,7 +1543,7 @@ tracks/45/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Body:modulate")
@@ -1046,10 +1595,19 @@ tracks/50/keys = {
 "update": 0,
 "values": [ 1.47457 ]
 }
+tracks/51/type = "value"
+tracks/51/path = NodePath("Mousy Bomb:visibility/visible")
+tracks/51/interp = 1
+tracks/51/imported = false
+tracks/51/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=14]
 
-resource/name = "Spawn Mousy"
 length = 1.0
 loop = false
 step = 0.1
@@ -1511,7 +2069,7 @@ tracks/45/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Body:modulate")
@@ -1563,8 +2121,38 @@ tracks/50/keys = {
 "update": 0,
 "values": [ 1.47457, 1.47457, 42.2864 ]
 }
+tracks/51/type = "value"
+tracks/51/path = NodePath("Mousy Bomb:visibility/visible")
+tracks/51/interp = 1
+tracks/51/imported = false
+tracks/51/keys = {
+"times": FloatArray( 0, 0.6, 1 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/52/type = "value"
+tracks/52/path = NodePath("Mousy Bomb:transform/pos")
+tracks/52/interp = 1
+tracks/52/imported = false
+tracks/52/keys = {
+"times": FloatArray( 0.7, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 27.61, -20.4175 ), Vector2( -44.3153, 9.28069 ) ]
+}
+tracks/53/type = "value"
+tracks/53/path = NodePath("Mousy Bomb:transform/rot")
+tracks/53/interp = 1
+tracks/53/imported = false
+tracks/53/keys = {
+"times": FloatArray( 0.7, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 11.4265, 15.539 ]
+}
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=15]
 
 length = 0.1
 loop = false
@@ -2027,7 +2615,7 @@ tracks/45/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Body:modulate")
@@ -2079,8 +2667,18 @@ tracks/50/keys = {
 "update": 0,
 "values": [ 1.47457 ]
 }
+tracks/51/type = "value"
+tracks/51/path = NodePath("Mousy Bomb:visibility/visible")
+tracks/51/interp = 1
+tracks/51/imported = false
+tracks/51/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=8]
 
 length = 1.5
 loop = true
@@ -2543,7 +3141,7 @@ tracks/45/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Body:modulate")
@@ -2595,8 +3193,18 @@ tracks/50/keys = {
 "update": 0,
 "values": [ 1.47457 ]
 }
+tracks/51/type = "value"
+tracks/51/path = NodePath("Mousy Bomb:visibility/visible")
+tracks/51/interp = 1
+tracks/51/imported = false
+tracks/51/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=9]
 
 length = 1.8
 loop = true
@@ -3059,7 +3667,7 @@ tracks/45/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Body:modulate")
@@ -3111,22 +3719,81 @@ tracks/50/keys = {
 "update": 0,
 "values": [ 1.47457 ]
 }
+tracks/51/type = "value"
+tracks/51/path = NodePath("Mousy Bomb:visibility/visible")
+tracks/51/interp = 1
+tracks/51/imported = false
+tracks/51/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[node name="Mouse" type="Node2D"]
+[node name="Mouse" type="KinematicBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -0.209015, 23.4105 )
+shapes/0/trigger = false
+collision/layers = 16
+collision/mask = 2
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+
+[node name="Health Bar" parent="." instance=ExtResource( 2 )]
+
+transform/pos = Vector2( 1.26505, -83.366 )
+
+[node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( -0.209015, 23.4105 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
 
 [node name="Animation" type="Node2D" parent="."]
 
 transform/pos = Vector2( 0, 6 )
 
+[node name="Mousy Bomb" type="Sprite" parent="Animation"]
+
+visibility/visible = false
+transform/pos = Vector2( -44.3153, 9.28069 )
+transform/rot = 15.539
+texture = ExtResource( 3 )
+
+[node name="Damage Area" type="Area2D" parent="Animation" groups=[
+"enemy_collider",
+]]
+
+input/pickable = true
+shapes/0/shape = SubResource( 10 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.725464, -0.0739708 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 16
+collision/mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area"]
+
+transform/pos = Vector2( 0.725464, -0.0739708 )
+shape = SubResource( 10 )
+trigger = false
+_update_shape_index = 0
+
 [node name="Body" type="Sprite" parent="Animation"]
 
 editor/display_folded = true
-texture = ExtResource( 1 )
+texture = ExtResource( 4 )
 
 [node name="Ear" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( -24.0475, -30.3368 )
-texture = ExtResource( 2 )
+texture = ExtResource( 5 )
 offset = Vector2( 0.858063, -10.1044 )
 
 [node name="Tear" type="Sprite" parent="Animation/Body"]
@@ -3134,23 +3801,23 @@ offset = Vector2( 0.858063, -10.1044 )
 visibility/visible = false
 transform/pos = Vector2( -55.7202, 6.8154 )
 transform/rot = 46.247
-texture = ExtResource( 3 )
+texture = ExtResource( 6 )
 
 [node name="Eye" type="Sprite" parent="Animation/Body"]
 
 editor/display_folded = true
 transform/pos = Vector2( -70.8223, -0.503559 )
-texture = ExtResource( 4 )
+texture = ExtResource( 7 )
 
 [node name="Eyeball" type="Sprite" parent="Animation/Body/Eye"]
 
 transform/pos = Vector2( -2.40617, -0.277634 )
-texture = ExtResource( 5 )
+texture = ExtResource( 8 )
 
 [node name="Nose" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( -93.4909, 18.7706 )
-texture = ExtResource( 6 )
+texture = ExtResource( 9 )
 
 [node name="Whiskers" type="Node2D" parent="Animation/Body"]
 
@@ -3160,21 +3827,21 @@ transform/pos = Vector2( -17.9338, -2.00503 )
 [node name="Top" type="Sprite" parent="Animation/Body/Whiskers"]
 
 transform/pos = Vector2( -42.0575, 20.7511 )
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
 offset = Vector2( 27.856, -1.87533 )
 
 [node name="Mid" type="Sprite" parent="Animation/Body/Whiskers"]
 
 transform/pos = Vector2( -41.2952, 25.9302 )
 transform/rot = -6.42017
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
 offset = Vector2( 27.6928, -1.89603 )
 
 [node name="Bot" type="Sprite" parent="Animation/Body/Whiskers"]
 
 transform/pos = Vector2( -42.8548, 31.4732 )
 transform/rot = -10.5917
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
 offset = Vector2( 28.1596, -2.27323 )
 
 [node name="Tail" type="Node2D" parent="Animation/Body"]
@@ -3185,28 +3852,28 @@ editor/display_folded = true
 
 transform/pos = Vector2( 90.4873, 33.3266 )
 transform/rot = -24.471
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 offset = Vector2( 5.97515, 0.188225 )
 
 [node name="2" type="Sprite" parent="Animation/Body/Tail/1"]
 
 transform/pos = Vector2( 11.8398, 0.224972 )
 transform/rot = 23.7285
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 offset = Vector2( 5.38211, 0.0505753 )
 
 [node name="3" type="Sprite" parent="Animation/Body/Tail/1/2"]
 
 transform/pos = Vector2( 11.0356, -0.166096 )
 transform/rot = 10.3619
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 offset = Vector2( 5.7803, 0.168934 )
 
 [node name="4" type="Sprite" parent="Animation/Body/Tail/1/2/3"]
 
 transform/pos = Vector2( 11.5236, 0.148762 )
 transform/rot = -12.4722
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 offset = Vector2( 5.50681, 0.0473824 )
 
 [node name="5" type="Sprite" parent="Animation/Body/Tail/1/2/3/4"]
@@ -3218,54 +3885,54 @@ transform/rot = 11.2994
 
 transform/pos = Vector2( 6.57635, -0.233982 )
 transform/rot = -14.9502
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 offset = Vector2( 5.02289, 0.220306 )
 
 [node name="7" type="Sprite" parent="Animation/Body/Tail/1/2/3/4/5/6"]
 
 transform/pos = Vector2( 11.0629, -0.00820541 )
 transform/rot = 18.4944
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 offset = Vector2( 5.72639, 0.348221 )
 
 [node name="8" type="Sprite" parent="Animation/Body/Tail/1/2/3/4/5/6/7"]
 
 transform/pos = Vector2( 11.6182, 0.105991 )
 transform/rot = -21.6409
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 offset = Vector2( 5.95529, 0.2701 )
 
 [node name="9" type="Sprite" parent="Animation/Body/Tail/1/2/3/4/5/6/7/8"]
 
 transform/pos = Vector2( 12.321, 0.167255 )
 transform/rot = 20.8047
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 offset = Vector2( 5.95531, 0.158596 )
 
 [node name="10" type="Sprite" parent="Animation/Body/Tail/1/2/3/4/5/6/7/8/9"]
 
 transform/pos = Vector2( 12.4647, -0.118343 )
 transform/rot = -21.6761
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 offset = Vector2( 5.54063, 0.201626 )
 
 [node name="11" type="Sprite" parent="Animation/Body/Tail/1/2/3/4/5/6/7/8/9/10"]
 
 transform/pos = Vector2( 12.0292, 0.199987 )
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 offset = Vector2( 5.43614, 0.120389 )
 
 [node name="12" type="Sprite" parent="Animation/Body/Tail/1/2/3/4/5/6/7/8/9/10/11"]
 
 transform/pos = Vector2( 11.5502, 0.128357 )
 transform/rot = 10.5366
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 offset = Vector2( 5.48133, 0.0164664 )
 
 [node name="13" type="Sprite" parent="Animation/Body/Tail/1/2/3/4/5/6/7/8/9/10/11/12"]
 
 transform/pos = Vector2( 11.9107, 0.136154 )
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 offset = Vector2( 5.45028, -0.0465801 )
 
 [node name="Mouth" type="Sprite" parent="Animation/Body"]
@@ -3273,7 +3940,7 @@ offset = Vector2( 5.45028, -0.0465801 )
 visibility/visible = false
 transform/pos = Vector2( 14.5279, 36.4965 )
 transform/rot = 1.47457
-texture = ExtResource( 9 )
+texture = ExtResource( 12 )
 offset = Vector2( -46.1412, 3.06131 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
@@ -3281,15 +3948,25 @@ offset = Vector2( -46.1412, 3.06131 )
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Die = SubResource( 1 )
-anims/Hurt = SubResource( 2 )
-"anims/Spawn Mousy" = SubResource( 3 )
-anims/Still = SubResource( 4 )
-anims/Stunned = SubResource( 5 )
-anims/Walk = SubResource( 6 )
+"anims/Close Lid" = SubResource( 16 )
+anims/Die = SubResource( 12 )
+anims/Hurt = SubResource( 13 )
+"anims/Open Lid" = SubResource( 14 )
+anims/Still = SubResource( 15 )
+anims/Stunned = SubResource( 8 )
+anims/Walk = SubResource( 9 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
-autoplay = ""
+autoplay = "Still"
+
+[node name="Number Spawn Pos" type="Position2D" parent="."]
+
+transform/pos = Vector2( 0.620667, -83.7903 )
+script/script = ExtResource( 16 )
+
+[node name="Mousy Spawn Pos" type="Position2D" parent="."]
+
+transform/pos = Vector2( -72.8, 32.3 )
 
 

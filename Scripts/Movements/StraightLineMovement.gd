@@ -11,3 +11,7 @@ func _init(dx, dy):
 # Returns the calculated position of the next frame.
 func movement(curr_pos, delta):
     return Vector2(curr_pos.x + dx * delta, curr_pos.y + dy * delta)
+
+func set_velocity(dx, dy):
+    self.dx = dx
+    self.dy = dy

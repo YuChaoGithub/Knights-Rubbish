@@ -6467,7 +6467,6 @@ transform/pos = Vector2( 4.42224, -173.674 )
 [node name="Sir" type="Node2D" parent="Animation"]
 
 editor/display_folded = true
-visibility/visible = false
 
 [node name="Body" type="Sprite" parent="Animation/Sir"]
 
@@ -6492,13 +6491,11 @@ editor/display_folded = true
 [node name="Left Eyebrow" type="Sprite" parent="Animation/Sir/Body/Face"]
 
 transform/pos = Vector2( -19.6604, -98.1412 )
-transform/rot = 56.0781
 texture = ExtResource( 4 )
 
 [node name="Right Eyebrow" type="Sprite" parent="Animation/Sir/Body/Face"]
 
 transform/pos = Vector2( 19.5776, -87.8257 )
-transform/rot = -38.6028
 texture = ExtResource( 4 )
 
 [node name="Left Eye" type="Sprite" parent="Animation/Sir/Body/Face"]
@@ -6508,7 +6505,7 @@ texture = ExtResource( 5 )
 
 [node name="Right Eye" type="Sprite" parent="Animation/Sir/Body/Face"]
 
-transform/pos = Vector2( 13.9543, -80.6898 )
+transform/pos = Vector2( 23.928, -77.3652 )
 texture = ExtResource( 5 )
 
 [node name="Scar" type="Sprite" parent="Animation/Sir/Body/Face"]
@@ -6518,7 +6515,7 @@ texture = ExtResource( 6 )
 
 [node name="Mouth" type="Sprite" parent="Animation/Sir/Body/Face"]
 
-transform/pos = Vector2( -3.196, -40.2652 )
+transform/pos = Vector2( -3.196, -32.3151 )
 texture = ExtResource( 7 )
 
 [node name="Stunned Right Eye" type="Sprite" parent="Animation/Sir/Body/Face"]
@@ -6542,19 +6539,18 @@ texture = ExtResource( 9 )
 
 [node name="Cap" type="Sprite" parent="Animation/Sir"]
 
-transform/pos = Vector2( 13.8514, -135.604 )
-transform/rot = -11.767
+transform/pos = Vector2( 14.471, -151.094 )
 texture = ExtResource( 10 )
 
 [node name="Sug" type="Sprite" parent="Animation/Sir"]
 
-transform/pos = Vector2( -97.9298, 147.066 )
-transform/rot = -90.022
+transform/pos = Vector2( -104.435, 123.212 )
 texture = ExtResource( 11 )
 
 [node name="Sug" type="Node2D" parent="Animation"]
 
 editor/display_folded = true
+visibility/visible = false
 
 [node name="Body" type="Sprite" parent="Animation/Sug"]
 
@@ -6594,7 +6590,7 @@ texture = ExtResource( 8 )
 
 [node name="Glasses" type="Sprite" parent="Animation/Sug/Body/Face"]
 
-transform/pos = Vector2( 5.84094, -50.946 )
+transform/pos = Vector2( 6.10536, -45.393 )
 texture = ExtResource( 14 )
 
 [node name="Left Eyebrow" type="Sprite" parent="Animation/Sug/Body/Face"]
@@ -6609,7 +6605,8 @@ texture = ExtResource( 15 )
 
 [node name="Mouth" type="Sprite" parent="Animation/Sug/Body/Face"]
 
-transform/pos = Vector2( 6.69626, -15.3057 )
+transform/pos = Vector2( 3.79768, -13.8564 )
+transform/rot = -130.595
 texture = ExtResource( 16 )
 
 [node name="Cover" type="Sprite" parent="Animation/Sug/Body"]
@@ -6619,13 +6616,14 @@ texture = ExtResource( 17 )
 
 [node name="Hat" type="Sprite" parent="Animation/Sug"]
 
-transform/pos = Vector2( 7.30121, -101.487 )
+transform/pos = Vector2( 27.8699, -88.0383 )
+transform/rot = -6.97738
 texture = ExtResource( 18 )
 
 [node name="Sir" type="Sprite" parent="Animation/Sug"]
 
-transform/pos = Vector2( -92.5787, 101.544 )
-transform/rot = 0.400856
+transform/pos = Vector2( -101.401, 140.716 )
+transform/rot = 89.5903
 texture = ExtResource( 19 )
 
 [node name="Big Bro" type="Node2D" parent="Animation"]

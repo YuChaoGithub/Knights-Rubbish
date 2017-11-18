@@ -211,3 +211,36 @@ Comment: **I AM A CODE REFACTORING KING!!!**
 * Started to implement `DarkEarspider.gd`. The code is now full with bugs. Will clean them up next week.
 
 **Commit**
+
+[2017.11.13]
+* Included `damaged_over_time(...)` in `EnemyCommon.gd`.
+* Implemented `RandomMovement.gd` to generate a sequence of random movement for mobs (or other nodes).
+* Completed scripting DarkEarspider.
+
+[2017.11.14]
+* Added `additional_movement_x` variable for `CharacterCommon.gd` to perform horizontal movement skills or being knocked back.
+* Completed `knocked_back(...)` in `CharacterCommon.gd`. Tested, it worked.
+
+[2017.11.15]
+* I don't know why, but apparently I have to add `int(number)` in a `%` operation even if number is already an integer...hmm, weird.
+* Completed scripting RedEarspider.
+* Refactored `CDPunch.gd` into a clean state machine.
+
+[2017.11.16]
+* Refactored `CDPunch.gd` and `DarkEarspider.gd` by taking out repeated code and put it in `EnemyCommon.gd`.
+* Removed `HorizontalMovementWithGravity.gd` and added `GravityMovement.gd`. Use `GravityMovement.gd` with `StraightLineMovement.gd` to attain the same effect with `HorionztalMovementWithGravity.gd`. Fixed `CDPunch.gd`, `RedEarspider.gd` and `PencilDart.gd` to adept this change.
+
+[2017.11.17]
+* Implemented `NumberSpawnPos.gd`, making the spawning position y of the numbers different.
+* Keshia's Basic Attack's hitbox is now turned off correctly after an empty swing.
+
+[2017.11.18]
+* Use modulate in scripting instead of animation player to control characters' hurt animation so that characters' current animation won't be stopped.
+* CDPunch now knocks back characters...it feels so good!
+* Cleaned some code in `KeshiaErasiaSkills.gd`.
+* Fixed a nasty bug related with physics frame & scripting frame...probably (idk the real reason causing this bug). Now Keshia's Basic Attack won't hit the enemy when its mask is set to 0. (That is, I put all the collision masking changes into the AnimationPlayer).
+* Fixed a bug that DarkEarspider would drop infinitely if the attack target is above him.
+* Completed scripting Mouse and Mousy Bomb.
+Comment: Wow, what an effective day.
+
+**Commit**

@@ -1,10 +1,8 @@
 extends Node2D
 
-const TIMER_PATH = "res://Scripts/Utils/CountdownTimer.gd"
-
 # Constants for skills.
 const BASIC_ATTACK_DURATION = 0.3
-const BASIC_ATTACK_STRIKES_TIME = 0.15
+const BASIC_ATTACK_STRIKES_TIME = 0.1
 const BASIC_ATTACK_COOLDOWN = 0.15
 const BASIC_ATTACK_DAMAGE = 29
 
@@ -29,16 +27,19 @@ const DOWN_SKILL_RESUME_COOLDOWN = 0.2
 const DOWN_SKILL_RESUME_DURATION = 0.4
 const DOWN_SKILL_COOLDOWN = 0.15
 
-# Avoid basic attack hitting multiple target.
-var basic_attack_hit = false
+# To get the can_move/can_cast_skill variables.
+onready var character = get_node("..")
 
 # For horizontal skill.
+var countdown_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var pencil_dart = preload("res://Scenes/Characters/Keshia Erasia/Pencil Dart.tscn")
 onready var pencil_toss_pos = get_node("../Pencil Toss Pos").get_pos()
-onready var dart_spawn_node = get_tree().get_root().get_node("Game Level")
+onready var dart_spawn_node = character.get_node("..")
 
 # When this is true, _process() will perform basic skill landing when the player detects the ground.
 var detecting_landing = false
+
+var basic_attack_hit = true
 
 # Can only cast Up Skill one time unless Keshia landed on the ground.
 var up_skill_available = true
@@ -54,9 +55,6 @@ var down_skill_can_resume = false
 var down_skill_timer = null
 
 var hit_box_timer = null
-
-# To get the can_move/can_cast_skill variables.
-onready var character = get_node("..")
 
 # Hit boxes of attack/skills.
 onready var basic_attack_hit_box = get_node("../Sprite/Animation/Body/Left Arm/Weapon/Basic Attack Hit Box")
@@ -74,7 +72,7 @@ func _process(delta):
 		# For Up Skill.
 		if not up_skill_available and up_skill_available_timer == null and OS.get_unix_time() - up_skill_cast_timestamp > UP_SKILL_LANDED_DETECTION_DELAY:
 			# Set up skill to available after cooldown.
-			up_skill_available_timer = preload(TIMER_PATH).new(UP_SKILL_COOLDOWN, self, "reset_up_skill_available")
+			up_skill_available_timer = countdown_timer.new(UP_SKILL_COOLDOWN, self, "reset_up_skill_available")
 			
 			# Reset timestamp.
 			up_skill_cast_timestamp = 0
@@ -102,7 +100,7 @@ func basic_attack():
 		character.set_status("can_cast_skill", false, BASIC_ATTACK_DURATION + BASIC_ATTACK_COOLDOWN)
 
 		# Perform attack (interruptable).
-		var strike_timer = preload(TIMER_PATH).new(BASIC_ATTACK_STRIKES_TIME, self, "basic_attack_strikes")
+		var strike_timer = countdown_timer.new(BASIC_ATTACK_STRIKES_TIME, self, "basic_attack_strikes")
 		character.register_timer("interruptable_skill", strike_timer)
 	elif down_skill_can_resume:
 		# Resume from down skill.
@@ -110,23 +108,16 @@ func basic_attack():
 
 func basic_attack_strikes():
 	# Enabel the collider of basic attack.
-	basic_attack_hit_box.set_collision_mask(Globals.get("Enemy Layer"))
-	basic_attack_hit = false
-
 	character.unregister_timer("interruptable_skill")
+	basic_attack_hit = false
 
 # Will be signalled by pencil weapon's collder (Area2D).
 func on_basic_attack_hit(area):
-	if not basic_attack_hit and area.is_in_group("enemy_collider"):
+	if !basic_attack_hit && area.is_in_group("enemy_collider"):
 		# Damage the enemy.
 		var enemy_node = area.get_node("../..")
 		enemy_node.damaged(BASIC_ATTACK_DAMAGE)
-
-		# Avoid hitting multiple target.
 		basic_attack_hit = true
-
-		# Disable the collider by clearing its mask.
-		basic_attack_hit_box.set_collision_mask(0)
 
 # ===========
 # Basic Skill: Hop, when it hits the ground, stun enemies around. Is invincible while hitting ground.
@@ -150,7 +141,7 @@ func basic_skill():
 			character.velocity.y *= -1
 
 		# Perform falling after the timer.
-		var hop_timer = preload(TIMER_PATH).new(BASIC_SKILL_HOP_DURATION, self, "basic_skill_falling")
+		var hop_timer = countdown_timer.new(BASIC_SKILL_HOP_DURATION, self, "basic_skill_falling")
 		character.register_timer("interruptable_skill", hop_timer)
 	elif down_skill_can_resume:
 		# Resume from down skill.
@@ -175,16 +166,6 @@ func basic_skill_strikes():
 	character.set_status("can_cast_skill", false, BASIC_SKILL_LAND_DURATION + BASIC_SKILL_COOLDOWN)
 	character.set_status("invincible", true, BASIC_SKILL_LAND_DURATION)
 
-	# Turn on the hit box.
-	basic_skill_hit_box.set_collision_mask(Globals.get("Enemy Layer"))
-
-	# Turn off the hit box after duration.
-	hit_box_timer = preload(TIMER_PATH).new(BASIC_SKILL_HIT_BOX_DURATION, self, "turn_off_basic_skill_hit_box")
-
-func turn_off_basic_skill_hit_box():
-	basic_skill_hit_box.set_collision_mask(0)
-	hit_box_timer = null
-
 # Will be signalled by the hit box when an enemy gets into it.
 func on_basic_skill_hit(area):
 	if area.is_in_group("enemy_collider"):
@@ -208,7 +189,7 @@ func horizontal_skill(side):
 		character.set_status("can_cast_skill", false, HORIZONTAL_SKILL_DURATION + HORIZONTAL_SKILL_COOLDOWN)
 
 		# Perform tossing (interruptable).
-		var toss_timer = preload(TIMER_PATH).new(HORIZONTAL_SKILL_TOSS_TIME, self, "horizontal_skill_toss", side)
+		var toss_timer = countdown_timer.new(HORIZONTAL_SKILL_TOSS_TIME, self, "horizontal_skill_toss", side)
 		character.register_timer("interruptable_skill", toss_timer)
 	elif down_skill_can_resume:
 		# Resume from down skill.
@@ -219,7 +200,7 @@ func horizontal_skill_toss(side):
 	var dart = pencil_dart.instance()
 
 	# Set position and facing.
-	dart.set_pos(character.get_global_pos() + pencil_toss_pos)
+	dart.set_pos(character.get_pos() + pencil_toss_pos)
 	dart.side = side
 
 	dart_spawn_node.add_child(dart)
@@ -248,22 +229,16 @@ func up_skill():
 		# Record a timestamp, so that there will be a short delay between before landed on ground detection.
 		up_skill_cast_timestamp = OS.get_unix_time()
 
-		# Turn on the damging hit box.
-		up_skill_hit_box.set_collision_mask(Globals.get("Enemy Layer"))
-
 		up_skill_targets.clear()
 
 		# Jump up and damage enemies with the pencil when the timer is on.
-		var jump_timer = preload(TIMER_PATH).new(UP_SKILL_DURATION, self, "up_skill_ended")
+		var jump_timer = countdown_timer.new(UP_SKILL_DURATION, self, "up_skill_ended")
 		character.register_timer("movement_skill", jump_timer)
 	elif down_skill_can_resume:
 		# Resume from down skill.
 		resume_from_down_skill()
 
 func up_skill_ended():
-	# Turn off the damaing hit box.
-	up_skill_hit_box.set_collision_mask(0)
-
 	character.unregister_timer("movement_skill")
 
 # Will be signalled by the hit box of up skill.
@@ -289,7 +264,7 @@ func down_skill():
 		character.status.can_cast_skill = false
 
 		# Can resume after the timer is up.
-		down_skill_timer = preload(TIMER_PATH).new(DOWN_SKILL_DURATION + DOWN_SKILL_RESUME_COOLDOWN, self, "set_down_skill_can_resume")
+		down_skill_timer = countdown_timer.new(DOWN_SKILL_DURATION + DOWN_SKILL_RESUME_COOLDOWN, self, "set_down_skill_can_resume")
 	elif down_skill_can_resume:
 		# Resume from down skill.
 		resume_from_down_skill()
@@ -306,7 +281,7 @@ func resume_from_down_skill():
 	down_skill_can_resume = false
 
 	# Reset character status when the timer's up.
-	down_skill_timer = preload(TIMER_PATH).new(DOWN_SKILL_RESUME_DURATION, self, "reset_status_from_down_skill")
+	down_skill_timer = countdown_timer.new(DOWN_SKILL_RESUME_DURATION, self, "reset_status_from_down_skill")
 
 	# Cooldown.
 	character.set_status("can_cast_skill", false, DOWN_SKILL_RESUME_DURATION + DOWN_SKILL_COOLDOWN)

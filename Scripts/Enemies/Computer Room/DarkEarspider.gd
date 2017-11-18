@@ -4,59 +4,75 @@ extends Node2D
 # 1. Move horizontally to the place above a character (in bounds but farthest).
 # 2. Drop down on the character's head.
 # 3. Clap! (Stunning the character)
-# 4. Spin dark silk to attack the character.
-# 5. Move back up.
+# 4. Move back up.
+# 5. Do some random movement.
 # 6. Repeat 1.
+# ===
+# If damaged or stunned, perform 4.
+
+enum { NONE, MOVE, DROP, CLAP, CLIMB, RANDOM_MOVEMENT }
 
 const MAX_HEALTH = 200
-const ACTIVATE_RANGE = 750
+
+const ACTIVATE_RANGE = 1500
+
+# Movement.
 const SPEED_X = 200
 const SPEED_Y = 1000
+const RANDOM_MOVEMENT_MIN_STEPS = 2
+const RANDOM_MOVEMENT_MAX_STEPS = 4
+const RANDOM_MOVEMENT_MIN_TIME_PER_STEP = 0.25
+const RANDOM_MOVEMENT_MAX_TIME_PER_STEP = 0.6
+
 const DROPPING_TO_CHAR_OFFSET_X = 200
-const DROPPING_TO_CHAR_OFFSET_Y = 250
-const DROP_DELAY = 1
+const DROPPING_TO_CHAR_OFFSET_Y = 125
+
+const CLAP_STUN_DURATION = 1.5
+
 const ATTACHED_SILK_THICKNESS = 5
 
-enum { NONE, MOVE, DROP, CLAP, SPIN_SILK, CLIMB }
+# Animation duration.
+const CLAP_ANIMATION_DURATION = 0.7
+const DIE_ANIMATION_DURATION = 0.5
 
 # It can only move between the bounds.
 export(int) var left_bound
 export(int) var right_bound
 
-var status = NONE
 var attack_target = null
 var status_timer = null
-
-var countdown_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
-var target_detection = preload("res://Scripts/Algorithms/TargetDetection.gd")
+var curr_rand_movement = null
 
 onready var original_pos = get_pos()
 onready var silk_attach_spot = get_node("Animation/Body/Silk Pos")
 onready var silk_attach_spot_original_pos = silk_attach_spot.get_global_pos()
-onready var char_average_pos = get_node("../../../../Character Average Position")
-onready var animator = get_node("Animation/AnimationPlayer")
-onready var movement_type = preload("res://Scripts/Movements/StraightLineMovement.gd").new(0, 0)
-onready var health_system = preload("res://Scripts/Utils/HealthSystem.gd").new(self, MAX_HEALTH)
-onready var health_bar = get_node("Health Bar")
-onready var number_spawn_pos = get_node("Number Spawn Pos")
-onready var enemy_common = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self, ACTIVATE_RANGE, char_average_pos, animator, health_system, health_bar, number_spawn_pos, "Still")
 
-func _ready():
+onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
+onready var movement_type = ec.stright_line_movement.new(0, 0)
+
+func activate():
 	set_process(true)
+
+	search_for_target()
+
+	# Become damagable.
+	get_node("Animation/Damage Area").add_to_group("enemy_collider")
+	
+	ec.change_status(MOVE)
 
 func _process(delta):
 	update()  # For _draw()
-	if enemy_common.not_hurt_dying_stunned():
-		if status == MOVE:
+	if ec.not_hurt_dying_stunned():
+		if ec.status == MOVE:
 			move_horizontally_to_target(delta)
-		elif status == DROP:
+		elif ec.status == DROP:
 			drop_down(delta)
-		elif status == CLAP:
+		elif ec.status == CLAP:
 			clap_attack()
-		elif status == SPIN_SILK:
-			spin_silk_attack()
-		elif status == CLIMB:
+		elif ec.status == CLIMB:
 			climb_up(delta)
+		elif ec.status == RANDOM_MOVEMENT:
+			perform_random_movement(delta)
 
 func _draw():
 	# Draw the attached black silk.
@@ -65,68 +81,96 @@ func _draw():
 	draw_line(from_pos, to_pos, Color(0, 0, 0), ATTACHED_SILK_THICKNESS)
 
 func change_status(to_status):
-	status = to_status
+	ec.change_status(to_status)
 
-func activate():
+func search_for_target():
 	# Find the farthest character as its attacking target.
-	attack_target = target_detection.get_farthest(self, char_average_pos.characters)
-
-	# Become damagable.
-	get_node("Animation/Damage Area").add_to_group("enemy_collider")
-	
-	change_status(MOVE)
+	attack_target = ec.target_detect.get_farthest(self, ec.char_average_pos.characters)
 
 func move_horizontally_to_target(delta):
+	ec.play_animation("Swing")
 	var difference_x = attack_target.get_global_pos().x - get_global_pos().x
 
 	# Apply horizontal movement.
-	movement_type.dx = sign(difference_x) * SPEED_X
-	movement_type.dy = 0
+	movement_type.set_velocity(sign(difference_x) * SPEED_X, 0)
 	var final_pos = movement_type.movement(get_pos(), delta)
 	final_pos.x = clamp(final_pos.x, original_pos.x - left_bound, original_pos.x + left_bound)
 	set_pos(final_pos)
 
 	# Close enough, land after a delay.
 	if abs(difference_x) <= DROPPING_TO_CHAR_OFFSET_X:
-		change_status(NONE)
-		status_timer = countdown_timer.new(DROP_DELAY, self, "change_status", DROP)
+		ec.change_status(DROP)
 
 func drop_down(delta):
-	movement_type.dy = SPEED_Y
-	movement_type.dx = 0
+	ec.play_animation("Drop")
+	movement_type.set_velocity(0, SPEED_Y)
 	set_pos(movement_type.movement(get_pos(), delta))
 
-	# Close enough, perform clap attack.
-	if abs(get_global_pos().y - attack_target.get_global_pos().y) < DROPPING_TO_CHAR_OFFSET_Y:
-		change_status(CLAP)
+	# Close enough or the target is above, perform clap attack.
+	var target_y = attack_target.get_global_pos().y
+	var curr_y = get_global_pos().y
+	if curr_y > target_y || abs(curr_y - target_y) < DROPPING_TO_CHAR_OFFSET_Y:
+		ec.change_status(CLAP)
 
 func clap_attack():
-	print("CLAP")
+	ec.play_animation("Clap")
+	ec.change_status(NONE)
+	status_timer = ec.cd_timer.new(CLAP_ANIMATION_DURATION, self, "change_status", CLIMB)
 
-func spin_silk_attack():
-	pass
+# Will be signalled if a character is clapped.
+func clap_attack_hit(area):
+	if area.is_in_group("player_collider"):
+		area.get_node("..").stunned(CLAP_STUN_DURATION)
 
 func climb_up(delta):
-	pass
+	ec.play_animation("Still")
+	movement_type.set_velocity(0, -SPEED_Y)
+	set_pos(movement_type.movement(get_pos(), delta))
+
+	# Back to the original y position. Start random horizontal movement.
+	if get_pos().y <= original_pos.y:
+		search_for_target()
+		ec.change_status(RANDOM_MOVEMENT)
+
+func perform_random_movement(delta):
+	ec.play_animation("Swing")
+	if curr_rand_movement == null:
+		# New random movement.
+		curr_rand_movement = ec.random_movement.new(SPEED_X, 0, true, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
+	
+	if !curr_rand_movement.movement_ended():
+		# Perform random movement sequence.
+		var final_pos = curr_rand_movement.movement(get_pos(), delta)
+		final_pos.x = clamp(final_pos.x, original_pos.x - left_bound, original_pos.x + left_bound)
+		set_pos(final_pos)
+	else:
+		# Search for a new target and perform MOVE.
+		curr_rand_movement = null
+		search_for_target()
+		ec.change_status(MOVE)
 
 func damaged(val):
-	pass
+	ec.damaged(val)
+	ec.change_status(CLIMB)
 
 func resume_from_damaged():
-	pass
+	ec.resume_from_damaged()
 
 func stunned(duration):
-	pass
+	ec.stunned(duration)
+	ec.change_status(CLIMB)
 
 func resume_from_stunned():
-	pass
+	ec.resume_from_damaged()
 
 func damaged_over_time(timer_per_tick, total_ticks, damage_per_tick):
-	pass
+	ec.damaged_over_time(timer_per_tick, total_ticks, damage_per_tick)
 
 func die():
-	pass
+	ec.die()
+	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
 
+# Can't be healed.
 func healed(val):
 	pass
 

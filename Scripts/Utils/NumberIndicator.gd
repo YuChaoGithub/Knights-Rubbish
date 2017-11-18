@@ -30,8 +30,8 @@ func initialize(number, color, pos, node):
 	self.color = color
 
 	parent = node.get_tree().get_root().get_node("Game Level")
-
-	set_global_pos(pos.get_global_pos())
+	 
+	set_global_pos(pos.get_curr_pos(self))
 
 	if number > 0:
 		instance_numbers(number)
@@ -47,7 +47,7 @@ func initialize(number, color, pos, node):
 
 func instance_numbers(number):
 	while number > 0:
-		var new_num = number_scenes[number % 10].instance()
+		var new_num = number_scenes[int(number) % 10].instance()
 		number_instances.push_back(new_num)
 		number = int(number / 10)
 

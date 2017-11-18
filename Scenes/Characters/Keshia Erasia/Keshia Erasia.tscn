@@ -14,6 +14,7 @@
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Petrified.png" type="Texture" id=12]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=13]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned mouth.png" type="Texture" id=14]
+[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -574,6 +575,16 @@ tracks/53/keys = {
 "transitions": FloatArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/54/type = "value"
+tracks/54/path = NodePath("Animation/Body/Left Arm/Weapon/Basic Attack Hit Box:collision/mask")
+tracks/54/interp = 1
+tracks/54/imported = false
+tracks/54/keys = {
+"times": FloatArray( 0, 0.1, 0.2 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 16, 0 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -1666,6 +1677,16 @@ tracks/53/keys = {
 "transitions": FloatArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/54/type = "value"
+tracks/54/path = NodePath("Basic Skill Hit Box:collision/mask")
+tracks/54/interp = 1
+tracks/54/imported = false
+tracks/54/keys = {
+"times": FloatArray( 0, 0.1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ 16, 0 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -3308,32 +3329,6 @@ tracks/53/keys = {
 
 [sub_resource type="Animation" id=10]
 
-length = 0.1
-loop = false
-step = 0.05
-tracks/0/type = "value"
-tracks/0/path = NodePath("Animation/Body:modulate")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 0.666667, 0.666667, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Animation/Body/Left Arm/Weapon:modulate")
-tracks/1/interp = 1
-tracks/1/imported = false
-tracks/1/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=11]
-
 length = 3.0
 loop = true
 step = 0.05
@@ -3878,7 +3873,7 @@ tracks/53/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=11]
 
 length = 0.5
 loop = false
@@ -4424,7 +4419,7 @@ tracks/53/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=12]
 
 length = 0.1
 loop = false
@@ -4970,7 +4965,7 @@ tracks/53/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=13]
 
 length = 1.0
 loop = true
@@ -5516,7 +5511,7 @@ tracks/53/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=14]
 
 length = 0.2
 loop = false
@@ -6061,8 +6056,18 @@ tracks/53/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
+tracks/54/type = "value"
+tracks/54/path = NodePath("Animation/Body/Left Arm/Weapon/Up Skill Hit Box:collision/mask")
+tracks/54/interp = 1
+tracks/54/imported = false
+tracks/54/keys = {
+"times": FloatArray( 0, 0.15, 0.2 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 16, 0 ]
+}
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=15]
 
 length = 1.0
 loop = true
@@ -6608,7 +6613,7 @@ tracks/53/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=16]
 
 custom_solver_bias = 0.0
 extents = Vector2( 218.001, 78.0224 )
@@ -6622,6 +6627,7 @@ player_constants_filepath = "res://Scripts/Constants/KeshiaErasiaConstants.gd"
 "player_collider",
 ]]
 
+editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -6648,7 +6654,7 @@ script/script = ExtResource( 3 )
 [node name="Right Arm" type="Sprite" parent="Sprite"]
 
 transform/pos = Vector2( 89.2042, -39.3245 )
-transform/rot = 50.4684
+transform/rot = 17.2619
 transform/scale = Vector2( 0.9, 0.9 )
 texture = ExtResource( 4 )
 offset = Vector2( -1.23269, 16.6908 )
@@ -6671,45 +6677,46 @@ transform/scale = Vector2( 1.1, 1.1 )
 
 [node name="Left Brow" type="Sprite" parent="Sprite/Animation/Body/Face"]
 
-transform/pos = Vector2( -22.3623, -26.1322 )
-transform/rot = -12.3728
+transform/pos = Vector2( -21.4847, -31.2223 )
+transform/rot = -21.127
 texture = ExtResource( 6 )
 
 [node name="Right Brow" type="Sprite" parent="Sprite/Animation/Body/Face"]
 
-transform/pos = Vector2( 29.14, -29.0397 )
-transform/rot = 9.40976
+transform/pos = Vector2( 27.7358, -35.534 )
+transform/rot = 19.4091
 texture = ExtResource( 7 )
 
 [node name="Left Eye" type="Sprite" parent="Sprite/Animation/Body/Face"]
 
-transform/pos = Vector2( -24.2582, -16.8928 )
+transform/pos = Vector2( -22.152, -25.8444 )
 transform/scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 8 )
 
 [node name="Right Eye" type="Sprite" parent="Sprite/Animation/Body/Face"]
 
-transform/pos = Vector2( 27.1973, -17.0359 )
+transform/pos = Vector2( 27.3728, -29.8489 )
 transform/scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 8 )
 
 [node name="Mouth" type="Sprite" parent="Sprite/Animation/Body/Face"]
 
-transform/pos = Vector2( 2.9665, 22.6168 )
+transform/pos = Vector2( 3.66161, 2.4598 )
 transform/scale = Vector2( 0.9625, 0.9625 )
 texture = ExtResource( 9 )
 
 [node name="Right Leg" type="Sprite" parent="Sprite/Animation/Body"]
 
+editor/display_folded = true
 transform/pos = Vector2( 17.1454, 13.0277 )
-transform/rot = -1.91592
+transform/rot = 38.197
 texture = ExtResource( 4 )
 offset = Vector2( -1.72225, 17.8055 )
 
 [node name="Right Foot" type="Sprite" parent="Sprite/Animation/Body/Right Leg"]
 
 transform/pos = Vector2( -2.25239, 35.3849 )
-transform/rot = 100.209
+transform/rot = 42.9917
 transform/scale = Vector2( 1, 0.8 )
 texture = ExtResource( 4 )
 offset = Vector2( -2.55776, 16.1404 )
@@ -6718,34 +6725,36 @@ offset = Vector2( -2.55776, 16.1404 )
 
 editor/display_folded = true
 transform/pos = Vector2( -30.1975, 11.7395 )
+transform/rot = -30.1269
 texture = ExtResource( 4 )
 offset = Vector2( -1.72225, 17.8055 )
 
 [node name="Left Foot" type="Sprite" parent="Sprite/Animation/Body/Left Leg"]
 
 transform/pos = Vector2( -4.91125, 36.1676 )
-transform/rot = -82.4143
+transform/rot = -125.775
 transform/scale = Vector2( 1, 0.7 )
 texture = ExtResource( 4 )
 offset = Vector2( 1.79243, -17.9243 )
 
 [node name="Left Arm" type="Sprite" parent="Sprite/Animation/Body"]
 
-transform/pos = Vector2( -66.2904, -77.3851 )
-transform/rot = -43.5296
+transform/pos = Vector2( -47.6953, -77.0408 )
+transform/rot = 120.159
 texture = ExtResource( 4 )
 offset = Vector2( -1.99024, 18.262 )
 
 [node name="Weapon" type="Sprite" parent="Sprite/Animation/Body/Left Arm"]
 
-transform/pos = Vector2( 6.00391, -0.181496 )
-transform/rot = 48.5044
+transform/pos = Vector2( 60.8076, 113.823 )
+transform/rot = -117.705
 transform/scale = Vector2( 1.2, 1.2 )
 texture = ExtResource( 10 )
 offset = Vector2( 3.92352, -79.9531 )
 
 [node name="Basic Attack Hit Box" type="Area2D" parent="Sprite/Animation/Body/Left Arm/Weapon"]
 
+editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 3.64801, -81.9464 )
@@ -6766,6 +6775,7 @@ _update_shape_index = 0
 
 [node name="Up Skill Hit Box" type="Area2D" parent="Sprite/Animation/Body/Left Arm/Weapon"]
 
+editor/display_folded = true
 transform/pos = Vector2( 2.89313, -140.365 )
 input/pickable = true
 shapes/0/shape = SubResource( 3 )
@@ -6788,8 +6798,9 @@ _update_shape_index = 0
 
 [node name="Left Forearm" type="Sprite" parent="Sprite/Animation/Body/Left Arm"]
 
+editor/display_folded = true
 transform/pos = Vector2( -3.15459, 36.6928 )
-transform/rot = -58.8796
+transform/rot = -161.972
 transform/scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 4 )
 offset = Vector2( 1.84393, -19.0845 )
@@ -6797,21 +6808,22 @@ offset = Vector2( 1.84393, -19.0845 )
 [node name="Hand" type="Sprite" parent="Sprite/Animation/Body/Left Arm/Left Forearm"]
 
 transform/pos = Vector2( 3.23194, -39.9086 )
-transform/rot = 167.501
+transform/rot = 145.763
 texture = ExtResource( 11 )
 offset = Vector2( 6.49008, 6.4641 )
 
 [node name="Weapon Remote Transform" type="RemoteTransform2D" parent="Sprite/Animation/Body/Left Arm/Left Forearm"]
 
-transform/pos = Vector2( -33.5425, -33.6231 )
-transform/rot = 107.384
+transform/pos = Vector2( -46.1896, -116.423 )
+transform/rot = 44.2668
 transform/scale = Vector2( 1.5, 1.5 )
 remote_path = NodePath("../../Weapon")
 
 [node name="Remote Right Arm" type="RemoteTransform2D" parent="Sprite/Animation/Body"]
 
+editor/display_folded = true
 transform/pos = Vector2( 89.5015, -86.9088 )
-transform/rot = 50.4684
+transform/rot = 17.2619
 transform/scale = Vector2( 0.9, 0.9 )
 remote_path = NodePath("../../../Right Arm")
 __meta__ = {
@@ -6820,16 +6832,16 @@ __meta__ = {
 
 [node name="Right Forearm" type="Sprite" parent="Sprite/Animation/Body/Remote Right Arm"]
 
-transform/pos = Vector2( -3.78853, 37.4229 )
-transform/rot = -86.9551
+transform/pos = Vector2( -2.48685, 37.4963 )
+transform/rot = 7.38955
 transform/scale = Vector2( 0.888889, 0.777778 )
 texture = ExtResource( 4 )
 offset = Vector2( -2.25615, 16.4975 )
 
 [node name="Hand" type="Sprite" parent="Sprite/Animation/Body/Remote Right Arm/Right Forearm"]
 
-transform/pos = Vector2( -3.54916, 37.1808 )
-transform/rot = -59.8362
+transform/pos = Vector2( -3.6006, 39.8685 )
+transform/rot = -110.523
 texture = ExtResource( 11 )
 offset = Vector2( 6.3133, 5.42676 )
 
@@ -6844,13 +6856,12 @@ root/root = NodePath("..")
 "anims/Down Skill" = SubResource( 7 )
 "anims/Down Skill Resume" = SubResource( 8 )
 "anims/Horizontal Skill" = SubResource( 9 )
-anims/Hurt = SubResource( 10 )
-anims/Idle = SubResource( 11 )
-anims/Jump = SubResource( 12 )
-anims/Still = SubResource( 13 )
-anims/Stunned = SubResource( 14 )
-"anims/Up Skill" = SubResource( 15 )
-anims/Walk = SubResource( 16 )
+anims/Idle = SubResource( 10 )
+anims/Jump = SubResource( 11 )
+anims/Still = SubResource( 12 )
+anims/Stunned = SubResource( 13 )
+"anims/Up Skill" = SubResource( 14 )
+anims/Walk = SubResource( 15 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -6861,7 +6872,7 @@ autoplay = "Still"
 editor/display_folded = true
 transform/pos = Vector2( 7, 20.8261 )
 input/pickable = true
-shapes/0/shape = SubResource( 17 )
+shapes/0/shape = SubResource( 16 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -6873,7 +6884,7 @@ collision/mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Basic Skill Hit Box"]
 
-shape = SubResource( 17 )
+shape = SubResource( 16 )
 trigger = false
 _update_shape_index = 0
 
@@ -6884,6 +6895,7 @@ transform/pos = Vector2( 75, -70 )
 [node name="Number Spawn Pos" type="Position2D" parent="."]
 
 transform/pos = Vector2( 0, -115.316 )
+script/script = ExtResource( 15 )
 
 [connection signal="area_enter" from="Sprite/Animation/Body/Left Arm/Weapon/Basic Attack Hit Box" to="Combo Handler" method="on_basic_attack_hit"]
 

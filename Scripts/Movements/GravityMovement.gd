@@ -1,12 +1,11 @@
-var dx
-var dy = 0
-var gravity
 var physics_body
+var gravity
 
-func _init(dx, gravity, physics_body):
-    self.dx = dx
-    self.gravity = gravity
+var dy = 0
+
+func _init(physics_body, gravity):
     self.physics_body = physics_body
+    self.gravity = gravity
 
 func movement(curr_pos, delta):
     # If the body is collided with a platform vertically, set cancel the downward speed.
@@ -14,5 +13,5 @@ func movement(curr_pos, delta):
         dy = 0
     else:
         dy += gravity * delta
-        
-    return Vector2(curr_pos.x + dx * delta, curr_pos.y + dy * delta)
+
+    return Vector2(curr_pos.x, curr_pos.y + dy * delta)

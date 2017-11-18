@@ -5,7 +5,7 @@ export(String, FILE) var player_constants_filepath
 # The amount of time (in seconds) to play idle animation.
 const TIME_TO_IDLE_ANIMATION = 5
 
-const HURT_ANIMATION_DURATION = 0.3
+const HURT_MODULATE_DURATION = 0.15
 const DAMAGE_NUMBER_COLOR = Color(255.0 / 255.0, 0.0 / 255.0, 210.0 / 255.0)
 const HEAL_NUMBER_COLOR = Color(110.0 / 255.0, 240.0 / 255.0, 15.0 / 255.0)
 const STUNNED_TEXT_COLOR = Color(180.0 / 255.0, 180.0 / 255.0, 0.0 / 255.0)
@@ -34,8 +34,9 @@ var jump_height_modifier = 1.0 setget set_jump_height_modifier
 var damage_modifier = 1.0
 var defense_modifier = 1.0
 
-# Speed modifier for horizontal movement skills.
-var speed_modifier_x = 0
+# For knockback or movement skills.
+var additional_speed_x = 0
+var additional_speed_x_fading_rate = 0
 
 # Velocity replacement for verticle movement skills (note that the velocity would only be replaced once).
 var velocity_replacement_y = null
@@ -61,10 +62,13 @@ var status = {
 # Calculated in every frame. Some skills may use the value.
 var landed_on_ground = false
 
+var countdown_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
+
 # Active timers for power ups.
 # For cancelling timers for conflicting power ups/state changes.
 # The data should be saved as dictionaries {tag:String -> CountdownTimer}.
 var active_timers = {}
+var hurt_modulate_timer = null
 
 # Child nodes.
 onready var collision_handler = get_node("Collision Handler")
@@ -184,7 +188,10 @@ func update_movement(delta):
 		# Only apply this velocity once.
 		velocity_replacement_y = null
 	
-	velocity.x = horizontal_movement * speed + speed_modifier_x
+	# Reduce additional speed x.
+	additional_speed_x = sign(additional_speed_x) * max(0, abs(additional_speed_x) - abs(delta * additional_speed_x_fading_rate))
+
+	velocity.x = horizontal_movement * speed + additional_speed_x
 	velocity.y += gravity * delta
 	
 	# Pass to the collision handler, and get the collision-modified movement from its return value.
@@ -262,7 +269,7 @@ func play_animation(key):
 
 # Register and unregister common timers for character states.
 func set_status(status_tag, boolean, duration):
-	register_timer(status_tag, preload("res://Scripts/Utils/CountdownTimer.gd").new(duration, self, "reset_status", [status_tag, not boolean]))
+	register_timer(status_tag, countdown_timer.new(duration, self, "reset_status", [status_tag, not boolean]))
 	status[status_tag] = boolean
 
 # The arguments are [status_tag, boolean]
@@ -308,19 +315,42 @@ func stunned(duration):
 	# Play animation.
 	play_animation("Stunned")
 
+func knocked_back(vel_x, vel_y, x_fade_rate):
+	if status.invincible:
+		return
+
+	velocity_replacement_y = vel_y
+	additional_speed_x = vel_x
+	additional_speed_x_fading_rate = x_fade_rate
+
 func damaged(val):
 	if status.invincible:
 		return
 
-	# Damaged animation.
-	set_status("animate_movement", false, HURT_ANIMATION_DURATION)
-	play_animation("Hurt")
+	# Apply modifier.
+	val = val * defense_modifier
+
+	# Damaged animation (modulate color).
+	if hurt_modulate_timer == null:
+		var curr_modulate = null
+		for node_path in player_constants.hurt_modulate_node_path:
+			if curr_modulate == null:
+				curr_modulate = get_node(node_path).get_modulate()
+			get_node(node_path).set_modulate(player_constants.hurt_modulate_color)
+
+		hurt_modulate_timer = countdown_timer.new(HURT_MODULATE_DURATION, self, "recover_modulate", curr_modulate)
+
 
 	# Number indicator.
 	var num = number_indicator.instance()
 	num.initialize(val, DAMAGE_NUMBER_COLOR, number_spawn_pos, self)
 
 	health_system.change_health_by(-val)
+
+func recover_modulate(original_modulate):
+	for node_path in player_constants.hurt_modulate_node_path:
+		get_node(node_path).set_modulate(original_modulate)
+	hurt_modulate_timer = null
 
 func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
 	if status.invincible:

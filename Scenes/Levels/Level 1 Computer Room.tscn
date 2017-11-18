@@ -1,43 +1,40 @@
-[gd_scene load_steps=39 format=1]
+[gd_scene load_steps=36 format=1]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Levels/Computer Room Subscenes/Part 1 Scene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Levels/Computer Room Subscenes/Part 2 Scene.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Red Earspider.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Mouse.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Mousy Bomb.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Amazlet.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Paranoid Android.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Harddies.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Calcasio.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Sonmera.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Canmera.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Batterio.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Sockute.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Laserphone.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Radiogugu.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Eelo Puncher.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Eelo Kicker.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Latortrans.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Scenes/Enemies/Computer Room/ASCII Gunner.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Scenes/Enemies/Computer Room/ASCII Bomber.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Cliffy.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine 1.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine 2.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine 3.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine Red Flag.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine Mine.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Windy Meteory.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Chromoghast.tscn" type="PackedScene" id=29]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Clockwork Fox.tscn" type="PackedScene" id=30]
-[ext_resource path="res://Scenes/Enemies/Computer Room/iSnail.tscn" type="PackedScene" id=31]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Godotbos.tscn" type="PackedScene" id=32]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Plugobra.tscn" type="PackedScene" id=33]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Floopy.tscn" type="PackedScene" id=34]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Eye Mac.tscn" type="PackedScene" id=35]
-[ext_resource path="res://Scripts/CharacterAveragePosition.gd" type="Script" id=36]
-[ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn" type="PackedScene" id=37]
-[ext_resource path="res://Scenes/Utils/Numbers/Number Indicator.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Amazlet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Paranoid Android.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Harddies.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Calcasio.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Sonmera.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Canmera.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Batterio.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Sockute.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Laserphone.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Radiogugu.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Eelo Puncher.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Eelo Kicker.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Latortrans.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Enemies/Computer Room/ASCII Gunner.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Enemies/Computer Room/ASCII Bomber.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Cliffy.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine 1.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine 2.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine 3.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine Red Flag.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine Mine.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Windy Meteory.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Chromoghast.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Clockwork Fox.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/Enemies/Computer Room/iSnail.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Godotbos.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Plugobra.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Floopy.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Eye Mac.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Scripts/CharacterAveragePosition.gd" type="Script" id=33]
+[ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Scenes/Utils/Numbers/Number Indicator.tscn" type="PackedScene" id=35]
 
 [node name="Game Level" type="Node2D"]
 
@@ -72,142 +69,130 @@ transform/pos = Vector2( 7400, -500 )
 
 editor/display_folded = true
 
-[node name="Red Earspider" parent="Enemies" instance=ExtResource( 4 )]
-
-transform/pos = Vector2( 1582, -1318 )
-
-[node name="Mouse" parent="Enemies" instance=ExtResource( 5 )]
-
-transform/pos = Vector2( 782, -818 )
-
-[node name="Mousy Bomb" parent="Enemies" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 1082, -768 )
-
-[node name="Amazlet" parent="Enemies" instance=ExtResource( 7 )]
+[node name="Amazlet" parent="Enemies" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1132, -1018 )
 
-[node name="Paranoid Android" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Paranoid Android" parent="Enemies" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 932, -818 )
 
-[node name="Harddies" parent="Enemies" instance=ExtResource( 9 )]
+[node name="Harddies" parent="Enemies" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 532, -1268 )
 
-[node name="Calcasio" parent="Enemies" instance=ExtResource( 10 )]
+[node name="Calcasio" parent="Enemies" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 832, -968 )
 
-[node name="Sonmera" parent="Enemies" instance=ExtResource( 11 )]
+[node name="Sonmera" parent="Enemies" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 682, -868 )
 
-[node name="Canmera" parent="Enemies" instance=ExtResource( 12 )]
+[node name="Canmera" parent="Enemies" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 1482, -818 )
 
-[node name="Batterio" parent="Enemies" instance=ExtResource( 13 )]
+[node name="Batterio" parent="Enemies" instance=ExtResource( 10 )]
 
 transform/pos = Vector2( 332, -818 )
 
-[node name="Sockute" parent="Enemies" instance=ExtResource( 14 )]
+[node name="Sockute" parent="Enemies" instance=ExtResource( 11 )]
 
 transform/pos = Vector2( 32, -918 )
 
-[node name="Laserphone" parent="Enemies" instance=ExtResource( 15 )]
+[node name="Laserphone" parent="Enemies" instance=ExtResource( 12 )]
 
 transform/pos = Vector2( -168, -1068 )
 
-[node name="Radiogugu" parent="Enemies" instance=ExtResource( 16 )]
+[node name="Radiogugu" parent="Enemies" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 882, -1018 )
 
-[node name="Eelo Puncher" parent="Enemies" instance=ExtResource( 17 )]
+[node name="Eelo Puncher" parent="Enemies" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 232, -1118 )
 
-[node name="Eelo Kicker" parent="Enemies" instance=ExtResource( 18 )]
+[node name="Eelo Kicker" parent="Enemies" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 32, -818 )
 
-[node name="Latortrans" parent="Enemies" instance=ExtResource( 19 )]
+[node name="Latortrans" parent="Enemies" instance=ExtResource( 16 )]
 
 transform/pos = Vector2( 82, -1118 )
 
-[node name="ASCII Gunner" parent="Enemies" instance=ExtResource( 20 )]
+[node name="ASCII Gunner" parent="Enemies" instance=ExtResource( 17 )]
 
 transform/pos = Vector2( 1532, -868 )
 
-[node name="ASCII Bomber" parent="Enemies" instance=ExtResource( 21 )]
+[node name="ASCII Bomber" parent="Enemies" instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 532, -718 )
 
-[node name="Cliffy" parent="Enemies" instance=ExtResource( 22 )]
+[node name="Cliffy" parent="Enemies" instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 932, -968 )
 
-[node name="Flaggomine 1" parent="Enemies" instance=ExtResource( 23 )]
+[node name="Flaggomine 1" parent="Enemies" instance=ExtResource( 20 )]
 
 transform/pos = Vector2( 682, -668 )
 
-[node name="Flaggomine 2" parent="Enemies" instance=ExtResource( 24 )]
+[node name="Flaggomine 2" parent="Enemies" instance=ExtResource( 21 )]
 
 transform/pos = Vector2( 482, -718 )
 
-[node name="Flaggomine 3" parent="Enemies" instance=ExtResource( 25 )]
+[node name="Flaggomine 3" parent="Enemies" instance=ExtResource( 22 )]
 
 transform/pos = Vector2( 482, -718 )
 
-[node name="Flaggomine Red Flag" parent="Enemies" instance=ExtResource( 26 )]
+[node name="Flaggomine Red Flag" parent="Enemies" instance=ExtResource( 23 )]
 
 transform/pos = Vector2( 932, -768 )
 
-[node name="Flaggomine Mine" parent="Enemies" instance=ExtResource( 27 )]
+[node name="Flaggomine Mine" parent="Enemies" instance=ExtResource( 24 )]
 
 transform/pos = Vector2( 732, -818 )
 
-[node name="Windy Meteory" parent="Enemies" instance=ExtResource( 28 )]
+[node name="Windy Meteory" parent="Enemies" instance=ExtResource( 25 )]
 
 transform/pos = Vector2( 832, -1518 )
 
-[node name="Chromoghast" parent="Enemies" instance=ExtResource( 29 )]
+[node name="Chromoghast" parent="Enemies" instance=ExtResource( 26 )]
 
 transform/pos = Vector2( 782, -968 )
 
-[node name="Clockwork Fox" parent="Enemies" instance=ExtResource( 30 )]
+[node name="Clockwork Fox" parent="Enemies" instance=ExtResource( 27 )]
 
 transform/pos = Vector2( 682, -868 )
 
-[node name="iSnail" parent="Enemies" instance=ExtResource( 31 )]
+[node name="iSnail" parent="Enemies" instance=ExtResource( 28 )]
 
 transform/pos = Vector2( 482, -718 )
 
-[node name="Godotbos" parent="Enemies" instance=ExtResource( 32 )]
+[node name="Godotbos" parent="Enemies" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 1182, -1268 )
 
-[node name="Plugobra" parent="Enemies" instance=ExtResource( 33 )]
+[node name="Plugobra" parent="Enemies" instance=ExtResource( 30 )]
 
 transform/pos = Vector2( 482, -718 )
 
-[node name="Floopy" parent="Enemies" instance=ExtResource( 34 )]
+[node name="Floopy" parent="Enemies" instance=ExtResource( 31 )]
 
 transform/pos = Vector2( 832, -968 )
 
-[node name="Eye Mac" parent="Enemies" instance=ExtResource( 35 )]
+[node name="Eye Mac" parent="Enemies" instance=ExtResource( 32 )]
 
 transform/pos = Vector2( 1182, -1368 )
 
 [node name="Character Average Position" type="Position2D" parent="."]
 
-script/script = ExtResource( 36 )
+script/script = ExtResource( 33 )
 
-[node name="Keshia Erasia" parent="." instance=ExtResource( 37 )]
+[node name="Keshia Erasia" parent="." instance=ExtResource( 34 )]
 
 transform/pos = Vector2( 200, -250 )
 
-[node name="Number Indicator" parent="." instance=ExtResource( 38 )]
+[node name="Number Indicator" parent="." instance=ExtResource( 35 )]
 
 
