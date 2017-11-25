@@ -2,6 +2,7 @@ const CHECK_ACTIVATE_IN_SECS = 1
 const DAMAGE_NUMBER_COLOR = Color(1.0, 0.0, 0.0)
 const HEAL_NUMBER_COLOR = Color(0.0, 100.0 / 255.0, 0.0)
 const STUNNED_TEXT_COLOR = Color(1.0, 1.0, 0.0)
+const IMMUNE_TEXT_COLOR = Color(255.0 / 255.0, 200.0 / 255.0, 0.0 / 255.0)
 const HURT_ANIM_DURATION = 0.3
 
 # Some commonly used scripts.
@@ -11,7 +12,7 @@ var target_detect = preload("res://Scripts/Algorithms/TargetDetection.gd")
 var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 
 # Movement types.
-var stright_line_movement = preload("res://Scripts/Movements/StraightLineMovement.gd")
+var straight_line_movement = preload("res://Scripts/Movements/StraightLineMovement.gd")
 var random_movement = preload("res://Scripts/Movements/RandomMovement.gd")
 var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd")
 
@@ -76,7 +77,11 @@ func not_hurt_dying_stunned():
     var key = animator.get_current_animation()
     return key != "Hurt" && key != "Die" && key != "Stunned"
 
-func damaged(val):
+func change_and_refill_full_health(full_health):
+    health_system.full_health = full_health
+    health_system.health = full_health
+
+func damaged(val, play_hurt_animation = true):
     health_system.change_health_by(-val)
 
     # Damage number indicator.
@@ -90,7 +95,7 @@ func damaged(val):
         hurt_timer = null
 
     # Won't play hurt animation if it is stunned.
-    if animator.get_current_animation() != "Stunned":
+    if play_hurt_animation && animator.get_current_animation() != "Stunned":
         play_animation("Hurt")
         hurt_timer = cd_timer.new(HURT_ANIM_DURATION, node, "resume_from_damaged")
 
@@ -128,9 +133,29 @@ func resume_from_stunned():
     play_animation("Still")
     stun_timer = null
 
+func display_immune_text():
+    var immune_text = num_indicator.instance()
+    immune_text.initialize(-2, IMMUNE_TEXT_COLOR, number_spawn_pos, node)
+
 func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
     health_system.change_health_over_time_by(time_per_tick, total_ticks, -damage_per_tick) 
-    
+
+func healed(val):
+    health_system.change_health_by(val)
+
+    # Damage number indicator.
+    var number = num_indicator.instance()
+    number.initialize(val, HEAL_NUMBER_COLOR, number_spawn_pos, node)
+
+    # Show health bar.
+    if health_system.health > 0:
+        health_bar.set_health_bar_and_show(float(health_system.health) / float(health_system.full_health))
+    else:
+        health_bar.queue_free()
+
+func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
+    health_system.change_health_over_time_by(time_per_tick, total_ticks, heal_per_tick)
+
 func die():
     # Can't be hurt any more.
     node.get_node("Animation/Damage Area").remove_from_group("enemy_collider")

@@ -22,12 +22,12 @@
 custom_solver_bias = 0.0
 extents = Vector2( 82.3215, 22.2797 )
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 93.7292, 40.888 )
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=3]
 
 resource/name = "Close Lid"
 length = 1.0
@@ -554,7 +554,7 @@ tracks/51/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=4]
 
 length = 0.5
 loop = false
@@ -1080,7 +1080,7 @@ tracks/51/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=5]
 
 length = 0.1
 loop = false
@@ -1606,7 +1606,7 @@ tracks/51/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=6]
 
 length = 1.0
 loop = false
@@ -2152,7 +2152,7 @@ tracks/53/keys = {
 "values": [ 11.4265, 15.539 ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=7]
 
 length = 0.1
 loop = false
@@ -3754,7 +3754,12 @@ _update_shape_index = 0
 
 [node name="Animation" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, 6 )
+
+[node name="Mousy Spawn Pos" type="Position2D" parent="Animation"]
+
+transform/pos = Vector2( -72.8, 26.3 )
 
 [node name="Mousy Bomb" type="Sprite" parent="Animation"]
 
@@ -3768,7 +3773,7 @@ texture = ExtResource( 3 )
 ]]
 
 input/pickable = true
-shapes/0/shape = SubResource( 10 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.725464, -0.0739708 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -3781,7 +3786,7 @@ collision/mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area"]
 
 transform/pos = Vector2( 0.725464, -0.0739708 )
-shape = SubResource( 10 )
+shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
@@ -3948,11 +3953,11 @@ offset = Vector2( -46.1412, 3.06131 )
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-"anims/Close Lid" = SubResource( 16 )
-anims/Die = SubResource( 12 )
-anims/Hurt = SubResource( 13 )
-"anims/Open Lid" = SubResource( 14 )
-anims/Still = SubResource( 15 )
+"anims/Close Lid" = SubResource( 3 )
+anims/Die = SubResource( 4 )
+anims/Hurt = SubResource( 5 )
+"anims/Open Lid" = SubResource( 6 )
+anims/Still = SubResource( 7 )
 anims/Stunned = SubResource( 8 )
 anims/Walk = SubResource( 9 )
 playback/active = true
@@ -3964,9 +3969,5 @@ autoplay = "Still"
 
 transform/pos = Vector2( 0.620667, -83.7903 )
 script/script = ExtResource( 16 )
-
-[node name="Mousy Spawn Pos" type="Position2D" parent="."]
-
-transform/pos = Vector2( -72.8, 32.3 )
 
 

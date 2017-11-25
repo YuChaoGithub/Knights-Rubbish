@@ -24,7 +24,6 @@ func _init(dx, dy, always_change_dir = true, min_steps = 2, max_steps = 4, min_t
     self.min_time_per_step = min_time_per_step
     self.max_time_per_step = max_time_per_step
     
-    rng.init_rand()
     generate_random_movements()
 
 func generate_random_movements():

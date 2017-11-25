@@ -10,7 +10,7 @@ extends KinematicBody2D
 
 enum { NONE, SEARCH, MOVE, ATTACK }
 
-const MAX_HEALTH = 350
+const MAX_HEALTH = 200
 
 const ACTIVATE_RANGE = 1000
 
@@ -36,18 +36,14 @@ const ATTACK_ANIMATION_DURATION = 0.65
 var attack_hit = false
 var status_timer = null
 var turn_stagger_timer = null
-var die_timer = null
 var attack_target = null
 var facing = -1
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
-onready var movement_type = ec.stright_line_movement.new(facing * SPEED_X, 0)
+onready var movement_type = ec.straight_line_movement.new(facing * SPEED_X, 0)
 onready var gravity_movement = ec.gravity_movement.new(self, GRAVITY)
 
 func activate():
-    # For staggered movement.
-    ec.rng.init_rand()
-
     set_process(true)
 
     ec.change_status(SEARCH)
@@ -64,8 +60,13 @@ func _process(delta):
         elif ec.status == ATTACK:
             attack()
 
+    apply_gravity(delta)
+
 func change_status(to_status):
     ec.change_status(to_status)
+
+func apply_gravity(delta):
+    move_to(gravity_movement.movement(get_global_pos(), delta))
 
 func search_for_target():
     ec.play_animation("Searching")
@@ -91,7 +92,6 @@ func apply_movement(delta):
             turn_stagger_timer = ec.cd_timer.new(ec.rng.randf_range(TURN_STAGGER_MIN_DELAY, TURN_STAGGER_MAX_DELAY), self, "turn_and_set_stagger_timer_to_null")
     
     var final_pos = movement_type.movement(get_global_pos(), delta)
-    final_pos = gravity_movement.movement(final_pos, delta)
     move_to(final_pos)
 
     # If the target is in attack range, switch to attack state.
@@ -119,16 +119,16 @@ func turn_and_set_stagger_timer_to_null():
 
 # Called when damaged by characters' attack.
 func damaged(val):
-    ec.damaged(val)
     ec.change_status(MOVE)
+    ec.damaged(val)
 
 func resume_from_damaged():
     ec.resume_from_damaged()
 
 # Called when stunned by characters' attack.
 func stunned(duration):
-    ec.stunned(duration)
-    ec.change_status(MOVE)   
+    ec.change_status(MOVE)
+    ec.stunned(duration)   
     
 func resume_from_stunned():
     ec.resume_from_stunned()
@@ -142,12 +142,11 @@ func die():
     ec.die()
     status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
 
-# Cannot be healed.
 func healed(val):
-    pass
+    ec.healed(val)
 
 func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
-    pass
+    ec.healed_over_time(time_per_tick, total_ticks, heal_per_tick)
 
 func on_attack_hit(area):
     if !attack_hit && area.is_in_group("player_collider"):

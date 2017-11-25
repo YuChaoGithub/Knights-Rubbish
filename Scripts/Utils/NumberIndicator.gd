@@ -4,6 +4,8 @@ const MOVEMENT_Y = -100
 const SHOW_DURATION = 1
 const SPRITE_WIDTH = 75
 
+enum { STUNNED = -1, IMMUNE = -2 }
+
 var number_scenes = [
 	preload("res://Scenes/Utils/Numbers/Number 0.tscn"),
 	preload("res://Scenes/Utils/Numbers/Number 1.tscn"),
@@ -17,6 +19,7 @@ var number_scenes = [
 	preload("res://Scenes/Utils/Numbers/Number 9.tscn")
 ]
 var stunned_scene = preload("res://Scenes/Utils/Numbers/Stunned.tscn")
+var immune_scene = preload("res://Scenes/Utils/Numbers/Immune.tscn")
 
 var number_instances = []
 var timepassed = 0.0
@@ -33,10 +36,12 @@ func initialize(number, color, pos, node):
 	 
 	set_global_pos(pos.get_curr_pos(self))
 
-	if number > 0:
-		instance_numbers(number)
-	else:    # Stunned text.
+	if number == STUNNED:
 		instance_stunned_text()
+	elif number == IMMUNE:
+		instance_immune_text()
+	else:
+		instance_numbers(number)		
 	
 	settle_positions()
 	add_numbers_as_children()
@@ -54,6 +59,10 @@ func instance_numbers(number):
 func instance_stunned_text():
 	var stunned_text = stunned_scene.instance()
 	number_instances.push_back(stunned_text)
+
+func instance_immune_text():
+	var immune_text = immune_scene.instance()
+	number_instances.push_back(immune_text)
 
 func settle_positions():
 	var len = number_instances.size()

@@ -244,3 +244,26 @@ Comment: **I AM A CODE REFACTORING KING!!!**
 Comment: Wow, what an effective day.
 
 **Commit**
+
+[2017.11.20]
+* Scripted Amazlet, Paranoid Android, Amazlet Frizbee.
+* Added `is_landed()` to `GravityMovement.gd`.
+* Modified `MousyBomb.gd` so that it would be freed after a centain time if it didn't hit a character.
+
+[2017.11.22]
+* Added `healed(val)` and `healed_over_time(...)` in every mob, since they might be healed somehow.
+* Number Indicator can now show "Immune" text for stun or damage immune.
+* Added `InitRandom.gd` so that the random number generator is only randomized once.
+
+[2017.11.23]
+* Completed scripting Harddies and Harddies Ring.
+
+[2017.11.24]
+* Scripted some Calcasio behaviors.
+
+[2017.11.25]
+* Fixed a bug that mobs aren't `queue_free`ed as expected. (So hard to find the bug...it appears that there are some sequentially wrong design between *die* and *damaged*)
+* Separated gravity movement from horizontal movement from CDPunch and Mouse so that they won't be stun locked in the middle of the air.
+* Completed scripting Calcasio and Calcasio Bullet. Cool.
+
+**Commit**

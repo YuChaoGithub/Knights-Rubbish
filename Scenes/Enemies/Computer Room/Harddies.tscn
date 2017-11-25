@@ -1,17 +1,50 @@
-[gd_scene load_steps=17 format=1]
+[gd_scene load_steps=27 format=1]
 
-[ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Shocked.png" type="Texture" id=1]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Eye.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Eyeball.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Ring.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Wing.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Body.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/Enemies/Computer Room/Harddies.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Body.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Eye.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Eyeball.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Ring.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Wing.png" type="Texture" id=6]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Hand Foot.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Shocked.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=11]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 
-resource/name = "Die"
+custom_solver_bias = 0.0
+extents = Vector2( 72.7447, 123.681 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 76.2103, 130.848 )
+
+[sub_resource type="RectangleShape2D" id=14]
+
+custom_solver_bias = 0.0
+extents = Vector2( 71.2131, 103.511 )
+
+[sub_resource type="CanvasItemShader" id=3]
+
+_code = {
+"fragment": "",
+"fragment_ofs": 0,
+"light": "",
+"light_ofs": 0,
+"vertex": "",
+"vertex_ofs": 0
+}
+
+[sub_resource type="CanvasItemMaterial" id=4]
+
+shader/shader = SubResource( 3 )
+shader/shading_mode = 0
+
+[sub_resource type="Animation" id=5]
+
 length = 0.8
 loop = false
 step = 0.1
@@ -163,7 +196,7 @@ tracks/14/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 6 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body:modulate")
@@ -183,7 +216,7 @@ tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Face/Left Eye/Eyeball:transform/scale")
@@ -213,7 +246,7 @@ tracks/19/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/20/type = "value"
 tracks/20/path = NodePath("Body/Ring:visibility/visible")
@@ -336,9 +369,8 @@ tracks/31/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=6]
 
-resource/name = "Fly"
 length = 1.0
 loop = true
 step = 0.1
@@ -490,7 +522,7 @@ tracks/14/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 6 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body:modulate")
@@ -510,7 +542,7 @@ tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Face/Left Eye/Eyeball:transform/scale")
@@ -540,7 +572,7 @@ tracks/19/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/20/type = "value"
 tracks/20/path = NodePath("Body/Ring:visibility/visible")
@@ -663,9 +695,8 @@ tracks/31/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=7]
 
-resource/name = "Hurt"
 length = 0.1
 loop = false
 step = 0.1
@@ -817,7 +848,7 @@ tracks/14/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 6 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body:modulate")
@@ -990,9 +1021,8 @@ tracks/31/keys = {
 "values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 
-resource/name = "Stiff"
 length = 0.1
 loop = false
 step = 0.1
@@ -1144,7 +1174,7 @@ tracks/14/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body:modulate")
@@ -1164,7 +1194,7 @@ tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Face/Left Eye/Eyeball:transform/scale")
@@ -1194,7 +1224,7 @@ tracks/19/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/20/type = "value"
 tracks/20/path = NodePath("Body/Ring:visibility/visible")
@@ -1317,9 +1347,335 @@ tracks/31/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 
-resource/name = "Stiff Hurt"
+resource/name = "Stiff Die"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Body/Face/Right Eye/Eyeball:transform/pos")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2.95596, 4.08894 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Body/Face/Right Eye/Eyeball:transform/rot")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Body:transform/pos")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Body:transform/rot")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Body/Face/Left Eye:transform/pos")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -31.0494, -48.1266 ), Vector2( -19.1465, 112.743 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Body/Face/Left Eye:transform/rot")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Body/Ring:transform/pos")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -5.78311, -146.58 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Body/Ring:transform/rot")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Body/Face/Right Eye:transform/pos")
+tracks/8/interp = 1
+tracks/8/imported = false
+tracks/8/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 25.1501, -49.9896 ), Vector2( 7.47609, 111.601 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Body/Face/Right Eye:transform/rot")
+tracks/9/interp = 1
+tracks/9/imported = false
+tracks/9/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Body/Face:transform/pos")
+tracks/10/interp = 1
+tracks/10/imported = false
+tracks/10/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Body/Face:transform/rot")
+tracks/11/interp = 1
+tracks/11/imported = false
+tracks/11/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Body/Face/Left Eye/Eyeball:transform/pos")
+tracks/12/interp = 1
+tracks/12/imported = false
+tracks/12/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.35641, 2.44374 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Body/Face/Left Eye/Eyeball:transform/rot")
+tracks/13/interp = 1
+tracks/13/imported = false
+tracks/13/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Body:texture")
+tracks/14/interp = 1
+tracks/14/imported = false
+tracks/14/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Body:modulate")
+tracks/15/interp = 1
+tracks/15/imported = false
+tracks/15/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Body/Face/Left Eye/Eyeball:texture")
+tracks/16/interp = 1
+tracks/16/imported = false
+tracks/16/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Body/Face/Left Eye/Eyeball:transform/scale")
+tracks/17/interp = 1
+tracks/17/imported = false
+tracks/17/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Body/Face/Right Eye/Eyeball:transform/scale")
+tracks/18/interp = 1
+tracks/18/imported = false
+tracks/18/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Body/Face/Right Eye/Eyeball:texture")
+tracks/19/interp = 1
+tracks/19/imported = false
+tracks/19/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 4 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Body/Ring:visibility/visible")
+tracks/20/interp = 1
+tracks/20/imported = false
+tracks/20/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Body/Left Wing:visibility/visible")
+tracks/21/interp = 1
+tracks/21/imported = false
+tracks/21/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Body/Right Wing:visibility/visible")
+tracks/22/interp = 1
+tracks/22/imported = false
+tracks/22/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Body/Left Wing:modulate")
+tracks/23/interp = 1
+tracks/23/imported = false
+tracks/23/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Body/Right Wing:modulate")
+tracks/24/interp = 1
+tracks/24/imported = false
+tracks/24/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Body/Ring:modulate")
+tracks/25/interp = 1
+tracks/25/imported = false
+tracks/25/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Body/Right Wing:transform/pos")
+tracks/26/interp = 1
+tracks/26/imported = false
+tracks/26/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 80.9536, -3.4734 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Body/Right Wing:transform/rot")
+tracks/27/interp = 1
+tracks/27/imported = false
+tracks/27/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Body/Left Wing:transform/pos")
+tracks/28/interp = 1
+tracks/28/imported = false
+tracks/28/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -79.6426, 1.54048 ) ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("Body/Left Wing:transform/rot")
+tracks/29/interp = 1
+tracks/29/imported = false
+tracks/29/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("Body/Face/Left Eye:modulate")
+tracks/30/interp = 1
+tracks/30/imported = false
+tracks/30/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("Body/Face/Right Eye:modulate")
+tracks/31/interp = 1
+tracks/31/imported = false
+tracks/31/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+
 length = 0.1
 loop = false
 step = 0.1
@@ -1471,7 +1827,7 @@ tracks/14/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body:modulate")
@@ -1491,7 +1847,7 @@ tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Face/Left Eye/Eyeball:transform/scale")
@@ -1521,7 +1877,7 @@ tracks/19/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/20/type = "value"
 tracks/20/path = NodePath("Body/Ring:visibility/visible")
@@ -1644,9 +2000,8 @@ tracks/31/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=11]
 
-resource/name = "Still"
 length = 0.1
 loop = false
 step = 0.1
@@ -1798,7 +2153,7 @@ tracks/14/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 6 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body:modulate")
@@ -1818,7 +2173,7 @@ tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Face/Left Eye/Eyeball:transform/scale")
@@ -1848,7 +2203,7 @@ tracks/19/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/20/type = "value"
 tracks/20/path = NodePath("Body/Ring:visibility/visible")
@@ -1971,9 +2326,8 @@ tracks/31/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=12]
 
-resource/name = "Stunned"
 length = 1.5
 loop = true
 step = 0.1
@@ -2125,7 +2479,7 @@ tracks/14/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 6 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body:modulate")
@@ -2145,7 +2499,7 @@ tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Face/Left Eye/Eyeball:transform/scale")
@@ -2175,7 +2529,7 @@ tracks/19/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/20/type = "value"
 tracks/20/path = NodePath("Body/Ring:visibility/visible")
@@ -2298,9 +2652,8 @@ tracks/31/keys = {
 "values": [ Color( 1, 1, 0.784314, 1 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=13]
 
-resource/name = "Toss Ring"
 length = 3.0
 loop = false
 step = 0.1
@@ -2452,7 +2805,7 @@ tracks/14/keys = {
 "times": FloatArray( 0, 3 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 6 ), ExtResource( 1 ) ]
+"values": [ ExtResource( 2 ), ExtResource( 8 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body:modulate")
@@ -2472,7 +2825,7 @@ tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Face/Left Eye/Eyeball:transform/scale")
@@ -2502,7 +2855,7 @@ tracks/19/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/20/type = "value"
 tracks/20/path = NodePath("Body/Ring:visibility/visible")
@@ -2625,58 +2978,118 @@ tracks/31/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="Harddies" type="Node2D"]
+[sub_resource type="RectangleShape2D" id=15]
+
+custom_solver_bias = 0.0
+extents = Vector2( 66.6453, 120.995 )
+
+[node name="Harddies" type="KinematicBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 16
+collision/mask = 2
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+
+[node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
 
 [node name="Animation" type="Node2D" parent="."]
 
+[node name="Ring Spawn Pos" type="Position2D" parent="Animation"]
+
+transform/pos = Vector2( -57, -146.5 )
+
+[node name="Damage Area" type="Area2D" parent="Animation"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 16
+collision/mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area"]
+
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Attack Area" type="Area2D" parent="Animation"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 14 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.20416, 18.4691 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Attack Area"]
+
+transform/pos = Vector2( 1.20416, 18.4691 )
+shape = SubResource( 14 )
+trigger = false
+_update_shape_index = 0
+
 [node name="Body" type="Sprite" parent="Animation"]
 
-texture = ExtResource( 1 )
-modulate = Color( 1, 0.588235, 0.588235, 1 )
+editor/display_folded = true
+material/material = SubResource( 4 )
+texture = ExtResource( 2 )
 
 [node name="Face" type="Node2D" parent="Animation/Body"]
 
 [node name="Left Eye" type="Sprite" parent="Animation/Body/Face"]
 
 transform/pos = Vector2( -31.0494, -48.1266 )
-texture = ExtResource( 2 )
-modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 3 )
 
 [node name="Eyeball" type="Sprite" parent="Animation/Body/Face/Left Eye"]
 
-transform/pos = Vector2( 1.35641, 2.44374 )
-texture = ExtResource( 3 )
+transform/pos = Vector2( 2.35629, 2.7514 )
+texture = ExtResource( 4 )
 
 [node name="Right Eye" type="Sprite" parent="Animation/Body/Face"]
 
 transform/pos = Vector2( 25.1501, -49.9896 )
-texture = ExtResource( 2 )
-modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 3 )
 
 [node name="Eyeball" type="Sprite" parent="Animation/Body/Face/Right Eye"]
 
-transform/pos = Vector2( 2.95596, 4.08894 )
-texture = ExtResource( 3 )
+transform/pos = Vector2( -0.889709, 3.78128 )
+texture = ExtResource( 4 )
 
 [node name="Ring" type="Sprite" parent="Animation/Body"]
 
-visibility/visible = false
 transform/pos = Vector2( -5.78311, -146.58 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="Left Wing" type="Sprite" parent="Animation/Body"]
 
-visibility/visible = false
 transform/pos = Vector2( -79.6426, 1.54048 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( -43.5824, -18.8898 )
 
 [node name="Right Wing" type="Sprite" parent="Animation/Body"]
 
-visibility/visible = false
 transform/pos = Vector2( 80.9536, -3.4734 )
 transform/scale = Vector2( -1, 1 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( -43.3834, -17.6572 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
@@ -2684,17 +3097,49 @@ offset = Vector2( -43.3834, -17.6572 )
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Die = SubResource( 4 )
-anims/Fly = SubResource( 1 )
-anims/Hurt = SubResource( 5 )
-anims/Stiff = SubResource( 7 )
-"anims/Stiff Hurt" = SubResource( 8 )
-anims/Still = SubResource( 2 )
-anims/Stunned = SubResource( 3 )
-"anims/Toss Ring" = SubResource( 6 )
+anims/Die = SubResource( 5 )
+anims/Fly = SubResource( 6 )
+anims/Hurt = SubResource( 7 )
+anims/Stiff = SubResource( 8 )
+"anims/Stiff Die" = SubResource( 9 )
+"anims/Stiff Hurt" = SubResource( 10 )
+anims/Still = SubResource( 11 )
+anims/Stunned = SubResource( 12 )
+"anims/Toss Ring" = SubResource( 13 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "Still"
+
+[node name="Number Spawn Pos" type="Position2D" parent="."]
+
+transform/pos = Vector2( -0.574585, -147.664 )
+script/script = ExtResource( 10 )
+
+[node name="Health Bar" parent="." instance=ExtResource( 11 )]
+
+transform/pos = Vector2( 1.14911, -191.331 )
+
+[node name="Platform" type="StaticBody2D" parent="."]
+
+editor/display_folded = true
+input/pickable = false
+shapes/0/shape = SubResource( 15 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 0
+collision/mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+
+shape = SubResource( 15 )
+trigger = false
+_update_shape_index = 0
+
+[connection signal="area_enter" from="Animation/Attack Area" to="." method="on_attack_hit"]
 
 

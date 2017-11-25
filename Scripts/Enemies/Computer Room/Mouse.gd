@@ -35,7 +35,7 @@ var curr_rand_movement = null
 var facing = -1
 
 var mousy_bomb = preload("res://Scenes/Enemies/Computer Room/Mousy Bomb.tscn")
-onready var mousy_spawn_pos = get_node("Mousy Spawn Pos")
+onready var mousy_spawn_pos = get_node("Animation/Mousy Spawn Pos")
 onready var mousy_parent_node = get_node("..")
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
@@ -60,8 +60,13 @@ func _process(delta):
 		elif ec.status == CLOSE:
 			close_lid()
 
+	apply_gravity(delta)
+
 func change_status(to_status):
 	ec.change_status(to_status)
+
+func apply_gravity(delta):
+	move_to(gravity_movement.movement(get_global_pos(), delta))
 
 func perform_movement(delta):
 	ec.play_animation("Walk")
@@ -72,7 +77,6 @@ func perform_movement(delta):
 	if !curr_rand_movement.movement_ended():
 		# Perform random movement sequence.
 		var final_pos = curr_rand_movement.movement(get_global_pos(), delta)
-		final_pos = gravity_movement.movement(final_pos, delta)
 		
 		# Turn sprite if it is moving in a different direction.
 		if final_pos.x < get_global_pos().x:
@@ -95,7 +99,7 @@ func open_lid():
 func spawn_mousy():
 	var new_mousy = mousy_bomb.instance()
 	new_mousy.facing = facing
-	new_mousy.set_pos(get_pos() + mousy_spawn_pos.get_pos())
+	new_mousy.set_global_pos(mousy_spawn_pos.get_global_pos())
 	mousy_parent_node.add_child(new_mousy)
 
 	ec.change_status(NONE)
@@ -112,21 +116,27 @@ func close_lid():
 	status_timer = ec.cd_timer.new(CLOSE_ANIMATION_DURATION, self, "change_status", MOVE)
 
 func damaged(val):
-	ec.damaged(val)
 	ec.change_status(MOVE)
+	ec.damaged(val)
 
 func resume_from_damaged():
 	ec.resume_from_damaged()
 
 func stunned(duration):
-	ec.stunned(duration)
 	ec.change_status(MOVE)
+	ec.stunned(duration)
 
 func resume_from_stunned():
 	ec.resume_from_stunned()
 
 func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
 	ec.damaged_over_time(time_per_tick, total_ticks, damage_per_tick)
+
+func healed(val):
+	ec.healed(val)
+
+func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
+	ec.healed_over_time(time_per_tick, total_ticks, heal_per_tick)
 
 func die():
 	ec.die()

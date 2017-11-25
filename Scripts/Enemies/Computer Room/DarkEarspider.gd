@@ -48,7 +48,7 @@ onready var silk_attach_spot = get_node("Animation/Body/Silk Pos")
 onready var silk_attach_spot_original_pos = silk_attach_spot.get_global_pos()
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
-onready var movement_type = ec.stright_line_movement.new(0, 0)
+onready var movement_type = ec.straight_line_movement.new(0, 0)
 
 func activate():
 	set_process(true)
@@ -150,29 +150,28 @@ func perform_random_movement(delta):
 		ec.change_status(MOVE)
 
 func damaged(val):
-	ec.damaged(val)
 	ec.change_status(CLIMB)
+	ec.damaged(val)
 
 func resume_from_damaged():
 	ec.resume_from_damaged()
 
 func stunned(duration):
-	ec.stunned(duration)
 	ec.change_status(CLIMB)
+	ec.stunned(duration)
 
 func resume_from_stunned():
-	ec.resume_from_damaged()
+	ec.resume_from_stunned()
 
-func damaged_over_time(timer_per_tick, total_ticks, damage_per_tick):
-	ec.damaged_over_time(timer_per_tick, total_ticks, damage_per_tick)
+func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
+	ec.damaged_over_time(time_per_tick, total_ticks, damage_per_tick)
 
 func die():
 	ec.die()
 	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
 
-# Can't be healed.
 func healed(val):
-	pass
+	ec.healed(val)
 
 func healed_over_time(time_per_tick, total_tick, heal_per_tick):
-	pass
+	ec.healed_over_time(time_per_tick, total_tick, heal_per_tick)

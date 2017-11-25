@@ -1,20 +1,38 @@
-[gd_scene load_steps=23 format=1]
+[gd_scene load_steps=29 format=1]
 
-[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/amazon tablet.png" type="Texture" id=1]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Face/Eye.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Face/Eyebrow.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Face/Wrinkle.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Face/Teeth.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Robot Spawn/Totem.png" type="Texture" id=6]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Robot Spawn/Robot Hat.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Robot Spawn/Robot Head.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Robot Spawn/Robot Body.png" type="Texture" id=9]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Robot Spawn/Robot Legs.png" type="Texture" id=10]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Acc/A.png" type="Texture" id=11]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Acc/C.png" type="Texture" id=12]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Acc/dot.png" type="Texture" id=13]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Acc/Accelerator.png" type="Texture" id=14]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Amazlet Flat.png" type="Texture" id=15]
+[ext_resource path="res://Scripts/Enemies/Computer Room/Amazlet.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/amazon tablet.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Face/Eye.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Face/Eyebrow.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Face/Wrinkle.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Face/Teeth.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Robot Spawn/Totem.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Robot Spawn/Robot Hat.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Robot Spawn/Robot Head.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Robot Spawn/Robot Body.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Robot Spawn/Robot Legs.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Acc/A.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Acc/C.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Acc/dot.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Acc/Accelerator.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Amazlet Flat.png" type="Texture" id=16]
+[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=17]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=18]
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 142.179, 242.761 )
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 128.265, 227.42 )
+
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 244.908, 11.227 )
 
 [sub_resource type="Animation" id=1]
 
@@ -422,8 +440,18 @@ tracks/39/keys = {
 "update": 0,
 "values": [ -90.6767, -90.6767, -90.6767, -180.414 ]
 }
+tracks/40/type = "value"
+tracks/40/path = NodePath("Flat/Platform After Dead:collision/layers")
+tracks/40/interp = 1
+tracks/40/imported = false
+tracks/40/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 2 ]
+}
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 
 resource/name = "Face"
 length = 1.6
@@ -829,8 +857,18 @@ tracks/39/keys = {
 "update": 0,
 "values": [ -90.6767 ]
 }
+tracks/40/type = "value"
+tracks/40/path = NodePath("Flat/Platform After Dead:collision/layers")
+tracks/40/interp = 1
+tracks/40/imported = false
+tracks/40/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 
 resource/name = "Face Coming Back"
 length = 0.5
@@ -1236,10 +1274,19 @@ tracks/39/keys = {
 "update": 0,
 "values": [ -90.6767 ]
 }
+tracks/40/type = "value"
+tracks/40/path = NodePath("Flat/Platform After Dead:collision/layers")
+tracks/40/interp = 1
+tracks/40/imported = false
+tracks/40/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 
-resource/name = "Hurt"
 length = 0.1
 loop = false
 step = 0.1
@@ -1643,10 +1690,19 @@ tracks/39/keys = {
 "update": 0,
 "values": [ -90.6767 ]
 }
+tracks/40/type = "value"
+tracks/40/path = NodePath("Flat/Platform After Dead:collision/layers")
+tracks/40/interp = 1
+tracks/40/imported = false
+tracks/40/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 
-resource/name = "Spawn Android"
 length = 4.0
 loop = false
 step = 0.1
@@ -2050,10 +2106,19 @@ tracks/39/keys = {
 "update": 0,
 "values": [ -90.6767 ]
 }
+tracks/40/type = "value"
+tracks/40/path = NodePath("Flat/Platform After Dead:collision/layers")
+tracks/40/interp = 1
+tracks/40/imported = false
+tracks/40/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=6]
 
-resource/name = "Still"
 length = 0.1
 loop = true
 step = 0.1
@@ -2456,6 +2521,16 @@ tracks/39/keys = {
 "transitions": FloatArray( 1 ),
 "update": 0,
 "values": [ -90.6767 ]
+}
+tracks/40/type = "value"
+tracks/40/path = NodePath("Flat/Platform After Dead:collision/layers")
+tracks/40/interp = 1
+tracks/40/imported = false
+tracks/40/keys = {
+"times": FloatArray( 0.1 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -2864,92 +2939,137 @@ tracks/39/keys = {
 "update": 0,
 "values": [ -90.6767 ]
 }
+tracks/40/type = "value"
+tracks/40/path = NodePath("Flat/Platform After Dead:collision/layers")
+tracks/40/interp = 1
+tracks/40/imported = false
+tracks/40/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
 [node name="Amazlet" type="Node2D"]
 
+transform/scale = Vector2( 2, 2 )
+script/script = ExtResource( 1 )
+
 [node name="Animation" type="Node2D" parent="."]
 
+transform/pos = Vector2( -1.18921, 1.18921 )
+
+[node name="Damage Area" type="Area2D" parent="Animation"]
+
 editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 16
+collision/mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area"]
+
+shape = SubResource( 8 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Attack Area" type="Area2D" parent="Animation"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 9 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Attack Area"]
+
+shape = SubResource( 9 )
+trigger = false
+_update_shape_index = 0
 
 [node name="Body" type="Sprite" parent="Animation"]
 
 editor/display_folded = true
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 
 [node name="Face Screen" type="Node2D" parent="Animation/Body"]
 
 [node name="Left Eye" type="Sprite" parent="Animation/Body/Face Screen"]
 
-transform/pos = Vector2( -92.464, -173.016 )
-texture = ExtResource( 2 )
-modulate = Color( 1, 1, 1, 0 )
+transform/pos = Vector2( -50.2532, -61.681 )
+texture = ExtResource( 3 )
 
 [node name="Right Eye" type="Sprite" parent="Animation/Body/Face Screen"]
 
-transform/pos = Vector2( 98.0236, -169.471 )
-texture = ExtResource( 2 )
-modulate = Color( 1, 1, 1, 0 )
+transform/pos = Vector2( 49.8636, -61.8192 )
+texture = ExtResource( 3 )
 
 [node name="Left Eyebrow" type="Sprite" parent="Animation/Body/Face Screen"]
 
-transform/pos = Vector2( -79.7758, -197.8 )
-texture = ExtResource( 3 )
-modulate = Color( 1, 1, 1, 0 )
+transform/pos = Vector2( -56.5457, -111.395 )
+texture = ExtResource( 4 )
 
 [node name="Right Eyebrow" type="Sprite" parent="Animation/Body/Face Screen"]
 
-transform/pos = Vector2( 85.6214, -194.117 )
-texture = ExtResource( 3 )
-modulate = Color( 1, 1, 1, 0 )
+transform/pos = Vector2( 54.4591, -111.678 )
+texture = ExtResource( 4 )
 
 [node name="Left Eye Wrinkle" type="Sprite" parent="Animation/Body/Face Screen"]
 
-transform/pos = Vector2( -103.345, 183.082 )
-texture = ExtResource( 4 )
-modulate = Color( 1, 1, 1, 0 )
+transform/pos = Vector2( -73.5996, -32.5051 )
+texture = ExtResource( 5 )
 
 [node name="Right Eye Wrinkle" type="Sprite" parent="Animation/Body/Face Screen"]
 
-transform/pos = Vector2( 99.8388, 183.832 )
+transform/pos = Vector2( 72.9259, -34.0209 )
 transform/scale = Vector2( -1, 1 )
-texture = ExtResource( 4 )
-modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 5 )
 
 [node name="Mouth" type="Sprite" parent="Animation/Body/Face Screen"]
 
-transform/pos = Vector2( -2.70626, 163.99 )
-texture = ExtResource( 5 )
-modulate = Color( 1, 1, 1, 0 )
+transform/pos = Vector2( -1.28979, 46.9892 )
+texture = ExtResource( 6 )
 
 [node name="Spawn Android Screen" type="Node2D" parent="Animation/Body"]
 
 [node name="Totem" type="Sprite" parent="Animation/Body/Spawn Android Screen"]
 
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="Robot Hat" type="Sprite" parent="Animation/Body/Spawn Android Screen"]
 
 transform/pos = Vector2( -1.85019, -35.5647 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="Robot Head" type="Sprite" parent="Animation/Body/Spawn Android Screen"]
 
 transform/pos = Vector2( -1.85019, -11.3067 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="Robot Body" type="Sprite" parent="Animation/Body/Spawn Android Screen"]
 
 transform/pos = Vector2( -1.23346, 32.0699 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="Robot Legs" type="Sprite" parent="Animation/Body/Spawn Android Screen"]
 
 transform/pos = Vector2( -2.6725, 67.0179 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="Throw Frizbee Screen" type="Node2D" parent="Animation/Body"]
@@ -2957,50 +3077,71 @@ modulate = Color( 1, 1, 1, 0 )
 [node name="A" type="Sprite" parent="Animation/Body/Throw Frizbee Screen"]
 
 transform/pos = Vector2( -69.0729, -118.353 )
-texture = ExtResource( 11 )
-modulate = Color( 1, 0, 0, 0 )
+texture = ExtResource( 12 )
+modulate = Color( 1, 1, 1, 0 )
 
 [node name="C1" type="Sprite" parent="Animation/Body/Throw Frizbee Screen"]
 
 transform/pos = Vector2( -12.522, -117.141 )
-texture = ExtResource( 12 )
-modulate = Color( 1, 0, 0, 0 )
+texture = ExtResource( 13 )
+modulate = Color( 1, 1, 1, 0 )
 
 [node name="C2" type="Sprite" parent="Animation/Body/Throw Frizbee Screen"]
 
 transform/pos = Vector2( 38.3738, -117.141 )
-texture = ExtResource( 12 )
-modulate = Color( 1, 0, 0, 0 )
+texture = ExtResource( 13 )
+modulate = Color( 1, 1, 1, 0 )
 
 [node name="dot1" type="Sprite" parent="Animation/Body/Throw Frizbee Screen"]
 
 transform/pos = Vector2( 69.403, -94.5751 )
-texture = ExtResource( 13 )
-modulate = Color( 1, 0, 0, 0 )
+texture = ExtResource( 14 )
+modulate = Color( 1, 1, 1, 0 )
 
 [node name="dot2" type="Sprite" parent="Animation/Body/Throw Frizbee Screen"]
 
 transform/pos = Vector2( 83.0678, -94.9347 )
-texture = ExtResource( 13 )
-modulate = Color( 1, 0, 0, 0 )
+texture = ExtResource( 14 )
+modulate = Color( 1, 1, 1, 0 )
 
 [node name="dot3" type="Sprite" parent="Animation/Body/Throw Frizbee Screen"]
 
 transform/pos = Vector2( 94.9347, -94.9347 )
-texture = ExtResource( 13 )
-modulate = Color( 1, 0, 0, 0 )
+texture = ExtResource( 14 )
+modulate = Color( 1, 1, 1, 0 )
 
 [node name="Accelerator" type="Sprite" parent="Animation/Body/Throw Frizbee Screen"]
 
 transform/pos = Vector2( 1.07883, 52.5018 )
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="Flat" type="Sprite" parent="Animation"]
 
 visibility/visible = false
 transform/rot = -90.6767
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
+
+[node name="Platform After Dead" type="StaticBody2D" parent="Animation/Flat"]
+
+transform/pos = Vector2( -1.42389, 3.79348 )
+transform/rot = 1.01898
+input/pickable = true
+shapes/0/shape = SubResource( 10 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 0
+collision/mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Flat/Platform After Dead"]
+
+shape = SubResource( 10 )
+trigger = false
+_update_shape_index = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
 
@@ -3008,15 +3149,34 @@ playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
 anims/Die = SubResource( 1 )
-anims/Face = SubResource( 6 )
-"anims/Face Coming Back" = SubResource( 5 )
-anims/Hurt = SubResource( 2 )
-"anims/Spawn Android" = SubResource( 4 )
-anims/Still = SubResource( 3 )
+anims/Face = SubResource( 2 )
+"anims/Face Coming Back" = SubResource( 3 )
+anims/Hurt = SubResource( 4 )
+"anims/Spawn Android" = SubResource( 5 )
+anims/Still = SubResource( 6 )
 "anims/Throw Frizbee" = SubResource( 7 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "Still"
+
+[node name="Android Spawn Pos" type="Position2D" parent="."]
+
+transform/pos = Vector2( -1.6, 32.7 )
+
+[node name="Frizbee Spawn Pos" type="Position2D" parent="."]
+
+transform/pos = Vector2( 2.4, 20.2 )
+
+[node name="Number Spawn Pos" type="Position2D" parent="."]
+
+transform/pos = Vector2( 0.394348, -255.143 )
+script/script = ExtResource( 17 )
+
+[node name="Health Bar" parent="." instance=ExtResource( 18 )]
+
+transform/pos = Vector2( 0.394348, -291.4 )
+
+[connection signal="area_enter" from="Animation/Attack Area" to="." method="touch_attack_hit"]
 
 
