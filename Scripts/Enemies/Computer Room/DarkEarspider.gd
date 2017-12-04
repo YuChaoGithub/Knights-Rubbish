@@ -31,7 +31,7 @@ const CLAP_STUN_DURATION = 1.5
 
 const ATTACHED_SILK_THICKNESS = 5
 
-# Animation duration.
+# Animation.
 const CLAP_ANIMATION_DURATION = 0.7
 const DIE_ANIMATION_DURATION = 0.5
 

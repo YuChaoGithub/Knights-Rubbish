@@ -267,3 +267,16 @@ Comment: Wow, what an effective day.
 * Completed scripting Calcasio and Calcasio Bullet. Cool.
 
 **Commit**
+
+[2017.11.29]
+* Completed scripting Sonmera (except its screenshot perk).
+* Completed scripting Canmera and Canmera Missle.
+
+[2017.12.01]
+* Completed scripting Batterio.
+* Completed Sockute and Sockute Lightning Ball.
+
+[2017.12.02]
+* Completed scripting Laserphone.
+
+**Commit**
