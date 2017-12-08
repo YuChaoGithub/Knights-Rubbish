@@ -9,6 +9,7 @@ const HURT_MODULATE_DURATION = 0.15
 const DAMAGE_NUMBER_COLOR = Color(255.0 / 255.0, 0.0 / 255.0, 210.0 / 255.0)
 const HEAL_NUMBER_COLOR = Color(110.0 / 255.0, 240.0 / 255.0, 15.0 / 255.0)
 const STUNNED_TEXT_COLOR = Color(180.0 / 255.0, 180.0 / 255.0, 0.0 / 255.0)
+const IMMUNE_TEXT_COLOR = Color(255.0 / 255.0, 230.0 / 255.0, 0.0 / 255.0)
 
 # Controls the basic animations (walk, jump, idle, etc.) of characters.
 # The name of the default animator is defined in player_constants.
@@ -29,7 +30,7 @@ var speed
 
 # State modifier (could be changed by power ups, debuffs, or skill).
 var size_modifier = 1.0 setget set_size_modifier
-var movement_speed_modifier = 1.0 setget set_movement_speed_modifier
+var movement_speed_modifier = 1.0
 var jump_height_modifier = 1.0 setget set_jump_height_modifier
 var damage_modifier = 1.0
 var defense_modifier = 1.0
@@ -68,6 +69,10 @@ var countdown_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 # For cancelling timers for conflicting power ups/state changes.
 # The data should be saved as dictionaries {tag:String -> CountdownTimer}.
 var active_timers = {}
+
+# A queue for speed modifying timers.
+var slowed_timer = []
+var speeded_timer = []
 var hurt_modulate_timer = null
 
 # Child nodes.
@@ -90,11 +95,7 @@ onready var health_system = preload("res://Scripts/Utils/HealthSystem.gd").new(s
 var number_indicator = preload("res://Scenes/Utils/Numbers/Number Indicator.tscn")
 onready var number_spawn_pos = get_node("Number Spawn Pos")
 
-# Getters and setters.
-func set_movement_speed_modifier(value):
-	movement_speed_modifier = value
-	recalculate_horizontal_movement_variables()
-	
+# Getters and setters.	
 func set_jump_height_modifier(value):
 	jump_height_modifier = value
 	recalculate_vertical_movement_variables()
@@ -281,10 +282,49 @@ func reset_status(args):
 func change_sprite_facing(side):
 	sprite.set_scale(Vector2(abs(sprite.get_scale().x) * side, sprite.get_scale().y))
 
+func display_immune_text():
+	var immune_text = number_indicator.instance()
+	immune_text.initialize(-2, IMMUNE_TEXT_COLOR, number_spawn_pos, self)
+
 # Common abnormal status.
+func speed_changed(multiplier, duration):
+	# Cannot be slowed while invincible.
+	if status.invincible && multiplier < 1.0:
+		return
+
+	movement_speed_modifier *= multiplier
+	recalculate_horizontal_movement_variables()
+
+	var speed_timer = countdown_timer.new(duration, self, "speed_change_recover", multiplier)
+	
+	if multiplier < 1:
+		slowed_timer.push_back(speed_timer)
+		# TODO: Show slowed icon.
+	else:
+		speeded_timer.push_back(speed_timer)
+		# TODO: Show speeded icon.
+
+func speed_change_recover(multiplier):
+	movement_speed_modifier /= multiplier
+	recalculate_horizontal_movement_variables()
+
+	if multiplier < 1:
+		slowed_timer.pop_front()
+
+		if slowed_timer.size() == 0:
+			pass
+			# TODO: Remove slowed icon.
+	else:
+		speeded_timer.pop_front()
+
+		if speeded_timer.size() == 0:
+			pass
+			# TODO: Remove speeded icon.
+
 func stunned(duration):
 	# Can't be stunned while invincible.
 	if status.invincible:
+		display_immune_text()
 		return
 
 	# Spawn stunned text.
@@ -325,6 +365,7 @@ func knocked_back(vel_x, vel_y, x_fade_rate):
 
 func damaged(val):
 	if status.invincible:
+		display_immune_text()
 		return
 
 	# Apply modifier.

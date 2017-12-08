@@ -165,6 +165,7 @@ func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
 
 func die():
 	ec.die()
+	cancel_attack_sequence()
 	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
 
 func healed(val):

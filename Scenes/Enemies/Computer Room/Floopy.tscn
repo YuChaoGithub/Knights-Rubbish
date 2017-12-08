@@ -1,22 +1,40 @@
-[gd_scene load_steps=22 format=1]
+[gd_scene load_steps=28 format=1]
 
-[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/blue floppy.png" type="Texture" id=1]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Hair.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Mouth.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Pants.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Arm.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Forearm.png" type="Texture" id=6]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Fist.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Eyeball.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Freckles.png" type="Texture" id=9]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Eyebrow.png" type="Texture" id=10]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Thigh.png" type="Texture" id=11]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Leg.png" type="Texture" id=12]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Left Brow.png" type="Texture" id=13]
-[ext_resource path="res://Graphics/Characters/Bro SS/Big Bro Eyebrow.png" type="Texture" id=14]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=15]
+[ext_resource path="res://Scripts/Enemies/Computer Room/Floopy.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/blue floppy.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Hair.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Mouth.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Pants.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Arm.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Forearm.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Fist.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Eyeball.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Freckles.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Eyebrow.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Thigh.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Leg.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Left Brow.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Characters/Bro SS/Big Bro Eyebrow.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=16]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=18]
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 65.4092, 99.1514 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 63.8442, 89.5907 )
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8.0451, 20.2429 )
+
+[sub_resource type="Animation" id=3]
 
 resource/name = "Die"
 length = 0.8
@@ -290,7 +308,7 @@ tracks/26/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/27/type = "value"
 tracks/27/path = NodePath("Body/Eyeball:transform/scale")
@@ -340,7 +358,7 @@ tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Body/Left Arm/Left Forearm:transform/pos")
@@ -382,10 +400,19 @@ tracks/35/keys = {
 "update": 0,
 "values": [ -13.3221 ]
 }
+tracks/36/type = "value"
+tracks/36/path = NodePath("Body/Left Arm/Left Forearm/Attack Area:collision/mask")
+tracks/36/interp = 1
+tracks/36/imported = false
+tracks/36/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=4]
 
-resource/name = "Hurt"
 length = 0.1
 loop = false
 step = 0.1
@@ -657,7 +684,7 @@ tracks/26/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 14 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/27/type = "value"
 tracks/27/path = NodePath("Body/Eyeball:transform/scale")
@@ -707,7 +734,7 @@ tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 10 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Body/Left Arm/Left Forearm:transform/pos")
@@ -749,8 +776,18 @@ tracks/35/keys = {
 "update": 0,
 "values": [ -13.3221 ]
 }
+tracks/36/type = "value"
+tracks/36/path = NodePath("Body/Left Arm/Left Forearm/Attack Area:collision/mask")
+tracks/36/interp = 1
+tracks/36/imported = false
+tracks/36/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 
 resource/name = "Punch"
 length = 0.3
@@ -1024,7 +1061,7 @@ tracks/26/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/27/type = "value"
 tracks/27/path = NodePath("Body/Eyeball:transform/scale")
@@ -1074,7 +1111,7 @@ tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Body/Left Arm/Left Forearm:transform/pos")
@@ -1116,10 +1153,19 @@ tracks/35/keys = {
 "update": 0,
 "values": [ -13.3221, 19.8151 ]
 }
+tracks/36/type = "value"
+tracks/36/path = NodePath("Body/Left Arm/Left Forearm/Attack Area:collision/mask")
+tracks/36/interp = 1
+tracks/36/imported = false
+tracks/36/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=6]
 
-resource/name = "Still"
 length = 0.1
 loop = false
 step = 0.1
@@ -1391,7 +1437,7 @@ tracks/26/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/27/type = "value"
 tracks/27/path = NodePath("Body/Eyeball:transform/scale")
@@ -1441,7 +1487,7 @@ tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Body/Left Arm/Left Forearm:transform/pos")
@@ -1483,10 +1529,19 @@ tracks/35/keys = {
 "update": 0,
 "values": [ -13.3221 ]
 }
+tracks/36/type = "value"
+tracks/36/path = NodePath("Body/Left Arm/Left Forearm/Attack Area:collision/mask")
+tracks/36/interp = 1
+tracks/36/imported = false
+tracks/36/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=7]
 
-resource/name = "Stunned"
 length = 1.5
 loop = true
 step = 0.1
@@ -1758,7 +1813,7 @@ tracks/26/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 16 ) ]
 }
 tracks/27/type = "value"
 tracks/27/path = NodePath("Body/Eyeball:transform/scale")
@@ -1808,7 +1863,7 @@ tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Body/Left Arm/Left Forearm:transform/pos")
@@ -1850,10 +1905,19 @@ tracks/35/keys = {
 "update": 0,
 "values": [ -13.3221 ]
 }
+tracks/36/type = "value"
+tracks/36/path = NodePath("Body/Left Arm/Left Forearm/Attack Area:collision/mask")
+tracks/36/interp = 1
+tracks/36/imported = false
+tracks/36/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=8]
 
-resource/name = "Walk"
 length = 1.0
 loop = true
 step = 0.1
@@ -2125,7 +2189,7 @@ tracks/26/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/27/type = "value"
 tracks/27/path = NodePath("Body/Eyeball:transform/scale")
@@ -2175,7 +2239,7 @@ tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Body/Left Arm/Left Forearm:transform/pos")
@@ -2217,99 +2281,169 @@ tracks/35/keys = {
 "update": 0,
 "values": [ -13.3221, -27.2023 ]
 }
+tracks/36/type = "value"
+tracks/36/path = NodePath("Body/Left Arm/Left Forearm/Attack Area:collision/mask")
+tracks/36/interp = 1
+tracks/36/imported = false
+tracks/36/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
-[node name="Floopy" type="Node2D"]
+[node name="Floopy" type="KinematicBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 4.77008, -0.317993 )
+shapes/0/trigger = false
+collision/layers = 16
+collision/mask = 2
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+
+[node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( 4.77008, -0.317993 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
 
 [node name="Animation" type="Node2D" parent="."]
 
-transform/pos = Vector2( 0, 10 )
+editor/display_folded = true
+transform/pos = Vector2( 0, -38.3367 )
 transform/scale = Vector2( 1.2, 1.2 )
+
+[node name="Damage Area" type="Area2D" parent="Animation"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 2.91506, 25.9704 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area"]
+
+transform/pos = Vector2( 2.91506, 25.9704 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 [node name="Body" type="Sprite" parent="Animation"]
 
-texture = ExtResource( 1 )
+editor/display_folded = true
+texture = ExtResource( 2 )
 
 [node name="Hair" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( 0, -41.6667 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="Mouth" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( 3.74959, 25.9211 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="Pants" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( 1.35602, 45.2921 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 offset = Vector2( 0.763308, 8.99558 )
 
 [node name="Left Arm" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( -51.7186, 0.0382042 )
 transform/rot = -7.89588
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( -6.14893, 12.1975 )
 
 [node name="Left Forearm" type="Sprite" parent="Animation/Body/Left Arm"]
 
 transform/pos = Vector2( -12.9889, 25.3793 )
 transform/rot = 7.09333
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 offset = Vector2( -1.47573, 12.7447 )
+
+[node name="Attack Area" type="Area2D" parent="Animation/Body/Left Arm/Left Forearm"]
+
+editor/display_folded = true
+transform/scale = Vector2( 1, 1 )
+input/pickable = true
+shapes/0/shape = SubResource( 9 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -1.97216, 20.5879 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 64
+collision/mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Body/Left Arm/Left Forearm/Attack Area"]
+
+transform/pos = Vector2( -1.97216, 20.5879 )
+shape = SubResource( 9 )
+trigger = false
+_update_shape_index = 0
 
 [node name="Left Fist" type="Sprite" parent="Animation/Body/Left Arm/Left Forearm"]
 
 transform/pos = Vector2( -1.05315, 28.3221 )
 transform/rot = -13.3221
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 offset = Vector2( 0.601303, 4.70964 )
 
 [node name="Right Arm" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( 57.4877, -6.32023 )
 transform/rot = 57.1621
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( -7.03201, 13.8758 )
 
 [node name="Eyeball" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( 2.47581, 0.521221 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 
 [node name="Freckles" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( 2.47581, 14.2034 )
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 
 [node name="Eyebrow" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( 0.912139, -15.3761 )
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 
 [node name="Left Thigh" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( -31.2435, 66.1487 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 offset = Vector2( 0.268084, 13.7078 )
 
 [node name="Left Leg" type="Sprite" parent="Animation/Body/Left Thigh"]
 
 transform/pos = Vector2( -0.91489, 29.2763 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 offset = Vector2( -0.653489, 8.10329 )
 
 [node name="Right Thigh" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( 36.7025, 66.7032 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 offset = Vector2( 0.00174205, 12.9088 )
 
 [node name="Right Leg" type="Sprite" parent="Animation/Body/Right Thigh"]
 
 transform/pos = Vector2( -1.30286, 28.2721 )
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 offset = Vector2( -0.260569, 8.72918 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
@@ -2317,15 +2451,26 @@ offset = Vector2( -0.260569, 8.72918 )
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Die = SubResource( 4 )
-anims/Hurt = SubResource( 1 )
-anims/Punch = SubResource( 6 )
-anims/Still = SubResource( 2 )
-anims/Stunned = SubResource( 3 )
-anims/Walk = SubResource( 5 )
+anims/Die = SubResource( 3 )
+anims/Hurt = SubResource( 4 )
+anims/Punch = SubResource( 5 )
+anims/Still = SubResource( 6 )
+anims/Stunned = SubResource( 7 )
+anims/Walk = SubResource( 8 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "Still"
+
+[node name="Health Bar" parent="." instance=ExtResource( 17 )]
+
+transform/pos = Vector2( 2.7919, -149.134 )
+
+[node name="Number Spawn Pos" type="Position2D" parent="."]
+
+transform/pos = Vector2( -0.312103, -168.175 )
+script/script = ExtResource( 18 )
+
+[connection signal="area_enter" from="Animation/Body/Left Arm/Left Forearm/Attack Area" to="." method="on_attack_hit"]
 
 

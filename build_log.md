@@ -280,3 +280,25 @@ Comment: Wow, what an effective day.
 * Completed scripting Laserphone.
 
 **Commit**
+
+[2017.12.04]
+* Painful and depressed. Can't work (nor live) efficiently.
+* Completed scripting Floopy.
+* Added RNG Initializer to the game level so that random behaviors are truly (pseudo) random.
+* Now "Immune" text will be shown if the character takes damage or stun hit when invincible.
+
+[2017.12.05]
+* Umm...declared some constants of Radiogugu.
+* Just trying to list something here to make it look like I've done something while I actually haven't.
+
+[2017.12.06]
+* Completed scripting Radiogugu Floopy Spawn Pos.
+* Implemented `speed_changed()` in `CharacterCommon.gd` for slow and speed effect.
+* Refactored `SpeedPotion.gd` to fit the new speed change code of characters.
+* Completed scripting `RadioguguWatch.gd` but haven't tested yet.
+
+[2017.12.08]
+* Completed scripting Radiogugu. Phew.
+Comment: Have a feeling that I will never finish this game. It's toooo time consuming.
+
+Sprint: Explode animation scene. Abnormal status indicator. (Probably should be combined with Number Indicator.)

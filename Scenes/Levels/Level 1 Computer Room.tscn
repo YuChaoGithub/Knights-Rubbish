@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=1]
+[gd_scene load_steps=25 format=1]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Levels/Computer Room Subscenes/Part 1 Scene.tscn" type="PackedScene" id=2]
@@ -20,11 +20,10 @@
 [ext_resource path="res://Scenes/Enemies/Computer Room/iSnail.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Enemies/Computer Room/Godotbos.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Enemies/Computer Room/Plugobra.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Floopy.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Eye Mac.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Scripts/CharacterAveragePosition.gd" type="Script" id=23]
-[ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Scenes/Utils/Numbers/Number Indicator.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Eye Mac.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scripts/CharacterAveragePosition.gd" type="Script" id=22]
+[ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scripts/Utils/InitRandom.gd" type="Script" id=24]
 
 [node name="Game Level" type="Node2D"]
 
@@ -35,8 +34,6 @@ drag_margin_right = 0.8
 drag_margin_left = 0.0
 
 [node name="Part 1" type="Node2D" parent="."]
-
-editor/display_folded = true
 
 [node name="Scene" parent="Part 1" instance=ExtResource( 2 )]
 
@@ -58,6 +55,8 @@ transform/pos = Vector2( 7400, -500 )
 [node name="Scene" parent="Part 3" instance_placeholder="res://Scenes/Levels/Computer Room Subscenes/Part 3 Scene.tscn"]
 
 [node name="Enemies" type="Node2D" parent="."]
+
+editor/display_folded = true
 
 [node name="Eelo Puncher" parent="Enemies" instance=ExtResource( 4 )]
 
@@ -81,7 +80,7 @@ transform/pos = Vector2( 532, -718 )
 
 [node name="Cliffy" parent="Enemies" instance=ExtResource( 9 )]
 
-transform/pos = Vector2( 932, -968 )
+transform/pos = Vector2( 926.173, -478.562 )
 
 [node name="Flaggomine 1" parent="Enemies" instance=ExtResource( 10 )]
 
@@ -127,22 +126,20 @@ transform/pos = Vector2( 1182, -1268 )
 
 transform/pos = Vector2( 482, -718 )
 
-[node name="Floopy" parent="Enemies" instance=ExtResource( 21 )]
-
-transform/pos = Vector2( 832, -968 )
-
-[node name="Eye Mac" parent="Enemies" instance=ExtResource( 22 )]
+[node name="Eye Mac" parent="Enemies" instance=ExtResource( 21 )]
 
 transform/pos = Vector2( 1182, -1368 )
 
 [node name="Character Average Position" type="Position2D" parent="."]
 
-script/script = ExtResource( 23 )
+script/script = ExtResource( 22 )
 
-[node name="Keshia Erasia" parent="." instance=ExtResource( 24 )]
+[node name="Keshia Erasia" parent="." instance=ExtResource( 23 )]
 
-transform/pos = Vector2( 200, -250 )
+transform/pos = Vector2( 1027.94, -254.998 )
 
-[node name="Number Indicator" parent="." instance=ExtResource( 25 )]
+[node name="RNG Initializer" type="Node2D" parent="."]
+
+script/script = ExtResource( 24 )
 
 
