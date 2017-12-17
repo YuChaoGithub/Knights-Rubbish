@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=1]
 
-[ext_resource path="res://Scripts/Enemies/Computer Room/LatortransStunBall.gd" type="Script" id=1]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Ball2.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Stunned chinese.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Enemies/Computer Room/LatortransHurtBall.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Ball3.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Hurt Chinese.png" type="Texture" id=3]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Ball1.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Ball3.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Ball4.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Ball4.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Ball2.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=1]
 
@@ -27,11 +27,10 @@ tracks/0/keys = {
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 20.9136
+radius = 18.7646
 
-[node name="Latortrans stun ball" type="Node2D"]
+[node name="Latortrans hurt ball" type="Node2D"]
 
-editor/display_folded = true
 transform/scale = Vector2( 3, 3 )
 script/script = ExtResource( 1 )
 
@@ -42,9 +41,8 @@ transform/scale = Vector2( 1.2, 1.2 )
 
 [node name="Ball" type="Sprite" parent="Animation"]
 
-transform/scale = Vector2( 1.1, 1.1 )
 texture = ExtResource( 2 )
-modulate = Color( 0.96875, 1, 0, 1 )
+modulate = Color( 1, 0, 0, 1 )
 
 [node name="Character" type="Sprite" parent="Animation"]
 
@@ -63,8 +61,7 @@ autoplay = ""
 
 [node name="Attack Area" type="Area2D" parent="."]
 
-editor/display_folded = true
-transform/pos = Vector2( 0.496745, 0.993479 )
+transform/pos = Vector2( 1.2349, -0.49396 )
 input/pickable = true
 shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )

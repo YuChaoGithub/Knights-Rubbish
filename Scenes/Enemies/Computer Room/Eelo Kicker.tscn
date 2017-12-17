@@ -1,19 +1,41 @@
-[gd_scene load_steps=19 format=1]
+[gd_scene load_steps=27 format=1]
 
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Left Leg.png" type="Texture" id=1]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Left Thigh.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Foot.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Right Leg.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Right Thigh.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Body.png" type="Texture" id=6]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Normal Face.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Dead Face.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Sad Face.png" type="Texture" id=9]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Stunned Face.png" type="Texture" id=10]
+[ext_resource path="res://Scripts/Enemies/Computer Room/EeloKicker.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Left Leg.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Left Thigh.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Foot.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Right Leg.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Right Thigh.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Body.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Normal Face.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Dead Face.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Sad Face.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Stunned Face.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=13]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="RectangleShape2D" id=1]
 
-resource/name = "Die"
+custom_solver_bias = 0.0
+extents = Vector2( 44.6992, 170.818 )
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 28.7709, 93.6066 )
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 17.4068, 35.2912 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 18.0726, 38.2289 )
+
+[sub_resource type="Animation" id=5]
+
 length = 0.8
 loop = false
 step = 0.1
@@ -115,7 +137,7 @@ tracks/9/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Body/Right Thigh Remote Transform:transform/pos")
@@ -237,11 +259,30 @@ tracks/21/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/22/type = "value"
+tracks/22/path = NodePath("Body/Left Thigh Remote Transform/Left Kick Area:collision/mask")
+tracks/22/interp = 1
+tracks/22/imported = false
+tracks/22/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Body/Right Thigh Remote Transform/Right Kick Area:collision/mask")
+tracks/23/interp = 1
+tracks/23/imported = false
+tracks/23/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=6]
 
-resource/name = "Double Kick"
-length = 0.1
+length = 0.6
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -319,20 +360,20 @@ tracks/7/path = NodePath("Body:transform/pos")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -9.09088 ) ]
+"values": [ Vector2( 0.371316, -0.365149 ), Vector2( 0, -9.09088 ), Vector2( 0, -9.09088 ), Vector2( 0.371316, -0.365149 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Body:transform/rot")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("Body/Face:texture")
@@ -342,87 +383,333 @@ tracks/9/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Body/Right Thigh Remote Transform:transform/pos")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 15.5384, 49.773 ) ]
+"values": [ Vector2( 15.5384, 49.773 ), Vector2( 15.5384, 49.773 ), Vector2( 15.5384, 49.773 ), Vector2( 11.9289, 52.0699 ) ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("Body/Right Thigh Remote Transform:transform/rot")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 87.5544 ]
+"values": [ 11.3522, 87.5544, 87.5544, 4.5238 ]
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("Body/Left Thigh Remote Transform:transform/pos")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -19.8079, 47.9032 ) ]
+"values": [ Vector2( -19.8079, 47.9032 ), Vector2( -19.8079, 47.9032 ), Vector2( -19.8079, 47.9032 ), Vector2( -11.1713, 52.2215 ) ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body/Left Thigh Remote Transform:transform/rot")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -73.9591 ]
+"values": [ -10.3454, -73.9591, -73.9591, -4.16273 ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform:transform/pos")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 3.02316, 33.5454 ) ]
+"values": [ Vector2( 3.02316, 33.5454 ), Vector2( 3.02316, 33.5454 ), Vector2( 3.02316, 33.5454 ), Vector2( 3.02316, 33.5454 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform:transform/rot")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -29.4346 ]
+"values": [ -29.4346, -29.4346, -29.4346, -8.96484 ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform:transform/pos")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -2.84875, 31.4524 ) ]
+"values": [ Vector2( -2.84875, 31.4524 ), Vector2( -2.84875, 31.4524 ), Vector2( -2.84875, 31.4524 ), Vector2( -2.84875, 31.4524 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform:transform/rot")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 32.5022, 32.5022, 32.5022, 13.2435 ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform/Left Foot Remote Transform:transform/pos")
+tracks/18/interp = 1
+tracks/18/imported = false
+tracks/18/keys = {
+"times": FloatArray( 0, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -3.50114, 23.8827 ), Vector2( -3.50114, 23.8827 ), Vector2( -3.50114, 23.8827 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform/Left Foot Remote Transform:transform/rot")
+tracks/19/interp = 1
+tracks/19/imported = false
+tracks/19/keys = {
+"times": FloatArray( 0, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 21.7199, 21.7199, 4.92696 ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform/Right Foot Remote Transform:transform/pos")
+tracks/20/interp = 1
+tracks/20/imported = false
+tracks/20/keys = {
+"times": FloatArray( 0, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.125038, 23.1325 ), Vector2( -0.125038, 23.1325 ), Vector2( -0.125038, 23.1325 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform/Right Foot Remote Transform:transform/rot")
+tracks/21/interp = 1
+tracks/21/imported = false
+tracks/21/keys = {
+"times": FloatArray( 0, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 51.2854, 51.2854, 19.695 ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Body/Right Thigh Remote Transform/Right Kick Area:collision/mask")
+tracks/22/interp = 1
+tracks/22/imported = false
+tracks/22/keys = {
+"times": FloatArray( 0, 0.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Body/Left Thigh Remote Transform/Left Kick Area:collision/mask")
+tracks/23/interp = 1
+tracks/23/imported = false
+tracks/23/keys = {
+"times": FloatArray( 0, 0.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 0 ]
+}
+
+[sub_resource type="Animation" id=7]
+
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Left Leg:modulate")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ 32.5022 ]
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Right Leg:modulate")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Left Thigh:modulate")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Right Thigh:modulate")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Body:modulate")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Left Foot:modulate")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Right Foot:modulate")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Body:transform/pos")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0, 1.4 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 4.38804 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Body:transform/rot")
+tracks/8/interp = 1
+tracks/8/imported = false
+tracks/8/keys = {
+"times": FloatArray( 0, 1.4 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.959114 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Body/Face:texture")
+tracks/9/interp = 1
+tracks/9/imported = false
+tracks/9/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Body/Right Thigh Remote Transform:transform/pos")
+tracks/10/interp = 1
+tracks/10/imported = false
+tracks/10/keys = {
+"times": FloatArray( 0, 1.4 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 11.1942, 54.1172 ), Vector2( 10.7066, 51.1918 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Body/Right Thigh Remote Transform:transform/rot")
+tracks/11/interp = 1
+tracks/11/imported = false
+tracks/11/keys = {
+"times": FloatArray( 0, 1.4 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 5.54209 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Body/Left Thigh Remote Transform:transform/pos")
+tracks/12/interp = 1
+tracks/12/imported = false
+tracks/12/keys = {
+"times": FloatArray( 0, 1.4 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -10.0851, 55.5573 ), Vector2( -10.0851, 52.1444 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Body/Left Thigh Remote Transform:transform/rot")
+tracks/13/interp = 1
+tracks/13/imported = false
+tracks/13/keys = {
+"times": FloatArray( 0, 1.4 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ -13.3875, -6.52861 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform:transform/pos")
+tracks/14/interp = 1
+tracks/14/imported = false
+tracks/14/keys = {
+"times": FloatArray( 0, 1.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.02316, 33.5454 ), Vector2( 3.02316, 33.5454 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform:transform/rot")
+tracks/15/interp = 1
+tracks/15/imported = false
+tracks/15/keys = {
+"times": FloatArray( 0, 1.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -7.25737 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform:transform/pos")
+tracks/16/interp = 1
+tracks/16/imported = false
+tracks/16/keys = {
+"times": FloatArray( 0, 1.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -2.84875, 31.4524 ), Vector2( -2.84875, 31.4524 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform:transform/rot")
+tracks/17/interp = 1
+tracks/17/imported = false
+tracks/17/keys = {
+"times": FloatArray( 0, 1.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 20.4734, 2.96114 ]
 }
 tracks/18/type = "value"
 tracks/18/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform/Left Foot Remote Transform:transform/pos")
@@ -442,30 +729,50 @@ tracks/19/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ 21.7199 ]
+"values": [ 0.0 ]
 }
 tracks/20/type = "value"
 tracks/20/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform/Right Foot Remote Transform:transform/pos")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 1.2 ),
+"transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -0.125038, 23.1325 ) ]
+"values": [ Vector2( -0.125038, 23.1325 ), Vector2( -0.125038, 23.1325 ) ]
 }
 tracks/21/type = "value"
 tracks/21/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform/Right Foot Remote Transform:transform/rot")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
+"times": FloatArray( 0, 1.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -6.71688 ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Body/Left Thigh Remote Transform/Left Kick Area:collision/mask")
+tracks/22/interp = 1
+tracks/22/imported = false
+tracks/22/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
-"update": 0,
-"values": [ 65.4707 ]
+"update": 1,
+"values": [ 0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Body/Right Thigh Remote Transform/Right Kick Area:collision/mask")
+tracks/23/interp = 1
+tracks/23/imported = false
+tracks/23/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=8]
 
 length = 0.1
 loop = false
@@ -568,7 +875,7 @@ tracks/9/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 10 ) ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Body/Right Thigh Remote Transform:transform/pos")
@@ -690,11 +997,30 @@ tracks/21/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/22/type = "value"
+tracks/22/path = NodePath("Body/Right Thigh Remote Transform/Right Kick Area:collision/mask")
+tracks/22/interp = 1
+tracks/22/imported = false
+tracks/22/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Body/Left Thigh Remote Transform/Left Kick Area:collision/mask")
+tracks/23/interp = 1
+tracks/23/imported = false
+tracks/23/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=9]
 
-resource/name = "Left Kick"
-length = 0.1
+length = 0.6
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -772,20 +1098,20 @@ tracks/7/path = NodePath("Body:transform/pos")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.2, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 29.0408, -0.618915 ) ]
+"values": [ Vector2( -0.607497, -1.88439 ), Vector2( 30.1255, -1.88438 ), Vector2( 3.55049, -2.12542 ), Vector2( 11.1434, -1.7036 ), Vector2( -0.607497, -1.88439 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Body:transform/rot")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.2, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -27.7511 ]
+"values": [ -2.03545, -27.7511, -27.7511, -27.7511, -2.03545 ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("Body/Face:texture")
@@ -795,133 +1121,152 @@ tracks/9/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Body/Right Thigh Remote Transform:transform/pos")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4 ),
+"transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 11.1942, 54.1172 ) ]
+"values": [ Vector2( 11.1942, 54.1172 ), Vector2( 11.1942, 54.1172 ), Vector2( 11.1942, 54.1172 ) ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("Body/Right Thigh Remote Transform:transform/rot")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 7.19469 ]
+"values": [ -4.07516, 7.19469, 7.19469, -4.07516 ]
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("Body/Left Thigh Remote Transform:transform/pos")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -15.3688, 58.8034 ) ]
+"values": [ Vector2( -10.8778, 57.9202 ), Vector2( -15.3688, 58.8034 ), Vector2( -15.3688, 58.8034 ), Vector2( -10.8778, 57.9202 ) ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body/Left Thigh Remote Transform:transform/rot")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -58.4161 ]
+"values": [ -24.1879, -58.4161, -58.4161, -24.1879 ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform:transform/pos")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 3.02316, 33.5454 ) ]
+"values": [ Vector2( 3.02316, 33.5454 ), Vector2( 3.02316, 33.5454 ), Vector2( 3.02316, 33.5454 ), Vector2( 3.02316, 33.5454 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform:transform/rot")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 36.9578 ]
+"values": [ 16.7865, 36.9578, 36.9578, 16.7865 ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform:transform/pos")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -2.84875, 31.4524 ) ]
+"values": [ Vector2( -2.84875, 31.4524 ), Vector2( -2.84875, 31.4524 ), Vector2( -2.84875, 31.4524 ), Vector2( -2.84875, 31.4524 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform:transform/rot")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 24.14 ]
+"values": [ 32.7986, 24.14, 24.14, 32.7986 ]
 }
 tracks/18/type = "value"
 tracks/18/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform/Left Foot Remote Transform:transform/pos")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -3.50114, 23.8827 ) ]
+"values": [ Vector2( -3.50114, 23.8827 ), Vector2( -3.50114, 23.8827 ), Vector2( -3.50114, 23.8827 ), Vector2( -3.50114, 23.8827 ) ]
 }
 tracks/19/type = "value"
 tracks/19/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform/Left Foot Remote Transform:transform/rot")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 21.3859 ]
+"values": [ 10.0772, 21.3859, 21.3859, 10.0772 ]
 }
 tracks/20/type = "value"
 tracks/20/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform/Right Foot Remote Transform:transform/pos")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -0.125038, 23.1325 ) ]
+"values": [ Vector2( -0.125038, 23.1325 ), Vector2( -0.125038, 23.1325 ), Vector2( -0.125038, 23.1325 ), Vector2( -0.125038, 23.1325 ) ]
 }
 tracks/21/type = "value"
 tracks/21/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform/Right Foot Remote Transform:transform/rot")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.02777, 8.2364, 8.2364, 1.02777 ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Body/Left Thigh Remote Transform/Left Kick Area:collision/mask")
+tracks/22/interp = 1
+tracks/22/imported = false
+tracks/22/keys = {
+"times": FloatArray( 0, 0.3 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Body/Right Thigh Remote Transform/Right Kick Area:collision/mask")
+tracks/23/interp = 1
+tracks/23/imported = false
+tracks/23/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
-"update": 0,
-"values": [ 8.2364 ]
+"update": 1,
+"values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=10]
 
-resource/name = "Right Kick"
-length = 0.1
+length = 0.6
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -999,20 +1344,20 @@ tracks/7/path = NodePath("Body:transform/pos")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.2, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -21.2434, 0.618745 ) ]
+"values": [ Vector2( -0.0918579, 0.0763984 ), Vector2( -21.2434, 0.618745 ), Vector2( -0.272661, 0.437963 ), Vector2( -21.2434, 0.618745 ), Vector2( -0.0918579, 0.0763984 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Body:transform/rot")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.2, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 20.233 ]
+"values": [ -1.045, 20.233, 20.233, 20.233, -1.045 ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("Body/Face:texture")
@@ -1022,130 +1367,150 @@ tracks/9/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Body/Right Thigh Remote Transform:transform/pos")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 17.6821, 57.3878 ) ]
+"values": [ Vector2( 10.0509, 55.3572 ), Vector2( 17.6821, 57.3878 ), Vector2( 17.6821, 57.3878 ), Vector2( 10.0509, 55.3572 ) ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("Body/Right Thigh Remote Transform:transform/rot")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 42.5101 ]
+"values": [ 16.0357, 42.5101, 42.5101, 16.0357 ]
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("Body/Left Thigh Remote Transform:transform/pos")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -10.0851, 55.5573 ) ]
+"values": [ Vector2( -10.0851, 55.5573 ), Vector2( -10.0851, 55.5573 ), Vector2( -10.0851, 55.5573 ), Vector2( -10.0851, 55.5573 ) ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body/Left Thigh Remote Transform:transform/rot")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -37.5748 ]
+"values": [ -14.9082, -37.5748, -37.5748, -14.9082 ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform:transform/pos")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 3.02316, 33.5454 ) ]
+"values": [ Vector2( 3.02316, 33.5454 ), Vector2( 3.02316, 33.5454 ), Vector2( 3.02316, 33.5454 ), Vector2( 3.02316, 33.5454 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform:transform/rot")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 58.0573 ]
+"values": [ 19.5035, 58.0573, 58.0573, 19.5035 ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform:transform/pos")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -2.84875, 31.4524 ) ]
+"values": [ Vector2( -2.84875, 31.4524 ), Vector2( -2.84875, 31.4524 ), Vector2( -2.84875, 31.4524 ), Vector2( -2.84875, 31.4524 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform:transform/rot")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 44.1022 ]
+"values": [ 30.2373, 44.1022, 44.1022, 30.2373 ]
 }
 tracks/18/type = "value"
 tracks/18/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform/Left Foot Remote Transform:transform/pos")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -3.50114, 23.8827 ) ]
+"values": [ Vector2( -3.50114, 23.8827 ), Vector2( -3.50114, 23.8827 ), Vector2( -3.50114, 23.8827 ), Vector2( -3.50114, 23.8827 ) ]
 }
 tracks/19/type = "value"
 tracks/19/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform/Left Foot Remote Transform:transform/rot")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 9.28942 ]
+"values": [ -2.81438, 9.28942, 9.28942, -2.81438 ]
 }
 tracks/20/type = "value"
 tracks/20/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform/Right Foot Remote Transform:transform/pos")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -0.125038, 23.1325 ) ]
+"values": [ Vector2( -0.618641, 22.574 ), Vector2( -0.125038, 23.1325 ), Vector2( -0.125038, 23.1325 ), Vector2( -0.618641, 22.574 ) ]
 }
 tracks/21/type = "value"
 tracks/21/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform/Right Foot Remote Transform:transform/rot")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
+"times": FloatArray( 0, 0.1, 0.4, 0.6 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -8.21933, 27.5992, 27.5992, -8.21933 ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Body/Right Thigh Remote Transform/Right Kick Area:collision/mask")
+tracks/22/interp = 1
+tracks/22/imported = false
+tracks/22/keys = {
+"times": FloatArray( 0, 0.3 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Body/Left Thigh Remote Transform/Left Kick Area:collision/mask")
+tracks/23/interp = 1
+tracks/23/imported = false
+tracks/23/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
-"update": 0,
-"values": [ 27.5992 ]
+"update": 1,
+"values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=11]
 
 length = 0.1
 loop = false
@@ -1248,7 +1613,7 @@ tracks/9/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Body/Right Thigh Remote Transform:transform/pos")
@@ -1370,8 +1735,28 @@ tracks/21/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/22/type = "value"
+tracks/22/path = NodePath("Body/Left Thigh Remote Transform/Left Kick Area:collision/mask")
+tracks/22/interp = 1
+tracks/22/imported = false
+tracks/22/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Body/Right Thigh Remote Transform/Right Kick Area:collision/mask")
+tracks/23/interp = 1
+tracks/23/imported = false
+tracks/23/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=12]
 
 length = 1.2
 loop = true
@@ -1474,7 +1859,7 @@ tracks/9/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 10 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Body/Right Thigh Remote Transform:transform/pos")
@@ -1596,8 +1981,28 @@ tracks/21/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/22/type = "value"
+tracks/22/path = NodePath("Body/Right Thigh Remote Transform/Right Kick Area:collision/mask")
+tracks/22/interp = 1
+tracks/22/imported = false
+tracks/22/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Body/Left Thigh Remote Transform/Left Kick Area:collision/mask")
+tracks/23/interp = 1
+tracks/23/imported = false
+tracks/23/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=13]
 
 length = 1.6
 loop = true
@@ -1700,7 +2105,7 @@ tracks/9/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Body/Right Thigh Remote Transform:transform/pos")
@@ -1822,63 +2227,142 @@ tracks/21/keys = {
 "update": 0,
 "values": [ -7.76799, -7.76799, -7.76799, 1.3539, -14.0924, -3.96969, -3.96969, 2.44395 ]
 }
+tracks/22/type = "value"
+tracks/22/path = NodePath("Body/Left Thigh Remote Transform/Left Kick Area:collision/mask")
+tracks/22/interp = 1
+tracks/22/imported = false
+tracks/22/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Body/Right Thigh Remote Transform/Right Kick Area:collision/mask")
+tracks/23/interp = 1
+tracks/23/imported = false
+tracks/23/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
-[node name="Eelo Kicker" type="Node2D"]
+[node name="Eelo Kicker" type="KinematicBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -0.638, 78.4872 )
+shapes/0/trigger = false
+collision/layers = 16
+collision/mask = 2
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+fountain_path = null
+
+[node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( -0.638, 78.4872 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
 
 [node name="Animation" type="Node2D" parent="."]
 
 transform/pos = Vector2( 0, -8.99997 )
 transform/scale = Vector2( 2.2, 2.2 )
 
+[node name="Damage Area" type="Area2D" parent="Animation"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -0.761192, 24.8658 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 16
+collision/mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area"]
+
+transform/pos = Vector2( -0.761192, 24.8658 )
+shape = SubResource( 2 )
+trigger = false
+_update_shape_index = 0
+
 [node name="Left Leg" type="Sprite" parent="Animation"]
 
 transform/pos = Vector2( -12.9339, 87.0097 )
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 offset = Vector2( -1.37547, 10.5142 )
 
 [node name="Left Thigh" type="Sprite" parent="Animation"]
 
 transform/pos = Vector2( -10.0851, 55.5573 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 offset = Vector2( 0.0526185, 13.5829 )
 
 [node name="Left Foot" type="Sprite" parent="Animation"]
 
 transform/pos = Vector2( -16.435, 110.892 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( -6.74521, 1.1897 )
 
 [node name="Right Leg" type="Sprite" parent="Animation"]
 
 transform/pos = Vector2( 14.2174, 87.6626 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 offset = Vector2( -0.481429, 9.83557 )
 
 [node name="Right Thigh" type="Sprite" parent="Animation"]
 
 transform/pos = Vector2( 11.1942, 54.1172 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( 1.55377, 14.6066 )
 
 [node name="Right Foot" type="Sprite" parent="Animation"]
 
 transform/pos = Vector2( 14.0923, 110.795 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 offset = Vector2( -6.56178, 1.61104 )
 
 [node name="Body" type="Sprite" parent="Animation"]
 
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 
 [node name="Face" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( 0.509963, -17.8487 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="Left Thigh Remote Transform" type="RemoteTransform2D" parent="Animation/Body"]
 
 transform/pos = Vector2( -10.0851, 55.5573 )
 remote_path = NodePath("../../Left Thigh")
+
+[node name="Left Kick Area" type="Area2D" parent="Animation/Body/Left Thigh Remote Transform"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -5.91713, 31.6486 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 64
+collision/mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Body/Left Thigh Remote Transform/Left Kick Area"]
+
+transform/pos = Vector2( -5.91713, 31.6486 )
+shape = SubResource( 3 )
+trigger = false
+_update_shape_index = 0
 
 [node name="Left Leg Remote Transform" type="RemoteTransform2D" parent="Animation/Body/Left Thigh Remote Transform"]
 
@@ -1895,6 +2379,28 @@ remote_path = NodePath("../../../../Left Foot")
 transform/pos = Vector2( 11.1942, 54.1172 )
 remote_path = NodePath("../../Right Thigh")
 
+[node name="Right Kick Area" type="Area2D" parent="Animation/Body/Right Thigh Remote Transform"]
+
+editor/display_folded = true
+transform/scale = Vector2( 1, 1 )
+input/pickable = true
+shapes/0/shape = SubResource( 4 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -4.5841, 30.7503 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 64
+collision/mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Body/Right Thigh Remote Transform/Right Kick Area"]
+
+transform/pos = Vector2( -4.5841, 30.7503 )
+shape = SubResource( 4 )
+trigger = false
+_update_shape_index = 0
+
 [node name="Right Leg Remote Transform" type="RemoteTransform2D" parent="Animation/Body/Right Thigh Remote Transform"]
 
 transform/pos = Vector2( 3.02316, 33.5454 )
@@ -1910,17 +2416,30 @@ remote_path = NodePath("../../../../Right Foot")
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Die = SubResource( 1 )
-"anims/Double Kick" = SubResource( 2 )
-anims/Hurt = SubResource( 3 )
-"anims/Left Kick" = SubResource( 4 )
-"anims/Right Kick" = SubResource( 5 )
-anims/Still = SubResource( 6 )
-anims/Stunned = SubResource( 7 )
-anims/Walk = SubResource( 8 )
+anims/Die = SubResource( 5 )
+"anims/Double Kick" = SubResource( 6 )
+anims/Healing = SubResource( 7 )
+anims/Hurt = SubResource( 8 )
+"anims/Left Kick" = SubResource( 9 )
+"anims/Right Kick" = SubResource( 10 )
+anims/Still = SubResource( 11 )
+anims/Stunned = SubResource( 12 )
+anims/Walk = SubResource( 13 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "Still"
+
+[node name="Health Bar" parent="." instance=ExtResource( 12 )]
+
+transform/pos = Vector2( -0.430573, -201.523 )
+
+[node name="Number Spawn Pos" type="Position2D" parent="."]
+
+script/script = ExtResource( 13 )
+
+[connection signal="area_enter" from="Animation/Body/Left Thigh Remote Transform/Left Kick Area" to="." method="on_left_kick_hit"]
+
+[connection signal="area_enter" from="Animation/Body/Right Thigh Remote Transform/Right Kick Area" to="." method="on_right_kick_hit"]
 
 

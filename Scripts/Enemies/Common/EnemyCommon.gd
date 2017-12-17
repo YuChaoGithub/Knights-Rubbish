@@ -141,6 +141,10 @@ func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
     health_system.change_health_over_time_by(time_per_tick, total_ticks, -damage_per_tick) 
 
 func healed(val):
+    # Dead already.
+    if health_system.health <= 0:
+        return
+
     health_system.change_health_by(val)
 
     # Damage number indicator.
@@ -148,10 +152,7 @@ func healed(val):
     number.initialize(val, HEAL_NUMBER_COLOR, number_spawn_pos, node)
 
     # Show health bar.
-    if health_system.health > 0:
-        health_bar.set_health_bar_and_show(float(health_system.health) / float(health_system.full_health))
-    else:
-        health_bar.queue_free()
+    health_bar.set_health_bar_and_show(float(health_system.health) / float(health_system.full_health))
 
 func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
     health_system.change_health_over_time_by(time_per_tick, total_ticks, heal_per_tick)

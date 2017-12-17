@@ -301,4 +301,28 @@ Comment: Wow, what an effective day.
 * Completed scripting Radiogugu. Phew.
 Comment: Have a feeling that I will never finish this game. It's toooo time consuming.
 
+**Commit**
+
+[2017.12.10]
+* Completed scripting Eelo Puncher.
+* Completed scripting Healing Fountain. (Need to add the sprites for it though.)
+
+[2017.12.12]
+* Completed scripting Eelo Kicker.
+
+[2017.12.13]
+* Adjusted Eelo Kicker's kicking animation.
+* Fixed Healing Fountain's bug. Completed Healing Fountain's animation.
+* Completed scripting Latortrans and its Balls.
+* Added `confused(duration)` function to `CharacterCommon.gd`.
+* Bug fix: Now the character would correctly tranfer from "Idle" animation to "Walk" animation.
+Comment: Changed my daily time table. Seems like it works since I completed tons of stuff today.
+
+[2017.12.15]
+* Completed scripting ASCII Gunner.
+
+[2017.12.17]
+* Completed scripting ASCII Bomber.
+* Adjusted ASCII Gunner shootings' Z layer so that it appears in the front of characters.
+
 Sprint: Explode animation scene. Abnormal status indicator. (Probably should be combined with Number Indicator.)

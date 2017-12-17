@@ -57,7 +57,8 @@ var status = {
 	can_cast_skill = true,
 	animate_movement = true,
 	invincible = false,
-	no_movement = false
+	no_movement = false,
+	confused = false
 }
 
 # Calculated in every frame. Some skills may use the value.
@@ -162,9 +163,9 @@ func update_movement(delta):
 	if status.can_move:
 		# Horizontal keyboard input.
 		if Input.is_action_pressed("player_left"):
-			horizontal_movement -= 1
+			horizontal_movement += (1 if status.confused else -1)
 		if Input.is_action_pressed("player_right"):
-			horizontal_movement += 1
+			horizontal_movement += (-1 if status.confused else 1)
 
 		# Override the "Still" animation if the character is walking (on the ground).
 		if horizontal_movement != 0 and landed_on_ground:
@@ -208,10 +209,10 @@ func update_movement(delta):
 	set_global_pos(final_pos)
 
 	# Play the movement animation if no skill animation is currently being played.
-	if status.animate_movement and animation_key != null:
+	if status.animate_movement && animation_key != null:
 
 		# Play idle animation if the character waits for too long.
-		if OS.get_unix_time() - idle_timestamp >= TIME_TO_IDLE_ANIMATION:
+		if animation_key == "Still" && OS.get_unix_time() - idle_timestamp >= TIME_TO_IDLE_ANIMATION:
 			play_animation("Idle")
 		else:
 			play_animation(animation_key)
@@ -352,8 +353,20 @@ func stunned(duration):
 		active_timers["interruptable_skill"].destroy_timer()
 		active_timers.erase("interruptable_skill")
 
-	# Play animation.
 	play_animation("Stunned")
+
+func confused(duration):
+	if status.invincible:
+		display_immune_text()
+		return
+
+	status.confused = true
+	var confused_timer = countdown_timer.new(duration, self, "cancel_confused")
+	register_timer("confused", confused_timer)
+
+func cancel_confused():
+	status.confused = false
+	unregister_timer("confused")
 
 func knocked_back(vel_x, vel_y, x_fade_rate):
 	if status.invincible:
