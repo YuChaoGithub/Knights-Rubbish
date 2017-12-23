@@ -112,10 +112,10 @@ func spawn_bullet():
     bullet_type_animator.play(str(digit))
 
     var new_bullet = bullet.instance()
-    new_bullet.set_global_pos(bullet_spawn_pos[spawned_bullets.size()].get_global_pos())
     new_bullet.initialize(digit, facing)
-    spawned_bullets.push_back(new_bullet)
     spawn_node.add_child(new_bullet)
+    new_bullet.set_global_pos(bullet_spawn_pos[spawned_bullets.size()].get_global_pos())
+    spawned_bullets.push_back(new_bullet)
 
     # Last tick.
     if spawned_bullets.size() == bullet_spawn_pos.size():

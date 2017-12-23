@@ -63,8 +63,8 @@ func spawn_lightning_ball():
 	change_status(NONE)
 
 	curr_ball = lightning_ball.instance()
-	curr_ball.set_global_pos(ball_spawn_pos.get_global_pos())
 	spawn_node.add_child(curr_ball)
+	curr_ball.set_global_pos(ball_spawn_pos.get_global_pos())
 
 	status_timer = cd_timer.new(SPAWNING_DURATION, self, "change_status", RECOVER)
 

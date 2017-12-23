@@ -59,8 +59,8 @@ func spawn_floopies():
 	var left_floopy = floopy.instance()
 	var right_floopy = floopy.instance()
 
-	left_floopy.set_global_pos(left_spawn_pos.get_global_pos())
-	right_floopy.set_global_pos(right_spawn_pos.get_global_pos())
-
 	spawn_node.add_child(left_floopy)
 	spawn_node.add_child(right_floopy)
+
+	left_floopy.set_global_pos(left_spawn_pos.get_global_pos())
+	right_floopy.set_global_pos(right_spawn_pos.get_global_pos())

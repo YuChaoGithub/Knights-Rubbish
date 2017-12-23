@@ -6,14 +6,13 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/ASCII Bomber/O.png" type="Texture" id=4]
 [ext_resource path="res://Graphics/Enemies/Computer Room/ASCII Bomber/M.png" type="Texture" id=5]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 21.0112, 25.996 )
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 
-resource/name = "Blinking"
 length = 0.2
 loop = true
 step = 0.1
@@ -108,9 +107,8 @@ tracks/8/keys = {
 "values": [ Vector2( 12.9669, 3.82834 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource/name = "Explode"
 length = 0.4
 loop = false
 step = 0.1
@@ -205,9 +203,8 @@ tracks/8/keys = {
 "values": [ Vector2( 12.9669, 3.82834 ), Vector2( 18.3739, 3.01047 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource/name = "Still"
 length = 0.1
 loop = false
 step = 0.1
@@ -309,8 +306,9 @@ extents = Vector2( 24.8153, 33.7439 )
 
 [node name="ASCII Bomber bomb" type="KinematicBody2D"]
 
+z/z = 1
 input/pickable = false
-shapes/0/shape = SubResource( 4 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -4.61095, -2.54605 )
 shapes/0/trigger = false
 collision/layers = 16
@@ -321,7 +319,7 @@ script/script = ExtResource( 1 )
 [node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="."]
 
 transform/pos = Vector2( -4.61095, -2.54605 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -371,9 +369,9 @@ modulate = Color( 1, 0, 0, 1 )
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Blinking = SubResource( 1 )
-anims/Explode = SubResource( 2 )
-anims/Still = SubResource( 3 )
+anims/Blinking = SubResource( 2 )
+anims/Explode = SubResource( 3 )
+anims/Still = SubResource( 4 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]

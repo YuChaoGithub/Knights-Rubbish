@@ -90,9 +90,9 @@ func play_throw_anim():
 
 func throw_bomb():
 	var new_bomb = bomb.instance()
-	new_bomb.set_global_pos(bomb_spawn_pos.get_global_pos())
 	new_bomb.initialize(facing)
 	spawn_node.add_child(new_bomb)
+	new_bomb.set_global_pos(bomb_spawn_pos.get_global_pos())
 
 	ec.change_status(NONE)
 	status_timer = ec.cd_timer.new(THROWING_DURATION, self, "change_status", MOVE)

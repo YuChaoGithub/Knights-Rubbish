@@ -1,24 +1,37 @@
-[gd_scene load_steps=17 format=1]
+[gd_scene load_steps=22 format=1]
 
-[ext_resource path="res://Graphics/Enemies/Computer Room/iSnail/Body Mouth Closed.png" type="Texture" id=1]
-[ext_resource path="res://Graphics/Enemies/Computer Room/iSnail/Left Eye.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/Enemies/Computer Room/iSnail/Eyeball.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/Enemies/Computer Room/iSnail/Right Eye.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/Enemies/Computer Room/iSnail/Tail.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/Enemies/Computer Room/iSnail/Shell.png" type="Texture" id=6]
-[ext_resource path="res://Graphics/Enemies/Computer Room/iSnail/Body.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/Die Eye.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Mouth.png" type="Texture" id=9]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=10]
+[ext_resource path="res://Scripts/Enemies/Computer Room/ISnail.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Enemies/Computer Room/iSnail/Body Mouth Closed.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Enemies/Computer Room/iSnail/Left Eye.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Enemies/Computer Room/iSnail/Eyeball.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Enemies/Computer Room/iSnail/Right Eye.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Enemies/Computer Room/iSnail/Tail.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Enemies/Computer Room/iSnail/Shell.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Enemies/Computer Room/iSnail/Body.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/Die Eye.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Mouth.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=11]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=13]
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 96.3852, 47.1801 )
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 96.1503, 86.2303 )
+
+[sub_resource type="Animation" id=10]
 
 resource/name = "Attack"
 length = 0.1
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Shell:modulate")
+tracks/0/path = NodePath("Reverse Node/Shell:modulate")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
@@ -28,7 +41,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Tail:modulate")
+tracks/1/path = NodePath("Reverse Node/Tail:modulate")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
@@ -38,7 +51,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Tail Remote Transform:transform/pos")
+tracks/2/path = NodePath("Reverse Node/Tail Remote Transform:transform/pos")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
@@ -48,7 +61,7 @@ tracks/2/keys = {
 "values": [ Vector2( 22.5345, -2.31123 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Tail Remote Transform:transform/rot")
+tracks/3/path = NodePath("Reverse Node/Tail Remote Transform:transform/rot")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
@@ -58,7 +71,7 @@ tracks/3/keys = {
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Tail Remote Transform/Body:transform/pos")
+tracks/4/path = NodePath("Reverse Node/Tail Remote Transform/Body:transform/pos")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
@@ -68,7 +81,7 @@ tracks/4/keys = {
 "values": [ Vector2( 8.35617, 67.4381 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Tail Remote Transform/Body:transform/rot")
+tracks/5/path = NodePath("Reverse Node/Tail Remote Transform/Body:transform/rot")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
@@ -78,7 +91,7 @@ tracks/5/keys = {
 "values": [ -1.11721 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Tail Remote Transform/Body/Left Eye:transform/pos")
+tracks/6/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:transform/pos")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
@@ -88,7 +101,7 @@ tracks/6/keys = {
 "values": [ Vector2( 48.6132, -96.8376 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Tail Remote Transform/Body/Left Eye:transform/rot")
+tracks/7/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:transform/rot")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
@@ -98,7 +111,7 @@ tracks/7/keys = {
 "values": [ 11.9596 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/pos")
+tracks/8/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/pos")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
@@ -108,7 +121,7 @@ tracks/8/keys = {
 "values": [ Vector2( -20.3106, -37.4498 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/rot")
+tracks/9/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/rot")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
@@ -118,7 +131,7 @@ tracks/9/keys = {
 "values": [ 1.11721 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Tail Remote Transform/Body/Right Eye:transform/pos")
+tracks/10/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:transform/pos")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
@@ -128,7 +141,7 @@ tracks/10/keys = {
 "values": [ Vector2( 64.9063, -96.8969 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Tail Remote Transform/Body/Right Eye:transform/rot")
+tracks/11/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:transform/rot")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
@@ -138,7 +151,7 @@ tracks/11/keys = {
 "values": [ -38.724 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/pos")
+tracks/12/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/pos")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
@@ -148,7 +161,7 @@ tracks/12/keys = {
 "values": [ Vector2( -3.53, -46.6356 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/rot")
+tracks/13/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/rot")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
@@ -158,7 +171,7 @@ tracks/13/keys = {
 "values": [ 1.11721 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Tail Remote Transform/Shell Remote Transform:transform/pos")
+tracks/14/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:transform/pos")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
@@ -168,7 +181,7 @@ tracks/14/keys = {
 "values": [ Vector2( -36.9797, 55.4696 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Tail Remote Transform/Shell Remote Transform:transform/rot")
+tracks/15/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:transform/rot")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
@@ -178,17 +191,17 @@ tracks/15/keys = {
 "values": [ 23.5322 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
+tracks/16/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/scale")
+tracks/17/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/scale")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
@@ -198,7 +211,7 @@ tracks/17/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/scale")
+tracks/18/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/scale")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
@@ -208,17 +221,17 @@ tracks/18/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
+tracks/19/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Tail Remote Transform/Body/Right Eye:modulate")
+tracks/20/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:modulate")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
@@ -228,7 +241,7 @@ tracks/20/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Tail Remote Transform/Body/Left Eye:modulate")
+tracks/21/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:modulate")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
@@ -238,7 +251,7 @@ tracks/21/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Tail Remote Transform/Body:modulate")
+tracks/22/path = NodePath("Reverse Node/Tail Remote Transform/Body:modulate")
 tracks/22/interp = 1
 tracks/22/imported = false
 tracks/22/keys = {
@@ -248,24 +261,24 @@ tracks/22/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Tail Remote Transform/Body:texture")
+tracks/23/path = NodePath("Reverse Node/Tail Remote Transform/Body:texture")
 tracks/23/interp = 1
 tracks/23/imported = false
 tracks/23/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=11]
 
 resource/name = "Die"
 length = 0.7
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Shell:modulate")
+tracks/0/path = NodePath("Reverse Node/Shell:modulate")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
@@ -275,7 +288,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Tail:modulate")
+tracks/1/path = NodePath("Reverse Node/Tail:modulate")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
@@ -285,7 +298,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Tail Remote Transform:transform/pos")
+tracks/2/path = NodePath("Reverse Node/Tail Remote Transform:transform/pos")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
@@ -295,7 +308,7 @@ tracks/2/keys = {
 "values": [ Vector2( 22.5345, -2.31123 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Tail Remote Transform:transform/rot")
+tracks/3/path = NodePath("Reverse Node/Tail Remote Transform:transform/rot")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
@@ -305,7 +318,7 @@ tracks/3/keys = {
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Tail Remote Transform/Body:transform/pos")
+tracks/4/path = NodePath("Reverse Node/Tail Remote Transform/Body:transform/pos")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
@@ -315,7 +328,7 @@ tracks/4/keys = {
 "values": [ Vector2( 8.35617, 67.4381 ), Vector2( 14.2863, 66.5486 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Tail Remote Transform/Body:transform/rot")
+tracks/5/path = NodePath("Reverse Node/Tail Remote Transform/Body:transform/rot")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
@@ -325,7 +338,7 @@ tracks/5/keys = {
 "values": [ -1.11721, 6.04604 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Tail Remote Transform/Body/Left Eye:transform/pos")
+tracks/6/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:transform/pos")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
@@ -335,7 +348,7 @@ tracks/6/keys = {
 "values": [ Vector2( 48.6132, -96.8376 ), Vector2( 48.6132, -96.8376 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Tail Remote Transform/Body/Left Eye:transform/rot")
+tracks/7/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:transform/rot")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
@@ -345,7 +358,7 @@ tracks/7/keys = {
 "values": [ 0.0, 105.278 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/pos")
+tracks/8/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/pos")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
@@ -355,7 +368,7 @@ tracks/8/keys = {
 "values": [ Vector2( -20.3106, -37.4498 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/rot")
+tracks/9/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/rot")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
@@ -365,7 +378,7 @@ tracks/9/keys = {
 "values": [ 1.11721 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Tail Remote Transform/Body/Right Eye:transform/pos")
+tracks/10/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:transform/pos")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
@@ -375,7 +388,7 @@ tracks/10/keys = {
 "values": [ Vector2( 64.9063, -96.8969 ), Vector2( 64.9063, -96.8969 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Tail Remote Transform/Body/Right Eye:transform/rot")
+tracks/11/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:transform/rot")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
@@ -385,7 +398,7 @@ tracks/11/keys = {
 "values": [ 0.0, 81.6402 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/pos")
+tracks/12/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/pos")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
@@ -395,7 +408,7 @@ tracks/12/keys = {
 "values": [ Vector2( -3.53, -46.6356 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/rot")
+tracks/13/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/rot")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
@@ -405,7 +418,7 @@ tracks/13/keys = {
 "values": [ 1.11721 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Tail Remote Transform/Shell Remote Transform:transform/pos")
+tracks/14/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:transform/pos")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
@@ -415,7 +428,7 @@ tracks/14/keys = {
 "values": [ Vector2( -36.9797, 55.4696 ), Vector2( -85.7204, 51.8424 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Tail Remote Transform/Shell Remote Transform:transform/rot")
+tracks/15/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:transform/rot")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
@@ -425,17 +438,17 @@ tracks/15/keys = {
 "values": [ 0.0, 59.2437 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
+tracks/16/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/scale")
+tracks/17/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/scale")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
@@ -445,7 +458,7 @@ tracks/17/keys = {
 "values": [ Vector2( 0.4, 0.4 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/scale")
+tracks/18/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/scale")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
@@ -455,17 +468,17 @@ tracks/18/keys = {
 "values": [ Vector2( 0.4, 0.4 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
+tracks/19/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Tail Remote Transform/Body/Right Eye:modulate")
+tracks/20/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:modulate")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
@@ -475,7 +488,7 @@ tracks/20/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Tail Remote Transform/Body/Left Eye:modulate")
+tracks/21/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:modulate")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
@@ -485,7 +498,7 @@ tracks/21/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Tail Remote Transform/Body:modulate")
+tracks/22/path = NodePath("Reverse Node/Tail Remote Transform/Body:modulate")
 tracks/22/interp = 1
 tracks/22/imported = false
 tracks/22/keys = {
@@ -495,24 +508,23 @@ tracks/22/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Tail Remote Transform/Body:texture")
+tracks/23/path = NodePath("Reverse Node/Tail Remote Transform/Body:texture")
 tracks/23/interp = 1
 tracks/23/imported = false
 tracks/23/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 
-resource/name = "Hurt"
 length = 0.1
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Shell:modulate")
+tracks/0/path = NodePath("Reverse Node/Shell:modulate")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
@@ -522,7 +534,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Tail:modulate")
+tracks/1/path = NodePath("Reverse Node/Tail:modulate")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
@@ -532,7 +544,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Tail Remote Transform:transform/pos")
+tracks/2/path = NodePath("Reverse Node/Tail Remote Transform:transform/pos")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
@@ -542,7 +554,7 @@ tracks/2/keys = {
 "values": [ Vector2( 22.5345, -2.31123 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Tail Remote Transform:transform/rot")
+tracks/3/path = NodePath("Reverse Node/Tail Remote Transform:transform/rot")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
@@ -552,7 +564,7 @@ tracks/3/keys = {
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Tail Remote Transform/Body:transform/pos")
+tracks/4/path = NodePath("Reverse Node/Tail Remote Transform/Body:transform/pos")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
@@ -562,7 +574,7 @@ tracks/4/keys = {
 "values": [ Vector2( 8.35617, 67.4381 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Tail Remote Transform/Body:transform/rot")
+tracks/5/path = NodePath("Reverse Node/Tail Remote Transform/Body:transform/rot")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
@@ -572,7 +584,7 @@ tracks/5/keys = {
 "values": [ 7.77709 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Tail Remote Transform/Body/Left Eye:transform/pos")
+tracks/6/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:transform/pos")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
@@ -582,7 +594,7 @@ tracks/6/keys = {
 "values": [ Vector2( 48.6132, -96.8376 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Tail Remote Transform/Body/Left Eye:transform/rot")
+tracks/7/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:transform/rot")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
@@ -592,7 +604,7 @@ tracks/7/keys = {
 "values": [ -88.1382 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/pos")
+tracks/8/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/pos")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
@@ -602,7 +614,7 @@ tracks/8/keys = {
 "values": [ Vector2( -19.0901, -37.5204 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/rot")
+tracks/9/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/rot")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
@@ -612,7 +624,7 @@ tracks/9/keys = {
 "values": [ -89.4556 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Tail Remote Transform/Body/Right Eye:transform/pos")
+tracks/10/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:transform/pos")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
@@ -622,7 +634,7 @@ tracks/10/keys = {
 "values": [ Vector2( 67.7928, -88.7691 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Tail Remote Transform/Body/Right Eye:transform/rot")
+tracks/11/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:transform/rot")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
@@ -632,7 +644,7 @@ tracks/11/keys = {
 "values": [ 12.4555 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/pos")
+tracks/12/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/pos")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
@@ -642,7 +654,7 @@ tracks/12/keys = {
 "values": [ Vector2( -3.783, -44.6442 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/rot")
+tracks/13/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/rot")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
@@ -652,7 +664,7 @@ tracks/13/keys = {
 "values": [ 181.7 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Tail Remote Transform/Shell Remote Transform:transform/pos")
+tracks/14/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:transform/pos")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
@@ -662,7 +674,7 @@ tracks/14/keys = {
 "values": [ Vector2( -36.9797, 55.4696 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Tail Remote Transform/Shell Remote Transform:transform/rot")
+tracks/15/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:transform/rot")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
@@ -672,17 +684,17 @@ tracks/15/keys = {
 "values": [ 45.6106 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
+tracks/16/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 10 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/scale")
+tracks/17/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/scale")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
@@ -692,7 +704,7 @@ tracks/17/keys = {
 "values": [ Vector2( 0.8, 0.8 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/scale")
+tracks/18/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/scale")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
@@ -702,17 +714,17 @@ tracks/18/keys = {
 "values": [ Vector2( 0.8, 0.8 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
+tracks/19/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 10 ) ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Tail Remote Transform/Body/Right Eye:modulate")
+tracks/20/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:modulate")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
@@ -722,7 +734,7 @@ tracks/20/keys = {
 "values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Tail Remote Transform/Body/Left Eye:modulate")
+tracks/21/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:modulate")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
@@ -732,7 +744,7 @@ tracks/21/keys = {
 "values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Tail Remote Transform/Body:modulate")
+tracks/22/path = NodePath("Reverse Node/Tail Remote Transform/Body:modulate")
 tracks/22/interp = 1
 tracks/22/imported = false
 tracks/22/keys = {
@@ -742,24 +754,23 @@ tracks/22/keys = {
 "values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Tail Remote Transform/Body:texture")
+tracks/23/path = NodePath("Reverse Node/Tail Remote Transform/Body:texture")
 tracks/23/interp = 1
 tracks/23/imported = false
 tracks/23/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=12]
 
-resource/name = "Still"
 length = 0.1
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Shell:modulate")
+tracks/0/path = NodePath("Reverse Node/Shell:modulate")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
@@ -769,7 +780,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Tail:modulate")
+tracks/1/path = NodePath("Reverse Node/Tail:modulate")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
@@ -779,7 +790,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Tail Remote Transform:transform/pos")
+tracks/2/path = NodePath("Reverse Node/Tail Remote Transform:transform/pos")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
@@ -789,7 +800,7 @@ tracks/2/keys = {
 "values": [ Vector2( 22.5345, -2.31123 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Tail Remote Transform:transform/rot")
+tracks/3/path = NodePath("Reverse Node/Tail Remote Transform:transform/rot")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
@@ -799,7 +810,7 @@ tracks/3/keys = {
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Tail Remote Transform/Body:transform/pos")
+tracks/4/path = NodePath("Reverse Node/Tail Remote Transform/Body:transform/pos")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
@@ -809,7 +820,7 @@ tracks/4/keys = {
 "values": [ Vector2( 8.35617, 67.4381 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Tail Remote Transform/Body:transform/rot")
+tracks/5/path = NodePath("Reverse Node/Tail Remote Transform/Body:transform/rot")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
@@ -819,7 +830,7 @@ tracks/5/keys = {
 "values": [ -1.11721 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Tail Remote Transform/Body/Left Eye:transform/pos")
+tracks/6/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:transform/pos")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
@@ -829,7 +840,7 @@ tracks/6/keys = {
 "values": [ Vector2( 48.6132, -96.8376 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Tail Remote Transform/Body/Left Eye:transform/rot")
+tracks/7/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:transform/rot")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
@@ -839,7 +850,7 @@ tracks/7/keys = {
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/pos")
+tracks/8/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/pos")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
@@ -849,7 +860,7 @@ tracks/8/keys = {
 "values": [ Vector2( -20.3106, -37.4498 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/rot")
+tracks/9/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/rot")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
@@ -859,7 +870,7 @@ tracks/9/keys = {
 "values": [ 1.11721 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Tail Remote Transform/Body/Right Eye:transform/pos")
+tracks/10/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:transform/pos")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
@@ -869,7 +880,7 @@ tracks/10/keys = {
 "values": [ Vector2( 64.9063, -96.8969 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Tail Remote Transform/Body/Right Eye:transform/rot")
+tracks/11/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:transform/rot")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
@@ -879,7 +890,7 @@ tracks/11/keys = {
 "values": [ 0.0 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/pos")
+tracks/12/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/pos")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
@@ -889,7 +900,7 @@ tracks/12/keys = {
 "values": [ Vector2( -3.53, -46.6356 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/rot")
+tracks/13/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/rot")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
@@ -899,7 +910,7 @@ tracks/13/keys = {
 "values": [ 1.11721 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Tail Remote Transform/Shell Remote Transform:transform/pos")
+tracks/14/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:transform/pos")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
@@ -909,7 +920,7 @@ tracks/14/keys = {
 "values": [ Vector2( -36.9797, 55.4696 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Tail Remote Transform/Shell Remote Transform:transform/rot")
+tracks/15/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:transform/rot")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
@@ -919,17 +930,17 @@ tracks/15/keys = {
 "values": [ 0.0 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
+tracks/16/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/scale")
+tracks/17/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/scale")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
@@ -939,7 +950,7 @@ tracks/17/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/scale")
+tracks/18/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/scale")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
@@ -949,17 +960,17 @@ tracks/18/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
+tracks/19/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Tail Remote Transform/Body/Right Eye:modulate")
+tracks/20/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:modulate")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
@@ -969,7 +980,7 @@ tracks/20/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Tail Remote Transform/Body/Left Eye:modulate")
+tracks/21/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:modulate")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
@@ -979,7 +990,7 @@ tracks/21/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Tail Remote Transform/Body:modulate")
+tracks/22/path = NodePath("Reverse Node/Tail Remote Transform/Body:modulate")
 tracks/22/interp = 1
 tracks/22/imported = false
 tracks/22/keys = {
@@ -989,24 +1000,23 @@ tracks/22/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Tail Remote Transform/Body:texture")
+tracks/23/path = NodePath("Reverse Node/Tail Remote Transform/Body:texture")
 tracks/23/interp = 1
 tracks/23/imported = false
 tracks/23/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=6]
 
-resource/name = "Stunned"
 length = 1.5
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Shell:modulate")
+tracks/0/path = NodePath("Reverse Node/Shell:modulate")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
@@ -1016,7 +1026,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 0.784314, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Tail:modulate")
+tracks/1/path = NodePath("Reverse Node/Tail:modulate")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
@@ -1026,7 +1036,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 0.784314, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Tail Remote Transform:transform/pos")
+tracks/2/path = NodePath("Reverse Node/Tail Remote Transform:transform/pos")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
@@ -1036,7 +1046,7 @@ tracks/2/keys = {
 "values": [ Vector2( 22.5345, -2.31123 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Tail Remote Transform:transform/rot")
+tracks/3/path = NodePath("Reverse Node/Tail Remote Transform:transform/rot")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
@@ -1046,7 +1056,7 @@ tracks/3/keys = {
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Tail Remote Transform/Body:transform/pos")
+tracks/4/path = NodePath("Reverse Node/Tail Remote Transform/Body:transform/pos")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
@@ -1056,7 +1066,7 @@ tracks/4/keys = {
 "values": [ Vector2( 10.6109, 67.4381 ), Vector2( 12.4898, 66.4987 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Tail Remote Transform/Body:transform/rot")
+tracks/5/path = NodePath("Reverse Node/Tail Remote Transform/Body:transform/rot")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
@@ -1066,7 +1076,7 @@ tracks/5/keys = {
 "values": [ 5.10806, -6.48639 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Tail Remote Transform/Body/Left Eye:transform/pos")
+tracks/6/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:transform/pos")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
@@ -1076,7 +1086,7 @@ tracks/6/keys = {
 "values": [ Vector2( 48.6132, -96.8376 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Tail Remote Transform/Body/Left Eye:transform/rot")
+tracks/7/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:transform/rot")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
@@ -1086,7 +1096,7 @@ tracks/7/keys = {
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/pos")
+tracks/8/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/pos")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
@@ -1096,7 +1106,7 @@ tracks/8/keys = {
 "values": [ Vector2( -21.3203, -37.5741 ), Vector2( -21.3203, -37.5741 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/rot")
+tracks/9/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/rot")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
@@ -1106,7 +1116,7 @@ tracks/9/keys = {
 "values": [ 1.11721, -117.817 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Tail Remote Transform/Body/Right Eye:transform/pos")
+tracks/10/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:transform/pos")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
@@ -1116,7 +1126,7 @@ tracks/10/keys = {
 "values": [ Vector2( 64.9063, -96.8969 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Tail Remote Transform/Body/Right Eye:transform/rot")
+tracks/11/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:transform/rot")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
@@ -1126,7 +1136,7 @@ tracks/11/keys = {
 "values": [ 0.0 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/pos")
+tracks/12/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/pos")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
@@ -1136,7 +1146,7 @@ tracks/12/keys = {
 "values": [ Vector2( -3.53, -46.6356 ), Vector2( -3.53, -46.6356 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/rot")
+tracks/13/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/rot")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
@@ -1146,7 +1156,7 @@ tracks/13/keys = {
 "values": [ -84.21, -223.185 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Tail Remote Transform/Shell Remote Transform:transform/pos")
+tracks/14/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:transform/pos")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
@@ -1156,7 +1166,7 @@ tracks/14/keys = {
 "values": [ Vector2( -36.9797, 55.4696 ), Vector2( -36.9797, 55.4696 ), Vector2( -36.9797, 55.4696 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Tail Remote Transform/Shell Remote Transform:transform/rot")
+tracks/15/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:transform/rot")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
@@ -1166,17 +1176,17 @@ tracks/15/keys = {
 "values": [ 0.0, 26.7656, -12.3721 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
+tracks/16/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 10 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/scale")
+tracks/17/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/scale")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
@@ -1186,7 +1196,7 @@ tracks/17/keys = {
 "values": [ Vector2( 0.6, 0.6 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/scale")
+tracks/18/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/scale")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
@@ -1196,17 +1206,17 @@ tracks/18/keys = {
 "values": [ Vector2( 0.6, 0.6 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
+tracks/19/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 10 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Tail Remote Transform/Body/Right Eye:modulate")
+tracks/20/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:modulate")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
@@ -1216,7 +1226,7 @@ tracks/20/keys = {
 "values": [ Color( 1, 1, 0.784314, 1 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Tail Remote Transform/Body/Left Eye:modulate")
+tracks/21/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:modulate")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
@@ -1226,7 +1236,7 @@ tracks/21/keys = {
 "values": [ Color( 1, 1, 0.784314, 1 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Tail Remote Transform/Body:modulate")
+tracks/22/path = NodePath("Reverse Node/Tail Remote Transform/Body:modulate")
 tracks/22/interp = 1
 tracks/22/imported = false
 tracks/22/keys = {
@@ -1236,24 +1246,23 @@ tracks/22/keys = {
 "values": [ Color( 1, 1, 0.784314, 1 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Tail Remote Transform/Body:texture")
+tracks/23/path = NodePath("Reverse Node/Tail Remote Transform/Body:texture")
 tracks/23/interp = 1
 tracks/23/imported = false
 tracks/23/keys = {
 "times": FloatArray( 0, 0.4, 0.8, 1.2 ),
 "transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 7 ) ]
+"values": [ ExtResource( 2 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 8 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=7]
 
-resource/name = "Walk"
 length = 1.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Shell:modulate")
+tracks/0/path = NodePath("Reverse Node/Shell:modulate")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
@@ -1263,7 +1272,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Tail:modulate")
+tracks/1/path = NodePath("Reverse Node/Tail:modulate")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
@@ -1273,7 +1282,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Tail Remote Transform:transform/pos")
+tracks/2/path = NodePath("Reverse Node/Tail Remote Transform:transform/pos")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
@@ -1283,7 +1292,7 @@ tracks/2/keys = {
 "values": [ Vector2( 22.5345, -2.31123 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Tail Remote Transform:transform/rot")
+tracks/3/path = NodePath("Reverse Node/Tail Remote Transform:transform/rot")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
@@ -1293,7 +1302,7 @@ tracks/3/keys = {
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Tail Remote Transform/Body:transform/pos")
+tracks/4/path = NodePath("Reverse Node/Tail Remote Transform/Body:transform/pos")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
@@ -1303,7 +1312,7 @@ tracks/4/keys = {
 "values": [ Vector2( 8.35617, 67.4381 ), Vector2( 15.177, 66.4637 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Tail Remote Transform/Body:transform/rot")
+tracks/5/path = NodePath("Reverse Node/Tail Remote Transform/Body:transform/rot")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
@@ -1313,7 +1322,7 @@ tracks/5/keys = {
 "values": [ 1.21581, -2.94666 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Tail Remote Transform/Body/Left Eye:transform/pos")
+tracks/6/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:transform/pos")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
@@ -1323,7 +1332,7 @@ tracks/6/keys = {
 "values": [ Vector2( 48.6132, -96.8376 ), Vector2( 48.6132, -96.8376 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Tail Remote Transform/Body/Left Eye:transform/rot")
+tracks/7/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:transform/rot")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
@@ -1333,7 +1342,7 @@ tracks/7/keys = {
 "values": [ 0.0, 13.1729 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/pos")
+tracks/8/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/pos")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
@@ -1343,7 +1352,7 @@ tracks/8/keys = {
 "values": [ Vector2( -20.3106, -37.4498 ), Vector2( -16.6865, -36.8366 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/rot")
+tracks/9/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/rot")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
@@ -1353,7 +1362,7 @@ tracks/9/keys = {
 "values": [ 1.11721, 1.11721 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Tail Remote Transform/Body/Right Eye:transform/pos")
+tracks/10/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:transform/pos")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
@@ -1363,7 +1372,7 @@ tracks/10/keys = {
 "values": [ Vector2( 64.9063, -96.8969 ), Vector2( 64.9063, -96.8969 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Tail Remote Transform/Body/Right Eye:transform/rot")
+tracks/11/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:transform/rot")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
@@ -1373,7 +1382,7 @@ tracks/11/keys = {
 "values": [ 0.0, 13.9133 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/pos")
+tracks/12/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/pos")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
@@ -1383,7 +1392,7 @@ tracks/12/keys = {
 "values": [ Vector2( -3.53, -46.6356 ), Vector2( -0.272675, -46.8904 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/rot")
+tracks/13/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/rot")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
@@ -1393,7 +1402,7 @@ tracks/13/keys = {
 "values": [ 1.11721, 1.11721 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Tail Remote Transform/Shell Remote Transform:transform/pos")
+tracks/14/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:transform/pos")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
@@ -1403,7 +1412,7 @@ tracks/14/keys = {
 "values": [ Vector2( -36.9797, 55.4696 ), Vector2( -39.933, 55.4696 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Tail Remote Transform/Shell Remote Transform:transform/rot")
+tracks/15/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:transform/rot")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
@@ -1413,17 +1422,17 @@ tracks/15/keys = {
 "values": [ 0.0, 3.33393 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
+tracks/16/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/scale")
+tracks/17/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:transform/scale")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
@@ -1433,7 +1442,7 @@ tracks/17/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/scale")
+tracks/18/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:transform/scale")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
@@ -1443,17 +1452,17 @@ tracks/18/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
+tracks/19/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Tail Remote Transform/Body/Right Eye:modulate")
+tracks/20/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:modulate")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
@@ -1463,7 +1472,7 @@ tracks/20/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Tail Remote Transform/Body/Left Eye:modulate")
+tracks/21/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:modulate")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
@@ -1473,7 +1482,7 @@ tracks/21/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Tail Remote Transform/Body:modulate")
+tracks/22/path = NodePath("Reverse Node/Tail Remote Transform/Body:modulate")
 tracks/22/interp = 1
 tracks/22/imported = false
 tracks/22/keys = {
@@ -1483,73 +1492,125 @@ tracks/22/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Tail Remote Transform/Body:texture")
+tracks/23/path = NodePath("Reverse Node/Tail Remote Transform/Body:texture")
 tracks/23/interp = 1
 tracks/23/imported = false
 tracks/23/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 
-[node name="iSnail" type="Node2D"]
+[node name="iSnail" type="KinematicBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 9 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.44986, 47.237 )
+shapes/0/trigger = false
+collision/layers = 16
+collision/mask = 2
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+
+[node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( 0.44986, 47.237 )
+shape = SubResource( 9 )
+trigger = false
+_update_shape_index = 0
 
 [node name="Animation" type="Node2D" parent="."]
 
-[node name="Tail Remote Transform" type="RemoteTransform2D" parent="Animation"]
+editor/display_folded = true
 
+[node name="Hourglass Spawn Pos" type="Position2D" parent="Animation"]
+
+transform/pos = Vector2( -115, 19 )
+
+[node name="Damage Area" type="Area2D" parent="Animation"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -0.429901, 13.7573 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 16
+collision/mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area"]
+
+transform/pos = Vector2( -0.429901, 13.7573 )
+shape = SubResource( 8 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Reverse Node" type="Node2D" parent="Animation"]
+
+editor/display_folded = true
+transform/pos = Vector2( 4.49875, 16.1956 )
+transform/scale = Vector2( -1, 1 )
+
+[node name="Tail Remote Transform" type="RemoteTransform2D" parent="Animation/Reverse Node"]
+
+editor/display_folded = true
 transform/pos = Vector2( 22.5345, -2.31123 )
 remote_path = NodePath("../Tail")
 
-[node name="Body" type="Sprite" parent="Animation/Tail Remote Transform"]
+[node name="Body" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform"]
 
-transform/pos = Vector2( 8.35617, 67.4381 )
-transform/rot = -1.11721
-texture = ExtResource( 1 )
+transform/pos = Vector2( 13.0722, 66.7644 )
+transform/rot = -1.66221
+texture = ExtResource( 2 )
 offset = Vector2( 30.1383, -42.194 )
 
-[node name="Left Eye" type="Sprite" parent="Animation/Tail Remote Transform/Body"]
+[node name="Left Eye" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform/Body"]
 
 transform/pos = Vector2( 48.6132, -96.8376 )
-texture = ExtResource( 2 )
+transform/rot = 11.385
+texture = ExtResource( 3 )
 offset = Vector2( -18.1988, -25.813 )
 
-[node name="Left Eyeball" type="Sprite" parent="Animation/Tail Remote Transform/Body/Left Eye"]
+[node name="Left Eyeball" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform/Body/Left Eye"]
 
-transform/pos = Vector2( -20.3106, -37.4498 )
+transform/pos = Vector2( -18.2225, -37.0965 )
 transform/rot = 1.11721
-transform/scale = Vector2( 1, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
-[node name="Right Eye" type="Sprite" parent="Animation/Tail Remote Transform/Body"]
+[node name="Right Eye" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform/Body"]
 
 transform/pos = Vector2( 64.9063, -96.8969 )
-texture = ExtResource( 4 )
+transform/rot = 12.0249
+texture = ExtResource( 5 )
 offset = Vector2( -3.6792, -30.3667 )
 
-[node name="Right Eyeball" type="Sprite" parent="Animation/Tail Remote Transform/Body/Right Eye"]
+[node name="Right Eyeball" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform/Body/Right Eye"]
 
-transform/pos = Vector2( -3.53, -46.6356 )
+transform/pos = Vector2( -1.65318, -46.7824 )
 transform/rot = 1.11721
-transform/scale = Vector2( 1, 1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
-[node name="Shell Remote Transform" type="RemoteTransform2D" parent="Animation/Tail Remote Transform"]
+[node name="Shell Remote Transform" type="RemoteTransform2D" parent="Animation/Reverse Node/Tail Remote Transform"]
 
-transform/pos = Vector2( -36.9797, 55.4696 )
+transform/pos = Vector2( -39.0217, 55.4696 )
+transform/rot = 2.30515
 remote_path = NodePath("../../Shell")
 
-[node name="Tail" type="Sprite" parent="Animation"]
+[node name="Tail" type="Sprite" parent="Animation/Reverse Node"]
 
 transform/pos = Vector2( 22.5345, -2.31123 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 offset = Vector2( -54.814, 73.8286 )
 
-[node name="Shell" type="Sprite" parent="Animation"]
+[node name="Shell" type="Sprite" parent="Animation/Reverse Node"]
 
-transform/pos = Vector2( -14.4452, 53.1583 )
-texture = ExtResource( 6 )
+transform/pos = Vector2( -16.4872, 53.1584 )
+transform/rot = 2.30515
+texture = ExtResource( 7 )
 offset = Vector2( 6.49088, -49.0143 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
@@ -1557,15 +1618,23 @@ offset = Vector2( 6.49088, -49.0143 )
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Attack = SubResource( 6 )
-anims/Die = SubResource( 4 )
-anims/Hurt = SubResource( 2 )
-anims/Still = SubResource( 1 )
-anims/Stunned = SubResource( 3 )
-anims/Walk = SubResource( 5 )
+anims/Attack = SubResource( 10 )
+anims/Die = SubResource( 11 )
+anims/Hurt = SubResource( 4 )
+anims/Still = SubResource( 12 )
+anims/Stunned = SubResource( 6 )
+anims/Walk = SubResource( 7 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "Still"
+
+[node name="Health Bar" parent="." instance=ExtResource( 12 )]
+
+transform/pos = Vector2( -2.16318, -105.995 )
+
+[node name="Number Spawn Pos" type="Position2D" parent="."]
+
+script/script = ExtResource( 13 )
 
 

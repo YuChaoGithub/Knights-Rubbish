@@ -200,10 +200,10 @@ func horizontal_skill_toss(side):
 	var dart = pencil_dart.instance()
 
 	# Set position and facing.
-	dart.set_pos(character.get_pos() + pencil_toss_pos)
 	dart.side = side
 
 	dart_spawn_node.add_child(dart)
+	dart.set_pos(character.get_pos() + pencil_toss_pos)
 
 	character.unregister_timer("interruptable_skill")
 

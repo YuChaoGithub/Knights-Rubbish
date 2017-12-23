@@ -325,4 +325,25 @@ Comment: Changed my daily time table. Seems like it works since I completed tons
 * Completed scripting ASCII Bomber.
 * Adjusted ASCII Gunner shootings' Z layer so that it appears in the front of characters.
 
+**Commit**
+
+[2017.12.18]
+* Added `BouncyMovement.gd`.
+* Completed scripting Cliffy.
+
+[2017.12.21]
+* Completed scripting Flaggomine.
+* Completed scripting Windy Meteory.
+
+[2017.12.22]
+* Completed scripting Chromoghast.
+* Moved all `set_global_pos()` calls after `add_child()` to avoid positioning bugs.
+
+[2017.12.23]
+* Completed scripting Clockwork Fox.
+* Completed scripting iSnail.
+* Reassign all z-layer of enemy scenes. (Generally, Enemy->0, Enemy Bullet->1, Enemy Bullet Hit Effect->2).
+
+**Commit**
+
 Sprint: Explode animation scene. Abnormal status indicator. (Probably should be combined with Number Indicator.)

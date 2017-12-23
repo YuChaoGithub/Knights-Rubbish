@@ -106,8 +106,8 @@ func play_android_anim():
 func spawn_android():
 	# Spawn android.
 	var new_android = paranoid_android.instance()
-	new_android.set_global_pos(android_spawn_pos.get_global_pos())
 	spawn_node.add_child(new_android)
+	new_android.set_global_pos(android_spawn_pos.get_global_pos())
 
 	# Keep on spawning or go back to face.
 	ec.change_status(NONE)
@@ -124,8 +124,8 @@ func spawn_frizbee():
 	var count = spawn_num_according_to_health(FRIZBEE_MIN_SPAWN_COUNT, FRIZBEE_MAX_SPAWN_COUNT)
 	for i in range(count):
 		var new_frizbee = frizbee.instance()
-		new_frizbee.set_global_pos(frizbee_spawn_pos.get_global_pos())
 		spawn_node.add_child(new_frizbee)
+		new_frizbee.set_global_pos(frizbee_spawn_pos.get_global_pos())
 		frizbees.push_back(new_frizbee)
 
 	ec.change_status(NONE)

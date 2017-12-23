@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=1]
+[gd_scene load_steps=22 format=1]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/ASCIIGunner.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/ASCII Gunner/Body.png" type="Texture" id=2]
@@ -10,7 +10,8 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/ASCII Gunner/Bullet 2.png" type="Texture" id=8]
 [ext_resource path="res://Graphics/Enemies/Computer Room/ASCII Gunner/Bullet 3.png" type="Texture" id=9]
 [ext_resource path="res://Graphics/Enemies/Computer Room/ASCII Bomber/Stunned Head.png" type="Texture" id=10]
-[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -1672,8 +1673,9 @@ autoplay = "Still"
 [node name="Number Spawn Pos" type="Position2D" parent="."]
 
 transform/pos = Vector2( 0.444153, -149.672 )
+script/script = ExtResource( 11 )
 
-[node name="Health Bar" parent="." instance=ExtResource( 11 )]
+[node name="Health Bar" parent="." instance=ExtResource( 12 )]
 
 transform/pos = Vector2( 1.73059, -150.997 )
 

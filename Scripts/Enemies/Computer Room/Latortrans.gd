@@ -110,9 +110,9 @@ func shoot_ball():
 
 	for dir in ball_directions:
 		var new_ball = output_balls[curr_attack].instance()
-		new_ball.set_global_pos(ball_spawn_pos.get_global_pos())
 		new_ball.initialize(dir)
 		spawn_node.add_child(new_ball)
+		new_ball.set_global_pos(ball_spawn_pos.get_global_pos())
 
 	status_timer = ec.cd_timer.new(OUTPUT_ANIMATION_SECOND_DURATION, self, "change_status", IDLE)
 

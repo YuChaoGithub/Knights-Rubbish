@@ -79,10 +79,7 @@ func perform_movement(delta):
 		var final_pos = curr_rand_movement.movement(get_global_pos(), delta)
 		
 		# Turn sprite if it is moving in a different direction.
-		if final_pos.x < get_global_pos().x:
-			facing = -1
-		elif final_pos.x > get_global_pos().x:
-			facing = 1
+		facing = sign(final_pos.x - get_global_pos().x)
 		ec.turn_sprites_x(facing)
 
 		move_to(final_pos)
@@ -99,15 +96,15 @@ func open_lid():
 func spawn_mousy():
 	var new_mousy = mousy_bomb.instance()
 	new_mousy.facing = facing
-	new_mousy.set_global_pos(mousy_spawn_pos.get_global_pos())
 	mousy_parent_node.add_child(new_mousy)
+	new_mousy.set_global_pos(mousy_spawn_pos.get_global_pos())
 
 	ec.change_status(NONE)
 	status_timer = ec.cd_timer.new(SPAWN_MOUSY_DURATION, self, "change_status", CLOSE)
 
 func face_the_nearest_target():
 	var target = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
-	facing = -1 if target.get_global_pos().x < get_global_pos().x else 1
+	facing = sign(target.get_global_pos().x - get_global_pos().x)
 	ec.turn_sprites_x(facing)
 
 func close_lid():

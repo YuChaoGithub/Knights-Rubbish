@@ -90,9 +90,9 @@ func spawn_missle():
 	var dy = sin(rotate_radian)
 
 	var new_missle = missle.instance()
-	new_missle.set_global_pos(missle_spawn_pos.get_global_pos())
 	new_missle.initialize(dx, dy)
 	spawn_node.add_child(new_missle)
+	new_missle.set_global_pos(missle_spawn_pos.get_global_pos())
 
 func damaged(val):
 	ec.change_status(AIM)

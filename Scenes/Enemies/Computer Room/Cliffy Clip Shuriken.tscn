@@ -1,37 +1,15 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=6 format=1]
 
-[ext_resource path="res://Graphics/Enemies/Computer Room/Cliffy/Paperclip.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Enemies/Computer Room/CliffyClipShuriken.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Cliffy/Paperclip.png" type="Texture" id=2]
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="RectangleShape2D" id=1]
 
-resource/name = "Blinking"
-length = 0.4
-loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:transform/scale")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
-"times": FloatArray( 0, 0.2 ),
-"transitions": FloatArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 0.9, 0.9 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Sprite:modulate")
-tracks/1/interp = 1
-tracks/1/imported = false
-tracks/1/keys = {
-"times": FloatArray( 0, 0.2 ),
-"transitions": FloatArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
-}
+custom_solver_bias = 0.0
+extents = Vector2( 55.4874, 24.1344 )
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=2]
 
-resource/name = "Traveling"
 length = 0.4
 loop = true
 step = 0.1
@@ -56,20 +34,46 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Sprite:transform/pos")
+tracks/2/path = NodePath("Sprite:transform/rot")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ -90.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+
+length = 0.4
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:transform/scale")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
 "times": FloatArray( 0, 0.2 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -155.836, -162.155 ), Vector2( -155.836, -162.155 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 0.9, 0.9 ) ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("Sprite:transform/rot")
-tracks/3/interp = 1
-tracks/3/imported = false
-tracks/3/keys = {
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite:transform/rot")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
 "times": FloatArray( 0, 0.2 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 0,
@@ -78,25 +82,49 @@ tracks/3/keys = {
 
 [node name="Cliffy Clip Shuriken" type="Node2D"]
 
+z/z = 1
+script/script = ExtResource( 1 )
+
+[node name="Attack Area" type="Area2D" parent="."]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 40.237, -4.62494 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 64
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack Area"]
+
+transform/pos = Vector2( 40.237, -4.62494 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/pos = Vector2( -155.836, -162.155 )
-transform/rot = -93.1085
-transform/scale = Vector2( 0.930707, 0.930707 )
-texture = ExtResource( 1 )
+transform/rot = -88.6486
+transform/scale = Vector2( 0.944043, 0.944043 )
+texture = ExtResource( 2 )
 offset = Vector2( -0.422621, -42.7782 )
-modulate = Color( 1, 0.307065, 0.307065, 1 )
+modulate = Color( 1, 0.440425, 0.440425, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Blinking = SubResource( 8 )
-anims/Traveling = SubResource( 9 )
+anims/Blinking = SubResource( 2 )
+anims/Traveling = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
+
+[connection signal="area_enter" from="Attack Area" to="." method="on_attack_hit"]
 
 

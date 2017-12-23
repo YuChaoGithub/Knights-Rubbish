@@ -196,9 +196,9 @@ func throw_slow_bomb():
 
 	# Spawn watch.
 	curr_watch = watch.instance()
-	curr_watch.set_global_pos(watch_spawn_pos.get_global_pos())
 	curr_watch.initialize(direction, self)
 	spawn_node.add_child(curr_watch)
+	curr_watch.set_global_pos(watch_spawn_pos.get_global_pos())
 
 	status_timer = ec.cd_timer.new(THROW_WATCH_SECOND_DURATION, self, "change_status", WAIT_SLOW_BOMB_FREED)
 
@@ -279,8 +279,8 @@ func drop_floopy():
 	ec.change_status(NONE)
 
 	var floopy_spawner_instance = floopy_spawner.instance()
-	floopy_spawner_instance.set_global_pos(floopy_spawn_pos.get_global_pos())
 	spawn_node.add_child(floopy_spawner_instance)
+	floopy_spawner_instance.set_global_pos(floopy_spawn_pos.get_global_pos())
 
 	status_timer = ec.cd_timer.new(DROP_FLOOPY_SECOND_DURATION, self, "change_status", RANDOM_ROAM)
 

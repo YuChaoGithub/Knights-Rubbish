@@ -1,24 +1,14 @@
-[gd_scene load_steps=20 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Levels/Computer Room Subscenes/Part 1 Scene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Levels/Computer Room Subscenes/Part 2 Scene.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Cliffy.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine 1.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine 2.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine 3.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine Red Flag.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine Mine.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Windy Meteory.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Chromoghast.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Clockwork Fox.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Enemies/Computer Room/iSnail.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Godotbos.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Plugobra.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Eye Mac.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scripts/CharacterAveragePosition.gd" type="Script" id=17]
-[ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scripts/Utils/InitRandom.gd" type="Script" id=19]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Godotbos.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Plugobra.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Eye Mac.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/CharacterAveragePosition.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/Utils/InitRandom.gd" type="Script" id=9]
 
 [node name="Game Level" type="Node2D"]
 
@@ -30,11 +20,12 @@ drag_margin_left = 0.0
 
 [node name="Part 1" type="Node2D" parent="."]
 
+editor/display_folded = true
+
 [node name="Scene" parent="Part 1" instance=ExtResource( 2 )]
 
 [node name="Part 2" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 3950, -300 )
 
 [node name="Scene" parent="Part 2" instance=ExtResource( 3 )]
@@ -51,68 +42,28 @@ transform/pos = Vector2( 7400, -500 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Cliffy" parent="Enemies" instance=ExtResource( 4 )]
-
-transform/pos = Vector2( 926.173, -478.562 )
-
-[node name="Flaggomine 1" parent="Enemies" instance=ExtResource( 5 )]
-
-transform/pos = Vector2( 682, -668 )
-
-[node name="Flaggomine 2" parent="Enemies" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 482, -718 )
-
-[node name="Flaggomine 3" parent="Enemies" instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 482, -718 )
-
-[node name="Flaggomine Red Flag" parent="Enemies" instance=ExtResource( 8 )]
-
-transform/pos = Vector2( 932, -768 )
-
-[node name="Flaggomine Mine" parent="Enemies" instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 732, -818 )
-
-[node name="Windy Meteory" parent="Enemies" instance=ExtResource( 10 )]
-
-transform/pos = Vector2( 832, -1518 )
-
-[node name="Chromoghast" parent="Enemies" instance=ExtResource( 11 )]
-
-transform/pos = Vector2( 782, -968 )
-
-[node name="Clockwork Fox" parent="Enemies" instance=ExtResource( 12 )]
-
-transform/pos = Vector2( 682, -868 )
-
-[node name="iSnail" parent="Enemies" instance=ExtResource( 13 )]
-
-transform/pos = Vector2( 482, -718 )
-
-[node name="Godotbos" parent="Enemies" instance=ExtResource( 14 )]
+[node name="Godotbos" parent="Enemies" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 1182, -1268 )
 
-[node name="Plugobra" parent="Enemies" instance=ExtResource( 15 )]
+[node name="Plugobra" parent="Enemies" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 482, -718 )
 
-[node name="Eye Mac" parent="Enemies" instance=ExtResource( 16 )]
+[node name="Eye Mac" parent="Enemies" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 1182, -1368 )
 
 [node name="Character Average Position" type="Position2D" parent="."]
 
-script/script = ExtResource( 17 )
+script/script = ExtResource( 7 )
 
-[node name="Keshia Erasia" parent="." instance=ExtResource( 18 )]
+[node name="Keshia Erasia" parent="." instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 1027.94, -254.998 )
+transform/pos = Vector2( 587.656, -232.464 )
 
 [node name="RNG Initializer" type="Node2D" parent="."]
 
-script/script = ExtResource( 19 )
+script/script = ExtResource( 9 )
 
 

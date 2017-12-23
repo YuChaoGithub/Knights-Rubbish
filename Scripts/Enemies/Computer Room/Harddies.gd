@@ -114,15 +114,16 @@ func spawn_two_rings():
 	var end_pos = attack_target.get_global_pos()
 
 	var left_ring = ring.instance()
-	left_ring.set_global_pos(ring_spawn_pos.get_global_pos())
 	left_ring.initialize(start_pos, Vector2(end_pos.x - RING_SPAWN_OFFSET, end_pos.y))
 
 	var right_ring = ring.instance()
-	right_ring.set_global_pos(ring_spawn_pos.get_global_pos())
 	right_ring.initialize(start_pos, Vector2(end_pos.x + RING_SPAWN_OFFSET, end_pos.y))
 
 	spawn_node.add_child(left_ring)
 	spawn_node.add_child(right_ring)
+
+	left_ring.set_global_pos(ring_spawn_pos.get_global_pos())
+	right_ring.set_global_pos(ring_spawn_pos.get_global_pos())
 
 func fall_and_detect_landing(delta):
 	ec.play_animation("Stiff")

@@ -1,14 +1,22 @@
-[gd_scene load_steps=18 format=1]
+[gd_scene load_steps=22 format=1]
 
-[ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Body.png" type="Texture" id=1]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Left Eye.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Left Eyeball.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Right Eye.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Right Eyeball.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Left Hand.png" type="Texture" id=6]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Shuriken.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Right Hand.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/Enemies/Computer Room/Chromoghast.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Body.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Left Eye.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Left Eyeball.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Right Eye.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Right Eyeball.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Left Hand.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Shuriken.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Right Hand.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=10]
+[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=11]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=12]
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 75.4496, 77.4479 )
 
 [sub_resource type="Animation" id=1]
 
@@ -174,7 +182,7 @@ tracks/15/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 6 ) ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Body/Left Eye/Eyeball:texture")
@@ -184,7 +192,7 @@ tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/rot")
@@ -215,6 +223,26 @@ tracks/19/keys = {
 "transitions": FloatArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Damage Area:collision/layers")
+tracks/20/interp = 1
+tracks/20/imported = false
+tracks/20/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 16 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Damage Area:transform/pos")
+tracks/21/interp = 1
+tracks/21/imported = false
+tracks/21/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -381,7 +409,7 @@ tracks/15/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Body/Right Eye/Eyeball:texture")
@@ -391,7 +419,7 @@ tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 6 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/rot")
@@ -422,6 +450,26 @@ tracks/19/keys = {
 "transitions": FloatArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Damage Area:collision/layers")
+tracks/20/interp = 1
+tracks/20/imported = false
+tracks/20/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 16 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Damage Area:transform/pos")
+tracks/21/interp = 1
+tracks/21/imported = false
+tracks/21/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -587,7 +635,7 @@ tracks/15/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 6 ) ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Body/Left Eye/Eyeball:texture")
@@ -597,7 +645,7 @@ tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/rot")
@@ -628,6 +676,26 @@ tracks/19/keys = {
 "transitions": FloatArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Damage Area:collision/layers")
+tracks/20/interp = 1
+tracks/20/imported = false
+tracks/20/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 16 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Damage Area:transform/pos")
+tracks/21/interp = 1
+tracks/21/imported = false
+tracks/21/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -794,7 +862,7 @@ tracks/15/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 10 ) ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Body/Right Eye/Eyeball:texture")
@@ -804,7 +872,7 @@ tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 10 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/rot")
@@ -835,6 +903,26 @@ tracks/19/keys = {
 "transitions": FloatArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Damage Area:collision/layers")
+tracks/20/interp = 1
+tracks/20/imported = false
+tracks/20/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 16 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Damage Area:transform/pos")
+tracks/21/interp = 1
+tracks/21/imported = false
+tracks/21/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -1001,7 +1089,7 @@ tracks/15/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 6 ) ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Body/Left Eye/Eyeball:texture")
@@ -1011,7 +1099,7 @@ tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/rot")
@@ -1042,6 +1130,26 @@ tracks/19/keys = {
 "transitions": FloatArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Damage Area:collision/layers")
+tracks/20/interp = 1
+tracks/20/imported = false
+tracks/20/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 16 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Damage Area:transform/pos")
+tracks/21/interp = 1
+tracks/21/imported = false
+tracks/21/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -1207,7 +1315,7 @@ tracks/15/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 6 ) ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Body/Left Eye/Eyeball:texture")
@@ -1217,7 +1325,7 @@ tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/rot")
@@ -1248,6 +1356,26 @@ tracks/19/keys = {
 "transitions": FloatArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Damage Area:collision/layers")
+tracks/20/interp = 1
+tracks/20/imported = false
+tracks/20/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Damage Area:transform/pos")
+tracks/21/interp = 1
+tracks/21/imported = false
+tracks/21/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -1413,7 +1541,7 @@ tracks/15/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Body/Right Eye/Eyeball:texture")
@@ -1423,7 +1551,7 @@ tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 6 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/rot")
@@ -1454,6 +1582,26 @@ tracks/19/keys = {
 "transitions": FloatArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Damage Area:collision/layers")
+tracks/20/interp = 1
+tracks/20/imported = false
+tracks/20/keys = {
+"times": FloatArray( 0, 0.2 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 16 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Damage Area:transform/pos")
+tracks/21/interp = 1
+tracks/21/imported = false
+tracks/21/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -1619,7 +1767,7 @@ tracks/15/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 6 ) ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Body/Left Eye/Eyeball:texture")
@@ -1629,7 +1777,7 @@ tracks/16/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/rot")
@@ -1661,56 +1809,104 @@ tracks/19/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/20/type = "value"
+tracks/20/path = NodePath("Damage Area:collision/layers")
+tracks/20/interp = 1
+tracks/20/imported = false
+tracks/20/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 16 ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Damage Area:transform/pos")
+tracks/21/interp = 1
+tracks/21/imported = false
+tracks/21/keys = {
+"times": FloatArray( 0, 0.8 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 4.16677 ), Vector2( -2.13928, 35.8279 ) ]
+}
 
 [node name="Chromoghast" type="Node2D"]
+
+script/script = ExtResource( 1 )
 
 [node name="Animation" type="Node2D" parent="."]
 
 transform/scale = Vector2( 1.2, 1.2 )
 
+[node name="Damage Area" type="Area2D" parent="Animation"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 9 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.427831, 1.71141 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 16
+collision/mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area"]
+
+transform/pos = Vector2( 0.427831, 1.71141 )
+shape = SubResource( 9 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Shuriken Spawn Pos" type="Position2D" parent="Animation"]
+
+transform/pos = Vector2( 57.5, 70.0202 )
+
 [node name="Body" type="Sprite" parent="Animation"]
 
-texture = ExtResource( 1 )
+editor/display_folded = true
+texture = ExtResource( 2 )
 
 [node name="Left Eye" type="Sprite" parent="Animation/Body"]
 
 editor/display_folded = true
 transform/pos = Vector2( -27.4463, 29.3113 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
 [node name="Eyeball" type="Sprite" parent="Animation/Body/Left Eye"]
 
 transform/pos = Vector2( 2.03697, 0.678991 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [node name="Right Eye" type="Sprite" parent="Animation/Body"]
 
 editor/display_folded = true
 transform/pos = Vector2( 34.0356, 20.5146 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
 [node name="Eyeball" type="Sprite" parent="Animation/Body/Right Eye"]
 
 transform/pos = Vector2( -0.905327, -0.678991 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="Left Hand" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( -39.9022, 69.5448 )
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 offset = Vector2( 11.9962, 8.89974 )
 
 [node name="Shuriken" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( 41.0731, 70.4644 )
 transform/rot = 90.0
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 
 [node name="Right Hand" type="Sprite" parent="Animation/Body"]
 
 editor/display_folded = true
 transform/pos = Vector2( 59.1972, 50.138 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 offset = Vector2( -9.75728, 9.18977 )
 
 [node name="Shuriken Remote Transform" type="RemoteTransform2D" parent="Animation/Body/Right Hand"]
@@ -1736,5 +1932,14 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "Still"
+
+[node name="Number Spawn Pos" type="Position2D" parent="."]
+
+transform/pos = Vector2( 0.301666, -116.907 )
+script/script = ExtResource( 11 )
+
+[node name="Health Bar" parent="." instance=ExtResource( 12 )]
+
+transform/pos = Vector2( -1.84192, -116.756 )
 
 
