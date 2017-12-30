@@ -1,32 +1,74 @@
-[gd_scene load_steps=42 format=1]
+[gd_scene load_steps=57 format=1]
 
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Screen.png" type="Texture" id=1]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Frame.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Totem 1.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Totem 2.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Totem 3.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Eye.png" type="Texture" id=6]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Eyeball.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Note.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/HURT ME.png" type="Texture" id=9]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/HURT ME Frame.png" type="Texture" id=10]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Heart.png" type="Texture" id=11]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Heart Frame.png" type="Texture" id=12]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Crosshair.png" type="Texture" id=13]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Hurt Me Arrow.png" type="Texture" id=14]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Mouse Shooter.png" type="Texture" id=15]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen Mask.png" type="Texture" id=16]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Walls.png" type="Texture" id=17]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Pump Head.png" type="Texture" id=18]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Pump Stand.png" type="Texture" id=19]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Harddies Siluette.png" type="Texture" id=20]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Stand.png" type="Texture" id=21]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Broken Stand Top.png" type="Texture" id=22]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Broken Stand Bottom.png" type="Texture" id=23]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 0.png" type="Texture" id=24]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 1.png" type="Texture" id=25]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 2.png" type="Texture" id=26]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 3.png" type="Texture" id=27]
+[ext_resource path="res://Scripts/Enemies/Computer Room/EyeMac.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Shocked.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Screen.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Frame.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Totem 1.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Totem 2.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Totem 3.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Eye.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Eyeball.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Note.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/HURT ME.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/HURT ME Frame.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Heart.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Heart Frame.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Crosshair.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Hurt Me Arrow.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Mouse Shooter.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen Mask.png" type="Texture" id=18]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Walls.png" type="Texture" id=19]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Pump Head.png" type="Texture" id=20]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Pump Stand.png" type="Texture" id=21]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Harddies Siluette.png" type="Texture" id=22]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/USB Bomb White Screen.png" type="Texture" id=23]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/USB Bomb Screen Frame.png" type="Texture" id=24]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/USB Bomb Siluette.png" type="Texture" id=25]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Stand.png" type="Texture" id=26]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Broken Stand Top.png" type="Texture" id=27]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Broken Stand Bottom.png" type="Texture" id=28]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 0.png" type="Texture" id=29]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 1.png" type="Texture" id=30]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 2.png" type="Texture" id=31]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 3.png" type="Texture" id=32]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=34]
+
+[sub_resource type="CircleShape2D" id=22]
+
+custom_solver_bias = 0.0
+radius = 13.8973
+
+[sub_resource type="RectangleShape2D" id=21]
+
+custom_solver_bias = 0.0
+extents = Vector2( 24.1585, 7.55383 )
+
+[sub_resource type="RectangleShape2D" id=17]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 188.443 )
+
+[sub_resource type="RectangleShape2D" id=18]
+
+custom_solver_bias = 0.0
+extents = Vector2( 280.468, 10 )
+
+[sub_resource type="RectangleShape2D" id=19]
+
+custom_solver_bias = 0.0
+extents = Vector2( 274.56, 10 )
+
+[sub_resource type="RectangleShape2D" id=20]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 172.856 )
+
+[sub_resource type="RectangleShape2D" id=16]
+
+custom_solver_bias = 0.0
+extents = Vector2( 59.4866, 57.596 )
 
 [sub_resource type="Animation" id=1]
 
@@ -335,7 +377,7 @@ tracks/29/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Screen/Eye/Eyeball:modulate")
+tracks/30/path = NodePath("Screen/Eye/Eyeball/Sprite:modulate")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
@@ -345,14 +387,14 @@ tracks/30/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Screen/Eye/Eyeball:texture")
+tracks/31/path = NodePath("Screen/Eye/Eyeball/Sprite:texture")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Screen/Eye:transform/pos")
@@ -452,7 +494,7 @@ tracks/41/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/42/type = "value"
 tracks/42/path = NodePath("Screen:transform/pos")
@@ -503,6 +545,46 @@ tracks/46/keys = {
 "transitions": FloatArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Screen/Drop USB Scene/Frame/USB:modulate")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Screen/Drop USB Scene/Frame/Outer:modulate")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Screen/Drop USB Scene/Frame/Inner:modulate")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/50/type = "value"
+tracks/50/path = NodePath("Harddies:visibility/visible")
+tracks/50/interp = 1
+tracks/50/imported = false
+tracks/50/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -812,7 +894,7 @@ tracks/29/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Screen/Eye/Eyeball:modulate")
+tracks/30/path = NodePath("Screen/Eye/Eyeball/Sprite:modulate")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
@@ -822,14 +904,14 @@ tracks/30/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Screen/Eye/Eyeball:texture")
+tracks/31/path = NodePath("Screen/Eye/Eyeball/Sprite:texture")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Screen/Eye:transform/pos")
@@ -929,7 +1011,7 @@ tracks/41/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/42/type = "value"
 tracks/42/path = NodePath("Screen:transform/pos")
@@ -980,6 +1062,46 @@ tracks/46/keys = {
 "transitions": FloatArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Screen/Drop USB Scene/Frame/Inner:modulate")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Screen/Drop USB Scene/Frame/Outer:modulate")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Screen/Drop USB Scene/Frame/USB:modulate")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/50/type = "value"
+tracks/50/path = NodePath("Harddies:visibility/visible")
+tracks/50/interp = 1
+tracks/50/imported = false
+tracks/50/keys = {
+"times": FloatArray( 0.1 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -1288,7 +1410,7 @@ tracks/29/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Screen/Eye/Eyeball:modulate")
+tracks/30/path = NodePath("Screen/Eye/Eyeball/Sprite:modulate")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
@@ -1298,14 +1420,14 @@ tracks/30/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Screen/Eye/Eyeball:texture")
+tracks/31/path = NodePath("Screen/Eye/Eyeball/Sprite:texture")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Screen/Eye:transform/pos")
@@ -1405,7 +1527,7 @@ tracks/41/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/42/type = "value"
 tracks/42/path = NodePath("Screen:transform/pos")
@@ -1456,6 +1578,46 @@ tracks/46/keys = {
 "transitions": FloatArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Screen/Drop USB Scene/Frame/USB:modulate")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Screen/Drop USB Scene/Frame/Outer:modulate")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Screen/Drop USB Scene/Frame/Inner:modulate")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/50/type = "value"
+tracks/50/path = NodePath("Harddies:visibility/visible")
+tracks/50/interp = 1
+tracks/50/imported = false
+tracks/50/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -1765,7 +1927,7 @@ tracks/29/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Screen/Eye/Eyeball:modulate")
+tracks/30/path = NodePath("Screen/Eye/Eyeball/Sprite:modulate")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
@@ -1775,14 +1937,14 @@ tracks/30/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Screen/Eye/Eyeball:texture")
+tracks/31/path = NodePath("Screen/Eye/Eyeball/Sprite:texture")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Screen/Eye:transform/pos")
@@ -1882,7 +2044,7 @@ tracks/41/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/42/type = "value"
 tracks/42/path = NodePath("Screen:transform/pos")
@@ -1933,6 +2095,46 @@ tracks/46/keys = {
 "transitions": FloatArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Screen/Drop USB Scene/Frame/Inner:modulate")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Screen/Drop USB Scene/Frame/Outer:modulate")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Screen/Drop USB Scene/Frame/USB:modulate")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/50/type = "value"
+tracks/50/path = NodePath("Harddies:visibility/visible")
+tracks/50/interp = 1
+tracks/50/imported = false
+tracks/50/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -2241,7 +2443,7 @@ tracks/29/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Screen/Eye/Eyeball:modulate")
+tracks/30/path = NodePath("Screen/Eye/Eyeball/Sprite:modulate")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
@@ -2251,14 +2453,14 @@ tracks/30/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Screen/Eye/Eyeball:texture")
+tracks/31/path = NodePath("Screen/Eye/Eyeball/Sprite:texture")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Screen/Eye:transform/pos")
@@ -2358,7 +2560,7 @@ tracks/41/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/42/type = "value"
 tracks/42/path = NodePath("Screen:transform/pos")
@@ -2409,6 +2611,46 @@ tracks/46/keys = {
 "transitions": FloatArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Screen/Drop USB Scene/Frame/USB:modulate")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Screen/Drop USB Scene/Frame/Outer:modulate")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Screen/Drop USB Scene/Frame/Inner:modulate")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/50/type = "value"
+tracks/50/path = NodePath("Harddies:visibility/visible")
+tracks/50/interp = 1
+tracks/50/imported = false
+tracks/50/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -2718,7 +2960,7 @@ tracks/29/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 0.95343, 0.868164, 0.992188, 1 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Screen/Eye/Eyeball:modulate")
+tracks/30/path = NodePath("Screen/Eye/Eyeball/Sprite:modulate")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
@@ -2728,14 +2970,14 @@ tracks/30/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Screen/Eye/Eyeball:texture")
+tracks/31/path = NodePath("Screen/Eye/Eyeball/Sprite:texture")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Screen/Eye:transform/pos")
@@ -2835,7 +3077,7 @@ tracks/41/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/42/type = "value"
 tracks/42/path = NodePath("Screen:transform/pos")
@@ -2886,6 +3128,46 @@ tracks/46/keys = {
 "transitions": FloatArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Screen/Drop USB Scene/Frame/Inner:modulate")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Screen/Drop USB Scene/Frame/Outer:modulate")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Screen/Drop USB Scene/Frame/USB:modulate")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/50/type = "value"
+tracks/50/path = NodePath("Harddies:visibility/visible")
+tracks/50/interp = 1
+tracks/50/imported = false
+tracks/50/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -3195,7 +3477,7 @@ tracks/29/keys = {
 "values": [ Color( 0.95343, 0.868164, 0.992188, 1 ), Color( 0.95343, 0.868164, 0.992188, 0 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Screen/Eye/Eyeball:modulate")
+tracks/30/path = NodePath("Screen/Eye/Eyeball/Sprite:modulate")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
@@ -3205,14 +3487,14 @@ tracks/30/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Screen/Eye/Eyeball:texture")
+tracks/31/path = NodePath("Screen/Eye/Eyeball/Sprite:texture")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Screen/Eye:transform/pos")
@@ -3312,7 +3594,7 @@ tracks/41/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/42/type = "value"
 tracks/42/path = NodePath("Screen:transform/pos")
@@ -3363,6 +3645,46 @@ tracks/46/keys = {
 "transitions": FloatArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Screen/Drop USB Scene/Frame/USB:modulate")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Screen/Drop USB Scene/Frame/Outer:modulate")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Screen/Drop USB Scene/Frame/Inner:modulate")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/50/type = "value"
+tracks/50/path = NodePath("Harddies:visibility/visible")
+tracks/50/interp = 1
+tracks/50/imported = false
+tracks/50/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -3671,7 +3993,7 @@ tracks/29/keys = {
 "values": [ Color( 0.916016, 0.75, 1, 1 ), Color( 0.538927, 0.49736, 0.621094, 1 ), Color( 0.189697, 0.565493, 0.867188, 1 ), Color( 0.513818, 0.596388, 0.920313, 1 ), Color( 0.596123, 0.362549, 0.9375, 1 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Screen/Eye/Eyeball:modulate")
+tracks/30/path = NodePath("Screen/Eye/Eyeball/Sprite:modulate")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
@@ -3681,14 +4003,14 @@ tracks/30/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Screen/Eye/Eyeball:texture")
+tracks/31/path = NodePath("Screen/Eye/Eyeball/Sprite:texture")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Screen/Eye:transform/pos")
@@ -3788,7 +4110,7 @@ tracks/41/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/42/type = "value"
 tracks/42/path = NodePath("Screen:transform/pos")
@@ -3839,6 +4161,46 @@ tracks/46/keys = {
 "transitions": FloatArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Screen/Drop USB Scene/Frame/Inner:modulate")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Screen/Drop USB Scene/Frame/Outer:modulate")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Screen/Drop USB Scene/Frame/USB:modulate")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/50/type = "value"
+tracks/50/path = NodePath("Harddies:visibility/visible")
+tracks/50/interp = 1
+tracks/50/imported = false
+tracks/50/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -4148,7 +4510,7 @@ tracks/29/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Screen/Eye/Eyeball:modulate")
+tracks/30/path = NodePath("Screen/Eye/Eyeball/Sprite:modulate")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
@@ -4158,14 +4520,14 @@ tracks/30/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Screen/Eye/Eyeball:texture")
+tracks/31/path = NodePath("Screen/Eye/Eyeball/Sprite:texture")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Screen/Eye:transform/pos")
@@ -4265,7 +4627,7 @@ tracks/41/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/42/type = "value"
 tracks/42/path = NodePath("Screen:transform/pos")
@@ -4316,6 +4678,56 @@ tracks/46/keys = {
 "transitions": FloatArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Screen/Drop USB Scene/Frame/USB:modulate")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Screen/Drop USB Scene/Frame/Outer:modulate")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Screen/Drop USB Scene/Frame/Inner:modulate")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/50/type = "value"
+tracks/50/path = NodePath("Harddies:visibility/visible")
+tracks/50/interp = 1
+tracks/50/imported = false
+tracks/50/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/51/type = "value"
+tracks/51/path = NodePath("Screen/Pump Harddies Screen/Light2D:enabled")
+tracks/51/interp = 1
+tracks/51/imported = false
+tracks/51/keys = {
+"times": FloatArray( 0, 1.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -4625,7 +5037,7 @@ tracks/29/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Screen/Eye/Eyeball:modulate")
+tracks/30/path = NodePath("Screen/Eye/Eyeball/Sprite:modulate")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
@@ -4635,14 +5047,14 @@ tracks/30/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Screen/Eye/Eyeball:texture")
+tracks/31/path = NodePath("Screen/Eye/Eyeball/Sprite:texture")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Screen/Eye:transform/pos")
@@ -4742,7 +5154,7 @@ tracks/41/keys = {
 "times": FloatArray( 0, 0.3, 0.35, 0.4, 0.45, 0.5, 1.8, 1.85, 1.9, 1.95, 2 ),
 "transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ), ExtResource( 1 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 27 ), ExtResource( 26 ), ExtResource( 25 ), ExtResource( 24 ), ExtResource( 1 ) ]
+"values": [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 3 ) ]
 }
 tracks/42/type = "value"
 tracks/42/path = NodePath("Screen:transform/pos")
@@ -4793,6 +5205,66 @@ tracks/46/keys = {
 "transitions": FloatArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Screen/Drop USB Scene/Frame/Inner:modulate")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Screen/Drop USB Scene/Frame/Outer:modulate")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Screen/Drop USB Scene/Frame/USB:modulate")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/50/type = "value"
+tracks/50/path = NodePath("Harddies:transform/pos")
+tracks/50/interp = 1
+tracks/50/imported = false
+tracks/50/keys = {
+"times": FloatArray( 0, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.45, 1.6 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -0.688058, 19.2288 ), Vector2( -0.688058, 19.2288 ), Vector2( 1.76109, -10.1607 ), Vector2( 2.0169, -41.4987 ), Vector2( 0.752703, -108.501 ), Vector2( 3.93072, -179.997 ), Vector2( 5.69815, -251.248 ), Vector2( 5.69815, -277.625 ), Vector2( 1.85119, -330.019 ) ]
+}
+tracks/51/type = "value"
+tracks/51/path = NodePath("Harddies:visibility/visible")
+tracks/51/interp = 1
+tracks/51/imported = false
+tracks/51/keys = {
+"times": FloatArray( 0, 1.6 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/52/type = "value"
+tracks/52/path = NodePath("Screen/Pump Harddies Screen/Light2D:enabled")
+tracks/52/interp = 1
+tracks/52/imported = false
+tracks/52/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -5018,20 +5490,20 @@ tracks/21/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Vector2( -5.27863, -41.6425 ) ]
+"values": [ Vector2( 0, 0 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Screen/Shoot Mouse Screen/Cannon:transform/rot")
+tracks/22/path = NodePath("Screen/Hurt Me Screen/Heart/Arrow:modulate")
 tracks/22/interp = 1
 tracks/22/imported = false
 tracks/22/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Screen/Hurt Me Screen/Heart/Arrow:modulate")
+tracks/23/path = NodePath("Screen/Hurt Me Screen/Heart/Crosshair:modulate")
 tracks/23/interp = 1
 tracks/23/imported = false
 tracks/23/keys = {
@@ -5041,7 +5513,7 @@ tracks/23/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Screen/Hurt Me Screen/Heart/Crosshair:modulate")
+tracks/24/path = NodePath("Screen/Hurt Me Screen/Heart/Frame:modulate")
 tracks/24/interp = 1
 tracks/24/imported = false
 tracks/24/keys = {
@@ -5051,7 +5523,7 @@ tracks/24/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Screen/Hurt Me Screen/Heart/Frame:modulate")
+tracks/25/path = NodePath("Screen/Hurt Me Screen/Heart/Heart:modulate")
 tracks/25/interp = 1
 tracks/25/imported = false
 tracks/25/keys = {
@@ -5061,7 +5533,7 @@ tracks/25/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Screen/Hurt Me Screen/Heart/Heart:modulate")
+tracks/26/path = NodePath("Screen/Hurt Me Screen/Frame:modulate")
 tracks/26/interp = 1
 tracks/26/imported = false
 tracks/26/keys = {
@@ -5071,7 +5543,7 @@ tracks/26/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Screen/Hurt Me Screen/Frame:modulate")
+tracks/27/path = NodePath("Screen/Hurt Me Screen/Text:modulate")
 tracks/27/interp = 1
 tracks/27/imported = false
 tracks/27/keys = {
@@ -5081,7 +5553,7 @@ tracks/27/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Screen/Hurt Me Screen/Text:modulate")
+tracks/28/path = NodePath("Screen/Music Note Screen/Lines:modulate")
 tracks/28/interp = 1
 tracks/28/imported = false
 tracks/28/keys = {
@@ -5091,157 +5563,157 @@ tracks/28/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("Screen/Music Note Screen/Lines:modulate")
+tracks/29/path = NodePath("Screen/Eye/Eyeball/Sprite:modulate")
 tracks/29/interp = 1
 tracks/29/imported = false
 tracks/29/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Screen/Eye/Eyeball:modulate")
+tracks/30/path = NodePath("Screen/Eye/Eyeball/Sprite:texture")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"update": 1,
+"values": [ ExtResource( 9 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Screen/Eye/Eyeball:texture")
+tracks/31/path = NodePath("Screen/Eye:transform/pos")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 7 ) ]
+"update": 0,
+"values": [ Vector2( -2.59296, 174.765 ) ]
 }
 tracks/32/type = "value"
-tracks/32/path = NodePath("Screen/Eye:transform/pos")
+tracks/32/path = NodePath("Screen/Eye:transform/rot")
 tracks/32/interp = 1
 tracks/32/imported = false
 tracks/32/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Vector2( -2.59296, 174.765 ) ]
+"values": [ 0.0 ]
 }
 tracks/33/type = "value"
-tracks/33/path = NodePath("Screen/Eye:transform/rot")
+tracks/33/path = NodePath("Screen/Eye:modulate")
 tracks/33/interp = 1
 tracks/33/imported = false
 tracks/33/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/34/type = "value"
-tracks/34/path = NodePath("Screen/Eye:modulate")
+tracks/34/path = NodePath("Screen/Totem/3:modulate")
 tracks/34/interp = 1
 tracks/34/imported = false
 tracks/34/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/35/type = "value"
-tracks/35/path = NodePath("Screen/Totem/3:modulate")
-tracks/35/interp = 1
-tracks/35/imported = false
-tracks/35/keys = {
 "times": FloatArray( 0, 0.3, 0.5 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.394531, 0.394531, 1 ), Color( 1, 0.351562, 0.351562, 1 ) ]
 }
-tracks/36/type = "value"
-tracks/36/path = NodePath("Screen/Totem/2:modulate")
-tracks/36/interp = 1
-tracks/36/imported = false
-tracks/36/keys = {
+tracks/35/type = "value"
+tracks/35/path = NodePath("Screen/Totem/2:modulate")
+tracks/35/interp = 1
+tracks/35/imported = false
+tracks/35/keys = {
 "times": FloatArray( 0, 0.1, 0.3 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.914062, 0, 1 ), Color( 1, 0.796875, 0, 1 ) ]
 }
-tracks/37/type = "value"
-tracks/37/path = NodePath("Screen/Totem/1:modulate")
-tracks/37/interp = 1
-tracks/37/imported = false
-tracks/37/keys = {
+tracks/36/type = "value"
+tracks/36/path = NodePath("Screen/Totem/1:modulate")
+tracks/36/interp = 1
+tracks/36/imported = false
+tracks/36/keys = {
 "times": FloatArray( 0, 0.2, 0.4 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.679688, 0, 1 ), Color( 1, 0.421875, 0, 1 ) ]
 }
+tracks/37/type = "value"
+tracks/37/path = NodePath("Screen/Frame:modulate")
+tracks/37/interp = 1
+tracks/37/imported = false
+tracks/37/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 tracks/38/type = "value"
-tracks/38/path = NodePath("Screen/Frame:modulate")
+tracks/38/path = NodePath("Screen/Hurt Me Screen/Heart/Heart:transform/scale")
 tracks/38/interp = 1
 tracks/38/imported = false
 tracks/38/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Vector2( 1, 1 ) ]
 }
 tracks/39/type = "value"
-tracks/39/path = NodePath("Screen/Hurt Me Screen/Heart/Heart:transform/scale")
+tracks/39/path = NodePath("Stand:modulate")
 tracks/39/interp = 1
 tracks/39/imported = false
 tracks/39/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/40/type = "value"
-tracks/40/path = NodePath("Stand:modulate")
+tracks/40/path = NodePath("Screen:texture")
 tracks/40/interp = 1
 tracks/40/imported = false
 tracks/40/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"update": 1,
+"values": [ ExtResource( 3 ) ]
 }
 tracks/41/type = "value"
-tracks/41/path = NodePath("Screen:texture")
+tracks/41/path = NodePath("Screen:transform/pos")
 tracks/41/interp = 1
 tracks/41/imported = false
 tracks/41/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 1 ) ]
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 tracks/42/type = "value"
-tracks/42/path = NodePath("Screen:transform/pos")
+tracks/42/path = NodePath("Screen:transform/rot")
 tracks/42/interp = 1
 tracks/42/imported = false
 tracks/42/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ 0.0 ]
 }
 tracks/43/type = "value"
-tracks/43/path = NodePath("Screen:transform/rot")
+tracks/43/path = NodePath("Broken stand/Top:modulate")
 tracks/43/interp = 1
 tracks/43/imported = false
 tracks/43/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/44/type = "value"
-tracks/44/path = NodePath("Broken stand/Top:modulate")
+tracks/44/path = NodePath("Broken stand/Bottom:modulate")
 tracks/44/interp = 1
 tracks/44/imported = false
 tracks/44/keys = {
@@ -5251,7 +5723,7 @@ tracks/44/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/45/type = "value"
-tracks/45/path = NodePath("Broken stand/Bottom:modulate")
+tracks/45/path = NodePath("Screen:modulate")
 tracks/45/interp = 1
 tracks/45/imported = false
 tracks/45/keys = {
@@ -5261,14 +5733,44 @@ tracks/45/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/46/type = "value"
-tracks/46/path = NodePath("Screen:modulate")
+tracks/46/path = NodePath("Screen/Drop USB Scene/Frame/Inner:modulate")
 tracks/46/interp = 1
 tracks/46/imported = false
 tracks/46/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Screen/Drop USB Scene/Frame/Outer:modulate")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Screen/Drop USB Scene/Frame/USB:modulate")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Harddies:visibility/visible")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -5494,20 +5996,20 @@ tracks/21/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Vector2( -5.27863, -41.6425 ) ]
+"values": [ Vector2( 0, 0 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Screen/Shoot Mouse Screen/Cannon:transform/rot")
+tracks/22/path = NodePath("Screen/Hurt Me Screen/Heart/Arrow:modulate")
 tracks/22/interp = 1
 tracks/22/imported = false
 tracks/22/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Screen/Hurt Me Screen/Heart/Arrow:modulate")
+tracks/23/path = NodePath("Screen/Hurt Me Screen/Heart/Crosshair:modulate")
 tracks/23/interp = 1
 tracks/23/imported = false
 tracks/23/keys = {
@@ -5517,7 +6019,7 @@ tracks/23/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Screen/Hurt Me Screen/Heart/Crosshair:modulate")
+tracks/24/path = NodePath("Screen/Hurt Me Screen/Heart/Frame:modulate")
 tracks/24/interp = 1
 tracks/24/imported = false
 tracks/24/keys = {
@@ -5527,7 +6029,7 @@ tracks/24/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Screen/Hurt Me Screen/Heart/Frame:modulate")
+tracks/25/path = NodePath("Screen/Hurt Me Screen/Heart/Heart:modulate")
 tracks/25/interp = 1
 tracks/25/imported = false
 tracks/25/keys = {
@@ -5537,7 +6039,7 @@ tracks/25/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Screen/Hurt Me Screen/Heart/Heart:modulate")
+tracks/26/path = NodePath("Screen/Hurt Me Screen/Frame:modulate")
 tracks/26/interp = 1
 tracks/26/imported = false
 tracks/26/keys = {
@@ -5547,7 +6049,7 @@ tracks/26/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Screen/Hurt Me Screen/Frame:modulate")
+tracks/27/path = NodePath("Screen/Hurt Me Screen/Text:modulate")
 tracks/27/interp = 1
 tracks/27/imported = false
 tracks/27/keys = {
@@ -5557,7 +6059,7 @@ tracks/27/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Screen/Hurt Me Screen/Text:modulate")
+tracks/28/path = NodePath("Screen/Music Note Screen/Lines:modulate")
 tracks/28/interp = 1
 tracks/28/imported = false
 tracks/28/keys = {
@@ -5567,157 +6069,157 @@ tracks/28/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("Screen/Music Note Screen/Lines:modulate")
+tracks/29/path = NodePath("Screen/Eye/Eyeball/Sprite:modulate")
 tracks/29/interp = 1
 tracks/29/imported = false
 tracks/29/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Screen/Eye/Eyeball:modulate")
+tracks/30/path = NodePath("Screen/Eye/Eyeball/Sprite:texture")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"update": 1,
+"values": [ ExtResource( 9 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Screen/Eye/Eyeball:texture")
+tracks/31/path = NodePath("Screen/Eye:transform/pos")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 7 ) ]
+"update": 0,
+"values": [ Vector2( -2.59296, 174.765 ) ]
 }
 tracks/32/type = "value"
-tracks/32/path = NodePath("Screen/Eye:transform/pos")
+tracks/32/path = NodePath("Screen/Eye:transform/rot")
 tracks/32/interp = 1
 tracks/32/imported = false
 tracks/32/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Vector2( -2.59296, 174.765 ) ]
+"values": [ 0.0 ]
 }
 tracks/33/type = "value"
-tracks/33/path = NodePath("Screen/Eye:transform/rot")
+tracks/33/path = NodePath("Screen/Eye:modulate")
 tracks/33/interp = 1
 tracks/33/imported = false
 tracks/33/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/34/type = "value"
-tracks/34/path = NodePath("Screen/Eye:modulate")
+tracks/34/path = NodePath("Screen/Totem/3:modulate")
 tracks/34/interp = 1
 tracks/34/imported = false
 tracks/34/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/35/type = "value"
-tracks/35/path = NodePath("Screen/Totem/3:modulate")
-tracks/35/interp = 1
-tracks/35/imported = false
-tracks/35/keys = {
 "times": FloatArray( 0, 0.3, 0.5 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 0.351562, 0.351562, 1 ), Color( 1, 0.394531, 0.394531, 1 ), Color( 1, 1, 1, 1 ) ]
 }
-tracks/36/type = "value"
-tracks/36/path = NodePath("Screen/Totem/2:modulate")
-tracks/36/interp = 1
-tracks/36/imported = false
-tracks/36/keys = {
+tracks/35/type = "value"
+tracks/35/path = NodePath("Screen/Totem/2:modulate")
+tracks/35/interp = 1
+tracks/35/imported = false
+tracks/35/keys = {
 "times": FloatArray( 0, 0.1, 0.5 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 0.796875, 0, 1 ), Color( 1, 0.914062, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
-tracks/37/type = "value"
-tracks/37/path = NodePath("Screen/Totem/1:modulate")
-tracks/37/interp = 1
-tracks/37/imported = false
-tracks/37/keys = {
+tracks/36/type = "value"
+tracks/36/path = NodePath("Screen/Totem/1:modulate")
+tracks/36/interp = 1
+tracks/36/imported = false
+tracks/36/keys = {
 "times": FloatArray( 0, 0.4, 0.5 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 0.679688, 0, 1 ), Color( 1, 0.421875, 0, 1 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/37/type = "value"
+tracks/37/path = NodePath("Screen/Frame:modulate")
+tracks/37/interp = 1
+tracks/37/imported = false
+tracks/37/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 tracks/38/type = "value"
-tracks/38/path = NodePath("Screen/Frame:modulate")
+tracks/38/path = NodePath("Screen/Hurt Me Screen/Heart/Heart:transform/scale")
 tracks/38/interp = 1
 tracks/38/imported = false
 tracks/38/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Vector2( 1, 1 ) ]
 }
 tracks/39/type = "value"
-tracks/39/path = NodePath("Screen/Hurt Me Screen/Heart/Heart:transform/scale")
+tracks/39/path = NodePath("Stand:modulate")
 tracks/39/interp = 1
 tracks/39/imported = false
 tracks/39/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/40/type = "value"
-tracks/40/path = NodePath("Stand:modulate")
+tracks/40/path = NodePath("Screen:texture")
 tracks/40/interp = 1
 tracks/40/imported = false
 tracks/40/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"update": 1,
+"values": [ ExtResource( 3 ) ]
 }
 tracks/41/type = "value"
-tracks/41/path = NodePath("Screen:texture")
+tracks/41/path = NodePath("Screen:transform/pos")
 tracks/41/interp = 1
 tracks/41/imported = false
 tracks/41/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 1 ) ]
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 tracks/42/type = "value"
-tracks/42/path = NodePath("Screen:transform/pos")
+tracks/42/path = NodePath("Screen:transform/rot")
 tracks/42/interp = 1
 tracks/42/imported = false
 tracks/42/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ 0.0 ]
 }
 tracks/43/type = "value"
-tracks/43/path = NodePath("Screen:transform/rot")
+tracks/43/path = NodePath("Broken stand/Bottom:modulate")
 tracks/43/interp = 1
 tracks/43/imported = false
 tracks/43/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/44/type = "value"
-tracks/44/path = NodePath("Broken stand/Bottom:modulate")
+tracks/44/path = NodePath("Broken stand/Top:modulate")
 tracks/44/interp = 1
 tracks/44/imported = false
 tracks/44/keys = {
@@ -5727,7 +6229,7 @@ tracks/44/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/45/type = "value"
-tracks/45/path = NodePath("Broken stand/Top:modulate")
+tracks/45/path = NodePath("Screen:modulate")
 tracks/45/interp = 1
 tracks/45/imported = false
 tracks/45/keys = {
@@ -5737,14 +6239,44 @@ tracks/45/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/46/type = "value"
-tracks/46/path = NodePath("Screen:modulate")
+tracks/46/path = NodePath("Screen/Drop USB Scene/Frame/USB:modulate")
 tracks/46/interp = 1
 tracks/46/imported = false
 tracks/46/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Screen/Drop USB Scene/Frame/Outer:modulate")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Screen/Drop USB Scene/Frame/Inner:modulate")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Harddies:visibility/visible")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -5970,20 +6502,20 @@ tracks/21/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Vector2( -5.27863, -41.6425 ) ]
+"values": [ Vector2( 0, 0 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Screen/Shoot Mouse Screen/Cannon:transform/rot")
+tracks/22/path = NodePath("Screen/Hurt Me Screen/Heart/Arrow:modulate")
 tracks/22/interp = 1
 tracks/22/imported = false
 tracks/22/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Screen/Hurt Me Screen/Heart/Arrow:modulate")
+tracks/23/path = NodePath("Screen/Hurt Me Screen/Heart/Crosshair:modulate")
 tracks/23/interp = 1
 tracks/23/imported = false
 tracks/23/keys = {
@@ -5993,7 +6525,7 @@ tracks/23/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Screen/Hurt Me Screen/Heart/Crosshair:modulate")
+tracks/24/path = NodePath("Screen/Hurt Me Screen/Heart/Frame:modulate")
 tracks/24/interp = 1
 tracks/24/imported = false
 tracks/24/keys = {
@@ -6003,7 +6535,7 @@ tracks/24/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Screen/Hurt Me Screen/Heart/Frame:modulate")
+tracks/25/path = NodePath("Screen/Hurt Me Screen/Heart/Heart:modulate")
 tracks/25/interp = 1
 tracks/25/imported = false
 tracks/25/keys = {
@@ -6013,7 +6545,7 @@ tracks/25/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Screen/Hurt Me Screen/Heart/Heart:modulate")
+tracks/26/path = NodePath("Screen/Hurt Me Screen/Frame:modulate")
 tracks/26/interp = 1
 tracks/26/imported = false
 tracks/26/keys = {
@@ -6023,7 +6555,7 @@ tracks/26/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Screen/Hurt Me Screen/Frame:modulate")
+tracks/27/path = NodePath("Screen/Hurt Me Screen/Text:modulate")
 tracks/27/interp = 1
 tracks/27/imported = false
 tracks/27/keys = {
@@ -6033,7 +6565,7 @@ tracks/27/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Screen/Hurt Me Screen/Text:modulate")
+tracks/28/path = NodePath("Screen/Music Note Screen/Lines:modulate")
 tracks/28/interp = 1
 tracks/28/imported = false
 tracks/28/keys = {
@@ -6043,157 +6575,157 @@ tracks/28/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("Screen/Music Note Screen/Lines:modulate")
+tracks/29/path = NodePath("Screen/Eye/Eyeball/Sprite:modulate")
 tracks/29/interp = 1
 tracks/29/imported = false
 tracks/29/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Screen/Eye/Eyeball:modulate")
+tracks/30/path = NodePath("Screen/Eye/Eyeball/Sprite:texture")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"update": 1,
+"values": [ ExtResource( 9 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Screen/Eye/Eyeball:texture")
+tracks/31/path = NodePath("Screen/Eye:transform/pos")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 7 ) ]
+"update": 0,
+"values": [ Vector2( -2.59296, 174.765 ) ]
 }
 tracks/32/type = "value"
-tracks/32/path = NodePath("Screen/Eye:transform/pos")
+tracks/32/path = NodePath("Screen/Eye:transform/rot")
 tracks/32/interp = 1
 tracks/32/imported = false
 tracks/32/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Vector2( -2.59296, 174.765 ) ]
+"values": [ 0.0 ]
 }
 tracks/33/type = "value"
-tracks/33/path = NodePath("Screen/Eye:transform/rot")
+tracks/33/path = NodePath("Screen/Eye:modulate")
 tracks/33/interp = 1
 tracks/33/imported = false
 tracks/33/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/34/type = "value"
-tracks/34/path = NodePath("Screen/Eye:modulate")
+tracks/34/path = NodePath("Screen/Totem/3:modulate")
 tracks/34/interp = 1
 tracks/34/imported = false
 tracks/34/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/35/type = "value"
-tracks/35/path = NodePath("Screen/Totem/3:modulate")
-tracks/35/interp = 1
-tracks/35/imported = false
-tracks/35/keys = {
 "times": FloatArray( 0, 0.3, 0.5, 0.8, 1.2, 1.8 ),
 "transitions": FloatArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 0.351562, 0.351562, 1 ), Color( 1, 0.394531, 0.394531, 1 ), Color( 1, 0.351562, 0.351562, 1 ), Color( 0.84375, 0.472189, 0.20105, 1 ), Color( 0.917969, 0.510082, 0.415955, 1 ), Color( 0.988281, 0.4676, 0.347443, 1 ) ]
 }
-tracks/36/type = "value"
-tracks/36/path = NodePath("Screen/Totem/2:modulate")
-tracks/36/interp = 1
-tracks/36/imported = false
-tracks/36/keys = {
+tracks/35/type = "value"
+tracks/35/path = NodePath("Screen/Totem/2:modulate")
+tracks/35/interp = 1
+tracks/35/imported = false
+tracks/35/keys = {
 "times": FloatArray( 0, 0.1, 0.3, 0.7, 1, 1.3, 1.7 ),
 "transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 0.796875, 0, 1 ), Color( 1, 0.914062, 0, 1 ), Color( 1, 0.796875, 0, 1 ), Color( 1, 0.960938, 0, 1 ), Color( 0.835938, 0.8066, 0.0848999, 1 ), Color( 0.835938, 0.648178, 0.0848999, 1 ), Color( 1, 0.75, 0, 1 ) ]
 }
-tracks/37/type = "value"
-tracks/37/path = NodePath("Screen/Totem/1:modulate")
-tracks/37/interp = 1
-tracks/37/imported = false
-tracks/37/keys = {
+tracks/36/type = "value"
+tracks/36/path = NodePath("Screen/Totem/1:modulate")
+tracks/36/interp = 1
+tracks/36/imported = false
+tracks/36/keys = {
 "times": FloatArray( 0, 0.2, 0.4, 1, 1.4 ),
 "transitions": FloatArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 0.421875, 0, 1 ), Color( 1, 0.679688, 0, 1 ), Color( 1, 0.421875, 0, 1 ), Color( 0.925781, 0.570364, 0.311005, 1 ), Color( 0.96875, 0.805853, 0.249756, 1 ) ]
 }
+tracks/37/type = "value"
+tracks/37/path = NodePath("Screen/Frame:modulate")
+tracks/37/interp = 1
+tracks/37/imported = false
+tracks/37/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 tracks/38/type = "value"
-tracks/38/path = NodePath("Screen/Frame:modulate")
+tracks/38/path = NodePath("Screen/Hurt Me Screen/Heart/Heart:transform/scale")
 tracks/38/interp = 1
 tracks/38/imported = false
 tracks/38/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Vector2( 1, 1 ) ]
 }
 tracks/39/type = "value"
-tracks/39/path = NodePath("Screen/Hurt Me Screen/Heart/Heart:transform/scale")
+tracks/39/path = NodePath("Stand:modulate")
 tracks/39/interp = 1
 tracks/39/imported = false
 tracks/39/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/40/type = "value"
-tracks/40/path = NodePath("Stand:modulate")
+tracks/40/path = NodePath("Screen:texture")
 tracks/40/interp = 1
 tracks/40/imported = false
 tracks/40/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"update": 1,
+"values": [ ExtResource( 3 ) ]
 }
 tracks/41/type = "value"
-tracks/41/path = NodePath("Screen:texture")
+tracks/41/path = NodePath("Screen:transform/pos")
 tracks/41/interp = 1
 tracks/41/imported = false
 tracks/41/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 1 ) ]
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
 }
 tracks/42/type = "value"
-tracks/42/path = NodePath("Screen:transform/pos")
+tracks/42/path = NodePath("Screen:transform/rot")
 tracks/42/interp = 1
 tracks/42/imported = false
 tracks/42/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ 0.0 ]
 }
 tracks/43/type = "value"
-tracks/43/path = NodePath("Screen:transform/rot")
+tracks/43/path = NodePath("Broken stand/Top:modulate")
 tracks/43/interp = 1
 tracks/43/imported = false
 tracks/43/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/44/type = "value"
-tracks/44/path = NodePath("Broken stand/Top:modulate")
+tracks/44/path = NodePath("Broken stand/Bottom:modulate")
 tracks/44/interp = 1
 tracks/44/imported = false
 tracks/44/keys = {
@@ -6203,7 +6735,7 @@ tracks/44/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/45/type = "value"
-tracks/45/path = NodePath("Broken stand/Bottom:modulate")
+tracks/45/path = NodePath("Screen:modulate")
 tracks/45/interp = 1
 tracks/45/imported = false
 tracks/45/keys = {
@@ -6213,14 +6745,44 @@ tracks/45/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/46/type = "value"
-tracks/46/path = NodePath("Screen:modulate")
+tracks/46/path = NodePath("Screen/Drop USB Scene/Frame/Inner:modulate")
 tracks/46/interp = 1
 tracks/46/imported = false
 tracks/46/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Screen/Drop USB Scene/Frame/Outer:modulate")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Screen/Drop USB Scene/Frame/USB:modulate")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Harddies:visibility/visible")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -6529,7 +7091,7 @@ tracks/29/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Screen/Eye/Eyeball:modulate")
+tracks/30/path = NodePath("Screen/Eye/Eyeball/Sprite:modulate")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
@@ -6539,14 +7101,14 @@ tracks/30/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Screen/Eye/Eyeball:texture")
+tracks/31/path = NodePath("Screen/Eye/Eyeball/Sprite:texture")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 7 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Screen/Eye:transform/pos")
@@ -6646,7 +7208,7 @@ tracks/41/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ ExtResource( 3 ) ]
 }
 tracks/42/type = "value"
 tracks/42/path = NodePath("Screen:transform/pos")
@@ -6688,16 +7250,578 @@ tracks/45/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
+tracks/46/type = "value"
+tracks/46/path = NodePath("Screen/Drop USB Scene/Frame/USB:modulate")
+tracks/46/interp = 1
+tracks/46/imported = false
+tracks/46/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Screen/Drop USB Scene/Frame/Outer:modulate")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Screen/Drop USB Scene/Frame/Inner:modulate")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Harddies:visibility/visible")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=15]
+
+resource/name = "USB Drop"
+length = 3.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Broken stand/Bottom:visibility/visible")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Broken stand/Top:visibility/visible")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Stand:visibility/visible")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Screen/Pump Harddies Screen/Harddies Siluette:modulate")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Screen/Pump Harddies Screen/Harddies Siluette:transform/pos")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.264175, 19.548 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Screen/Pump Harddies Screen/Harddies Siluette:transform/rot")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Broken stand/Bottom:transform/pos")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.144676, 288.267 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Broken stand/Bottom:transform/rot")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Broken stand/Top:transform/pos")
+tracks/8/interp = 1
+tracks/8/imported = false
+tracks/8/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -8.71497, 282.768 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Broken stand/Top:transform/rot")
+tracks/9/interp = 1
+tracks/9/imported = false
+tracks/9/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Screen/Pump Harddies Screen/Pump Stand:transform/pos")
+tracks/10/interp = 1
+tracks/10/imported = false
+tracks/10/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.00330067, 122.323 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Screen/Pump Harddies Screen/Pump Stand:transform/rot")
+tracks/11/interp = 1
+tracks/11/imported = false
+tracks/11/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Screen/Pump Harddies Screen/Pump Stand:transform/scale")
+tracks/12/interp = 1
+tracks/12/imported = false
+tracks/12/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Screen/Pump Harddies Screen/Pump Head:transform/pos")
+tracks/13/interp = 1
+tracks/13/imported = false
+tracks/13/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 104.432 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Screen/Pump Harddies Screen/Pump Head:transform/rot")
+tracks/14/interp = 1
+tracks/14/imported = false
+tracks/14/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Screen/Pump Harddies Screen/Walls:transform/pos")
+tracks/15/interp = 1
+tracks/15/imported = false
+tracks/15/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.59766, 44.7301 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Screen/Pump Harddies Screen/Walls:transform/rot")
+tracks/16/interp = 1
+tracks/16/imported = false
+tracks/16/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Screen/Pump Harddies Screen/Pump Stand:modulate")
+tracks/17/interp = 1
+tracks/17/imported = false
+tracks/17/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Screen/Pump Harddies Screen/Pump Head:modulate")
+tracks/18/interp = 1
+tracks/18/imported = false
+tracks/18/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Screen/Pump Harddies Screen/Walls:modulate")
+tracks/19/interp = 1
+tracks/19/imported = false
+tracks/19/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Screen/Shoot Mouse Screen/Cannon:modulate")
+tracks/20/interp = 1
+tracks/20/imported = false
+tracks/20/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Screen/Shoot Mouse Screen/Cannon:transform/pos")
+tracks/21/interp = 1
+tracks/21/imported = false
+tracks/21/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -5.27863, -41.6425 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Screen/Shoot Mouse Screen/Cannon:transform/rot")
+tracks/22/interp = 1
+tracks/22/imported = false
+tracks/22/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Screen/Hurt Me Screen/Heart/Arrow:modulate")
+tracks/23/interp = 1
+tracks/23/imported = false
+tracks/23/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Screen/Hurt Me Screen/Heart/Crosshair:modulate")
+tracks/24/interp = 1
+tracks/24/imported = false
+tracks/24/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Screen/Hurt Me Screen/Heart/Frame:modulate")
+tracks/25/interp = 1
+tracks/25/imported = false
+tracks/25/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Screen/Hurt Me Screen/Heart/Heart:modulate")
+tracks/26/interp = 1
+tracks/26/imported = false
+tracks/26/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Screen/Hurt Me Screen/Frame:modulate")
+tracks/27/interp = 1
+tracks/27/imported = false
+tracks/27/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Screen/Hurt Me Screen/Text:modulate")
+tracks/28/interp = 1
+tracks/28/imported = false
+tracks/28/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("Screen/Music Note Screen/Lines:modulate")
+tracks/29/interp = 1
+tracks/29/imported = false
+tracks/29/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("Screen/Eye/Eyeball/Sprite:modulate")
+tracks/30/interp = 1
+tracks/30/imported = false
+tracks/30/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("Screen/Eye/Eyeball/Sprite:texture")
+tracks/31/interp = 1
+tracks/31/imported = false
+tracks/31/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ) ]
+}
+tracks/32/type = "value"
+tracks/32/path = NodePath("Screen/Eye:transform/pos")
+tracks/32/interp = 1
+tracks/32/imported = false
+tracks/32/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( -2.59296, 174.765 ) ]
+}
+tracks/33/type = "value"
+tracks/33/path = NodePath("Screen/Eye:transform/rot")
+tracks/33/interp = 1
+tracks/33/imported = false
+tracks/33/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/34/type = "value"
+tracks/34/path = NodePath("Screen/Eye:modulate")
+tracks/34/interp = 1
+tracks/34/imported = false
+tracks/34/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/35/type = "value"
+tracks/35/path = NodePath("Screen/Totem/3:modulate")
+tracks/35/interp = 1
+tracks/35/imported = false
+tracks/35/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/36/type = "value"
+tracks/36/path = NodePath("Screen/Totem/2:modulate")
+tracks/36/interp = 1
+tracks/36/imported = false
+tracks/36/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/37/type = "value"
+tracks/37/path = NodePath("Screen/Totem/1:modulate")
+tracks/37/interp = 1
+tracks/37/imported = false
+tracks/37/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/38/type = "value"
+tracks/38/path = NodePath("Screen/Frame:modulate")
+tracks/38/interp = 1
+tracks/38/imported = false
+tracks/38/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("Screen/Hurt Me Screen/Heart/Heart:transform/scale")
+tracks/39/interp = 1
+tracks/39/imported = false
+tracks/39/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/40/type = "value"
+tracks/40/path = NodePath("Stand:modulate")
+tracks/40/interp = 1
+tracks/40/imported = false
+tracks/40/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/41/type = "value"
+tracks/41/path = NodePath("Screen:texture")
+tracks/41/interp = 1
+tracks/41/imported = false
+tracks/41/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ) ]
+}
+tracks/42/type = "value"
+tracks/42/path = NodePath("Screen:transform/pos")
+tracks/42/interp = 1
+tracks/42/imported = false
+tracks/42/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/43/type = "value"
+tracks/43/path = NodePath("Screen:transform/rot")
+tracks/43/interp = 1
+tracks/43/imported = false
+tracks/43/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/44/type = "value"
+tracks/44/path = NodePath("Broken stand/Bottom:modulate")
+tracks/44/interp = 1
+tracks/44/imported = false
+tracks/44/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/45/type = "value"
+tracks/45/path = NodePath("Screen:modulate")
+tracks/45/interp = 1
+tracks/45/imported = false
+tracks/45/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/46/type = "value"
+tracks/46/path = NodePath("Screen/Drop USB Scene/Frame/Inner:modulate")
+tracks/46/interp = 1
+tracks/46/imported = false
+tracks/46/keys = {
+"times": FloatArray( 0, 0.5, 2.5, 3 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Screen/Drop USB Scene/Frame/Outer:modulate")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": FloatArray( 0, 0.5, 1, 3, 3.5 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Screen/Drop USB Scene/Frame/USB:modulate")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": FloatArray( 0, 1, 1.5, 2, 2.1 ),
+"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Harddies:visibility/visible")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [node name="Eye Mac" type="Node2D"]
 
+script/script = ExtResource( 1 )
+
 [node name="Animation" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/scale = Vector2( 1.75, 1.75 )
+
+[node name="Harddies" type="Sprite" parent="Animation"]
+
+visibility/visible = false
+transform/pos = Vector2( 1.85119, -330.019 )
+transform/scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 2 )
+
+[node name="Harddies Spawn Pos" type="Position2D" parent="Animation"]
+
+transform/pos = Vector2( 2.46586, -328.724 )
+transform/scale = Vector2( 1, 1 )
 
 [node name="Screen" type="Sprite" parent="Animation"]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 
 [node name="Broken Screen" type="Sprite" parent="Animation/Screen"]
 
@@ -6706,7 +7830,7 @@ transform/pos = Vector2( 3.58478, -49.1627 )
 [node name="Frame" type="Sprite" parent="Animation/Screen"]
 
 transform/pos = Vector2( 4.81488, -6.74084 )
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 
 [node name="Totem" type="Node2D" parent="Animation/Screen"]
 
@@ -6715,28 +7839,181 @@ editor/display_folded = true
 [node name="1" type="Sprite" parent="Animation/Screen/Totem"]
 
 transform/pos = Vector2( 0.518585, 174.246 )
-texture = ExtResource( 3 )
+texture = ExtResource( 5 )
+modulate = Color( 1, 0.421875, 0, 1 )
 
 [node name="2" type="Sprite" parent="Animation/Screen/Totem"]
 
 transform/pos = Vector2( 5.70447, 178.914 )
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
+modulate = Color( 1, 0.796875, 0, 1 )
 
 [node name="3" type="Sprite" parent="Animation/Screen/Totem"]
 
 transform/pos = Vector2( 15.5577, 177.358 )
-texture = ExtResource( 5 )
+texture = ExtResource( 7 )
+modulate = Color( 1, 0.351562, 0.351562, 1 )
 
 [node name="Eye" type="Sprite" parent="Animation/Screen"]
 
 editor/display_folded = true
 transform/pos = Vector2( -2.59296, 174.765 )
-texture = ExtResource( 6 )
+texture = ExtResource( 8 )
 
-[node name="Eyeball" type="Sprite" parent="Animation/Screen/Eye"]
+[node name="Eyeball" type="KinematicBody2D" parent="Animation/Screen/Eye"]
+
+transform/scale = Vector2( 1, 1 )
+input/pickable = false
+shapes/0/shape = SubResource( 22 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.742711, -1.48543 )
+shapes/0/trigger = false
+collision/layers = 0
+collision/mask = 262144
+collision/margin = 0.08
+
+[node name="Sprite" type="Sprite" parent="Animation/Screen/Eye/Eyeball"]
 
 transform/pos = Vector2( -0.223637, -0.904678 )
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Screen/Eye/Eyeball"]
+
+transform/pos = Vector2( 0.742711, -1.48543 )
+shape = SubResource( 22 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Eye Frame" type="StaticBody2D" parent="Animation/Screen/Eye"]
+
+editor/display_folded = true
+transform/pos = Vector2( -6.00846, -28.2217 )
+transform/rot = 8.0398
+input/pickable = false
+shapes/0/shape = SubResource( 21 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 262144
+collision/mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Screen/Eye/Eye Frame"]
+
+shape = SubResource( 21 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Eye Frame1" type="StaticBody2D" parent="Animation/Screen/Eye"]
+
+editor/display_folded = true
+transform/pos = Vector2( 39.8575, -17.3988 )
+transform/rot = -37.1672
+input/pickable = false
+shapes/0/shape = SubResource( 21 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 262144
+collision/mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Screen/Eye/Eye Frame1"]
+
+shape = SubResource( 21 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Eye Frame2" type="StaticBody2D" parent="Animation/Screen/Eye"]
+
+editor/display_folded = true
+transform/pos = Vector2( -40.0869, -13.3821 )
+transform/rot = -141.26
+input/pickable = false
+shapes/0/shape = SubResource( 21 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 262144
+collision/mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Screen/Eye/Eye Frame2"]
+
+shape = SubResource( 21 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Eye Frame3" type="StaticBody2D" parent="Animation/Screen/Eye"]
+
+editor/display_folded = true
+transform/pos = Vector2( -37.3855, 20.8568 )
+transform/rot = -215.642
+input/pickable = false
+shapes/0/shape = SubResource( 21 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 262144
+collision/mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Screen/Eye/Eye Frame3"]
+
+shape = SubResource( 21 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Eye Frame4" type="StaticBody2D" parent="Animation/Screen/Eye"]
+
+editor/display_folded = true
+transform/pos = Vector2( -0.764225, 29.5103 )
+transform/rot = -177.171
+input/pickable = false
+shapes/0/shape = SubResource( 21 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 262144
+collision/mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Screen/Eye/Eye Frame4"]
+
+shape = SubResource( 21 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Eye Frame5" type="StaticBody2D" parent="Animation/Screen/Eye"]
+
+editor/display_folded = true
+transform/pos = Vector2( 39.8803, 17.5003 )
+transform/rot = -149.76
+input/pickable = false
+shapes/0/shape = SubResource( 21 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 262144
+collision/mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Screen/Eye/Eye Frame5"]
+
+shape = SubResource( 21 )
+trigger = false
+_update_shape_index = 0
 
 [node name="Music Note Screen" type="Node2D" parent="Animation/Screen"]
 
@@ -6745,7 +8022,7 @@ editor/display_folded = true
 [node name="Lines" type="Sprite" parent="Animation/Screen/Music Note Screen"]
 
 transform/pos = Vector2( 1.44385, -40.4276 )
-texture = ExtResource( 8 )
+texture = ExtResource( 10 )
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="Hurt Me Screen" type="Node2D" parent="Animation/Screen"]
@@ -6755,59 +8032,135 @@ editor/display_folded = true
 [node name="Text" type="Sprite" parent="Animation/Screen/Hurt Me Screen"]
 
 transform/pos = Vector2( 6.59912, -117.88 )
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="Frame" type="Sprite" parent="Animation/Screen/Hurt Me Screen"]
 
 transform/pos = Vector2( 5.60605, -118.91 )
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="Heart" type="Node2D" parent="Animation/Screen/Hurt Me Screen"]
 
-transform/pos = Vector2( 47.1506, 54.7223 )
+editor/display_folded = true
+transform/pos = Vector2( -8.57541, 51.6173 )
+
+[node name="Damage Area" type="RemoteTransform2D" parent="Animation/Screen/Hurt Me Screen/Heart"]
+
+transform/pos = Vector2( -3.45493, -4.14602 )
+transform/scale = Vector2( 1, 1 )
+remote_path = NodePath("../../../../Damage Area")
 
 [node name="Heart" type="Sprite" parent="Animation/Screen/Hurt Me Screen/Heart"]
 
-texture = ExtResource( 11 )
+texture = ExtResource( 13 )
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="Frame" type="Sprite" parent="Animation/Screen/Hurt Me Screen/Heart"]
 
-texture = ExtResource( 12 )
+texture = ExtResource( 14 )
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="Crosshair" type="Sprite" parent="Animation/Screen/Hurt Me Screen/Heart"]
 
 transform/pos = Vector2( 23.4032, -9.98077 )
-texture = ExtResource( 13 )
+texture = ExtResource( 15 )
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="Arrow" type="Sprite" parent="Animation/Screen/Hurt Me Screen/Heart"]
 
 transform/pos = Vector2( 95.9798, -66.7197 )
-texture = ExtResource( 14 )
+texture = ExtResource( 16 )
 modulate = Color( 1, 1, 1, 0 )
+
+[node name="Left Pos" type="Position2D" parent="Animation/Screen/Hurt Me Screen"]
+
+transform/pos = Vector2( -180, 50 )
+
+[node name="Right Pos" type="Position2D" parent="Animation/Screen/Hurt Me Screen"]
+
+transform/pos = Vector2( 114, 50 )
 
 [node name="Shoot Mouse Screen" type="Node2D" parent="Animation/Screen"]
 
-editor/display_folded = true
+transform/pos = Vector2( -2.25837, -39.145 )
+transform/rot = -179.583
 
 [node name="Cannon" type="Sprite" parent="Animation/Screen/Shoot Mouse Screen"]
 
-transform/pos = Vector2( -5.27863, -41.6425 )
-texture = ExtResource( 15 )
-modulate = Color( 1, 1, 1, 0 )
+editor/display_folded = true
+texture = ExtResource( 17 )
+modulate = Color( 1, 0.519531, 0.519531, 1 )
+
+[node name="Spawn Pos" type="Position2D" parent="Animation/Screen/Shoot Mouse Screen/Cannon"]
+
+transform/pos = Vector2( -119.721, -3.3575 )
+transform/scale = Vector2( 1, 1 )
+
+[node name="Transform Area" type="Area2D" parent="Animation/Screen/Shoot Mouse Screen" groups=[
+"Mouse Transform",
+]]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = SubResource( 17 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 265.661, 11.0083 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 18 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, -9.02793, 182.896 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 19 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, -7.04863, -170.579 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 20 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, -279.504, 3.88786 )
+shapes/3/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 524288
+collision/mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Screen/Shoot Mouse Screen/Transform Area"]
+
+transform/pos = Vector2( 265.661, 11.0083 )
+shape = SubResource( 17 )
+trigger = false
+_update_shape_index = 0
+
+[node name="CollisionShape2D 2" type="CollisionShape2D" parent="Animation/Screen/Shoot Mouse Screen/Transform Area"]
+
+transform/pos = Vector2( -9.02793, 182.896 )
+shape = SubResource( 18 )
+trigger = false
+_update_shape_index = 1
+
+[node name="CollisionShape2D 3" type="CollisionShape2D" parent="Animation/Screen/Shoot Mouse Screen/Transform Area"]
+
+transform/pos = Vector2( -7.04863, -170.579 )
+shape = SubResource( 19 )
+trigger = false
+_update_shape_index = 2
+
+[node name="CollisionShape2D 4" type="CollisionShape2D" parent="Animation/Screen/Shoot Mouse Screen/Transform Area"]
+
+transform/pos = Vector2( -279.504, 3.88786 )
+shape = SubResource( 20 )
+trigger = false
+_update_shape_index = 3
 
 [node name="Pump Harddies Screen" type="Node2D" parent="Animation/Screen"]
+
+editor/display_folded = true
 
 [node name="Light2D" type="Light2D" parent="Animation/Screen/Pump Harddies Screen"]
 
 transform/pos = Vector2( 11.0494, -201.987 )
 enabled = true
 editor_only = false
-texture = ExtResource( 16 )
+texture = ExtResource( 18 )
 offset = Vector2( 0, 0 )
 scale = 1.0
 color = Color( 1, 1, 1, 1 )
@@ -6828,19 +8181,19 @@ shadow/item_mask = 1
 [node name="Walls" type="Sprite" parent="Animation/Screen/Pump Harddies Screen"]
 
 transform/pos = Vector2( 3.59766, 44.7301 )
-texture = ExtResource( 17 )
+texture = ExtResource( 19 )
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="Pump Head" type="Sprite" parent="Animation/Screen/Pump Harddies Screen"]
 
 transform/pos = Vector2( 0, 104.432 )
-texture = ExtResource( 18 )
+texture = ExtResource( 20 )
 modulate = Color( 1, 1, 1, 0 )
 
 [node name="Pump Stand" type="Sprite" parent="Animation/Screen/Pump Harddies Screen"]
 
 transform/pos = Vector2( -0.00330067, 122.323 )
-texture = ExtResource( 19 )
+texture = ExtResource( 21 )
 offset = Vector2( 0.00330067, -8.01206 )
 modulate = Color( 1, 1, 1, 0 )
 
@@ -6848,28 +8201,109 @@ modulate = Color( 1, 1, 1, 0 )
 
 visibility/light_mask = 2
 transform/pos = Vector2( -0.264175, 19.548 )
-texture = ExtResource( 20 )
+texture = ExtResource( 22 )
 modulate = Color( 1, 1, 1, 0 )
+
+[node name="Drop USB Scene" type="Node2D" parent="Animation/Screen"]
+
+editor/display_folded = true
+
+[node name="Frame" type="Node2D" parent="Animation/Screen/Drop USB Scene"]
+
+editor/display_folded = true
+transform/pos = Vector2( -1.07924, -56.1142 )
+
+[node name="Inner" type="Sprite" parent="Animation/Screen/Drop USB Scene/Frame"]
+
+texture = ExtResource( 23 )
+modulate = Color( 1, 1, 1, 0 )
+
+[node name="Outer" type="Sprite" parent="Animation/Screen/Drop USB Scene/Frame"]
+
+transform/pos = Vector2( 0, 0.679619 )
+texture = ExtResource( 24 )
+modulate = Color( 1, 1, 1, 0 )
+
+[node name="USB" type="Sprite" parent="Animation/Screen/Drop USB Scene/Frame"]
+
+texture = ExtResource( 25 )
+modulate = Color( 1, 1, 1, 0 )
+
+[node name="Spawn Pos" type="Position2D" parent="Animation/Screen/Drop USB Scene/Frame"]
+
+transform/scale = Vector2( 1, 1 )
+
+[node name="Bottom Left" type="Position2D" parent="Animation/Screen/Drop USB Scene"]
+
+transform/pos = Vector2( -165, 50 )
+
+[node name="Top Right" type="Position2D" parent="Animation/Screen/Drop USB Scene"]
+
+transform/pos = Vector2( 171, -125 )
 
 [node name="Stand" type="Sprite" parent="Animation"]
 
 transform/pos = Vector2( 0, 285.145 )
-texture = ExtResource( 21 )
+texture = ExtResource( 26 )
 
 [node name="Broken stand" type="Node2D" parent="Animation"]
+
+editor/display_folded = true
 
 [node name="Top" type="Sprite" parent="Animation/Broken stand"]
 
 visibility/visible = false
 transform/pos = Vector2( -8.71497, 282.768 )
-texture = ExtResource( 22 )
-modulate = Color( 1, 1, 1, 0 )
+texture = ExtResource( 27 )
 
 [node name="Bottom" type="Sprite" parent="Animation/Broken stand"]
 
 visibility/visible = false
 transform/pos = Vector2( -0.144676, 288.267 )
-texture = ExtResource( 23 )
+texture = ExtResource( 28 )
+
+[node name="Plugobra Spawn Poses" type="Node2D" parent="Animation"]
+
+editor/display_folded = true
+transform/scale = Vector2( 1, 1 )
+
+[node name="1" type="Position2D" parent="Animation/Plugobra Spawn Poses"]
+
+transform/pos = Vector2( -485.284, 344.046 )
+
+[node name="2" type="Position2D" parent="Animation/Plugobra Spawn Poses"]
+
+transform/pos = Vector2( -172.342, 342.279 )
+
+[node name="3" type="Position2D" parent="Animation/Plugobra Spawn Poses"]
+
+transform/pos = Vector2( 172.981, 342.664 )
+
+[node name="4" type="Position2D" parent="Animation/Plugobra Spawn Poses"]
+
+transform/pos = Vector2( 457.504, 342.835 )
+
+[node name="Damage Area" type="Area2D" parent="Animation"]
+
+transform/pos = Vector2( -12.0303, 47.4713 )
+transform/scale = Vector2( 1, 1 )
+input/pickable = true
+shapes/0/shape = SubResource( 16 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.690988, 4.14603 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision/layers = 16
+collision/mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area"]
+
+transform/pos = Vector2( 0.690988, 4.14603 )
+shape = SubResource( 16 )
+trigger = false
+_update_shape_index = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
 
@@ -6890,9 +8324,19 @@ anims/Hurt = SubResource( 2 )
 "anims/Shoot Mouse Disappear" = SubResource( 12 )
 "anims/Shoot Mouse Screen" = SubResource( 13 )
 anims/Still = SubResource( 14 )
+"anims/USB Drop" = SubResource( 15 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "Still"
+
+[node name="Health Bar" parent="." instance=ExtResource( 33 )]
+
+transform/pos = Vector2( 0, -454.899 )
+
+[node name="Number Spawn Pos" type="Position2D" parent="."]
+
+transform/pos = Vector2( 4.15442, -454.899 )
+script/script = ExtResource( 34 )
 
 

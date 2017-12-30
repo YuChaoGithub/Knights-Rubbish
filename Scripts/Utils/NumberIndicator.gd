@@ -1,7 +1,7 @@
 extends Node2D
 
 const MOVEMENT_Y = -100
-const SHOW_DURATION = 1
+const SHOW_DURATION = 0.25
 const SPRITE_WIDTH = 75
 
 enum { STUNNED = -1, IMMUNE = -2 }

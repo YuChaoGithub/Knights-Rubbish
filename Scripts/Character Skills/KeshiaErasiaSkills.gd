@@ -1,8 +1,7 @@
 extends Node2D
 
 # Constants for skills.
-const BASIC_ATTACK_DURATION = 0.3
-const BASIC_ATTACK_STRIKES_TIME = 0.1
+const BASIC_ATTACK_DURATION = 0.8
 const BASIC_ATTACK_COOLDOWN = 0.15
 const BASIC_ATTACK_DAMAGE = 29
 
@@ -20,7 +19,7 @@ const UP_SKILL_DURATION = 0.7
 const UP_SKILL_COOLDOWN = 0.2
 const UP_SKILL_LANDED_DETECTION_DELAY = 0.05
 const UP_SKILL_VELOCITY = -850
-const UP_SKILL_DAMAGE = 5
+const UP_SKILL_DAMAGE = 211
 
 const DOWN_SKILL_DURATION = 0.6
 const DOWN_SKILL_RESUME_COOLDOWN = 0.2
@@ -39,8 +38,6 @@ onready var dart_spawn_node = character.get_node("..")
 # When this is true, _process() will perform basic skill landing when the player detects the ground.
 var detecting_landing = false
 
-var basic_attack_hit = true
-
 # Can only cast Up Skill one time unless Keshia landed on the ground.
 var up_skill_available = true
 var up_skill_available_timer = null
@@ -55,11 +52,6 @@ var down_skill_can_resume = false
 var down_skill_timer = null
 
 var hit_box_timer = null
-
-# Hit boxes of attack/skills.
-onready var basic_attack_hit_box = get_node("../Sprite/Animation/Body/Left Arm/Weapon/Basic Attack Hit Box")
-onready var basic_skill_hit_box = get_node("../Sprite/Basic Skill Hit Box")
-onready var up_skill_hit_box = get_node("../Sprite/Animation/Body/Left Arm/Weapon/Up Skill Hit Box")
 
 func _ready():
 	set_process(true)
@@ -100,7 +92,7 @@ func basic_attack():
 		character.set_status("can_cast_skill", false, BASIC_ATTACK_DURATION + BASIC_ATTACK_COOLDOWN)
 
 		# Perform attack (interruptable).
-		var strike_timer = countdown_timer.new(BASIC_ATTACK_STRIKES_TIME, self, "basic_attack_strikes")
+		var strike_timer = countdown_timer.new(BASIC_ATTACK_DURATION, self, "basic_attack_strikes")
 		character.register_timer("interruptable_skill", strike_timer)
 	elif down_skill_can_resume:
 		# Resume from down skill.
@@ -109,15 +101,13 @@ func basic_attack():
 func basic_attack_strikes():
 	# Enabel the collider of basic attack.
 	character.unregister_timer("interruptable_skill")
-	basic_attack_hit = false
 
 # Will be signalled by pencil weapon's collder (Area2D).
 func on_basic_attack_hit(area):
-	if !basic_attack_hit && area.is_in_group("enemy_collider"):
+	if area.is_in_group("enemy_collider"):
 		# Damage the enemy.
 		var enemy_node = area.get_node("../..")
 		enemy_node.damaged(BASIC_ATTACK_DAMAGE)
-		basic_attack_hit = true
 
 # ===========
 # Basic Skill: Hop, when it hits the ground, stun enemies around. Is invincible while hitting ground.

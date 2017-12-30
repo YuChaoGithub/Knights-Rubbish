@@ -1,14 +1,11 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Levels/Computer Room Subscenes/Part 1 Scene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Levels/Computer Room Subscenes/Part 2 Scene.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Godotbos.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Plugobra.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Eye Mac.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scripts/CharacterAveragePosition.gd" type="Script" id=7]
-[ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scripts/Utils/InitRandom.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/CharacterAveragePosition.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Utils/InitRandom.gd" type="Script" id=6]
 
 [node name="Game Level" type="Node2D"]
 
@@ -17,6 +14,7 @@
 transform/pos = Vector2( 1280, -740 )
 drag_margin_right = 0.8
 drag_margin_left = 0.0
+drag_margin_bottom = 1.0
 
 [node name="Part 1" type="Node2D" parent="."]
 
@@ -42,28 +40,16 @@ transform/pos = Vector2( 7400, -500 )
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Godotbos" parent="Enemies" instance=ExtResource( 4 )]
-
-transform/pos = Vector2( 1182, -1268 )
-
-[node name="Plugobra" parent="Enemies" instance=ExtResource( 5 )]
-
-transform/pos = Vector2( 482, -718 )
-
-[node name="Eye Mac" parent="Enemies" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 1182, -1368 )
-
 [node name="Character Average Position" type="Position2D" parent="."]
 
-script/script = ExtResource( 7 )
+script/script = ExtResource( 4 )
 
-[node name="Keshia Erasia" parent="." instance=ExtResource( 8 )]
+[node name="Keshia Erasia" parent="." instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 587.656, -232.464 )
 
 [node name="RNG Initializer" type="Node2D" parent="."]
 
-script/script = ExtResource( 9 )
+script/script = ExtResource( 6 )
 
 

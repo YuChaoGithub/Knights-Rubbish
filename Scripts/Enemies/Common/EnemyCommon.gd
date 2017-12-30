@@ -95,7 +95,8 @@ func damaged(val, play_hurt_animation = true):
         hurt_timer = null
 
     # Won't play hurt animation if it is stunned.
-    if play_hurt_animation && animator.get_current_animation() != "Stunned":
+    var curr_anim = animator.get_current_animation()
+    if (curr_anim == "Hurt" || play_hurt_animation) && curr_anim != "Stunned":
         play_animation("Hurt")
         hurt_timer = cd_timer.new(HURT_ANIM_DURATION, node, "resume_from_damaged")
 

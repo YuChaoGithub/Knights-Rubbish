@@ -144,10 +144,7 @@ func random_roam(delta):
 	if !curr_rand_movement.movement_ended():
 		var final_pos = curr_rand_movement.movement(get_global_pos(), delta)
 
-		if final_pos.x < get_global_pos().x:
-			facing = -1
-		elif final_pos.x > get_global_pos().x:
-			facing = 1
+		facing = sign(final_pos.x - get_global_pos().x)
 		turn_sprites_x(facing)
 
 		move_to(final_pos)

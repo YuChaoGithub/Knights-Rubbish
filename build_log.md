@@ -346,4 +346,31 @@ Comment: Changed my daily time table. Seems like it works since I completed tons
 
 **Commit**
 
-Sprint: Explode animation scene. Abnormal status indicator. (Probably should be combined with Number Indicator.)
+[2017.12.25]
+* Completed scripting Plugobra.
+
+[2017.12.26]
+* Scripting Godotbos. Not finished nor tested yet.
+
+[2017.12.27]
+* Completed scripting Godotbos.
+* Fixed an intricate bug that freezes enemies in "Hurt" animation when two consecutive attacks hit.
+
+[2017.12.28]
+* Organized and remake some Eye Mac's animations.
+* Scripting Eye Mac. Not finished nor teseted yet.
+
+[2017.12.29]
+* Completed scripting Eye Mac.
+* Changed the duration of number indicators from 1.0 sec to 0.25 sec.
+Milestone: Completed scripting all enemies in Computer Room.
+
+[2017.12.30]
+* Completed changing Keshia's basic attack. (Fully interruptable, attack twice)
+
+**Commit**
+
+To Do List: 
+* Abnormal status indicator. (Probably should be combined with Number Indicator.)
+* Powerup animations and graphics.
+* Boss health bar.
