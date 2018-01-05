@@ -1,37 +1,19 @@
-extends Node2D
+extends KinematicBody2D
 
-const TAG = "damage_change"
-const DAMAGE_MODIFIER = 2
+const GRAVITY = 600
+const DAMAGE_MODIFIER = 2.0
 const DURATION = 5.0
 
-var movement_pattern
+onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
 
-# The affected character
-var character_node
+func _ready():
+	set_process(true)
 
-var recover_timer
+func _process(delta):
+	move_to(gravity_movement.movement(get_global_pos(), delta))
 
 func on_area_entered(area):
 	# A character enters.
 	if area.is_in_group("player_collider"):
-		character_node = area.get_node("..")
-		character_node.damage_modifier *= DAMAGE_MODIFIER
-		
-		# Remove the trigger area to avoid multiple effects.
-		get_node("Trigger Area").queue_free()
-		
-		# Configure timer and start it. Recover the modifiers after the timer ends.
-		recover_timer = preload("res://Scripts/Utils/CountdownTimer.gd").new(DURATION, self, "recover")
-		
-		# Register to charcter node to avoid conflicting power ups.
-		character_node.register_timer(TAG, recover_timer)
-
-# Restore the effects.
-func recover():
-	character_node.damage_modifier /= DAMAGE_MODIFIER
-	
-	# Unregister to character node.
-	character_node.unregister_timer(TAG)
-	
-	# Remove the shrink potion scene entirely.
-	queue_free()
+		area.get_node("..").damage_boosted(DAMAGE_MODIFIER, DURATION)
+		queue_free()

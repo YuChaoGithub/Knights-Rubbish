@@ -1,4 +1,4 @@
-extends Node2D
+extends KinematicBody2D
 
 # Harddies AI:
 # 1. Flies through the sky for a certain duration.
@@ -43,7 +43,7 @@ const PLATFORM_COLLISION_LAYER = 2
 
 var attack_target = null
 var status_timer = null
-var curr_rand_movement = null
+var knockable = true
 var facing = -1
 
 # Ring spawning.
@@ -54,10 +54,10 @@ onready var spawn_node = get_node("..")
 onready var impassible_platform = get_node("Platform")
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
-onready var movement_type = ec.straight_line_movement.new(facing * SPEED_X, 0)
-onready var gravity_movement = ec.gravity_movement.new(self, GRAVITY)
 
 func activate():
+	ec.init_gravity_movement(GRAVITY)
+	ec.init_straight_line_movement(facing * SPEED_X, 0)
 	set_process(true)
 	ec.change_status(FLY)
 	get_node("Animation/Damage Area").add_to_group("enemy_collider")
@@ -75,24 +75,25 @@ func _process(delta):
 		elif ec.status == LANDED:
 			landed()
 
+	if knockable:
+		ec.perform_knock_back_movement(delta)
+
 func change_status(to_status):
 	ec.change_status(to_status)
 
 func apply_random_movement(delta):
 	ec.play_animation("Fly")
-	if curr_rand_movement == null:
-		# New random movement.
-		curr_rand_movement = ec.random_movement.new(SPEED_X, 0, true, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
+	if ec.random_movement == null:
+		ec.init_random_movement("movement_not_ended", "movement_ended", SPEED_X, 0, true, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
 
-	if !curr_rand_movement.movement_ended():
-		# Existing random movement.
-		var final_pos = curr_rand_movement.movement(get_global_pos(), delta)
-		move_to(final_pos)
-	else:
-		# Random movement ended.
-		detect_and_face_the_farthest_target()
-		curr_rand_movement = null
-		ec.change_status(TOSS_ANIM)
+	ec.perform_random_movement(delta)
+
+func movement_not_ended(movement_dir):
+	return
+
+func movement_ended():
+	detect_and_face_the_farthest_target()
+	ec.change_status(TOSS_ANIM)
 
 func detect_and_face_the_farthest_target():
 	attack_target = ec.target_detect.get_farthest(self, ec.char_average_pos.characters)
@@ -131,10 +132,9 @@ func fall_and_detect_landing(delta):
 	if ec.health_system.full_health != STONED_MAX_HEALTH:
 		ec.change_and_refill_full_health(STONED_MAX_HEALTH)
 
-	var movement_of_gravity = gravity_movement.movement(get_global_pos(), delta)
-	move_to(movement_of_gravity)
+	ec.perform_gravity_movement(delta)
 
-	if gravity_movement.is_landed():
+	if ec.gravity_movement.is_landed():
 		change_status(LANDED)
 
 func on_attack_hit(area):
@@ -146,6 +146,7 @@ func on_attack_hit(area):
 		character.knocked_back(dir * KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 
 func landed():
+	knockable = false
 	ec.play_animation("Stiff")
 	impassible_platform.set_layer_mask(PLATFORM_COLLISION_LAYER)
 
@@ -156,14 +157,8 @@ func damaged(val):
 func resume_from_damaged():
 	ec.resume_from_damaged()
 
-func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
-	ec.damaged_over_time(time_per_tick, total_ticks, damage_per_tick)
-
 func healed(val):
 	ec.healed(val)
-
-func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
-	ec.healed_over_time(time_per_tick, total_ticks, heal_per_tick)
 
 func stunned(duration):
 	if ec.status == FALLING || ec.status == LANDED:
@@ -174,6 +169,17 @@ func stunned(duration):
 
 func resume_from_stunned():
 	ec.resume_from_stunned()
+
+func knocked_back(vel_x, vel_y, fade_rate):
+	if ec.status != FALLING && ec.status != LANDED:
+		ec.knocked_back(vel_x, 0, fade_rate)
+
+func slowed(multiplier, duration):
+	if ec.status != FALLING && ec.status != LANDED:
+		ec.slowed(multiplier, duration)
+
+func slowed_recover(label):
+	ec.slowed_recover(label)
 
 func die():
 	get_node("Animation/Damage Area").remove_from_group("enemy_collider")

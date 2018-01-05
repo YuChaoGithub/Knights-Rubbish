@@ -311,17 +311,11 @@ func crack_screen_according_to_health():
 func resume_from_damaged():
 	ec.resume_from_damaged()
 
-func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
-	ec.damaged_over_time(time_per_tick, total_ticks, damage_per_tick)
-
 func stunned(duration):
 	ec.display_immune_text()
 
 func healed(val):
 	ec.healed(val)
-
-func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
-	ec.healed_over_time(time_per_tick, total_ticks, heal_per_tick)
 
 func die():
 	ec.die()

@@ -6,7 +6,7 @@ var side
 const SPEED_X = 2250
 const GRAVITY = 1200
 const LIFE_TIME = 0.1
-const DAMAGE = 214
+const DAMAGE = 20
 
 # Ensure that only one target is hit.
 var already_hit = false
@@ -42,6 +42,7 @@ func on_enemy_hit(area):
 	if not already_hit and area.is_in_group("enemy_collider"):
 		# Deal damage to enemy.
 		area.get_node("../..").damaged(DAMAGE)
+		area.get_node("../..").slowed(0.2, 3)
 
 		# Avoid damaging multiple targets.
 		already_hit = true

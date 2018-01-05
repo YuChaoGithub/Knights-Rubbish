@@ -54,7 +54,6 @@ var status_timer = null
 var heal_timer = null
 var kick_timestamp = null
 var kicked_targets = []
-var curr_rand_movement = null
 var facing = -1
 
 # Roaming pos.
@@ -82,10 +81,10 @@ onready var mine_spawn_pos = get_node("Animation/Mine Throw Pos")
 onready var spawn_node = get_node("..")
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
-onready var gravity_movement = ec.gravity_movement.new(self, GRAVITY)
-onready var straight_movement = ec.straight_line_movement.new(0, 0)
 
 func activate():
+	ec.init_gravity_movement(GRAVITY)
+	ec.init_straight_line_movement(0, 0)
 	set_process(true)
 	get_node("Animation/Damage Area").add_to_group("enemy_collider")
 	ec.change_status(PRE_SPEED_WALK_STAND)
@@ -120,13 +119,11 @@ func _process(delta):
 			play_throw_mine_anim()
 		elif ec.status == THROW_MINE:
 			throw_mine()
-	apply_gravity(delta)
+	
+	ec.perform_gravity_movement(delta)
 
 func change_status(to_status):
 	ec.change_status(to_status)
-
-func apply_gravity(delta):
-	move_to(gravity_movement.movement(get_global_pos(), delta))
 
 func pre_speed_walk_stand():
 	ec.play_animation("Still")
@@ -136,17 +133,17 @@ func pre_speed_walk_stand():
 func speed_walk(delta):
 	ec.play_animation("Walk")
 
-	if curr_rand_movement == null:
-		curr_rand_movement = ec.random_movement.new(SPEED_WALK_SPEED_X, 0, false, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
+	if ec.random_movement == null:
+		ec.init_random_movement("movement_not_ended", "movement_ended", SPEED_WALK_SPEED_X, 0, false, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
 
-	if curr_rand_movement.movement_ended():
-		curr_rand_movement = null
-		ec.change_status(RNG_STEP)
-	else:
-		var final_pos = curr_rand_movement.movement(get_global_pos(), delta)
-		facing = sign(final_pos.x - get_global_pos().x)
-		ec.turn_sprites_x(facing)
-		move_to(final_pos)
+	ec.perform_random_movement(delta)
+
+func movement_not_ended(movement_dir):
+	facing = movement_dir
+	ec.turn_sprites_x(facing)
+
+func movement_ended():
+	ec.change_status(RNG_STEP)
 
 func rng_step_while_standing():
 	ec.play_animation("Still")
@@ -170,8 +167,8 @@ func kick_move(delta):
 	# Determine whether to left/right according to facing.
 	var target_x = kick_pos_right.get_global_pos().x if facing == 1 else kick_pos_left.get_global_pos().x
 
-	straight_movement.dx = facing * ATTACK_WALK_SPEED
-	set_global_pos(straight_movement.movement(get_global_pos(), delta))
+	ec.straight_line_movement.dx = facing * ATTACK_WALK_SPEED
+	ec.perform_straight_line_movement(delta)
 	
 	if facing == -1 && get_global_pos().x < target_x || facing == 1 && get_global_pos().x > target_x:
 		facing = -facing
@@ -190,8 +187,8 @@ func kick(delta):
 		kick_timestamp = 0.0
 		kicked_targets.clear()
 
-	straight_movement.dx = facing * KICK_SPEED_X
-	set_global_pos(straight_movement.movement(get_global_pos(), delta))
+	ec.straight_line_movement.dx = facing * KICK_SPEED_X
+	ec.perform_straight_line_movement(delta)
 
 	kick_timestamp += delta
 	if kick_timestamp > KICK_DURATION:
@@ -212,8 +209,8 @@ func move_to_center(delta):
 
 	facing = sign(shoot_center_pos.get_global_pos().x - get_global_pos().x)
 	ec.turn_sprites_x(facing)
-	straight_movement.dx = facing * ATTACK_WALK_SPEED
-	set_global_pos(straight_movement.movement(get_global_pos(), delta))
+	ec.straight_line_movement.dx = facing * ATTACK_WALK_SPEED
+	ec.perform_straight_line_movement(delta)
 
 	if abs(get_global_pos().x - shoot_center_pos.get_global_pos().x) < CENTER_POS_RADIUS:
 		ec.change_status(PREPARE_FIRE)
@@ -290,14 +287,14 @@ func stunned(duration):
 	else:
 		ec.display_immune_text()
 
-func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
-	ec.damaged_over_time(time_per_tick, total_ticks, damage_per_tick)
-
 func healed(val):
 	ec.healed(val)
 
-func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
-	ec.healed_over_time(time_per_tick, total_ticks, heal_per_tick)
+func knocked_back(vel_x, vel_y, fade_rate):
+	return
+
+func slowed(multiplier, duration):
+	return
 
 func die():
 	ec.die()

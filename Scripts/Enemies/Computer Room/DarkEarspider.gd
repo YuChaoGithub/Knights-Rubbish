@@ -48,7 +48,7 @@ onready var silk_attach_spot = get_node("Animation/Body/Silk Pos")
 onready var silk_attach_spot_original_pos = silk_attach_spot.get_global_pos()
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
-onready var movement_type = ec.straight_line_movement.new(0, 0)
+onready var movement_type = preload("res://Scripts/Movements/StraightLineMovement.gd").new(0, 0)
 
 func activate():
 	set_process(true)
@@ -136,7 +136,7 @@ func perform_random_movement(delta):
 	ec.play_animation("Swing")
 	if curr_rand_movement == null:
 		# New random movement.
-		curr_rand_movement = ec.random_movement.new(SPEED_X, 0, true, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
+		curr_rand_movement = preload("res://Scripts/Movements/RandomMovement.gd").new(SPEED_X, 0, true, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
 	
 	if !curr_rand_movement.movement_ended():
 		# Perform random movement sequence.
@@ -163,9 +163,6 @@ func stunned(duration):
 func resume_from_stunned():
 	ec.resume_from_stunned()
 
-func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
-	ec.damaged_over_time(time_per_tick, total_ticks, damage_per_tick)
-
 func die():
 	ec.die()
 	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
@@ -173,5 +170,8 @@ func die():
 func healed(val):
 	ec.healed(val)
 
-func healed_over_time(time_per_tick, total_tick, heal_per_tick):
-	ec.healed_over_time(time_per_tick, total_tick, heal_per_tick)
+func knocked_back(vel_x, vel_y, fade_rate):
+	return
+
+func slowed(multiplier, duration):
+	return

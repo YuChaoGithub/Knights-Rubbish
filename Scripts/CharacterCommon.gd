@@ -1,6 +1,11 @@
 extends Node2D
 
 export(String, FILE) var player_constants_filepath
+export(NodePath) var defense_icon_path
+export(NodePath) var damage_icon_path
+export(NodePath) var slowed_icon_path
+export(NodePath) var speeded_icon_path
+export(NodePath) var confused_icon_path
 
 # The amount of time (in seconds) to play idle animation.
 const TIME_TO_IDLE_ANIMATION = 5
@@ -29,9 +34,7 @@ var jump_speed
 var speed
 
 # State modifier (could be changed by power ups, debuffs, or skill).
-var size_modifier = 1.0 setget set_size_modifier
 var movement_speed_modifier = 1.0
-var jump_height_modifier = 1.0 setget set_jump_height_modifier
 var damage_modifier = 1.0
 var defense_modifier = 1.0
 
@@ -71,9 +74,10 @@ var countdown_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 # The data should be saved as dictionaries {tag:String -> CountdownTimer}.
 var active_timers = {}
 
-# A queue for speed modifying timers.
-var slowed_timer = []
-var speeded_timer = []
+var speed_timers = {} # Label -> {timer, multiplier}
+var speed_timer_label = 0
+var slowed_count = 0
+var speeded_count = 0
 var hurt_modulate_timer = null
 
 # Child nodes.
@@ -96,19 +100,13 @@ onready var health_system = preload("res://Scripts/Utils/HealthSystem.gd").new(s
 var number_indicator = preload("res://Scenes/Utils/Numbers/Number Indicator.tscn")
 onready var number_spawn_pos = get_node("Number Spawn Pos")
 
-# Getters and setters.	
-func set_jump_height_modifier(value):
-	jump_height_modifier = value
-	recalculate_vertical_movement_variables()
-	
-func set_size_modifier(value):
-	size_modifier = value
-	
-	# Update the actual size.
-	set_scale(Vector2(1.0, 1.0) * value)
-	
-	# Reset collision raycast origins.
-	collision_handler.calculate_ray_spacings()
+onready var status_icons = {
+	defense = get_node(defense_icon_path),
+	damage = get_node(damage_icon_path),
+	slowed = get_node(slowed_icon_path),
+	confused = get_node(confused_icon_path),
+	speeded = get_node(speeded_icon_path)
+}
 
 func _ready():
 	# Configure movement related variables.
@@ -118,6 +116,10 @@ func _ready():
 	# Default animator.
 	sprite = get_node("Sprite")
 	animator = sprite.get_node(player_constants.default_animator_path)
+
+	# Hide all status icons.
+	for icon in status_icons:
+		status_icons[icon].hide()
 
 	# Initialize timestamp.
 	idle_timestamp = OS.get_unix_time()
@@ -243,7 +245,7 @@ func recalculate_horizontal_movement_variables():
 	speed = player_constants.movement_speed * movement_speed_modifier
 	
 func recalculate_vertical_movement_variables():
-	gravity = 2 * player_constants.jump_height * jump_height_modifier / pow(player_constants.time_to_jump_to_highest, 2)
+	gravity = 2 * player_constants.jump_height / pow(player_constants.time_to_jump_to_highest, 2)
 	jump_speed = -gravity * player_constants.time_to_jump_to_highest
 	
 # Manage the timer according to its tag.
@@ -288,6 +290,56 @@ func display_immune_text():
 	immune_text.initialize(-2, IMMUNE_TEXT_COLOR, number_spawn_pos, self)
 
 # Common abnormal status.
+func defense_boosted(multiplier, duration):
+	var defense_timer = countdown_timer.new(duration, self, "defense_boost_recover", multiplier)
+	register_timer("defense_change", defense_timer)
+
+	defense_modifier *= multiplier
+
+	status_icons.defense.show()
+	status_icons.defense.get_node("AnimationPlayer").play("Pop")
+
+func defense_boost_recover(multiplier):
+	defense_modifier /= multiplier
+	status_icons.defense.hide()
+	unregister_timer("defense_change")
+
+func damage_boosted(multiplier, duration):
+	var damage_timer = countdown_timer.new(duration, self, "damage_boost_recover", multiplier)
+	register_timer("damage_change", damage_timer)
+
+	damage_modifier *= multiplier
+
+	status_icons.damage.show()
+	status_icons.damage.get_node("AnimationPlayer").play("Pop")
+
+func damage_boost_recover(multiplier):
+	damage_modifier /= multiplier
+	status_icons.damage.hide()
+	unregister_timer("damage_change")
+
+func dwarfed_or_gianted(multipliers, duration):
+	var dwarf_giant_timer = countdown_timer.new(duration, self, "dwarf_giant_recover", multipliers)
+	register_timer("giant_dwarf_potion", dwarf_giant_timer)
+
+	set_size(multipliers.size)
+	defense_modifier *= multipliers.defense
+	damage_modifier *= multipliers.damage
+	
+func dwarf_giant_recover(multipliers):
+	set_size(1.0)
+	defense_modifier /= multipliers.defense
+	damage_modifier /= multipliers.damage
+
+	unregister_timer("giant_dwarf_potion")
+
+func set_size(multiplier):	
+	# Update the actual size.
+	set_scale(Vector2(1.0, 1.0) * multiplier)
+	
+	# Reset collision raycast origins.
+	collision_handler.calculate_ray_spacings()
+
 func speed_changed(multiplier, duration):
 	# Cannot be slowed while invincible.
 	if status.invincible && multiplier < 1.0:
@@ -296,31 +348,37 @@ func speed_changed(multiplier, duration):
 	movement_speed_modifier *= multiplier
 	recalculate_horizontal_movement_variables()
 
-	var speed_timer = countdown_timer.new(duration, self, "speed_change_recover", multiplier)
-	
-	if multiplier < 1:
-		slowed_timer.push_back(speed_timer)
-		# TODO: Show slowed icon.
-	else:
-		speeded_timer.push_back(speed_timer)
-		# TODO: Show speeded icon.
+	var speed_timer = countdown_timer.new(duration, self, "speed_change_recover", speed_timer_label)
 
-func speed_change_recover(multiplier):
-	movement_speed_modifier /= multiplier
+	if multiplier < 1:
+		status_icons.slowed.show()
+		status_icons.slowed.get_node("AnimationPlayer").play("Pop")
+		slowed_count += 1
+	else:
+		status_icons.speeded.show()
+		speeded_count += 1
+
+	speed_timers[speed_timer_label] = {
+		timer = speed_timer,
+		multiplier = multiplier
+	}
+	speed_timer_label += 1
+
+func speed_change_recover(label):
+	var speed_data = speed_timers[label]
+	movement_speed_modifier /= speed_data.multiplier
 	recalculate_horizontal_movement_variables()
 
-	if multiplier < 1:
-		slowed_timer.pop_front()
-
-		if slowed_timer.size() == 0:
-			pass
-			# TODO: Remove slowed icon.
+	if speed_data.multiplier < 1:
+		slowed_count -= 1
+		if slowed_count == 0:
+			status_icons.slowed.hide()
 	else:
-		speeded_timer.pop_front()
+		speeded_count -= 1
+		if speeded_count == 0:
+			status_icons.speeded.hide()
 
-		if speeded_timer.size() == 0:
-			pass
-			# TODO: Remove speeded icon.
+	speed_timers.erase(label)
 
 func stunned(duration):
 	# Can't be stunned while invincible.
@@ -361,11 +419,16 @@ func confused(duration):
 		return
 
 	status.confused = true
+
+	status_icons.confused.show()
+	status_icons.confused.get_node("AnimationPlayer").play("Pop")
+
 	var confused_timer = countdown_timer.new(duration, self, "cancel_confused")
 	register_timer("confused", confused_timer)
 
 func cancel_confused():
 	status.confused = false
+	status_icons.confused.hide()
 	unregister_timer("confused")
 
 func knocked_back(vel_x, vel_y, x_fade_rate):
@@ -406,21 +469,12 @@ func recover_modulate(original_modulate):
 		get_node(node_path).set_modulate(original_modulate)
 	hurt_modulate_timer = null
 
-func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
-	if status.invincible:
-		return
-	
-	health_system.change_health_over_time_by(time_per_tick, total_ticks, -damage_per_tick)
-
 func healed(val):
 	health_system.change_health_by(val)
 
 	# Number indicator.
 	var num = number_indicator.instance()
 	num.initialize(val, HEAL_NUMBER_COLOR, number_spawn_pos, self)
-
-func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
-	health_system.change_health_over_time_by(time_per_tick, total_ticks, heal_per_tick)
 
 func die():
 	print("I died. QQ")

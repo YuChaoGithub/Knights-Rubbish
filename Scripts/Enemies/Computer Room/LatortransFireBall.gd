@@ -31,7 +31,12 @@ func _process(delta):
 func on_attack_hit(area):
 	if area.is_in_group("player_collider"):
 		var character = area.get_node("..")
-		character.damaged_over_time(TIME_PER_TICK, TOTAL_TICKS, DAMAGE_PER_TICK)
+		
+		# Damage over time.
+		var fire_particle = preload("res://Scenes/Utils/Fire Particle.tscn").instance()
+		character.add_child(fire_particle)
+		fire_particle.initialize(DAMAGE_PER_TICK, TIME_PER_TICK, TOTAL_TICKS)
+
 		character.knocked_back(-KNOCK_BACK_VEL_X, -KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 
 		queue_free()

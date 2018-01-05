@@ -1,40 +1,27 @@
-extends Node2D
+extends KinematicBody2D
 
-const TAG = "giant_dwarf_potion"
+const GRAVITY = 600
 const SIZE_MODIFIER = 0.5
 const DAMAGE_MODIFIER = 0.75
+const DEFENSE_MODIFIER = 1.2
 const DURATION = 6.0
 
-var movement_pattern
+onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
 
-# The affected character
-var character_node
+func _ready():
+	set_process(true)
 
-var recover_timer
+func _process(delta):
+	move_to(gravity_movement.movement(get_global_pos(), delta))
 
 func on_area_entered(area):
 	# A character enters.
 	if area.is_in_group("player_collider"):
-		character_node = area.get_node("..")
-		character_node.size_modifier *= SIZE_MODIFIER
-		character_node.damage_modifier *= DAMAGE_MODIFIER
+		var multipliers = {
+			size = SIZE_MODIFIER,
+			damage = DAMAGE_MODIFIER,
+			defense = DEFENSE_MODIFIER
+		}
+		area.get_node("..").dwarfed_or_gianted(multipliers, DURATION)
 		
-		# Remove the trigger area to avoid multiple effects.
-		get_node("Trigger Area").queue_free()
-		
-		# Configure timer and start it. Recover the modifiers after the timer ends.
-		recover_timer = preload("res://Scripts/Utils/CountdownTimer.gd").new(DURATION, self, "recover")
-		
-		# Register to charcter node to avoid conflicting power ups.
-		character_node.register_timer(TAG, recover_timer)
-
-# Restore the effects.
-func recover():
-	character_node.size_modifier /= SIZE_MODIFIER
-	character_node.damage_modifier /= DAMAGE_MODIFIER
-	
-	# Unregister to character node.
-	character_node.unregister_timer(TAG)
-	
-	# Remove the shrink potion scene entirely.
-	queue_free()
+		queue_free()

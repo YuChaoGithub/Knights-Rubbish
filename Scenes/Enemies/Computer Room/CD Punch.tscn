@@ -1053,7 +1053,6 @@ _update_shape_index = 0
 
 [node name="Body" type="Sprite" parent="Animation"]
 
-editor/display_folded = true
 texture = ExtResource( 3 )
 offset = Vector2( -99.7217, -0.654175 )
 
@@ -1068,6 +1067,12 @@ texture = ExtResource( 4 )
 visibility/visible = false
 transform/pos = Vector2( -36.8196, 27.9996 )
 texture = ExtResource( 5 )
+
+[node name="Number Spawn Pos" type="RemoteTransform2D" parent="Animation/Body"]
+
+transform/pos = Vector2( 50.8802, 78.0164 )
+transform/rot = 30.4259
+remote_path = NodePath("../../../Number Spawn Pos")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
 
@@ -1088,7 +1093,8 @@ autoplay = "Still"
 
 [node name="Number Spawn Pos" type="Position2D" parent="."]
 
-transform/pos = Vector2( 0, -150 )
+transform/pos = Vector2( 50.8802, 78.0164 )
+transform/rot = 30.4259
 script/script = ExtResource( 14 )
 
 [connection signal="area_enter" from="Animation/Attack Area" to="." method="on_attack_hit"]

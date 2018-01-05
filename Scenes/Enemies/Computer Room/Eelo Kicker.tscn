@@ -2340,6 +2340,7 @@ texture = ExtResource( 8 )
 
 [node name="Left Thigh Remote Transform" type="RemoteTransform2D" parent="Animation/Body"]
 
+editor/display_folded = true
 transform/pos = Vector2( -10.0851, 55.5573 )
 remote_path = NodePath("../../Left Thigh")
 
@@ -2376,13 +2377,13 @@ remote_path = NodePath("../../../../Left Foot")
 
 [node name="Right Thigh Remote Transform" type="RemoteTransform2D" parent="Animation/Body"]
 
+editor/display_folded = true
 transform/pos = Vector2( 11.1942, 54.1172 )
 remote_path = NodePath("../../Right Thigh")
 
 [node name="Right Kick Area" type="Area2D" parent="Animation/Body/Right Thigh Remote Transform"]
 
 editor/display_folded = true
-transform/scale = Vector2( 1, 1 )
 input/pickable = true
 shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -4.5841, 30.7503 )
@@ -2411,6 +2412,12 @@ remote_path = NodePath("../../../Right Leg")
 transform/pos = Vector2( -0.125038, 23.1325 )
 remote_path = NodePath("../../../../Right Foot")
 
+[node name="Number Spawn Pos" type="RemoteTransform2D" parent="Animation/Body"]
+
+transform/pos = Vector2( 0.241089, -51.5902 )
+transform/scale = Vector2( 0.4, 0.4 )
+remote_path = NodePath("../../../Number Spawn Pos")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
 
 playback/process_mode = 1
@@ -2436,6 +2443,8 @@ transform/pos = Vector2( -0.430573, -201.523 )
 
 [node name="Number Spawn Pos" type="Position2D" parent="."]
 
+transform/pos = Vector2( 0.530396, -122.498 )
+transform/scale = Vector2( 0.88, 0.88 )
 script/script = ExtResource( 13 )
 
 [connection signal="area_enter" from="Animation/Body/Left Thigh Remote Transform/Left Kick Area" to="." method="on_left_kick_hit"]

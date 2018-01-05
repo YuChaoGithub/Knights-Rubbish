@@ -1,14 +1,16 @@
-extends Node2D
+extends KinematicBody2D
 
+const GRAVITY = 600
 const SPEED_MODIFIER = 2.0
 const DURATION = 5.0
 
-var movement_pattern
+onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
 
-# The affected character
-var character_node
+func _ready():
+	set_process(true)
 
-var recover_timer
+func _process(delta):
+	move_to(gravity_movement.movement(get_global_pos(), delta))
 
 func on_area_entered(area):
 	# A character enters.

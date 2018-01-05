@@ -370,7 +370,36 @@ Milestone: Completed scripting all enemies in Computer Room.
 
 **Commit**
 
-To Do List: 
-* Abnormal status indicator. (Probably should be combined with Number Indicator.)
-* Powerup animations and graphics.
+[2018.01.02]
+* Completed graphics of speed, defensive, hyper, giant/dwarf potion.
+* Completed status icons of speeded, defensive, hyper, slowed, confused.
+
+[2018.01.03]
+* Refactored code for Power Ups.
+* Applied graphics to Power Ups.
+* Added `damage_boosted(...)`, `damage_bossted(...)`, etc. status changing functions.
+* Completed characters' status icons.
+
+[2018.01.04]
+* Refactored enemy movements. (Keep the redundant code in `EnemyCommon.gd`). Rewrite every enemy related with movements.
+* Rewrite the speed changing system of `CharacterCommon.gd` so that speeding overlapping is handled correctly.
+* Make the status icons pop when appearing.
+
+[2018.01.05]
+* Completed implementing enemy knock back and slowed icon.
+* Removed all `damaged_over_time(...)` and `healed_over_time(...)`.
+* Implemented `ChangeHealthOverTime.gd` and `FireParticle.gd` in place of `damaged_over_time(...)`.
+
+**Commit**
+
+To Do List:
+* Burned, poisoned particle effects.
+-
 * Boss health bar.
+
+Polishing:
+* Slow down walking animation while slowed.
+* Jumping dust for characters.
+* Drink potion animation.
+* Status icons enlarging and gradually vanish when disappearing.
+* Attack special effects.

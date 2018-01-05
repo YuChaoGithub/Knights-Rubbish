@@ -40,15 +40,12 @@ var attack_target = null
 var facing = -1
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
-onready var movement_type = ec.straight_line_movement.new(facing * SPEED_X, 0)
-onready var gravity_movement = ec.gravity_movement.new(self, GRAVITY)
 
 func activate():
+    ec.init_gravity_movement(GRAVITY)
+    ec.init_straight_line_movement(facing * SPEED_X, 0)
     set_process(true)
-
     ec.change_status(SEARCH)
-    
-    # Become damagable.
     get_node("Animation/Damage Area").add_to_group("enemy_collider")
 
 func _process(delta):
@@ -60,13 +57,11 @@ func _process(delta):
         elif ec.status == ATTACK:
             attack()
 
-    apply_gravity(delta)
+    ec.perform_gravity_movement(delta)
+    ec.perform_knock_back_movement(delta)
 
 func change_status(to_status):
     ec.change_status(to_status)
-
-func apply_gravity(delta):
-    move_to(gravity_movement.movement(get_global_pos(), delta))
 
 func search_for_target():
     ec.play_animation("Searching")
@@ -91,8 +86,7 @@ func apply_movement(delta):
         if turn_stagger_timer == null:
             turn_stagger_timer = ec.cd_timer.new(ec.rng.randf_range(TURN_STAGGER_MIN_DELAY, TURN_STAGGER_MAX_DELAY), self, "turn_and_set_stagger_timer_to_null")
     
-    var final_pos = movement_type.movement(get_global_pos(), delta)
-    move_to(final_pos)
+    ec.perform_straight_line_movement(delta)
 
     # If the target is in attack range, switch to attack state.
     if in_attack_range():
@@ -114,7 +108,7 @@ func turn_and_set_stagger_timer_to_null():
     # turn
     facing = -facing
     ec.turn_sprites_x(facing)
-    movement_type.dx = facing * abs(movement_type.dx)
+    ec.straight_line_movement.dx = facing * abs(ec.straight_line_movement.dx)
     turn_stagger_timer = null
 
 # Called when damaged by characters' attack.
@@ -133,9 +127,14 @@ func stunned(duration):
 func resume_from_stunned():
     ec.resume_from_stunned()
 
-# Called when damaged over time by characters' attack.
-func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
-    ec.damaged_over_time(time_per_tick, total_ticks, damage_per_tick)
+func slowed(multiplier, duration):
+    ec.slowed(multiplier, duration)
+    
+func slowed_recover(label):
+    ec.slowed_recover(label)
+
+func knocked_back(vel_x, vel_y, fade_rate):
+    ec.knocked_back(vel_x, vel_y, fade_rate)
 
 # Called when health drops below 0.
 func die():

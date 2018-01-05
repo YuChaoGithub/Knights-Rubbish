@@ -49,13 +49,11 @@ onready var laser_pos = get_node("Laser Pos")
 onready var drawing_node = get_node("Drawing")
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
-onready var movement_type = ec.straight_line_movement.new(0, 0)
 
 func activate():
+	ec.init_straight_line_movement(0, 0)
 	set_process(true)
-
 	get_node("Animation/Damage Area").add_to_group("enemy_collider")
-
 	ec.change_status(WAITING)
 
 func _process(delta):
@@ -93,8 +91,8 @@ func wait_till_character_is_near():
 
 func drop_down(delta):
 	ec.play_animation("Swing")
-	movement_type.set_velocity(0, DROP_SPEED)
-	set_pos(movement_type.movement(get_pos(), delta))
+	ec.straight_line_movement.set_velocity(0, DROP_SPEED)
+	ec.perform_straight_line_movement(delta)
 
 	if close_enough_for_attack():
 		ec.change_status(TURN_ON)
@@ -144,8 +142,8 @@ func cancel_attack_sequence():
 
 func climb_up(delta):
 	ec.play_animation("Climb")
-	movement_type.set_velocity(0, CLIMB_SPEED)
-	set_pos(movement_type.movement(get_pos(), delta))
+	ec.straight_line_movement.set_velocity(0, CLIMB_SPEED)
+	ec.perform_straight_line_movement(delta)
 
 	if get_pos().y <= original_pos_y:
 		ec.change_status(WAITING)
@@ -160,8 +158,11 @@ func resume_from_damaged():
 func stunned(duration):
 	ec.display_immune_text()
 
-func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
-	ec.damaged_over_time(time_per_tick, total_ticks, damage_per_tick)
+func slowed(multiplier, duration):
+	return
+
+func knocked_back(vel_x, vel_y, fade_rate):
+	return
 
 func die():
 	ec.die()
@@ -170,6 +171,3 @@ func die():
 
 func healed(val):
 	ec.healed(val)
-
-func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
-	ec.healed_over_time(time_per_tick, total_ticks, heal_per_tick)

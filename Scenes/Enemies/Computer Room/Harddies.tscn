@@ -22,12 +22,12 @@ extents = Vector2( 72.7447, 123.681 )
 custom_solver_bias = 0.0
 extents = Vector2( 76.2103, 130.848 )
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 71.2131, 103.511 )
 
-[sub_resource type="CanvasItemShader" id=3]
+[sub_resource type="CanvasItemShader" id=4]
 
 _code = {
 "fragment": "",
@@ -38,12 +38,12 @@ _code = {
 "vertex_ofs": 0
 }
 
-[sub_resource type="CanvasItemMaterial" id=4]
+[sub_resource type="CanvasItemMaterial" id=5]
 
-shader/shader = SubResource( 3 )
+shader/shader = SubResource( 4 )
 shader/shading_mode = 0
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 
 length = 0.8
 loop = false
@@ -369,7 +369,7 @@ tracks/31/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 
 length = 1.0
 loop = true
@@ -695,7 +695,7 @@ tracks/31/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 
 length = 0.1
 loop = false
@@ -1021,7 +1021,7 @@ tracks/31/keys = {
 "values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 
 length = 0.1
 loop = false
@@ -1347,9 +1347,8 @@ tracks/31/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 
-resource/name = "Stiff Die"
 length = 0.5
 loop = false
 step = 0.1
@@ -1674,7 +1673,7 @@ tracks/31/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 
 length = 0.1
 loop = false
@@ -2000,7 +1999,7 @@ tracks/31/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 
 length = 0.1
 loop = false
@@ -2326,7 +2325,7 @@ tracks/31/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=13]
 
 length = 1.5
 loop = true
@@ -2652,7 +2651,7 @@ tracks/31/keys = {
 "values": [ Color( 1, 1, 0.784314, 1 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=14]
 
 length = 3.0
 loop = false
@@ -3030,7 +3029,7 @@ _update_shape_index = 0
 
 editor/display_folded = true
 input/pickable = true
-shapes/0/shape = SubResource( 14 )
+shapes/0/shape = SubResource( 3 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.20416, 18.4691 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -3042,14 +3041,13 @@ collision/layers = 64
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Attack Area"]
 
 transform/pos = Vector2( 1.20416, 18.4691 )
-shape = SubResource( 14 )
+shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
 
 [node name="Body" type="Sprite" parent="Animation"]
 
-editor/display_folded = true
-material/material = SubResource( 4 )
+material/material = SubResource( 5 )
 texture = ExtResource( 2 )
 
 [node name="Face" type="Node2D" parent="Animation/Body"]
@@ -3092,20 +3090,25 @@ transform/scale = Vector2( -1, 1 )
 texture = ExtResource( 6 )
 offset = Vector2( -43.3834, -17.6572 )
 
+[node name="Number Spawn Pos" type="RemoteTransform2D" parent="Animation/Body"]
+
+transform/pos = Vector2( -3.47943, 58.4548 )
+remote_path = NodePath("../../../Number Spawn Pos")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Die = SubResource( 5 )
-anims/Fly = SubResource( 6 )
-anims/Hurt = SubResource( 7 )
-anims/Stiff = SubResource( 8 )
-"anims/Stiff Die" = SubResource( 9 )
-"anims/Stiff Hurt" = SubResource( 10 )
-anims/Still = SubResource( 11 )
-anims/Stunned = SubResource( 12 )
-"anims/Toss Ring" = SubResource( 13 )
+anims/Die = SubResource( 6 )
+anims/Fly = SubResource( 7 )
+anims/Hurt = SubResource( 8 )
+anims/Stiff = SubResource( 9 )
+"anims/Stiff Die" = SubResource( 10 )
+"anims/Stiff Hurt" = SubResource( 11 )
+anims/Still = SubResource( 12 )
+anims/Stunned = SubResource( 13 )
+"anims/Toss Ring" = SubResource( 14 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -3113,7 +3116,7 @@ autoplay = "Still"
 
 [node name="Number Spawn Pos" type="Position2D" parent="."]
 
-transform/pos = Vector2( -0.574585, -147.664 )
+transform/pos = Vector2( -3.47943, 58.4548 )
 script/script = ExtResource( 10 )
 
 [node name="Health Bar" parent="." instance=ExtResource( 11 )]

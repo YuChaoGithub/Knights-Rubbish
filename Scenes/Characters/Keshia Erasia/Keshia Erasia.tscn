@@ -1,20 +1,25 @@
-[gd_scene load_steps=32 format=1]
+[gd_scene load_steps=37 format=1]
 
 [ext_resource path="res://Scripts/CharacterCommon.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/MovementCollisionHandler.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Character Skills/KeshiaErasiaSkills.gd" type="Script" id=3]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Hand Foot.png" type="Texture" id=4]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Body.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Left Brow.png" type="Texture" id=6]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Right Brow.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Eye.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Mouth.png" type="Texture" id=9]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Weapon.png" type="Texture" id=10]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Hand.png" type="Texture" id=11]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Petrified.png" type="Texture" id=12]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=13]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned mouth.png" type="Texture" id=14]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/Power Ups/Defense Icon.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Power Ups/Attack Icon.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Power Ups/Slowed Icon.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Left Brow.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Right Brow.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Eye.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Mouth.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Weapon.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Hand.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Power Ups/Confused Icon.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Power Ups/Speeded Icon.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Petrified.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=18]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned mouth.png" type="Texture" id=19]
+[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -31,7 +36,7 @@ extents = Vector2( 9.14579, 160.524 )
 custom_solver_bias = 0.0
 extents = Vector2( 10, 128.45 )
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=4]
 
 resource/name = "Basic Attack"
 length = 0.6
@@ -485,7 +490,7 @@ tracks/44/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -495,7 +500,7 @@ tracks/45/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:transform/scale")
@@ -515,7 +520,7 @@ tracks/47/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visibility/visible")
@@ -1041,7 +1046,7 @@ tracks/44/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -1051,7 +1056,7 @@ tracks/45/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:transform/scale")
@@ -1071,7 +1076,7 @@ tracks/47/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visibility/visible")
@@ -1587,7 +1592,7 @@ tracks/44/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -1597,7 +1602,7 @@ tracks/45/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:transform/scale")
@@ -1617,7 +1622,7 @@ tracks/47/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visibility/visible")
@@ -2143,7 +2148,7 @@ tracks/44/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -2153,7 +2158,7 @@ tracks/45/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:transform/scale")
@@ -2173,7 +2178,7 @@ tracks/47/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visibility/visible")
@@ -2223,7 +2228,7 @@ tracks/52/keys = {
 "times": FloatArray( 0, 0.25 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 12 ) ]
+"values": [ ExtResource( 5 ), ExtResource( 17 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Body/Left Arm/Weapon:modulate")
@@ -2689,7 +2694,7 @@ tracks/44/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -2699,7 +2704,7 @@ tracks/45/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:transform/scale")
@@ -2719,7 +2724,7 @@ tracks/47/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visibility/visible")
@@ -2769,7 +2774,7 @@ tracks/52/keys = {
 "times": FloatArray( 0, 0.2 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ), ExtResource( 5 ) ]
+"values": [ ExtResource( 17 ), ExtResource( 5 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Body/Left Arm/Weapon:modulate")
@@ -3235,7 +3240,7 @@ tracks/44/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -3245,7 +3250,7 @@ tracks/45/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:transform/scale")
@@ -3265,7 +3270,7 @@ tracks/47/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visibility/visible")
@@ -3791,7 +3796,7 @@ tracks/45/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Left Eye:texture")
@@ -3801,7 +3806,7 @@ tracks/46/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/47/type = "value"
 tracks/47/path = NodePath("Animation/Body/Face/Mouth:texture")
@@ -3811,7 +3816,7 @@ tracks/47/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visibility/visible")
@@ -4327,7 +4332,7 @@ tracks/44/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -4337,7 +4342,7 @@ tracks/45/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:transform/scale")
@@ -4357,7 +4362,7 @@ tracks/47/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visibility/visible")
@@ -4873,7 +4878,7 @@ tracks/44/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -4883,7 +4888,7 @@ tracks/45/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:transform/scale")
@@ -4903,7 +4908,7 @@ tracks/47/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visibility/visible")
@@ -5419,7 +5424,7 @@ tracks/44/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 18 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -5429,7 +5434,7 @@ tracks/45/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 18 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:transform/scale")
@@ -5449,7 +5454,7 @@ tracks/47/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 14 ) ]
+"values": [ ExtResource( 19 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visibility/visible")
@@ -5965,7 +5970,7 @@ tracks/44/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -5975,7 +5980,7 @@ tracks/45/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:transform/scale")
@@ -5995,7 +6000,7 @@ tracks/47/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visibility/visible")
@@ -6521,7 +6526,7 @@ tracks/44/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Left Eye:texture")
@@ -6531,7 +6536,7 @@ tracks/45/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 8 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:transform/scale")
@@ -6551,7 +6556,7 @@ tracks/47/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visibility/visible")
@@ -6623,6 +6628,11 @@ extents = Vector2( 218.001, 78.0224 )
 
 script/script = ExtResource( 1 )
 player_constants_filepath = "res://Scripts/Constants/KeshiaErasiaConstants.gd"
+defense_icon_path = NodePath("Sprite/Animation/Body/Defense Icon")
+damage_icon_path = NodePath("Sprite/Animation/Body/Attack Icon")
+slowed_icon_path = NodePath("Sprite/Animation/Body/Slowed Icon")
+speeded_icon_path = NodePath("Sprite/Animation/Speeded Icon")
+confused_icon_path = NodePath("Sprite/Animation/Body/Confused Icon")
 
 [node name="Collision Handler" type="Area2D" parent="." groups=[
 "player_collider",
@@ -6654,8 +6664,8 @@ script/script = ExtResource( 3 )
 
 [node name="Right Arm" type="Sprite" parent="Sprite"]
 
-transform/pos = Vector2( 76.8402, -41.257 )
-transform/rot = 96.024
+transform/pos = Vector2( 89.2042, -39.3245 )
+transform/rot = 50.4684
 transform/scale = Vector2( 0.9, 0.9 )
 texture = ExtResource( 4 )
 offset = Vector2( -1.23269, 16.6908 )
@@ -6666,10 +6676,24 @@ transform/pos = Vector2( 0, 100 )
 
 [node name="Body" type="Sprite" parent="Sprite/Animation"]
 
-transform/pos = Vector2( 17.335, -53.1823 )
-transform/rot = 21.2215
+transform/pos = Vector2( -0.297318, -52.4157 )
 texture = ExtResource( 5 )
 offset = Vector2( 0, -75 )
+
+[node name="Defense Icon" parent="Sprite/Animation/Body" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 65.0262, -45.5302 )
+transform/scale = Vector2( 0.5, 0.5 )
+
+[node name="Attack Icon" parent="Sprite/Animation/Body" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( -18.2505, -41.8988 )
+transform/scale = Vector2( 0.55, 0.55 )
+
+[node name="Slowed Icon" parent="Sprite/Animation/Body" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 24.982, -118.167 )
+transform/scale = Vector2( 0.6, 0.6 )
 
 [node name="Face" type="Node2D" parent="Sprite/Animation/Body"]
 
@@ -6680,76 +6704,76 @@ transform/scale = Vector2( 1.1, 1.1 )
 [node name="Left Brow" type="Sprite" parent="Sprite/Animation/Body/Face"]
 
 transform/pos = Vector2( -22.3623, -23.3092 )
-transform/rot = -20.8596
-texture = ExtResource( 6 )
+texture = ExtResource( 9 )
 
 [node name="Right Brow" type="Sprite" parent="Sprite/Animation/Body/Face"]
 
 transform/pos = Vector2( 29.2886, -26.3653 )
-transform/rot = 23.2798
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
 
 [node name="Left Eye" type="Sprite" parent="Sprite/Animation/Body/Face"]
 
-transform/pos = Vector2( -18.9194, -9.71695 )
+transform/pos = Vector2( -24.4068, -11.8411 )
 transform/scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 
 [node name="Right Eye" type="Sprite" parent="Sprite/Animation/Body/Face"]
 
-transform/pos = Vector2( 33.8862, -13.5204 )
+transform/pos = Vector2( 30.1689, -12.2813 )
 transform/scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 
 [node name="Mouth" type="Sprite" parent="Sprite/Animation/Body/Face"]
 
-transform/pos = Vector2( 7.92285, 15.5363 )
+transform/pos = Vector2( 2.9665, 22.6168 )
 transform/scale = Vector2( 0.9625, 0.9625 )
-texture = ExtResource( 9 )
+texture = ExtResource( 12 )
 
 [node name="Right Leg" type="Sprite" parent="Sprite/Animation/Body"]
 
+editor/display_folded = true
 transform/pos = Vector2( 17.1454, 13.0277 )
-transform/rot = -43.2563
+transform/rot = -1.91592
 texture = ExtResource( 4 )
 offset = Vector2( -1.72225, 17.8055 )
 
 [node name="Right Foot" type="Sprite" parent="Sprite/Animation/Body/Right Leg"]
 
 transform/pos = Vector2( -2.25239, 35.3849 )
-transform/rot = 97.2183
+transform/rot = 100.209
 transform/scale = Vector2( 1, 0.8 )
 texture = ExtResource( 4 )
 offset = Vector2( -2.55776, 16.1404 )
 
 [node name="Left Leg" type="Sprite" parent="Sprite/Animation/Body"]
 
-transform/pos = Vector2( -44.3795, 12.1894 )
-transform/rot = -62.3906
+editor/display_folded = true
+transform/pos = Vector2( -30.1975, 11.7395 )
 texture = ExtResource( 4 )
 offset = Vector2( -1.72225, 17.8055 )
 
 [node name="Left Foot" type="Sprite" parent="Sprite/Animation/Body/Left Leg"]
 
 transform/pos = Vector2( -4.91125, 36.1676 )
-transform/rot = -40.9712
+transform/rot = -82.4143
 transform/scale = Vector2( 1, 0.7 )
 texture = ExtResource( 4 )
 offset = Vector2( 1.79243, -17.9243 )
 
 [node name="Left Arm" type="Sprite" parent="Sprite/Animation/Body"]
 
+editor/display_folded = true
 transform/pos = Vector2( -66.2904, -77.3851 )
-transform/rot = -38.1875
+transform/rot = -43.5296
 texture = ExtResource( 4 )
 offset = Vector2( -1.99024, 18.262 )
 
 [node name="Weapon" type="Sprite" parent="Sprite/Animation/Body/Left Arm"]
 
-transform/pos = Vector2( 110.437, 2.28671 )
-transform/rot = -56.873
+transform/pos = Vector2( 6.00391, -0.181496 )
+transform/rot = 48.5044
 transform/scale = Vector2( 1.2, 1.2 )
-texture = ExtResource( 10 )
+texture = ExtResource( 13 )
 offset = Vector2( 3.92352, -79.9531 )
 
 [node name="Basic Attack Hit Box" type="Area2D" parent="Sprite/Animation/Body/Left Arm/Weapon"]
@@ -6799,7 +6823,7 @@ _update_shape_index = 0
 [node name="Left Forearm" type="Sprite" parent="Sprite/Animation/Body/Left Arm"]
 
 transform/pos = Vector2( -3.15459, 36.6928 )
-transform/rot = -117.394
+transform/rot = -58.8796
 transform/scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 4 )
 offset = Vector2( 1.84393, -19.0845 )
@@ -6808,20 +6832,21 @@ offset = Vector2( 1.84393, -19.0845 )
 
 transform/pos = Vector2( 3.23194, -39.9086 )
 transform/rot = 167.501
-texture = ExtResource( 11 )
+texture = ExtResource( 14 )
 offset = Vector2( 6.49008, 6.4641 )
 
 [node name="Weapon Remote Transform" type="RemoteTransform2D" parent="Sprite/Animation/Body/Left Arm/Left Forearm"]
 
-transform/pos = Vector2( -103.515, -106.279 )
-transform/rot = 60.5209
+transform/pos = Vector2( -33.5425, -33.6231 )
+transform/rot = 107.384
 transform/scale = Vector2( 1.5, 1.5 )
 remote_path = NodePath("../../Weapon")
 
 [node name="Remote Right Arm" type="RemoteTransform2D" parent="Sprite/Animation/Body"]
 
-transform/pos = Vector2( 87.3508, -60.5628 )
-transform/rot = 74.8025
+editor/display_folded = true
+transform/pos = Vector2( 89.5015, -86.9088 )
+transform/rot = 50.4684
 transform/scale = Vector2( 0.9, 0.9 )
 remote_path = NodePath("../../../Right Arm")
 __meta__ = {
@@ -6831,7 +6856,7 @@ __meta__ = {
 [node name="Right Forearm" type="Sprite" parent="Sprite/Animation/Body/Remote Right Arm"]
 
 transform/pos = Vector2( -3.78853, 37.4229 )
-transform/rot = -64.7523
+transform/rot = -86.9551
 transform/scale = Vector2( 0.888889, 0.777778 )
 texture = ExtResource( 4 )
 offset = Vector2( -2.25615, 16.4975 )
@@ -6840,15 +6865,24 @@ offset = Vector2( -2.25615, 16.4975 )
 
 transform/pos = Vector2( -3.54916, 37.1808 )
 transform/rot = -59.8362
-texture = ExtResource( 11 )
+texture = ExtResource( 14 )
 offset = Vector2( 6.3133, 5.42676 )
+
+[node name="Confused Icon" parent="Sprite/Animation/Body" instance=ExtResource( 15 )]
+
+transform/pos = Vector2( 1.45558, -231.081 )
+
+[node name="Speeded Icon" parent="Sprite/Animation" instance=ExtResource( 16 )]
+
+transform/pos = Vector2( -6.10352e-05, -23.6296 )
+transform/scale = Vector2( 0.5, 0.5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-"anims/Basic Attack" = SubResource( 17 )
+"anims/Basic Attack" = SubResource( 4 )
 "anims/Basic Skill" = SubResource( 5 )
 "anims/Basic Skill Landing" = SubResource( 6 )
 "anims/Down Skill" = SubResource( 7 )
@@ -6893,7 +6927,7 @@ transform/pos = Vector2( 75, -70 )
 [node name="Number Spawn Pos" type="Position2D" parent="."]
 
 transform/pos = Vector2( 0, -115.316 )
-script/script = ExtResource( 15 )
+script/script = ExtResource( 20 )
 
 [connection signal="area_enter" from="Sprite/Animation/Body/Left Arm/Weapon/Basic Attack Hit Box" to="Combo Handler" method="on_basic_attack_hit"]
 

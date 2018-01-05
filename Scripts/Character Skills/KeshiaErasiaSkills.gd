@@ -108,6 +108,7 @@ func on_basic_attack_hit(area):
 		# Damage the enemy.
 		var enemy_node = area.get_node("../..")
 		enemy_node.damaged(BASIC_ATTACK_DAMAGE)
+		enemy_node.knocked_back(500,-500,1000)
 
 # ===========
 # Basic Skill: Hop, when it hits the ground, stun enemies around. Is invincible while hitting ground.

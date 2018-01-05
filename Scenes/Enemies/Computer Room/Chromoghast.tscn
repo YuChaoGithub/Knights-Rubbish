@@ -13,14 +13,13 @@
 [ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=11]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=12]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 75.4496, 77.4479 )
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 
-resource/name = "Die"
 length = 0.5
 loop = false
 step = 0.1
@@ -245,9 +244,8 @@ tracks/21/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource/name = "Hurt"
 length = 0.1
 loop = false
 step = 0.1
@@ -472,7 +470,7 @@ tracks/21/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
 length = 0.1
 loop = false
@@ -698,9 +696,8 @@ tracks/21/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 
-resource/name = "Stunned"
 length = 1.5
 loop = true
 step = 0.1
@@ -925,9 +922,8 @@ tracks/21/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 
-resource/name = "Throw Shuriken"
 length = 1.5
 loop = false
 step = 0.1
@@ -1152,7 +1148,7 @@ tracks/21/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 
 length = 0.5
 loop = false
@@ -1378,7 +1374,7 @@ tracks/21/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 
 length = 0.5
 loop = false
@@ -1604,7 +1600,7 @@ tracks/21/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 
 length = 2.0
 loop = true
@@ -1842,7 +1838,7 @@ transform/scale = Vector2( 1.2, 1.2 )
 
 editor/display_folded = true
 input/pickable = true
-shapes/0/shape = SubResource( 9 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.427831, 1.71141 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -1855,7 +1851,7 @@ collision/mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area"]
 
 transform/pos = Vector2( 0.427831, 1.71141 )
-shape = SubResource( 9 )
+shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
@@ -1920,14 +1916,14 @@ remote_path = NodePath("../../Shuriken")
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Die = SubResource( 1 )
-anims/Hurt = SubResource( 2 )
-anims/Still = SubResource( 3 )
-anims/Stunned = SubResource( 4 )
-"anims/Throw Shuriken" = SubResource( 5 )
-"anims/Turn Invisible" = SubResource( 6 )
-"anims/Turn Opaque" = SubResource( 7 )
-anims/Walk = SubResource( 8 )
+anims/Die = SubResource( 2 )
+anims/Hurt = SubResource( 3 )
+anims/Still = SubResource( 4 )
+anims/Stunned = SubResource( 5 )
+"anims/Throw Shuriken" = SubResource( 6 )
+"anims/Turn Invisible" = SubResource( 7 )
+"anims/Turn Opaque" = SubResource( 8 )
+anims/Walk = SubResource( 9 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -1935,11 +1931,11 @@ autoplay = "Still"
 
 [node name="Number Spawn Pos" type="Position2D" parent="."]
 
-transform/pos = Vector2( 0.301666, -116.907 )
+transform/pos = Vector2( -0.566376, -103.452 )
 script/script = ExtResource( 11 )
 
 [node name="Health Bar" parent="." instance=ExtResource( 12 )]
 
-transform/pos = Vector2( -1.84192, -116.756 )
+transform/pos = Vector2( -1.84192, -156.252 )
 
 

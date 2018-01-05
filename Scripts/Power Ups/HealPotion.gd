@@ -1,19 +1,20 @@
-extends Node2D
+extends KinematicBody2D
 
-const HEALTH_HEALING_PORTION = 0.3
+export(int) var heal_amount = 150
 
-var movement_pattern
+const GRAVITY = 600
 
-# The affected character
-var character_node
+onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
 
-var recover_timer
+func _ready():
+	set_process(true)
+
+func _process(delta):
+	move_to(gravity_movement.movement(get_global_pos(), delta))
 
 func on_area_entered(area):
 	# A character enters.
 	if area.is_in_group("player_collider"):
-		character_node = area.get_node("..")
-		character_node.health += HEALTH_HEALING_PORTION * character_node.player_constants.full_health
+		area.get_node("..").healed(heal_amount)
 		
-		# Remove the scene.
 		queue_free()

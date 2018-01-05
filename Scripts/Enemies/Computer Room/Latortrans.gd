@@ -122,17 +122,17 @@ func damaged(val):
 func resume_from_damaged():
 	ec.resume_from_damaged()
 
-func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
-	ec.damaged_over_time(time_per_tick, total_ticks, damage_per_tick)
-
 func stunned(duration):
 	ec.display_immune_text()
 
 func healed(val):
 	ec.healed(val)
 
-func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
-	ec.healed_over_time(time_per_tick, total_ticks, heal_per_tick)
+func knocked_back(vel_x, vel_y, fade_rate):
+	return
+
+func slowed(multiplier, duration):
+	return
 
 func die():
 	ec.die()

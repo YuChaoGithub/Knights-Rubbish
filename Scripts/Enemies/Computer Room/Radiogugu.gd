@@ -59,7 +59,6 @@ const PLATFORM_LAYER = 2
 
 var status_timer = null
 var laser_timer = null
-var curr_rand_movement = null
 var facing = -1
 var attack_target = null
 var walk_back_dir = null
@@ -87,10 +86,10 @@ onready var drawing_node = get_node("Drawing Node")
 onready var raycast_space = get_world_2d().get_direct_space_state()
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
-onready var gravity_movement = ec.gravity_movement.new(self, GRAVITY)
 onready var display_screen = get_node("Animation/Body/Head/Display")
 
 func activate():
+	ec.init_gravity_movement(GRAVITY)
 	set_process(true)
 	get_node("Animation/Damage Area").add_to_group("enemy_collider")
 	turn_sprites_x(facing)
@@ -122,7 +121,8 @@ func _process(delta):
 			shoot_laser_eyes()
 		elif ec.status == LASER_EYES_RECOVER:
 			recover_laser_eyes()
-	apply_gravity(delta)
+	
+	ec.perform_gravity_movement(delta)
 
 func change_status(to_status):
 	ec.change_status(to_status)
@@ -132,39 +132,31 @@ func turn_sprites_x(facing):
 	var display_scale = display_screen.get_scale()
 	display_screen.set_scale(Vector2(abs(display_scale.x) * facing, display_scale.y))
 
-func apply_gravity(delta):
-	move_to(gravity_movement.movement(get_global_pos(), delta))
-
 func random_roam(delta):
 	ec.play_animation("Walk")
-	if curr_rand_movement == null:
-		# New random movement.
-		curr_rand_movement = ec.random_movement.new(SPEED_X, 0, true, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
+	if ec.random_movement == null:
+		ec.init_random_movement("movement_not_ended", "movement_ended", SPEED_X, 0, true, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
 
-	if !curr_rand_movement.movement_ended():
-		var final_pos = curr_rand_movement.movement(get_global_pos(), delta)
+	ec.perform_random_movement(delta)		
 
-		facing = sign(final_pos.x - get_global_pos().x)
-		turn_sprites_x(facing)
+func movement_not_ended(movement_dir):
+	facing = movement_dir
+	ec.turn_sprites_x(facing)
 
-		move_to(final_pos)
+func movement_ended():
+	var to_status = NONE
+	if get_health_percentage() > 0.5:
+		to_status = SLOW_BOMB_ANIM
 	else:
-		curr_rand_movement = null
-		
-		# Transition to other status.
-		var to_status = NONE
-		if get_health_percentage() > 0.5:
+		var rand_num = ec.rng.randi_range(0, 100)
+		if rand_num < 30:
+			to_status = DROP_FLOOPY_ANIM
+		elif rand_num < 60:
 			to_status = SLOW_BOMB_ANIM
 		else:
-			var rand_num = ec.rng.randi_range(0, 100)
-			if rand_num < 30:
-				to_status = DROP_FLOOPY_ANIM
-			elif rand_num < 60:
-				to_status = SLOW_BOMB_ANIM
-			else:
-				to_status = LASER_EYES_ANIM
+			to_status = LASER_EYES_ANIM
 
-		ec.change_status(to_status)
+	ec.change_status(to_status)
 
 func get_health_percentage():
 	return float(ec.health_system.health) / float(MAX_HEALTH)
@@ -357,14 +349,14 @@ func resume_from_damaged():
 func stunned(duration):
 	ec.display_immune_text()
 
-func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
-	ec.damaged_over_time(time_per_tick, total_ticks, damage_per_tick)
-
 func healed(val):
 	ec.healed(val)
 
-func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
-	ec.healed_over_time(time_per_tick, total_ticks, heal_per_tick)
+func slowed(multiplier, duration):
+	return
+
+func knocked_back(vel_x, vel_y, fade_rate):
+	return
 
 func die():
 	ec.die()

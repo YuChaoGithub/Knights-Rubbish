@@ -33,7 +33,6 @@ const TYPE_MIN_DIGIT = 1
 const TYPE_MAX_DIGIT = 7
 
 var status_timer = null
-var curr_rand_movement = null
 var facing = -1
 
 var spawned_bullets = []
@@ -54,9 +53,9 @@ onready var bullet_type_animator = get_node("Animation/Body/Number Buttons/Anima
 onready var spawn_node = get_node("..")
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
-onready var gravity_movement = ec.gravity_movement.new(self, GRAVITY)
 
 func activate():
+    ec.init_gravity_movement(GRAVITY)
     set_process(true)
     ec.change_status(MOVE)
     get_node("Animation/Damage Area").add_to_group("enemy_collider")
@@ -70,29 +69,25 @@ func _process(delta):
         elif ec.status == SHOOT:
             shoot_digit_bullets()
         
-    apply_gravity(delta)
+    ec.perform_gravity_movement(delta)
+    ec.perform_knock_back_movement(delta)
 
 func change_status(to_status):
     ec.change_status(to_status)
 
-func apply_gravity(delta):
-    move_to(gravity_movement.movement(get_global_pos(), delta))
-
 func apply_random_movement(delta):
     ec.play_animation("Walk")
-    if curr_rand_movement == null:
-        # New random movement.
-        curr_rand_movement = ec.random_movement.new(SPEED_X, 0, true, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
+    if ec.random_movement == null:
+        ec.init_random_movement("movement_not_ended", "movement_ended", SPEED_X, 0, true, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
 
-    if !curr_rand_movement.movement_ended():
-        # Existing random movement.
-        var final_pos = curr_rand_movement.movement(get_global_pos(), delta)
-        move_to(final_pos)
-    else:
-        # Random movement ended.
-        detect_and_face_the_nearest_target()
-        curr_rand_movement = null
-        ec.change_status(TYPE)
+    ec.perform_random_movement(delta)
+
+func movement_not_ended(movement_dir):
+    return
+
+func movement_ended():
+    detect_and_face_the_nearest_target()
+    ec.change_status(TYPE)
 
 func detect_and_face_the_nearest_target():
     var attack_target = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
@@ -150,14 +145,8 @@ func damaged(val):
 func resume_from_damaged():
     ec.resume_from_damaged()
 
-func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
-    ec.damaged_over_time(time_per_tick, total_ticks, damage_per_tick)
-
 func healed(val):
     ec.healed(val)
-
-func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
-    ec.healed_over_time(time_per_tick, total_ticks, heal_per_tick)
 
 func stunned(duration):
     cancel_bullet_spawning()
@@ -166,6 +155,16 @@ func stunned(duration):
 
 func resume_from_stunned():
     ec.resume_from_stunned()
+
+func slowed(multiplier, duration):
+    ec.slowed(multiplier, duration)
+
+func slowed_recover(label):
+    ec.slowed_recover(label)
+
+func knocked_back(vel_x, vel_y, fade_rate):
+    if ec.animator.get_current_animation() != "Typing":
+        ec.knocked_back(vel_x, vel_y, fade_rate)
 
 func die():
     cancel_bullet_spawning()

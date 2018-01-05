@@ -87,14 +87,14 @@ func stunned(duration):
 func resume_from_stunned():
 	ec.resume_from_stunned()
 
-func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
-	ec.damaged_over_time(time_per_tick, total_ticks, damage_per_tick)
-
 func healed(val):
 	ec.healed(val)
 
-func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
-	ec.healed_over_time(time_per_tick, total_ticks, heal_per_tick)
+func knocked_back(vel_x, vel_y, fade_rate):
+	return
+
+func slowed(multiplier, duration):
+	return
 
 func die():
 	cancel_activate_timer()

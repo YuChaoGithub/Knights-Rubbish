@@ -36,13 +36,12 @@ const TARGET_DETECT_INTERVAL = 1.0
 
 var status_timer = null
 var target_detect_timer = null
-var curr_rand_movement = null
 var facing = -1
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
-onready var gravity_movement = ec.gravity_movement.new(self, GRAVITY)
 
 func activate():
+	ec.init_gravity_movement(GRAVITY)
 	set_process(true)
 	ec.change_status(ROAM)
 	get_node("Animation/Damage Area").add_to_group("enemy_collider")
@@ -54,37 +53,31 @@ func _process(delta):
 		elif ec.status == ATTACK:
 			attack()
 
-	apply_gravity(delta)
+	ec.perform_gravity_movement(delta)
+	ec.perform_knock_back_movement(delta)
 
 func change_status(to_status):
 	ec.change_status(to_status)
 
-func apply_gravity(delta):
-	move_to(gravity_movement.movement(get_global_pos(), delta))
-
 func roam(delta):
 	ec.play_animation("Walk")
 	
-	if curr_rand_movement == null:
-		curr_rand_movement = ec.random_movement.new(SPEED_X, 0, true, RANDOM_MOVEMENT_STEPS, RANDOM_MOVEMENT_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
+	if ec.random_movement == null:
+		ec.init_random_movement("movement_not_ended", "movement_ended", SPEED_X, 0, true, RANDOM_MOVEMENT_STEPS, RANDOM_MOVEMENT_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
 
-	if curr_rand_movement.movement_ended():
-		curr_rand_movement = null
-	else:
-		var final_pos = curr_rand_movement.movement(get_global_pos(), delta)
-		
-		if final_pos.x < get_global_pos().x:
-			facing = -1
-		elif final_pos.x > get_global_pos().x:
-			facing = 1
-		ec.turn_sprites_x(facing)
-
-		move_to(final_pos)
+	ec.perform_random_movement(delta)
 
 	# Target detection timer.
 	if target_detect_timer == null:
 		target_detect_timer = ec.cd_timer.new(TARGET_DETECT_INTERVAL, self, "check_target_in_range")
 	
+func movement_not_ended(movement_dir):
+	facing = movement_dir
+	ec.turn_sprites_x(facing)
+
+func movement_ended():
+	return
+
 func check_target_in_range():
 	target_detect_timer = null
 	
@@ -118,14 +111,17 @@ func stunned(duration):
 func resume_from_stunned():
 	ec.resume_from_stunned()
 
-func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
-	ec.damaged_over_time(time_per_tick, total_ticks, damage_per_tick)
+func slowed(multiplier, duration):
+	ec.slowed(multiplier, duration)
+
+func slowed_recover(label):
+	ec.slowed_recover(label)
+
+func knocked_back(vel_x, vel_y, fade_rate):
+	ec.knocked_back(vel_x, vel_y, fade_rate)
 
 func healed(val):
 	ec.healed(val)
-
-func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
-	ec.healed_over_time(time_per_tick, total_ticks, heal_per_tick)
 
 func die():
 	ec.die()

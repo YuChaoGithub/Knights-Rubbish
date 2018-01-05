@@ -29,7 +29,6 @@ const SPAWN_DART_INTERVAL = 0.3
 
 var status_timer = null
 var dart_spawn_timer = null
-var curr_rand_movement = null
 var facing = -1
 
 onready var spawn_node = get_node("..")
@@ -66,6 +65,8 @@ func _process(delta):
 			play_dart_anim()
 		elif ec.status == SHOOT_DART:
 			shoot_dart()
+
+	ec.perform_knock_back_movement(delta)
 		
 func change_status(to_status):
 	ec.change_status(to_status)
@@ -73,24 +74,20 @@ func change_status(to_status):
 func apply_movement(delta):
 	ec.play_animation("Walk")
 
-	if curr_rand_movement == null:
-		curr_rand_movement = ec.random_movement.new(SPEED_X, 0, true, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
+	if ec.random_movement == null:
+		ec.init_random_movement("movement_not_ended", "movement_ended", SPEED_X, 0, true, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
 
-	if curr_rand_movement.movement_ended():
-		curr_rand_movement = null
-		face_nearest_target()
-		var to_status = BUBBLE_ANIM if ec.rng.randsign() == 1 else DART_ANIM
-		ec.change_status(to_status)
-	else:
-		var final_pos = curr_rand_movement.movement(get_global_pos(), delta)
+	ec.perform_random_movement(delta)
+		
 
-		if final_pos.x < get_global_pos().x:
-			facing = -1
-		elif final_pos.x > get_global_pos().x:
-			facing = 1
-		ec.turn_sprites_x(facing)
+func movement_not_ended(movement_dir):
+	facing = movement_dir
+	ec.turn_sprites_x(facing)
 
-		set_global_pos(final_pos)
+func movement_ended():
+	face_nearest_target()
+	var to_status = BUBBLE_ANIM if ec.rng.randsign() == 1 else DART_ANIM
+	ec.change_status(to_status)
 
 func face_nearest_target():
 	var target = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
@@ -165,14 +162,19 @@ func stunned(duration):
 func resume_from_stunned():
 	ec.resume_from_stunned()
 
-func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
-	ec.damaged_over_time(time_per_tick, total_ticks, damage_per_tick)
-
 func healed(val):
 	ec.healed(val)
 
-func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
-	ec.healed_over_time(time_per_tick, total_ticks, heal_per_tick)
+func knocked_back(vel_x, vel_y, fade_rate):
+	var curr_anim = ec.animator.get_current_animation()
+	if curr_anim != "Exclaim" && curr_anim != "Light bulb":
+		ec.knocked_back(vel_x, 0, fade_rate)
+
+func slowed(multiplier, duration):
+	ec.slowed(multiplier, duration)
+
+func slowed_recover(label):
+	ec.slowed_recover(label)
 
 func die():
 	cancel_dart_spawn_and_dart_instaces()

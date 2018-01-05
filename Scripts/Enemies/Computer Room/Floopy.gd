@@ -47,12 +47,14 @@ var facing = -1
 var green_body_texture = preload("res://Graphics/Enemies/Computer Room/Floopy/green floppy.png")
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
-onready var movement_type = ec.straight_line_movement.new(facing * SPEED_X, 0)
-onready var gravity_movement = ec.gravity_movement.new(self, GRAVITY)
 
 func activate():
 	if ec.rng.randsign() == 1:
 		get_node("Animation/Body").set_texture(green_body_texture)
+	
+	ec.init_gravity_movement(GRAVITY)
+	ec.init_straight_line_movement(facing * SPEED_X, 0)
+	
 	set_process(true)
 	ec.change_status(MOVE)
 	get_node("Animation/Damage Area").add_to_group("enemy_collider")
@@ -68,19 +70,17 @@ func _process(delta):
 		elif ec.status == FLEE:
 			flee(delta)
 
-	apply_gravity(delta)
+	ec.perform_gravity_movement(delta)
+	ec.perform_knock_back_movement(delta)
 
 func change_status(to_status):
 	ec.change_status(to_status)
-
-func apply_gravity(delta):
-	move_to(gravity_movement.movement(get_global_pos(), delta))	
 
 func apply_movement(delta):
 	ec.play_animation("Walk")
 
 	if attack_target == null:
-		movement_type.dx = facing * SPEED_X
+		ec.straight_line_movement.dx = facing * SPEED_X
 		attack_target = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
 
 	var target_pos = attack_target.get_global_pos()
@@ -96,8 +96,7 @@ func apply_movement(delta):
 			turn_stagger_timer = ec.cd_timer.new(ec.rng.randf_range(TURN_STAGGER_MIN_DELAY, TURN_STAGGER_MAX_DELAY), self, "turn_and_set_stagger_timer_to_null")
 
 
-	var final_pos = movement_type.movement(get_global_pos(), delta)
-	move_to(final_pos)
+	ec.perform_straight_line_movement(delta)
 
 	if in_attack_range():
 		attack_target = null
@@ -106,7 +105,7 @@ func apply_movement(delta):
 func turn_and_set_stagger_timer_to_null():
 	facing = -facing
 	ec.turn_sprites_x(facing)
-	movement_type.dx = facing * SPEED_X
+	ec.straight_line_movement.dx = facing * SPEED_X
 	turn_stagger_timer = null
 
 func in_attack_range():
@@ -138,12 +137,12 @@ func cancel_stagger_turn_timer():
 func init_flee():
 	facing = -facing
 	ec.turn_sprites_x(facing)
-	movement_type.dx = facing * FLEE_SPEED_X
+	ec.straight_line_movement.dx = facing * FLEE_SPEED_X
 	
 	# ANCIENT MYSTERY: So it turns out that this line of code makes Floopy jumps SOMETIMES and not ALWAYS.
 	# I'll keep it here since random jumping actually works pretty nice here.
 	# Got to get back here and figure out why this random jumping occurs some time later though.
-	gravity_movement.dy = -FLEE_JUMP_SPEED
+	ec.gravity_movement.dy = -FLEE_JUMP_SPEED
 
 	ec.change_status(FLEE)
 	
@@ -151,7 +150,7 @@ func init_flee():
 
 func flee(delta):
 	ec.play_animation("Walk")
-	move_to(movement_type.movement(get_global_pos(), delta))
+	ec.perform_straight_line_movement(delta)
 	# State transition in written in init_flee().
 
 func damaged(val):
@@ -168,14 +167,17 @@ func stunned(duration):
 func resume_from_stunned():
 	ec.resume_from_stunned()
 
-func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
-	ec.damaged_over_time(time_per_tick, total_ticks, damage_per_tick)
-
 func healed(val):
 	ec.healed(val)
 
-func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
-	ec.healed_over_time(time_per_tick, total_ticks, heal_per_tick)
+func knocked_back(vel_x, vel_y, fade_rate):
+	ec.knocked_back(vel_x, vel_y, fade_rate)
+
+func slowed(multiplier, duration):
+	ec.slowed(multiplier, duration)
+
+func slowed_recover(label):
+	ec.slowed_recover(label)
 
 func die():
 	ec.die()

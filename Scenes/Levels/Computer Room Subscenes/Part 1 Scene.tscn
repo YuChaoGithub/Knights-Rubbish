@@ -37,7 +37,7 @@
 
 [node name="Eye Mac" parent="Enemies" instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 5750, -1000 )
+transform/pos = Vector2( 6450, -1100 )
 
 [node name="Kick Left Pos" type="Position2D" parent="Enemies"]
 
@@ -53,72 +53,72 @@ transform/pos = Vector2( 1750, -500 )
 
 [node name="Godotbos" parent="Enemies" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 7150, -1300 )
+transform/pos = Vector2( 6050, -1100 )
 kick_right_pos_path = NodePath("../Kick Right Pos")
 kick_left_pos_path = NodePath("../Kick Left Pos")
 shoot_center_pos_path = NodePath("../Center Pos")
 
 [node name="Plugobra" parent="Enemies" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 6632, -650 )
+transform/pos = Vector2( 5632, -868 )
 
 [node name="iSnail" parent="Enemies" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 1450, -200 )
+transform/pos = Vector2( 5350, -1100 )
 
 [node name="Clockwork Fox" parent="Enemies" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 6132, -500 )
+transform/pos = Vector2( 6250, -850 )
 
 [node name="Chromoghast" parent="Enemies" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 6032, -750 )
+transform/pos = Vector2( 5750, -850 )
 
 [node name="Windy Meteory" parent="Enemies" instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 6182, -700 )
+transform/pos = Vector2( 5900, -1050 )
 
 [node name="Cliffy" parent="Enemies" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 6632, -900 )
+transform/pos = Vector2( 6250, -1100 )
 
 [node name="ASCII Bomber" parent="Enemies" instance=ExtResource( 9 )]
 
-transform/pos = Vector2( 6532, -550 )
+transform/pos = Vector2( 5650, -800 )
 
 [node name="ASCII Gunner" parent="Enemies" instance=ExtResource( 10 )]
 
-transform/pos = Vector2( 6332, -550 )
+transform/pos = Vector2( 5600, -750 )
 
 [node name="Latortrans" parent="Enemies" instance=ExtResource( 11 )]
 
-transform/pos = Vector2( 6732, -800 )
+transform/pos = Vector2( 2300, -400 )
 
 [node name="Healing Fountain" parent="Enemies" instance=ExtResource( 12 )]
 
-transform/pos = Vector2( 6332, -700 )
+transform/pos = Vector2( 6500, -1100 )
 
 [node name="Eelo Kicker" parent="Enemies" instance=ExtResource( 13 )]
 
-transform/pos = Vector2( 6382, -700 )
+transform/pos = Vector2( 6400, -1350 )
 fountain_path = NodePath("../Healing Fountain")
 
 [node name="Eelo Puncher" parent="Enemies" instance=ExtResource( 14 )]
 
-transform/pos = Vector2( 6082, -650 )
+transform/pos = Vector2( 6300, -1150 )
 fountain_path = NodePath("../Healing Fountain")
 
 [node name="Radiogugu" parent="Enemies" instance=ExtResource( 15 )]
 
-transform/pos = Vector2( 6782, -1100 )
+transform/pos = Vector2( 5900, -950 )
 
 [node name="Floopy" parent="Enemies" instance=ExtResource( 16 )]
 
-transform/pos = Vector2( 7064, -718 )
+transform/pos = Vector2( 6250, -1100 )
 
 [node name="Laserphone" parent="Enemies" instance=ExtResource( 17 )]
 
-transform/pos = Vector2( 6364, -1568 )
+transform/pos = Vector2( 6150, -950 )
 
 [node name="Sockute" parent="Enemies" instance=ExtResource( 18 )]
 
@@ -130,7 +130,7 @@ transform/pos = Vector2( 6564, -668 )
 
 [node name="Canmera" parent="Enemies" instance=ExtResource( 20 )]
 
-transform/pos = Vector2( 6664, -668 )
+transform/pos = Vector2( 6600, -750 )
 
 [node name="Amazlet" parent="Enemies" instance=ExtResource( 21 )]
 
@@ -138,15 +138,15 @@ transform/pos = Vector2( 6964, -1118 )
 
 [node name="Mouse" parent="Enemies" instance=ExtResource( 22 )]
 
-transform/pos = Vector2( 6082, -650 )
+transform/pos = Vector2( 5500, -950 )
 
 [node name="CD Punch" parent="Enemies" instance=ExtResource( 23 )]
 
-transform/pos = Vector2( 6614, -818 )
+transform/pos = Vector2( 5600, -800 )
 
 [node name="Dark Earspider" parent="Enemies" instance=ExtResource( 24 )]
 
-transform/pos = Vector2( 6964, -818 )
+transform/pos = Vector2( 6050, -950 )
 left_bound = 200
 right_bound = 1000
 
@@ -156,21 +156,23 @@ transform/pos = Vector2( 7064, -1018 )
 
 [node name="Harddies" parent="Enemies" instance=ExtResource( 26 )]
 
-transform/pos = Vector2( 6764, -818 )
+transform/pos = Vector2( 5150, -900 )
 
 [node name="Calcasio" parent="Enemies" instance=ExtResource( 27 )]
 
-transform/pos = Vector2( 6664, -968 )
+transform/pos = Vector2( 6000, -1050 )
 
 [node name="Sonmera" parent="Enemies" instance=ExtResource( 28 )]
 
-transform/pos = Vector2( 6914, -818 )
+transform/pos = Vector2( 6150, -900 )
 
 [node name="Flaggomine Mine" parent="Enemies" instance=ExtResource( 29 )]
 
 transform/pos = Vector2( 5832, -550 )
 
 [node name="Platforms" type="Node2D" parent="."]
+
+editor/display_folded = true
 
 [node name="Wooden Platform 400x100" parent="Platforms" instance=ExtResource( 30 )]
 

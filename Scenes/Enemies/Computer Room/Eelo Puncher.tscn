@@ -377,7 +377,7 @@ tracks/32/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=7]
 
 resource/name = "Healing"
 length = 2.0
@@ -714,7 +714,7 @@ tracks/32/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 
 length = 0.1
 loop = false
@@ -1050,7 +1050,7 @@ tracks/32/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 
 length = 2.4
 loop = false
@@ -1386,7 +1386,7 @@ tracks/32/keys = {
 "values": [ 0, 1, 0, 1, 0 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 
 length = 0.1
 loop = false
@@ -1722,7 +1722,7 @@ tracks/32/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 
 length = 1.5
 loop = true
@@ -2058,7 +2058,7 @@ tracks/32/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 
 length = 2.0
 loop = true
@@ -2505,6 +2505,7 @@ remote_path = NodePath("../../Face")
 
 [node name="Left Arm Remote Transform" type="RemoteTransform2D" parent="Animation/Body Remote Transform"]
 
+editor/display_folded = true
 transform/pos = Vector2( -34.0084, -13.8542 )
 transform/rot = -5.82343
 remote_path = NodePath("../Left Arm")
@@ -2524,6 +2525,7 @@ offset = Vector2( 0.399933, 6.53002 )
 
 [node name="Right Arm Remote Transform" type="RemoteTransform2D" parent="Animation/Body Remote Transform"]
 
+editor/display_folded = true
 transform/pos = Vector2( 33.9878, -9.75095 )
 transform/rot = 14.3828
 remote_path = NodePath("../Right Arm")
@@ -2562,9 +2564,15 @@ transform/rot = 31.1673
 texture = ExtResource( 7 )
 offset = Vector2( 0.589759, 0.25804 )
 
+[node name="Number Spawn Pos" type="RemoteTransform2D" parent="Animation/Body Remote Transform"]
+
+transform/pos = Vector2( -0.471191, -57.4814 )
+transform/scale = Vector2( 0.4, 0.4 )
+remote_path = NodePath("../../../Number Spawn Pos")
+
 [node name="Body" type="Sprite" parent="Animation"]
 
-transform/pos = Vector2( 0.847701, 0.812112 )
+transform/pos = Vector2( 0.847701, 0.812113 )
 texture = ExtResource( 8 )
 
 [node name="Face" type="Sprite" parent="Animation"]
@@ -2578,12 +2586,12 @@ playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
 anims/Die = SubResource( 6 )
-anims/Healing = SubResource( 12 )
-anims/Hurt = SubResource( 7 )
-anims/Punch = SubResource( 8 )
-anims/Still = SubResource( 9 )
-anims/Stunned = SubResource( 10 )
-anims/Walk = SubResource( 11 )
+anims/Healing = SubResource( 7 )
+anims/Hurt = SubResource( 8 )
+anims/Punch = SubResource( 9 )
+anims/Still = SubResource( 10 )
+anims/Stunned = SubResource( 11 )
+anims/Walk = SubResource( 12 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -2595,7 +2603,8 @@ transform/pos = Vector2( 3.23474, -200.555 )
 
 [node name="Number Spawn Pos" type="Position2D" parent="."]
 
-transform/pos = Vector2( 1.29388, -199.261 )
+transform/pos = Vector2( 0.333021, -113.776 )
+transform/scale = Vector2( 0.88, 0.88 )
 script/script = ExtResource( 15 )
 
 [connection signal="area_enter" from="Animation/Left Punch Area" to="." method="on_left_attack_hit"]

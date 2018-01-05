@@ -39,9 +39,9 @@ onready var drawing_node = get_node("Drawing")
 onready var rise_to_pos_y = get_global_pos().y - RISE_LENGTH
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
-onready var movement_type = ec.straight_line_movement.new(0, -RISE_SPEED_Y)
 
 func activate():
+	ec.init_straight_line_movement(0, -RISE_SPEED_Y)
 	set_process(true)
 	get_node("Animation/Damage Area").add_to_group("enemy_collider")
 	ec.change_status(RISE)
@@ -61,7 +61,7 @@ func change_status(to_status):
 func rise(delta):
 	ec.play_animation("Wiggle")
 	
-	set_global_pos(movement_type.movement(get_global_pos(), delta))
+	ec.perform_straight_line_movement(delta)
 
 	if get_global_pos().y <= rise_to_pos_y:
 		ec.change_status(LASER)
@@ -105,17 +105,17 @@ func damaged(val):
 func resume_from_damaged():
 	ec.resume_from_damaged()
 
-func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
-	ec.damaged_over_time(time_per_tick, total_ticks, damage_per_tick)
-
 func stunned(duration):
 	ec.display_immune_text()
 
 func healed(val):
 	ec.healed(val)
 
-func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
-	ec.healed_over_time(time_per_tick, total_ticks, heal_per_tick)
+func slowed(multiplier, duration):
+	return
+
+func knocked_back(vel_x, vel_y, fade_rate):
+	return
 
 func die():
 	ec.die()

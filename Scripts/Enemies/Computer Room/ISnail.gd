@@ -38,10 +38,10 @@ var hourglass = preload("res://Scenes/Enemies/Computer Room/iSnail Hourglass.tsc
 onready var hourglass_spawn_pos = get_node("Animation/Hourglass Spawn Pos")
 onready var spawn_node = get_node("..")
 
-onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
 func activate():
+    ec.init_gravity_movement(GRAVITY)
     set_process(true)
     ec.change_status(MOVE)
     get_node("Animation/Damage Area").add_to_group("enemy_collider")
@@ -55,31 +55,27 @@ func _process(delta):
         elif ec.status == SPIT_INTERVAL:
             spit_interval()
 
-    apply_gravity(delta)
+    ec.perform_gravity_movement(delta)
+    ec.perform_knock_back_movement(delta)
 
 func change_status(to_status):
     ec.change_status(to_status)
 
-func apply_gravity(delta):
-    move_to(gravity_movement.movement(get_global_pos(), delta))
-
 func perform_movement(delta):
     ec.play_animation("Walk")
-    if curr_rand_movement == null:
-        curr_rand_movement = ec.random_movement.new(SPEED_X, 0, false, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
+    if ec.random_movement == null:
+        ec.init_random_movement("movement_not_ended", "movement_ended", SPEED_X, 0, false, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
 
-    if curr_rand_movement.movement_ended():
-        face_nearest_target()
-        curr_rand_movement = null
-        hourglass_count = 0
-        ec.change_status(SPIT)
-    else:
-        var final_pos = curr_rand_movement.movement(get_global_pos(), delta)
+    ec.perform_random_movement(delta)
 
-        facing = sign(final_pos.x - get_global_pos().x)
-        ec.turn_sprites_x(facing)
+func movement_not_ended(movement_dir):
+    facing = movement_dir
+    ec.turn_sprites_x(facing)
 
-        move_to(final_pos)
+func movement_ended():
+    face_nearest_target()
+    hourglass_count = 0
+    ec.change_status(SPIT)
 
 func face_nearest_target():
     var target = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
@@ -117,14 +113,14 @@ func stunned(duration):
 func resume_from_stunned():
     ec.resume_from_stunned()
 
-func damaged_over_time(time_per_tick, total_ticks, damage_per_tick):
-    ec.damaged_over_time(time_per_tick, total_ticks, damage_per_tick)
-
 func healed(val):
     ec.healed(val)
 
-func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
-    ec.healed_over_time(time_per_tick, total_ticks, heal_per_tick)
+func slowed(multiplier, duration):
+    return
+
+func knocked_back(vel_x, vel_y, fade_rate):
+    ec.knocked_back(vel_x / 2, vel_y / 2, fade_rate / 2)
 
 func die():
     ec.die()
