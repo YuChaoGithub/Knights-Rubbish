@@ -53,10 +53,9 @@ onready var frizbee_spawn_pos = get_node("Frizbee Spawn Pos")
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
 func activate():
+	ec.health_bar.show_health_bar()
 	set_process(true)
-
 	ec.change_status(FACE)
-
 	get_node("Animation/Damage Area").add_to_group("enemy_collider")
 
 func _process(delta):
@@ -169,6 +168,7 @@ func slowed(multiplier, duration):
 
 func die():
 	ec.die()
+	ec.health_bar.drop_health_bar()
 
 	# Disable touch damage.
 	get_node("Animation/Attack Area").queue_free()

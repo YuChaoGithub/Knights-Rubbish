@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=1]
+[gd_scene load_steps=58 format=1]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/EyeMac.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Shocked.png" type="Texture" id=2]
@@ -32,47 +32,47 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 1.png" type="Texture" id=30]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 2.png" type="Texture" id=31]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 3.png" type="Texture" id=32]
-[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=33]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=34]
+[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=33]
+[ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Graphics/UI/Avatar/Eyemac.png" type="Texture" id=35]
 
-[sub_resource type="CircleShape2D" id=22]
+[sub_resource type="CircleShape2D" id=23]
 
 custom_solver_bias = 0.0
 radius = 13.8973
 
-[sub_resource type="RectangleShape2D" id=21]
+[sub_resource type="RectangleShape2D" id=24]
 
 custom_solver_bias = 0.0
 extents = Vector2( 24.1585, 7.55383 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=25]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 188.443 )
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="RectangleShape2D" id=26]
 
 custom_solver_bias = 0.0
 extents = Vector2( 280.468, 10 )
 
-[sub_resource type="RectangleShape2D" id=19]
+[sub_resource type="RectangleShape2D" id=27]
 
 custom_solver_bias = 0.0
 extents = Vector2( 274.56, 10 )
 
-[sub_resource type="RectangleShape2D" id=20]
+[sub_resource type="RectangleShape2D" id=28]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 172.856 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=29]
 
 custom_solver_bias = 0.0
 extents = Vector2( 59.4866, 57.596 )
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=30]
 
-resource/name = "Die"
 length = 2.0
 loop = false
 step = 0.1
@@ -587,9 +587,8 @@ tracks/50/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=31]
 
-resource/name = "Hurt"
 length = 0.1
 loop = true
 step = 0.1
@@ -1104,7 +1103,7 @@ tracks/50/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=32]
 
 length = 1.0
 loop = false
@@ -1620,9 +1619,8 @@ tracks/50/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=33]
 
-resource/name = "Hurt Me Disappear"
 length = 0.8
 loop = false
 step = 0.1
@@ -2137,7 +2135,7 @@ tracks/50/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=34]
 
 length = 2.0
 loop = true
@@ -2653,9 +2651,8 @@ tracks/50/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=35]
 
-resource/name = "Music Note Appear"
 length = 0.5
 loop = false
 step = 0.1
@@ -3170,9 +3167,8 @@ tracks/50/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=36]
 
-resource/name = "Music Note Disappear"
 length = 0.5
 loop = false
 step = 0.1
@@ -3687,7 +3683,7 @@ tracks/50/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=37]
 
 length = 2.0
 loop = true
@@ -4203,9 +4199,8 @@ tracks/50/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=16]
 
-resource/name = "Pump Harddies Appear"
 length = 1.5
 loop = false
 step = 0.1
@@ -4730,9 +4725,8 @@ tracks/51/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=17]
 
-resource/name = "Pump Harddies Screen"
 length = 2.0
 loop = false
 step = 0.05
@@ -5267,7 +5261,7 @@ tracks/52/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=18]
 
 length = 0.5
 loop = false
@@ -5773,7 +5767,7 @@ tracks/49/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=19]
 
 length = 0.5
 loop = false
@@ -6279,7 +6273,7 @@ tracks/49/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=20]
 
 length = 2.0
 loop = true
@@ -6785,7 +6779,7 @@ tracks/49/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=21]
 
 length = 0.1
 loop = false
@@ -7291,9 +7285,8 @@ tracks/49/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=22]
 
-resource/name = "USB Drop"
 length = 3.5
 loop = false
 step = 0.1
@@ -7817,7 +7810,6 @@ texture = ExtResource( 2 )
 [node name="Harddies Spawn Pos" type="Position2D" parent="Animation"]
 
 transform/pos = Vector2( 2.46586, -328.724 )
-transform/scale = Vector2( 1, 1 )
 
 [node name="Screen" type="Sprite" parent="Animation"]
 
@@ -7862,9 +7854,8 @@ texture = ExtResource( 8 )
 
 [node name="Eyeball" type="KinematicBody2D" parent="Animation/Screen/Eye"]
 
-transform/scale = Vector2( 1, 1 )
 input/pickable = false
-shapes/0/shape = SubResource( 22 )
+shapes/0/shape = SubResource( 23 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.742711, -1.48543 )
 shapes/0/trigger = false
 collision/layers = 0
@@ -7879,7 +7870,7 @@ texture = ExtResource( 9 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Screen/Eye/Eyeball"]
 
 transform/pos = Vector2( 0.742711, -1.48543 )
-shape = SubResource( 22 )
+shape = SubResource( 23 )
 trigger = false
 _update_shape_index = 0
 
@@ -7889,7 +7880,7 @@ editor/display_folded = true
 transform/pos = Vector2( -6.00846, -28.2217 )
 transform/rot = 8.0398
 input/pickable = false
-shapes/0/shape = SubResource( 21 )
+shapes/0/shape = SubResource( 24 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 262144
@@ -7901,7 +7892,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Screen/Eye/Eye Frame"]
 
-shape = SubResource( 21 )
+shape = SubResource( 24 )
 trigger = false
 _update_shape_index = 0
 
@@ -7911,7 +7902,7 @@ editor/display_folded = true
 transform/pos = Vector2( 39.8575, -17.3988 )
 transform/rot = -37.1672
 input/pickable = false
-shapes/0/shape = SubResource( 21 )
+shapes/0/shape = SubResource( 24 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 262144
@@ -7923,7 +7914,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Screen/Eye/Eye Frame1"]
 
-shape = SubResource( 21 )
+shape = SubResource( 24 )
 trigger = false
 _update_shape_index = 0
 
@@ -7933,7 +7924,7 @@ editor/display_folded = true
 transform/pos = Vector2( -40.0869, -13.3821 )
 transform/rot = -141.26
 input/pickable = false
-shapes/0/shape = SubResource( 21 )
+shapes/0/shape = SubResource( 24 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 262144
@@ -7945,7 +7936,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Screen/Eye/Eye Frame2"]
 
-shape = SubResource( 21 )
+shape = SubResource( 24 )
 trigger = false
 _update_shape_index = 0
 
@@ -7955,7 +7946,7 @@ editor/display_folded = true
 transform/pos = Vector2( -37.3855, 20.8568 )
 transform/rot = -215.642
 input/pickable = false
-shapes/0/shape = SubResource( 21 )
+shapes/0/shape = SubResource( 24 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 262144
@@ -7967,7 +7958,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Screen/Eye/Eye Frame3"]
 
-shape = SubResource( 21 )
+shape = SubResource( 24 )
 trigger = false
 _update_shape_index = 0
 
@@ -7977,7 +7968,7 @@ editor/display_folded = true
 transform/pos = Vector2( -0.764225, 29.5103 )
 transform/rot = -177.171
 input/pickable = false
-shapes/0/shape = SubResource( 21 )
+shapes/0/shape = SubResource( 24 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 262144
@@ -7989,7 +7980,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Screen/Eye/Eye Frame4"]
 
-shape = SubResource( 21 )
+shape = SubResource( 24 )
 trigger = false
 _update_shape_index = 0
 
@@ -7999,7 +7990,7 @@ editor/display_folded = true
 transform/pos = Vector2( 39.8803, 17.5003 )
 transform/rot = -149.76
 input/pickable = false
-shapes/0/shape = SubResource( 21 )
+shapes/0/shape = SubResource( 24 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 262144
@@ -8011,7 +8002,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Screen/Eye/Eye Frame5"]
 
-shape = SubResource( 21 )
+shape = SubResource( 24 )
 trigger = false
 _update_shape_index = 0
 
@@ -8049,7 +8040,6 @@ transform/pos = Vector2( -8.57541, 51.6173 )
 [node name="Damage Area" type="RemoteTransform2D" parent="Animation/Screen/Hurt Me Screen/Heart"]
 
 transform/pos = Vector2( -3.45493, -4.14602 )
-transform/scale = Vector2( 1, 1 )
 remote_path = NodePath("../../../../Damage Area")
 
 [node name="Heart" type="Sprite" parent="Animation/Screen/Hurt Me Screen/Heart"]
@@ -8096,7 +8086,6 @@ modulate = Color( 1, 0.519531, 0.519531, 1 )
 [node name="Spawn Pos" type="Position2D" parent="Animation/Screen/Shoot Mouse Screen/Cannon"]
 
 transform/pos = Vector2( -119.721, -3.3575 )
-transform/scale = Vector2( 1, 1 )
 
 [node name="Transform Area" type="Area2D" parent="Animation/Screen/Shoot Mouse Screen" groups=[
 "Mouse Transform",
@@ -8104,16 +8093,16 @@ transform/scale = Vector2( 1, 1 )
 
 editor/display_folded = true
 input/pickable = true
-shapes/0/shape = SubResource( 17 )
+shapes/0/shape = SubResource( 25 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 265.661, 11.0083 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 18 )
+shapes/1/shape = SubResource( 26 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, -9.02793, 182.896 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 19 )
+shapes/2/shape = SubResource( 27 )
 shapes/2/transform = Matrix32( 1, 0, 0, 1, -7.04863, -170.579 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 20 )
+shapes/3/shape = SubResource( 28 )
 shapes/3/transform = Matrix32( 1, 0, 0, 1, -279.504, 3.88786 )
 shapes/3/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -8126,28 +8115,28 @@ collision/mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Screen/Shoot Mouse Screen/Transform Area"]
 
 transform/pos = Vector2( 265.661, 11.0083 )
-shape = SubResource( 17 )
+shape = SubResource( 25 )
 trigger = false
 _update_shape_index = 0
 
 [node name="CollisionShape2D 2" type="CollisionShape2D" parent="Animation/Screen/Shoot Mouse Screen/Transform Area"]
 
 transform/pos = Vector2( -9.02793, 182.896 )
-shape = SubResource( 18 )
+shape = SubResource( 26 )
 trigger = false
 _update_shape_index = 1
 
 [node name="CollisionShape2D 3" type="CollisionShape2D" parent="Animation/Screen/Shoot Mouse Screen/Transform Area"]
 
 transform/pos = Vector2( -7.04863, -170.579 )
-shape = SubResource( 19 )
+shape = SubResource( 27 )
 trigger = false
 _update_shape_index = 2
 
 [node name="CollisionShape2D 4" type="CollisionShape2D" parent="Animation/Screen/Shoot Mouse Screen/Transform Area"]
 
 transform/pos = Vector2( -279.504, 3.88786 )
-shape = SubResource( 20 )
+shape = SubResource( 28 )
 trigger = false
 _update_shape_index = 3
 
@@ -8231,8 +8220,6 @@ modulate = Color( 1, 1, 1, 0 )
 
 [node name="Spawn Pos" type="Position2D" parent="Animation/Screen/Drop USB Scene/Frame"]
 
-transform/scale = Vector2( 1, 1 )
-
 [node name="Bottom Left" type="Position2D" parent="Animation/Screen/Drop USB Scene"]
 
 transform/pos = Vector2( -165, 50 )
@@ -8265,7 +8252,6 @@ texture = ExtResource( 28 )
 [node name="Plugobra Spawn Poses" type="Node2D" parent="Animation"]
 
 editor/display_folded = true
-transform/scale = Vector2( 1, 1 )
 
 [node name="1" type="Position2D" parent="Animation/Plugobra Spawn Poses"]
 
@@ -8288,7 +8274,7 @@ transform/pos = Vector2( 457.504, 342.835 )
 transform/pos = Vector2( -12.0303, 47.4713 )
 transform/scale = Vector2( 1, 1 )
 input/pickable = true
-shapes/0/shape = SubResource( 16 )
+shapes/0/shape = SubResource( 29 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.690988, 4.14603 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -8301,7 +8287,7 @@ collision/mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area"]
 
 transform/pos = Vector2( 0.690988, 4.14603 )
-shape = SubResource( 16 )
+shape = SubResource( 29 )
 trigger = false
 _update_shape_index = 0
 
@@ -8310,33 +8296,33 @@ _update_shape_index = 0
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Die = SubResource( 1 )
-anims/Hurt = SubResource( 2 )
-"anims/Hurt Me Appear" = SubResource( 3 )
-"anims/Hurt Me Disappear" = SubResource( 4 )
-"anims/Hurt Me Screen" = SubResource( 5 )
-"anims/Music Note Appear" = SubResource( 6 )
-"anims/Music Note Disappear" = SubResource( 7 )
-"anims/Music Note Screen" = SubResource( 8 )
-"anims/Pump Harddies Appear" = SubResource( 9 )
-"anims/Pump Harddies Screen" = SubResource( 10 )
-"anims/Shoot Mouse Appear" = SubResource( 11 )
-"anims/Shoot Mouse Disappear" = SubResource( 12 )
-"anims/Shoot Mouse Screen" = SubResource( 13 )
-anims/Still = SubResource( 14 )
-"anims/USB Drop" = SubResource( 15 )
+anims/Die = SubResource( 30 )
+anims/Hurt = SubResource( 31 )
+"anims/Hurt Me Appear" = SubResource( 32 )
+"anims/Hurt Me Disappear" = SubResource( 33 )
+"anims/Hurt Me Screen" = SubResource( 34 )
+"anims/Music Note Appear" = SubResource( 35 )
+"anims/Music Note Disappear" = SubResource( 36 )
+"anims/Music Note Screen" = SubResource( 37 )
+"anims/Pump Harddies Appear" = SubResource( 16 )
+"anims/Pump Harddies Screen" = SubResource( 17 )
+"anims/Shoot Mouse Appear" = SubResource( 18 )
+"anims/Shoot Mouse Disappear" = SubResource( 19 )
+"anims/Shoot Mouse Screen" = SubResource( 20 )
+anims/Still = SubResource( 21 )
+"anims/USB Drop" = SubResource( 22 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "Still"
 
-[node name="Health Bar" parent="." instance=ExtResource( 33 )]
-
-transform/pos = Vector2( 0, -454.899 )
-
 [node name="Number Spawn Pos" type="Position2D" parent="."]
 
 transform/pos = Vector2( 4.15442, -454.899 )
-script/script = ExtResource( 34 )
+script/script = ExtResource( 33 )
+
+[node name="Health Bar" parent="." instance=ExtResource( 34 )]
+
+avatar_texture = ExtResource( 35 )
 
 

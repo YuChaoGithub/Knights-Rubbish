@@ -4,6 +4,9 @@ extends Node2D
 const BASIC_ATTACK_DURATION = 0.8
 const BASIC_ATTACK_COOLDOWN = 0.15
 const BASIC_ATTACK_DAMAGE = 29
+const BASIC_ATTACK_KNOCK_BACK_VEL_X = 500
+const BASIC_ATTACK_KNOCK_BACK_VEL_Y = 0
+const BASIC_ATTACK_KNOCK_BACK_FADE_RATE = 1000
 
 const BASIC_SKILL_HOP_DURATION = 0.6
 const BASIC_SKILL_LAND_DURATION = 0.25
@@ -107,8 +110,8 @@ func on_basic_attack_hit(area):
 	if area.is_in_group("enemy_collider"):
 		# Damage the enemy.
 		var enemy_node = area.get_node("../..")
-		enemy_node.damaged(BASIC_ATTACK_DAMAGE)
-		enemy_node.knocked_back(500,-500,1000)
+		enemy_node.damaged(BASIC_ATTACK_DAMAGE * character.damage_modifier)
+		enemy_node.knocked_back(sign(enemy_node.get_global_pos().x - get_global_pos().x) * BASIC_ATTACK_KNOCK_BACK_VEL_X * character.enemy_knock_back_modifier,-BASIC_ATTACK_KNOCK_BACK_VEL_Y * character.enemy_knock_back_modifier, BASIC_ATTACK_KNOCK_BACK_FADE_RATE * character.enemy_knock_back_modifier)
 
 # ===========
 # Basic Skill: Hop, when it hits the ground, stun enemies around. Is invincible while hitting ground.
@@ -190,8 +193,7 @@ func horizontal_skill_toss(side):
 	# Spawn pencil dart.
 	var dart = pencil_dart.instance()
 
-	# Set position and facing.
-	dart.side = side
+	dart.initialize(side, character.damage_modifier, character.get_scale().x)
 
 	dart_spawn_node.add_child(dart)
 	dart.set_pos(character.get_pos() + pencil_toss_pos)
@@ -237,7 +239,7 @@ func on_up_skill_hit(area):
 	if area.is_in_group("enemy_collider"):
 		# Can't hit the same object twice.
 		if !(area in up_skill_targets):
-			area.get_node("../..").damaged(UP_SKILL_DAMAGE)
+			area.get_node("../..").damaged(UP_SKILL_DAMAGE * character.damage_modifier)
 			up_skill_targets.push_back(area)
 	
 # ==========

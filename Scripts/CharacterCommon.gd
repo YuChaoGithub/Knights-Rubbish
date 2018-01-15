@@ -37,6 +37,8 @@ var speed
 var movement_speed_modifier = 1.0
 var damage_modifier = 1.0
 var defense_modifier = 1.0
+var self_knock_back_modifier = 1.0
+var enemy_knock_back_modifier = 1.0
 
 # For knockback or movement skills.
 var additional_speed_x = 0
@@ -96,9 +98,14 @@ onready var player_constants = load(player_constants_filepath)
 # Manages healing, damaging, dying.
 onready var health_system = preload("res://Scripts/Utils/HealthSystem.gd").new(self, player_constants.full_health)
 
+# Particles.
+onready var fire_particle = get_node(player_constants.fire_particle_node_path)
+
 # Damage, heal numbers indicator.
 var number_indicator = preload("res://Scenes/Utils/Numbers/Number Indicator.tscn")
 onready var number_spawn_pos = get_node("Number Spawn Pos")
+
+onready var health_bar = get_node("Health Bar")
 
 onready var status_icons = {
 	defense = get_node(defense_icon_path),
@@ -112,7 +119,7 @@ func _ready():
 	# Configure movement related variables.
 	recalculate_horizontal_movement_variables()
 	recalculate_vertical_movement_variables()
-
+	
 	# Default animator.
 	sprite = get_node("Sprite")
 	animator = sprite.get_node(player_constants.default_animator_path)
@@ -121,12 +128,18 @@ func _ready():
 	for icon in status_icons:
 		status_icons[icon].hide()
 
+	# Hide all particles.
+	fire_particle.hide()
+
 	# Initialize timestamp.
 	idle_timestamp = OS.get_unix_time()
 
 	# Register itself to character average position.
 	char_average_pos.characters.push_back(self)
 	char_average_pos.add_character(get_global_pos())
+
+	# Health bar.
+	health_bar.initialize(player_constants.full_health)
 
 	set_process(true)
 
@@ -289,6 +302,16 @@ func display_immune_text():
 	var immune_text = number_indicator.instance()
 	immune_text.initialize(-2, IMMUNE_TEXT_COLOR, number_spawn_pos, self)
 
+func show_ignited_particles(duration):
+	var ignite_timer = countdown_timer.new(duration, self, "ignited_recover")
+	register_timer("ignite", ignite_timer)
+
+	fire_particle.show()
+
+func ignited_recover():
+	unregister_timer("ignite")
+	fire_particle.hide()
+
 # Common abnormal status.
 func defense_boosted(multiplier, duration):
 	var defense_timer = countdown_timer.new(duration, self, "defense_boost_recover", multiplier)
@@ -325,11 +348,15 @@ func dwarfed_or_gianted(multipliers, duration):
 	set_size(multipliers.size)
 	defense_modifier *= multipliers.defense
 	damage_modifier *= multipliers.damage
-	
+	self_knock_back_modifier *= multipliers.self_knock_back
+	enemy_knock_back_modifier *= multipliers.enemy_knock_back
+
 func dwarf_giant_recover(multipliers):
 	set_size(1.0)
 	defense_modifier /= multipliers.defense
 	damage_modifier /= multipliers.damage
+	self_knock_back_modifier /= multipliers.self_knock_back
+	enemy_knock_back_modifier /= multipliers.enemy_knock_back
 
 	unregister_timer("giant_dwarf_potion")
 
@@ -435,9 +462,9 @@ func knocked_back(vel_x, vel_y, x_fade_rate):
 	if status.invincible:
 		return
 
-	velocity_replacement_y = vel_y
-	additional_speed_x = vel_x
-	additional_speed_x_fading_rate = x_fade_rate
+	velocity_replacement_y = vel_y * self_knock_back_modifier
+	additional_speed_x = vel_x * self_knock_back_modifier
+	additional_speed_x_fading_rate = x_fade_rate * self_knock_back_modifier
 
 func damaged(val):
 	if status.invincible:
@@ -457,12 +484,12 @@ func damaged(val):
 
 		hurt_modulate_timer = countdown_timer.new(HURT_MODULATE_DURATION, self, "recover_modulate", curr_modulate)
 
-
 	# Number indicator.
 	var num = number_indicator.instance()
 	num.initialize(val, DAMAGE_NUMBER_COLOR, number_spawn_pos, self)
 
 	health_system.change_health_by(-val)
+	health_bar.set_health_bar(health_system.health)
 
 func recover_modulate(original_modulate):
 	for node_path in player_constants.hurt_modulate_node_path:
@@ -471,6 +498,7 @@ func recover_modulate(original_modulate):
 
 func healed(val):
 	health_system.change_health_by(val)
+	health_bar.set_health_bar(health_system.health)
 
 	# Number indicator.
 	var num = number_indicator.instance()

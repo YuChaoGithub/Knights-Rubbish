@@ -83,6 +83,7 @@ onready var spawn_node = get_node("..")
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
 func activate():
+	ec.health_bar.show_health_bar()
 	ec.init_gravity_movement(GRAVITY)
 	ec.init_straight_line_movement(0, 0)
 	set_process(true)
@@ -298,3 +299,4 @@ func slowed(multiplier, duration):
 
 func die():
 	ec.die()
+	ec.health_bar.drop_health_bar()

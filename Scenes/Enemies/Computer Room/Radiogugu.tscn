@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=1]
+[gd_scene load_steps=38 format=1]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Radiogugu.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Radiogugu/Body.png" type="Texture" id=2]
@@ -21,26 +21,27 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Radiogugu/Left Leg.png" type="Texture" id=19]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Radiogugu/Left Foot.png" type="Texture" id=20]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Radiogugu/Right Thigh.png" type="Texture" id=21]
-[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=23]
-[ext_resource path="res://Scripts/Utils/DrawingNode.gd" type="Script" id=24]
+[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=22]
+[ext_resource path="res://Scripts/Utils/DrawingNode.gd" type="Script" id=23]
+[ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Graphics/UI/Avatar/Radiogugu.png" type="Texture" id=25]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 111.252, 155.082 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 128.683, 155.025 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 204.291, 90.5594 )
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=4]
 
 length = 0.8
 loop = false
@@ -656,7 +657,7 @@ tracks/60/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=5]
 
 length = 2.0
 loop = false
@@ -1272,7 +1273,7 @@ tracks/60/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=6]
 
 length = 0.1
 loop = false
@@ -1888,7 +1889,7 @@ tracks/60/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=7]
 
 length = 2.5
 loop = false
@@ -2504,7 +2505,7 @@ tracks/60/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 5, 5 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=8]
 
 length = 1.0
 loop = false
@@ -3120,7 +3121,7 @@ tracks/60/keys = {
 "values": [ Vector2( 5, 5 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=9]
 
 length = 2.5
 loop = false
@@ -3736,7 +3737,7 @@ tracks/60/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=10]
 
 length = 0.1
 loop = false
@@ -4352,7 +4353,7 @@ tracks/60/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=11]
 
 length = 1.0
 loop = true
@@ -4968,7 +4969,7 @@ tracks/60/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=12]
 
 length = 2.0
 loop = false
@@ -5605,7 +5606,6 @@ _update_shape_index = 0
 
 [node name="Animation" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( -1.32568, -23.1999 )
 transform/scale = Vector2( 1.5, 1.5 )
 
@@ -5614,10 +5614,10 @@ transform/scale = Vector2( 1.5, 1.5 )
 editor/display_folded = true
 transform/pos = Vector2( -4.47035e-06, 8.58307e-06 )
 input/pickable = true
-shapes/0/shape = SubResource( 11 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -3.18351, 89.9336 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 12 )
+shapes/1/shape = SubResource( 3 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, -2.38769, -150.42 )
 shapes/1/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -5630,20 +5630,20 @@ collision/mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area"]
 
 transform/pos = Vector2( -3.18351, 89.9336 )
-shape = SubResource( 11 )
+shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
 [node name="CollisionShape2D 2" type="CollisionShape2D" parent="Animation/Damage Area"]
 
 transform/pos = Vector2( -2.38769, -150.42 )
-shape = SubResource( 12 )
+shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 1
 
 [node name="Body" type="Sprite" parent="Animation"]
 
-transform/pos = Vector2( 0, 12.1429 )
+editor/display_folded = true
 transform/scale = Vector2( -1, 1 )
 texture = ExtResource( 2 )
 
@@ -5667,7 +5667,7 @@ transform/scale = Vector2( 0.666667, 0.666667 )
 
 [node name="Head" type="Sprite" parent="Animation/Body"]
 
-transform/pos = Vector2( 1.37831, -83.578 )
+transform/pos = Vector2( 0.992401, -91.3945 )
 texture = ExtResource( 3 )
 offset = Vector2( 1.72435, -65.1253 )
 
@@ -5683,12 +5683,12 @@ texture = ExtResource( 4 )
 
 [node name="Left Eye" type="Sprite" parent="Animation/Body/Head"]
 
-transform/pos = Vector2( -138.704, -38.3576 )
+transform/pos = Vector2( -125.959, -38.1694 )
 texture = ExtResource( 5 )
 
 [node name="Right Eye" type="Sprite" parent="Animation/Body/Head"]
 
-transform/pos = Vector2( 143.731, -47.9299 )
+transform/pos = Vector2( 134.356, -47.1392 )
 texture = ExtResource( 5 )
 
 [node name="Display" type="Node2D" parent="Animation/Body/Head"]
@@ -5709,25 +5709,25 @@ transform/pos = Vector2( -7.3302, 51.3114 )
 
 transform/pos = Vector2( -39.6447, -53.1599 )
 texture = ExtResource( 7 )
-modulate = Color( 1, 1, 1, 0.714286 )
+modulate = Color( 1, 1, 1, 0 )
 
 [node name="I" type="Sprite" parent="Animation/Body/Head/Display/KILL"]
 
 transform/pos = Vector2( -6.82198, -54.1897 )
 texture = ExtResource( 8 )
-modulate = Color( 1, 1, 1, 0.714286 )
+modulate = Color( 1, 1, 1, 0 )
 
 [node name="L" type="Sprite" parent="Animation/Body/Head/Display/KILL"]
 
 transform/pos = Vector2( 26.2582, -53.9323 )
 texture = ExtResource( 9 )
-modulate = Color( 1, 1, 1, 0.714286 )
+modulate = Color( 1, 1, 1, 0 )
 
 [node name="L 2" type="Sprite" parent="Animation/Body/Head/Display/KILL"]
 
 transform/pos = Vector2( 59.5958, -53.9323 )
 texture = ExtResource( 9 )
-modulate = Color( 1, 1, 1, 0.714286 )
+modulate = Color( 1, 1, 1, 0 )
 
 [node name="Watchout" type="Sprite" parent="Animation/Body/Head/Display"]
 
@@ -5738,14 +5738,12 @@ modulate = Color( 1, 1, 1, 0 )
 [node name="Left Arm" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( -106.019, -32.9298 )
-transform/rot = -46.1886
 texture = ExtResource( 11 )
 offset = Vector2( -1.25291, 50.674 )
 
 [node name="Left Hand" type="Sprite" parent="Animation/Body/Left Arm"]
 
-transform/pos = Vector2( -23.0233, 175.041 )
-transform/rot = -26.5287
+transform/pos = Vector2( -3.65407, 125.543 )
 texture = ExtResource( 12 )
 offset = Vector2( -5.22005, 14.6162 )
 
@@ -5757,14 +5755,12 @@ texture = ExtResource( 13 )
 [node name="Right Arm" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( 105.762, -40.2713 )
-transform/rot = 50.4635
 texture = ExtResource( 14 )
 offset = Vector2( 12.4982, 51.266 )
 
 [node name="Right Hand" type="Sprite" parent="Animation/Body/Right Arm"]
 
-transform/pos = Vector2( 26.2613, 174.075 )
-transform/rot = 19.5867
+transform/pos = Vector2( 1.60898, 127.646 )
 texture = ExtResource( 15 )
 offset = Vector2( -6.16779, 18.5033 )
 
@@ -5782,14 +5778,12 @@ texture = ExtResource( 17 )
 
 editor/display_folded = true
 transform/pos = Vector2( -42.8918, 87.6317 )
-transform/rot = 20.4442
 texture = ExtResource( 18 )
 offset = Vector2( -1.31754, 30.9035 )
 
 [node name="Left Leg" type="Sprite" parent="Animation/Body/Left Thigh"]
 
 transform/pos = Vector2( -5.11302, 83.2234 )
-transform/rot = -5.1258
 texture = ExtResource( 19 )
 offset = Vector2( 1.05096, 21.2296 )
 
@@ -5802,7 +5796,6 @@ offset = Vector2( 16.4417, -0.773727 )
 [node name="Right Thigh" type="Sprite" parent="Animation/Body"]
 
 transform/pos = Vector2( 27.1868, 88.79 )
-transform/rot = 2.40571
 texture = ExtResource( 21 )
 offset = Vector2( 0.613007, 33.2202 )
 
@@ -5811,31 +5804,31 @@ offset = Vector2( 0.613007, 33.2202 )
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/Die = SubResource( 2 )
-"anims/Drop Floopies" = SubResource( 3 )
-anims/Hurt = SubResource( 4 )
-anims/Laser = SubResource( 5 )
-"anims/Laser Recover" = SubResource( 6 )
-anims/Scratch = SubResource( 7 )
-anims/Still = SubResource( 8 )
-anims/Walk = SubResource( 9 )
-"anims/Watch Out" = SubResource( 10 )
+anims/Die = SubResource( 4 )
+"anims/Drop Floopies" = SubResource( 5 )
+anims/Hurt = SubResource( 6 )
+anims/Laser = SubResource( 7 )
+"anims/Laser Recover" = SubResource( 8 )
+anims/Scratch = SubResource( 9 )
+anims/Still = SubResource( 10 )
+anims/Walk = SubResource( 11 )
+"anims/Watch Out" = SubResource( 12 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "Still"
 
-[node name="Health Bar" parent="." instance=ExtResource( 22 )]
-
-transform/pos = Vector2( 3.19445, -440.846 )
-
 [node name="Number Spawn Pos" type="Position2D" parent="."]
 
 transform/pos = Vector2( -1.25482, -442.962 )
-script/script = ExtResource( 23 )
+script/script = ExtResource( 22 )
 
 [node name="Drawing Node" type="Node2D" parent="."]
 
-script/script = ExtResource( 24 )
+script/script = ExtResource( 23 )
+
+[node name="Health Bar" parent="." instance=ExtResource( 24 )]
+
+avatar_texture = ExtResource( 25 )
 
 

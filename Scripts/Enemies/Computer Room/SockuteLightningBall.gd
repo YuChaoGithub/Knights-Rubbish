@@ -21,6 +21,7 @@ var fade_out_timer = null
 var fading = false
 
 var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
+var dot = preload("res://Scenes/Utils/Change Health OT.tscn")
 
 onready var animator = get_node("AnimationPlayer")
 
@@ -54,7 +55,13 @@ func start_travel(target_pos):
 func on_attack_hit(area):
 	if area.is_in_group("player_collider"):
 		var character = area.get_node("..")
-		character.damaged_over_time(TIME_PER_TICK, TOTAL_TICKS, DAMAGE_PER_TICK)
+
+		var damage_over_time = dot.instance()
+		character.add_child(damage_over_time)
+		damage_over_time.initialize(-DAMAGE_PER_TICK, TIME_PER_TICK, TOTAL_TICKS)
+
+		character.show_ignited_particles(TIME_PER_TICK * TOTAL_TICKS)
+		
 		character.knocked_back(sign(movement_pattern.dx) * KNOCK_BACK_VEL_X, sign(movement_pattern.dy) * KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 
 		fade_out_and_queue_free()

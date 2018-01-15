@@ -53,6 +53,7 @@ var idle_timer = null
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
 func activate():
+	ec.health_bar.show_health_bar()
 	set_process(true)
 	ec.change_status(IDLE)
 	get_node("Animation/Damage Area").add_to_group("enemy_collider")
@@ -136,5 +137,5 @@ func slowed(multiplier, duration):
 
 func die():
 	ec.die()
-
+	ec.health_bar.drop_health_bar()
 	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

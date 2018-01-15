@@ -392,14 +392,49 @@ Milestone: Completed scripting all enemies in Computer Room.
 
 **Commit**
 
+[2018.01.07]
+* Completed fire particles.
+* Removed `FireParticle.gd`, use `ChangeHealthOverTime.gd` for all circumstances instead.
+
+[2018.01.08]
+* Completed boss health bar.
+* Integrated attack boost to Keshia's skills.
+
+[2018.01.09]
+* Computer Room design outline from 1-1 to 1-18.
+* Completed designing character health bar HUD.
+* Made Keshia's dart size according to shrink/giant potion.
+
+[2018.01.10]
+* Completed character health bar.
+* Reduce/Increase the knock back rate of character and character's attacks after shink/giant potion consumed.
+* Bug Fix: Disable all attack colliders of Keshia Erasia if the attack ended. (So the colliders will be off when stunned)
+* Computer Room design outline from 1-19 to 1-23.
+
+[2018.01.11]
+* Completed outlining the design of Computer Room.
+* Show "Immune" instead of "0" when inflicting 0 damage.
+
+**Commit**
+
 To Do List:
-* Burned, poisoned particle effects.
--
-* Boss health bar.
+* Update Keshia Erasia's skills.
+* Mysterious Box: Drops potion randomly. (smiley paper)
+* Ultimate ability stone.
+
+Planned Prototype Stages:
+[Ver 0.1] First level completed. (Est. May 2018)
+[Ver 0.1.1] Second character (Wendy Vista) completed.
+[Ver 0.2] Main UI completed.
 
 Polishing:
-* Slow down walking animation while slowed.
-* Jumping dust for characters.
-* Drink potion animation.
-* Status icons enlarging and gradually vanish when disappearing.
-* Attack special effects.
+* [Effect] Attack effects.
+* [Animation] Parachute on potions before landing.
+* [Animation] Radiogugu watch out skill blinks blue.
+* [Script] Slow down walking animation while slowed.
+* [Effect] Jumping dust for characters.
+* [Animation] Drink potion animation.
+* [Script] Status icons gradually vanish when disappearing.
+* [Script] Adjust damage according to player numbers.
+* [Script] Random ranged damage instead of fixed damage.
+* [Graphics] Dark level: wears mining hat.

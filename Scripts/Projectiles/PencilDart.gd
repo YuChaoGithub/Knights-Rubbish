@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
-# Which side should it travel. Should be set when instancing.
 var side
+var damage_modifier
+var size
 
 const SPEED_X = 2250
 const GRAVITY = 1200
@@ -17,9 +18,17 @@ onready var movement_pattern = preload("res://Scripts/Movements/StraightLineMove
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
 onready var sprite = get_node("Sprite")
 
+func initialize(side, damage_modifier, size):
+	self.side = side
+	self.damage_modifier = damage_modifier
+	self.size = size
+
 func _ready():
 	# Set facing.
 	sprite.set_scale(Vector2(sprite.get_scale().x * side, sprite.get_scale().y))
+
+	# Set size.
+	set_scale(get_scale() * size)
 
 	set_process(true)
 
@@ -41,7 +50,7 @@ func _process(delta):
 func on_enemy_hit(area):
 	if not already_hit and area.is_in_group("enemy_collider"):
 		# Deal damage to enemy.
-		area.get_node("../..").damaged(DAMAGE)
+		area.get_node("../..").damaged(DAMAGE * damage_modifier)
 		area.get_node("../..").slowed(0.2, 3)
 
 		# Avoid damaging multiple targets.

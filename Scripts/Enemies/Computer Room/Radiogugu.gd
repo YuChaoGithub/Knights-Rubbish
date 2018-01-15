@@ -42,7 +42,7 @@ const RANDOM_MOVEMENT_MIN_TIME_PER_STEP = 1.5
 const RANDOM_MOVEMENT_MAX_TIME_PER_STEP = 2.5
 
 # Animation.
-const DIE_ANIMATION_DURATION = 0.8
+const DIE_ANIMATION_DURATION = 1.0
 const DROP_FLOOPY_FIRST_DURATION = 1.1
 const DROP_FLOOPY_SECOND_DURATION = 0.9
 const LASER_ACTIVE_ANIMATION_DURATION = 2.5
@@ -73,6 +73,7 @@ onready var floopy_spawn_pos = get_node("Animation/Body/Floopy Spawn Pos")
 
 # Scratch.
 var scratch_anim = preload("res://Scenes/Enemies/Computer Room/Radiogugu Claw Skill.tscn")
+var dot = preload("res://Scenes/Utils/Change Health OT.tscn")
 
 # Watch Attack.
 var watch = preload("res://Scenes/Enemies/Computer Room/Radiogugu Watch Skill.tscn")
@@ -89,6 +90,7 @@ onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self
 onready var display_screen = get_node("Animation/Body/Head/Display")
 
 func activate():
+	ec.health_bar.show_health_bar()
 	ec.init_gravity_movement(GRAVITY)
 	set_process(true)
 	get_node("Animation/Damage Area").add_to_group("enemy_collider")
@@ -256,7 +258,10 @@ func scratch():
 	status_timer = ec.cd_timer.new(SCRATCH_SECOND_DURATION, self, "change_status", DROP_FLOOPY_ANIM)
 
 func apply_scratch_damage(target, knock_back_dir):
-	target.damaged_over_time(SCRATCH_INTERVAL, 2, SINGLE_SCRATCH_DAMAGE)
+	var damage_over_time = dot.instance()
+	target.add_child(damage_over_time)
+	damage_over_time.initialize(-SINGLE_SCRATCH_DAMAGE, SCRATCH_INTERVAL, 2)
+	
 	target.knocked_back(knock_back_dir * KNOCK_BACK_VEL_X, -KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 
 func play_drop_floopy_anim():
@@ -360,5 +365,6 @@ func knocked_back(vel_x, vel_y, fade_rate):
 
 func die():
 	ec.die()
+	ec.health_bar.drop_health_bar()
 	cancel_laser_sequence()
 	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

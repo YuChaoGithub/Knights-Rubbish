@@ -106,6 +106,7 @@ onready var eyeball = get_node("Animation/Screen/Eye/Eyeball")
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
 func activate():
+	ec.health_bar.show_health_bar()
 	set_process(true)
 	ec.change_status(RNG_IDLE)
 
@@ -319,3 +320,4 @@ func healed(val):
 
 func die():
 	ec.die()
+	ec.health_bar.drop_health_bar()

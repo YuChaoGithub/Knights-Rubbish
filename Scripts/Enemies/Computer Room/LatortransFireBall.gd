@@ -33,10 +33,11 @@ func on_attack_hit(area):
 		var character = area.get_node("..")
 		
 		# Damage over time.
-		var fire_particle = preload("res://Scenes/Utils/Fire Particle.tscn").instance()
-		character.add_child(fire_particle)
-		fire_particle.initialize(DAMAGE_PER_TICK, TIME_PER_TICK, TOTAL_TICKS)
-
+		var dot = preload("res://Scenes/Utils/Change Health OT.tscn").instance()
+		character.add_child(dot)
+		dot.initialize(-DAMAGE_PER_TICK, TIME_PER_TICK, TOTAL_TICKS)
+		
+		character.show_ignited_particles(TIME_PER_TICK * TOTAL_TICKS)
 		character.knocked_back(-KNOCK_BACK_VEL_X, -KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 
 		queue_free()

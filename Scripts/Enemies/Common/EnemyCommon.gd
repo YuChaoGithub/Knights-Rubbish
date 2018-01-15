@@ -211,10 +211,7 @@ func damaged(val, play_hurt_animation = true):
         hurt_timer = cd_timer.new(HURT_ANIM_DURATION, node, "resume_from_damaged")
 
     # Show health bar.
-    if health_system.health > 0:
-        health_bar.set_health_bar_and_show(float(health_system.health) / float(health_system.full_health))
-    else:
-        health_bar.queue_free()
+    health_bar.set_health_bar_and_show(float(health_system.health) / float(health_system.full_health))
 
 # NOTE that this function should be called by the node.
 func resume_from_damaged():

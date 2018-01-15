@@ -1,26 +1,26 @@
 [gd_scene load_steps=31 format=1]
 
-[ext_resource path="res://Scenes/Enemies/Computer Room/Eye Mac.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Godotbos.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Plugobra.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Enemies/Computer Room/iSnail.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Clockwork Fox.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Chromoghast.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Windy Meteory.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Cliffy.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Enemies/Computer Room/ASCII Bomber.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Enemies/Computer Room/ASCII Gunner.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Latortrans.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Enemies/Healing Fountain.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Eelo Kicker.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Eelo Puncher.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Radiogugu.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Floopy.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Laserphone.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Sockute.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Batterio.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Canmera.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Amazlet.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Godotbos.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Eye Mac.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Amazlet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Latortrans.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Radiogugu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Plugobra.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Enemies/Computer Room/iSnail.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Clockwork Fox.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Chromoghast.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Windy Meteory.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Cliffy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Enemies/Computer Room/ASCII Bomber.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Enemies/Computer Room/ASCII Gunner.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Enemies/Healing Fountain.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Eelo Kicker.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Eelo Puncher.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Floopy.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Laserphone.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Sockute.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Batterio.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Canmera.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Scenes/Enemies/Computer Room/Mouse.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scenes/Enemies/Computer Room/CD Punch.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Scenes/Enemies/Computer Room/Dark Earspider.tscn" type="PackedScene" id=24]
@@ -35,9 +35,7 @@
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Eye Mac" parent="Enemies" instance=ExtResource( 1 )]
-
-transform/pos = Vector2( 6450, -1100 )
+editor/display_folded = true
 
 [node name="Kick Left Pos" type="Position2D" parent="Enemies"]
 
@@ -51,94 +49,98 @@ transform/pos = Vector2( 3000, -500 )
 
 transform/pos = Vector2( 1750, -500 )
 
-[node name="Godotbos" parent="Enemies" instance=ExtResource( 2 )]
+[node name="Godotbos" parent="Enemies" instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 6050, -1100 )
+transform/pos = Vector2( 4000, -1150 )
 kick_right_pos_path = NodePath("../Kick Right Pos")
 kick_left_pos_path = NodePath("../Kick Left Pos")
 shoot_center_pos_path = NodePath("../Center Pos")
 
-[node name="Plugobra" parent="Enemies" instance=ExtResource( 3 )]
+[node name="Eye Mac" parent="Enemies" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 5632, -868 )
+transform/pos = Vector2( 7382, -1268 )
 
-[node name="iSnail" parent="Enemies" instance=ExtResource( 4 )]
+[node name="Amazlet" parent="Enemies" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 5300, -1200 )
+
+[node name="Latortrans" parent="Enemies" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 5282, -1218 )
+
+[node name="Radiogugu" parent="Enemies" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1500, -450 )
+
+[node name="Plugobra" parent="Enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 5650, -1200 )
+
+[node name="iSnail" parent="Enemies" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 5350, -1100 )
 
-[node name="Clockwork Fox" parent="Enemies" instance=ExtResource( 5 )]
+[node name="Clockwork Fox" parent="Enemies" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 6250, -850 )
 
-[node name="Chromoghast" parent="Enemies" instance=ExtResource( 6 )]
+[node name="Chromoghast" parent="Enemies" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 5750, -850 )
 
-[node name="Windy Meteory" parent="Enemies" instance=ExtResource( 7 )]
+[node name="Windy Meteory" parent="Enemies" instance=ExtResource( 10 )]
 
 transform/pos = Vector2( 5900, -1050 )
 
-[node name="Cliffy" parent="Enemies" instance=ExtResource( 8 )]
+[node name="Cliffy" parent="Enemies" instance=ExtResource( 11 )]
 
 transform/pos = Vector2( 6250, -1100 )
 
-[node name="ASCII Bomber" parent="Enemies" instance=ExtResource( 9 )]
+[node name="ASCII Bomber" parent="Enemies" instance=ExtResource( 12 )]
 
 transform/pos = Vector2( 5650, -800 )
 
-[node name="ASCII Gunner" parent="Enemies" instance=ExtResource( 10 )]
+[node name="ASCII Gunner" parent="Enemies" instance=ExtResource( 13 )]
 
 transform/pos = Vector2( 5600, -750 )
 
-[node name="Latortrans" parent="Enemies" instance=ExtResource( 11 )]
-
-transform/pos = Vector2( 2300, -400 )
-
-[node name="Healing Fountain" parent="Enemies" instance=ExtResource( 12 )]
+[node name="Healing Fountain" parent="Enemies" instance=ExtResource( 14 )]
 
 transform/pos = Vector2( 6500, -1100 )
 
-[node name="Eelo Kicker" parent="Enemies" instance=ExtResource( 13 )]
+[node name="Eelo Kicker" parent="Enemies" instance=ExtResource( 15 )]
 
 transform/pos = Vector2( 6400, -1350 )
 fountain_path = NodePath("../Healing Fountain")
 
-[node name="Eelo Puncher" parent="Enemies" instance=ExtResource( 14 )]
+[node name="Eelo Puncher" parent="Enemies" instance=ExtResource( 16 )]
 
 transform/pos = Vector2( 6300, -1150 )
 fountain_path = NodePath("../Healing Fountain")
 
-[node name="Radiogugu" parent="Enemies" instance=ExtResource( 15 )]
+[node name="Floopy" parent="Enemies" instance=ExtResource( 17 )]
 
-transform/pos = Vector2( 5900, -950 )
+transform/pos = Vector2( 5400, -700 )
 
-[node name="Floopy" parent="Enemies" instance=ExtResource( 16 )]
-
-transform/pos = Vector2( 6250, -1100 )
-
-[node name="Laserphone" parent="Enemies" instance=ExtResource( 17 )]
+[node name="Laserphone" parent="Enemies" instance=ExtResource( 18 )]
 
 transform/pos = Vector2( 6150, -950 )
 
-[node name="Sockute" parent="Enemies" instance=ExtResource( 18 )]
+[node name="Sockute" parent="Enemies" instance=ExtResource( 19 )]
 
 transform/pos = Vector2( 6714, -768 )
 
-[node name="Batterio" parent="Enemies" instance=ExtResource( 19 )]
+[node name="Batterio" parent="Enemies" instance=ExtResource( 20 )]
 
 transform/pos = Vector2( 6564, -668 )
 
-[node name="Canmera" parent="Enemies" instance=ExtResource( 20 )]
+[node name="Canmera" parent="Enemies" instance=ExtResource( 21 )]
 
 transform/pos = Vector2( 6600, -750 )
 
-[node name="Amazlet" parent="Enemies" instance=ExtResource( 21 )]
-
-transform/pos = Vector2( 6964, -1118 )
-
 [node name="Mouse" parent="Enemies" instance=ExtResource( 22 )]
 
-transform/pos = Vector2( 5500, -950 )
+transform/pos = Vector2( 4050, -600 )
 
 [node name="CD Punch" parent="Enemies" instance=ExtResource( 23 )]
 

@@ -38,7 +38,7 @@ func initialize(number, color, pos, node):
 
 	if number == STUNNED:
 		instance_stunned_text()
-	elif number == IMMUNE:
+	elif number == IMMUNE || number == 0:
 		instance_immune_text()
 	else:
 		instance_numbers(number)		
