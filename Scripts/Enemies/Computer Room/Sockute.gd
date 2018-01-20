@@ -65,6 +65,7 @@ func spawn_lightning_ball():
 	curr_ball = lightning_ball.instance()
 	spawn_node.add_child(curr_ball)
 	curr_ball.set_global_pos(ball_spawn_pos.get_global_pos())
+	curr_ball = weakref(curr_ball)
 
 	status_timer = cd_timer.new(SPAWNING_DURATION, self, "change_status", RECOVER)
 
@@ -78,5 +79,8 @@ func play_recover_animation():
 
 func release_lightning_ball():
 	var target_pos = target_detect.get_nearest(self, char_average_pos.characters).get_global_pos()
-	curr_ball.start_travel(target_pos)
+	
+	if curr_ball.get_ref() != null:
+		curr_ball.get_ref().start_travel(target_pos)
+
 	curr_ball = null

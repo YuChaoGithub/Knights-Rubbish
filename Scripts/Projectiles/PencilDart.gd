@@ -7,12 +7,14 @@ var size
 const SPEED_X = 2250
 const GRAVITY = 1200
 const LIFE_TIME = 0.1
+const TOTAL_LIFE_TIME = 2.0
 const DAMAGE = 20
 
 # Ensure that only one target is hit.
 var already_hit = false
 
 var lifetime_timer
+var timestamp = 0.0
 
 onready var movement_pattern = preload("res://Scripts/Movements/StraightLineMovement.gd").new(side * SPEED_X, 0)
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
@@ -45,6 +47,10 @@ func _process(delta):
 		gravity_movement.gravity = 0
 
 		lifetime_timer = preload("res://Scripts/Utils/CountdownTimer.gd").new(LIFE_TIME, self, "queue_free")
+
+	timestamp += delta
+	if timestamp >= TOTAL_LIFE_TIME:
+		queue_free()
 
 # Will be signalled when it hits an enemy.
 func on_enemy_hit(area):

@@ -15,6 +15,10 @@ func _process(delta):
 func on_area_entered(area):
 	# A character enters.
 	if area.is_in_group("player_collider"):
-		area.get_node("..").healed(heal_amount)
+		var character = area.get_node("..")
 		
-		queue_free()
+		# Won't consume the potion if the character is full health.
+		if !character.health_system.is_full_health():
+			area.get_node("..").healed(heal_amount)
+		
+			queue_free()

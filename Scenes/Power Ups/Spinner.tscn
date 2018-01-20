@@ -1,0 +1,64 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://Scripts/Power Ups/Spinner.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Powerups/Ult Ball/Spinner.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Powerups/Ult Ball/Hole.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Powerups/Ult Ball/Right Half.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Powerups/Ult Ball/Left Half.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Powerups/Ult Ball/Top Half.png" type="Texture" id=6]
+
+[node name="Spinner" type="KinematicBody2D"]
+
+input/pickable = false
+collision/layers = 0
+collision/mask = 0
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+
+[node name="Spinner" type="Sprite" parent="."]
+
+transform/pos = Vector2( -4.67944, 0.11998 )
+texture = ExtResource( 2 )
+offset = Vector2( 22.1245, -10.0885 )
+
+[node name="Hole 1" type="Sprite" parent="Spinner"]
+
+transform/pos = Vector2( 104.149, 29.977 )
+texture = ExtResource( 3 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite" type="Sprite" parent="Spinner/Hole 1"]
+
+transform/pos = Vector2( -84.3574, -23.9494 )
+texture = ExtResource( 4 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Hole 2" type="Sprite" parent="Spinner"]
+
+transform/pos = Vector2( -74.1308, 76.4607 )
+transform/rot = -116.376
+texture = ExtResource( 3 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite" type="Sprite" parent="Spinner/Hole 2"]
+
+transform/pos = Vector2( -81.5691, -25.7947 )
+transform/rot = 115.09
+texture = ExtResource( 5 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Hole 3" type="Sprite" parent="Spinner"]
+
+transform/pos = Vector2( -23.0157, -99.5769 )
+transform/rot = 122.581
+texture = ExtResource( 3 )
+modulate = Color( 0, 0, 0, 1 )
+
+[node name="Sprite" type="Sprite" parent="Spinner/Hole 3"]
+
+transform/pos = Vector2( -75.5024, -24.1137 )
+transform/rot = -124.14
+texture = ExtResource( 6 )
+modulate = Color( 0, 0, 0, 1 )
+
+

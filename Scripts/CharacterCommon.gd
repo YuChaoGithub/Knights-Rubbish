@@ -10,6 +10,11 @@ export(NodePath) var confused_icon_path
 # The amount of time (in seconds) to play idle animation.
 const TIME_TO_IDLE_ANIMATION = 5
 
+# Grabbing and dropping.
+const GRABBING_DURATION = 1.0
+const DROPPING_DURATION = 3.5
+const FALL_OFF_DAMAGE = 100
+
 const HURT_MODULATE_DURATION = 0.15
 const DAMAGE_NUMBER_COLOR = Color(255.0 / 255.0, 0.0 / 255.0, 210.0 / 255.0)
 const HEAL_NUMBER_COLOR = Color(110.0 / 255.0, 240.0 / 255.0, 15.0 / 255.0)
@@ -63,7 +68,9 @@ var status = {
 	animate_movement = true,
 	invincible = false,
 	no_movement = false,
-	confused = false
+	confused = false,
+	has_ult = false,
+	fallen_off = false
 }
 
 # Calculated in every frame. Some skills may use the value.
@@ -81,6 +88,8 @@ var speed_timer_label = 0
 var slowed_count = 0
 var speeded_count = 0
 var hurt_modulate_timer = null
+var fall_off_timer = null
+var top_fist = null
 
 # Child nodes.
 onready var collision_handler = get_node("Collision Handler")
@@ -97,9 +106,11 @@ onready var player_constants = load(player_constants_filepath)
 
 # Manages healing, damaging, dying.
 onready var health_system = preload("res://Scripts/Utils/HealthSystem.gd").new(self, player_constants.full_health)
+onready var avatar_texture = load("res://Graphics/UI/Avatar/" + player_constants.name + ".png")
 
 # Particles.
 onready var fire_particle = get_node(player_constants.fire_particle_node_path)
+onready var ult_eyes = get_node(player_constants.ult_eyes_node_path)
 
 # Damage, heal numbers indicator.
 var number_indicator = preload("res://Scenes/Utils/Numbers/Number Indicator.tscn")
@@ -139,7 +150,7 @@ func _ready():
 	char_average_pos.add_character(get_global_pos())
 
 	# Health bar.
-	health_bar.initialize(player_constants.full_health)
+	health_bar.initialize(player_constants.full_health, avatar_texture)
 
 	set_process(true)
 
@@ -182,6 +193,15 @@ func update_movement(delta):
 		if Input.is_action_pressed("player_right"):
 			horizontal_movement += (-1 if status.confused else 1)
 
+		# In fist.
+		if top_fist != null:
+			top_fist.perform_movement(horizontal_movement, delta)
+
+			var final_pos = top_fist.get_drop_pos()
+			char_average_pos.update_pos(get_global_pos(), final_pos)
+			set_global_pos(final_pos)
+			return
+ 
 		# Override the "Still" animation if the character is walking (on the ground).
 		if horizontal_movement != 0 and landed_on_ground:
 			animation_key = "Walk"
@@ -215,7 +235,13 @@ func update_movement(delta):
 	var final_pos = get_global_pos() + collision_handler.movement_after_collision(velocity * delta)
 
 	# Pass to the following camera, so that the character won't go beyond the camera.
-	final_pos = following_camera.clamp_pos_within_cam_bounds(final_pos)
+	var camera_clamped_pos = following_camera.clamp_pos_within_cam_bounds(final_pos)
+	
+	# Fall off check.
+	if !status.fallen_off && camera_clamped_pos.y < final_pos.y:
+		falls_off()
+	
+	final_pos = camera_clamped_pos
 	
 	# Update Character Average Position (so that the camera is updated).
 	char_average_pos.update_pos(get_global_pos(), final_pos)
@@ -231,6 +257,47 @@ func update_movement(delta):
 			play_animation("Idle")
 		else:
 			play_animation(animation_key)
+
+# Falls off the bottom of the screen.
+func falls_off():
+	status.fallen_off = true
+
+	following_camera.cam_lock_semaphore += 1
+
+	combo_handler.cancel_invincible_skills()
+	damaged(FALL_OFF_DAMAGE)
+
+	hide()
+	following_camera.instance_bottom_grab(get_global_pos().x)
+
+	set_status("can_move", false, GRABBING_DURATION)
+	set_status("can_cast_skill", false, GRABBING_DURATION + DROPPING_DURATION)
+	set_status("no_movement", true, GRABBING_DURATION)
+	set_status("can_jump", false, GRABBING_DURATION + DROPPING_DURATION)
+	set_status("invincible", true, GRABBING_DURATION + DROPPING_DURATION)
+
+	fall_off_timer = countdown_timer.new(GRABBING_DURATION, self, "show_fist")
+
+func show_fist():
+	top_fist = following_camera.instance_top_fist()
+	
+	fall_off_timer = countdown_timer.new(DROPPING_DURATION, self, "drop_from_fist")
+
+func drop_from_fist():
+	status.fallen_off = false
+
+	velocity = Vector2(0.0, 0.0)
+
+	following_camera.cam_lock_semaphore -= 1
+
+	top_fist.release()
+	
+	var original_z = get_z()
+	set_z(top_fist.get_z() + 1)
+	show()
+
+	top_fist = null
+	fall_off_timer = countdown_timer.new(0.5, self, "set_z", original_z)
 	
 # Perform combo by its function name.
 func check_combo_and_perform():
@@ -252,6 +319,22 @@ func check_combo_and_perform():
 	elif Input.is_action_pressed("player_attack"):
 		# Attack.
 		combo_handler.basic_attack()
+
+func gain_ult():
+	status.has_ult = true
+	health_bar.change_to_ult_theme()
+	ult_eyes.show()
+
+	for eye_path in player_constants.eyes_node_path:
+		get_node(eye_path).hide()
+
+func release_ult():
+	status.has_ult = false
+	health_bar.change_to_ordinary_theme()
+	ult_eyes.hide()
+
+	for eye_path in player_constants.eyes_node_path:
+		get_node(eye_path).show()
 
 # Configure movement related variables.
 func recalculate_horizontal_movement_variables():

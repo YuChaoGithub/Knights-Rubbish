@@ -7,16 +7,16 @@
 [node name="Part 2 Scene" type="Node2D"]
 
 script/script = ExtResource( 1 )
-cam_init_left_bound = -1000000
-cam_init_right_bound = 1000000
-cam_init_top_bound = -100000
-cam_init_bot_bound = 1000000
+cam_init_left_bound = -1e+06
+cam_init_right_bound = 1e+06
+cam_init_top_bound = -100000.0
+cam_init_bot_bound = 1e+06
 cam_init_left_margin = -0.1
 cam_init_right_margin = 0.3
 cam_init_top_margin = 0.0
 cam_init_bot_margin = 1.0
-part_to_remove = null
-part_to_instance = null
+part_to_remove = "Null"
+part_to_instance = "Null"
 
 [node name="Entry Point" type="Position2D" parent="."]
 
@@ -25,8 +25,6 @@ x_greater_than = true
 y_greater_than = false
 
 [node name="Platforms" type="Node2D" parent="."]
-
-editor/display_folded = true
 
 [node name="Wooden Platform 400x100" parent="Platforms" instance=ExtResource( 3 )]
 
@@ -39,6 +37,14 @@ transform/pos = Vector2( 600, -50 )
 [node name="Wooden Platform 400x102" parent="Platforms" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 1000, -50 )
+
+[node name="Wooden Platform 400x110" parent="Platforms" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 600, -150 )
+
+[node name="Wooden Platform 400x111" parent="Platforms" instance=ExtResource( 3 )]
+
+transform/pos = Vector2( 600, -250 )
 
 [node name="Wooden Platform 400x103" parent="Platforms" instance=ExtResource( 3 )]
 
@@ -58,14 +64,14 @@ transform/pos = Vector2( 2600, -50 )
 
 [node name="Wooden Platform 400x107" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 2800, -150 )
+transform/pos = Vector2( 3000, -50 )
 
 [node name="Wooden Platform 400x108" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 3050, -250 )
+transform/pos = Vector2( 3000, -150 )
 
 [node name="Wooden Platform 400x109" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 3250, -350 )
+transform/pos = Vector2( 3000, -250 )
 
 

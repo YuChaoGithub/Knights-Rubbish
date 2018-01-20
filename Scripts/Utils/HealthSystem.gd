@@ -19,3 +19,6 @@ func change_health_by(val):
 
     # DEBUG
     print(str(parent_node), " Health Now: ", health)
+
+func is_full_health():
+    return health == full_health

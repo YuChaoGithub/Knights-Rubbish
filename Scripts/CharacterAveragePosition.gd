@@ -34,4 +34,8 @@ func update_pos(original_pos, new_pos):
 
 # Update the following camera according to its position.
 func update_camera():
-	following_camera.check_camera_update(get_global_pos())
+	var max_y = -10000000000.0
+	for character in characters:
+		max_y = max(max_y, character.get_global_pos().y)
+
+	following_camera.check_camera_update(get_global_pos().x, max_y)

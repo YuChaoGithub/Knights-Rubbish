@@ -9,10 +9,9 @@ extents = Vector2( 199.95, 50.1181 )
 
 [node name="Wooden Platform 400x100" type="Node2D"]
 
-transform/pos = Vector2( -1.14115, 68.3408 )
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )

@@ -44,7 +44,6 @@ stretch_mode = 0
 
 [node name="Frame" type="TextureFrame" parent="Control"]
 
-editor/display_folded = true
 rect/scale = Vector2( 0.15, 0.15 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -68,6 +67,18 @@ margin/top = 45.0
 margin/right = 300.0
 margin/bottom = 295.0
 texture = ExtResource( 4 )
+stretch_mode = 0
+
+[node name="Ult Ball" type="TextureFrame" parent="Control/Frame"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 481.0
+margin/bottom = 500.0
 stretch_mode = 0
 
 [node name="Bar" type="TextureProgress" parent="Control"]

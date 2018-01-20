@@ -417,10 +417,37 @@ Milestone: Completed scripting all enemies in Computer Room.
 
 **Commit**
 
+[2018.01.15]
+* Health potion now won't be consumed if the character is in full health.
+* Added a red frame in editor for the following camera.
+* Figured out how to control (lock & unlock) the following camera.
+* Layout the platforms of 1-1 and 1-2-1.
+
+[2018.01.17]
+* Completed graphics: Character Healing Machine, Ult Ball, Mysterious Box.
+* Change Sockute lightning ball and Batterio laser to red.
+
+[2018.01.18]
+* Completed healing machine.
+* Fixed a bug of Sockute that its ball may be null when setting it to start travel.
+* Completed mysterious box.
+* Completed Ult Stone.
+
+[2018.01.19]
+* Completed "Ult Theme" of health bar and blue eyes of Keshia Erasia.
+* Completed the grabbing hand of the "drop off screen" mechanic.
+* Align the camera vertically to the lowest character instead of the average position to avoid the upper character bring the lower character to its death.
+
+[2018.01.20]
+* Completed dropping hand.
+* Added a semaphore lock for camera update so the camera could be locked when a character is performing the "drop off screen" sequence.
+* Added `cancel_invincible_skills()` to skill implementation so no matter which skill is used, health will be deducted when dropping off screen. Also, when dropping, the charater will resume movement animation.
+* Change the animation of Ult Ball (remove spinner after levitating.)
+
+**Commit**
+
 To Do List:
 * Update Keshia Erasia's skills.
-* Mysterious Box: Drops potion randomly. (smiley paper)
-* Ultimate ability stone.
 
 Planned Prototype Stages:
 [Ver 0.1] First level completed. (Est. May 2018)
@@ -429,6 +456,7 @@ Planned Prototype Stages:
 
 Polishing:
 * [Effect] Attack effects.
+* [Effect] Ult Stone particles.
 * [Animation] Parachute on potions before landing.
 * [Animation] Radiogugu watch out skill blinks blue.
 * [Script] Slow down walking animation while slowed.

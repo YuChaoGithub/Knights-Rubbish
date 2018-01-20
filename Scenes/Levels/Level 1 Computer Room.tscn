@@ -1,48 +1,40 @@
-[gd_scene load_steps=13 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Levels/Computer Room Subscenes/Part 1 Scene.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/Levels/Computer Room Subscenes/Part 2 Scene.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Levels/Computer Room Subscenes/1-1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Levels/Computer Room Subscenes/1-2-1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/CharacterAveragePosition.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/Utils/InitRandom.gd" type="Script" id=6]
-[ext_resource path="res://Scenes/Power Ups/Dwarf Potion.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Power Ups/Giant Potion.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Power Ups/HealPotion.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Power Ups/Hyper Potion.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Power Ups/Speed Potion.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Power Ups/DefensivePotion.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Power Ups/Mystery Box.tscn" type="PackedScene" id=7]
 
 [node name="Game Level" type="Node2D"]
 
 [node name="Following Camera" parent="." instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 1280, -740 )
-drag_margin_right = 0.8
+transform/pos = Vector2( 1302.77, -741.842 )
+z/z = 1
+drag_margin_right = 0.4
 drag_margin_left = 0.0
-drag_margin_bottom = 1.0
+drag_margin_top = 1.0
+drag_margin_bottom = 0.0
+left_limit = 0
+bottom_limit = 0
 
-[node name="Part 1" type="Node2D" parent="."]
+[node name="1-1" type="Node2D" parent="."]
 
-editor/display_folded = true
+[node name="Scene" parent="1-1" instance=ExtResource( 2 )]
 
-[node name="Scene" parent="Part 1" instance=ExtResource( 2 )]
-
-[node name="Part 2" type="Node2D" parent="."]
-
-transform/pos = Vector2( 3950, -300 )
-
-[node name="Scene" parent="Part 2" instance=ExtResource( 3 )]
-
-part_to_remove = NodePath("../../Part 1/Scene")
-part_to_instance = NodePath("../../Part 3/Scene")
-
-[node name="Part 3" type="Node2D" parent="."]
+[node name="1-2-1" type="Node2D" parent="."]
 
 editor/display_folded = true
-transform/pos = Vector2( 7400, -500 )
+transform/pos = Vector2( 7400, -400 )
 
-[node name="Scene" parent="Part 3" instance_placeholder="res://Scenes/Levels/Computer Room Subscenes/Part 3 Scene.tscn"]
+[node name="Part 2 Scene" parent="1-2-1" instance=ExtResource( 3 )]
+
+cam_init_right_bound = 10450.0
+cam_init_left_margin = 0.0
+cam_init_right_margin = 0.4
 
 [node name="Enemies" type="Node2D" parent="."]
 
@@ -52,34 +44,19 @@ script/script = ExtResource( 4 )
 
 [node name="Keshia Erasia" parent="." instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 587.656, -232.464 )
+transform/pos = Vector2( 602.286, -244.363 )
 
 [node name="RNG Initializer" type="Node2D" parent="."]
 
 script/script = ExtResource( 6 )
 
-[node name="Dwarf Potion" parent="." instance=ExtResource( 7 )]
+[node name="Position2D" type="Position2D" parent="."]
 
-transform/pos = Vector2( 85.4595, -253.856 )
+transform/pos = Vector2( 10450, -650 )
+transform/scale = Vector2( 10, 10 )
 
-[node name="Giant Potion" parent="." instance=ExtResource( 8 )]
+[node name="Mystery Box" parent="." instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 833.647, -143.352 )
-
-[node name="HealPotion" parent="." instance=ExtResource( 9 )]
-
-transform/pos = Vector2( 3844.72, -644.049 )
-
-[node name="Hyper Potion" parent="." instance=ExtResource( 10 )]
-
-transform/pos = Vector2( 141.165, -321.482 )
-
-[node name="Speed Potion" parent="." instance=ExtResource( 11 )]
-
-transform/pos = Vector2( 4094.92, -659.481 )
-
-[node name="DefensivePotion" parent="." instance=ExtResource( 12 )]
-
-transform/pos = Vector2( 3022.89, -653.725 )
+transform/pos = Vector2( 1946.42, -261.823 )
 
 

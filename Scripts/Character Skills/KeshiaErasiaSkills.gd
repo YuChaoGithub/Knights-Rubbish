@@ -287,3 +287,18 @@ func reset_status_from_down_skill():
 	
 func ult():
 	pass
+
+func cancel_invincible_skills():
+	# Basic Skill Falling.
+	if detecting_landing:
+		detecting_landing = false
+		character.status.invincible = false
+		character.status.animate_movement = true
+
+	# Down Skill.
+	if down_skill_timer != null:
+		down_skill_timer.time_out()
+	
+	if down_skill_can_resume:
+		down_skill_can_resume = false
+		reset_status_from_down_skill()
