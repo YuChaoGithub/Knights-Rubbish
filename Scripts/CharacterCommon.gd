@@ -15,6 +15,9 @@ const GRABBING_DURATION = 1.0
 const DROPPING_DURATION = 3.5
 const FALL_OFF_DAMAGE = 100
 
+# The actual damage taken will be 20% less or more randomly.
+const DAMAGE_TAKEN_RAND_RATIO = 0.2
+
 const HURT_MODULATE_DURATION = 0.15
 const DAMAGE_NUMBER_COLOR = Color(255.0 / 255.0, 0.0 / 255.0, 210.0 / 255.0)
 const HEAL_NUMBER_COLOR = Color(110.0 / 255.0, 240.0 / 255.0, 15.0 / 255.0)
@@ -70,13 +73,15 @@ var status = {
 	no_movement = false,
 	confused = false,
 	has_ult = false,
-	fallen_off = false
+	fallen_off = false,
+	cc_immune = false
 }
 
 # Calculated in every frame. Some skills may use the value.
 var landed_on_ground = false
 
 var countdown_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
+var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 
 # Active timers for power ups.
 # For cancelling timers for conflicting power ups/state changes.
@@ -265,7 +270,7 @@ func falls_off():
 	following_camera.cam_lock_semaphore += 1
 
 	combo_handler.cancel_invincible_skills()
-	damaged(FALL_OFF_DAMAGE)
+	damaged(FALL_OFF_DAMAGE, false)
 
 	hide()
 	following_camera.instance_bottom_grab(get_global_pos().x)
@@ -492,7 +497,7 @@ func speed_change_recover(label):
 
 func stunned(duration):
 	# Can't be stunned while invincible.
-	if status.invincible:
+	if status.invincible || status.cc_immune:
 		display_immune_text()
 		return
 
@@ -524,7 +529,7 @@ func stunned(duration):
 	play_animation("Stunned")
 
 func confused(duration):
-	if status.invincible:
+	if status.invincible || status.cc_immune:
 		display_immune_text()
 		return
 
@@ -542,20 +547,21 @@ func cancel_confused():
 	unregister_timer("confused")
 
 func knocked_back(vel_x, vel_y, x_fade_rate):
-	if status.invincible:
+	if status.invincible || status.cc_immune:
 		return
 
 	velocity_replacement_y = vel_y * self_knock_back_modifier
 	additional_speed_x = vel_x * self_knock_back_modifier
 	additional_speed_x_fading_rate = x_fade_rate * self_knock_back_modifier
 
-func damaged(val):
+func damaged(val, randomness = true):
 	if status.invincible:
 		display_immune_text()
 		return
 
 	# Apply modifier.
-	val = val * defense_modifier
+	var rand_ratio = (1.0 + rng.randf_range(-DAMAGE_TAKEN_RAND_RATIO, DAMAGE_TAKEN_RAND_RATIO)) if randomness else 1
+	val = int(val * defense_modifier * rand_ratio)
 
 	# Damaged animation (modulate color).
 	if hurt_modulate_timer == null:

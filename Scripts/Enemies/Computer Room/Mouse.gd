@@ -12,9 +12,11 @@ extends KinematicBody2D
 
 enum { NONE, MOVE, OPEN, FIRE, CLOSE }
 
-const MAX_HEALTH = 350
+signal defeated
 
-const ACTIVATE_RANGE = 1600
+const MAX_HEALTH = 250
+
+export(int) var ACTIVATE_RANGE = 1600
 
 # Movement.
 const SPEED_X = 200
@@ -129,4 +131,5 @@ func slowed_recover(label):
 
 func die():
 	ec.die()
+	emit_signal("defeated")
 	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

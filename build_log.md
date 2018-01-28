@@ -446,8 +446,32 @@ Milestone: Completed scripting all enemies in Computer Room.
 
 **Commit**
 
+[2018.01.23]
+* Adjusted the speed of Ult Ball's spinner.
+* Adjusted some of the level layouts.
+
+[2018.01.24]
+* Fixed the bug of Keshia's horizontal skill that the pencil will stuck to the wall if Keshia is standing backside near the wall.
+* Completed `CounterSignalEmitter.gd` to connect enemy elimination and camera control.
+* Fixed the bug in `EnemyCommon.gd` that shrinks the x scale to 0 when passing 0 to `turn_sprites_x(facing)`.
+* Make enemies not flipping furiously around x scale when hitting the wall.
+* Completed level design: 1-2-1 to 1-2-3.
+
+[2018.01.25]
+* Make damage done and damage taken of the characters fluctuate in a random range.
+* Decide the numeric values of Keshia Erasia's Skills.
+* Reworked Keshia's down skill (immune cc & defense boost instead of invinciblilty).
+* Completed Keshia's Ult animation.
+
+[2018.01.26]
+* Completed Keshia's Ult Skill.
+
+[2018.01.28]
+* Completed `RepeatingSpawner.gd` for repeated mob spawning. Not tested yet.
+
+**Commit**
+
 To Do List:
-* Update Keshia Erasia's skills.
 
 Planned Prototype Stages:
 [Ver 0.1] First level completed. (Est. May 2018)
@@ -464,5 +488,4 @@ Polishing:
 * [Animation] Drink potion animation.
 * [Script] Status icons gradually vanish when disappearing.
 * [Script] Adjust damage according to player numbers.
-* [Script] Random ranged damage instead of fixed damage.
 * [Graphics] Dark level: wears mining hat.

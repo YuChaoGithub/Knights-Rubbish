@@ -20,7 +20,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 82.3215, 22.2797 )
+extents = Vector2( 99.5027, 49.3213 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -3734,12 +3734,13 @@ tracks/51/keys = {
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, -0.209015, 23.4105 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -1.21582, -0.249504 )
 shapes/0/trigger = false
 collision/layers = 16
 collision/mask = 2
 collision/margin = 0.08
 script/script = ExtResource( 1 )
+ACTIVATE_RANGE = 1600
 
 [node name="Health Bar" parent="." instance=ExtResource( 2 )]
 
@@ -3747,14 +3748,13 @@ transform/pos = Vector2( 2.07376, -129.868 )
 
 [node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( -0.209015, 23.4105 )
+transform/pos = Vector2( -1.21582, -0.249504 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
 [node name="Animation" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 0, 6 )
 
 [node name="Mousy Spawn Pos" type="Position2D" parent="Animation"]
@@ -3816,7 +3816,7 @@ texture = ExtResource( 7 )
 
 [node name="Eyeball" type="Sprite" parent="Animation/Body/Eye"]
 
-transform/pos = Vector2( -2.40617, -0.277634 )
+transform/pos = Vector2( -2.80041, 1.03648 )
 texture = ExtResource( 8 )
 
 [node name="Nose" type="Sprite" parent="Animation/Body"]
@@ -3877,7 +3877,7 @@ offset = Vector2( 5.7803, 0.168934 )
 [node name="4" type="Sprite" parent="Animation/Body/Tail/1/2/3"]
 
 transform/pos = Vector2( 11.5236, 0.148762 )
-transform/rot = -12.4722
+transform/rot = 23.0557
 texture = ExtResource( 11 )
 offset = Vector2( 5.50681, 0.0473824 )
 
@@ -3896,7 +3896,7 @@ offset = Vector2( 5.02289, 0.220306 )
 [node name="7" type="Sprite" parent="Animation/Body/Tail/1/2/3/4/5/6"]
 
 transform/pos = Vector2( 11.0629, -0.00820541 )
-transform/rot = 18.4944
+transform/rot = -12.5496
 texture = ExtResource( 11 )
 offset = Vector2( 5.72639, 0.348221 )
 
@@ -3910,7 +3910,7 @@ offset = Vector2( 5.95529, 0.2701 )
 [node name="9" type="Sprite" parent="Animation/Body/Tail/1/2/3/4/5/6/7/8"]
 
 transform/pos = Vector2( 12.321, 0.167255 )
-transform/rot = 20.8047
+transform/rot = -5.72651
 texture = ExtResource( 11 )
 offset = Vector2( 5.95531, 0.158596 )
 

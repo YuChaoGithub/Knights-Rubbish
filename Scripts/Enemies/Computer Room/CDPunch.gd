@@ -10,9 +10,11 @@ extends KinematicBody2D
 
 enum { NONE, SEARCH, MOVE, ATTACK }
 
+signal defeated
+
 const MAX_HEALTH = 200
 
-const ACTIVATE_RANGE = 1000
+export(int) var ACTIVATE_RANGE = 1000
 
 # Attack.
 const ATTACK_RANGE_X = 350
@@ -139,6 +141,7 @@ func knocked_back(vel_x, vel_y, fade_rate):
 # Called when health drops below 0.
 func die():
     ec.die()
+    emit_signal("defeated")
     status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
 
 func healed(val):

@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 const GRAVITY = 800
-const SPEED_X = 2000
-const SPEED_Y = 800
+const SPEED_X = 750
+const SPEED_Y = 1500
 const TO_SCALE = 0.1
 const SMOOTH = 0.3
 

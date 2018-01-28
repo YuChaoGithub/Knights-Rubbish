@@ -105,14 +105,14 @@ func perform_random_movement(delta):
         node.call(random_movement_ended_func)
         discard_random_movement()
     else:
-        var origin_pos = node.get_global_pos()
+        var original_pos = node.get_global_pos()
 
         if is_kinematic_body:
             node.move_to(random_movement.movement(node.get_global_pos(), delta))
         else:
             node.set_global_pos(random_movement.movement(node.get_global_pos(), delta))
         
-        node.call(random_movement_not_ended_func, sign(node.get_global_pos().x - origin_pos.x))
+        node.call(random_movement_not_ended_func, sign(int(node.get_global_pos().x) - int(original_pos.x)))
 
 func discard_random_movement():
     random_movement = null
@@ -128,7 +128,8 @@ func play_animation_and_diable_others(key):
     animator.play(key)
 
 func turn_sprites_x(facing):
-    sprites.set_scale(Vector2(-1 * abs(sprites.get_scale().x) * facing, sprites.get_scale().y))
+    if facing != 0:
+        sprites.set_scale(Vector2(-1 * abs(sprites.get_scale().x) * facing, sprites.get_scale().y))
 
 func not_hurt_dying_stunned():
     var key = animator.get_current_animation()

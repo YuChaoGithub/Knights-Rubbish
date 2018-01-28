@@ -1,18 +1,19 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Levels/Computer Room Subscenes/1-1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Levels/Computer Room Subscenes/1-2-1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scripts/CharacterAveragePosition.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scripts/Utils/InitRandom.gd" type="Script" id=6]
-[ext_resource path="res://Scenes/Power Ups/Mystery Box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Levels/Computer Room Subscenes/1-2-2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Levels/Computer Room Subscenes/1-2-3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/CharacterAveragePosition.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/Utils/InitRandom.gd" type="Script" id=8]
 
 [node name="Game Level" type="Node2D"]
 
 [node name="Following Camera" parent="." instance=ExtResource( 1 )]
 
-transform/pos = Vector2( 1302.77, -741.842 )
+transform/pos = Vector2( 5082, -768 )
 z/z = 1
 drag_margin_right = 0.4
 drag_margin_left = 0.0
@@ -27,36 +28,55 @@ bottom_limit = 0
 
 [node name="1-2-1" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 7400, -400 )
 
-[node name="Part 2 Scene" parent="1-2-1" instance=ExtResource( 3 )]
+[node name="Scene" parent="1-2-1" instance=ExtResource( 3 )]
 
-cam_init_right_bound = 10450.0
+cam_init_left_bound = -1000000000
+cam_init_right_bound = 10500
+cam_init_top_bound = -1000000000
+cam_init_bot_bound = 1000000000
 cam_init_left_margin = 0.0
 cam_init_right_margin = 0.4
+
+[node name="1-2-2" type="Node2D" parent="."]
+
+transform/pos = Vector2( 10600, -100 )
+
+[node name="Scene" parent="1-2-2" instance=ExtResource( 4 )]
+
+cam_init_left_bound = 10200
+cam_init_right_bound = 14000
+cam_init_left_margin = 0.3
+cam_init_right_margin = 0.7
+
+[node name="1-2-3" type="Node2D" parent="."]
+
+editor/display_folded = true
+transform/pos = Vector2( 14200, -100 )
+
+[node name="Scene" parent="1-2-3" instance=ExtResource( 5 )]
+
+cam_init_right_bound = 17050
+cam_init_right_margin = 0.5
 
 [node name="Enemies" type="Node2D" parent="."]
 
 [node name="Character Average Position" type="Position2D" parent="."]
 
-script/script = ExtResource( 4 )
+script/script = ExtResource( 6 )
 
-[node name="Keshia Erasia" parent="." instance=ExtResource( 5 )]
+[node name="Keshia Erasia" parent="." instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 602.286, -244.363 )
+transform/pos = Vector2( 5100, -750 )
 
 [node name="RNG Initializer" type="Node2D" parent="."]
 
-script/script = ExtResource( 6 )
+script/script = ExtResource( 8 )
 
 [node name="Position2D" type="Position2D" parent="."]
 
-transform/pos = Vector2( 10450, -650 )
+transform/pos = Vector2( 10200, -550 )
 transform/scale = Vector2( 10, 10 )
-
-[node name="Mystery Box" parent="." instance=ExtResource( 7 )]
-
-transform/pos = Vector2( 1946.42, -261.823 )
 
 

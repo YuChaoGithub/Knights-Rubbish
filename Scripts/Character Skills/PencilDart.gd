@@ -8,7 +8,11 @@ const SPEED_X = 2250
 const GRAVITY = 1200
 const LIFE_TIME = 0.1
 const TOTAL_LIFE_TIME = 2.0
-const DAMAGE = 20
+const DAMAGE_INIT = 40
+const DAMAGE_FINAL = 20
+const DAMAGE_SCALE_TIME = 0.5
+
+var damage
 
 # Ensure that only one target is hit.
 var already_hit = false
@@ -24,6 +28,7 @@ func initialize(side, damage_modifier, size):
 	self.side = side
 	self.damage_modifier = damage_modifier
 	self.size = size
+	damage = DAMAGE_INIT
 
 func _ready():
 	# Set facing.
@@ -49,6 +54,9 @@ func _process(delta):
 		lifetime_timer = preload("res://Scripts/Utils/CountdownTimer.gd").new(LIFE_TIME, self, "queue_free")
 
 	timestamp += delta
+
+	damage = lerp(DAMAGE_INIT, DAMAGE_FINAL, timestamp / DAMAGE_SCALE_TIME)
+
 	if timestamp >= TOTAL_LIFE_TIME:
 		queue_free()
 
@@ -56,8 +64,7 @@ func _process(delta):
 func on_enemy_hit(area):
 	if not already_hit and area.is_in_group("enemy_collider"):
 		# Deal damage to enemy.
-		area.get_node("../..").damaged(DAMAGE * damage_modifier)
-		area.get_node("../..").slowed(0.2, 3)
+		area.get_node("../..").damaged(damage * damage_modifier)
 
 		# Avoid damaging multiple targets.
 		already_hit = true

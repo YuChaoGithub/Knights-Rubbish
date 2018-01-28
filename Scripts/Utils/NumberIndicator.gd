@@ -51,6 +51,10 @@ func initialize(number, color, pos, node):
 	set_process(true)
 
 func instance_numbers(number):
+	# Only 3 digits are allowed.
+	if number > 999:
+		number = 999
+
 	while number > 0:
 		var new_num = number_scenes[int(number) % 10].instance()
 		number_instances.push_back(new_num)

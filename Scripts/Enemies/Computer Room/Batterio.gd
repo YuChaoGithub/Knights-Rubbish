@@ -81,6 +81,7 @@ func attack_collider_off_sequence():
 func end_attack_collider_sequence():
 	laser_timer.destroy_timer()
 	laser_timer = null
+	attack_collider.set_collision_mask(0)
 
 func on_attack_hit(area):
 	if area.is_in_group("player_collider"):

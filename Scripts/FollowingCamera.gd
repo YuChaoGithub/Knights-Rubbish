@@ -13,10 +13,10 @@ export(float) var drag_margin_top = 0.5
 export(float) var drag_margin_bottom = 0.8
 
 # Max/Min limits of the camera position (+ margin).
-export(float) var right_limit = 10000000000.0
-export(float) var left_limit = -10000000000.0
-export(float) var top_limit = -10000000000.0
-export(float) var bottom_limit = 10000000000.0
+export(int, -1000000000, 1000000000) var right_limit = 1000000000
+export(int, -1000000000, 1000000000) var left_limit = -1000000000
+export(int, -1000000000, 1000000000) var top_limit = -1000000000
+export(int, -1000000000, 1000000000) var bottom_limit = 10000000000
 
 var cam_width
 var cam_height

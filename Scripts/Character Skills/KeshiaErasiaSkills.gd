@@ -3,15 +3,21 @@ extends Node2D
 # Constants for skills.
 const BASIC_ATTACK_DURATION = 0.8
 const BASIC_ATTACK_COOLDOWN = 0.15
-const BASIC_ATTACK_DAMAGE = 29
-const BASIC_ATTACK_KNOCK_BACK_VEL_X = 500
-const BASIC_ATTACK_KNOCK_BACK_VEL_Y = 0
+const BASIC_ATTACK_DAMAGE_MIN = 20
+const BASIC_ATTACK_DAMAGE_MAX = 35
+const BASIC_ATTACK_KNOCK_BACK_VEL_X = 400
+const BASIC_ATTACK_KNOCK_BACK_VEL_Y = 50
 const BASIC_ATTACK_KNOCK_BACK_FADE_RATE = 1000
 
 const BASIC_SKILL_HOP_DURATION = 0.6
 const BASIC_SKILL_LAND_DURATION = 0.25
 const BASIC_SKILL_HIT_BOX_DURATION = 0.1
 const BASIC_SKILL_COOLDOWN = 0.1
+const BASIC_SKILL_DAMAGE_MIN = 10
+const BASIC_SKILL_DAMAGE_MAX = 15
+const BASIC_SKILL_KNOCK_BACK_VEL_X = 800
+const BASIC_SKILL_KNOCK_BACK_VEL_Y = 50
+const BASIC_SKILL_KNOCK_BACK_FADE_RATE = 1200
 const BASIC_SKILL_STUN_DURATION = 2
 
 const HORIZONTAL_SKILL_DURATION = 0.8
@@ -22,12 +28,17 @@ const UP_SKILL_DURATION = 0.7
 const UP_SKILL_COOLDOWN = 0.2
 const UP_SKILL_LANDED_DETECTION_DELAY = 0.05
 const UP_SKILL_VELOCITY = -850
-const UP_SKILL_DAMAGE = 211
+const UP_SKILL_DAMAGE_MIN = 10
+const UP_SKILL_DAMAGE_MAX = 25
 
 const DOWN_SKILL_DURATION = 0.6
 const DOWN_SKILL_RESUME_COOLDOWN = 0.2
 const DOWN_SKILL_RESUME_DURATION = 0.4
 const DOWN_SKILL_COOLDOWN = 0.15
+const DOWN_SKILL_DEFENSE_MODIFIER = 0.3
+
+const ULT_TOTAL_DURATION = 4.5
+const ULT_FIRE_TIME = 3.9
 
 # To get the can_move/can_cast_skill variables.
 onready var character = get_node("..")
@@ -54,7 +65,11 @@ var up_skill_cast_timestamp = 0
 var down_skill_can_resume = false
 var down_skill_timer = null
 
-var hit_box_timer = null
+# Ult.
+var ult_eraser = preload("res://Scenes/Characters/Keshia Erasia/Keshia Ult Eraser.tscn")
+var ult_timer = null
+
+var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 
 func _ready():
 	set_process(true)
@@ -110,7 +125,8 @@ func on_basic_attack_hit(area):
 	if area.is_in_group("enemy_collider"):
 		# Damage the enemy.
 		var enemy_node = area.get_node("../..")
-		enemy_node.damaged(BASIC_ATTACK_DAMAGE * character.damage_modifier)
+		var damage = rng.randi_range(BASIC_ATTACK_DAMAGE_MIN, BASIC_ATTACK_DAMAGE_MAX)
+		enemy_node.damaged(damage * character.damage_modifier)
 		enemy_node.knocked_back(sign(enemy_node.get_global_pos().x - get_global_pos().x) * BASIC_ATTACK_KNOCK_BACK_VEL_X * character.enemy_knock_back_modifier,-BASIC_ATTACK_KNOCK_BACK_VEL_Y * character.enemy_knock_back_modifier, BASIC_ATTACK_KNOCK_BACK_FADE_RATE * character.enemy_knock_back_modifier)
 
 # ===========
@@ -163,8 +179,11 @@ func basic_skill_strikes():
 # Will be signalled by the hit box when an enemy gets into it.
 func on_basic_skill_hit(area):
 	if area.is_in_group("enemy_collider"):
-		# Stun the enemy.
-		area.get_node("../..").stunned(BASIC_SKILL_STUN_DURATION)
+		var enemy = area.get_node("../..")
+		var damage = rng.randi_range(BASIC_SKILL_DAMAGE_MIN, BASIC_SKILL_DAMAGE_MAX)
+		enemy.damaged(damage * character.damage_modifier)
+		enemy.stunned(BASIC_SKILL_STUN_DURATION)
+		enemy.knocked_back(sign(enemy.get_global_pos().x - get_global_pos().x) * BASIC_SKILL_KNOCK_BACK_VEL_X * character.enemy_knock_back_modifier,-BASIC_SKILL_KNOCK_BACK_VEL_Y * character.enemy_knock_back_modifier, BASIC_SKILL_KNOCK_BACK_FADE_RATE * character.enemy_knock_back_modifier)		
 
 # ================
 # Horizontal Skill: Short range poke. (toss the pencil).
@@ -239,7 +258,8 @@ func on_up_skill_hit(area):
 	if area.is_in_group("enemy_collider"):
 		# Can't hit the same object twice.
 		if !(area in up_skill_targets):
-			area.get_node("../..").damaged(UP_SKILL_DAMAGE * character.damage_modifier)
+			var damage = rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX)
+			area.get_node("../..").damaged(damage * character.damage_modifier)
 			up_skill_targets.push_back(area)
 	
 # ==========
@@ -252,9 +272,10 @@ func down_skill():
 
 		# Set character status timer.
 		character.status.can_move = false
-		character.status.invincible = true
+		character.status.cc_immune = true
 		character.status.animate_movement = false
 		character.status.can_cast_skill = false
+		character.defense_modifier *= DOWN_SKILL_DEFENSE_MODIFIER
 
 		# Can resume after the timer is up.
 		down_skill_timer = countdown_timer.new(DOWN_SKILL_DURATION + DOWN_SKILL_RESUME_COOLDOWN, self, "set_down_skill_can_resume")
@@ -281,12 +302,37 @@ func resume_from_down_skill():
 
 func reset_status_from_down_skill():
 	character.status.can_move = true
-	character.status.invincible = false
+	character.status.cc_immune = false
 	character.status.animate_movement = true
+	character.defense_modifier /= DOWN_SKILL_DEFENSE_MODIFIER
 	down_skill_timer = null
 	
 func ult():
-	pass
+	if character.status.can_move && character.status.can_cast_skill && character.status.has_ult:
+		character.status.has_ult = false
+
+		character.set_status("can_move", false, ULT_TOTAL_DURATION)
+		character.set_status("can_jump", false, ULT_TOTAL_DURATION)
+		character.set_status("can_cast_skill", false, ULT_TOTAL_DURATION)
+		character.set_status("animate_movement", false, ULT_TOTAL_DURATION)
+		character.set_status("invincible", true, ULT_TOTAL_DURATION)
+		character.set_status("no_movement", true, ULT_TOTAL_DURATION)
+
+		character.get_node("Keshia Ult/AnimationPlayer").play("Forming Circle")
+		character.play_animation("Ult")
+
+		ult_timer = countdown_timer.new(ULT_FIRE_TIME, self, "fire_ult")
+
+func fire_ult():
+	character.release_ult()
+	character.get_node("Ult Hit Box").set_global_pos(character.following_camera.get_global_pos())
+
+func ult_hit(area):
+	if area.is_in_group("enemy_collider"):
+		var new_eraser = ult_eraser.instance()
+		new_eraser.initialize(character.get_global_pos(), area.get_node("../.."))
+		character.get_node("..").add_child(new_eraser)
+		new_eraser.set_global_pos(character.get_global_pos())
 
 func cancel_invincible_skills():
 	# Basic Skill Falling.

@@ -1,10 +1,10 @@
 extends Node2D
 
 # The limits which will be set to the camera upon the characters arriving the level part.
-export(float) var cam_init_left_bound = -10000000000.0
-export(float) var cam_init_right_bound = 10000000000.0
-export(float) var cam_init_top_bound = -10000000000.0
-export(float) var cam_init_bot_bound = 10000000000.0
+export(int, -1000000000, 1000000000) var cam_init_left_bound = -1000000000
+export(int, -1000000000, 1000000000) var cam_init_right_bound = 1000000000
+export(int, -1000000000, 1000000000) var cam_init_top_bound = -1000000000
+export(int, -1000000000, 1000000000) var cam_init_bot_bound = 1000000000
 
 # The margins which will be set to the camera upon the characters arriving the level part.
 export(float) var cam_init_left_margin = 0.0
@@ -44,12 +44,12 @@ func update_left_bound(val):
     following_camera.left_limit = val
 
 func update_right_bound(val):
-    following_camera.right_limt = val
+    following_camera.right_limit = val
 
 func update_top_bound(val):
     following_camera.top_limit = val
 
-func update_bottom_bount(val):
+func update_bottom_bound(val):
     following_camera.bottom_limit = val
 
 func update_left_margin(val):
