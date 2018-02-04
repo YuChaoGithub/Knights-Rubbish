@@ -25,6 +25,7 @@ func being_hit():
 		return
 
 	if spinner.hit_and_check_if_complete():
+		get_node("Damage Area").queue_free()
 		start_travel = true
 		set_process(true)
 		timer = cd_timer.new(SHOOT_DURATION, self, "pause_in_air")

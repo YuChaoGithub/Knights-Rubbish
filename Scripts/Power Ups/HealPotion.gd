@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-export(int) var heal_amount = 150
+export(int) var heal_amount = 100
 
 const GRAVITY = 600
 

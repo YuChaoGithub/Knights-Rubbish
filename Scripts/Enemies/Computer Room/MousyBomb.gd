@@ -5,7 +5,7 @@ const SPEED_X = 500
 const GRAVITY = 500
 
 # Attack.
-const DAMAGE = 20
+const DAMAGE = 10
 const KNOCK_BACK_VEL_X = 500
 const KNOCK_BACK_FADE_RATE = 1250
 const KNOCK_BACK_VEL_Y = 500

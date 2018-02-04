@@ -36,10 +36,11 @@ onready var screen_size = get_viewport_rect().size
 
 func _draw():
 	if get_tree().is_editor_hint():
-		draw_line(Vector2(-cam_width * 0.5, -cam_height * 0.5), Vector2(-cam_width * 0.5, cam_height * 0.5), Color(1.0, 0.0, 0.0), 1)
-		draw_line(Vector2(cam_width * 0.5, -cam_height * 0.5), Vector2(cam_width * 0.5, cam_height * 0.5), Color(1.0, 0.0, 0.0), 1)
-		draw_line(Vector2(-cam_width * 0.5, -cam_height * 0.5), Vector2(cam_width * 0.5, -cam_height * 0.5), Color(1.0, 0.0, 0.0), 1)
-		draw_line(Vector2(-cam_width * 0.5, cam_height * 0.5), Vector2(cam_width * 0.5, cam_height * 0.5), Color(1.0, 0.0, 0.0), 1)
+		for i in [0.1, 0.2, 0.3, 0.4, 0.5]:
+			draw_line(Vector2(-cam_width * i, -cam_height * 0.5), Vector2(-cam_width * i, cam_height * 0.5), Color(1.0, 0.0, 0.0), 1)
+			draw_line(Vector2(cam_width * i, -cam_height * 0.5), Vector2(cam_width * i, cam_height * 0.5), Color(1.0, 0.0, 0.0), 1)
+			draw_line(Vector2(-cam_width * 0.5, -cam_height * i), Vector2(cam_width * 0.5, -cam_height * i), Color(1.0, 0.0, 0.0), 1)
+			draw_line(Vector2(-cam_width * 0.5, cam_height * i), Vector2(cam_width * 0.5, cam_height * i), Color(1.0, 0.0, 0.0), 1)
 
 func _ready():
 	cam_width = screen_size.x * ZOOM_FACTOR

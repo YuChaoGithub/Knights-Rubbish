@@ -19,7 +19,7 @@ export(int) var ACTIVATE_RANGE = 1000
 # Attack.
 const ATTACK_RANGE_X = 350
 const ATTACK_RANGE_Y = 200
-const ATTACK_DAMAGE = 10
+const ATTACK_DAMAGE = 6
 const KNOCK_BACK_VEL_X = 750
 const KNOCK_BACK_FADE_RATE = 1500
 const KNOCK_BACK_VEL_Y = 0
@@ -46,6 +46,7 @@ onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self
 func activate():
     ec.init_gravity_movement(GRAVITY)
     ec.init_straight_line_movement(facing * SPEED_X, 0)
+    attack_target = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
     set_process(true)
     ec.change_status(SEARCH)
     get_node("Animation/Damage Area").add_to_group("enemy_collider")

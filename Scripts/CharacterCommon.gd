@@ -269,7 +269,7 @@ func falls_off():
 
 	following_camera.cam_lock_semaphore += 1
 
-	combo_handler.cancel_invincible_skills()
+	combo_handler.cancel_skills_when_falling_off()
 	damaged(FALL_OFF_DAMAGE, false)
 
 	hide()

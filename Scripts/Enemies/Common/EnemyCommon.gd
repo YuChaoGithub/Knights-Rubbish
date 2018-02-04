@@ -23,6 +23,8 @@ var sprites
 var is_kinematic_body
 var slowed_label
 
+var fade_in_timer = null
+
 var knock_back_fade_rate = 0
 var knock_back_dx = 0
 var knock_back_dy = 0
@@ -181,6 +183,10 @@ func knocked_back(vel_x, vel_y, fade_rate):
     knock_back_dx = vel_x
     knock_back_dy = vel_y
     knock_back_fade_rate = fade_rate
+
+    # Reset gravity movement for knocking up.
+    if gravity_movement != null:
+        gravity_movement.dy = 0
 
 func perform_knock_back_movement(delta):
     knock_back_dx = sign(knock_back_dx) * max(0, abs(knock_back_dx) - abs(delta * knock_back_fade_rate))

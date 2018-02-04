@@ -8,11 +8,13 @@ extends KinematicBody2D
 # ===
 # When hurt or stunned, go to 3.
 
+signal defeated
+
 enum { NONE, MOVE, PUNCH, INIT_FLEE, FLEE }
 
 const MAX_HEALTH = 150
 
-const ACTIVATE_RANGE = 1500
+export(int) var ACTIVATE_RANGE = 1500
 
 # Attack.
 const ATTACK_RANGE_X = 150
@@ -21,10 +23,10 @@ const DAMAGE = 30
 const KNOCK_BACK_VEL_X = 800
 const KNOCK_BACK_FADE_RATE = 1400
 const KNOCK_BACK_VEL_Y = 0
-const STUN_DURATION = 1.25
+const STUN_DURATION = 0.75
 
 # Movement.
-const SPEED_X = 400
+const SPEED_X = 300
 const FLEE_SPEED_X = 600
 const GRAVITY = 600
 const TURN_STAGGER_MIN_DELAY = 0.5
@@ -48,10 +50,11 @@ var green_body_texture = preload("res://Graphics/Enemies/Computer Room/Floopy/gr
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
-func activate():
+func _ready():
 	if ec.rng.randsign() == 1:
 		get_node("Animation/Body").set_texture(green_body_texture)
-	
+
+func activate():
 	ec.init_gravity_movement(GRAVITY)
 	ec.init_straight_line_movement(facing * SPEED_X, 0)
 	
@@ -180,5 +183,6 @@ func slowed_recover(label):
 	ec.slowed_recover(label)
 
 func die():
+	emit_signal("defeated")
 	ec.die()
 	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

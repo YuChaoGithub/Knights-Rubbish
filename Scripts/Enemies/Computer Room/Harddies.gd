@@ -39,7 +39,7 @@ const STONED_DIE_ANIMATION_DURATION = 0.5
 const TOSS_ANIM_DURATION = 2.0
 const STONED_ANIM_DURATION = 1.0
 
-const PLATFORM_COLLISION_LAYER = 2
+const PLATFORM_COLLISION_LAYER = 512
 
 var attack_target = null
 var status_timer = null

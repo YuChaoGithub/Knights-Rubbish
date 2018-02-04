@@ -1,153 +1,141 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scripts/LevelPartCommon.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/LevelPartEntryPoint.gd" type="Script" id=2]
-[ext_resource path="res://Scenes/Enemies/Computer Room/CD Punch.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/Platforms/Wooden Platform 400x100.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Power Ups/HealPotion.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Enemies/Computer Room/CD Punch.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Platforms/Wooden Platform 400x100.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Power Ups/HealPotion.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=5]
 
 [node name="1-2-2" type="Node2D"]
 
-script/script = ExtResource( 1 )
-cam_init_left_bound = -1000000000
-cam_init_right_bound = 1000000000
-cam_init_top_bound = -1000000000
-cam_init_bot_bound = 1000000000
-cam_init_left_margin = 0.0
-cam_init_right_margin = 1.0
-cam_init_top_margin = 0.0
-cam_init_bot_margin = 1.0
-part_to_remove = "Null"
-part_to_instance = "Null"
-
-[node name="Entry Point" type="Position2D" parent="."]
-
-script/script = ExtResource( 2 )
-x_greater_than = true
-y_greater_than = false
+script = ExtResource( 1 )
 
 [node name="Backgrounds" type="Node2D" parent="."]
 
+
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="CD Punch" parent="Enemies" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1200, -250 )
+[node name="CD Punch" parent="Enemies" instance=ExtResource( 2 )]
+
+position = Vector2( 1200, -250 )
 ACTIVATE_RANGE = 1000
 
-[node name="CD Punch 2" parent="Enemies" instance=ExtResource( 3 )]
+[node name="CD Punch 2" parent="Enemies" instance=ExtResource( 2 )]
 
-transform/pos = Vector2( 2350, -250 )
+position = Vector2( 2350, -250 )
 ACTIVATE_RANGE = 2150
 
 [node name="Platforms" type="Node2D" parent="."]
 
 editor/display_folded = true
 
-[node name="Wooden Platform 400x100" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x100" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 200, -450 )
+position = Vector2( 200, -450 )
 
-[node name="Wooden Platform 400x105" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x105" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 200, -550 )
+position = Vector2( 200, -550 )
 
-[node name="Wooden Platform 400x106" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x106" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 600, -50 )
+position = Vector2( 600, -50 )
 
-[node name="Wooden Platform 400x107" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x107" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1000, -50 )
+position = Vector2( 1000, -50 )
 
-[node name="Wooden Platform 400x108" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x108" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1400, -50 )
+position = Vector2( 1400, -50 )
 
-[node name="Wooden Platform 400x109" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x109" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 1800, -50 )
+position = Vector2( 1800, -50 )
 
-[node name="Wooden Platform 400x110" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x110" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 2200, -50 )
+position = Vector2( 2200, -50 )
 
-[node name="Wooden Platform 400x111" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x111" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 2600, -50 )
+position = Vector2( 2600, -50 )
 
-[node name="Wooden Platform 400x112" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x112" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 3000, -50 )
+position = Vector2( 3000, -50 )
 
-[node name="Wooden Platform 400x113" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x113" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 3000, -150 )
+position = Vector2( 3000, -150 )
 
-[node name="Wooden Platform 400x114" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x114" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 3000, -250 )
+position = Vector2( 3000, -250 )
 
-[node name="Wooden Platform 400x115" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x115" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 3400, -250 )
+position = Vector2( 3400, -250 )
 
-[node name="Wooden Platform 400x116" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x116" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 3400, -150 )
+position = Vector2( 3400, -150 )
 
-[node name="Wooden Platform 400x117" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x117" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 3400, -50 )
+position = Vector2( 3400, -50 )
 
-[node name="Wooden Platform 400x118" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x118" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 3400, -350 )
+position = Vector2( 3400, -350 )
 
-[node name="Wooden Platform 400x119" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x119" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 3400, -450 )
+position = Vector2( 3400, -450 )
 
-[node name="Wooden Platform 400x101" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x101" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 200, -350 )
+position = Vector2( 200, -350 )
 
-[node name="Wooden Platform 400x102" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x102" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 200, -250 )
+position = Vector2( 200, -250 )
 
-[node name="Wooden Platform 400x103" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x103" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 200, -150 )
+position = Vector2( 200, -150 )
 
-[node name="Wooden Platform 400x104" parent="Platforms" instance=ExtResource( 4 )]
+[node name="Wooden Platform 400x104" parent="Platforms" instance=ExtResource( 3 )]
 
-transform/pos = Vector2( 200, -50 )
+position = Vector2( 200, -50 )
 
 [node name="Power Ups" type="Node2D" parent="."]
 
-[node name="HealPotion" parent="Power Ups" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 3050, -350 )
+[node name="HealPotion" parent="Power Ups" instance=ExtResource( 4 )]
 
-[node name="HealPotion1" parent="Power Ups" instance=ExtResource( 5 )]
+position = Vector2( 3050, -350 )
 
-transform/pos = Vector2( 3350, -550 )
+[node name="HealPotion1" parent="Power Ups" instance=ExtResource( 4 )]
+
+position = Vector2( 3350, -550 )
 
 [node name="Camera Margin Updater" type="Node2D" parent="."]
 
-script/script = ExtResource( 6 )
+script = ExtResource( 5 )
 count_to_emit = 2
 
-[connection signal="defeated" from="Enemies/CD Punch" to="Camera Margin Updater" method="increment_count"]
+[connection signal="defeated"  from="Enemies/CD Punch"  to="Camera Margin Updater" method="increment_count" binds=[  ]]
 
-[connection signal="defeated" from="Enemies/CD Punch 2" to="Camera Margin Updater" method="increment_count"]
+[connection signal="defeated"  from="Enemies/CD Punch 2"  to="Camera Margin Updater" method="increment_count" binds=[  ]]
 
-[connection signal="count_reached" from="Camera Margin Updater" to="." method="update_right_bound" binds= [ 1000000000 ]]
+[connection signal="count_reached"  from="Camera Margin Updater"  to="." method="instance_level_part" binds=[ "1-2-3" ]]
 
-[connection signal="count_reached" from="Camera Margin Updater" to="." method="update_left_margin" binds= [ 0.0 ]]
+[connection signal="count_reached"  from="Camera Margin Updater"  to="." method="remove_level_part" binds=[ "1-2-1" ]]
 
-[connection signal="count_reached" from="Camera Margin Updater" to="." method="update_right_margin" binds= [ 0.5 ]]
+[connection signal="count_reached"  from="Camera Margin Updater"  to="." method="update_right_bound" binds=[ 17000 ]]
 
+[connection signal="count_reached"  from="Camera Margin Updater"  to="." method="update_left_margin" binds=[ 0.0 ]]
 
+[connection signal="count_reached"  from="Camera Margin Updater"  to="." method="update_right_margin" binds=[ 0.5 ]]

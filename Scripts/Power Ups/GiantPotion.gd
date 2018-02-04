@@ -6,7 +6,7 @@ const DAMAGE_MODIFIER = 1.5
 const DEFENSE_MODIFIER = 0.75
 const SELF_KNOCK_BACK_MODIFIER = 0.5
 const ENEMY_KNOCK_BACK_MODIFIER = 2.0
-const DURATION = 5.0
+const DURATION = 15.0
 
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
 

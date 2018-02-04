@@ -1,15 +1,13 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Graphics/Enemies/Computer Room/Flaggomine/Red Flag.png" type="Texture" id=1]
 
 [node name="Flaggomine Red Flag" type="Node2D"]
 
-transform/pos = Vector2( 450, -50 )
+position = Vector2( 450, -50 )
 
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/pos = Vector2( 0, -12.6625 )
-transform/scale = Vector2( 2.5, 2.5 )
+position = Vector2( 0, -12.6625 )
+scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 1 )
-
-

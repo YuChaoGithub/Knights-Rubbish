@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/ParanoidAndroid.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Robot Spawn/Robot Body.png" type="Texture" id=2]
@@ -25,72 +25,72 @@ length = 0.2
 loop = false
 step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body:modulate")
+tracks/0/path = NodePath("Body:self_modulate")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0, 0.15 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body/Head:modulate")
+tracks/1/path = NodePath("Body/Head:self_modulate")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0, 0.15 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/Head/Hat:modulate")
+tracks/2/path = NodePath("Body/Head/Hat:self_modulate")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0, 0.15 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/Legs:modulate")
+tracks/3/path = NodePath("Body/Legs:self_modulate")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0, 0.15 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/Explosion/1:visibility/visible")
+tracks/4/path = NodePath("Body/Explosion/1:visible")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0, 0.05, 0.1 ),
-"transitions": FloatArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/Explosion/2:visibility/visible")
+tracks/5/path = NodePath("Body/Explosion/2:visible")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0, 0.1, 0.15 ),
-"transitions": FloatArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.15 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/Explosion/3:visibility/visible")
+tracks/6/path = NodePath("Body/Explosion/3:visible")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0, 0.15 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
@@ -101,72 +101,72 @@ length = 0.4
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body:modulate")
+tracks/0/path = NodePath("Body:self_modulate")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0, 0.2 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body/Head:modulate")
+tracks/1/path = NodePath("Body/Head:self_modulate")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0, 0.2 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/Head/Hat:modulate")
+tracks/2/path = NodePath("Body/Head/Hat:self_modulate")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0, 0.2 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/Legs:modulate")
+tracks/3/path = NodePath("Body/Legs:self_modulate")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0, 0.2 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/Explosion/3:visibility/visible")
+tracks/4/path = NodePath("Body/Explosion/3:visible")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/Explosion/2:visibility/visible")
+tracks/5/path = NodePath("Body/Explosion/2:visible")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/Explosion/1:visibility/visible")
+tracks/6/path = NodePath("Body/Explosion/1:visible")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
@@ -177,114 +177,115 @@ length = 0.1
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body:modulate")
+tracks/0/path = NodePath("Body:self_modulate")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body/Head:modulate")
+tracks/1/path = NodePath("Body/Head:self_modulate")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/Head/Hat:modulate")
+tracks/2/path = NodePath("Body/Head/Hat:self_modulate")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/Legs:modulate")
+tracks/3/path = NodePath("Body/Legs:self_modulate")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/Explosion/1:visibility/visible")
+tracks/4/path = NodePath("Body/Explosion/1:visible")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/Explosion/2:visibility/visible")
+tracks/5/path = NodePath("Body/Explosion/2:visible")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/Explosion/3:visibility/visible")
+tracks/6/path = NodePath("Body/Explosion/3:visible")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 
 [node name="Paranoid Android" type="KinematicBody2D"]
 
-transform/scale = Vector2( 2, 2 )
-z/z = 1
-input/pickable = false
+scale = Vector2( 2, 2 )
+z = 1
+input_pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.342133, -18.1334 )
+shapes/0/transform = Transform2D( 1, 0, 0, 1, 0.342133, -18.1334 )
 shapes/0/trigger = false
-collision/layers = 16
-collision/mask = 2
+collision_layer = 16
+collision_mask = 2
 collision/margin = 0.08
-script/script = ExtResource( 1 )
+script = ExtResource( 1 )
 
 [node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 0.342133, -18.1334 )
+position = Vector2( 0.342133, -18.1334 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
 [node name="Animation" type="Node2D" parent="."]
 
+
 [node name="Attack Area" type="Area2D" parent="Animation"]
 
 editor/display_folded = true
-input/pickable = true
+input_pickable = true
 shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 6.10352e-05, -18.2814 )
+shapes/0/transform = Transform2D( 1, 0, 0, 1, 6.10352e-05, -18.2814 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision/layers = 64
+collision_layer = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Attack Area"]
 
-transform/pos = Vector2( 6.10352e-05, -18.2814 )
+position = Vector2( 6.10352e-05, -18.2814 )
 shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -296,45 +297,45 @@ texture = ExtResource( 2 )
 
 [node name="Head" type="Sprite" parent="Animation/Body"]
 
-transform/pos = Vector2( 0, -43 )
+position = Vector2( 0, -43 )
 texture = ExtResource( 3 )
 
 [node name="Hat" type="Sprite" parent="Animation/Body/Head"]
 
-transform/pos = Vector2( 0, -24 )
+position = Vector2( 0, -24 )
 texture = ExtResource( 4 )
 
 [node name="Legs" type="Sprite" parent="Animation/Body"]
 
-transform/pos = Vector2( 0, 30 )
+position = Vector2( 0, 30 )
 texture = ExtResource( 5 )
 
 [node name="Explosion" type="Node2D" parent="Animation/Body"]
 
 editor/display_folded = true
-transform/pos = Vector2( 0.584732, -17.2547 )
-transform/scale = Vector2( 2, 2 )
+position = Vector2( 0.584732, -17.2547 )
+scale = Vector2( 2, 2 )
 
 [node name="1" type="Sprite" parent="Animation/Body/Explosion"]
 
-visibility/visible = false
+visible = false
 texture = ExtResource( 6 )
 
 [node name="2" type="Sprite" parent="Animation/Body/Explosion"]
 
-visibility/visible = false
+visible = false
 texture = ExtResource( 7 )
 
 [node name="3" type="Sprite" parent="Animation/Body/Explosion"]
 
-visibility/visible = false
+visible = false
 texture = ExtResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
 
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+root_node = NodePath("..")
 anims/Explode = SubResource( 3 )
 anims/Moving = SubResource( 4 )
 anims/Still = SubResource( 5 )
@@ -343,6 +344,4 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = ""
 
-[connection signal="area_enter" from="Animation/Attack Area" to="." method="attack_hit"]
-
-
+[connection signal="area_entered"  from="Animation/Attack Area"  to="." method="attack_hit" binds=[  ]]

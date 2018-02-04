@@ -5,7 +5,7 @@ var damage_modifier
 var size
 
 const SPEED_X = 2250
-const GRAVITY = 1200
+const GRAVITY = 2000
 const LIFE_TIME = 0.1
 const TOTAL_LIFE_TIME = 2.0
 const DAMAGE_INIT = 40

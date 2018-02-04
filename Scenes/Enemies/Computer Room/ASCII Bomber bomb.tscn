@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/ASCIIBomberBomb.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/ASCII Bomber/Bomb.png" type="Texture" id=2]
@@ -17,92 +17,92 @@ length = 0.2
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("BOOM/B:visibility/visible")
+tracks/0/path = NodePath("BOOM/B:visible")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("BOOM/O:visibility/visible")
+tracks/1/path = NodePath("BOOM/O:visible")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("BOOM/O 2:visibility/visible")
+tracks/2/path = NodePath("BOOM/O 2:visible")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("BOOM/M:visibility/visible")
+tracks/3/path = NodePath("BOOM/M:visible")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Bomb:modulate")
+tracks/4/path = NodePath("Bomb:self_modulate")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("BOOM/B:transform/pos")
+tracks/5/path = NodePath("BOOM/B:position")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -18.5184, 4.33398 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("BOOM/O:transform/pos")
+tracks/6/path = NodePath("BOOM/O:position")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -5.18678, 3.82834 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("BOOM/O 2:transform/pos")
+tracks/7/path = NodePath("BOOM/O 2:position")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 3.58135, 3.82834 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("BOOM/M:transform/pos")
+tracks/8/path = NodePath("BOOM/M:position")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 12.9669, 3.82834 ) ]
 }
@@ -113,92 +113,92 @@ length = 0.4
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("BOOM/B:visibility/visible")
+tracks/0/path = NodePath("BOOM/B:visible")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("BOOM/O:visibility/visible")
+tracks/1/path = NodePath("BOOM/O:visible")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("BOOM/O 2:visibility/visible")
+tracks/2/path = NodePath("BOOM/O 2:visible")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0, 0.2 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("BOOM/M:visibility/visible")
+tracks/3/path = NodePath("BOOM/M:visible")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0, 0.3 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Bomb:modulate")
+tracks/4/path = NodePath("Bomb:self_modulate")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0, 0.2 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 0.392157 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("BOOM/B:transform/pos")
+tracks/5/path = NodePath("BOOM/B:position")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0, 0.4 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -15.7922, 4.2431 ), Vector2( -20.8222, 3.60993 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("BOOM/O:transform/pos")
+tracks/6/path = NodePath("BOOM/O:position")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0, 0.4 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -5.18678, 3.82834 ), Vector2( -7.86757, 3.14678 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("BOOM/O 2:transform/pos")
+tracks/7/path = NodePath("BOOM/O 2:position")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0, 0.4 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 3.58135, 3.82834 ), Vector2( 5.80778, 3.19222 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("BOOM/M:transform/pos")
+tracks/8/path = NodePath("BOOM/M:position")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0, 0.4 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 12.9669, 3.82834 ), Vector2( 18.3739, 3.01047 ) ]
 }
@@ -209,92 +209,92 @@ length = 0.1
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("BOOM/B:visibility/visible")
+tracks/0/path = NodePath("BOOM/B:visible")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("BOOM/O:visibility/visible")
+tracks/1/path = NodePath("BOOM/O:visible")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("BOOM/O 2:visibility/visible")
+tracks/2/path = NodePath("BOOM/O 2:visible")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("BOOM/M:visibility/visible")
+tracks/3/path = NodePath("BOOM/M:visible")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Bomb:modulate")
+tracks/4/path = NodePath("Bomb:self_modulate")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("BOOM/B:transform/pos")
+tracks/5/path = NodePath("BOOM/B:position")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -18.5184, 4.33398 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("BOOM/O:transform/pos")
+tracks/6/path = NodePath("BOOM/O:position")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -5.18678, 3.82834 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("BOOM/O 2:transform/pos")
+tracks/7/path = NodePath("BOOM/O 2:position")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 3.58135, 3.82834 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("BOOM/M:transform/pos")
+tracks/8/path = NodePath("BOOM/M:position")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 12.9669, 3.82834 ) ]
 }
@@ -306,26 +306,26 @@ extents = Vector2( 24.8153, 33.7439 )
 
 [node name="ASCII Bomber bomb" type="KinematicBody2D"]
 
-z/z = 1
-input/pickable = false
+z = 1
+input_pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, -4.61095, -2.54605 )
+shapes/0/transform = Transform2D( 1, 0, 0, 1, -4.61095, -2.54605 )
 shapes/0/trigger = false
-collision/layers = 16
-collision/mask = 2
+collision_layer = 16
+collision_mask = 2
 collision/margin = 0.08
-script/script = ExtResource( 1 )
+script = ExtResource( 1 )
 
 [node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( -4.61095, -2.54605 )
+position = Vector2( -4.61095, -2.54605 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
 [node name="Animation" type="Node2D" parent="."]
 
-transform/scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="Bomb" type="Sprite" parent="Animation"]
 
@@ -334,41 +334,41 @@ texture = ExtResource( 2 )
 [node name="BOOM" type="Node2D" parent="Animation"]
 
 editor/display_folded = true
-transform/scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="B" type="Sprite" parent="Animation/BOOM"]
 
-visibility/visible = false
-transform/pos = Vector2( -18.5184, 4.33398 )
+visible = false
+position = Vector2( -18.5184, 4.33398 )
 texture = ExtResource( 3 )
-modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
 
 [node name="O" type="Sprite" parent="Animation/BOOM"]
 
-visibility/visible = false
-transform/pos = Vector2( -5.18678, 3.82834 )
+visible = false
+position = Vector2( -5.18678, 3.82834 )
 texture = ExtResource( 4 )
-modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
 
 [node name="O 2" type="Sprite" parent="Animation/BOOM"]
 
-visibility/visible = false
-transform/pos = Vector2( 3.58135, 3.82834 )
+visible = false
+position = Vector2( 3.58135, 3.82834 )
 texture = ExtResource( 4 )
-modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
 
 [node name="M" type="Sprite" parent="Animation/BOOM"]
 
-visibility/visible = false
-transform/pos = Vector2( 12.9669, 3.82834 )
+visible = false
+position = Vector2( 12.9669, 3.82834 )
 texture = ExtResource( 5 )
-modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
 
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+root_node = NodePath("..")
 anims/Blinking = SubResource( 2 )
 anims/Explode = SubResource( 3 )
 anims/Still = SubResource( 4 )
@@ -380,23 +380,21 @@ autoplay = ""
 [node name="Attack Area" type="Area2D" parent="."]
 
 editor/display_folded = true
-input/pickable = true
+input_pickable = true
 shapes/0/shape = SubResource( 5 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, -4.99435, 0.712364 )
+shapes/0/transform = Transform2D( 1, 0, 0, 1, -4.99435, 0.712364 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision/layers = 64
+collision_layer = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack Area"]
 
-transform/pos = Vector2( -4.99435, 0.712364 )
+position = Vector2( -4.99435, 0.712364 )
 shape = SubResource( 5 )
 trigger = false
 _update_shape_index = 0
 
-[connection signal="area_enter" from="Attack Area" to="." method="on_attack_hit"]
-
-
+[connection signal="area_entered"  from="Attack Area"  to="." method="on_attack_hit" binds=[  ]]

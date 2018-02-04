@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 const GRAVITY = 600
 const SPEED_MODIFIER = 2.0
-const DURATION = 5.0
+const DURATION = 10.0
 
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
 

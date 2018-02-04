@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=1]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Chromoghast.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Body.png" type="Texture" id=2]
@@ -24,152 +24,152 @@ length = 0.5
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body:transform/pos")
+tracks/0/path = NodePath("Body:position")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( -2.56892, 53.3769 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body:transform/rot")
+tracks/1/path = NodePath("Body:rotation_deg")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/Right Eye:transform/pos")
+tracks/2/path = NodePath("Body/Right Eye:position")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 34.0356, 20.5146 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/Right Eye:transform/rot")
+tracks/3/path = NodePath("Body/Right Eye:rotation_deg")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/Left Eye/Eyeball:transform/pos")
+tracks/4/path = NodePath("Body/Left Eye/Eyeball:position")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 2.03697, 0.678991 ), Vector2( -7.38248, -4.4589 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/Left Eye/Eyeball:transform/rot")
+tracks/5/path = NodePath("Body/Left Eye/Eyeball:rotation_deg")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/Left Eye:transform/pos")
+tracks/6/path = NodePath("Body/Left Eye:position")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -27.4463, 29.3113 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body/Left Eye:transform/rot")
+tracks/7/path = NodePath("Body/Left Eye:rotation_deg")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body/Right Hand:transform/pos")
+tracks/8/path = NodePath("Body/Right Hand:position")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 59.1972, 50.138 ), Vector2( 42.6418, 60.6992 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/Right Hand:transform/rot")
+tracks/9/path = NodePath("Body/Right Hand:rotation_deg")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 135.173 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body/Left Hand:transform/pos")
+tracks/10/path = NodePath("Body/Left Hand:position")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -39.9022, 69.5448 ), Vector2( -39.9022, 67.5468 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Body/Left Hand:transform/rot")
+tracks/11/path = NodePath("Body/Left Hand:rotation_deg")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, -144.035 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body/Right Eye/Eyeball:transform/pos")
+tracks/12/path = NodePath("Body/Right Eye/Eyeball:position")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -0.905327, -0.678991 ), Vector2( 1.66362, 5.60064 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Body/Right Eye/Eyeball:transform/rot")
+tracks/13/path = NodePath("Body/Right Eye/Eyeball:rotation_deg")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body:modulate")
+tracks/14/path = NodePath("Body:self_modulate")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 0.196078 ) ]
 }
@@ -178,8 +178,8 @@ tracks/15/path = NodePath("Body/Right Eye/Eyeball:texture")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 6 ) ]
 }
@@ -188,58 +188,58 @@ tracks/16/path = NodePath("Body/Left Eye/Eyeball:texture")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/rot")
+tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:rotation_deg")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 90.0 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/pos")
+tracks/18/path = NodePath("Body/Right Hand/Shuriken Remote Transform:position")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -18.1241, 20.3264 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Body/Shuriken:visibility/visible")
+tracks/19/path = NodePath("Body/Shuriken:visible")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Damage Area:collision/layers")
+tracks/20/path = NodePath("Damage Area:collision_layer")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 16 ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Damage Area:transform/pos")
+tracks/21/path = NodePath("Damage Area:position")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
@@ -250,152 +250,152 @@ length = 0.1
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body:transform/pos")
+tracks/0/path = NodePath("Body:position")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body:transform/rot")
+tracks/1/path = NodePath("Body:rotation_deg")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/Right Eye:transform/pos")
+tracks/2/path = NodePath("Body/Right Eye:position")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 34.0356, 20.5146 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/Right Eye:transform/rot")
+tracks/3/path = NodePath("Body/Right Eye:rotation_deg")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/Left Eye/Eyeball:transform/pos")
+tracks/4/path = NodePath("Body/Left Eye/Eyeball:position")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1.74029, 8.39252 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/Left Eye/Eyeball:transform/rot")
+tracks/5/path = NodePath("Body/Left Eye/Eyeball:rotation_deg")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/Left Eye:transform/pos")
+tracks/6/path = NodePath("Body/Left Eye:position")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -27.4463, 29.3113 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body/Left Eye:transform/rot")
+tracks/7/path = NodePath("Body/Left Eye:rotation_deg")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body/Right Hand:transform/pos")
+tracks/8/path = NodePath("Body/Right Hand:position")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 55.2416, 44.3034 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/Right Hand:transform/rot")
+tracks/9/path = NodePath("Body/Right Hand:rotation_deg")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ -61.0013 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body/Left Hand:transform/pos")
+tracks/10/path = NodePath("Body/Left Hand:position")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -40.0011, 61.5346 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Body/Left Hand:transform/rot")
+tracks/11/path = NodePath("Body/Left Hand:rotation_deg")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 79.7628 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body/Right Eye/Eyeball:transform/pos")
+tracks/12/path = NodePath("Body/Right Eye/Eyeball:position")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -0.213085, 4.0678 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Body/Right Eye/Eyeball:transform/rot")
+tracks/13/path = NodePath("Body/Right Eye/Eyeball:rotation_deg")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body:modulate")
+tracks/14/path = NodePath("Body:self_modulate")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 0.588235, 0.588235, 1 ) ]
 }
@@ -404,8 +404,8 @@ tracks/15/path = NodePath("Body/Left Eye/Eyeball:texture")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 4 ) ]
 }
@@ -414,58 +414,58 @@ tracks/16/path = NodePath("Body/Right Eye/Eyeball:texture")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 6 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/rot")
+tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:rotation_deg")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 90.0 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/pos")
+tracks/18/path = NodePath("Body/Right Hand/Shuriken Remote Transform:position")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -18.1241, 20.3264 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Body/Shuriken:visibility/visible")
+tracks/19/path = NodePath("Body/Shuriken:visible")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Damage Area:collision/layers")
+tracks/20/path = NodePath("Damage Area:collision_layer")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 16 ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Damage Area:transform/pos")
+tracks/21/path = NodePath("Damage Area:position")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
@@ -476,152 +476,152 @@ length = 0.1
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body:transform/pos")
+tracks/0/path = NodePath("Body:position")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body:transform/rot")
+tracks/1/path = NodePath("Body:rotation_deg")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/Right Eye:transform/pos")
+tracks/2/path = NodePath("Body/Right Eye:position")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 34.0356, 20.5146 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/Right Eye:transform/rot")
+tracks/3/path = NodePath("Body/Right Eye:rotation_deg")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/Left Eye/Eyeball:transform/pos")
+tracks/4/path = NodePath("Body/Left Eye/Eyeball:position")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 2.03697, 0.678991 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/Left Eye/Eyeball:transform/rot")
+tracks/5/path = NodePath("Body/Left Eye/Eyeball:rotation_deg")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/Left Eye:transform/pos")
+tracks/6/path = NodePath("Body/Left Eye:position")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -27.4463, 29.3113 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body/Left Eye:transform/rot")
+tracks/7/path = NodePath("Body/Left Eye:rotation_deg")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body/Right Hand:transform/pos")
+tracks/8/path = NodePath("Body/Right Hand:position")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 59.1972, 50.138 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/Right Hand:transform/rot")
+tracks/9/path = NodePath("Body/Right Hand:rotation_deg")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body/Left Hand:transform/pos")
+tracks/10/path = NodePath("Body/Left Hand:position")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -39.9022, 69.5448 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Body/Left Hand:transform/rot")
+tracks/11/path = NodePath("Body/Left Hand:rotation_deg")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body/Right Eye/Eyeball:transform/pos")
+tracks/12/path = NodePath("Body/Right Eye/Eyeball:position")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -0.905327, -0.678991 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Body/Right Eye/Eyeball:transform/rot")
+tracks/13/path = NodePath("Body/Right Eye/Eyeball:rotation_deg")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body:modulate")
+tracks/14/path = NodePath("Body:self_modulate")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
@@ -630,8 +630,8 @@ tracks/15/path = NodePath("Body/Right Eye/Eyeball:texture")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 6 ) ]
 }
@@ -640,58 +640,58 @@ tracks/16/path = NodePath("Body/Left Eye/Eyeball:texture")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/rot")
+tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:rotation_deg")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 90.0 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/pos")
+tracks/18/path = NodePath("Body/Right Hand/Shuriken Remote Transform:position")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -18.1241, 20.3264 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Body/Shuriken:visibility/visible")
+tracks/19/path = NodePath("Body/Shuriken:visible")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Damage Area:collision/layers")
+tracks/20/path = NodePath("Damage Area:collision_layer")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 16 ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Damage Area:transform/pos")
+tracks/21/path = NodePath("Damage Area:position")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
@@ -702,152 +702,152 @@ length = 1.5
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body:transform/pos")
+tracks/0/path = NodePath("Body:position")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0, 0.4, 0.7, 1 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.4, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( -0.270131, -10.2652 ), Vector2( 0, 0 ), Vector2( -0.270131, 11.0756 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body:transform/rot")
+tracks/1/path = NodePath("Body:rotation_deg")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0, 0.4, 0.7, 1 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.4, 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ -12.8978, -0.425747, 8.92829, 0.743507 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/Right Eye:transform/pos")
+tracks/2/path = NodePath("Body/Right Eye:position")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 34.0356, 20.5146 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/Right Eye:transform/rot")
+tracks/3/path = NodePath("Body/Right Eye:rotation_deg")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/Left Eye/Eyeball:transform/pos")
+tracks/4/path = NodePath("Body/Left Eye/Eyeball:position")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 2.03697, 0.678991 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/Left Eye/Eyeball:transform/rot")
+tracks/5/path = NodePath("Body/Left Eye/Eyeball:rotation_deg")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/Left Eye:transform/pos")
+tracks/6/path = NodePath("Body/Left Eye:position")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -27.4463, 29.3113 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body/Left Eye:transform/rot")
+tracks/7/path = NodePath("Body/Left Eye:rotation_deg")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body/Right Hand:transform/pos")
+tracks/8/path = NodePath("Body/Right Hand:position")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0, 0.9 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 59.1972, 50.138 ), Vector2( 59.1972, 50.138 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/Right Hand:transform/rot")
+tracks/9/path = NodePath("Body/Right Hand:rotation_deg")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
-"times": FloatArray( 0, 0.9 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 20.1589, 79.1068 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body/Left Hand:transform/pos")
+tracks/10/path = NodePath("Body/Left Hand:position")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
-"times": FloatArray( 0, 0.6 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -39.9022, 69.5448 ), Vector2( -39.9022, 69.5448 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Body/Left Hand:transform/rot")
+tracks/11/path = NodePath("Body/Left Hand:rotation_deg")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
-"times": FloatArray( 0, 0.6 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ -23.3155, -81.2908 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body/Right Eye/Eyeball:transform/pos")
+tracks/12/path = NodePath("Body/Right Eye/Eyeball:position")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -0.905327, -0.678991 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Body/Right Eye/Eyeball:transform/rot")
+tracks/13/path = NodePath("Body/Right Eye/Eyeball:rotation_deg")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body:modulate")
+tracks/14/path = NodePath("Body:self_modulate")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 0, 1 ) ]
 }
@@ -856,8 +856,8 @@ tracks/15/path = NodePath("Body/Left Eye/Eyeball:texture")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 10 ) ]
 }
@@ -866,58 +866,58 @@ tracks/16/path = NodePath("Body/Right Eye/Eyeball:texture")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 10 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/rot")
+tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:rotation_deg")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 90.0 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/pos")
+tracks/18/path = NodePath("Body/Right Hand/Shuriken Remote Transform:position")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -18.1241, 20.3264 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Body/Shuriken:visibility/visible")
+tracks/19/path = NodePath("Body/Shuriken:visible")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Damage Area:collision/layers")
+tracks/20/path = NodePath("Damage Area:collision_layer")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 16 ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Damage Area:transform/pos")
+tracks/21/path = NodePath("Damage Area:position")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
@@ -928,152 +928,152 @@ length = 1.5
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body:transform/pos")
+tracks/0/path = NodePath("Body:position")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body:transform/rot")
+tracks/1/path = NodePath("Body:rotation_deg")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/Right Eye:transform/pos")
+tracks/2/path = NodePath("Body/Right Eye:position")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 34.0356, 20.5146 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/Right Eye:transform/rot")
+tracks/3/path = NodePath("Body/Right Eye:rotation_deg")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/Left Eye/Eyeball:transform/pos")
+tracks/4/path = NodePath("Body/Left Eye/Eyeball:position")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0, 0.6, 0.8, 1.1, 1.3 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.6, 0.8, 1.1, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 2.03697, 0.678991 ), Vector2( 6.31717, -0.130781 ), Vector2( 6.55496, 3.19802 ), Vector2( 6.55496, 3.19802 ), Vector2( -5.60426, 4.81924 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/Left Eye/Eyeball:transform/rot")
+tracks/5/path = NodePath("Body/Left Eye/Eyeball:rotation_deg")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0, 0.6, 0.8, 1.1, 1.3 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.6, 0.8, 1.1, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/Left Eye:transform/pos")
+tracks/6/path = NodePath("Body/Left Eye:position")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -27.4463, 29.3113 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body/Left Eye:transform/rot")
+tracks/7/path = NodePath("Body/Left Eye:rotation_deg")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body/Right Hand:transform/pos")
+tracks/8/path = NodePath("Body/Right Hand:position")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 59.1972, 50.138 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/Right Hand:transform/rot")
+tracks/9/path = NodePath("Body/Right Hand:rotation_deg")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
-"times": FloatArray( 0, 0.5, 1, 1.2 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 106.37, 106.37, -11.8753 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body/Left Hand:transform/pos")
+tracks/10/path = NodePath("Body/Left Hand:position")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
-"times": FloatArray( 0, 1.3 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -39.9022, 69.5448 ), Vector2( -40.6498, 69.794 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Body/Left Hand:transform/rot")
+tracks/11/path = NodePath("Body/Left Hand:rotation_deg")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
-"times": FloatArray( 0, 0.7, 1.1, 1.3 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.7, 1.1, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 72.4815, 72.4815, -106.103 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body/Right Eye/Eyeball:transform/pos")
+tracks/12/path = NodePath("Body/Right Eye/Eyeball:position")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
-"times": FloatArray( 0, 0.8, 1.1, 1.3 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.8, 1.1, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -0.905327, -0.678991 ), Vector2( 2.66124, 2.05538 ), Vector2( 2.66124, 2.05538 ), Vector2( -3.62102, 2.66334 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Body/Right Eye/Eyeball:transform/rot")
+tracks/13/path = NodePath("Body/Right Eye/Eyeball:rotation_deg")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
-"times": FloatArray( 0, 0.7, 0.8, 1.1, 1.3 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.7, 0.8, 1.1, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body:modulate")
+tracks/14/path = NodePath("Body:self_modulate")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
@@ -1082,8 +1082,8 @@ tracks/15/path = NodePath("Body/Right Eye/Eyeball:texture")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 6 ) ]
 }
@@ -1092,58 +1092,58 @@ tracks/16/path = NodePath("Body/Left Eye/Eyeball:texture")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/rot")
+tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:rotation_deg")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
-"times": FloatArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.1, 1.2, 1.3, 1.5 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.1, 1.2, 1.3, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 90.0, 180.0, 270.0, 360.0, 420.0, 480.0, 510.0, 540.0, 501.667, 425.0 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/pos")
+tracks/18/path = NodePath("Body/Right Hand/Shuriken Remote Transform:position")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -18.1241, 20.3264 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Body/Shuriken:visibility/visible")
+tracks/19/path = NodePath("Body/Shuriken:visible")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
-"times": FloatArray( 0, 1.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Damage Area:collision/layers")
+tracks/20/path = NodePath("Damage Area:collision_layer")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 16 ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Damage Area:transform/pos")
+tracks/21/path = NodePath("Damage Area:position")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
@@ -1154,152 +1154,152 @@ length = 0.5
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body:transform/pos")
+tracks/0/path = NodePath("Body:position")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body:transform/rot")
+tracks/1/path = NodePath("Body:rotation_deg")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/Right Eye:transform/pos")
+tracks/2/path = NodePath("Body/Right Eye:position")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 34.0356, 20.5146 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/Right Eye:transform/rot")
+tracks/3/path = NodePath("Body/Right Eye:rotation_deg")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/Left Eye/Eyeball:transform/pos")
+tracks/4/path = NodePath("Body/Left Eye/Eyeball:position")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 2.03697, 0.678991 ), Vector2( 5.91337, 2.56181 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/Left Eye/Eyeball:transform/rot")
+tracks/5/path = NodePath("Body/Left Eye/Eyeball:rotation_deg")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/Left Eye:transform/pos")
+tracks/6/path = NodePath("Body/Left Eye:position")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -27.4463, 29.3113 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body/Left Eye:transform/rot")
+tracks/7/path = NodePath("Body/Left Eye:rotation_deg")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body/Right Hand:transform/pos")
+tracks/8/path = NodePath("Body/Right Hand:position")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 59.1972, 50.138 ), Vector2( 50.464, 44.4733 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/Right Hand:transform/rot")
+tracks/9/path = NodePath("Body/Right Hand:rotation_deg")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, -29.7704 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body/Left Hand:transform/pos")
+tracks/10/path = NodePath("Body/Left Hand:position")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -39.9022, 69.5448 ), Vector2( -29.9889, 58.2153 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Body/Left Hand:transform/rot")
+tracks/11/path = NodePath("Body/Left Hand:rotation_deg")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 23.4034 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body/Right Eye/Eyeball:transform/pos")
+tracks/12/path = NodePath("Body/Right Eye/Eyeball:position")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -0.905327, -0.678991 ), Vector2( -1.56984, 1.31458 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Body/Right Eye/Eyeball:transform/rot")
+tracks/13/path = NodePath("Body/Right Eye/Eyeball:rotation_deg")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body:modulate")
+tracks/14/path = NodePath("Body:self_modulate")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
@@ -1308,8 +1308,8 @@ tracks/15/path = NodePath("Body/Right Eye/Eyeball:texture")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 6 ) ]
 }
@@ -1318,58 +1318,58 @@ tracks/16/path = NodePath("Body/Left Eye/Eyeball:texture")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/rot")
+tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:rotation_deg")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 90.0 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/pos")
+tracks/18/path = NodePath("Body/Right Hand/Shuriken Remote Transform:position")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -18.1241, 20.3264 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Body/Shuriken:visibility/visible")
+tracks/19/path = NodePath("Body/Shuriken:visible")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Damage Area:collision/layers")
+tracks/20/path = NodePath("Damage Area:collision_layer")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 0 ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Damage Area:transform/pos")
+tracks/21/path = NodePath("Damage Area:position")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
@@ -1380,152 +1380,152 @@ length = 0.5
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body:transform/pos")
+tracks/0/path = NodePath("Body:position")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body:transform/rot")
+tracks/1/path = NodePath("Body:rotation_deg")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/Right Eye:transform/pos")
+tracks/2/path = NodePath("Body/Right Eye:position")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 34.0356, 20.5146 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/Right Eye:transform/rot")
+tracks/3/path = NodePath("Body/Right Eye:rotation_deg")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/Left Eye/Eyeball:transform/pos")
+tracks/4/path = NodePath("Body/Left Eye/Eyeball:position")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 5.91337, 2.56181 ), Vector2( 2.03697, 0.678991 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/Left Eye/Eyeball:transform/rot")
+tracks/5/path = NodePath("Body/Left Eye/Eyeball:rotation_deg")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/Left Eye:transform/pos")
+tracks/6/path = NodePath("Body/Left Eye:position")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -27.4463, 29.3113 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body/Left Eye:transform/rot")
+tracks/7/path = NodePath("Body/Left Eye:rotation_deg")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body/Right Hand:transform/pos")
+tracks/8/path = NodePath("Body/Right Hand:position")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 50.464, 44.4733 ), Vector2( 59.1972, 50.138 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/Right Hand:transform/rot")
+tracks/9/path = NodePath("Body/Right Hand:rotation_deg")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ -29.7704, 0.0 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body/Left Hand:transform/pos")
+tracks/10/path = NodePath("Body/Left Hand:position")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -29.9889, 58.2153 ), Vector2( -39.9022, 69.5448 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Body/Left Hand:transform/rot")
+tracks/11/path = NodePath("Body/Left Hand:rotation_deg")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 23.4034, 0.0 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body/Right Eye/Eyeball:transform/pos")
+tracks/12/path = NodePath("Body/Right Eye/Eyeball:position")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -1.56984, 1.31458 ), Vector2( -0.905327, -0.678991 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Body/Right Eye/Eyeball:transform/rot")
+tracks/13/path = NodePath("Body/Right Eye/Eyeball:rotation_deg")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body:modulate")
+tracks/14/path = NodePath("Body:self_modulate")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
@@ -1534,8 +1534,8 @@ tracks/15/path = NodePath("Body/Left Eye/Eyeball:texture")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 4 ) ]
 }
@@ -1544,58 +1544,58 @@ tracks/16/path = NodePath("Body/Right Eye/Eyeball:texture")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 6 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/rot")
+tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:rotation_deg")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 90.0 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/pos")
+tracks/18/path = NodePath("Body/Right Hand/Shuriken Remote Transform:position")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -18.1241, 20.3264 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Body/Shuriken:visibility/visible")
+tracks/19/path = NodePath("Body/Shuriken:visible")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Damage Area:collision/layers")
+tracks/20/path = NodePath("Damage Area:collision_layer")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
-"times": FloatArray( 0, 0.2 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 0, 16 ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Damage Area:transform/pos")
+tracks/21/path = NodePath("Damage Area:position")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
@@ -1606,152 +1606,152 @@ length = 2.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Body:transform/pos")
+tracks/0/path = NodePath("Body:position")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0, 0.8 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( -0.331345, 28.4961 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Body:transform/rot")
+tracks/1/path = NodePath("Body:rotation_deg")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0, 0.8 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body/Right Eye:transform/pos")
+tracks/2/path = NodePath("Body/Right Eye:position")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 34.0356, 20.5146 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Body/Right Eye:transform/rot")
+tracks/3/path = NodePath("Body/Right Eye:rotation_deg")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body/Left Eye/Eyeball:transform/pos")
+tracks/4/path = NodePath("Body/Left Eye/Eyeball:position")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 2.03697, 0.678991 ), Vector2( -0.0338154, 4.08211 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Body/Left Eye/Eyeball:transform/rot")
+tracks/5/path = NodePath("Body/Left Eye/Eyeball:rotation_deg")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0 ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body/Left Eye:transform/pos")
+tracks/6/path = NodePath("Body/Left Eye:position")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -27.4463, 29.3113 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Body/Left Eye:transform/rot")
+tracks/7/path = NodePath("Body/Left Eye:rotation_deg")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body/Right Hand:transform/pos")
+tracks/8/path = NodePath("Body/Right Hand:position")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0, 1.2 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 59.1972, 50.138 ), Vector2( 57.638, 43.4555 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Body/Right Hand:transform/rot")
+tracks/9/path = NodePath("Body/Right Hand:rotation_deg")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
-"times": FloatArray( 0, 1.2 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 20.5463 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body/Left Hand:transform/pos")
+tracks/10/path = NodePath("Body/Left Hand:position")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
-"times": FloatArray( 0, 0.6 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -39.9022, 69.5448 ), Vector2( -43.6889, 62.8623 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Body/Left Hand:transform/rot")
+tracks/11/path = NodePath("Body/Left Hand:rotation_deg")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
-"times": FloatArray( 0, 0.6 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, -24.4176 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body/Right Eye/Eyeball:transform/pos")
+tracks/12/path = NodePath("Body/Right Eye/Eyeball:position")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
-"times": FloatArray( 0, 1.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -0.905327, -0.678991 ), Vector2( -0.678432, -1.81337 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Body/Right Eye/Eyeball:transform/rot")
+tracks/13/path = NodePath("Body/Right Eye/Eyeball:rotation_deg")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
-"times": FloatArray( 0, 1.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body:modulate")
+tracks/14/path = NodePath("Body:self_modulate")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
@@ -1760,8 +1760,8 @@ tracks/15/path = NodePath("Body/Right Eye/Eyeball:texture")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 6 ) ]
 }
@@ -1770,94 +1770,94 @@ tracks/16/path = NodePath("Body/Left Eye/Eyeball:texture")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/rot")
+tracks/17/path = NodePath("Body/Right Hand/Shuriken Remote Transform:rotation_deg")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 90.0 ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body/Right Hand/Shuriken Remote Transform:transform/pos")
+tracks/18/path = NodePath("Body/Right Hand/Shuriken Remote Transform:position")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -18.1241, 20.3264 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Body/Shuriken:visibility/visible")
+tracks/19/path = NodePath("Body/Shuriken:visible")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Damage Area:collision/layers")
+tracks/20/path = NodePath("Damage Area:collision_layer")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 16 ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Damage Area:transform/pos")
+tracks/21/path = NodePath("Damage Area:position")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
-"times": FloatArray( 0, 0.8 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 4.16677 ), Vector2( -2.13928, 35.8279 ) ]
 }
 
 [node name="Chromoghast" type="Node2D"]
 
-script/script = ExtResource( 1 )
+script = ExtResource( 1 )
 
 [node name="Animation" type="Node2D" parent="."]
 
-transform/scale = Vector2( 1.2, 1.2 )
+scale = Vector2( 1.2, 1.2 )
 
 [node name="Damage Area" type="Area2D" parent="Animation"]
 
 editor/display_folded = true
-input/pickable = true
+input_pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0.427831, 1.71141 )
+shapes/0/transform = Transform2D( 1, 0, 0, 1, 0.427831, 1.71141 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision/layers = 16
-collision/mask = 0
+collision_layer = 16
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area"]
 
-transform/pos = Vector2( 0.427831, 1.71141 )
+position = Vector2( 0.427831, 1.71141 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
 [node name="Shuriken Spawn Pos" type="Position2D" parent="Animation"]
 
-transform/pos = Vector2( 57.5, 70.0202 )
+position = Vector2( 57.5, 70.0202 )
 
 [node name="Body" type="Sprite" parent="Animation"]
 
@@ -1867,62 +1867,62 @@ texture = ExtResource( 2 )
 [node name="Left Eye" type="Sprite" parent="Animation/Body"]
 
 editor/display_folded = true
-transform/pos = Vector2( -27.4463, 29.3113 )
+position = Vector2( -27.4463, 29.3113 )
 texture = ExtResource( 3 )
 
 [node name="Eyeball" type="Sprite" parent="Animation/Body/Left Eye"]
 
-transform/pos = Vector2( 2.03697, 0.678991 )
+position = Vector2( 2.03697, 0.678991 )
 texture = ExtResource( 4 )
 
 [node name="Right Eye" type="Sprite" parent="Animation/Body"]
 
 editor/display_folded = true
-transform/pos = Vector2( 34.0356, 20.5146 )
+position = Vector2( 34.0356, 20.5146 )
 texture = ExtResource( 5 )
 
 [node name="Eyeball" type="Sprite" parent="Animation/Body/Right Eye"]
 
-transform/pos = Vector2( -0.905327, -0.678991 )
+position = Vector2( -0.905327, -0.678991 )
 texture = ExtResource( 6 )
 
 [node name="Left Hand" type="Sprite" parent="Animation/Body"]
 
-transform/pos = Vector2( -39.9022, 69.5448 )
+position = Vector2( -39.9022, 69.5448 )
 texture = ExtResource( 7 )
 offset = Vector2( 11.9962, 8.89974 )
 
 [node name="Shuriken" type="Sprite" parent="Animation/Body"]
 
-transform/pos = Vector2( 41.0731, 70.4644 )
-transform/rot = 90.0
+position = Vector2( 41.0731, 70.4644 )
+rotation_deg = -90.0
 texture = ExtResource( 8 )
 
 [node name="Right Hand" type="Sprite" parent="Animation/Body"]
 
 editor/display_folded = true
-transform/pos = Vector2( 59.1972, 50.138 )
+position = Vector2( 59.1972, 50.138 )
 texture = ExtResource( 9 )
 offset = Vector2( -9.75728, 9.18977 )
 
 [node name="Shuriken Remote Transform" type="RemoteTransform2D" parent="Animation/Body/Right Hand"]
 
-transform/pos = Vector2( -18.1241, 20.3264 )
-transform/rot = 90.0
+position = Vector2( -18.1241, 20.3264 )
+rotation_deg = -90.0
 remote_path = NodePath("../../Shuriken")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
 
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+root_node = NodePath("..")
 anims/Die = SubResource( 2 )
 anims/Hurt = SubResource( 3 )
 anims/Still = SubResource( 4 )
 anims/Stunned = SubResource( 5 )
-"anims/Throw Shuriken" = SubResource( 6 )
-"anims/Turn Invisible" = SubResource( 7 )
-"anims/Turn Opaque" = SubResource( 8 )
+anims/Throw Shuriken = SubResource( 6 )
+anims/Turn Invisible = SubResource( 7 )
+anims/Turn Opaque = SubResource( 8 )
 anims/Walk = SubResource( 9 )
 playback/active = true
 playback/speed = 1.0
@@ -1931,11 +1931,9 @@ autoplay = "Still"
 
 [node name="Number Spawn Pos" type="Position2D" parent="."]
 
-transform/pos = Vector2( -0.566376, -103.452 )
-script/script = ExtResource( 11 )
+position = Vector2( -0.566376, -103.452 )
+script = ExtResource( 11 )
 
 [node name="Health Bar" parent="." instance=ExtResource( 12 )]
 
-transform/pos = Vector2( -1.84192, -156.252 )
-
-
+position = Vector2( -1.84192, -156.252 )

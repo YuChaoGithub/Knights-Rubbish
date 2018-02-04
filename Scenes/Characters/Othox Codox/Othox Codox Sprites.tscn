@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=1]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Graphics/Characters/Othox Codox/Body.png" type="Texture" id=1]
 [ext_resource path="res://Graphics/Characters/Othox Codox/Small Wheel.png" type="Texture" id=2]
@@ -20,517 +20,517 @@
 
 [sub_resource type="Animation" id=1]
 
-resource/name = "Hurt"
+resource_name = "Hurt"
 length = 0.1
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Animation/Wheel Chair/Body/Mouth:transform/pos")
+tracks/0/path = NodePath("Animation/Wheel Chair/Body/Mouth:position")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 9.74373, -0.458313 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Animation/Wheel Chair/Body/Mouth:transform/rot")
+tracks/1/path = NodePath("Animation/Wheel Chair/Body/Mouth:rotation_deg")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ -177.95 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Animation/Wheel Chair/Body/Mouth:transform/scale")
+tracks/2/path = NodePath("Animation/Wheel Chair/Body/Mouth:scale")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:transform/pos")
+tracks/3/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:position")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -82.237, 47.8675 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:transform/rot")
+tracks/4/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:rotation_deg")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:transform/scale")
+tracks/5/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:scale")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Animation/Wheel Chair:transform/pos")
+tracks/6/path = NodePath("Animation/Wheel Chair:position")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Animation/Wheel Chair:transform/rot")
+tracks/7/path = NodePath("Animation/Wheel Chair:rotation_deg")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Animation/Wheel Chair:transform/scale")
+tracks/8/path = NodePath("Animation/Wheel Chair:scale")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Animation/Wheel Chair/Body/Beard:transform/pos")
+tracks/9/path = NodePath("Animation/Wheel Chair/Body/Beard:position")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 6.00408, 17.3764 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Animation/Wheel Chair/Body/Beard:transform/rot")
+tracks/10/path = NodePath("Animation/Wheel Chair/Body/Beard:rotation_deg")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Animation/Wheel Chair/Body/Beard:transform/scale")
+tracks/11/path = NodePath("Animation/Wheel Chair/Body/Beard:scale")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:transform/pos")
+tracks/12/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:position")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 25.2521, -68.9185 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:transform/rot")
+tracks/13/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:rotation_deg")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:transform/scale")
+tracks/14/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:scale")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Animation/Wheel Chair/Body/Left Arm:transform/pos")
+tracks/15/path = NodePath("Animation/Wheel Chair/Body/Left Arm:position")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -44.0386, 0.138672 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Animation/Wheel Chair/Body/Left Arm:transform/rot")
+tracks/16/path = NodePath("Animation/Wheel Chair/Body/Left Arm:rotation_deg")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Animation/Wheel Chair/Body/Left Arm:transform/scale")
+tracks/17/path = NodePath("Animation/Wheel Chair/Body/Left Arm:scale")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:transform/pos")
+tracks/18/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:position")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1.62183, -53.2707 ), Vector2( 1.62183, -53.2707 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:transform/rot")
+tracks/19/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:rotation_deg")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 43.1932 ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:transform/scale")
+tracks/20/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:scale")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:transform/pos")
+tracks/21/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:position")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 38.9234, -42.2653 ), Vector2( 38.9234, -42.2653 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:transform/rot")
+tracks/22/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:rotation_deg")
 tracks/22/interp = 1
 tracks/22/imported = false
 tracks/22/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, -32.2284 ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:transform/scale")
+tracks/23/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:scale")
 tracks/23/interp = 1
 tracks/23/imported = false
 tracks/23/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Animation/Wheel Chair/Body/Right Arm:transform/pos")
+tracks/24/path = NodePath("Animation/Wheel Chair/Body/Right Arm:position")
 tracks/24/interp = 1
 tracks/24/imported = false
 tracks/24/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 49.4514, 15.1539 ), Vector2( 49.4514, 15.1539 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Animation/Wheel Chair/Body/Right Arm:transform/rot")
+tracks/25/path = NodePath("Animation/Wheel Chair/Body/Right Arm:rotation_deg")
 tracks/25/interp = 1
 tracks/25/imported = false
 tracks/25/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, -158.925 ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Animation/Wheel Chair/Body/Right Arm:transform/scale")
+tracks/26/path = NodePath("Animation/Wheel Chair/Body/Right Arm:scale")
 tracks/26/interp = 1
 tracks/26/imported = false
 tracks/26/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Animation/Wheel Chair/Body/Nose:transform/pos")
+tracks/27/path = NodePath("Animation/Wheel Chair/Body/Nose:position")
 tracks/27/interp = 1
 tracks/27/imported = false
 tracks/27/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 12.6003, -21.957 ) ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Animation/Wheel Chair/Body/Nose:transform/rot")
+tracks/28/path = NodePath("Animation/Wheel Chair/Body/Nose:rotation_deg")
 tracks/28/interp = 1
 tracks/28/imported = false
 tracks/28/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("Animation/Wheel Chair/Body/Nose:transform/scale")
+tracks/29/path = NodePath("Animation/Wheel Chair/Body/Nose:scale")
 tracks/29/interp = 1
 tracks/29/imported = false
 tracks/29/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 0.8, 0.8 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Animation/Wheel Chair/Body/Right Eye:transform/pos")
+tracks/30/path = NodePath("Animation/Wheel Chair/Body/Right Eye:position")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 36.9669, -38.4186 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Animation/Wheel Chair/Body/Right Eye:transform/rot")
+tracks/31/path = NodePath("Animation/Wheel Chair/Body/Right Eye:rotation_deg")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/32/type = "value"
-tracks/32/path = NodePath("Animation/Wheel Chair/Body/Right Eye:transform/scale")
+tracks/32/path = NodePath("Animation/Wheel Chair/Body/Right Eye:scale")
 tracks/32/interp = 1
 tracks/32/imported = false
 tracks/32/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/33/type = "value"
-tracks/33/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:transform/pos")
+tracks/33/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:position")
 tracks/33/interp = 1
 tracks/33/imported = false
 tracks/33/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -11.1154, -5.74422 ), Vector2( -11.1154, -5.74422 ) ]
 }
 tracks/34/type = "value"
-tracks/34/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:transform/rot")
+tracks/34/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:rotation_deg")
 tracks/34/interp = 1
 tracks/34/imported = false
 tracks/34/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, -37.5848 ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:transform/scale")
+tracks/35/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:scale")
 tracks/35/interp = 1
 tracks/35/imported = false
 tracks/35/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/36/type = "value"
-tracks/36/path = NodePath("Animation/Wheel Chair/Small Wheel:transform/pos")
+tracks/36/path = NodePath("Animation/Wheel Chair/Small Wheel:position")
 tracks/36/interp = 1
 tracks/36/imported = false
 tracks/36/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 45.8219, 99.5746 ) ]
 }
 tracks/37/type = "value"
-tracks/37/path = NodePath("Animation/Wheel Chair/Small Wheel:transform/rot")
+tracks/37/path = NodePath("Animation/Wheel Chair/Small Wheel:rotation_deg")
 tracks/37/interp = 1
 tracks/37/imported = false
 tracks/37/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/38/type = "value"
-tracks/38/path = NodePath("Animation/Wheel Chair/Small Wheel:transform/scale")
+tracks/38/path = NodePath("Animation/Wheel Chair/Small Wheel:scale")
 tracks/38/interp = 1
 tracks/38/imported = false
 tracks/38/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/39/type = "value"
-tracks/39/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:transform/pos")
+tracks/39/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:position")
 tracks/39/interp = 1
 tracks/39/imported = false
 tracks/39/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 30.4383, 5.0019 ), Vector2( 30.4383, 5.0019 ) ]
 }
 tracks/40/type = "value"
-tracks/40/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:transform/rot")
+tracks/40/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:rotation_deg")
 tracks/40/interp = 1
 tracks/40/imported = false
 tracks/40/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 38.7407 ]
 }
 tracks/41/type = "value"
-tracks/41/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:transform/scale")
+tracks/41/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:scale")
 tracks/41/interp = 1
 tracks/41/imported = false
 tracks/41/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/42/type = "value"
-tracks/42/path = NodePath("Animation/Wheel Chair/Body/Hat:transform/pos")
+tracks/42/path = NodePath("Animation/Wheel Chair/Body/Hat:position")
 tracks/42/interp = 1
 tracks/42/imported = false
 tracks/42/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 31.9925, -94.2244 ), Vector2( 55.1933, -71.3119 ) ]
 }
 tracks/43/type = "value"
-tracks/43/path = NodePath("Animation/Wheel Chair/Body/Hat:transform/rot")
+tracks/43/path = NodePath("Animation/Wheel Chair/Body/Hat:rotation_deg")
 tracks/43/interp = 1
 tracks/43/imported = false
 tracks/43/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, -17.9345 ]
 }
 tracks/44/type = "value"
-tracks/44/path = NodePath("Animation/Wheel Chair/Body/Hat:transform/scale")
+tracks/44/path = NodePath("Animation/Wheel Chair/Body/Hat:scale")
 tracks/44/interp = 1
 tracks/44/imported = false
 tracks/44/keys = {
-"times": FloatArray( 0, 0.1 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/45/type = "value"
-tracks/45/path = NodePath("Animation/Wheel Chair/Body/Left Eye:transform/pos")
+tracks/45/path = NodePath("Animation/Wheel Chair/Body/Left Eye:position")
 tracks/45/interp = 1
 tracks/45/imported = false
 tracks/45/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 3.00605, -49.2059 ) ]
 }
 tracks/46/type = "value"
-tracks/46/path = NodePath("Animation/Wheel Chair/Body/Left Eye:transform/rot")
+tracks/46/path = NodePath("Animation/Wheel Chair/Body/Left Eye:rotation_deg")
 tracks/46/interp = 1
 tracks/46/imported = false
 tracks/46/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/47/type = "value"
-tracks/47/path = NodePath("Animation/Wheel Chair/Body/Left Eye:transform/scale")
+tracks/47/path = NodePath("Animation/Wheel Chair/Body/Left Eye:scale")
 tracks/47/interp = 1
 tracks/47/imported = false
 tracks/47/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/48/type = "value"
-tracks/48/path = NodePath("Animation/Wheel Chair/Body:transform/pos")
+tracks/48/path = NodePath("Animation/Wheel Chair/Body:position")
 tracks/48/interp = 1
 tracks/48/imported = false
 tracks/48/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -6.88864, -99.4379 ) ]
 }
 tracks/49/type = "value"
-tracks/49/path = NodePath("Animation/Wheel Chair/Body:transform/rot")
+tracks/49/path = NodePath("Animation/Wheel Chair/Body:rotation_deg")
 tracks/49/interp = 1
 tracks/49/imported = false
 tracks/49/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/50/type = "value"
-tracks/50/path = NodePath("Animation/Wheel Chair/Body:transform/scale")
+tracks/50/path = NodePath("Animation/Wheel Chair/Body:scale")
 tracks/50/interp = 1
 tracks/50/imported = false
 tracks/50/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
@@ -539,8 +539,8 @@ tracks/51/path = NodePath("Animation/Wheel Chair/Body/Left Eye:texture")
 tracks/51/interp = 1
 tracks/51/imported = false
 tracks/51/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 4 ) ]
 }
@@ -549,8 +549,8 @@ tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
 tracks/52/interp = 1
 tracks/52/imported = false
 tracks/52/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 4 ) ]
 }
@@ -561,512 +561,512 @@ length = 4.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Animation/Wheel Chair/Body/Mouth:transform/pos")
+tracks/0/path = NodePath("Animation/Wheel Chair/Body/Mouth:position")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 9.74373, -0.458313 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Animation/Wheel Chair/Body/Mouth:transform/rot")
+tracks/1/path = NodePath("Animation/Wheel Chair/Body/Mouth:rotation_deg")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Animation/Wheel Chair/Body/Mouth:transform/scale")
+tracks/2/path = NodePath("Animation/Wheel Chair/Body/Mouth:scale")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:transform/pos")
+tracks/3/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:position")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -81.8351, 47.8675 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:transform/rot")
+tracks/4/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:rotation_deg")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:transform/scale")
+tracks/5/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:scale")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Animation/Wheel Chair:transform/pos")
+tracks/6/path = NodePath("Animation/Wheel Chair:position")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Animation/Wheel Chair:transform/rot")
+tracks/7/path = NodePath("Animation/Wheel Chair:rotation_deg")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Animation/Wheel Chair:transform/scale")
+tracks/8/path = NodePath("Animation/Wheel Chair:scale")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Animation/Wheel Chair/Body/Beard:transform/pos")
+tracks/9/path = NodePath("Animation/Wheel Chair/Body/Beard:position")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 6.00408, 17.3764 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Animation/Wheel Chair/Body/Beard:transform/rot")
+tracks/10/path = NodePath("Animation/Wheel Chair/Body/Beard:rotation_deg")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Animation/Wheel Chair/Body/Beard:transform/scale")
+tracks/11/path = NodePath("Animation/Wheel Chair/Body/Beard:scale")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:transform/pos")
+tracks/12/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:position")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 25.2521, -68.9185 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:transform/rot")
+tracks/13/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:rotation_deg")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:transform/scale")
+tracks/14/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:scale")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Animation/Wheel Chair/Body/Left Arm:transform/pos")
+tracks/15/path = NodePath("Animation/Wheel Chair/Body/Left Arm:position")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -44.0386, 0.138672 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Animation/Wheel Chair/Body/Left Arm:transform/rot")
+tracks/16/path = NodePath("Animation/Wheel Chair/Body/Left Arm:rotation_deg")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Animation/Wheel Chair/Body/Left Arm:transform/scale")
+tracks/17/path = NodePath("Animation/Wheel Chair/Body/Left Arm:scale")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:transform/pos")
+tracks/18/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:position")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
-"times": FloatArray( 0, 1.2, 1.4, 1.6 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1.2, 1.4, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1.62183, -53.2707 ), Vector2( 1.62183, -53.2707 ), Vector2( 3.26962, -60.1614 ), Vector2( 1.62183, -53.2707 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:transform/rot")
+tracks/19/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:rotation_deg")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
-"times": FloatArray( 0, 1.2, 1.4, 1.6 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1.2, 1.4, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:transform/scale")
+tracks/20/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:scale")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
-"times": FloatArray( 0, 1.2, 1.4, 1.6 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1.2, 1.4, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:transform/pos")
+tracks/21/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:position")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
-"times": FloatArray( 0, 1.2, 1.4, 1.6 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1.2, 1.4, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 38.9234, -42.2653 ), Vector2( 38.9234, -42.2653 ), Vector2( 40.4214, -49.1561 ), Vector2( 38.9234, -42.2653 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:transform/rot")
+tracks/22/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:rotation_deg")
 tracks/22/interp = 1
 tracks/22/imported = false
 tracks/22/keys = {
-"times": FloatArray( 0, 1.2, 1.4, 1.6 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1.2, 1.4, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:transform/scale")
+tracks/23/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:scale")
 tracks/23/interp = 1
 tracks/23/imported = false
 tracks/23/keys = {
-"times": FloatArray( 0, 1.2, 1.4, 1.6 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1.2, 1.4, 1.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Animation/Wheel Chair/Body/Right Arm:transform/pos")
+tracks/24/path = NodePath("Animation/Wheel Chair/Body/Right Arm:position")
 tracks/24/interp = 1
 tracks/24/imported = false
 tracks/24/keys = {
-"times": FloatArray( 0, 0.5, 1, 1.5, 2 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 50.0718, 8.01881 ), Vector2( 53.9195, -9.1673 ), Vector2( 53.9195, -9.1673 ), Vector2( 53.9195, -9.1673 ), Vector2( 50.0718, 8.01881 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Animation/Wheel Chair/Body/Right Arm:transform/rot")
+tracks/25/path = NodePath("Animation/Wheel Chair/Body/Right Arm:rotation_deg")
 tracks/25/interp = 1
 tracks/25/imported = false
 tracks/25/keys = {
-"times": FloatArray( 0, 0.5, 1, 1.5, 2 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 36.4445, 22.7668, 22.7668, 0.0 ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Animation/Wheel Chair/Body/Right Arm:transform/scale")
+tracks/26/path = NodePath("Animation/Wheel Chair/Body/Right Arm:scale")
 tracks/26/interp = 1
 tracks/26/imported = false
 tracks/26/keys = {
-"times": FloatArray( 0, 0.5, 1, 1.5, 2 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Animation/Wheel Chair/Body/Nose:transform/pos")
+tracks/27/path = NodePath("Animation/Wheel Chair/Body/Nose:position")
 tracks/27/interp = 1
 tracks/27/imported = false
 tracks/27/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 12.6003, -21.957 ) ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Animation/Wheel Chair/Body/Nose:transform/rot")
+tracks/28/path = NodePath("Animation/Wheel Chair/Body/Nose:rotation_deg")
 tracks/28/interp = 1
 tracks/28/imported = false
 tracks/28/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("Animation/Wheel Chair/Body/Nose:transform/scale")
+tracks/29/path = NodePath("Animation/Wheel Chair/Body/Nose:scale")
 tracks/29/interp = 1
 tracks/29/imported = false
 tracks/29/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Animation/Wheel Chair/Body/Right Eye:transform/pos")
+tracks/30/path = NodePath("Animation/Wheel Chair/Body/Right Eye:position")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
-"times": FloatArray( 0, 0.3, 0.5 ),
-"transitions": FloatArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 36.9669, -38.4186 ), Vector2( 36.9669, -38.4186 ), Vector2( 40.8325, -37.1266 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Animation/Wheel Chair/Body/Right Eye:transform/rot")
+tracks/31/path = NodePath("Animation/Wheel Chair/Body/Right Eye:rotation_deg")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
-"times": FloatArray( 0, 0.3, 0.5 ),
-"transitions": FloatArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 0.0 ]
 }
 tracks/32/type = "value"
-tracks/32/path = NodePath("Animation/Wheel Chair/Body/Right Eye:transform/scale")
+tracks/32/path = NodePath("Animation/Wheel Chair/Body/Right Eye:scale")
 tracks/32/interp = 1
 tracks/32/imported = false
 tracks/32/keys = {
-"times": FloatArray( 0, 0.3, 0.5 ),
-"transitions": FloatArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/33/type = "value"
-tracks/33/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:transform/pos")
+tracks/33/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:position")
 tracks/33/interp = 1
 tracks/33/imported = false
 tracks/33/keys = {
-"times": FloatArray( 0, 0.9 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -11.1154, -5.74422 ), Vector2( -11.1154, -5.74422 ) ]
 }
 tracks/34/type = "value"
-tracks/34/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:transform/rot")
+tracks/34/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:rotation_deg")
 tracks/34/interp = 1
 tracks/34/imported = false
 tracks/34/keys = {
-"times": FloatArray( 0, 0.9 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, -12.0828 ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:transform/scale")
+tracks/35/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:scale")
 tracks/35/interp = 1
 tracks/35/imported = false
 tracks/35/keys = {
-"times": FloatArray( 0, 0.9 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/36/type = "value"
-tracks/36/path = NodePath("Animation/Wheel Chair/Small Wheel:transform/pos")
+tracks/36/path = NodePath("Animation/Wheel Chair/Small Wheel:position")
 tracks/36/interp = 1
 tracks/36/imported = false
 tracks/36/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 45.8219, 99.5746 ) ]
 }
 tracks/37/type = "value"
-tracks/37/path = NodePath("Animation/Wheel Chair/Small Wheel:transform/rot")
+tracks/37/path = NodePath("Animation/Wheel Chair/Small Wheel:rotation_deg")
 tracks/37/interp = 1
 tracks/37/imported = false
 tracks/37/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/38/type = "value"
-tracks/38/path = NodePath("Animation/Wheel Chair/Small Wheel:transform/scale")
+tracks/38/path = NodePath("Animation/Wheel Chair/Small Wheel:scale")
 tracks/38/interp = 1
 tracks/38/imported = false
 tracks/38/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/39/type = "value"
-tracks/39/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:transform/pos")
+tracks/39/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:position")
 tracks/39/interp = 1
 tracks/39/imported = false
 tracks/39/keys = {
-"times": FloatArray( 0, 0.9 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 30.4383, 5.0019 ), Vector2( 30.4383, 5.0019 ) ]
 }
 tracks/40/type = "value"
-tracks/40/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:transform/rot")
+tracks/40/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:rotation_deg")
 tracks/40/interp = 1
 tracks/40/imported = false
 tracks/40/keys = {
-"times": FloatArray( 0, 0.9 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 14.0334 ]
 }
 tracks/41/type = "value"
-tracks/41/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:transform/scale")
+tracks/41/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:scale")
 tracks/41/interp = 1
 tracks/41/imported = false
 tracks/41/keys = {
-"times": FloatArray( 0, 0.9 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/42/type = "value"
-tracks/42/path = NodePath("Animation/Wheel Chair/Body/Hat:transform/pos")
+tracks/42/path = NodePath("Animation/Wheel Chair/Body/Hat:position")
 tracks/42/interp = 1
 tracks/42/imported = false
 tracks/42/keys = {
-"times": FloatArray( 0, 0.6, 1.1, 1.5, 2 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.6, 1.1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 31.9925, -94.2244 ), Vector2( 31.9925, -94.2244 ), Vector2( 84.8893, -94.994 ), Vector2( 84.8893, -94.994 ), Vector2( 31.9925, -94.2244 ) ]
 }
 tracks/43/type = "value"
-tracks/43/path = NodePath("Animation/Wheel Chair/Body/Hat:transform/rot")
+tracks/43/path = NodePath("Animation/Wheel Chair/Body/Hat:rotation_deg")
 tracks/43/interp = 1
 tracks/43/imported = false
 tracks/43/keys = {
-"times": FloatArray( 0, 0.6, 1.1, 1.5, 2 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.6, 1.1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, -63.7422, -63.7422, 0.0 ]
 }
 tracks/44/type = "value"
-tracks/44/path = NodePath("Animation/Wheel Chair/Body/Hat:transform/scale")
+tracks/44/path = NodePath("Animation/Wheel Chair/Body/Hat:scale")
 tracks/44/interp = 1
 tracks/44/imported = false
 tracks/44/keys = {
-"times": FloatArray( 0, 0.6, 1.1, 1.5, 2 ),
-"transitions": FloatArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.6, 1.1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/45/type = "value"
-tracks/45/path = NodePath("Animation/Wheel Chair/Body/Left Eye:transform/pos")
+tracks/45/path = NodePath("Animation/Wheel Chair/Body/Left Eye:position")
 tracks/45/interp = 1
 tracks/45/imported = false
 tracks/45/keys = {
-"times": FloatArray( 0, 0.3, 0.5 ),
-"transitions": FloatArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 3.00605, -49.2059 ), Vector2( 3.00605, -49.2059 ), Vector2( 5.44947, -48.6747 ) ]
 }
 tracks/46/type = "value"
-tracks/46/path = NodePath("Animation/Wheel Chair/Body/Left Eye:transform/rot")
+tracks/46/path = NodePath("Animation/Wheel Chair/Body/Left Eye:rotation_deg")
 tracks/46/interp = 1
 tracks/46/imported = false
 tracks/46/keys = {
-"times": FloatArray( 0, 0.3, 0.5 ),
-"transitions": FloatArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 0.0 ]
 }
 tracks/47/type = "value"
-tracks/47/path = NodePath("Animation/Wheel Chair/Body/Left Eye:transform/scale")
+tracks/47/path = NodePath("Animation/Wheel Chair/Body/Left Eye:scale")
 tracks/47/interp = 1
 tracks/47/imported = false
 tracks/47/keys = {
-"times": FloatArray( 0, 0.3, 0.5 ),
-"transitions": FloatArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/48/type = "value"
-tracks/48/path = NodePath("Animation/Wheel Chair/Body:transform/pos")
+tracks/48/path = NodePath("Animation/Wheel Chair/Body:position")
 tracks/48/interp = 1
 tracks/48/imported = false
 tracks/48/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -6.88864, -99.4379 ) ]
 }
 tracks/49/type = "value"
-tracks/49/path = NodePath("Animation/Wheel Chair/Body:transform/rot")
+tracks/49/path = NodePath("Animation/Wheel Chair/Body:rotation_deg")
 tracks/49/interp = 1
 tracks/49/imported = false
 tracks/49/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/50/type = "value"
-tracks/50/path = NodePath("Animation/Wheel Chair/Body:transform/scale")
+tracks/50/path = NodePath("Animation/Wheel Chair/Body:scale")
 tracks/50/interp = 1
 tracks/50/imported = false
 tracks/50/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
@@ -1075,8 +1075,8 @@ tracks/51/path = NodePath("Animation/Wheel Chair/Body/Left Eye:texture")
 tracks/51/interp = 1
 tracks/51/imported = false
 tracks/51/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 4 ) ]
 }
@@ -1085,525 +1085,525 @@ tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
 tracks/52/interp = 1
 tracks/52/imported = false
 tracks/52/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 4 ) ]
 }
 
 [sub_resource type="Animation" id=3]
 
-resource/name = "Jump"
+resource_name = "Jump"
 length = 0.1
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Animation/Wheel Chair/Body/Mouth:transform/pos")
+tracks/0/path = NodePath("Animation/Wheel Chair/Body/Mouth:position")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 10.8422, -4.85205 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Animation/Wheel Chair/Body/Mouth:transform/rot")
+tracks/1/path = NodePath("Animation/Wheel Chair/Body/Mouth:rotation_deg")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Animation/Wheel Chair/Body/Mouth:transform/scale")
+tracks/2/path = NodePath("Animation/Wheel Chair/Body/Mouth:scale")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:transform/pos")
+tracks/3/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:position")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -82.237, 47.8675 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:transform/rot")
+tracks/4/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:rotation_deg")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:transform/scale")
+tracks/5/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:scale")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Animation/Wheel Chair:transform/pos")
+tracks/6/path = NodePath("Animation/Wheel Chair:position")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Animation/Wheel Chair:transform/rot")
+tracks/7/path = NodePath("Animation/Wheel Chair:rotation_deg")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Animation/Wheel Chair:transform/scale")
+tracks/8/path = NodePath("Animation/Wheel Chair:scale")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Animation/Wheel Chair/Body/Beard:transform/pos")
+tracks/9/path = NodePath("Animation/Wheel Chair/Body/Beard:position")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 6.00408, 17.3764 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Animation/Wheel Chair/Body/Beard:transform/rot")
+tracks/10/path = NodePath("Animation/Wheel Chair/Body/Beard:rotation_deg")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Animation/Wheel Chair/Body/Beard:transform/scale")
+tracks/11/path = NodePath("Animation/Wheel Chair/Body/Beard:scale")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:transform/pos")
+tracks/12/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:position")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 25.2521, -68.9185 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:transform/rot")
+tracks/13/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:rotation_deg")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:transform/scale")
+tracks/14/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:scale")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Animation/Wheel Chair/Body/Left Arm:transform/pos")
+tracks/15/path = NodePath("Animation/Wheel Chair/Body/Left Arm:position")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -44.0386, 0.138672 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Animation/Wheel Chair/Body/Left Arm:transform/rot")
+tracks/16/path = NodePath("Animation/Wheel Chair/Body/Left Arm:rotation_deg")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 142.02 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Animation/Wheel Chair/Body/Left Arm:transform/scale")
+tracks/17/path = NodePath("Animation/Wheel Chair/Body/Left Arm:scale")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:transform/pos")
+tracks/18/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:position")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1.4649, -55.1537 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:transform/rot")
+tracks/19/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:rotation_deg")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:transform/scale")
+tracks/20/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:scale")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:transform/pos")
+tracks/21/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:position")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 38.6096, -46.3452 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:transform/rot")
+tracks/22/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:rotation_deg")
 tracks/22/interp = 1
 tracks/22/imported = false
 tracks/22/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:transform/scale")
+tracks/23/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:scale")
 tracks/23/interp = 1
 tracks/23/imported = false
 tracks/23/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Animation/Wheel Chair/Body/Right Arm:transform/pos")
+tracks/24/path = NodePath("Animation/Wheel Chair/Body/Right Arm:position")
 tracks/24/interp = 1
 tracks/24/imported = false
 tracks/24/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 49.4514, 15.1539 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Animation/Wheel Chair/Body/Right Arm:transform/rot")
+tracks/25/path = NodePath("Animation/Wheel Chair/Body/Right Arm:rotation_deg")
 tracks/25/interp = 1
 tracks/25/imported = false
 tracks/25/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 27.9182 ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Animation/Wheel Chair/Body/Right Arm:transform/scale")
+tracks/26/path = NodePath("Animation/Wheel Chair/Body/Right Arm:scale")
 tracks/26/interp = 1
 tracks/26/imported = false
 tracks/26/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Animation/Wheel Chair/Body/Nose:transform/pos")
+tracks/27/path = NodePath("Animation/Wheel Chair/Body/Nose:position")
 tracks/27/interp = 1
 tracks/27/imported = false
 tracks/27/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 12.6003, -21.957 ) ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Animation/Wheel Chair/Body/Nose:transform/rot")
+tracks/28/path = NodePath("Animation/Wheel Chair/Body/Nose:rotation_deg")
 tracks/28/interp = 1
 tracks/28/imported = false
 tracks/28/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("Animation/Wheel Chair/Body/Nose:transform/scale")
+tracks/29/path = NodePath("Animation/Wheel Chair/Body/Nose:scale")
 tracks/29/interp = 1
 tracks/29/imported = false
 tracks/29/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Animation/Wheel Chair/Body/Right Eye:transform/pos")
+tracks/30/path = NodePath("Animation/Wheel Chair/Body/Right Eye:position")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 37.9084, -39.0462 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Animation/Wheel Chair/Body/Right Eye:transform/rot")
+tracks/31/path = NodePath("Animation/Wheel Chair/Body/Right Eye:rotation_deg")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/32/type = "value"
-tracks/32/path = NodePath("Animation/Wheel Chair/Body/Right Eye:transform/scale")
+tracks/32/path = NodePath("Animation/Wheel Chair/Body/Right Eye:scale")
 tracks/32/interp = 1
 tracks/32/imported = false
 tracks/32/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/33/type = "value"
-tracks/33/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:transform/pos")
+tracks/33/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:position")
 tracks/33/interp = 1
 tracks/33/imported = false
 tracks/33/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -16.7645, -6.68573 ) ]
 }
 tracks/34/type = "value"
-tracks/34/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:transform/rot")
+tracks/34/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:rotation_deg")
 tracks/34/interp = 1
 tracks/34/imported = false
 tracks/34/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:transform/scale")
+tracks/35/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:scale")
 tracks/35/interp = 1
 tracks/35/imported = false
 tracks/35/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/36/type = "value"
-tracks/36/path = NodePath("Animation/Wheel Chair/Small Wheel:transform/pos")
+tracks/36/path = NodePath("Animation/Wheel Chair/Small Wheel:position")
 tracks/36/interp = 1
 tracks/36/imported = false
 tracks/36/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 45.8219, 99.5746 ) ]
 }
 tracks/37/type = "value"
-tracks/37/path = NodePath("Animation/Wheel Chair/Small Wheel:transform/rot")
+tracks/37/path = NodePath("Animation/Wheel Chair/Small Wheel:rotation_deg")
 tracks/37/interp = 1
 tracks/37/imported = false
 tracks/37/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/38/type = "value"
-tracks/38/path = NodePath("Animation/Wheel Chair/Small Wheel:transform/scale")
+tracks/38/path = NodePath("Animation/Wheel Chair/Small Wheel:scale")
 tracks/38/interp = 1
 tracks/38/imported = false
 tracks/38/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/39/type = "value"
-tracks/39/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:transform/pos")
+tracks/39/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:position")
 tracks/39/interp = 1
 tracks/39/imported = false
 tracks/39/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 35.4597, 6.25728 ) ]
 }
 tracks/40/type = "value"
-tracks/40/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:transform/rot")
+tracks/40/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:rotation_deg")
 tracks/40/interp = 1
 tracks/40/imported = false
 tracks/40/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/41/type = "value"
-tracks/41/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:transform/scale")
+tracks/41/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:scale")
 tracks/41/interp = 1
 tracks/41/imported = false
 tracks/41/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/42/type = "value"
-tracks/42/path = NodePath("Animation/Wheel Chair/Body/Hat:transform/pos")
+tracks/42/path = NodePath("Animation/Wheel Chair/Body/Hat:position")
 tracks/42/interp = 1
 tracks/42/imported = false
 tracks/42/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 35.1697, -102.565 ) ]
 }
 tracks/43/type = "value"
-tracks/43/path = NodePath("Animation/Wheel Chair/Body/Hat:transform/rot")
+tracks/43/path = NodePath("Animation/Wheel Chair/Body/Hat:rotation_deg")
 tracks/43/interp = 1
 tracks/43/imported = false
 tracks/43/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/44/type = "value"
-tracks/44/path = NodePath("Animation/Wheel Chair/Body/Hat:transform/scale")
+tracks/44/path = NodePath("Animation/Wheel Chair/Body/Hat:scale")
 tracks/44/interp = 1
 tracks/44/imported = false
 tracks/44/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/45/type = "value"
-tracks/45/path = NodePath("Animation/Wheel Chair/Body/Left Eye:transform/pos")
+tracks/45/path = NodePath("Animation/Wheel Chair/Body/Left Eye:position")
 tracks/45/interp = 1
 tracks/45/imported = false
 tracks/45/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0.0245895, -50.7751 ) ]
 }
 tracks/46/type = "value"
-tracks/46/path = NodePath("Animation/Wheel Chair/Body/Left Eye:transform/rot")
+tracks/46/path = NodePath("Animation/Wheel Chair/Body/Left Eye:rotation_deg")
 tracks/46/interp = 1
 tracks/46/imported = false
 tracks/46/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/47/type = "value"
-tracks/47/path = NodePath("Animation/Wheel Chair/Body/Left Eye:transform/scale")
+tracks/47/path = NodePath("Animation/Wheel Chair/Body/Left Eye:scale")
 tracks/47/interp = 1
 tracks/47/imported = false
 tracks/47/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/48/type = "value"
-tracks/48/path = NodePath("Animation/Wheel Chair/Body:transform/pos")
+tracks/48/path = NodePath("Animation/Wheel Chair/Body:position")
 tracks/48/interp = 1
 tracks/48/imported = false
 tracks/48/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -6.09433, -115.324 ) ]
 }
 tracks/49/type = "value"
-tracks/49/path = NodePath("Animation/Wheel Chair/Body:transform/rot")
+tracks/49/path = NodePath("Animation/Wheel Chair/Body:rotation_deg")
 tracks/49/interp = 1
 tracks/49/imported = false
 tracks/49/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/50/type = "value"
-tracks/50/path = NodePath("Animation/Wheel Chair/Body:transform/scale")
+tracks/50/path = NodePath("Animation/Wheel Chair/Body:scale")
 tracks/50/interp = 1
 tracks/50/imported = false
 tracks/50/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
@@ -1612,8 +1612,8 @@ tracks/51/path = NodePath("Animation/Wheel Chair/Body/Left Eye:texture")
 tracks/51/interp = 1
 tracks/51/imported = false
 tracks/51/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 4 ) ]
 }
@@ -1622,525 +1622,525 @@ tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
 tracks/52/interp = 1
 tracks/52/imported = false
 tracks/52/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 4 ) ]
 }
 
 [sub_resource type="Animation" id=4]
 
-resource/name = "Still"
+resource_name = "Still"
 length = 0.1
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Animation/Wheel Chair/Body/Mouth:transform/pos")
+tracks/0/path = NodePath("Animation/Wheel Chair/Body/Mouth:position")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 9.74373, -0.458313 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Animation/Wheel Chair/Body/Mouth:transform/rot")
+tracks/1/path = NodePath("Animation/Wheel Chair/Body/Mouth:rotation_deg")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Animation/Wheel Chair/Body/Mouth:transform/scale")
+tracks/2/path = NodePath("Animation/Wheel Chair/Body/Mouth:scale")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:transform/pos")
+tracks/3/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:position")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -82.237, 47.8675 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:transform/rot")
+tracks/4/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:rotation_deg")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:transform/scale")
+tracks/5/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:scale")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Animation/Wheel Chair:transform/pos")
+tracks/6/path = NodePath("Animation/Wheel Chair:position")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Animation/Wheel Chair:transform/rot")
+tracks/7/path = NodePath("Animation/Wheel Chair:rotation_deg")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Animation/Wheel Chair:transform/scale")
+tracks/8/path = NodePath("Animation/Wheel Chair:scale")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Animation/Wheel Chair/Body/Beard:transform/pos")
+tracks/9/path = NodePath("Animation/Wheel Chair/Body/Beard:position")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 6.00408, 17.3764 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Animation/Wheel Chair/Body/Beard:transform/rot")
+tracks/10/path = NodePath("Animation/Wheel Chair/Body/Beard:rotation_deg")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Animation/Wheel Chair/Body/Beard:transform/scale")
+tracks/11/path = NodePath("Animation/Wheel Chair/Body/Beard:scale")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:transform/pos")
+tracks/12/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:position")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 25.2521, -68.9185 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:transform/rot")
+tracks/13/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:rotation_deg")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:transform/scale")
+tracks/14/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:scale")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Animation/Wheel Chair/Body/Left Arm:transform/pos")
+tracks/15/path = NodePath("Animation/Wheel Chair/Body/Left Arm:position")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -44.0386, 0.138672 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Animation/Wheel Chair/Body/Left Arm:transform/rot")
+tracks/16/path = NodePath("Animation/Wheel Chair/Body/Left Arm:rotation_deg")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Animation/Wheel Chair/Body/Left Arm:transform/scale")
+tracks/17/path = NodePath("Animation/Wheel Chair/Body/Left Arm:scale")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:transform/pos")
+tracks/18/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:position")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1.62183, -53.2707 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:transform/rot")
+tracks/19/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:rotation_deg")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:transform/scale")
+tracks/20/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:scale")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:transform/pos")
+tracks/21/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:position")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 38.9234, -42.2653 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:transform/rot")
+tracks/22/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:rotation_deg")
 tracks/22/interp = 1
 tracks/22/imported = false
 tracks/22/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:transform/scale")
+tracks/23/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:scale")
 tracks/23/interp = 1
 tracks/23/imported = false
 tracks/23/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Animation/Wheel Chair/Body/Right Arm:transform/pos")
+tracks/24/path = NodePath("Animation/Wheel Chair/Body/Right Arm:position")
 tracks/24/interp = 1
 tracks/24/imported = false
 tracks/24/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 49.4514, 15.1539 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Animation/Wheel Chair/Body/Right Arm:transform/rot")
+tracks/25/path = NodePath("Animation/Wheel Chair/Body/Right Arm:rotation_deg")
 tracks/25/interp = 1
 tracks/25/imported = false
 tracks/25/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Animation/Wheel Chair/Body/Right Arm:transform/scale")
+tracks/26/path = NodePath("Animation/Wheel Chair/Body/Right Arm:scale")
 tracks/26/interp = 1
 tracks/26/imported = false
 tracks/26/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Animation/Wheel Chair/Body/Nose:transform/pos")
+tracks/27/path = NodePath("Animation/Wheel Chair/Body/Nose:position")
 tracks/27/interp = 1
 tracks/27/imported = false
 tracks/27/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 12.6003, -21.957 ) ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Animation/Wheel Chair/Body/Nose:transform/rot")
+tracks/28/path = NodePath("Animation/Wheel Chair/Body/Nose:rotation_deg")
 tracks/28/interp = 1
 tracks/28/imported = false
 tracks/28/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("Animation/Wheel Chair/Body/Nose:transform/scale")
+tracks/29/path = NodePath("Animation/Wheel Chair/Body/Nose:scale")
 tracks/29/interp = 1
 tracks/29/imported = false
 tracks/29/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Animation/Wheel Chair/Body/Right Eye:transform/pos")
+tracks/30/path = NodePath("Animation/Wheel Chair/Body/Right Eye:position")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 36.9669, -38.4186 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Animation/Wheel Chair/Body/Right Eye:transform/rot")
+tracks/31/path = NodePath("Animation/Wheel Chair/Body/Right Eye:rotation_deg")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/32/type = "value"
-tracks/32/path = NodePath("Animation/Wheel Chair/Body/Right Eye:transform/scale")
+tracks/32/path = NodePath("Animation/Wheel Chair/Body/Right Eye:scale")
 tracks/32/interp = 1
 tracks/32/imported = false
 tracks/32/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/33/type = "value"
-tracks/33/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:transform/pos")
+tracks/33/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:position")
 tracks/33/interp = 1
 tracks/33/imported = false
 tracks/33/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -11.1154, -5.74422 ) ]
 }
 tracks/34/type = "value"
-tracks/34/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:transform/rot")
+tracks/34/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:rotation_deg")
 tracks/34/interp = 1
 tracks/34/imported = false
 tracks/34/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:transform/scale")
+tracks/35/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:scale")
 tracks/35/interp = 1
 tracks/35/imported = false
 tracks/35/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/36/type = "value"
-tracks/36/path = NodePath("Animation/Wheel Chair/Small Wheel:transform/pos")
+tracks/36/path = NodePath("Animation/Wheel Chair/Small Wheel:position")
 tracks/36/interp = 1
 tracks/36/imported = false
 tracks/36/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 45.8219, 99.5746 ) ]
 }
 tracks/37/type = "value"
-tracks/37/path = NodePath("Animation/Wheel Chair/Small Wheel:transform/rot")
+tracks/37/path = NodePath("Animation/Wheel Chair/Small Wheel:rotation_deg")
 tracks/37/interp = 1
 tracks/37/imported = false
 tracks/37/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/38/type = "value"
-tracks/38/path = NodePath("Animation/Wheel Chair/Small Wheel:transform/scale")
+tracks/38/path = NodePath("Animation/Wheel Chair/Small Wheel:scale")
 tracks/38/interp = 1
 tracks/38/imported = false
 tracks/38/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/39/type = "value"
-tracks/39/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:transform/pos")
+tracks/39/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:position")
 tracks/39/interp = 1
 tracks/39/imported = false
 tracks/39/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 30.4383, 5.0019 ) ]
 }
 tracks/40/type = "value"
-tracks/40/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:transform/rot")
+tracks/40/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:rotation_deg")
 tracks/40/interp = 1
 tracks/40/imported = false
 tracks/40/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/41/type = "value"
-tracks/41/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:transform/scale")
+tracks/41/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:scale")
 tracks/41/interp = 1
 tracks/41/imported = false
 tracks/41/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/42/type = "value"
-tracks/42/path = NodePath("Animation/Wheel Chair/Body/Hat:transform/pos")
+tracks/42/path = NodePath("Animation/Wheel Chair/Body/Hat:position")
 tracks/42/interp = 1
 tracks/42/imported = false
 tracks/42/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 31.9925, -94.2244 ) ]
 }
 tracks/43/type = "value"
-tracks/43/path = NodePath("Animation/Wheel Chair/Body/Hat:transform/rot")
+tracks/43/path = NodePath("Animation/Wheel Chair/Body/Hat:rotation_deg")
 tracks/43/interp = 1
 tracks/43/imported = false
 tracks/43/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/44/type = "value"
-tracks/44/path = NodePath("Animation/Wheel Chair/Body/Hat:transform/scale")
+tracks/44/path = NodePath("Animation/Wheel Chair/Body/Hat:scale")
 tracks/44/interp = 1
 tracks/44/imported = false
 tracks/44/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/45/type = "value"
-tracks/45/path = NodePath("Animation/Wheel Chair/Body/Left Eye:transform/pos")
+tracks/45/path = NodePath("Animation/Wheel Chair/Body/Left Eye:position")
 tracks/45/interp = 1
 tracks/45/imported = false
 tracks/45/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 3.00605, -49.2059 ) ]
 }
 tracks/46/type = "value"
-tracks/46/path = NodePath("Animation/Wheel Chair/Body/Left Eye:transform/rot")
+tracks/46/path = NodePath("Animation/Wheel Chair/Body/Left Eye:rotation_deg")
 tracks/46/interp = 1
 tracks/46/imported = false
 tracks/46/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/47/type = "value"
-tracks/47/path = NodePath("Animation/Wheel Chair/Body/Left Eye:transform/scale")
+tracks/47/path = NodePath("Animation/Wheel Chair/Body/Left Eye:scale")
 tracks/47/interp = 1
 tracks/47/imported = false
 tracks/47/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/48/type = "value"
-tracks/48/path = NodePath("Animation/Wheel Chair/Body:transform/pos")
+tracks/48/path = NodePath("Animation/Wheel Chair/Body:position")
 tracks/48/interp = 1
 tracks/48/imported = false
 tracks/48/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -6.88864, -99.4379 ) ]
 }
 tracks/49/type = "value"
-tracks/49/path = NodePath("Animation/Wheel Chair/Body:transform/rot")
+tracks/49/path = NodePath("Animation/Wheel Chair/Body:rotation_deg")
 tracks/49/interp = 1
 tracks/49/imported = false
 tracks/49/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/50/type = "value"
-tracks/50/path = NodePath("Animation/Wheel Chair/Body:transform/scale")
+tracks/50/path = NodePath("Animation/Wheel Chair/Body:scale")
 tracks/50/interp = 1
 tracks/50/imported = false
 tracks/50/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
@@ -2149,8 +2149,8 @@ tracks/51/path = NodePath("Animation/Wheel Chair/Body/Left Eye:texture")
 tracks/51/interp = 1
 tracks/51/imported = false
 tracks/51/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 4 ) ]
 }
@@ -2159,525 +2159,525 @@ tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
 tracks/52/interp = 1
 tracks/52/imported = false
 tracks/52/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 4 ) ]
 }
 
 [sub_resource type="Animation" id=5]
 
-resource/name = "Stunned"
+resource_name = "Stunned"
 length = 1.5
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Animation/Wheel Chair/Body/Mouth:transform/pos")
+tracks/0/path = NodePath("Animation/Wheel Chair/Body/Mouth:position")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0, 0.3, 0.8, 1.2 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.8, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 10.7286, -7.6996 ), Vector2( 11.0941, -10.387 ), Vector2( 10.7421, -6.3618 ), Vector2( 11.7802, -10.5031 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Animation/Wheel Chair/Body/Mouth:transform/rot")
+tracks/1/path = NodePath("Animation/Wheel Chair/Body/Mouth:rotation_deg")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0, 0.3, 0.8, 1.2 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.8, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 0.0, 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Animation/Wheel Chair/Body/Mouth:transform/scale")
+tracks/2/path = NodePath("Animation/Wheel Chair/Body/Mouth:scale")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0, 0.3, 0.8, 1.2 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.8, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:transform/pos")
+tracks/3/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:position")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -82.237, 47.8675 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:transform/rot")
+tracks/4/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:rotation_deg")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:transform/scale")
+tracks/5/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:scale")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Animation/Wheel Chair:transform/pos")
+tracks/6/path = NodePath("Animation/Wheel Chair:position")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Animation/Wheel Chair:transform/rot")
+tracks/7/path = NodePath("Animation/Wheel Chair:rotation_deg")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Animation/Wheel Chair:transform/scale")
+tracks/8/path = NodePath("Animation/Wheel Chair:scale")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Animation/Wheel Chair/Body/Beard:transform/pos")
+tracks/9/path = NodePath("Animation/Wheel Chair/Body/Beard:position")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 13.2978, 11.52 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Animation/Wheel Chair/Body/Beard:transform/rot")
+tracks/10/path = NodePath("Animation/Wheel Chair/Body/Beard:rotation_deg")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 13.5192 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Animation/Wheel Chair/Body/Beard:transform/scale")
+tracks/11/path = NodePath("Animation/Wheel Chair/Body/Beard:scale")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:transform/pos")
+tracks/12/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:position")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 25.2521, -68.9185 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:transform/rot")
+tracks/13/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:rotation_deg")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:transform/scale")
+tracks/14/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:scale")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Animation/Wheel Chair/Body/Left Arm:transform/pos")
+tracks/15/path = NodePath("Animation/Wheel Chair/Body/Left Arm:position")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
-"times": FloatArray( 0, 0.8 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -44.0386, 0.138672 ), Vector2( -44.0386, 0.138672 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Animation/Wheel Chair/Body/Left Arm:transform/rot")
+tracks/16/path = NodePath("Animation/Wheel Chair/Body/Left Arm:rotation_deg")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
-"times": FloatArray( 0, 0.8 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ -41.108, -38.7654 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Animation/Wheel Chair/Body/Left Arm:transform/scale")
+tracks/17/path = NodePath("Animation/Wheel Chair/Body/Left Arm:scale")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
-"times": FloatArray( 0, 0.8 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:transform/pos")
+tracks/18/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:position")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
-"times": FloatArray( 0, 0.9 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 2.66182, -59.6264 ), Vector2( 3.8306, -61.85 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:transform/rot")
+tracks/19/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:rotation_deg")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
-"times": FloatArray( 0, 0.9 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0 ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:transform/scale")
+tracks/20/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:scale")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
-"times": FloatArray( 0, 0.9 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:transform/pos")
+tracks/21/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:position")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
-"times": FloatArray( 0, 1.2 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 39.8696, -47.9315 ), Vector2( 40.101, -49.6327 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:transform/rot")
+tracks/22/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:rotation_deg")
 tracks/22/interp = 1
 tracks/22/imported = false
 tracks/22/keys = {
-"times": FloatArray( 0, 1.2 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0 ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:transform/scale")
+tracks/23/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:scale")
 tracks/23/interp = 1
 tracks/23/imported = false
 tracks/23/keys = {
-"times": FloatArray( 0, 1.2 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Animation/Wheel Chair/Body/Right Arm:transform/pos")
+tracks/24/path = NodePath("Animation/Wheel Chair/Body/Right Arm:position")
 tracks/24/interp = 1
 tracks/24/imported = false
 tracks/24/keys = {
-"times": FloatArray( 0, 0.8 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 49.4514, 15.1539 ), Vector2( 49.4514, 15.1539 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Animation/Wheel Chair/Body/Right Arm:transform/rot")
+tracks/25/path = NodePath("Animation/Wheel Chair/Body/Right Arm:rotation_deg")
 tracks/25/interp = 1
 tracks/25/imported = false
 tracks/25/keys = {
-"times": FloatArray( 0, 0.8 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 72.7238, 99.9061 ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Animation/Wheel Chair/Body/Right Arm:transform/scale")
+tracks/26/path = NodePath("Animation/Wheel Chair/Body/Right Arm:scale")
 tracks/26/interp = 1
 tracks/26/imported = false
 tracks/26/keys = {
-"times": FloatArray( 0, 0.8 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Animation/Wheel Chair/Body/Nose:transform/pos")
+tracks/27/path = NodePath("Animation/Wheel Chair/Body/Nose:position")
 tracks/27/interp = 1
 tracks/27/imported = false
 tracks/27/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 13.1162, -25.75 ) ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Animation/Wheel Chair/Body/Nose:transform/rot")
+tracks/28/path = NodePath("Animation/Wheel Chair/Body/Nose:rotation_deg")
 tracks/28/interp = 1
 tracks/28/imported = false
 tracks/28/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("Animation/Wheel Chair/Body/Nose:transform/scale")
+tracks/29/path = NodePath("Animation/Wheel Chair/Body/Nose:scale")
 tracks/29/interp = 1
 tracks/29/imported = false
 tracks/29/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Animation/Wheel Chair/Body/Right Eye:transform/pos")
+tracks/30/path = NodePath("Animation/Wheel Chair/Body/Right Eye:position")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
-"times": FloatArray( 0, 0.7 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 36.9669, -38.4186 ), Vector2( 36.9669, -38.4186 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Animation/Wheel Chair/Body/Right Eye:transform/rot")
+tracks/31/path = NodePath("Animation/Wheel Chair/Body/Right Eye:rotation_deg")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
-"times": FloatArray( 0, 0.7 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ -144.529, -240.535 ]
 }
 tracks/32/type = "value"
-tracks/32/path = NodePath("Animation/Wheel Chair/Body/Right Eye:transform/scale")
+tracks/32/path = NodePath("Animation/Wheel Chair/Body/Right Eye:scale")
 tracks/32/interp = 1
 tracks/32/imported = false
 tracks/32/keys = {
-"times": FloatArray( 0, 0.7 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0.8, 0.8 ), Vector2( 0.8, 0.8 ) ]
 }
 tracks/33/type = "value"
-tracks/33/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:transform/pos")
+tracks/33/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:position")
 tracks/33/interp = 1
 tracks/33/imported = false
 tracks/33/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -9.83131, -8.73038 ) ]
 }
 tracks/34/type = "value"
-tracks/34/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:transform/rot")
+tracks/34/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:rotation_deg")
 tracks/34/interp = 1
 tracks/34/imported = false
 tracks/34/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:transform/scale")
+tracks/35/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:scale")
 tracks/35/interp = 1
 tracks/35/imported = false
 tracks/35/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/36/type = "value"
-tracks/36/path = NodePath("Animation/Wheel Chair/Small Wheel:transform/pos")
+tracks/36/path = NodePath("Animation/Wheel Chair/Small Wheel:position")
 tracks/36/interp = 1
 tracks/36/imported = false
 tracks/36/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 45.8219, 99.5746 ) ]
 }
 tracks/37/type = "value"
-tracks/37/path = NodePath("Animation/Wheel Chair/Small Wheel:transform/rot")
+tracks/37/path = NodePath("Animation/Wheel Chair/Small Wheel:rotation_deg")
 tracks/37/interp = 1
 tracks/37/imported = false
 tracks/37/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/38/type = "value"
-tracks/38/path = NodePath("Animation/Wheel Chair/Small Wheel:transform/scale")
+tracks/38/path = NodePath("Animation/Wheel Chair/Small Wheel:scale")
 tracks/38/interp = 1
 tracks/38/imported = false
 tracks/38/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/39/type = "value"
-tracks/39/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:transform/pos")
+tracks/39/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:position")
 tracks/39/interp = 1
 tracks/39/imported = false
 tracks/39/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 31.3224, 1.08332 ) ]
 }
 tracks/40/type = "value"
-tracks/40/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:transform/rot")
+tracks/40/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:rotation_deg")
 tracks/40/interp = 1
 tracks/40/imported = false
 tracks/40/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/41/type = "value"
-tracks/41/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:transform/scale")
+tracks/41/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:scale")
 tracks/41/interp = 1
 tracks/41/imported = false
 tracks/41/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/42/type = "value"
-tracks/42/path = NodePath("Animation/Wheel Chair/Body/Hat:transform/pos")
+tracks/42/path = NodePath("Animation/Wheel Chair/Body/Hat:position")
 tracks/42/interp = 1
 tracks/42/imported = false
 tracks/42/keys = {
-"times": FloatArray( 0, 0.5, 1, 1.1 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -17.7323, -100.46 ), Vector2( -19.3412, -101.251 ), Vector2( -20.95, -102.042 ), Vector2( -20.3065, -101.726 ) ]
 }
 tracks/43/type = "value"
-tracks/43/path = NodePath("Animation/Wheel Chair/Body/Hat:transform/rot")
+tracks/43/path = NodePath("Animation/Wheel Chair/Body/Hat:rotation_deg")
 tracks/43/interp = 1
 tracks/43/imported = false
 tracks/43/keys = {
-"times": FloatArray( 0, 0.5, 1, 1.1 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 86.3776, 89.186, 86.3776, 83.2998 ]
 }
 tracks/44/type = "value"
-tracks/44/path = NodePath("Animation/Wheel Chair/Body/Hat:transform/scale")
+tracks/44/path = NodePath("Animation/Wheel Chair/Body/Hat:scale")
 tracks/44/interp = 1
 tracks/44/imported = false
 tracks/44/keys = {
-"times": FloatArray( 0, 0.5, 1, 1.1 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/45/type = "value"
-tracks/45/path = NodePath("Animation/Wheel Chair/Body/Left Eye:transform/pos")
+tracks/45/path = NodePath("Animation/Wheel Chair/Body/Left Eye:position")
 tracks/45/interp = 1
 tracks/45/imported = false
 tracks/45/keys = {
-"times": FloatArray( 0, 0.9 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 3.00605, -49.2059 ), Vector2( 3.00605, -49.2059 ) ]
 }
 tracks/46/type = "value"
-tracks/46/path = NodePath("Animation/Wheel Chair/Body/Left Eye:transform/rot")
+tracks/46/path = NodePath("Animation/Wheel Chair/Body/Left Eye:rotation_deg")
 tracks/46/interp = 1
 tracks/46/imported = false
 tracks/46/keys = {
-"times": FloatArray( 0, 0.9 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, -144.553 ]
 }
 tracks/47/type = "value"
-tracks/47/path = NodePath("Animation/Wheel Chair/Body/Left Eye:transform/scale")
+tracks/47/path = NodePath("Animation/Wheel Chair/Body/Left Eye:scale")
 tracks/47/interp = 1
 tracks/47/imported = false
 tracks/47/keys = {
-"times": FloatArray( 0, 0.9 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0.8, 0.8 ), Vector2( 0.8, 0.8 ) ]
 }
 tracks/48/type = "value"
-tracks/48/path = NodePath("Animation/Wheel Chair/Body:transform/pos")
+tracks/48/path = NodePath("Animation/Wheel Chair/Body:position")
 tracks/48/interp = 1
 tracks/48/imported = false
 tracks/48/keys = {
-"times": FloatArray( 0, 0.8 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 21.5858, -47.059 ), Vector2( 21.5858, -49.2043 ) ]
 }
 tracks/49/type = "value"
-tracks/49/path = NodePath("Animation/Wheel Chair/Body:transform/rot")
+tracks/49/path = NodePath("Animation/Wheel Chair/Body:rotation_deg")
 tracks/49/interp = 1
 tracks/49/imported = false
 tracks/49/keys = {
-"times": FloatArray( 0, 0.8 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 277.745, 277.745 ]
 }
 tracks/50/type = "value"
-tracks/50/path = NodePath("Animation/Wheel Chair/Body:transform/scale")
+tracks/50/path = NodePath("Animation/Wheel Chair/Body:scale")
 tracks/50/interp = 1
 tracks/50/imported = false
 tracks/50/keys = {
-"times": FloatArray( 0, 0.8 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
@@ -2686,8 +2686,8 @@ tracks/51/path = NodePath("Animation/Wheel Chair/Body/Left Eye:texture")
 tracks/51/interp = 1
 tracks/51/imported = false
 tracks/51/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 17 ) ]
 }
@@ -2696,525 +2696,525 @@ tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
 tracks/52/interp = 1
 tracks/52/imported = false
 tracks/52/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 17 ) ]
 }
 
 [sub_resource type="Animation" id=6]
 
-resource/name = "Walk"
+resource_name = "Walk"
 length = 4.0
 loop = true
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Animation/Wheel Chair/Body/Mouth:transform/pos")
+tracks/0/path = NodePath("Animation/Wheel Chair/Body/Mouth:position")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0, 1.5, 3 ),
-"transitions": FloatArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 9.74373, -0.458313 ), Vector2( 10.3315, -4.1317 ), Vector2( 9.50514, 0.293854 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Animation/Wheel Chair/Body/Mouth:transform/rot")
+tracks/1/path = NodePath("Animation/Wheel Chair/Body/Mouth:rotation_deg")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 0, 1.5, 3 ),
-"transitions": FloatArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Animation/Wheel Chair/Body/Mouth:transform/scale")
+tracks/2/path = NodePath("Animation/Wheel Chair/Body/Mouth:scale")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
-"times": FloatArray( 0, 1.5, 3 ),
-"transitions": FloatArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 1.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:transform/pos")
+tracks/3/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:position")
 tracks/3/interp = 1
 tracks/3/imported = false
 tracks/3/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -79.8255, 49.4751 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:transform/rot")
+tracks/4/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:rotation_deg")
 tracks/4/interp = 1
 tracks/4/imported = false
 tracks/4/keys = {
-"times": FloatArray( 0, 2, 4 ),
-"transitions": FloatArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 2, 4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, -180.0, -360.0 ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:transform/scale")
+tracks/5/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:scale")
 tracks/5/interp = 1
 tracks/5/imported = false
 tracks/5/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Animation/Wheel Chair:transform/pos")
+tracks/6/path = NodePath("Animation/Wheel Chair:position")
 tracks/6/interp = 1
 tracks/6/imported = false
 tracks/6/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Animation/Wheel Chair:transform/rot")
+tracks/7/path = NodePath("Animation/Wheel Chair:rotation_deg")
 tracks/7/interp = 1
 tracks/7/imported = false
 tracks/7/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Animation/Wheel Chair:transform/scale")
+tracks/8/path = NodePath("Animation/Wheel Chair:scale")
 tracks/8/interp = 1
 tracks/8/imported = false
 tracks/8/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Animation/Wheel Chair/Body/Beard:transform/pos")
+tracks/9/path = NodePath("Animation/Wheel Chair/Body/Beard:position")
 tracks/9/interp = 1
 tracks/9/imported = false
 tracks/9/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 6.00408, 17.3764 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Animation/Wheel Chair/Body/Beard:transform/rot")
+tracks/10/path = NodePath("Animation/Wheel Chair/Body/Beard:rotation_deg")
 tracks/10/interp = 1
 tracks/10/imported = false
 tracks/10/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Animation/Wheel Chair/Body/Beard:transform/scale")
+tracks/11/path = NodePath("Animation/Wheel Chair/Body/Beard:scale")
 tracks/11/interp = 1
 tracks/11/imported = false
 tracks/11/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:transform/pos")
+tracks/12/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:position")
 tracks/12/interp = 1
 tracks/12/imported = false
 tracks/12/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 25.2521, -68.9185 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:transform/rot")
+tracks/13/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:rotation_deg")
 tracks/13/interp = 1
 tracks/13/imported = false
 tracks/13/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:transform/scale")
+tracks/14/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:scale")
 tracks/14/interp = 1
 tracks/14/imported = false
 tracks/14/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Animation/Wheel Chair/Body/Left Arm:transform/pos")
+tracks/15/path = NodePath("Animation/Wheel Chair/Body/Left Arm:position")
 tracks/15/interp = 1
 tracks/15/imported = false
 tracks/15/keys = {
-"times": FloatArray( 0, 1, 2, 3 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -44.0386, 0.138672 ), Vector2( -44.0386, 0.138672 ), Vector2( -44.0386, 0.138672 ), Vector2( -44.0386, 0.138672 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Animation/Wheel Chair/Body/Left Arm:transform/rot")
+tracks/16/path = NodePath("Animation/Wheel Chair/Body/Left Arm:rotation_deg")
 tracks/16/interp = 1
 tracks/16/imported = false
 tracks/16/keys = {
-"times": FloatArray( 0, 1, 2, 3 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ -3.39049, 0.813389, -3.39049, 0.813389 ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Animation/Wheel Chair/Body/Left Arm:transform/scale")
+tracks/17/path = NodePath("Animation/Wheel Chair/Body/Left Arm:scale")
 tracks/17/interp = 1
 tracks/17/imported = false
 tracks/17/keys = {
-"times": FloatArray( 0, 1, 2, 3 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:transform/pos")
+tracks/18/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:position")
 tracks/18/interp = 1
 tracks/18/imported = false
 tracks/18/keys = {
-"times": FloatArray( 0, 2.6 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 2.6 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1.62183, -53.2707 ), Vector2( 1.62183, -53.2707 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:transform/rot")
+tracks/19/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:rotation_deg")
 tracks/19/interp = 1
 tracks/19/imported = false
 tracks/19/keys = {
-"times": FloatArray( 0, 2.6 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 2.6 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, -8.2987 ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:transform/scale")
+tracks/20/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:scale")
 tracks/20/interp = 1
 tracks/20/imported = false
 tracks/20/keys = {
-"times": FloatArray( 0, 2.6 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 2.6 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:transform/pos")
+tracks/21/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:position")
 tracks/21/interp = 1
 tracks/21/imported = false
 tracks/21/keys = {
-"times": FloatArray( 0, 1.4 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 38.9234, -42.2653 ), Vector2( 38.9234, -42.2653 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:transform/rot")
+tracks/22/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:rotation_deg")
 tracks/22/interp = 1
 tracks/22/imported = false
 tracks/22/keys = {
-"times": FloatArray( 0, 1.4 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, -5.05009 ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:transform/scale")
+tracks/23/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:scale")
 tracks/23/interp = 1
 tracks/23/imported = false
 tracks/23/keys = {
-"times": FloatArray( 0, 1.4 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/24/type = "value"
-tracks/24/path = NodePath("Animation/Wheel Chair/Body/Right Arm:transform/pos")
+tracks/24/path = NodePath("Animation/Wheel Chair/Body/Right Arm:position")
 tracks/24/interp = 1
 tracks/24/imported = false
 tracks/24/keys = {
-"times": FloatArray( 0, 1, 2, 3 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 49.4514, 15.1539 ), Vector2( 49.4514, 15.1539 ), Vector2( 49.4514, 15.1539 ), Vector2( 49.4514, 15.1539 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Animation/Wheel Chair/Body/Right Arm:transform/rot")
+tracks/25/path = NodePath("Animation/Wheel Chair/Body/Right Arm:rotation_deg")
 tracks/25/interp = 1
 tracks/25/imported = false
 tracks/25/keys = {
-"times": FloatArray( 0, 1, 2, 3 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 19.1537, 0.0, 19.1537 ]
 }
 tracks/26/type = "value"
-tracks/26/path = NodePath("Animation/Wheel Chair/Body/Right Arm:transform/scale")
+tracks/26/path = NodePath("Animation/Wheel Chair/Body/Right Arm:scale")
 tracks/26/interp = 1
 tracks/26/imported = false
 tracks/26/keys = {
-"times": FloatArray( 0, 1, 2, 3 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/27/type = "value"
-tracks/27/path = NodePath("Animation/Wheel Chair/Body/Nose:transform/pos")
+tracks/27/path = NodePath("Animation/Wheel Chair/Body/Nose:position")
 tracks/27/interp = 1
 tracks/27/imported = false
 tracks/27/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 12.6003, -21.957 ) ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Animation/Wheel Chair/Body/Nose:transform/rot")
+tracks/28/path = NodePath("Animation/Wheel Chair/Body/Nose:rotation_deg")
 tracks/28/interp = 1
 tracks/28/imported = false
 tracks/28/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/29/type = "value"
-tracks/29/path = NodePath("Animation/Wheel Chair/Body/Nose:transform/scale")
+tracks/29/path = NodePath("Animation/Wheel Chair/Body/Nose:scale")
 tracks/29/interp = 1
 tracks/29/imported = false
 tracks/29/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/30/type = "value"
-tracks/30/path = NodePath("Animation/Wheel Chair/Body/Right Eye:transform/pos")
+tracks/30/path = NodePath("Animation/Wheel Chair/Body/Right Eye:position")
 tracks/30/interp = 1
 tracks/30/imported = false
 tracks/30/keys = {
-"times": FloatArray( 0, 2 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 36.9669, -38.4186 ), Vector2( 40.6837, -37.7515 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Animation/Wheel Chair/Body/Right Eye:transform/rot")
+tracks/31/path = NodePath("Animation/Wheel Chair/Body/Right Eye:rotation_deg")
 tracks/31/interp = 1
 tracks/31/imported = false
 tracks/31/keys = {
-"times": FloatArray( 0, 2 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0 ]
 }
 tracks/32/type = "value"
-tracks/32/path = NodePath("Animation/Wheel Chair/Body/Right Eye:transform/scale")
+tracks/32/path = NodePath("Animation/Wheel Chair/Body/Right Eye:scale")
 tracks/32/interp = 1
 tracks/32/imported = false
 tracks/32/keys = {
-"times": FloatArray( 0, 2 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/33/type = "value"
-tracks/33/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:transform/pos")
+tracks/33/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:position")
 tracks/33/interp = 1
 tracks/33/imported = false
 tracks/33/keys = {
-"times": FloatArray( 0, 2.4 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 2.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -11.1154, -5.74422 ), Vector2( -13.2243, -5.74422 ) ]
 }
 tracks/34/type = "value"
-tracks/34/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:transform/rot")
+tracks/34/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:rotation_deg")
 tracks/34/interp = 1
 tracks/34/imported = false
 tracks/34/keys = {
-"times": FloatArray( 0, 2.4 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 2.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, -14.0953 ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:transform/scale")
+tracks/35/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:scale")
 tracks/35/interp = 1
 tracks/35/imported = false
 tracks/35/keys = {
-"times": FloatArray( 0, 2.4 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 2.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/36/type = "value"
-tracks/36/path = NodePath("Animation/Wheel Chair/Small Wheel:transform/pos")
+tracks/36/path = NodePath("Animation/Wheel Chair/Small Wheel:position")
 tracks/36/interp = 1
 tracks/36/imported = false
 tracks/36/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 45.8219, 99.5746 ) ]
 }
 tracks/37/type = "value"
-tracks/37/path = NodePath("Animation/Wheel Chair/Small Wheel:transform/rot")
+tracks/37/path = NodePath("Animation/Wheel Chair/Small Wheel:rotation_deg")
 tracks/37/interp = 1
 tracks/37/imported = false
 tracks/37/keys = {
-"times": FloatArray( 0, 2, 3, 4 ),
-"transitions": FloatArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 2, 3, 4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, -360.0, -540.0, -720.0 ]
 }
 tracks/38/type = "value"
-tracks/38/path = NodePath("Animation/Wheel Chair/Small Wheel:transform/scale")
+tracks/38/path = NodePath("Animation/Wheel Chair/Small Wheel:scale")
 tracks/38/interp = 1
 tracks/38/imported = false
 tracks/38/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/39/type = "value"
-tracks/39/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:transform/pos")
+tracks/39/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:position")
 tracks/39/interp = 1
 tracks/39/imported = false
 tracks/39/keys = {
-"times": FloatArray( 0, 2.4 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 2.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 30.4383, 5.0019 ), Vector2( 34.4079, 6.24239 ) ]
 }
 tracks/40/type = "value"
-tracks/40/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:transform/rot")
+tracks/40/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:rotation_deg")
 tracks/40/interp = 1
 tracks/40/imported = false
 tracks/40/keys = {
-"times": FloatArray( 0, 2.4 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 2.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 17.2766 ]
 }
 tracks/41/type = "value"
-tracks/41/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:transform/scale")
+tracks/41/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:scale")
 tracks/41/interp = 1
 tracks/41/imported = false
 tracks/41/keys = {
-"times": FloatArray( 0, 2.4 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 2.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/42/type = "value"
-tracks/42/path = NodePath("Animation/Wheel Chair/Body/Hat:transform/pos")
+tracks/42/path = NodePath("Animation/Wheel Chair/Body/Hat:position")
 tracks/42/interp = 1
 tracks/42/imported = false
 tracks/42/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 31.9925, -94.2244 ) ]
 }
 tracks/43/type = "value"
-tracks/43/path = NodePath("Animation/Wheel Chair/Body/Hat:transform/rot")
+tracks/43/path = NodePath("Animation/Wheel Chair/Body/Hat:rotation_deg")
 tracks/43/interp = 1
 tracks/43/imported = false
 tracks/43/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/44/type = "value"
-tracks/44/path = NodePath("Animation/Wheel Chair/Body/Hat:transform/scale")
+tracks/44/path = NodePath("Animation/Wheel Chair/Body/Hat:scale")
 tracks/44/interp = 1
 tracks/44/imported = false
 tracks/44/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/45/type = "value"
-tracks/45/path = NodePath("Animation/Wheel Chair/Body/Left Eye:transform/pos")
+tracks/45/path = NodePath("Animation/Wheel Chair/Body/Left Eye:position")
 tracks/45/interp = 1
 tracks/45/imported = false
 tracks/45/keys = {
-"times": FloatArray( 0, 2.4 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 2.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 3.00605, -49.2059 ), Vector2( 4.82224, -48.6006 ) ]
 }
 tracks/46/type = "value"
-tracks/46/path = NodePath("Animation/Wheel Chair/Body/Left Eye:transform/rot")
+tracks/46/path = NodePath("Animation/Wheel Chair/Body/Left Eye:rotation_deg")
 tracks/46/interp = 1
 tracks/46/imported = false
 tracks/46/keys = {
-"times": FloatArray( 0, 2.4 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 2.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0 ]
 }
 tracks/47/type = "value"
-tracks/47/path = NodePath("Animation/Wheel Chair/Body/Left Eye:transform/scale")
+tracks/47/path = NodePath("Animation/Wheel Chair/Body/Left Eye:scale")
 tracks/47/interp = 1
 tracks/47/imported = false
 tracks/47/keys = {
-"times": FloatArray( 0, 2.4 ),
-"transitions": FloatArray( 1, 1 ),
+"times": PoolRealArray( 0, 2.4 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ) ]
 }
 tracks/48/type = "value"
-tracks/48/path = NodePath("Animation/Wheel Chair/Body:transform/pos")
+tracks/48/path = NodePath("Animation/Wheel Chair/Body:position")
 tracks/48/interp = 1
 tracks/48/imported = false
 tracks/48/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( -6.88864, -99.4379 ) ]
 }
 tracks/49/type = "value"
-tracks/49/path = NodePath("Animation/Wheel Chair/Body:transform/rot")
+tracks/49/path = NodePath("Animation/Wheel Chair/Body:rotation_deg")
 tracks/49/interp = 1
 tracks/49/imported = false
 tracks/49/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
 }
 tracks/50/type = "value"
-tracks/50/path = NodePath("Animation/Wheel Chair/Body:transform/scale")
+tracks/50/path = NodePath("Animation/Wheel Chair/Body:scale")
 tracks/50/interp = 1
 tracks/50/imported = false
 tracks/50/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
@@ -3223,8 +3223,8 @@ tracks/51/path = NodePath("Animation/Wheel Chair/Body/Left Eye:texture")
 tracks/51/interp = 1
 tracks/51/imported = false
 tracks/51/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 4 ) ]
 }
@@ -3233,128 +3233,131 @@ tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
 tracks/52/interp = 1
 tracks/52/imported = false
 tracks/52/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 4 ) ]
 }
 
 [node name="Othox Codox Sprites" type="Node2D"]
 
+
 [node name="Animation" type="Node2D" parent="."]
 
-transform/pos = Vector2( 9.71881, -120.363 )
+position = Vector2( 9.71881, -120.363 )
 
 [node name="Body" type="Sprite" parent="Animation"]
 
-transform/pos = Vector2( -6.88864, -99.4379 )
+position = Vector2( -6.88864, -99.4379 )
 texture = ExtResource( 1 )
 
 [node name="Small Wheel" type="Sprite" parent="Animation"]
 
-transform/pos = Vector2( 45.8219, 99.5746 )
+position = Vector2( 45.8219, 99.5746 )
+rotation_deg = 8.30958
 texture = ExtResource( 2 )
 offset = Vector2( 0.602219, 0.471329 )
 
 [node name="Wheel Chair" type="Sprite" parent="Animation"]
 
+editor/display_folded = true
 texture = ExtResource( 3 )
 
 [node name="Body" type="RemoteTransform2D" parent="Animation/Wheel Chair"]
 
-transform/pos = Vector2( -6.88864, -99.4379 )
+position = Vector2( -6.88864, -99.4379 )
 remote_path = NodePath("../../Body")
 
 [node name="Left Eye" type="Sprite" parent="Animation/Wheel Chair/Body"]
 
-transform/pos = Vector2( 3.00605, -49.2059 )
+position = Vector2( 3.04098, -49.1943 )
 texture = ExtResource( 4 )
 
 [node name="Right Eye" type="Sprite" parent="Animation/Wheel Chair/Body"]
 
-transform/pos = Vector2( 36.9669, -38.4186 )
+position = Vector2( 37.0527, -38.4032 )
 texture = ExtResource( 4 )
 
 [node name="Left Wrinkle" type="Sprite" parent="Animation/Wheel Chair/Body"]
 
-transform/pos = Vector2( -11.1154, -5.74422 )
-transform/rot = -37.5848
+position = Vector2( -11.156, -5.74422 )
+rotation_deg = 0.271125
 texture = ExtResource( 5 )
 
 [node name="Right Wrinkle" type="Sprite" parent="Animation/Wheel Chair/Body"]
 
-transform/pos = Vector2( 30.4383, 5.0019 )
-transform/rot = 38.7407
+position = Vector2( 30.5147, 5.02576 )
+rotation_deg = -0.332318
 texture = ExtResource( 6 )
 
 [node name="Left Eyebrow" type="Sprite" parent="Animation/Wheel Chair/Body"]
 
-transform/pos = Vector2( 1.62183, -53.2707 )
-transform/rot = 43.1932
+position = Vector2( 1.62183, -53.2707 )
+rotation_deg = 0.147348
 texture = ExtResource( 7 )
 
 [node name="Right Eyebrow" type="Sprite" parent="Animation/Wheel Chair/Body"]
 
-transform/pos = Vector2( 38.9234, -42.2653 )
-transform/rot = -32.2284
+position = Vector2( 38.9234, -42.2653 )
+rotation_deg = 0.166524
 texture = ExtResource( 8 )
 
 [node name="Nose" type="Sprite" parent="Animation/Wheel Chair/Body"]
 
-transform/pos = Vector2( 12.6003, -21.957 )
-transform/scale = Vector2( 0.8, 0.8 )
+position = Vector2( 12.6003, -21.957 )
 texture = ExtResource( 9 )
 
 [node name="Mouth" type="Sprite" parent="Animation/Wheel Chair/Body"]
 
-transform/pos = Vector2( 9.74373, -0.458313 )
-transform/rot = -177.95
+position = Vector2( 9.76182, -0.571366 )
 texture = ExtResource( 10 )
 
 [node name="Beard" type="Sprite" parent="Animation/Wheel Chair/Body"]
 
-transform/pos = Vector2( 6.00408, 17.3764 )
+position = Vector2( 6.00408, 17.3764 )
 texture = ExtResource( 11 )
 
 [node name="Hat" type="Sprite" parent="Animation/Wheel Chair/Body"]
 
-transform/pos = Vector2( 55.1933, -71.3119 )
-transform/rot = -17.9345
+position = Vector2( 31.9925, -94.2244 )
 texture = ExtResource( 12 )
 
 [node name="Left Arm" type="Sprite" parent="Animation/Wheel Chair/Body"]
 
-transform/pos = Vector2( -44.0386, 0.138672 )
+position = Vector2( -44.0386, 0.138672 )
+rotation_deg = 3.19642
 texture = ExtResource( 13 )
 offset = Vector2( 28.238, 18.4983 )
 
 [node name="Right Arm" type="Sprite" parent="Animation/Wheel Chair/Body"]
 
-transform/pos = Vector2( 49.4514, 15.1539 )
-transform/rot = -158.925
+position = Vector2( 49.4514, 15.1539 )
+rotation_deg = -0.884217
 texture = ExtResource( 14 )
 offset = Vector2( 20.6086, -17.7932 )
 
 [node name="Wrinkles" type="Sprite" parent="Animation/Wheel Chair/Body"]
 
-transform/pos = Vector2( 25.2521, -68.9185 )
+position = Vector2( 25.2521, -68.9185 )
 texture = ExtResource( 15 )
 
 [node name="Wheel Chair Big Wheel" type="Sprite" parent="Animation/Wheel Chair"]
 
-transform/pos = Vector2( -82.237, 47.8675 )
+position = Vector2( -79.8255, 49.4751 )
+rotation_deg = 4.15479
 texture = ExtResource( 16 )
 
 [node name="Small Wheel" type="RemoteTransform2D" parent="Animation/Wheel Chair"]
 
-transform/pos = Vector2( 45.8219, 99.5746 )
+position = Vector2( 45.8219, 99.5746 )
+rotation_deg = 8.30958
 remote_path = NodePath("../../Small Wheel")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+root_node = NodePath("..")
 anims/Hurt = SubResource( 1 )
 anims/Idle = SubResource( 2 )
 anims/Jump = SubResource( 3 )
@@ -3365,5 +3368,3 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "Still"
-
-

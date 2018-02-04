@@ -5,7 +5,7 @@ const BASIC_ATTACK_DURATION = 0.8
 const BASIC_ATTACK_COOLDOWN = 0.15
 const BASIC_ATTACK_DAMAGE_MIN = 20
 const BASIC_ATTACK_DAMAGE_MAX = 35
-const BASIC_ATTACK_KNOCK_BACK_VEL_X = 400
+const BASIC_ATTACK_KNOCK_BACK_VEL_X = 300
 const BASIC_ATTACK_KNOCK_BACK_VEL_Y = 50
 const BASIC_ATTACK_KNOCK_BACK_FADE_RATE = 1000
 
@@ -28,8 +28,11 @@ const UP_SKILL_DURATION = 0.7
 const UP_SKILL_COOLDOWN = 0.2
 const UP_SKILL_LANDED_DETECTION_DELAY = 0.05
 const UP_SKILL_VELOCITY = -850
-const UP_SKILL_DAMAGE_MIN = 10
-const UP_SKILL_DAMAGE_MAX = 25
+const UP_SKILL_DAMAGE_MIN = 15
+const UP_SKILL_DAMAGE_MAX = 30
+const UP_SKILL_KNOCK_BACK_VEL_X = 300
+const UP_SKILL_KNOCK_BACK_VEL_Y = 500
+const UP_SKILL_KNOCK_BACK_FADE_RATE = 500
 
 const DOWN_SKILL_DURATION = 0.6
 const DOWN_SKILL_RESUME_COOLDOWN = 0.2
@@ -130,10 +133,10 @@ func on_basic_attack_hit(area):
 		enemy_node.knocked_back(sign(enemy_node.get_global_pos().x - get_global_pos().x) * BASIC_ATTACK_KNOCK_BACK_VEL_X * character.enemy_knock_back_modifier,-BASIC_ATTACK_KNOCK_BACK_VEL_Y * character.enemy_knock_back_modifier, BASIC_ATTACK_KNOCK_BACK_FADE_RATE * character.enemy_knock_back_modifier)
 
 # ===========
-# Basic Skill: Hop, when it hits the ground, stun enemies around. Is invincible while hitting ground.
+# Basic Skill: Hop, when it hits the ground, stun enemies around.
 # ===========
-# Sequence: Hop animation (Can move, can't jump) -> Falling (Invincible) -> Landed on the ground / hit mobs or boss ->
-#           Landing animation (Can't move, Invincible, perform attack).
+# Sequence: Hop animation (Can move, can't jump) -> Falling -> Landed on the ground / hit mobs or boss ->
+#           Landing animation (Can't move, perform attack).
 # ===========
 func basic_skill():
 	if character.status.can_move and character.status.can_cast_skill:
@@ -158,8 +161,6 @@ func basic_skill():
 		resume_from_down_skill()
 
 func basic_skill_falling():
-	character.status.invincible = true
-
 	character.unregister_timer("interruptable_skill")
 
 	# Landing dection code in _process(delta).
@@ -174,7 +175,6 @@ func basic_skill_strikes():
 	character.set_status("can_jump", false, BASIC_SKILL_LAND_DURATION)
 	character.set_status("can_move", false, BASIC_SKILL_LAND_DURATION)
 	character.set_status("can_cast_skill", false, BASIC_SKILL_LAND_DURATION + BASIC_SKILL_COOLDOWN)
-	character.set_status("invincible", true, BASIC_SKILL_LAND_DURATION)
 
 # Will be signalled by the hit box when an enemy gets into it.
 func on_basic_skill_hit(area):
@@ -259,7 +259,9 @@ func on_up_skill_hit(area):
 		# Can't hit the same object twice.
 		if !(area in up_skill_targets):
 			var damage = rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX)
-			area.get_node("../..").damaged(damage * character.damage_modifier)
+			var enemy = area.get_node("../..")
+			enemy.damaged(damage * character.damage_modifier)
+			enemy.knocked_back(sign(enemy.get_global_pos().x - get_global_pos().x) * UP_SKILL_KNOCK_BACK_VEL_X * character.enemy_knock_back_modifier,-UP_SKILL_KNOCK_BACK_VEL_Y * character.enemy_knock_back_modifier, BASIC_ATTACK_KNOCK_BACK_FADE_RATE * character.enemy_knock_back_modifier)
 			up_skill_targets.push_back(area)
 	
 # ==========
@@ -334,11 +336,10 @@ func ult_hit(area):
 		character.get_node("..").add_child(new_eraser)
 		new_eraser.set_global_pos(character.get_global_pos())
 
-func cancel_invincible_skills():
+func cancel_skills_when_falling_off():
 	# Basic Skill Falling.
 	if detecting_landing:
 		detecting_landing = false
-		character.status.invincible = false
 		character.status.animate_movement = true
 
 	# Down Skill.

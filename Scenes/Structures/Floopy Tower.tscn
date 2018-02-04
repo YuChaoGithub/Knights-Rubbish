@@ -1,0 +1,2317 @@
+[gd_scene load_steps=56 format=2]
+
+[ext_resource path="res://Scripts/Structures/Tower.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/blue floppy.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Mouth.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Pants.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Thigh.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Freckles.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Eyebrow.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Eyeball.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Hair.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Arm.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Forearm.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/Fist.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/green floppy.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/Structure/Tower/Tower.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Structure/Tower/Amazlet Badge.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/Structure/Tower/Piece 1.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/Structure/Tower/Piece 2.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/Structure/Tower/Piece 3.png" type="Texture" id=18]
+[ext_resource path="res://Graphics/Structure/Tower/Piece 4.png" type="Texture" id=19]
+[ext_resource path="res://Graphics/Structure/Tower/Piece 5.png" type="Texture" id=20]
+[ext_resource path="res://Graphics/Structure/Tower/Piece 6.png" type="Texture" id=21]
+[ext_resource path="res://Graphics/Structure/Tower/Piece 7.png" type="Texture" id=22]
+[ext_resource path="res://Graphics/Structure/Tower/Piece 8.png" type="Texture" id=23]
+[ext_resource path="res://Graphics/Structure/Tower/Health Bar Inner.png" type="Texture" id=24]
+[ext_resource path="res://Graphics/Structure/Tower/Health Bar Mask.png" type="Texture" id=25]
+[ext_resource path="res://Graphics/Structure/Tower/Health Bar Outer.png" type="Texture" id=26]
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 274.612, 582.229 )
+
+[sub_resource type="RectangleShape2D" id=7]
+
+custom_solver_bias = 0.0
+extents = Vector2( 250.027, 580.731 )
+
+[sub_resource type="Animation" id=3]
+
+length = 0.6
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Blue Floopy Dancing/Freckles:position")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 6.23657, -76.2908 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blue Floopy Dancing/Freckles:rotation_deg")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Blue Floopy Dancing:position")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -51.6191, -156.884 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Blue Floopy Dancing:rotation_deg")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.11474 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Blue Floopy Dancing/Hair:position")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.16943, -130.472 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Blue Floopy Dancing/Hair:rotation_deg")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Blue Floopy Dancing/Eyeball:position")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.55908, -89.9336 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Blue Floopy Dancing/Eyeball:rotation_deg")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Blue Floopy Dancing/Left Arm/Left Forearm:position")
+tracks/8/interp = 1
+tracks/8/imported = false
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -14.3567, 23.1484 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Blue Floopy Dancing/Left Arm/Left Forearm:rotation_deg")
+tracks/9/interp = 1
+tracks/9/imported = false
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Blue Floopy Dancing/Left Arm/Left Forearm/Fist:position")
+tracks/10/interp = 1
+tracks/10/imported = false
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -2.26904, 21.9476 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Blue Floopy Dancing/Left Arm/Left Forearm/Fist:rotation_deg")
+tracks/11/interp = 1
+tracks/11/imported = false
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Blue Floopy Dancing/Brow:position")
+tracks/12/interp = 1
+tracks/12/imported = false
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.16943, -107.085 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Blue Floopy Dancing/Brow:rotation_deg")
+tracks/13/interp = 1
+tracks/13/imported = false
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Blue Floopy Dancing/Right Foot:position")
+tracks/14/interp = 1
+tracks/14/imported = false
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 37.3173, -27.0513 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Blue Floopy Dancing/Right Foot:rotation_deg")
+tracks/15/interp = 1
+tracks/15/imported = false
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 4.87716 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Blue Floopy Dancing/Pants:position")
+tracks/16/interp = 1
+tracks/16/imported = false
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.47266, -35.8151 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Blue Floopy Dancing/Pants:rotation_deg")
+tracks/17/interp = 1
+tracks/17/imported = false
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Blue Floopy Dancing/Left Foot:position")
+tracks/18/interp = 1
+tracks/18/imported = false
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -33.4468, -26.7646 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Blue Floopy Dancing/Left Foot:rotation_deg")
+tracks/19/interp = 1
+tracks/19/imported = false
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Blue Floopy Dancing/Right Arm:position")
+tracks/20/interp = 1
+tracks/20/imported = false
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 56.0084, -96.5609 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Blue Floopy Dancing/Right Arm:rotation_deg")
+tracks/21/interp = 1
+tracks/21/imported = false
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 59.9472 ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Blue Floopy Dancing/Mouth:position")
+tracks/22/interp = 1
+tracks/22/imported = false
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 4.73755, -64.8527 ) ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Blue Floopy Dancing/Mouth:rotation_deg")
+tracks/23/interp = 1
+tracks/23/imported = false
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Blue Floopy Dancing/Left Arm:position")
+tracks/24/interp = 1
+tracks/24/imported = false
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -53.8076, -93.5669 ) ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Blue Floopy Dancing/Left Arm:rotation_deg")
+tracks/25/interp = 1
+tracks/25/imported = false
+tracks/25/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Green Floopy Dancing/Left Foot:position")
+tracks/26/interp = 1
+tracks/26/imported = false
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -33.4468, -26.7646 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Green Floopy Dancing/Left Foot:rotation_deg")
+tracks/27/interp = 1
+tracks/27/imported = false
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Green Floopy Dancing/Eyeball:position")
+tracks/28/interp = 1
+tracks/28/imported = false
+tracks/28/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.55908, -89.9336 ) ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("Green Floopy Dancing/Eyeball:rotation_deg")
+tracks/29/interp = 1
+tracks/29/imported = false
+tracks/29/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("Green Floopy Dancing/Left Arm/Left Forearm/Fist:position")
+tracks/30/interp = 1
+tracks/30/imported = false
+tracks/30/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -2.26904, 21.9476 ) ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("Green Floopy Dancing/Left Arm/Left Forearm/Fist:rotation_deg")
+tracks/31/interp = 1
+tracks/31/imported = false
+tracks/31/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/32/type = "value"
+tracks/32/path = NodePath("Green Floopy Dancing/Freckles:position")
+tracks/32/interp = 1
+tracks/32/imported = false
+tracks/32/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 6.23657, -76.2908 ) ]
+}
+tracks/33/type = "value"
+tracks/33/path = NodePath("Green Floopy Dancing/Freckles:rotation_deg")
+tracks/33/interp = 1
+tracks/33/imported = false
+tracks/33/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/34/type = "value"
+tracks/34/path = NodePath("Green Floopy Dancing/Left Arm:position")
+tracks/34/interp = 1
+tracks/34/imported = false
+tracks/34/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -53.8076, -93.5669 ) ]
+}
+tracks/35/type = "value"
+tracks/35/path = NodePath("Green Floopy Dancing/Left Arm:rotation_deg")
+tracks/35/interp = 1
+tracks/35/imported = false
+tracks/35/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/36/type = "value"
+tracks/36/path = NodePath("Green Floopy Dancing:position")
+tracks/36/interp = 1
+tracks/36/imported = false
+tracks/36/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 81.7126, -154.898 ) ]
+}
+tracks/37/type = "value"
+tracks/37/path = NodePath("Green Floopy Dancing:rotation_deg")
+tracks/37/interp = 1
+tracks/37/imported = false
+tracks/37/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/38/type = "value"
+tracks/38/path = NodePath("Green Floopy Dancing/Right Arm:position")
+tracks/38/interp = 1
+tracks/38/imported = false
+tracks/38/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 56.0084, -96.5609 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("Green Floopy Dancing/Right Arm:rotation_deg")
+tracks/39/interp = 1
+tracks/39/imported = false
+tracks/39/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 59.9472 ]
+}
+tracks/40/type = "value"
+tracks/40/path = NodePath("Green Floopy Dancing/Hair:position")
+tracks/40/interp = 1
+tracks/40/imported = false
+tracks/40/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.16943, -130.472 ) ]
+}
+tracks/41/type = "value"
+tracks/41/path = NodePath("Green Floopy Dancing/Hair:rotation_deg")
+tracks/41/interp = 1
+tracks/41/imported = false
+tracks/41/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/42/type = "value"
+tracks/42/path = NodePath("Green Floopy Dancing/Brow:position")
+tracks/42/interp = 1
+tracks/42/imported = false
+tracks/42/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.16943, -107.085 ) ]
+}
+tracks/43/type = "value"
+tracks/43/path = NodePath("Green Floopy Dancing/Brow:rotation_deg")
+tracks/43/interp = 1
+tracks/43/imported = false
+tracks/43/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/44/type = "value"
+tracks/44/path = NodePath("Green Floopy Dancing/Left Arm/Left Forearm:position")
+tracks/44/interp = 1
+tracks/44/imported = false
+tracks/44/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -14.3567, 23.1484 ) ]
+}
+tracks/45/type = "value"
+tracks/45/path = NodePath("Green Floopy Dancing/Left Arm/Left Forearm:rotation_deg")
+tracks/45/interp = 1
+tracks/45/imported = false
+tracks/45/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/46/type = "value"
+tracks/46/path = NodePath("Green Floopy Dancing/Mouth:position")
+tracks/46/interp = 1
+tracks/46/imported = false
+tracks/46/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 4.73755, -64.8527 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Green Floopy Dancing/Mouth:rotation_deg")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Green Floopy Dancing/Right Foot:position")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 37.3173, -27.0513 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Green Floopy Dancing/Right Foot:rotation_deg")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 4.87716 ]
+}
+tracks/50/type = "value"
+tracks/50/path = NodePath("Green Floopy Dancing/Pants:position")
+tracks/50/interp = 1
+tracks/50/imported = false
+tracks/50/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.47266, -35.8151 ) ]
+}
+tracks/51/type = "value"
+tracks/51/path = NodePath("Green Floopy Dancing/Pants:rotation_deg")
+tracks/51/interp = 1
+tracks/51/imported = false
+tracks/51/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/52/type = "value"
+tracks/52/path = NodePath("Blue Floopy Dancing:visible")
+tracks/52/interp = 1
+tracks/52/imported = false
+tracks/52/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/53/type = "value"
+tracks/53/path = NodePath("Green Floopy Dancing:visible")
+tracks/53/interp = 1
+tracks/53/imported = false
+tracks/53/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/54/type = "value"
+tracks/54/path = NodePath("Tower Sprite:visible")
+tracks/54/interp = 1
+tracks/54/imported = false
+tracks/54/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/55/type = "value"
+tracks/55/path = NodePath("Health Bar:visible")
+tracks/55/interp = 1
+tracks/55/imported = false
+tracks/55/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/56/type = "value"
+tracks/56/path = NodePath("Collapse Tower:visible")
+tracks/56/interp = 1
+tracks/56/imported = false
+tracks/56/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/57/type = "value"
+tracks/57/path = NodePath("Collapse Tower/3:position")
+tracks/57/interp = 1
+tracks/57/imported = false
+tracks/57/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -80.1803, 130.693 ), Vector2( -32.775, 272.909 ) ]
+}
+tracks/58/type = "value"
+tracks/58/path = NodePath("Collapse Tower/3:rotation_deg")
+tracks/58/interp = 1
+tracks/58/imported = false
+tracks/58/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -93.0108 ]
+}
+tracks/59/type = "value"
+tracks/59/path = NodePath("Collapse Tower/7:position")
+tracks/59/interp = 1
+tracks/59/imported = false
+tracks/59/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -98.3961, -155.747 ), Vector2( -101.074, 236.186 ) ]
+}
+tracks/60/type = "value"
+tracks/60/path = NodePath("Collapse Tower/7:rotation_deg")
+tracks/60/interp = 1
+tracks/60/imported = false
+tracks/60/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -26.9236 ]
+}
+tracks/61/type = "value"
+tracks/61/path = NodePath("Collapse Tower/1:position")
+tracks/61/interp = 1
+tracks/61/imported = false
+tracks/61/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -54.6783, 259.113 ), Vector2( -75.5692, 267.66 ) ]
+}
+tracks/62/type = "value"
+tracks/62/path = NodePath("Collapse Tower/1:rotation_deg")
+tracks/62/interp = 1
+tracks/62/imported = false
+tracks/62/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -8.65696 ]
+}
+tracks/63/type = "value"
+tracks/63/path = NodePath("Collapse Tower/9:position")
+tracks/63/interp = 1
+tracks/63/imported = false
+tracks/63/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -3.25598, -224.85 ), Vector2( 12.8142, 257.255 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("Collapse Tower/9:rotation_deg")
+tracks/64/interp = 1
+tracks/64/imported = false
+tracks/64/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -61.7151 ]
+}
+tracks/65/type = "value"
+tracks/65/path = NodePath("Collapse Tower/8:position")
+tracks/65/interp = 1
+tracks/65/imported = false
+tracks/65/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 10.8976, 112.478 ), Vector2( 22.5039, 238.361 ) ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("Collapse Tower/8:rotation_deg")
+tracks/66/interp = 1
+tracks/66/imported = false
+tracks/66/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -55.0926 ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("Collapse Tower/4:position")
+tracks/67/interp = 1
+tracks/67/imported = false
+tracks/67/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -98.3959, -15.0317 ), Vector2( -53.8208, 259.494 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Collapse Tower/4:rotation_deg")
+tracks/68/interp = 1
+tracks/68/imported = false
+tracks/68/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -101.152 ]
+}
+tracks/69/type = "value"
+tracks/69/path = NodePath("Collapse Tower/2:position")
+tracks/69/interp = 1
+tracks/69/imported = false
+tracks/69/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 57.3477, 219.039 ), Vector2( 73.6211, 227.53 ) ]
+}
+tracks/70/type = "value"
+tracks/70/path = NodePath("Collapse Tower/2:rotation_deg")
+tracks/70/interp = 1
+tracks/70/imported = false
+tracks/70/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 22.1791 ]
+}
+tracks/71/type = "value"
+tracks/71/path = NodePath("Collapse Tower/5:position")
+tracks/71/interp = 1
+tracks/71/imported = false
+tracks/71/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 36.855, -200.831 ), Vector2( 7.39307, 252.705 ) ]
+}
+tracks/72/type = "value"
+tracks/72/path = NodePath("Collapse Tower/5:rotation_deg")
+tracks/72/interp = 1
+tracks/72/imported = false
+tracks/72/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 29.3277 ]
+}
+tracks/73/type = "value"
+tracks/73/path = NodePath("Collapse Tower/6:position")
+tracks/73/interp = 1
+tracks/73/imported = false
+tracks/73/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 34.1224, 7.28247 ), Vector2( 63.5844, 255.477 ) ]
+}
+tracks/74/type = "value"
+tracks/74/path = NodePath("Collapse Tower/6:rotation_deg")
+tracks/74/interp = 1
+tracks/74/imported = false
+tracks/74/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 45.2744 ]
+}
+tracks/75/type = "value"
+tracks/75/path = NodePath("Collapse Tower:visibility/opacity")
+tracks/75/interp = 1
+tracks/75/imported = false
+tracks/75/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 1.0, 1.0, 0.0 ]
+}
+tracks/76/type = "value"
+tracks/76/path = NodePath("Wall:collision_layer")
+tracks/76/interp = 1
+tracks/76/imported = false
+tracks/76/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 512, 0 ]
+}
+
+[sub_resource type="Animation" id=4]
+
+length = 5.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Blue Floopy Dancing/Freckles:position")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 6.23657, -76.2908 ), Vector2( 6.23657, -76.2908 ), Vector2( 6.23657, -76.2908 ), Vector2( 6.23657, -76.2908 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blue Floopy Dancing/Freckles:rotation_deg")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": PoolRealArray( 0, 2, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Blue Floopy Dancing:position")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 1.4, 1.6, 1.8, 2, 3.5, 3.7, 3.9, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -51.6191, -156.884 ), Vector2( -56.3953, -171.691 ), Vector2( -56.3953, -171.691 ), Vector2( 16.2043, -241.425 ), Vector2( 51.5488, -173.601 ), Vector2( 51.5488, -173.601 ), Vector2( 51.5488, -173.601 ), Vector2( 13.3892, -221.023 ), Vector2( -35.8855, -166.932 ), Vector2( -35.8855, -166.932 ), Vector2( -51.6191, -156.884 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Blue Floopy Dancing:rotation_deg")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 1.4, 1.6, 1.8, 2, 3.5, 3.7, 3.9, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 1.11474, 28.3997, 28.3997, 4.54762, -19.2049, -19.2049, -19.2049, 9.59844, 20.0825, 20.0825, 1.11474 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Blue Floopy Dancing/Hair:position")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.16943, -130.472 ), Vector2( 1.16943, -130.472 ), Vector2( 1.16943, -130.472 ), Vector2( 1.16943, -130.472 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Blue Floopy Dancing/Hair:rotation_deg")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Blue Floopy Dancing/Eyeball:position")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.6, 2, 2.6, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.55908, -89.9336 ), Vector2( -4.00537, -89.6844 ), Vector2( -4.00537, -89.6844 ), Vector2( 4.72559, -93.9026 ), Vector2( 4.72559, -93.9026 ), Vector2( 1.55908, -89.9336 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Blue Floopy Dancing/Eyeball:rotation_deg")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.6, 2, 2.6, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Blue Floopy Dancing/Left Arm/Left Forearm:position")
+tracks/8/interp = 1
+tracks/8/imported = false
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.7, 2, 2.8, 4.3, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -14.3567, 23.1484 ), Vector2( -14.3567, 23.1484 ), Vector2( -14.3567, 23.1484 ), Vector2( -14.3567, 23.1484 ), Vector2( -14.3567, 23.1484 ), Vector2( -14.3567, 23.1484 ), Vector2( -14.3567, 23.1484 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Blue Floopy Dancing/Left Arm/Left Forearm:rotation_deg")
+tracks/9/interp = 1
+tracks/9/imported = false
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.7, 2, 2.8, 4.3, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -87.0848, -87.0848, -41.9812, -41.9812, 12.8111, 0.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Blue Floopy Dancing/Left Arm/Left Forearm/Fist:position")
+tracks/10/interp = 1
+tracks/10/imported = false
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.7, 2, 2.8, 4.3, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -2.26904, 21.9476 ), Vector2( -2.26904, 21.9476 ), Vector2( -2.26904, 21.9476 ), Vector2( -2.26904, 21.9476 ), Vector2( -2.26904, 21.9476 ), Vector2( -2.26904, 21.9476 ), Vector2( -2.26904, 21.9476 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Blue Floopy Dancing/Left Arm/Left Forearm/Fist:rotation_deg")
+tracks/11/interp = 1
+tracks/11/imported = false
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.7, 2, 2.8, 4.3, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -29.6026, -29.6026, -15.8741, -15.8741, 18.4416, 0.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Blue Floopy Dancing/Brow:position")
+tracks/12/interp = 1
+tracks/12/imported = false
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.6, 2, 2.6, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.16943, -107.085 ), Vector2( -2.55566, -104.212 ), Vector2( -2.55566, -104.212 ), Vector2( 11.7888, -109.209 ), Vector2( 11.7888, -109.209 ), Vector2( 1.16943, -107.085 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Blue Floopy Dancing/Brow:rotation_deg")
+tracks/13/interp = 1
+tracks/13/imported = false
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.6, 2, 2.6, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 5.11047, 5.11047, -14.5124, -14.5124, 0.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Blue Floopy Dancing/Right Foot:position")
+tracks/14/interp = 1
+tracks/14/imported = false
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8, 2, 4.3, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 37.3173, -27.0513 ), Vector2( 37.3173, -27.0513 ), Vector2( 37.9524, -20.1921 ), Vector2( 36.6274, -22.8691 ), Vector2( 36.6274, -22.8691 ), Vector2( 37.0299, -25.3088 ), Vector2( 37.3173, -27.0513 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Blue Floopy Dancing/Right Foot:rotation_deg")
+tracks/15/interp = 1
+tracks/15/imported = false
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8, 2, 4.3, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 4.87716, 4.87716, 43.9523, 43.9523, 43.9523, -19.1712, 4.87716 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Blue Floopy Dancing/Pants:position")
+tracks/16/interp = 1
+tracks/16/imported = false
+tracks/16/keys = {
+"times": PoolRealArray( 0, 2, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.47266, -35.8151 ), Vector2( 3.47266, -35.8151 ), Vector2( 3.47266, -35.8151 ), Vector2( 3.47266, -35.8151 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Blue Floopy Dancing/Pants:rotation_deg")
+tracks/17/interp = 1
+tracks/17/imported = false
+tracks/17/keys = {
+"times": PoolRealArray( 0, 2, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Blue Floopy Dancing/Left Foot:position")
+tracks/18/interp = 1
+tracks/18/imported = false
+tracks/18/keys = {
+"times": PoolRealArray( 0, 2, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -33.4468, -26.7646 ), Vector2( -33.4468, -26.7646 ), Vector2( -33.4468, -26.7646 ), Vector2( -33.4468, -26.7646 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Blue Floopy Dancing/Left Foot:rotation_deg")
+tracks/19/interp = 1
+tracks/19/imported = false
+tracks/19/keys = {
+"times": PoolRealArray( 0, 2, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Blue Floopy Dancing/Right Arm:position")
+tracks/20/interp = 1
+tracks/20/imported = false
+tracks/20/keys = {
+"times": PoolRealArray( 0, 0.8, 2, 2.2, 3, 4.3, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 56.0084, -96.5609 ), Vector2( 56.0084, -96.5609 ), Vector2( 56.0084, -96.5609 ), Vector2( 56.0084, -96.5609 ), Vector2( 56.0084, -96.5609 ), Vector2( 56.0084, -96.5609 ), Vector2( 56.0084, -96.5609 ), Vector2( 56.0084, -96.5609 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Blue Floopy Dancing/Right Arm:rotation_deg")
+tracks/21/interp = 1
+tracks/21/imported = false
+tracks/21/keys = {
+"times": PoolRealArray( 0, 0.8, 2, 2.2, 3, 4.3, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 59.9472, 104.451, 104.451, 104.451, 4.42949, 4.42949, 19.8747, 59.9472 ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Blue Floopy Dancing/Mouth:position")
+tracks/22/interp = 1
+tracks/22/imported = false
+tracks/22/keys = {
+"times": PoolRealArray( 0, 2, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4.73755, -64.8527 ), Vector2( 4.73755, -64.8527 ), Vector2( 4.73755, -64.8527 ), Vector2( 4.73755, -64.8527 ) ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Blue Floopy Dancing/Mouth:rotation_deg")
+tracks/23/interp = 1
+tracks/23/imported = false
+tracks/23/keys = {
+"times": PoolRealArray( 0, 2, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Blue Floopy Dancing/Left Arm:position")
+tracks/24/interp = 1
+tracks/24/imported = false
+tracks/24/keys = {
+"times": PoolRealArray( 0, 0.7, 2, 2.8, 4.3, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -53.8076, -93.5669 ), Vector2( -53.8076, -93.5669 ), Vector2( -53.8076, -93.5669 ), Vector2( -53.8076, -93.5669 ), Vector2( -53.8076, -93.5669 ), Vector2( -53.8076, -93.5669 ), Vector2( -53.8076, -93.5669 ) ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Blue Floopy Dancing/Left Arm:rotation_deg")
+tracks/25/interp = 1
+tracks/25/imported = false
+tracks/25/keys = {
+"times": PoolRealArray( 0, 0.7, 2, 2.8, 4.3, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -140.707, -140.707, -30.4478, -30.4478, 66.7871, 0.0 ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Green Floopy Dancing/Left Foot:position")
+tracks/26/interp = 1
+tracks/26/imported = false
+tracks/26/keys = {
+"times": PoolRealArray( 0, 2.4, 3.4, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -33.4468, -26.7646 ), Vector2( -33.4468, -26.7646 ), Vector2( -33.4468, -26.7646 ), Vector2( -33.4468, -26.7646 ), Vector2( -33.4468, -26.7646 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Green Floopy Dancing/Left Foot:rotation_deg")
+tracks/27/interp = 1
+tracks/27/imported = false
+tracks/27/keys = {
+"times": PoolRealArray( 0, 0.5, 2.4, 3.4, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, -21.0037, -21.0037, 0.0 ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Green Floopy Dancing/Eyeball:position")
+tracks/28/interp = 1
+tracks/28/imported = false
+tracks/28/keys = {
+"times": PoolRealArray( 0, 0.5, 1.3, 1.7, 2.1, 2.4, 3.2, 4.3, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.55908, -89.9336 ), Vector2( 1.55908, -89.9336 ), Vector2( -3.72119, -92.436 ), Vector2( -3.72119, -92.436 ), Vector2( 7.6936, -88.6695 ), Vector2( 7.6936, -88.6695 ), Vector2( 1.99707, -88.4762 ), Vector2( 1.99707, -88.4762 ), Vector2( -2.25977, -91.0339 ), Vector2( 1.55908, -89.9336 ) ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("Green Floopy Dancing/Eyeball:rotation_deg")
+tracks/29/interp = 1
+tracks/29/imported = false
+tracks/29/keys = {
+"times": PoolRealArray( 0, 0.5, 1.3, 1.7, 2.1, 2.4, 3.2, 4.3, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0, -3.16423, -3.16423, -3.16423, -3.16423, -3.16423, 0.0 ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("Green Floopy Dancing/Left Arm/Left Forearm/Fist:position")
+tracks/30/interp = 1
+tracks/30/imported = false
+tracks/30/keys = {
+"times": PoolRealArray( 0, 0.5, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -2.26904, 21.9476 ), Vector2( -2.26904, 21.9476 ), Vector2( -2.26904, 21.9476 ), Vector2( -2.26904, 21.9476 ) ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("Green Floopy Dancing/Left Arm/Left Forearm/Fist:rotation_deg")
+tracks/31/interp = 1
+tracks/31/imported = false
+tracks/31/keys = {
+"times": PoolRealArray( 0, 0.5, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/32/type = "value"
+tracks/32/path = NodePath("Green Floopy Dancing/Freckles:position")
+tracks/32/interp = 1
+tracks/32/imported = false
+tracks/32/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 2.4, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 6.23657, -76.2908 ), Vector2( 6.23657, -76.2908 ), Vector2( 6.23657, -76.2908 ), Vector2( 6.23657, -76.2908 ), Vector2( 6.23657, -76.2908 ), Vector2( 6.23657, -76.2908 ) ]
+}
+tracks/33/type = "value"
+tracks/33/path = NodePath("Green Floopy Dancing/Freckles:rotation_deg")
+tracks/33/interp = 1
+tracks/33/imported = false
+tracks/33/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 2.4, 3.4, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -9.164, -9.164, 0.135872, 0.135872, 0.0 ]
+}
+tracks/34/type = "value"
+tracks/34/path = NodePath("Green Floopy Dancing/Left Arm:position")
+tracks/34/interp = 1
+tracks/34/imported = false
+tracks/34/keys = {
+"times": PoolRealArray( 0, 0.5, 1.3, 1.7, 2.4, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -53.8076, -93.5669 ), Vector2( -53.8076, -93.5669 ), Vector2( -53.8076, -93.5669 ), Vector2( -53.8076, -93.5669 ), Vector2( -53.8076, -93.5669 ), Vector2( -53.8076, -93.5669 ), Vector2( -53.8076, -93.5669 ) ]
+}
+tracks/35/type = "value"
+tracks/35/path = NodePath("Green Floopy Dancing/Left Arm:rotation_deg")
+tracks/35/interp = 1
+tracks/35/imported = false
+tracks/35/keys = {
+"times": PoolRealArray( 0, 0.5, 1.3, 1.7, 2.1, 2.4, 3.2, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 192.669, 192.669, 183.706, 183.706, 361.288, 361.288, 0.0 ]
+}
+tracks/36/type = "value"
+tracks/36/path = NodePath("Green Floopy Dancing:position")
+tracks/36/interp = 1
+tracks/36/imported = false
+tracks/36/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.7, 1.9, 2.1, 2.4, 3.7, 3.9, 4.1, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 81.7126, -154.898 ), Vector2( 81.7126, -154.898 ), Vector2( 79.7649, -172.915 ), Vector2( 79.7649, -172.915 ), Vector2( 14.6147, -207.028 ), Vector2( -64.2246, -170.288 ), Vector2( -64.2246, -170.288 ), Vector2( -64.2246, -170.288 ), Vector2( 33.6545, -215.089 ), Vector2( 77.968, -169.801 ), Vector2( 77.968, -169.801 ), Vector2( 81.7126, -154.898 ) ]
+}
+tracks/37/type = "value"
+tracks/37/path = NodePath("Green Floopy Dancing:rotation_deg")
+tracks/37/interp = 1
+tracks/37/imported = false
+tracks/37/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.7, 1.9, 2.1, 2.4, 3.7, 3.9, 4.1, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -27.1713, -27.1713, 3.65148, 21.9252, 21.9252, 21.9252, 1.52513, -19.6895, -19.6895, 0.0 ]
+}
+tracks/38/type = "value"
+tracks/38/path = NodePath("Green Floopy Dancing/Right Arm:position")
+tracks/38/interp = 1
+tracks/38/imported = false
+tracks/38/keys = {
+"times": PoolRealArray( 0, 0.5, 1.3, 2.4, 3.2, 4.3, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 56.0084, -96.5609 ), Vector2( 56.0084, -96.5609 ), Vector2( 56.0084, -96.5609 ), Vector2( 56.0084, -96.5609 ), Vector2( 56.0084, -96.5609 ), Vector2( 56.0084, -96.5609 ), Vector2( 56.0084, -96.5609 ), Vector2( 56.0084, -96.5609 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("Green Floopy Dancing/Right Arm:rotation_deg")
+tracks/39/interp = 1
+tracks/39/imported = false
+tracks/39/keys = {
+"times": PoolRealArray( 0, 0.5, 1.3, 2.4, 3.2, 4.3, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 59.9472, 59.9472, 86.6865, 86.6865, 151.858, 151.858, 83.3101, 59.9472 ]
+}
+tracks/40/type = "value"
+tracks/40/path = NodePath("Green Floopy Dancing/Hair:position")
+tracks/40/interp = 1
+tracks/40/imported = false
+tracks/40/keys = {
+"times": PoolRealArray( 0, 0.5, 1.3, 2.4, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.16943, -130.472 ), Vector2( 1.16943, -130.472 ), Vector2( 1.16943, -130.472 ), Vector2( 1.16943, -130.472 ), Vector2( 1.16943, -130.472 ), Vector2( 1.16943, -130.472 ) ]
+}
+tracks/41/type = "value"
+tracks/41/path = NodePath("Green Floopy Dancing/Hair:rotation_deg")
+tracks/41/interp = 1
+tracks/41/imported = false
+tracks/41/keys = {
+"times": PoolRealArray( 0, 0.5, 1.3, 2.4, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -2.88697, -2.88697, -2.88697, 0.0 ]
+}
+tracks/42/type = "value"
+tracks/42/path = NodePath("Green Floopy Dancing/Brow:position")
+tracks/42/interp = 1
+tracks/42/imported = false
+tracks/42/keys = {
+"times": PoolRealArray( 0, 0.5, 1.3, 2.4, 3.2, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.16943, -107.085 ), Vector2( 1.16943, -107.085 ), Vector2( 6.49561, -102.405 ), Vector2( 6.49561, -102.405 ), Vector2( 6.49561, -102.405 ), Vector2( 6.49561, -102.405 ), Vector2( 1.16943, -107.085 ) ]
+}
+tracks/43/type = "value"
+tracks/43/path = NodePath("Green Floopy Dancing/Brow:rotation_deg")
+tracks/43/interp = 1
+tracks/43/imported = false
+tracks/43/keys = {
+"times": PoolRealArray( 0, 0.5, 1.3, 2.4, 3.2, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -28.8286, -28.8286, -17.3716, -17.3716, 0.0 ]
+}
+tracks/44/type = "value"
+tracks/44/path = NodePath("Green Floopy Dancing/Left Arm/Left Forearm:position")
+tracks/44/interp = 1
+tracks/44/imported = false
+tracks/44/keys = {
+"times": PoolRealArray( 0, 0.5, 1.3, 2.4, 3.2, 4.3, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -14.3567, 23.1484 ), Vector2( -14.3567, 23.1484 ), Vector2( -14.3567, 23.1484 ), Vector2( -14.3567, 23.1484 ), Vector2( -14.3567, 23.1484 ), Vector2( -14.3567, 23.1484 ), Vector2( -14.3567, 23.1484 ), Vector2( -14.3567, 23.1484 ) ]
+}
+tracks/45/type = "value"
+tracks/45/path = NodePath("Green Floopy Dancing/Left Arm/Left Forearm:rotation_deg")
+tracks/45/interp = 1
+tracks/45/imported = false
+tracks/45/keys = {
+"times": PoolRealArray( 0, 0.5, 1.3, 2.4, 3.2, 4.3, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, -94.7833, -94.7833, -66.7313, -66.7313, 7.769, 0.0 ]
+}
+tracks/46/type = "value"
+tracks/46/path = NodePath("Green Floopy Dancing/Mouth:position")
+tracks/46/interp = 1
+tracks/46/imported = false
+tracks/46/keys = {
+"times": PoolRealArray( 0, 0.5, 2.4, 3.2, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4.73755, -64.8527 ), Vector2( 4.73755, -64.8527 ), Vector2( 4.73755, -64.8527 ), Vector2( 4.74341, -62.2303 ), Vector2( 4.74341, -62.2303 ), Vector2( 4.73755, -64.8527 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Green Floopy Dancing/Mouth:rotation_deg")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": PoolRealArray( 0, 0.5, 2.4, 3.2, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Green Floopy Dancing/Right Foot:position")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": PoolRealArray( 0, 0.5, 4.3, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 37.3173, -27.0513 ), Vector2( 37.3173, -27.0513 ), Vector2( 37.3173, -27.0513 ), Vector2( 37.3173, -27.0513 ), Vector2( 37.3173, -27.0513 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Green Floopy Dancing/Right Foot:rotation_deg")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": PoolRealArray( 0, 0.5, 4.3, 5, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 4.87716, 4.87716, 4.87716, -8.55225, 4.87716 ]
+}
+tracks/50/type = "value"
+tracks/50/path = NodePath("Green Floopy Dancing/Pants:position")
+tracks/50/interp = 1
+tracks/50/imported = false
+tracks/50/keys = {
+"times": PoolRealArray( 0, 0.5, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 3.47266, -35.8151 ), Vector2( 3.47266, -35.8151 ), Vector2( 3.47266, -35.8151 ), Vector2( 3.47266, -35.8151 ) ]
+}
+tracks/51/type = "value"
+tracks/51/path = NodePath("Green Floopy Dancing/Pants:rotation_deg")
+tracks/51/interp = 1
+tracks/51/imported = false
+tracks/51/keys = {
+"times": PoolRealArray( 0, 0.5, 4.3, 5.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/52/type = "value"
+tracks/52/path = NodePath("Blue Floopy Dancing:visible")
+tracks/52/interp = 1
+tracks/52/imported = false
+tracks/52/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/53/type = "value"
+tracks/53/path = NodePath("Green Floopy Dancing:visible")
+tracks/53/interp = 1
+tracks/53/imported = false
+tracks/53/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/54/type = "value"
+tracks/54/path = NodePath("Tower Sprite:visible")
+tracks/54/interp = 1
+tracks/54/imported = false
+tracks/54/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/55/type = "value"
+tracks/55/path = NodePath("Health Bar:visible")
+tracks/55/interp = 1
+tracks/55/imported = false
+tracks/55/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/56/type = "value"
+tracks/56/path = NodePath("Collapse Tower:visible")
+tracks/56/interp = 1
+tracks/56/imported = false
+tracks/56/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/57/type = "value"
+tracks/57/path = NodePath("Wall:collision_layer")
+tracks/57/interp = 1
+tracks/57/imported = false
+tracks/57/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 512 ]
+}
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "Still"
+length = 0.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Blue Floopy Dancing/Freckles:position")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 6.23657, -76.2908 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blue Floopy Dancing/Freckles:rotation_deg")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Blue Floopy Dancing:position")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -51.6191, -156.884 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Blue Floopy Dancing:rotation_deg")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1.11474 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Blue Floopy Dancing/Hair:position")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.16943, -130.472 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Blue Floopy Dancing/Hair:rotation_deg")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Blue Floopy Dancing/Eyeball:position")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.55908, -89.9336 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Blue Floopy Dancing/Eyeball:rotation_deg")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Blue Floopy Dancing/Left Arm/Left Forearm:position")
+tracks/8/interp = 1
+tracks/8/imported = false
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -14.3567, 23.1484 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Blue Floopy Dancing/Left Arm/Left Forearm:rotation_deg")
+tracks/9/interp = 1
+tracks/9/imported = false
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Blue Floopy Dancing/Left Arm/Left Forearm/Fist:position")
+tracks/10/interp = 1
+tracks/10/imported = false
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -2.26904, 21.9476 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Blue Floopy Dancing/Left Arm/Left Forearm/Fist:rotation_deg")
+tracks/11/interp = 1
+tracks/11/imported = false
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Blue Floopy Dancing/Brow:position")
+tracks/12/interp = 1
+tracks/12/imported = false
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.16943, -107.085 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Blue Floopy Dancing/Brow:rotation_deg")
+tracks/13/interp = 1
+tracks/13/imported = false
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Blue Floopy Dancing/Right Foot:position")
+tracks/14/interp = 1
+tracks/14/imported = false
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 37.3173, -27.0513 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Blue Floopy Dancing/Right Foot:rotation_deg")
+tracks/15/interp = 1
+tracks/15/imported = false
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 4.87716 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Blue Floopy Dancing/Pants:position")
+tracks/16/interp = 1
+tracks/16/imported = false
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.47266, -35.8151 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Blue Floopy Dancing/Pants:rotation_deg")
+tracks/17/interp = 1
+tracks/17/imported = false
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Blue Floopy Dancing/Left Foot:position")
+tracks/18/interp = 1
+tracks/18/imported = false
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -33.4468, -26.7646 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Blue Floopy Dancing/Left Foot:rotation_deg")
+tracks/19/interp = 1
+tracks/19/imported = false
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Blue Floopy Dancing/Right Arm:position")
+tracks/20/interp = 1
+tracks/20/imported = false
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 56.0084, -96.5609 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Blue Floopy Dancing/Right Arm:rotation_deg")
+tracks/21/interp = 1
+tracks/21/imported = false
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 59.9472 ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Blue Floopy Dancing/Mouth:position")
+tracks/22/interp = 1
+tracks/22/imported = false
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 4.73755, -64.8527 ) ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Blue Floopy Dancing/Mouth:rotation_deg")
+tracks/23/interp = 1
+tracks/23/imported = false
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Blue Floopy Dancing/Left Arm:position")
+tracks/24/interp = 1
+tracks/24/imported = false
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -53.8076, -93.5669 ) ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Blue Floopy Dancing/Left Arm:rotation_deg")
+tracks/25/interp = 1
+tracks/25/imported = false
+tracks/25/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Green Floopy Dancing/Left Foot:position")
+tracks/26/interp = 1
+tracks/26/imported = false
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -33.4468, -26.7646 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Green Floopy Dancing/Left Foot:rotation_deg")
+tracks/27/interp = 1
+tracks/27/imported = false
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Green Floopy Dancing/Eyeball:position")
+tracks/28/interp = 1
+tracks/28/imported = false
+tracks/28/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.55908, -89.9336 ) ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("Green Floopy Dancing/Eyeball:rotation_deg")
+tracks/29/interp = 1
+tracks/29/imported = false
+tracks/29/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("Green Floopy Dancing/Left Arm/Left Forearm/Fist:position")
+tracks/30/interp = 1
+tracks/30/imported = false
+tracks/30/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -2.26904, 21.9476 ) ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("Green Floopy Dancing/Left Arm/Left Forearm/Fist:rotation_deg")
+tracks/31/interp = 1
+tracks/31/imported = false
+tracks/31/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/32/type = "value"
+tracks/32/path = NodePath("Green Floopy Dancing/Freckles:position")
+tracks/32/interp = 1
+tracks/32/imported = false
+tracks/32/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 6.23657, -76.2908 ) ]
+}
+tracks/33/type = "value"
+tracks/33/path = NodePath("Green Floopy Dancing/Freckles:rotation_deg")
+tracks/33/interp = 1
+tracks/33/imported = false
+tracks/33/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/34/type = "value"
+tracks/34/path = NodePath("Green Floopy Dancing/Left Arm:position")
+tracks/34/interp = 1
+tracks/34/imported = false
+tracks/34/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -53.8076, -93.5669 ) ]
+}
+tracks/35/type = "value"
+tracks/35/path = NodePath("Green Floopy Dancing/Left Arm:rotation_deg")
+tracks/35/interp = 1
+tracks/35/imported = false
+tracks/35/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/36/type = "value"
+tracks/36/path = NodePath("Green Floopy Dancing:position")
+tracks/36/interp = 1
+tracks/36/imported = false
+tracks/36/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 81.7126, -154.898 ) ]
+}
+tracks/37/type = "value"
+tracks/37/path = NodePath("Green Floopy Dancing:rotation_deg")
+tracks/37/interp = 1
+tracks/37/imported = false
+tracks/37/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/38/type = "value"
+tracks/38/path = NodePath("Green Floopy Dancing/Right Arm:position")
+tracks/38/interp = 1
+tracks/38/imported = false
+tracks/38/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 56.0084, -96.5609 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("Green Floopy Dancing/Right Arm:rotation_deg")
+tracks/39/interp = 1
+tracks/39/imported = false
+tracks/39/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 59.9472 ]
+}
+tracks/40/type = "value"
+tracks/40/path = NodePath("Green Floopy Dancing/Hair:position")
+tracks/40/interp = 1
+tracks/40/imported = false
+tracks/40/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.16943, -130.472 ) ]
+}
+tracks/41/type = "value"
+tracks/41/path = NodePath("Green Floopy Dancing/Hair:rotation_deg")
+tracks/41/interp = 1
+tracks/41/imported = false
+tracks/41/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/42/type = "value"
+tracks/42/path = NodePath("Green Floopy Dancing/Brow:position")
+tracks/42/interp = 1
+tracks/42/imported = false
+tracks/42/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.16943, -107.085 ) ]
+}
+tracks/43/type = "value"
+tracks/43/path = NodePath("Green Floopy Dancing/Brow:rotation_deg")
+tracks/43/interp = 1
+tracks/43/imported = false
+tracks/43/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/44/type = "value"
+tracks/44/path = NodePath("Green Floopy Dancing/Left Arm/Left Forearm:position")
+tracks/44/interp = 1
+tracks/44/imported = false
+tracks/44/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -14.3567, 23.1484 ) ]
+}
+tracks/45/type = "value"
+tracks/45/path = NodePath("Green Floopy Dancing/Left Arm/Left Forearm:rotation_deg")
+tracks/45/interp = 1
+tracks/45/imported = false
+tracks/45/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/46/type = "value"
+tracks/46/path = NodePath("Green Floopy Dancing/Mouth:position")
+tracks/46/interp = 1
+tracks/46/imported = false
+tracks/46/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 4.73755, -64.8527 ) ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Green Floopy Dancing/Mouth:rotation_deg")
+tracks/47/interp = 1
+tracks/47/imported = false
+tracks/47/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Green Floopy Dancing/Right Foot:position")
+tracks/48/interp = 1
+tracks/48/imported = false
+tracks/48/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 37.3173, -27.0513 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Green Floopy Dancing/Right Foot:rotation_deg")
+tracks/49/interp = 1
+tracks/49/imported = false
+tracks/49/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 4.87716 ]
+}
+tracks/50/type = "value"
+tracks/50/path = NodePath("Green Floopy Dancing/Pants:position")
+tracks/50/interp = 1
+tracks/50/imported = false
+tracks/50/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.47266, -35.8151 ) ]
+}
+tracks/51/type = "value"
+tracks/51/path = NodePath("Green Floopy Dancing/Pants:rotation_deg")
+tracks/51/interp = 1
+tracks/51/imported = false
+tracks/51/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/52/type = "value"
+tracks/52/path = NodePath("Blue Floopy Dancing:visible")
+tracks/52/interp = 1
+tracks/52/imported = false
+tracks/52/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/53/type = "value"
+tracks/53/path = NodePath("Green Floopy Dancing:visible")
+tracks/53/interp = 1
+tracks/53/imported = false
+tracks/53/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/54/type = "value"
+tracks/54/path = NodePath("Tower Sprite:visible")
+tracks/54/interp = 1
+tracks/54/imported = false
+tracks/54/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/55/type = "value"
+tracks/55/path = NodePath("Health Bar:visible")
+tracks/55/interp = 1
+tracks/55/imported = false
+tracks/55/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/56/type = "value"
+tracks/56/path = NodePath("Collapse Tower:visible")
+tracks/56/interp = 1
+tracks/56/imported = false
+tracks/56/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/57/type = "value"
+tracks/57/path = NodePath("Wall:collision_layer")
+tracks/57/interp = 1
+tracks/57/imported = false
+tracks/57/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 512 ]
+}
+
+[node name="Floopy Tower" type="Node2D"]
+
+position = Vector2( 0, -616.639 )
+script = ExtResource( 1 )
+full_health = 1000
+collapsed_spawn_path_1 = "res://Scenes/Enemies/Computer Room/Small Floopy.tscn"
+collapsed_spawn_path_2 = "res://Scenes/Enemies/Computer Room/Small Floopy.tscn"
+
+[node name="Damage Area" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="Damage Area" type="Area2D" parent="Damage Area" groups=[
+"enemy_collider",
+]]
+
+editor/display_folded = true
+input_pickable = true
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Transform2D( 1, 0, 0, 1, -0.0349121, 28.2449 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage Area/Damage Area"]
+
+position = Vector2( -0.0349121, 28.2449 )
+shape = SubResource( 6 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Blue Floopy Dancing" type="Sprite" parent="."]
+
+editor/display_folded = true
+position = Vector2( -51.6191, -156.884 )
+rotation_deg = -1.11474
+texture = ExtResource( 2 )
+offset = Vector2( 0.240479, -89.6437 )
+
+[node name="Mouth" type="Sprite" parent="Blue Floopy Dancing"]
+
+position = Vector2( 4.73755, -64.8527 )
+texture = ExtResource( 3 )
+
+[node name="Pants" type="Sprite" parent="Blue Floopy Dancing"]
+
+position = Vector2( 3.47266, -35.8151 )
+texture = ExtResource( 4 )
+
+[node name="Left Foot" type="Sprite" parent="Blue Floopy Dancing"]
+
+position = Vector2( -33.4468, -26.7646 )
+texture = ExtResource( 5 )
+offset = Vector2( 0.330566, 12.5193 )
+
+[node name="Right Foot" type="Sprite" parent="Blue Floopy Dancing"]
+
+position = Vector2( 37.3173, -27.0513 )
+rotation_deg = -4.87716
+texture = ExtResource( 5 )
+offset = Vector2( 0.330566, 12.5193 )
+
+[node name="Freckles" type="Sprite" parent="Blue Floopy Dancing"]
+
+position = Vector2( 6.23657, -76.2908 )
+texture = ExtResource( 6 )
+
+[node name="Brow" type="Sprite" parent="Blue Floopy Dancing"]
+
+position = Vector2( 1.16943, -107.085 )
+texture = ExtResource( 7 )
+
+[node name="Eyeball" type="Sprite" parent="Blue Floopy Dancing"]
+
+position = Vector2( 1.55908, -89.9336 )
+texture = ExtResource( 8 )
+
+[node name="Hair" type="Sprite" parent="Blue Floopy Dancing"]
+
+position = Vector2( 1.16943, -130.472 )
+texture = ExtResource( 9 )
+
+[node name="Left Arm" type="Sprite" parent="Blue Floopy Dancing"]
+
+position = Vector2( -53.8076, -93.5669 )
+texture = ExtResource( 10 )
+offset = Vector2( -5.68091, 11.0476 )
+
+[node name="Left Forearm" type="Sprite" parent="Blue Floopy Dancing/Left Arm"]
+
+position = Vector2( -14.3567, 23.1484 )
+texture = ExtResource( 11 )
+offset = Vector2( -1.40869, 8.3822 )
+
+[node name="Fist" type="Sprite" parent="Blue Floopy Dancing/Left Arm/Left Forearm"]
+
+position = Vector2( -2.26904, 21.9476 )
+texture = ExtResource( 12 )
+offset = Vector2( 1.53149, 4.31445 )
+
+[node name="Right Arm" type="Sprite" parent="Blue Floopy Dancing"]
+
+position = Vector2( 56.0084, -96.5609 )
+rotation_deg = -59.9472
+texture = ExtResource( 10 )
+offset = Vector2( -6.69762, 12.1168 )
+
+[node name="Green Floopy Dancing" type="Sprite" parent="."]
+
+editor/display_folded = true
+position = Vector2( 81.7126, -154.898 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 13 )
+offset = Vector2( 0.240479, -89.6437 )
+
+[node name="Mouth" type="Sprite" parent="Green Floopy Dancing"]
+
+position = Vector2( 4.73755, -64.8527 )
+texture = ExtResource( 3 )
+
+[node name="Pants" type="Sprite" parent="Green Floopy Dancing"]
+
+position = Vector2( 3.47266, -35.8151 )
+texture = ExtResource( 4 )
+
+[node name="Left Foot" type="Sprite" parent="Green Floopy Dancing"]
+
+position = Vector2( -33.4468, -26.7646 )
+texture = ExtResource( 5 )
+offset = Vector2( 0.330566, 12.5193 )
+
+[node name="Right Foot" type="Sprite" parent="Green Floopy Dancing"]
+
+position = Vector2( 37.3173, -27.0513 )
+rotation_deg = -4.87716
+texture = ExtResource( 5 )
+offset = Vector2( 0.330566, 12.5193 )
+
+[node name="Freckles" type="Sprite" parent="Green Floopy Dancing"]
+
+position = Vector2( 6.23657, -76.2908 )
+texture = ExtResource( 6 )
+
+[node name="Brow" type="Sprite" parent="Green Floopy Dancing"]
+
+position = Vector2( 1.16943, -107.085 )
+texture = ExtResource( 7 )
+
+[node name="Eyeball" type="Sprite" parent="Green Floopy Dancing"]
+
+position = Vector2( 1.55908, -89.9336 )
+texture = ExtResource( 8 )
+
+[node name="Hair" type="Sprite" parent="Green Floopy Dancing"]
+
+position = Vector2( 1.16943, -130.472 )
+texture = ExtResource( 9 )
+
+[node name="Left Arm" type="Sprite" parent="Green Floopy Dancing"]
+
+position = Vector2( -53.8076, -93.5669 )
+texture = ExtResource( 10 )
+offset = Vector2( -5.68091, 11.0476 )
+
+[node name="Left Forearm" type="Sprite" parent="Green Floopy Dancing/Left Arm"]
+
+position = Vector2( -14.3567, 23.1484 )
+texture = ExtResource( 11 )
+offset = Vector2( -1.40869, 8.3822 )
+
+[node name="Fist" type="Sprite" parent="Green Floopy Dancing/Left Arm/Left Forearm"]
+
+position = Vector2( -2.26904, 21.9476 )
+texture = ExtResource( 12 )
+offset = Vector2( 1.53149, 4.31445 )
+
+[node name="Right Arm" type="Sprite" parent="Green Floopy Dancing"]
+
+position = Vector2( 56.0084, -96.5609 )
+rotation_deg = -59.9472
+texture = ExtResource( 10 )
+offset = Vector2( -6.69762, 12.1168 )
+
+[node name="Tower Sprite" type="Sprite" parent="."]
+
+editor/display_folded = true
+position = Vector2( 0, 18.5954 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+
+[node name="Badge" type="Sprite" parent="Tower Sprite"]
+
+position = Vector2( -3.86462, -235.264 )
+texture = ExtResource( 15 )
+
+[node name="Collapse Tower" type="Node2D" parent="."]
+
+editor/display_folded = true
+visible = false
+scale = Vector2( 2, 2 )
+
+[node name="1" type="Sprite" parent="Collapse Tower"]
+
+position = Vector2( -54.6783, 259.113 )
+texture = ExtResource( 16 )
+
+[node name="2" type="Sprite" parent="Collapse Tower"]
+
+position = Vector2( 57.3477, 219.039 )
+texture = ExtResource( 17 )
+
+[node name="3" type="Sprite" parent="Collapse Tower"]
+
+position = Vector2( -80.1803, 130.693 )
+texture = ExtResource( 18 )
+
+[node name="4" type="Sprite" parent="Collapse Tower"]
+
+position = Vector2( -98.3959, -15.0317 )
+texture = ExtResource( 19 )
+
+[node name="5" type="Sprite" parent="Collapse Tower"]
+
+position = Vector2( 36.855, -200.831 )
+texture = ExtResource( 20 )
+
+[node name="6" type="Sprite" parent="Collapse Tower"]
+
+position = Vector2( 34.1224, 7.28247 )
+texture = ExtResource( 21 )
+
+[node name="7" type="Sprite" parent="Collapse Tower"]
+
+position = Vector2( -98.3961, -155.747 )
+texture = ExtResource( 22 )
+
+[node name="8" type="Sprite" parent="Collapse Tower"]
+
+position = Vector2( 10.8976, 112.478 )
+texture = ExtResource( 23 )
+
+[node name="9" type="Sprite" parent="Collapse Tower"]
+
+position = Vector2( -3.25598, -224.85 )
+texture = ExtResource( 15 )
+
+[node name="Health Bar" type="Node2D" parent="."]
+
+position = Vector2( -18.783, 211.474 )
+scale = Vector2( 1.95, 1.95 )
+
+[node name="Light" type="Light2D" parent="Health Bar"]
+
+enabled = true
+editor_only = false
+texture = ExtResource( 24 )
+offset = Vector2( 0, 0 )
+scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.0
+mode = 3
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range/layer_min = 0
+range_layer_max = 0
+range/item_mask = 4096
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow/esm_multiplier = 80.0
+shadow/item_mask = 1
+
+[node name="Inner" type="Sprite" parent="Health Bar"]
+
+light_mask = 4096
+position = Vector2( 0, 93 )
+texture = ExtResource( 25 )
+offset = Vector2( 0, -93 )
+
+[node name="Outer" type="Sprite" parent="Health Bar"]
+
+texture = ExtResource( 26 )
+
+[node name="Wall" type="StaticBody2D" parent="."]
+
+position = Vector2( -0.752075, 2.82336 )
+input_pickable = false
+shapes/0/shape = SubResource( 7 )
+shapes/0/transform = Transform2D( 1, 0, 0, 1, -7.91162, 21.9954 )
+shapes/0/trigger = false
+collision_layer = 512
+collision_mask = 0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+
+position = Vector2( -7.91162, 21.9954 )
+shape = SubResource( 7 )
+trigger = false
+_update_shape_index = 0
+
+[node name="Collapse Spawn Pos 1" type="Position2D" parent="."]
+
+position = Vector2( 130, 535 )
+
+[node name="Collapse Spawn Pos 2" type="Position2D" parent="."]
+
+position = Vector2( -130, 535 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+root_node = NodePath("..")
+anims/Collapse = SubResource( 3 )
+anims/Dance = SubResource( 4 )
+anims/Still = SubResource( 5 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "Still"

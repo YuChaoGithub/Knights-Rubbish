@@ -1,17 +1,18 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Graphics/Particles/Fire.png" type="Texture" id=1]
 
-[sub_resource type="ColorRamp" id=1]
+[sub_resource type="Gradient" id=1]
 
-offsets = FloatArray( 0, 0.104478, 0.211443, 0.828358, 1 )
-colors = ColorArray( 1, 0.9375, 0, 0, 1, 0.9375, 0, 1, 1, 0.703125, 0, 1, 1, 0.143018, 0, 1, 1, 0, 0, 0 )
+offsets = PoolRealArray( 0, 0.104478, 0.211443, 0.828358, 1 )
+colors = PoolColorArray( 1, 0.9375, 0, 0, 1, 0.9375, 0, 1, 1, 0.703125, 0, 1, 1, 0.143018, 0, 1, 1, 0, 0, 0 )
 
 [node name="Fire Particle" type="Node2D"]
 
+
 [node name="Particles2D" type="Particles2D" parent="."]
 
-transform/scale = Vector2( 2, 2 )
+scale = Vector2( 2, 2 )
 config/amount = 5
 config/lifetime = 2.0
 config/preprocess = 0.1
@@ -40,9 +41,9 @@ color/color_ramp = SubResource( 1 )
 
 [node name="Particles2D2" type="Particles2D" parent="."]
 
-transform/pos = Vector2( -20.7992, -2.65521 )
-transform/rot = -4.14171
-transform/scale = Vector2( 2, 2 )
+position = Vector2( -20.7992, -2.65521 )
+rotation_deg = 4.14171
+scale = Vector2( 2, 2 )
 config/amount = 5
 config/lifetime = 2.0
 config/preprocess = 0.1
@@ -71,9 +72,9 @@ color/color_ramp = SubResource( 1 )
 
 [node name="Particles2D1" type="Particles2D" parent="."]
 
-transform/pos = Vector2( 24.8179, -1.32761 )
-transform/rot = 7.27092
-transform/scale = Vector2( 2, 2 )
+position = Vector2( 24.8179, -1.32761 )
+rotation_deg = -7.27092
+scale = Vector2( 2, 2 )
 config/amount = 5
 config/lifetime = 2.0
 config/preprocess = 0.1
@@ -99,5 +100,3 @@ randomness/linear_velocity = 0.25
 randomness/initial_angle = 0.29
 randomness/initial_size = 0.1
 color/color_ramp = SubResource( 1 )
-
-

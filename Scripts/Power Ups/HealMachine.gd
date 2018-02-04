@@ -1,6 +1,6 @@
 extends Node2D
 
-export(int) var heal_amount = 150
+export(int) var heal_amount = 100
 export(float) var interval = 1.0
 
 var timer = null

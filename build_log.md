@@ -471,6 +471,43 @@ Milestone: Completed scripting all enemies in Computer Room.
 
 **Commit**
 
+[2018.01.29]  
+* Refactored camera update & level part instancing/removing mechanism. (Use `PassingTrigger.gd` instead of `LevelEntryPoint.gd`).
+* Keshia's Basic Skill no longer grants invicibility while landing.
+* Design level part 1-3.
+
+[2018.01.30]
+* Decreased the hit box length of Keshia's basic attack. (Avoid hitting backside).
+* Completed level part 1-3.
+
+[2018.01.31]
+* Shrinked Keshia's size by 20%. (Scale 1 -> Scale 0.8)
+
+[2018.02.01]
+* Now enemies will be knocked up as expected.
+* Added "Player Only Platform" as layer 512. (Put fallen-Harddies into this layer)
+* Implemented tower (obstacle). Not tested yet.
+
+[2018.02.02]
+* Redesigned `PassingTrigger.gd` so that it can handle both "Lesser" and "Greater" position triggers.
+* Tested and fixed bugs of Tower.
+* Adjusted numeric values of power ups.
+* Design level part 1-4.
+
+[2018.02.03]
+* Added "fade in" effect and "spawning particles" to Repeating Spawner.
+* Fix a bug of CDPunch that it failed to search an attack target when being attacked immediately after activated.
+* Determine the numeric value of Floopy.
+* Floopy will now have randomized color upon instancing.
+* Make Keshia's dart fall faster (to decrease it's range).
+* Completed level part 1-4.
+* Design level part 1-5-1, 1-5-2. Not tested yet.
+
+[2018.02.04]
+* Holy, I screwed up! I accidentally converted the project to 3.0, not knowing that many things broke. damn.
+
+**Commit**
+
 To Do List:
 
 Planned Prototype Stages:
@@ -479,6 +516,7 @@ Planned Prototype Stages:
 [Ver 0.2] Main UI completed.
 
 Polishing:
+* [UI] A "GO" sign when the right camera margin is changing.
 * [Effect] Attack effects.
 * [Effect] Ult Stone particles.
 * [Animation] Parachute on potions before landing.
@@ -486,6 +524,6 @@ Polishing:
 * [Script] Slow down walking animation while slowed.
 * [Effect] Jumping dust for characters.
 * [Animation] Drink potion animation.
-* [Script] Status icons gradually vanish when disappearing.
+* [Script] Status icons showed in HUD. Blinking when about to vanish.
 * [Script] Adjust damage according to player numbers.
 * [Graphics] Dark level: wears mining hat.

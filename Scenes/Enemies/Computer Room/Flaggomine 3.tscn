@@ -1,15 +1,13 @@
-[gd_scene load_steps=2 format=1]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Graphics/Enemies/Computer Room/Flaggomine/3.png" type="Texture" id=1]
 
 [node name="Flaggomine 3" type="Node2D"]
 
-z/z = 1
+z = 1
 
 [node name="Sprite" type="Sprite" parent="."]
 
-transform/pos = Vector2( -5.47171, -64.1298 )
-transform/scale = Vector2( 2.5, 2.5 )
+position = Vector2( -5.47171, -64.1298 )
+scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 1 )
-
-
