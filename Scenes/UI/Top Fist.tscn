@@ -9,7 +9,7 @@
 [ext_resource path="res://Graphics/UI/Scrap 3.png" type="Texture" id=7]
 [ext_resource path="res://Graphics/UI/Arrow.png" type="Texture" id=8]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=1]
 
 resource_name = "Appear"
 length = 3.5
@@ -18,7 +18,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -28,7 +30,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:position")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -38,7 +42,9 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/path = NodePath("Left:self_modulate")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0.4, 0.5, 3.1, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -48,7 +54,9 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("Left/Sprite:self_modulate")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0.4, 0.5, 3.1, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -58,7 +66,9 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/path = NodePath("Right:self_modulate")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0.4, 0.5, 3.1, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -68,7 +78,9 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/path = NodePath("Right/Sprite:self_modulate")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0.4, 0.5, 3.1, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -78,7 +90,9 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/path = NodePath("Right:scale")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0.5, 0.6, 0.8, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -88,7 +102,9 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/path = NodePath("Left:scale")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0.6, 0.8, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -98,7 +114,9 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/path = NodePath("Sprite/Icon:position")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -115,7 +133,9 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.05, 0.1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -125,7 +145,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:position")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -135,7 +157,9 @@ tracks/1/keys = {
 tracks/2/type = "method"
 tracks/2/path = NodePath(".")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 1 ),
 "transitions": PoolRealArray( 1 ),
@@ -147,7 +171,9 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("Left:self_modulate")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -157,7 +183,9 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/path = NodePath("Left/Sprite:self_modulate")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -167,7 +195,9 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/path = NodePath("Right:self_modulate")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -177,7 +207,9 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/path = NodePath("Right/Sprite:self_modulate")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -187,7 +219,9 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/path = NodePath("Sprite/Icon:position")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -195,64 +229,64 @@ tracks/7/keys = {
 "values": [ Vector2( -22.3128, 61.9086 ), Vector2( -22.3128, 42.8695 ) ]
 }
 
-[node name="Top Fist" type="Node2D"]
+[node name="Top Fist" type="Node2D" index="0"]
 
-z = 4
+z_index = 4
 script = ExtResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="." index="0"]
 
 position = Vector2( -0.719116, -522.26 )
 texture = ExtResource( 2 )
 offset = Vector2( 7.73104, 296.463 )
 
-[node name="Icon" type="Sprite" parent="Sprite"]
+[node name="Icon" type="Sprite" parent="Sprite" index="0"]
 
 position = Vector2( -22.3128, 42.8695 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 3 )
 
-[node name="Drop Pos" type="Position2D" parent="."]
+[node name="Drop Pos" type="Position2D" parent="." index="1"]
 
 position = Vector2( -1.18323, 248.479 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 
+root_node = NodePath("..")
+autoplay = "Appear"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-root_node = NodePath("..")
-anims/Appear = SubResource( 3 )
+playback_speed = 1.0
+anims/Appear = SubResource( 1 )
 anims/Release = SubResource( 2 )
-playback/active = true
-playback/speed = 1.0
 blend_times = [  ]
-autoplay = "Appear"
 
-[node name="Left" type="Sprite" parent="."]
+[node name="Left" type="Sprite" parent="." index="3"]
 
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -204.701, 93.7265 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Left" index="0"]
+
 self_modulate = Color( 1, 1, 1, 0 )
-
-[node name="Sprite" type="Sprite" parent="Left"]
-
 position = Vector2( -1.79016, -8.95093 )
-rotation_deg = -176.521
+rotation = -3.08087
 texture = ExtResource( 8 )
+
+[node name="Right" type="Sprite" parent="." index="4"]
+
 self_modulate = Color( 1, 1, 1, 0 )
-
-[node name="Right" type="Sprite" parent="."]
-
 position = Vector2( 161.325, 92.8315 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Right" index="0"]
+
 self_modulate = Color( 1, 1, 1, 0 )
-
-[node name="Sprite" type="Sprite" parent="Right"]
-
 position = Vector2( -3.58032, 1.79018 )
-rotation_deg = 2.03264
-scale = Vector2( 1, 1 )
+rotation = 0.0354763
 texture = ExtResource( 8 )
-self_modulate = Color( 1, 1, 1, 0 )
+
+

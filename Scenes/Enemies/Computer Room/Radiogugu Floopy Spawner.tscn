@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/RadioguguFloopySpawner.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Radiogugu/Pink Floppy.png" type="Texture" id=2]
@@ -18,7 +18,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Red Floopy:position")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3, 0.4, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -26,19 +28,23 @@ tracks/0/keys = {
 "values": [ Vector2( -63.4272, 0 ), Vector2( -77.4998, -111.494 ), Vector2( -77.4998, -111.494 ), Vector2( -83.1371, -120.655 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Red Floopy:rotation_deg")
+tracks/1/path = NodePath("Red Floopy:rotation_degrees")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.3, 0.4, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, -46.2817, -46.2817, 1.36272 ]
+"values": [ 0.0, 46.2817, 46.2817, -1.36272 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Red Floopy:scale")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 0.3, 0.4, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -48,7 +54,9 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("Blue Floopy:position")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 0.3, 0.4, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -56,19 +64,23 @@ tracks/3/keys = {
 "values": [ Vector2( 59.3526, 0 ), Vector2( 81.4086, -111.349 ), Vector2( 81.4086, -111.349 ), Vector2( 84.9319, -116.282 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Blue Floopy:rotation_deg")
+tracks/4/path = NodePath("Blue Floopy:rotation_degrees")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0, 0.3, 0.4, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 45.7956, 45.7956, 0.53771 ]
+"values": [ 0.0, -45.7956, -45.7956, -0.53771 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Blue Floopy:scale")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0, 0.3, 0.4, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -78,7 +90,9 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/path = NodePath("Red Floopy:self_modulate")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 0.7, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -88,7 +102,9 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/path = NodePath("Blue Floopy:self_modulate")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 0.7, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -104,7 +120,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Red Floopy:position")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -112,9 +130,11 @@ tracks/0/keys = {
 "values": [ Vector2( -63.4272, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Red Floopy:rotation_deg")
+tracks/1/path = NodePath("Red Floopy:rotation_degrees")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -124,7 +144,9 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/path = NodePath("Red Floopy:scale")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -134,7 +156,9 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("Blue Floopy:position")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -142,9 +166,11 @@ tracks/3/keys = {
 "values": [ Vector2( 59.3526, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Blue Floopy:rotation_deg")
+tracks/4/path = NodePath("Blue Floopy:rotation_degrees")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -154,7 +180,9 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/path = NodePath("Blue Floopy:scale")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -164,7 +192,9 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/path = NodePath("Red Floopy:self_modulate")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -174,7 +204,9 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/path = NodePath("Blue Floopy:self_modulate")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -182,53 +214,50 @@ tracks/7/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Radiogugu Floopy Spawner" type="KinematicBody2D"]
+[node name="Radiogugu Floopy Spawner" type="KinematicBody2D" index="0"]
 
 position = Vector2( 9.49024, 426.419 )
 input_pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Transform2D( 1, 0, 0, 1, 0, -1.06714 )
-shapes/0/trigger = false
-collision_layer = 16
-collision_mask = 2
-collision/margin = 0.08
+collision_layer = 0
+collision_mask = 4
+collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
 
-[node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="."]
+[node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="." index="0"]
 
 position = Vector2( 0, -1.06714 )
 shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
 
-[node name="Red Floopy" type="Sprite" parent="."]
+[node name="Red Floopy" type="Sprite" parent="." index="1"]
 
 position = Vector2( -63.4272, 0 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 2 )
 
-[node name="Blue Floopy" type="Sprite" parent="."]
+[node name="Blue Floopy" type="Sprite" parent="." index="2"]
 
 position = Vector2( 59.3526, 0 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 3 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 
+root_node = NodePath("..")
+autoplay = "Still"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-root_node = NodePath("..")
+playback_speed = 1.0
 anims/Spawn = SubResource( 2 )
 anims/Still = SubResource( 3 )
-playback/active = true
-playback/speed = 1.0
 blend_times = [  ]
-autoplay = "Still"
 
-[node name="Spawn Pos Right" type="Position2D" parent="."]
+[node name="Spawn Pos Right" type="Position2D" parent="." index="4"]
 
 position = Vector2( 83, -81.5 )
 
-[node name="Spawn Pos Left" type="Position2D" parent="."]
+[node name="Spawn Pos Left" type="Position2D" parent="." index="5"]
 
 position = Vector2( -85, -83 )
+
+

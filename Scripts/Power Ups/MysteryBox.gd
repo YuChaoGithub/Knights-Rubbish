@@ -10,8 +10,8 @@ const EXPLODE_DURATION = 0.3
 var scenes = [
 	preload("res://Scenes/Power Ups/Dwarf Potion.tscn"),
 	preload("res://Scenes/Power Ups/Giant Potion.tscn"),
-	preload("res://Scenes/Power Ups/HealPotion.tscn"),
-	preload("res://Scenes/Power Ups/Hyper Potion.tscn"),
+	preload("res://Scenes/Power Ups/Healing Potion.tscn"),
+	preload("res://Scenes/Power Ups/Attack Potion.tscn"),
 	preload("res://Scenes/Power Ups/Speed Potion.tscn")
 ]
 

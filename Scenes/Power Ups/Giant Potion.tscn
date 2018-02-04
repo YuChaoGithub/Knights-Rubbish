@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Power Ups/GiantPotion.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Powerups/Drink Me Pot.png" type="Texture" id=2]
@@ -13,48 +13,44 @@ extents = Vector2( 85.1433, 92.5582 )
 custom_solver_bias = 0.0
 extents = Vector2( 83.9538, 93.5413 )
 
-[node name="Giant Potion" type="KinematicBody2D"]
+[node name="Giant Potion" type="KinematicBody2D" index="0"]
 
 input_pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Transform2D( 1, 0, 0, 1, 5.41095, -96.5646 )
-shapes/0/trigger = false
 collision_layer = 0
-collision_mask = 2
-collision/margin = 0.08
+collision_mask = 4
+collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "collision" ]
 
-[node name="Movement Collision Shape" type="CollisionShape2D" parent="."]
+[node name="Movement Collision Shape" type="CollisionShape2D" parent="." index="0"]
 
 position = Vector2( 5.41095, -96.5646 )
 shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
 
-[node name="Trigger Area" type="Area2D" parent="."]
+[node name="Trigger Area" type="Area2D" parent="." index="1"]
 
 editor/display_folded = true
 position = Vector2( 5.54932, -95.0325 )
 input_pickable = true
-shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 8
+collision_layer = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger Area" index="0"]
 
 shape = SubResource( 2 )
-trigger = false
-_update_shape_index = 0
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="." index="2"]
 
 position = Vector2( 5.54932, -95.0325 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
-[connection signal="area_entered"  from="Trigger Area"  to="." method="on_area_entered" binds=[  ]]
+[connection signal="area_entered" from="Trigger Area" to="." method="on_area_entered"]
+
+

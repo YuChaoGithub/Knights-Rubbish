@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/ISnail.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/iSnail/Body Mouth Closed.png" type="Texture" id=2]
@@ -14,17 +14,17 @@
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=13]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 96.3852, 47.1801 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 96.1503, 86.2303 )
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=3]
 
 resource_name = "Attack"
 length = 0.1
@@ -33,7 +33,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Reverse Node/Shell:self_modulate")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -43,7 +45,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Reverse Node/Tail:self_modulate")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -53,7 +57,9 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/path = NodePath("Reverse Node/Tail Remote Transform:position")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -61,9 +67,11 @@ tracks/2/keys = {
 "values": [ Vector2( 22.5345, -2.31123 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Reverse Node/Tail Remote Transform:rotation_deg")
+tracks/3/path = NodePath("Reverse Node/Tail Remote Transform:rotation_degrees")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -73,7 +81,9 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/path = NodePath("Reverse Node/Tail Remote Transform/Body:position")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -81,19 +91,23 @@ tracks/4/keys = {
 "values": [ Vector2( 8.35617, 67.4381 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Reverse Node/Tail Remote Transform/Body:rotation_deg")
+tracks/5/path = NodePath("Reverse Node/Tail Remote Transform/Body:rotation_degrees")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -1.11721 ]
+"values": [ 1.11721 ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:position")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -101,19 +115,23 @@ tracks/6/keys = {
 "values": [ Vector2( 48.6132, -96.8376 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:rotation_deg")
+tracks/7/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:rotation_degrees")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 11.9596 ]
+"values": [ -11.9596 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:position")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -121,19 +139,23 @@ tracks/8/keys = {
 "values": [ Vector2( -20.3106, -37.4498 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:rotation_deg")
+tracks/9/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:rotation_degrees")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1.11721 ]
+"values": [ -1.11721 ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:position")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -141,19 +163,23 @@ tracks/10/keys = {
 "values": [ Vector2( 64.9063, -96.8969 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:rotation_deg")
+tracks/11/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:rotation_degrees")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -38.724 ]
+"values": [ 38.724 ]
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:position")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -161,19 +187,23 @@ tracks/12/keys = {
 "values": [ Vector2( -3.53, -46.6356 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:rotation_deg")
+tracks/13/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:rotation_degrees")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1.11721 ]
+"values": [ -1.11721 ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:position")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -181,19 +211,23 @@ tracks/14/keys = {
 "values": [ Vector2( -36.9797, 55.4696 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:rotation_deg")
+tracks/15/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:rotation_degrees")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 23.5322 ]
+"values": [ -23.5322 ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -203,7 +237,9 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:scale")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -213,7 +249,9 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:scale")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -223,7 +261,9 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -233,7 +273,9 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:self_modulate")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -243,7 +285,9 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:self_modulate")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -253,7 +297,9 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/path = NodePath("Reverse Node/Tail Remote Transform/Body:self_modulate")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -263,254 +309,9 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/path = NodePath("Reverse Node/Tail Remote Transform/Body:texture")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
-tracks/23/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 8 ) ]
-}
-
-[sub_resource type="Animation" id=11]
-
-resource_name = "Die"
-length = 0.7
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Reverse Node/Shell:self_modulate")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Reverse Node/Tail:self_modulate")
-tracks/1/interp = 1
-tracks/1/imported = false
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Reverse Node/Tail Remote Transform:position")
-tracks/2/interp = 1
-tracks/2/imported = false
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 22.5345, -2.31123 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Reverse Node/Tail Remote Transform:rotation_deg")
-tracks/3/interp = 1
-tracks/3/imported = false
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Reverse Node/Tail Remote Transform/Body:position")
-tracks/4/interp = 1
-tracks/4/imported = false
-tracks/4/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 8.35617, 67.4381 ), Vector2( 14.2863, 66.5486 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("Reverse Node/Tail Remote Transform/Body:rotation_deg")
-tracks/5/interp = 1
-tracks/5/imported = false
-tracks/5/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ -1.11721, 6.04604 ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:position")
-tracks/6/interp = 1
-tracks/6/imported = false
-tracks/6/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 48.6132, -96.8376 ), Vector2( 48.6132, -96.8376 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:rotation_deg")
-tracks/7/interp = 1
-tracks/7/imported = false
-tracks/7/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 105.278 ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:position")
-tracks/8/interp = 1
-tracks/8/imported = false
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -20.3106, -37.4498 ) ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:rotation_deg")
-tracks/9/interp = 1
-tracks/9/imported = false
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 1.11721 ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:position")
-tracks/10/interp = 1
-tracks/10/imported = false
-tracks/10/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 64.9063, -96.8969 ), Vector2( 64.9063, -96.8969 ) ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:rotation_deg")
-tracks/11/interp = 1
-tracks/11/imported = false
-tracks/11/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 81.6402 ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:position")
-tracks/12/interp = 1
-tracks/12/imported = false
-tracks/12/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -3.53, -46.6356 ) ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:rotation_deg")
-tracks/13/interp = 1
-tracks/13/imported = false
-tracks/13/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 1.11721 ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:position")
-tracks/14/interp = 1
-tracks/14/imported = false
-tracks/14/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -36.9797, 55.4696 ), Vector2( -85.7204, 51.8424 ) ]
-}
-tracks/15/type = "value"
-tracks/15/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:rotation_deg")
-tracks/15/interp = 1
-tracks/15/imported = false
-tracks/15/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 59.2437 ]
-}
-tracks/16/type = "value"
-tracks/16/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
-tracks/16/interp = 1
-tracks/16/imported = false
-tracks/16/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 9 ) ]
-}
-tracks/17/type = "value"
-tracks/17/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:scale")
-tracks/17/interp = 1
-tracks/17/imported = false
-tracks/17/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0.4, 0.4 ) ]
-}
-tracks/18/type = "value"
-tracks/18/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:scale")
-tracks/18/interp = 1
-tracks/18/imported = false
-tracks/18/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0.4, 0.4 ) ]
-}
-tracks/19/type = "value"
-tracks/19/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
-tracks/19/interp = 1
-tracks/19/imported = false
-tracks/19/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 9 ) ]
-}
-tracks/20/type = "value"
-tracks/20/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:self_modulate")
-tracks/20/interp = 1
-tracks/20/imported = false
-tracks/20/keys = {
-"times": PoolRealArray( 0, 0.5, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/21/type = "value"
-tracks/21/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:self_modulate")
-tracks/21/interp = 1
-tracks/21/imported = false
-tracks/21/keys = {
-"times": PoolRealArray( 0, 0.5, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/22/type = "value"
-tracks/22/path = NodePath("Reverse Node/Tail Remote Transform/Body:self_modulate")
-tracks/22/interp = 1
-tracks/22/imported = false
-tracks/22/keys = {
-"times": PoolRealArray( 0, 0.5, 0.7 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/23/type = "value"
-tracks/23/path = NodePath("Reverse Node/Tail Remote Transform/Body:texture")
-tracks/23/interp = 1
-tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -520,33 +321,40 @@ tracks/23/keys = {
 
 [sub_resource type="Animation" id=4]
 
-length = 0.1
+resource_name = "Die"
+length = 0.7
 loop = false
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Reverse Node/Shell:self_modulate")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Reverse Node/Tail:self_modulate")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Reverse Node/Tail Remote Transform:position")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -554,9 +362,11 @@ tracks/2/keys = {
 "values": [ Vector2( 22.5345, -2.31123 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Reverse Node/Tail Remote Transform:rotation_deg")
+tracks/3/path = NodePath("Reverse Node/Tail Remote Transform:rotation_degrees")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -566,293 +376,57 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/path = NodePath("Reverse Node/Tail Remote Transform/Body:position")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 8.35617, 67.4381 ) ]
+"values": [ Vector2( 8.35617, 67.4381 ), Vector2( 14.2863, 66.5486 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Reverse Node/Tail Remote Transform/Body:rotation_deg")
+tracks/5/path = NodePath("Reverse Node/Tail Remote Transform/Body:rotation_degrees")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 7.77709 ]
+"values": [ 1.11721, -6.04604 ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:position")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 48.6132, -96.8376 ) ]
+"values": [ Vector2( 48.6132, -96.8376 ), Vector2( 48.6132, -96.8376 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:rotation_deg")
+tracks/7/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:rotation_degrees")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -88.1382 ]
+"values": [ 0.0, -105.278 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:position")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -19.0901, -37.5204 ) ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:rotation_deg")
-tracks/9/interp = 1
-tracks/9/imported = false
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -89.4556 ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:position")
-tracks/10/interp = 1
-tracks/10/imported = false
-tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 67.7928, -88.7691 ) ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:rotation_deg")
-tracks/11/interp = 1
-tracks/11/imported = false
-tracks/11/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 12.4555 ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:position")
-tracks/12/interp = 1
-tracks/12/imported = false
-tracks/12/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -3.783, -44.6442 ) ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:rotation_deg")
-tracks/13/interp = 1
-tracks/13/imported = false
-tracks/13/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 181.7 ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:position")
-tracks/14/interp = 1
-tracks/14/imported = false
-tracks/14/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -36.9797, 55.4696 ) ]
-}
-tracks/15/type = "value"
-tracks/15/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:rotation_deg")
-tracks/15/interp = 1
-tracks/15/imported = false
-tracks/15/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 45.6106 ]
-}
-tracks/16/type = "value"
-tracks/16/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
-tracks/16/interp = 1
-tracks/16/imported = false
-tracks/16/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 10 ) ]
-}
-tracks/17/type = "value"
-tracks/17/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:scale")
-tracks/17/interp = 1
-tracks/17/imported = false
-tracks/17/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0.8, 0.8 ) ]
-}
-tracks/18/type = "value"
-tracks/18/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:scale")
-tracks/18/interp = 1
-tracks/18/imported = false
-tracks/18/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0.8, 0.8 ) ]
-}
-tracks/19/type = "value"
-tracks/19/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
-tracks/19/interp = 1
-tracks/19/imported = false
-tracks/19/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 10 ) ]
-}
-tracks/20/type = "value"
-tracks/20/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:self_modulate")
-tracks/20/interp = 1
-tracks/20/imported = false
-tracks/20/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
-}
-tracks/21/type = "value"
-tracks/21/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:self_modulate")
-tracks/21/interp = 1
-tracks/21/imported = false
-tracks/21/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
-}
-tracks/22/type = "value"
-tracks/22/path = NodePath("Reverse Node/Tail Remote Transform/Body:self_modulate")
-tracks/22/interp = 1
-tracks/22/imported = false
-tracks/22/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
-}
-tracks/23/type = "value"
-tracks/23/path = NodePath("Reverse Node/Tail Remote Transform/Body:texture")
-tracks/23/interp = 1
-tracks/23/imported = false
-tracks/23/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 2 ) ]
-}
-
-[sub_resource type="Animation" id=12]
-
-length = 0.1
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Reverse Node/Shell:self_modulate")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Reverse Node/Tail:self_modulate")
-tracks/1/interp = 1
-tracks/1/imported = false
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Reverse Node/Tail Remote Transform:position")
-tracks/2/interp = 1
-tracks/2/imported = false
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 22.5345, -2.31123 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Reverse Node/Tail Remote Transform:rotation_deg")
-tracks/3/interp = 1
-tracks/3/imported = false
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Reverse Node/Tail Remote Transform/Body:position")
-tracks/4/interp = 1
-tracks/4/imported = false
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 8.35617, 67.4381 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("Reverse Node/Tail Remote Transform/Body:rotation_deg")
-tracks/5/interp = 1
-tracks/5/imported = false
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ -1.11721 ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:position")
-tracks/6/interp = 1
-tracks/6/imported = false
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 48.6132, -96.8376 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:rotation_deg")
-tracks/7/interp = 1
-tracks/7/imported = false
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:position")
-tracks/8/interp = 1
-tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -860,39 +434,47 @@ tracks/8/keys = {
 "values": [ Vector2( -20.3106, -37.4498 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:rotation_deg")
+tracks/9/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:rotation_degrees")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1.11721 ]
+"values": [ -1.11721 ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:position")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 64.9063, -96.8969 ) ]
+"values": [ Vector2( 64.9063, -96.8969 ), Vector2( 64.9063, -96.8969 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:rotation_deg")
+tracks/11/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:rotation_degrees")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ 0.0, -81.6402 ]
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:position")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -900,19 +482,317 @@ tracks/12/keys = {
 "values": [ Vector2( -3.53, -46.6356 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:rotation_deg")
+tracks/13/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:rotation_degrees")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1.11721 ]
+"values": [ -1.11721 ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:position")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -36.9797, 55.4696 ), Vector2( -85.7204, 51.8424 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:rotation_degrees")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -59.2437 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:scale")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.4, 0.4 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:scale")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.4, 0.4 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:self_modulate")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:self_modulate")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Reverse Node/Tail Remote Transform/Body:self_modulate")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Reverse Node/Tail Remote Transform/Body:texture")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+
+length = 0.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Reverse Node/Shell:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Reverse Node/Tail:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Reverse Node/Tail Remote Transform:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 22.5345, -2.31123 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Reverse Node/Tail Remote Transform:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Reverse Node/Tail Remote Transform/Body:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 8.35617, 67.4381 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Reverse Node/Tail Remote Transform/Body:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -7.77709 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 48.6132, -96.8376 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 88.1382 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -19.0901, -37.5204 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 89.4556 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 67.7928, -88.7691 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:rotation_degrees")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -12.4555 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.783, -44.6442 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:rotation_degrees")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -181.7 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -920,89 +800,107 @@ tracks/14/keys = {
 "values": [ Vector2( -36.9797, 55.4696 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:rotation_deg")
+tracks/15/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:rotation_degrees")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ -45.6106 ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 10 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:scale")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [ Vector2( 0.8, 0.8 ) ]
 }
 tracks/18/type = "value"
 tracks/18/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:scale")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ) ]
+"values": [ Vector2( 0.8, 0.8 ) ]
 }
 tracks/19/type = "value"
 tracks/19/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ) ]
+"values": [ ExtResource( 10 ) ]
 }
 tracks/20/type = "value"
 tracks/20/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:self_modulate")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
 }
 tracks/21/type = "value"
 tracks/21/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:self_modulate")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
 }
 tracks/22/type = "value"
 tracks/22/path = NodePath("Reverse Node/Tail Remote Transform/Body:self_modulate")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 0.784314, 0.784314, 1 ) ]
 }
 tracks/23/type = "value"
 tracks/23/path = NodePath("Reverse Node/Tail Remote Transform/Body:texture")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1012,33 +910,39 @@ tracks/23/keys = {
 
 [sub_resource type="Animation" id=6]
 
-length = 1.5
-loop = true
+length = 0.1
+loop = false
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Reverse Node/Shell:self_modulate")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 0.784314, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Reverse Node/Tail:self_modulate")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 0.784314, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Reverse Node/Tail Remote Transform:position")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1046,9 +950,11 @@ tracks/2/keys = {
 "values": [ Vector2( 22.5345, -2.31123 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Reverse Node/Tail Remote Transform:rotation_deg")
+tracks/3/path = NodePath("Reverse Node/Tail Remote Transform:rotation_degrees")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1058,27 +964,33 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/path = NodePath("Reverse Node/Tail Remote Transform/Body:position")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 10.6109, 67.4381 ), Vector2( 12.4898, 66.4987 ) ]
+"values": [ Vector2( 8.35617, 67.4381 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Reverse Node/Tail Remote Transform/Body:rotation_deg")
+tracks/5/path = NodePath("Reverse Node/Tail Remote Transform/Body:rotation_degrees")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 5.10806, -6.48639 ]
+"values": [ 1.11721 ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:position")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1086,9 +998,11 @@ tracks/6/keys = {
 "values": [ Vector2( 48.6132, -96.8376 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:rotation_deg")
+tracks/7/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:rotation_degrees")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1098,27 +1012,33 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:position")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -21.3203, -37.5741 ), Vector2( -21.3203, -37.5741 ) ]
+"values": [ Vector2( -20.3106, -37.4498 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:rotation_deg")
+tracks/9/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:rotation_degrees")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1.11721, -117.817 ]
+"values": [ -1.11721 ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:position")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1126,9 +1046,11 @@ tracks/10/keys = {
 "values": [ Vector2( 64.9063, -96.8969 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:rotation_deg")
+tracks/11/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:rotation_degrees")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1138,153 +1060,183 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:position")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 0, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -3.53, -46.6356 ), Vector2( -3.53, -46.6356 ) ]
+"values": [ Vector2( -3.53, -46.6356 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:rotation_deg")
+tracks/13/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:rotation_degrees")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -84.21, -223.185 ]
+"values": [ -1.11721 ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:position")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
-"times": PoolRealArray( 0, 0.4, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -36.9797, 55.4696 ), Vector2( -36.9797, 55.4696 ), Vector2( -36.9797, 55.4696 ) ]
+"values": [ Vector2( -36.9797, 55.4696 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:rotation_deg")
+tracks/15/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:rotation_degrees")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
-"times": PoolRealArray( 0, 0.4, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0, 26.7656, -12.3721 ]
+"values": [ 0.0 ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:scale")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0.6, 0.6 ) ]
+"values": [ Vector2( 1, 1 ) ]
 }
 tracks/18/type = "value"
 tracks/18/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:scale")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0.6, 0.6 ) ]
+"values": [ Vector2( 1, 1 ) ]
 }
 tracks/19/type = "value"
 tracks/19/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/20/type = "value"
 tracks/20/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:self_modulate")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 0.784314, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/21/type = "value"
 tracks/21/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:self_modulate")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 0.784314, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/22/type = "value"
 tracks/22/path = NodePath("Reverse Node/Tail Remote Transform/Body:self_modulate")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 0.784314, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/23/type = "value"
 tracks/23/path = NodePath("Reverse Node/Tail Remote Transform/Body:texture")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
-"times": PoolRealArray( 0, 0.4, 0.8, 1.2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 8 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 
 [sub_resource type="Animation" id=7]
 
-length = 1.0
+length = 1.5
 loop = true
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Reverse Node/Shell:self_modulate")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 0.784314, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Reverse Node/Tail:self_modulate")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 0.784314, 1 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Reverse Node/Tail Remote Transform:position")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1292,9 +1244,11 @@ tracks/2/keys = {
 "values": [ Vector2( 22.5345, -2.31123 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Reverse Node/Tail Remote Transform:rotation_deg")
+tracks/3/path = NodePath("Reverse Node/Tail Remote Transform:rotation_degrees")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1304,7 +1258,303 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/path = NodePath("Reverse Node/Tail Remote Transform/Body:position")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 10.6109, 67.4381 ), Vector2( 12.4898, 66.4987 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Reverse Node/Tail Remote Transform/Body:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -5.10806, 6.48639 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 48.6132, -96.8376 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -21.3203, -37.5741 ), Vector2( -21.3203, -37.5741 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:rotation_degrees")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -1.11721, 117.817 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 64.9063, -96.8969 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:rotation_degrees")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -3.53, -46.6356 ), Vector2( -3.53, -46.6356 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:rotation_degrees")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 84.21, 223.185 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -36.9797, 55.4696 ), Vector2( -36.9797, 55.4696 ), Vector2( -36.9797, 55.4696 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:rotation_degrees")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -26.7656, 12.3721 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:scale")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.6, 0.6 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:scale")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.6, 0.6 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 11 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:self_modulate")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 0.784314, 1 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:self_modulate")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 0.784314, 1 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Reverse Node/Tail Remote Transform/Body:self_modulate")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 0.784314, 1 ) ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Reverse Node/Tail Remote Transform/Body:texture")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0, 0.4, 0.8, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 2 ), ExtResource( 8 ), ExtResource( 2 ), ExtResource( 8 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+
+length = 1.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Reverse Node/Shell:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Reverse Node/Tail:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Reverse Node/Tail Remote Transform:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 22.5345, -2.31123 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Reverse Node/Tail Remote Transform:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Reverse Node/Tail Remote Transform/Body:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1312,19 +1562,23 @@ tracks/4/keys = {
 "values": [ Vector2( 8.35617, 67.4381 ), Vector2( 15.177, 66.4637 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Reverse Node/Tail Remote Transform/Body:rotation_deg")
+tracks/5/path = NodePath("Reverse Node/Tail Remote Transform/Body:rotation_degrees")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 1.21581, -2.94666 ]
+"values": [ -1.21581, 2.94666 ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:position")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1332,19 +1586,23 @@ tracks/6/keys = {
 "values": [ Vector2( 48.6132, -96.8376 ), Vector2( 48.6132, -96.8376 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:rotation_deg")
+tracks/7/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:rotation_degrees")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 13.1729 ]
+"values": [ 0.0, -13.1729 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:position")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0, 0.6 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1352,19 +1610,23 @@ tracks/8/keys = {
 "values": [ Vector2( -20.3106, -37.4498 ), Vector2( -16.6865, -36.8366 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:rotation_deg")
+tracks/9/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:rotation_degrees")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0, 0.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 1.11721, 1.11721 ]
+"values": [ -1.11721, -1.11721 ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:position")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1372,19 +1634,23 @@ tracks/10/keys = {
 "values": [ Vector2( 64.9063, -96.8969 ), Vector2( 64.9063, -96.8969 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:rotation_deg")
+tracks/11/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:rotation_degrees")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 13.9133 ]
+"values": [ 0.0, -13.9133 ]
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:position")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0, 0.6 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1392,19 +1658,23 @@ tracks/12/keys = {
 "values": [ Vector2( -3.53, -46.6356 ), Vector2( -0.272675, -46.8904 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:rotation_deg")
+tracks/13/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:rotation_degrees")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0, 0.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 1.11721, 1.11721 ]
+"values": [ -1.11721, -1.11721 ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:position")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1412,19 +1682,23 @@ tracks/14/keys = {
 "values": [ Vector2( -36.9797, 55.4696 ), Vector2( -39.933, 55.4696 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:rotation_deg")
+tracks/15/path = NodePath("Reverse Node/Tail Remote Transform/Shell Remote Transform:rotation_degrees")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 3.33393 ]
+"values": [ 0.0, -3.33393 ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:texture")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1434,7 +1708,9 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye/Right Eyeball:scale")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1444,7 +1720,9 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:scale")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1454,7 +1732,9 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye/Left Eyeball:texture")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1464,7 +1744,9 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/path = NodePath("Reverse Node/Tail Remote Transform/Body/Right Eye:self_modulate")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1474,7 +1756,9 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/path = NodePath("Reverse Node/Tail Remote Transform/Body/Left Eye:self_modulate")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1484,7 +1768,9 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/path = NodePath("Reverse Node/Tail Remote Transform/Body:self_modulate")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1494,7 +1780,9 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/path = NodePath("Reverse Node/Tail Remote Transform/Body:texture")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1502,138 +1790,139 @@ tracks/23/keys = {
 "values": [ ExtResource( 2 ) ]
 }
 
-[node name="iSnail" type="KinematicBody2D"]
+[node name="iSnail" type="KinematicBody2D" index="0"]
 
 input_pickable = false
-shapes/0/shape = SubResource( 9 )
-shapes/0/transform = Transform2D( 1, 0, 0, 1, 0.44986, 47.237 )
-shapes/0/trigger = false
-collision_layer = 16
-collision_mask = 2
-collision/margin = 0.08
+collision_layer = 0
+collision_mask = 20
+collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
 
-[node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="."]
+[node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="." index="0"]
 
 position = Vector2( 0.44986, 47.237 )
-shape = SubResource( 9 )
-trigger = false
-_update_shape_index = 0
+shape = SubResource( 1 )
 
-[node name="Animation" type="Node2D" parent="."]
+[node name="Animation" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
-
-[node name="Hourglass Spawn Pos" type="Position2D" parent="Animation"]
+[node name="Hourglass Spawn Pos" type="Position2D" parent="Animation" index="0"]
 
 position = Vector2( -115, 19 )
 
-[node name="Damage Area" type="Area2D" parent="Animation"]
+[node name="Damage Area" type="Area2D" parent="Animation" index="1"]
 
 editor/display_folded = true
 input_pickable = true
-shapes/0/shape = SubResource( 8 )
-shapes/0/transform = Transform2D( 1, 0, 0, 1, -0.429901, 13.7573 )
-shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 16
+collision_layer = 2
 collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area" index="0"]
 
 position = Vector2( -0.429901, 13.7573 )
-shape = SubResource( 8 )
-trigger = false
-_update_shape_index = 0
+shape = SubResource( 2 )
 
-[node name="Reverse Node" type="Node2D" parent="Animation"]
+[node name="Reverse Node" type="Node2D" parent="Animation" index="2"]
 
 editor/display_folded = true
 position = Vector2( 4.49875, 16.1956 )
 scale = Vector2( -1, 1 )
 
-[node name="Tail Remote Transform" type="RemoteTransform2D" parent="Animation/Reverse Node"]
+[node name="Tail Remote Transform" type="RemoteTransform2D" parent="Animation/Reverse Node" index="0"]
 
 editor/display_folded = true
 position = Vector2( 22.5345, -2.31123 )
 remote_path = NodePath("../Tail")
+use_global_coordinates = true
+update_position = true
+update_rotation = true
+update_scale = true
 
-[node name="Body" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform"]
+[node name="Body" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform" index="0"]
 
-position = Vector2( 13.0722, 66.7644 )
-rotation_deg = 1.66221
+position = Vector2( 9.27492, 67.3069 )
+rotation = -0.0114343
 texture = ExtResource( 2 )
 offset = Vector2( 30.1383, -42.194 )
 
-[node name="Left Eye" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform/Body"]
+[node name="Left Eye" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform/Body" index="0"]
 
 position = Vector2( 48.6132, -96.8376 )
-rotation_deg = -11.385
+rotation = -0.025807
 texture = ExtResource( 3 )
 offset = Vector2( -18.1988, -25.813 )
 
-[node name="Left Eyeball" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform/Body/Left Eye"]
+[node name="Left Eyeball" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform/Body/Left Eye" index="0"]
 
-position = Vector2( -18.2225, -37.0965 )
-rotation_deg = -1.11721
+position = Vector2( -19.7004, -37.3466 )
+rotation = -0.019499
 texture = ExtResource( 4 )
 
-[node name="Right Eye" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform/Body"]
+[node name="Right Eye" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform/Body" index="1"]
 
 position = Vector2( 64.9063, -96.8969 )
-rotation_deg = -12.0249
+rotation = -0.0272575
 texture = ExtResource( 5 )
 offset = Vector2( -3.6792, -30.3667 )
 
-[node name="Right Eyeball" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform/Body/Right Eye"]
+[node name="Right Eyeball" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform/Body/Right Eye" index="0"]
 
-position = Vector2( -1.65318, -46.7824 )
-rotation_deg = -1.11721
+position = Vector2( -2.98156, -46.6785 )
+rotation = -0.019499
 texture = ExtResource( 4 )
 
-[node name="Shell Remote Transform" type="RemoteTransform2D" parent="Animation/Reverse Node/Tail Remote Transform"]
+[node name="Shell Remote Transform" type="RemoteTransform2D" parent="Animation/Reverse Node/Tail Remote Transform" index="1"]
 
-position = Vector2( -39.0217, 55.4696 )
-rotation_deg = -2.30515
+position = Vector2( -37.3775, 55.4696 )
+rotation = -0.00783778
 remote_path = NodePath("../../Shell")
+use_global_coordinates = true
+update_position = true
+update_rotation = true
+update_scale = true
 
-[node name="Tail" type="Sprite" parent="Animation/Reverse Node"]
+[node name="Tail" type="Sprite" parent="Animation/Reverse Node" index="1"]
 
 position = Vector2( 22.5345, -2.31123 )
 texture = ExtResource( 6 )
 offset = Vector2( -54.814, 73.8286 )
 
-[node name="Shell" type="Sprite" parent="Animation/Reverse Node"]
+[node name="Shell" type="Sprite" parent="Animation/Reverse Node" index="2"]
 
-position = Vector2( -16.4872, 53.1584 )
-rotation_deg = -2.30515
+position = Vector2( -14.843, 53.1584 )
+rotation = -0.00783778
 texture = ExtResource( 7 )
 offset = Vector2( 6.49088, -49.0143 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation" index="3"]
 
+root_node = NodePath("..")
+autoplay = "Still"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-root_node = NodePath("..")
-anims/Attack = SubResource( 10 )
-anims/Die = SubResource( 11 )
-anims/Hurt = SubResource( 4 )
-anims/Still = SubResource( 12 )
-anims/Stunned = SubResource( 6 )
-anims/Walk = SubResource( 7 )
-playback/active = true
-playback/speed = 1.0
+playback_speed = 1.0
+anims/Attack = SubResource( 3 )
+anims/Die = SubResource( 4 )
+anims/Hurt = SubResource( 5 )
+anims/Still = SubResource( 6 )
+anims/Stunned = SubResource( 7 )
+anims/Walk = SubResource( 8 )
 blend_times = [  ]
-autoplay = "Still"
 
-[node name="Health Bar" parent="." instance=ExtResource( 12 )]
+[node name="Health Bar" parent="." index="2" instance=ExtResource( 12 )]
 
 position = Vector2( -2.16318, -105.995 )
 
-[node name="Number Spawn Pos" type="Position2D" parent="."]
+[node name="Number Spawn Pos" type="Position2D" parent="." index="3"]
 
 position = Vector2( 0, -108.591 )
 script = ExtResource( 13 )
+
+

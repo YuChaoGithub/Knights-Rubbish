@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Batterio.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Batterio/Particle.png" type="Texture" id=2]
@@ -22,7 +22,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Left Laser:self_modulate")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -32,7 +34,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Right Laser:self_modulate")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -49,7 +53,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Left Laser:self_modulate")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -59,7 +65,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Right Laser:self_modulate")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -76,7 +84,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Left Laser:self_modulate")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -86,7 +96,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Right Laser:self_modulate")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -103,7 +115,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Left Laser:self_modulate")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -113,7 +127,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Right Laser:self_modulate")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -126,120 +142,107 @@ tracks/1/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 34.1525, 483.933 )
 
-[node name="Batterio" type="Node2D"]
+[node name="Batterio" type="Node2D" index="0"]
 
 scale = Vector2( 0.9, 0.9 )
 script = ExtResource( 1 )
 on_duration = 2.0
 off_duration = 2.0
 
-[node name="Left Laser" type="Sprite" parent="."]
+[node name="Left Laser" type="Sprite" parent="." index="0"]
 
+self_modulate = Color( 1, 1, 1, 0.117647 )
 position = Vector2( 27.6857, -701.133 )
 scale = Vector2( 2, 100 )
-z = 1
+z_index = 1
 texture = ExtResource( 2 )
+
+[node name="Right Laser" type="Sprite" parent="." index="1"]
+
 self_modulate = Color( 1, 1, 1, 0.117647 )
-
-[node name="Right Laser" type="Sprite" parent="."]
-
 position = Vector2( 78.4597, -699.979 )
 scale = Vector2( 2, 100 )
-z = 1
+z_index = 1
 texture = ExtResource( 2 )
-self_modulate = Color( 1, 1, 1, 0.117647 )
 
-[node name="Laser Head Top" type="Sprite" parent="."]
+[node name="Laser Head Top" type="Sprite" parent="." index="2"]
 
-editor/display_folded = true
 position = Vector2( 55.3575, -1300.39 )
-rotation_deg = 90.0
+rotation = 1.5708
 scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 
-[node name="Platform" type="StaticBody2D" parent="Laser Head Top"]
+[node name="Platform" type="StaticBody2D" parent="Laser Head Top" index="0"]
 
 input_pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Transform2D( 1, 0, 0, 1, -1.96039, 0.140022 )
-shapes/0/trigger = false
-collision_layer = 1
+collision_layer = 4
 collision_mask = 1
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Laser Head Top/Platform"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laser Head Top/Platform" index="0"]
 
 position = Vector2( -1.96039, 0.140022 )
 shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
 
-[node name="Laser Head Bottom" type="Sprite" parent="."]
+[node name="Laser Head Bottom" type="Sprite" parent="." index="3"]
 
-editor/display_folded = true
 position = Vector2( 51.0791, -103.243 )
-rotation_deg = -90.0
+rotation = -1.5708
 scale = Vector2( 2, 2 )
 texture = ExtResource( 3 )
 
-[node name="Platform" type="StaticBody2D" parent="Laser Head Bottom"]
+[node name="Platform" type="StaticBody2D" parent="Laser Head Bottom" index="0"]
 
 editor/display_folded = true
 input_pickable = false
-shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Transform2D( 1, 0, 0, 1, -3.45752, -0.576254 )
-shapes/0/trigger = false
-collision_layer = 2
+collision_layer = 4
 collision_mask = 0
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Laser Head Bottom/Platform"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laser Head Bottom/Platform" index="0"]
 
 position = Vector2( -3.45752, -0.576254 )
 shape = SubResource( 2 )
-trigger = false
-_update_shape_index = 0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
 
+root_node = NodePath("..")
+autoplay = "Still"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-root_node = NodePath("..")
+playback_speed = 1.0
 anims/Still = SubResource( 3 )
-anims/Turn Off = SubResource( 4 )
-anims/Turn On = SubResource( 5 )
+anims/TurnOff = SubResource( 4 )
+anims/TurnOn = SubResource( 5 )
 anims/Warning = SubResource( 6 )
-playback/active = true
-playback/speed = 1.0
 blend_times = [  ]
-autoplay = "Still"
 
-[node name="Attack Area" type="Area2D" parent="."]
+[node name="Attack Area" type="Area2D" parent="." index="5"]
 
 editor/display_folded = true
 position = Vector2( 52.2202, -740.347 )
 input_pickable = true
-shapes/0/shape = SubResource( 7 )
-shapes/0/transform = Transform2D( 1, 0, 0, 1, 1.15384, 41.2006 )
-shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 64
+collision_layer = 0
 collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack Area" index="0"]
 
 position = Vector2( 1.15384, 41.2006 )
 shape = SubResource( 7 )
-trigger = false
-_update_shape_index = 0
 
-[connection signal="area_entered"  from="Attack Area"  to="." method="on_attack_hit" binds=[  ]]
+[connection signal="area_entered" from="Attack Area" to="." method="on_attack_hit"]
+
+

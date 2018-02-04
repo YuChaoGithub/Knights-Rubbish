@@ -23,7 +23,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Animation/Body/Eyebrow:position")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -31,19 +33,23 @@ tracks/0/keys = {
 "values": [ Vector2( 32.5088, -42.1199 ), Vector2( 27.1756, -38.4438 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Animation/Body/Eyebrow:rotation_deg")
+tracks/1/path = NodePath("Animation/Body/Eyebrow:rotation_degrees")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 24.5086 ]
+"values": [ 0.0, -24.5086 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Animation/Body/Eyebrow:scale")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -53,7 +59,9 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("Animation/Body/Eye:position")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -61,19 +69,23 @@ tracks/3/keys = {
 "values": [ Vector2( 36.2405, -34.7825 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Animation/Body/Eye:rotation_deg")
+tracks/4/path = NodePath("Animation/Body/Eye:rotation_degrees")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 28.5086 ]
+"values": [ -28.5086 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Animation/Body/Eye:scale")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -83,7 +95,9 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/path = NodePath("Animation/Money 6:position")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -91,9 +105,11 @@ tracks/6/keys = {
 "values": [ Vector2( -270.648, 60.9568 ), Vector2( -236.186, 61.3529 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Animation/Money 6:rotation_deg")
+tracks/7/path = NodePath("Animation/Money 6:rotation_degrees")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -103,7 +119,9 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/path = NodePath("Animation/Money 6:scale")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -113,7 +131,9 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/path = NodePath("Animation/Money 5:position")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -121,9 +141,11 @@ tracks/9/keys = {
 "values": [ Vector2( -249.516, 19.5062 ), Vector2( -218.619, 19.5062 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Animation/Money 5:rotation_deg")
+tracks/10/path = NodePath("Animation/Money 5:rotation_degrees")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -133,7 +155,9 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/path = NodePath("Animation/Money 5:scale")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -143,7 +167,9 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/path = NodePath("Animation/Money 4:position")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -151,9 +177,11 @@ tracks/12/keys = {
 "values": [ Vector2( -207.253, 50.3909 ), Vector2( -173.583, 50.3909 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Animation/Money 4:rotation_deg")
+tracks/13/path = NodePath("Animation/Money 4:rotation_degrees")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -163,7 +191,9 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/path = NodePath("Animation/Money 4:scale")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -173,7 +203,9 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/path = NodePath("Animation/Money 3:position")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -181,9 +213,11 @@ tracks/15/keys = {
 "values": [ Vector2( -171.492, 47.9527 ), Vector2( -146.141, 47.9527 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Animation/Money 3:rotation_deg")
+tracks/16/path = NodePath("Animation/Money 3:rotation_degrees")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -193,7 +227,9 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/path = NodePath("Animation/Money 3:scale")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -203,7 +239,9 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/path = NodePath("Animation/Money 8:position")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -211,9 +249,11 @@ tracks/18/keys = {
 "values": [ Vector2( -306.553, 52.5053 ), Vector2( -282.39, 52.9014 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Animation/Money 8:rotation_deg")
+tracks/19/path = NodePath("Animation/Money 8:rotation_degrees")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -223,7 +263,9 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/path = NodePath("Animation/Money 8:scale")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -233,7 +275,9 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/path = NodePath("Animation/Money 7:position")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -241,9 +285,11 @@ tracks/21/keys = {
 "values": [ Vector2( -266.584, 46.3271 ), Vector2( -236.876, 47.1194 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Animation/Money 7:rotation_deg")
+tracks/22/path = NodePath("Animation/Money 7:rotation_degrees")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -253,7 +299,9 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/path = NodePath("Animation/Money 7:scale")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -263,7 +311,9 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/path = NodePath("Animation/Money 2:position")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -271,9 +321,11 @@ tracks/24/keys = {
 "values": [ Vector2( -134.918, 48.7654 ), Vector2( -117.885, 49.1615 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Animation/Money 2:rotation_deg")
+tracks/25/path = NodePath("Animation/Money 2:rotation_degrees")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -283,7 +335,9 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/path = NodePath("Animation/Money 2:scale")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -293,7 +347,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Animation/Money 1:position")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -301,9 +357,11 @@ tracks/27/keys = {
 "values": [ Vector2( -91.8416, 47.1399 ), Vector2( -83.5231, 47.536 ) ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Animation/Money 1:rotation_deg")
+tracks/28/path = NodePath("Animation/Money 1:rotation_degrees")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -313,7 +371,9 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/path = NodePath("Animation/Money 1:scale")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -323,7 +383,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Animation/Body:position")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -331,9 +393,11 @@ tracks/30/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( -1.64069, 9.28842 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Animation/Body:rotation_deg")
+tracks/31/path = NodePath("Animation/Body:rotation_degrees")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -343,7 +407,9 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/path = NodePath("Animation/Body:scale")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -353,7 +419,9 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Eye:texture")
 tracks/33/interp = 1
+tracks/33/loop_wrap = true
 tracks/33/imported = false
+tracks/33/enabled = true
 tracks/33/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -370,7 +438,9 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Animation/Body/Eyebrow:position")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -378,9 +448,11 @@ tracks/0/keys = {
 "values": [ Vector2( 32.5088, -42.1199 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Animation/Body/Eyebrow:rotation_deg")
+tracks/1/path = NodePath("Animation/Body/Eyebrow:rotation_degrees")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -390,7 +462,9 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/path = NodePath("Animation/Body/Eyebrow:scale")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -400,7 +474,9 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("Animation/Body/Eye:position")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -408,9 +484,11 @@ tracks/3/keys = {
 "values": [ Vector2( 34.5613, -34.3027 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Animation/Body/Eye:rotation_deg")
+tracks/4/path = NodePath("Animation/Body/Eye:rotation_degrees")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -420,7 +498,9 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/path = NodePath("Animation/Body/Eye:scale")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -430,7 +510,9 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/path = NodePath("Animation/Money 6:position")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 0.5, 1.45, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -438,9 +520,11 @@ tracks/6/keys = {
 "values": [ Vector2( -270.648, 60.9568 ), Vector2( -270.648, 60.9568 ), Vector2( 4.08197, -54.9592 ), Vector2( 4.08197, -54.9592 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Animation/Money 6:rotation_deg")
+tracks/7/path = NodePath("Animation/Money 6:rotation_degrees")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 0.5, 1.45, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -450,7 +534,9 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/path = NodePath("Animation/Money 6:scale")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0, 0.5, 1.45, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -460,7 +546,9 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/path = NodePath("Animation/Money 5:position")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0, 0.5, 1.3, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -468,9 +556,11 @@ tracks/9/keys = {
 "values": [ Vector2( -249.516, 19.5062 ), Vector2( -249.516, 19.5062 ), Vector2( -0.34259, -56.2499 ), Vector2( -0.34259, -56.2499 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Animation/Money 5:rotation_deg")
+tracks/10/path = NodePath("Animation/Money 5:rotation_degrees")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0, 0.5, 1.3, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -480,7 +570,9 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/path = NodePath("Animation/Money 5:scale")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0, 0.5, 1.3, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -490,7 +582,9 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/path = NodePath("Animation/Money 4:position")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0, 0.5, 1.15, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -498,9 +592,11 @@ tracks/12/keys = {
 "values": [ Vector2( -207.253, 50.3909 ), Vector2( -207.253, 50.3909 ), Vector2( -1.89001, -50.9215 ), Vector2( -1.89001, -50.9215 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Animation/Money 4:rotation_deg")
+tracks/13/path = NodePath("Animation/Money 4:rotation_degrees")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0, 0.5, 1.15, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -510,7 +606,9 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/path = NodePath("Animation/Money 4:scale")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0, 0.5, 1.15, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -520,7 +618,9 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/path = NodePath("Animation/Money 3:position")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -528,9 +628,11 @@ tracks/15/keys = {
 "values": [ Vector2( -171.492, 47.9527 ), Vector2( -171.492, 47.9527 ), Vector2( 1.92584, -51.5343 ), Vector2( 1.92584, -51.5343 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Animation/Money 3:rotation_deg")
+tracks/16/path = NodePath("Animation/Money 3:rotation_degrees")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -540,7 +642,9 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/path = NodePath("Animation/Money 3:scale")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -550,7 +654,9 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/path = NodePath("Animation/Money 8:position")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0, 0.5, 1.75, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -558,9 +664,11 @@ tracks/18/keys = {
 "values": [ Vector2( -306.553, 52.5053 ), Vector2( -306.553, 52.5053 ), Vector2( -0.7901, -54.2835 ), Vector2( -0.7901, -54.2835 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Animation/Money 8:rotation_deg")
+tracks/19/path = NodePath("Animation/Money 8:rotation_degrees")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0, 0.5, 1.75, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -570,7 +678,9 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/path = NodePath("Animation/Money 8:scale")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0, 0.5, 1.75, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -580,7 +690,9 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/path = NodePath("Animation/Money 7:position")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0, 0.5, 1.6, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -588,9 +700,11 @@ tracks/21/keys = {
 "values": [ Vector2( -266.584, 46.3271 ), Vector2( -266.584, 46.3271 ), Vector2( 0.843933, -55.898 ), Vector2( 0.843933, -55.898 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Animation/Money 7:rotation_deg")
+tracks/22/path = NodePath("Animation/Money 7:rotation_degrees")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0, 0.5, 1.6, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -600,7 +714,9 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/path = NodePath("Animation/Money 7:scale")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0, 0.5, 1.6, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -610,7 +726,9 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/path = NodePath("Animation/Money 2:position")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0, 0.5, 0.85, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -618,9 +736,11 @@ tracks/24/keys = {
 "values": [ Vector2( -134.918, 48.7654 ), Vector2( -134.918, 48.7654 ), Vector2( 1.99097, -60.7615 ), Vector2( 1.99097, -60.7615 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Animation/Money 2:rotation_deg")
+tracks/25/path = NodePath("Animation/Money 2:rotation_degrees")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0, 0.5, 0.85, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -630,7 +750,9 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/path = NodePath("Animation/Money 2:scale")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0, 0.5, 0.85, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -640,7 +762,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Animation/Money 1:position")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -648,9 +772,11 @@ tracks/27/keys = {
 "values": [ Vector2( -91.8416, 47.1399 ), Vector2( -91.8416, 47.1399 ), Vector2( 0.343628, -50.5216 ), Vector2( 0.343628, -50.5216 ) ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Animation/Money 1:rotation_deg")
+tracks/28/path = NodePath("Animation/Money 1:rotation_degrees")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -660,7 +786,9 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/path = NodePath("Animation/Money 1:scale")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -670,7 +798,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Animation/Body:position")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0, 0.25, 0.5, 2, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
@@ -678,19 +808,23 @@ tracks/30/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, -54.7635 ), Vector2( 0, -54.7635 ), Vector2( 0, -54.7635 ), Vector2( 0, -54.7635 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Animation/Body:rotation_deg")
+tracks/31/path = NodePath("Animation/Body:rotation_degrees")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0, 0.25, 0.5, 2, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.0, 0.0, 180.0, 180.0 ]
+"values": [ 0.0, 0.0, 0.0, -180.0, -180.0 ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Animation/Body:scale")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0, 0.25, 0.5, 2, 2.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
@@ -700,7 +834,9 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Eye:texture")
 tracks/33/interp = 1
+tracks/33/loop_wrap = true
 tracks/33/imported = false
+tracks/33/enabled = true
 tracks/33/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -717,7 +853,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Animation/Body/Eyebrow:position")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -725,19 +863,23 @@ tracks/0/keys = {
 "values": [ Vector2( 27.3858, -45.2997 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Animation/Body/Eyebrow:rotation_deg")
+tracks/1/path = NodePath("Animation/Body/Eyebrow:rotation_degrees")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 25.2835 ]
+"values": [ -25.2835 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Animation/Body/Eyebrow:scale")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -747,7 +889,9 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("Animation/Body/Eye:position")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -755,9 +899,11 @@ tracks/3/keys = {
 "values": [ Vector2( 34.5613, -34.3027 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Animation/Body/Eye:rotation_deg")
+tracks/4/path = NodePath("Animation/Body/Eye:rotation_degrees")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -767,7 +913,9 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/path = NodePath("Animation/Body/Eye:scale")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -777,7 +925,9 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/path = NodePath("Animation/Money 6:position")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -785,9 +935,11 @@ tracks/6/keys = {
 "values": [ Vector2( -260.403, 14.8539 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Animation/Money 6:rotation_deg")
+tracks/7/path = NodePath("Animation/Money 6:rotation_degrees")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -797,7 +949,9 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/path = NodePath("Animation/Money 6:scale")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -807,7 +961,9 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/path = NodePath("Animation/Money 5:position")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -815,9 +971,11 @@ tracks/9/keys = {
 "values": [ Vector2( -233.124, -2.52079 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Animation/Money 5:rotation_deg")
+tracks/10/path = NodePath("Animation/Money 5:rotation_degrees")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -827,7 +985,9 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/path = NodePath("Animation/Money 5:scale")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -837,7 +997,9 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/path = NodePath("Animation/Money 4:position")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -845,9 +1007,11 @@ tracks/12/keys = {
 "values": [ Vector2( -198.032, 20.1679 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Animation/Money 4:rotation_deg")
+tracks/13/path = NodePath("Animation/Money 4:rotation_degrees")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -857,7 +1021,9 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/path = NodePath("Animation/Money 4:scale")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -867,7 +1033,9 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/path = NodePath("Animation/Money 3:position")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -875,9 +1043,11 @@ tracks/15/keys = {
 "values": [ Vector2( -151.002, -21.2018 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Animation/Money 3:rotation_deg")
+tracks/16/path = NodePath("Animation/Money 3:rotation_degrees")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -887,7 +1057,9 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/path = NodePath("Animation/Money 3:scale")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -897,7 +1069,9 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/path = NodePath("Animation/Money 8:position")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -905,9 +1079,11 @@ tracks/18/keys = {
 "values": [ Vector2( -309.114, -7.42854 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Animation/Money 8:rotation_deg")
+tracks/19/path = NodePath("Animation/Money 8:rotation_degrees")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -917,7 +1093,9 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/path = NodePath("Animation/Money 8:scale")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -927,7 +1105,9 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/path = NodePath("Animation/Money 7:position")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -935,9 +1115,11 @@ tracks/21/keys = {
 "values": [ Vector2( -260.949, -5.41059 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Animation/Money 7:rotation_deg")
+tracks/22/path = NodePath("Animation/Money 7:rotation_degrees")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -947,7 +1129,9 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/path = NodePath("Animation/Money 7:scale")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -957,7 +1141,9 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/path = NodePath("Animation/Money 2:position")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -965,9 +1151,11 @@ tracks/24/keys = {
 "values": [ Vector2( -128.771, -6.04586 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Animation/Money 2:rotation_deg")
+tracks/25/path = NodePath("Animation/Money 2:rotation_degrees")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -977,7 +1165,9 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/path = NodePath("Animation/Money 2:scale")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -987,7 +1177,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Animation/Money 1:position")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -995,9 +1187,11 @@ tracks/27/keys = {
 "values": [ Vector2( -95.4273, 6.15955 ) ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Animation/Money 1:rotation_deg")
+tracks/28/path = NodePath("Animation/Money 1:rotation_degrees")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1007,7 +1201,9 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/path = NodePath("Animation/Money 1:scale")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1017,7 +1213,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Animation/Body:position")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1025,19 +1223,23 @@ tracks/30/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Animation/Body:rotation_deg")
+tracks/31/path = NodePath("Animation/Body:rotation_degrees")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 23.1897 ]
+"values": [ -23.1897 ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Animation/Body:scale")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1047,354 +1249,9 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Eye:texture")
 tracks/33/interp = 1
+tracks/33/loop_wrap = true
 tracks/33/imported = false
-tracks/33/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 10 ) ]
-}
-
-[sub_resource type="Animation" id=6]
-
-resource_name = "Still"
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Animation/Body/Eyebrow:position")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 32.5088, -42.1199 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Animation/Body/Eyebrow:rotation_deg")
-tracks/1/interp = 1
-tracks/1/imported = false
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Animation/Body/Eyebrow:scale")
-tracks/2/interp = 1
-tracks/2/imported = false
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Animation/Body/Eye:position")
-tracks/3/interp = 1
-tracks/3/imported = false
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 34.5613, -34.3027 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Animation/Body/Eye:rotation_deg")
-tracks/4/interp = 1
-tracks/4/imported = false
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("Animation/Body/Eye:scale")
-tracks/5/interp = 1
-tracks/5/imported = false
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath("Animation/Money 6:position")
-tracks/6/interp = 1
-tracks/6/imported = false
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -270.648, 60.9568 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath("Animation/Money 6:rotation_deg")
-tracks/7/interp = 1
-tracks/7/imported = false
-tracks/7/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/8/type = "value"
-tracks/8/path = NodePath("Animation/Money 6:scale")
-tracks/8/interp = 1
-tracks/8/imported = false
-tracks/8/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("Animation/Money 5:position")
-tracks/9/interp = 1
-tracks/9/imported = false
-tracks/9/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -249.516, 19.5062 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("Animation/Money 5:rotation_deg")
-tracks/10/interp = 1
-tracks/10/imported = false
-tracks/10/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("Animation/Money 5:scale")
-tracks/11/interp = 1
-tracks/11/imported = false
-tracks/11/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("Animation/Money 4:position")
-tracks/12/interp = 1
-tracks/12/imported = false
-tracks/12/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -207.253, 50.3909 ) ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("Animation/Money 4:rotation_deg")
-tracks/13/interp = 1
-tracks/13/imported = false
-tracks/13/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("Animation/Money 4:scale")
-tracks/14/interp = 1
-tracks/14/imported = false
-tracks/14/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/15/type = "value"
-tracks/15/path = NodePath("Animation/Money 3:position")
-tracks/15/interp = 1
-tracks/15/imported = false
-tracks/15/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -171.492, 47.9527 ) ]
-}
-tracks/16/type = "value"
-tracks/16/path = NodePath("Animation/Money 3:rotation_deg")
-tracks/16/interp = 1
-tracks/16/imported = false
-tracks/16/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/17/type = "value"
-tracks/17/path = NodePath("Animation/Money 3:scale")
-tracks/17/interp = 1
-tracks/17/imported = false
-tracks/17/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/18/type = "value"
-tracks/18/path = NodePath("Animation/Money 8:position")
-tracks/18/interp = 1
-tracks/18/imported = false
-tracks/18/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -306.553, 52.5053 ) ]
-}
-tracks/19/type = "value"
-tracks/19/path = NodePath("Animation/Money 8:rotation_deg")
-tracks/19/interp = 1
-tracks/19/imported = false
-tracks/19/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/20/type = "value"
-tracks/20/path = NodePath("Animation/Money 8:scale")
-tracks/20/interp = 1
-tracks/20/imported = false
-tracks/20/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/21/type = "value"
-tracks/21/path = NodePath("Animation/Money 7:position")
-tracks/21/interp = 1
-tracks/21/imported = false
-tracks/21/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -266.584, 46.3271 ) ]
-}
-tracks/22/type = "value"
-tracks/22/path = NodePath("Animation/Money 7:rotation_deg")
-tracks/22/interp = 1
-tracks/22/imported = false
-tracks/22/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/23/type = "value"
-tracks/23/path = NodePath("Animation/Money 7:scale")
-tracks/23/interp = 1
-tracks/23/imported = false
-tracks/23/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/24/type = "value"
-tracks/24/path = NodePath("Animation/Money 2:position")
-tracks/24/interp = 1
-tracks/24/imported = false
-tracks/24/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -134.918, 48.7654 ) ]
-}
-tracks/25/type = "value"
-tracks/25/path = NodePath("Animation/Money 2:rotation_deg")
-tracks/25/interp = 1
-tracks/25/imported = false
-tracks/25/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/26/type = "value"
-tracks/26/path = NodePath("Animation/Money 2:scale")
-tracks/26/interp = 1
-tracks/26/imported = false
-tracks/26/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/27/type = "value"
-tracks/27/path = NodePath("Animation/Money 1:position")
-tracks/27/interp = 1
-tracks/27/imported = false
-tracks/27/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( -91.8416, 47.1399 ) ]
-}
-tracks/28/type = "value"
-tracks/28/path = NodePath("Animation/Money 1:rotation_deg")
-tracks/28/interp = 1
-tracks/28/imported = false
-tracks/28/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/29/type = "value"
-tracks/29/path = NodePath("Animation/Money 1:scale")
-tracks/29/interp = 1
-tracks/29/imported = false
-tracks/29/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/30/type = "value"
-tracks/30/path = NodePath("Animation/Body:position")
-tracks/30/interp = 1
-tracks/30/imported = false
-tracks/30/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
-}
-tracks/31/type = "value"
-tracks/31/path = NodePath("Animation/Body:rotation_deg")
-tracks/31/interp = 1
-tracks/31/imported = false
-tracks/31/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/32/type = "value"
-tracks/32/path = NodePath("Animation/Body:scale")
-tracks/32/interp = 1
-tracks/32/imported = false
-tracks/32/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/33/type = "value"
-tracks/33/path = NodePath("Animation/Body/Eye:texture")
-tracks/33/interp = 1
-tracks/33/imported = false
+tracks/33/enabled = true
 tracks/33/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1404,24 +1261,28 @@ tracks/33/keys = {
 
 [sub_resource type="Animation" id=4]
 
-resource_name = "Stunned"
-length = 1.5
-loop = true
-step = 0.05
+resource_name = "Still"
+length = 1.0
+loop = false
+step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Animation/Body/Eyebrow:position")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 27.2078, -47.9144 ) ]
+"values": [ Vector2( 32.5088, -42.1199 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Animation/Body/Eyebrow:rotation_deg")
+tracks/1/path = NodePath("Animation/Body/Eyebrow:rotation_degrees")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1431,7 +1292,9 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/path = NodePath("Animation/Body/Eyebrow:scale")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1441,7 +1304,423 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("Animation/Body/Eye:position")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 34.5613, -34.3027 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Animation/Body/Eye:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Animation/Body/Eye:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Animation/Money 6:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -270.648, 60.9568 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Animation/Money 6:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Animation/Money 6:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Animation/Money 5:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -249.516, 19.5062 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Animation/Money 5:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Animation/Money 5:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Animation/Money 4:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -207.253, 50.3909 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Animation/Money 4:rotation_degrees")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Animation/Money 4:scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Animation/Money 3:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -171.492, 47.9527 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Animation/Money 3:rotation_degrees")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Animation/Money 3:scale")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Animation/Money 8:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -306.553, 52.5053 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Animation/Money 8:rotation_degrees")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Animation/Money 8:scale")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Animation/Money 7:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -266.584, 46.3271 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Animation/Money 7:rotation_degrees")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Animation/Money 7:scale")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Animation/Money 2:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -134.918, 48.7654 ) ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Animation/Money 2:rotation_degrees")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Animation/Money 2:scale")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Animation/Money 1:position")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -91.8416, 47.1399 ) ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Animation/Money 1:rotation_degrees")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("Animation/Money 1:scale")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("Animation/Body:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("Animation/Body:rotation_degrees")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/32/type = "value"
+tracks/32/path = NodePath("Animation/Body:scale")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/33/type = "value"
+tracks/33/path = NodePath("Animation/Body/Eye:texture")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+
+length = 1.5
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Animation/Body/Eyebrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 27.2078, -47.9144 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Animation/Body/Eyebrow:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Animation/Body/Eyebrow:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Animation/Body/Eye:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 0.75 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1449,19 +1728,23 @@ tracks/3/keys = {
 "values": [ Vector2( 34.5613, -34.3027 ), Vector2( 34.5613, -34.3027 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Animation/Body/Eye:rotation_deg")
+tracks/4/path = NodePath("Animation/Body/Eye:rotation_degrees")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0, 0.75 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, -129.836 ]
+"values": [ 0.0, 129.836 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Animation/Body/Eye:scale")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0, 0.75 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1471,7 +1754,9 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/path = NodePath("Animation/Money 6:position")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1479,9 +1764,11 @@ tracks/6/keys = {
 "values": [ Vector2( -236.733, 60.4098 ), Vector2( -213.404, 63.0759 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Animation/Money 6:rotation_deg")
+tracks/7/path = NodePath("Animation/Money 6:rotation_degrees")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1491,7 +1778,9 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/path = NodePath("Animation/Money 6:scale")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1501,7 +1790,9 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/path = NodePath("Animation/Money 5:position")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0, 0.6, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -1509,19 +1800,23 @@ tracks/9/keys = {
 "values": [ Vector2( -245.14, 75.3018 ), Vector2( -244.14, 62.9708 ), Vector2( -243.252, 74.6723 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Animation/Money 5:rotation_deg")
+tracks/10/path = NodePath("Animation/Money 5:rotation_degrees")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0, 0.6, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 90.5255, 81.225, 91.6406 ]
+"values": [ -90.5255, -81.225, -91.6406 ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("Animation/Money 5:scale")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0, 0.6, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -1531,7 +1826,9 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/path = NodePath("Animation/Money 4:position")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0, 0.3, 1.05, 1.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1539,19 +1836,23 @@ tracks/12/keys = {
 "values": [ Vector2( -207.253, 50.3909 ), Vector2( -216.552, 49.2969 ), Vector2( -210.74, 49.9807 ), Vector2( -195.902, 50.1174 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Animation/Money 4:rotation_deg")
+tracks/13/path = NodePath("Animation/Money 4:rotation_degrees")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0, 0.3, 1.05, 1.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 15.8727, 15.8727, -1.66797, 4.17892 ]
+"values": [ -15.8727, -15.8727, 1.66797, -4.17892 ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("Animation/Money 4:scale")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0, 0.3, 1.05, 1.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1561,7 +1862,9 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/path = NodePath("Animation/Money 3:position")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0, 0.35, 0.9, 1.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1569,19 +1872,23 @@ tracks/15/keys = {
 "values": [ Vector2( -171.492, 47.9527 ), Vector2( -181.885, 46.8586 ), Vector2( -176.914, 47.3819 ), Vector2( -159.981, 47.1202 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Animation/Money 3:rotation_deg")
+tracks/16/path = NodePath("Animation/Money 3:rotation_degrees")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0, 0.35, 0.9, 1.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 19.844, 19.844, -10.2145, 4.81475 ]
+"values": [ -19.844, -19.844, 10.2145, -4.81475 ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Animation/Money 3:scale")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0, 0.35, 0.9, 1.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1591,7 +1898,9 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/path = NodePath("Animation/Money 8:position")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0, 0.35, 0.85, 1.1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1599,19 +1908,23 @@ tracks/18/keys = {
 "values": [ Vector2( -306.553, 52.5053 ), Vector2( -322.416, 51.4113 ), Vector2( -295.826, 51.3399 ), Vector2( -289.559, 53.9762 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Animation/Money 8:rotation_deg")
+tracks/19/path = NodePath("Animation/Money 8:rotation_degrees")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0, 0.35, 0.85, 1.1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 11.5727, 11.5727, -21.0358, -8.49408 ]
+"values": [ -11.5727, -11.5727, 21.0358, 8.49408 ]
 }
 tracks/20/type = "value"
 tracks/20/path = NodePath("Animation/Money 8:scale")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0, 0.35, 0.85, 1.1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1621,7 +1934,9 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/path = NodePath("Animation/Money 7:position")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0, 0.65 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1629,9 +1944,11 @@ tracks/21/keys = {
 "values": [ Vector2( -283.542, 46.8741 ), Vector2( -266.878, 48.8738 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Animation/Money 7:rotation_deg")
+tracks/22/path = NodePath("Animation/Money 7:rotation_degrees")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0, 0.65 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1641,7 +1958,9 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/path = NodePath("Animation/Money 7:scale")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0, 0.65 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1651,7 +1970,9 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/path = NodePath("Animation/Money 2:position")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0, 0.2, 0.5, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1659,19 +1980,23 @@ tracks/24/keys = {
 "values": [ Vector2( -134.918, 48.7654 ), Vector2( -147.499, 48.7654 ), Vector2( -144.596, 48.7654 ), Vector2( -127.47, 51.5005 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Animation/Money 2:rotation_deg")
+tracks/25/path = NodePath("Animation/Money 2:rotation_degrees")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0, 0.2, 0.5, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 17.3936, 17.3936, -16.0003, -5.98215 ]
+"values": [ -17.3936, -17.3936, 16.0003, 5.98215 ]
 }
 tracks/26/type = "value"
 tracks/26/path = NodePath("Animation/Money 2:scale")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0, 0.2, 0.5, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1681,7 +2006,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Animation/Money 1:position")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0, 0.25, 0.7, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1689,19 +2016,23 @@ tracks/27/keys = {
 "values": [ Vector2( -91.8416, 47.1399 ), Vector2( -105.117, 47.5824 ), Vector2( -88.8801, 48.7228 ), Vector2( -82.1471, 48.7432 ) ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Animation/Money 1:rotation_deg")
+tracks/28/path = NodePath("Animation/Money 1:rotation_degrees")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0, 0.25, 0.7, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 23.051, 23.051, -19.1935, -7.9283 ]
+"values": [ -23.051, -23.051, 19.1935, 7.9283 ]
 }
 tracks/29/type = "value"
 tracks/29/path = NodePath("Animation/Money 1:scale")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0, 0.25, 0.7, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1711,7 +2042,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Animation/Body:position")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0, 0.2, 0.75, 0.95 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1719,19 +2052,23 @@ tracks/30/keys = {
 "values": [ Vector2( -26.4457, 1.65283 ), Vector2( -38.6879, 1.65283 ), Vector2( 19.8344, 2.20377 ), Vector2( 36.6674, 2.20377 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Animation/Body:rotation_deg")
+tracks/31/path = NodePath("Animation/Body:rotation_degrees")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0, 0.2, 0.75, 0.95 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 12.5454, 12.5454, -14.2452, -14.2452 ]
+"values": [ -12.5454, -12.5454, 14.2452, 14.2452 ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Animation/Body:scale")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0, 0.2, 0.75, 0.95 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1741,7 +2078,9 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Eye:texture")
 tracks/33/interp = 1
+tracks/33/loop_wrap = true
 tracks/33/imported = false
+tracks/33/enabled = true
 tracks/33/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1749,16 +2088,17 @@ tracks/33/keys = {
 "values": [ ExtResource( 13 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 
-resource_name = "Walk"
 length = 1.0
 loop = true
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Animation/Body/Eyebrow:position")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1766,9 +2106,11 @@ tracks/0/keys = {
 "values": [ Vector2( 32.5088, -42.1199 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Animation/Body/Eyebrow:rotation_deg")
+tracks/1/path = NodePath("Animation/Body/Eyebrow:rotation_degrees")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1778,7 +2120,9 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/path = NodePath("Animation/Body/Eyebrow:scale")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1788,7 +2132,9 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("Animation/Body/Eye:position")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1796,9 +2142,11 @@ tracks/3/keys = {
 "values": [ Vector2( 34.5613, -34.3027 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Animation/Body/Eye:rotation_deg")
+tracks/4/path = NodePath("Animation/Body/Eye:rotation_degrees")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1808,7 +2156,9 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/path = NodePath("Animation/Body/Eye:scale")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1818,7 +2168,9 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/path = NodePath("Animation/Money 6:position")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 0.25, 0.45, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1826,9 +2178,11 @@ tracks/6/keys = {
 "values": [ Vector2( -270.648, 60.9568 ), Vector2( -270.648, 60.9568 ), Vector2( -271.349, 28.0341 ), Vector2( -271.349, 28.0341 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Animation/Money 6:rotation_deg")
+tracks/7/path = NodePath("Animation/Money 6:rotation_degrees")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 0.25, 0.45, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1838,7 +2192,9 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/path = NodePath("Animation/Money 6:scale")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0, 0.25, 0.45, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1848,7 +2204,9 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/path = NodePath("Animation/Money 5:position")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0, 0.25, 0.4, 0.55 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1856,9 +2214,11 @@ tracks/9/keys = {
 "values": [ Vector2( -249.516, 19.5062 ), Vector2( -249.516, 19.5062 ), Vector2( -248.115, -7.11216 ), Vector2( -248.115, -7.11216 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Animation/Money 5:rotation_deg")
+tracks/10/path = NodePath("Animation/Money 5:rotation_degrees")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0, 0.25, 0.4, 0.55 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1868,7 +2228,9 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/path = NodePath("Animation/Money 5:scale")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0, 0.25, 0.4, 0.55 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1878,7 +2240,9 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/path = NodePath("Animation/Money 4:position")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0, 0.15, 0.35, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1886,9 +2250,11 @@ tracks/12/keys = {
 "values": [ Vector2( -207.253, 50.3909 ), Vector2( -207.253, 50.3909 ), Vector2( -205.151, 27.9755 ), Vector2( -205.151, 27.9755 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Animation/Money 4:rotation_deg")
+tracks/13/path = NodePath("Animation/Money 4:rotation_degrees")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0, 0.15, 0.35, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1898,7 +2264,9 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/path = NodePath("Animation/Money 4:scale")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0, 0.15, 0.35, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1908,7 +2276,9 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/path = NodePath("Animation/Money 3:position")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1916,9 +2286,11 @@ tracks/15/keys = {
 "values": [ Vector2( -171.492, 47.9527 ), Vector2( -171.492, 47.9527 ), Vector2( -171.492, 23.4358 ), Vector2( -171.492, 47.9527 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Animation/Money 3:rotation_deg")
+tracks/16/path = NodePath("Animation/Money 3:rotation_degrees")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1928,7 +2300,9 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/path = NodePath("Animation/Money 3:scale")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1938,7 +2312,9 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/path = NodePath("Animation/Money 8:position")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0, 0.35, 0.55, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1946,9 +2322,11 @@ tracks/18/keys = {
 "values": [ Vector2( -306.553, 52.5053 ), Vector2( -306.553, 52.5053 ), Vector2( -309.355, 19.5826 ), Vector2( -309.355, 19.5826 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Animation/Money 8:rotation_deg")
+tracks/19/path = NodePath("Animation/Money 8:rotation_degrees")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0, 0.35, 0.55, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1958,7 +2336,9 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/path = NodePath("Animation/Money 8:scale")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0, 0.35, 0.55, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1968,7 +2348,9 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/path = NodePath("Animation/Money 7:position")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0, 0.35, 0.5, 0.65 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1976,9 +2358,11 @@ tracks/21/keys = {
 "values": [ Vector2( -266.584, 46.3271 ), Vector2( -266.584, 46.3271 ), Vector2( -265.183, 12.0035 ), Vector2( -265.183, 12.0035 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Animation/Money 7:rotation_deg")
+tracks/22/path = NodePath("Animation/Money 7:rotation_degrees")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0, 0.35, 0.5, 0.65 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1988,7 +2372,9 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/path = NodePath("Animation/Money 7:scale")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0, 0.35, 0.5, 0.65 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -1998,7 +2384,9 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/path = NodePath("Animation/Money 2:position")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0, 0.15, 0.25, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -2006,9 +2394,11 @@ tracks/24/keys = {
 "values": [ Vector2( -134.918, 48.7654 ), Vector2( -134.918, 48.7654 ), Vector2( -136.319, 25.6495 ), Vector2( -134.918, 48.7654 ) ]
 }
 tracks/25/type = "value"
-tracks/25/path = NodePath("Animation/Money 2:rotation_deg")
+tracks/25/path = NodePath("Animation/Money 2:rotation_degrees")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0, 0.15, 0.25, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -2018,7 +2408,9 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/path = NodePath("Animation/Money 2:scale")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0, 0.15, 0.25, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -2028,7 +2420,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Animation/Money 1:position")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0, 0.15, 0.2, 0.35 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -2036,9 +2430,11 @@ tracks/27/keys = {
 "values": [ Vector2( -91.8416, 47.1399 ), Vector2( -91.8416, 47.1399 ), Vector2( -89.0396, 21.2221 ), Vector2( -91.8416, 47.1399 ) ]
 }
 tracks/28/type = "value"
-tracks/28/path = NodePath("Animation/Money 1:rotation_deg")
+tracks/28/path = NodePath("Animation/Money 1:rotation_degrees")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0, 0.15, 0.2, 0.35 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -2048,7 +2444,9 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/path = NodePath("Animation/Money 1:scale")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0, 0.15, 0.2, 0.35 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -2058,7 +2456,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Animation/Body:position")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -2066,19 +2466,23 @@ tracks/30/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 2.10144, -16.8116 ), Vector2( 0, 0 ) ]
 }
 tracks/31/type = "value"
-tracks/31/path = NodePath("Animation/Body:rotation_deg")
+tracks/31/path = NodePath("Animation/Body:rotation_degrees")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ -5.72607, 0.0, 11.2998 ]
+"values": [ 5.72607, 0.0, -11.2998 ]
 }
 tracks/32/type = "value"
 tracks/32/path = NodePath("Animation/Body:scale")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0, 0.15, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -2088,7 +2492,9 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Eye:texture")
 tracks/33/interp = 1
+tracks/33/loop_wrap = true
 tracks/33/imported = false
+tracks/33/enabled = true
 tracks/33/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2096,79 +2502,80 @@ tracks/33/keys = {
 "values": [ ExtResource( 10 ) ]
 }
 
-[node name="Waitie Changie Sprites" type="Node2D"]
+[node name="Waitie Changie Sprites" type="Node2D" index="0"]
 
-
-[node name="Animation" type="Node2D" parent="."]
+[node name="Animation" type="Node2D" parent="." index="0"]
 
 position = Vector2( 0, -127.229 )
 
-[node name="Money 8" type="Sprite" parent="Animation"]
+[node name="Money 8" type="Sprite" parent="Animation" index="0"]
 
-position = Vector2( -306.553, 52.5053 )
+position = Vector2( -307.774, 38.1557 )
 texture = ExtResource( 1 )
 
-[node name="Money 7" type="Sprite" parent="Animation"]
+[node name="Money 7" type="Sprite" parent="Animation" index="1"]
 
-position = Vector2( -266.584, 46.3271 )
+position = Vector2( -265.77, 26.3802 )
 texture = ExtResource( 2 )
 
-[node name="Money 6" type="Sprite" parent="Animation"]
+[node name="Money 6" type="Sprite" parent="Animation" index="2"]
 
-position = Vector2( -270.648, 60.9568 )
+position = Vector2( -271.304, 30.1459 )
 texture = ExtResource( 3 )
 
-[node name="Money 5" type="Sprite" parent="Animation"]
+[node name="Money 5" type="Sprite" parent="Animation" index="3"]
 
-position = Vector2( -249.516, 19.5062 )
+position = Vector2( -248.115, -7.11216 )
 texture = ExtResource( 4 )
 
-[node name="Money 4" type="Sprite" parent="Animation"]
+[node name="Money 4" type="Sprite" parent="Animation" index="4"]
 
-position = Vector2( -207.253, 50.3909 )
+position = Vector2( -205.151, 27.9755 )
 texture = ExtResource( 5 )
 
-[node name="Money 3" type="Sprite" parent="Animation"]
+[node name="Money 3" type="Sprite" parent="Animation" index="5"]
 
-position = Vector2( -171.492, 47.9527 )
+position = Vector2( -171.492, 45.8559 )
 texture = ExtResource( 6 )
 
-[node name="Money 2" type="Sprite" parent="Animation"]
+[node name="Money 2" type="Sprite" parent="Animation" index="6"]
 
 position = Vector2( -134.918, 48.7654 )
 texture = ExtResource( 7 )
 
-[node name="Money 1" type="Sprite" parent="Animation"]
+[node name="Money 1" type="Sprite" parent="Animation" index="7"]
 
 position = Vector2( -91.8416, 47.1399 )
 texture = ExtResource( 8 )
 
-[node name="Body" type="Sprite" parent="Animation"]
+[node name="Body" type="Sprite" parent="Animation" index="8"]
 
+rotation = -0.138988
 texture = ExtResource( 9 )
 
-[node name="Eye" type="Sprite" parent="Animation/Body"]
+[node name="Eye" type="Sprite" parent="Animation/Body" index="0"]
 
 position = Vector2( 34.5613, -34.3027 )
 texture = ExtResource( 10 )
 
-[node name="Eyebrow" type="Sprite" parent="Animation/Body"]
+[node name="Eyebrow" type="Sprite" parent="Animation/Body" index="1"]
 
 position = Vector2( 32.5088, -42.1199 )
 texture = ExtResource( 11 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 
+root_node = NodePath("..")
+autoplay = "Still"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-root_node = NodePath("..")
+playback_speed = 1.0
 anims/Hurt = SubResource( 1 )
 anims/Idle = SubResource( 2 )
 anims/Jump = SubResource( 3 )
-anims/Still = SubResource( 6 )
-anims/Stunned = SubResource( 4 )
-anims/Walk = SubResource( 5 )
-playback/active = true
-playback/speed = 1.0
+anims/Still = SubResource( 4 )
+anims/Stunned = SubResource( 5 )
+anims/Walk = SubResource( 6 )
 blend_times = [  ]
-autoplay = "Still"
+
+

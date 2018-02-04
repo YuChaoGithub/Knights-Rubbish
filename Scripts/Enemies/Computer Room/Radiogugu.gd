@@ -55,7 +55,7 @@ const THROW_WATCH_SECOND_DURATION = 0.6
 const LASER_COLOR = Color(1, 0, 0)
 const LASER_THICKNESS = 10
 
-const PLATFORM_LAYER = 2
+const PLATFORM_LAYER = 2  ### FIX THIS ###
 
 var status_timer = null
 var laser_timer = null

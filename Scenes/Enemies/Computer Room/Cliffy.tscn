@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Cliffy.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Cliffy/Note.png" type="Texture" id=2]
@@ -28,7 +28,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Note/Exclaimation mark:visible")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -38,7 +40,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Note/Talk Bubble:visible")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -48,7 +52,9 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/path = NodePath("Note/Paper clip:position")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -56,19 +62,23 @@ tracks/2/keys = {
 "values": [ Vector2( 6.19582, -48.9318 ), Vector2( 4.7518, -27.2714 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Note/Paper clip:rotation_deg")
+tracks/3/path = NodePath("Note/Paper clip:rotation_degrees")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, -86.0373 ]
+"values": [ 0.0, 86.0373 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Note/Paper clip/Left Eye:position")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -76,9 +86,11 @@ tracks/4/keys = {
 "values": [ Vector2( -15.0818, -16.3654 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Note/Paper clip/Left Eye:rotation_deg")
+tracks/5/path = NodePath("Note/Paper clip/Left Eye:rotation_degrees")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -88,7 +100,9 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/path = NodePath("Note/Paper clip/Right Eyebrow:position")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -96,19 +110,23 @@ tracks/6/keys = {
 "values": [ Vector2( 16.3168, -29.3703 ), Vector2( 18.9523, -17.7888 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Note/Paper clip/Right Eyebrow:rotation_deg")
+tracks/7/path = NodePath("Note/Paper clip/Right Eyebrow:rotation_degrees")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 4.11414, -73.6369 ]
+"values": [ -4.11414, 73.6369 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Note/Paper clip/Left Eye/Eyeball:position")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -116,9 +134,11 @@ tracks/8/keys = {
 "values": [ Vector2( 2.67384, -0.106735 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Note/Paper clip/Left Eye/Eyeball:rotation_deg")
+tracks/9/path = NodePath("Note/Paper clip/Left Eye/Eyeball:rotation_degrees")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -128,7 +148,9 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/path = NodePath("Note/Paper clip/Right Eye/Eyeball:position")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -136,9 +158,11 @@ tracks/10/keys = {
 "values": [ Vector2( -1.70938, 0.932388 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Note/Paper clip/Right Eye/Eyeball:rotation_deg")
+tracks/11/path = NodePath("Note/Paper clip/Right Eye/Eyeball:rotation_degrees")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -148,7 +172,9 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/path = NodePath("Note/Paper clip/Right Eye:position")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -156,9 +182,11 @@ tracks/12/keys = {
 "values": [ Vector2( 15.7236, -16.2049 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Note/Paper clip/Right Eye:rotation_deg")
+tracks/13/path = NodePath("Note/Paper clip/Right Eye:rotation_degrees")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -168,7 +196,9 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/path = NodePath("Note/Paper clip/Left Eyebrow:position")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -176,19 +206,23 @@ tracks/14/keys = {
 "values": [ Vector2( -14.9183, -30.1473 ), Vector2( -20.6854, -14.8054 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Note/Paper clip/Left Eyebrow:rotation_deg")
+tracks/15/path = NodePath("Note/Paper clip/Left Eyebrow:rotation_degrees")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -3.43807, 43.7581 ]
+"values": [ 3.43807, -43.7581 ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Note/Talk Bubble:position")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -196,9 +230,11 @@ tracks/16/keys = {
 "values": [ Vector2( -24.5919, -70.9496 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Note/Talk Bubble:rotation_deg")
+tracks/17/path = NodePath("Note/Talk Bubble:rotation_degrees")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -208,7 +244,9 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/path = NodePath("Note/Talk Bubble/Light bulb stand:position")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -216,9 +254,11 @@ tracks/18/keys = {
 "values": [ Vector2( -13.5364, -18.6728 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Note/Talk Bubble/Light bulb stand:rotation_deg")
+tracks/19/path = NodePath("Note/Talk Bubble/Light bulb stand:rotation_degrees")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -228,7 +268,9 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/path = NodePath("Note/Talk Bubble/Light bulb:position")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -236,9 +278,11 @@ tracks/20/keys = {
 "values": [ Vector2( -13.1653, -30.283 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Note/Talk Bubble/Light bulb:rotation_deg")
+tracks/21/path = NodePath("Note/Talk Bubble/Light bulb:rotation_degrees")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -248,7 +292,9 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/path = NodePath("Note/Exclaimation mark:position")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -256,9 +302,11 @@ tracks/22/keys = {
 "values": [ Vector2( 50.8315, -77.4231 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Note/Exclaimation mark:rotation_deg")
+tracks/23/path = NodePath("Note/Exclaimation mark:rotation_degrees")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -268,7 +316,9 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/path = NodePath("Note/Paper clip:self_modulate")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -278,7 +328,9 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/path = NodePath("Note/Paper clip/Left Eye/Eyelid:visible")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -288,7 +340,9 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/path = NodePath("Note/Paper clip/Right Eye/Eyelid:visible")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -298,7 +352,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Note/Paper clip/Right Eye:self_modulate")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -308,7 +364,9 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/path = NodePath("Note:self_modulate")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -318,7 +376,9 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/path = NodePath("Note/Paper clip/Right Eye/Eyeball:scale")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -328,7 +388,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Note/Paper clip/Left Eye/Eyeball:scale")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -338,7 +400,9 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/path = NodePath("Note/Paper clip/Left Eye/Eyeball:texture")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -348,7 +412,9 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/path = NodePath("Note/Paper clip/Right Eye/Eyeball:texture")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -358,7 +424,9 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/path = NodePath("Note/Paper clip/Left Eye:self_modulate")
 tracks/33/interp = 1
+tracks/33/loop_wrap = true
 tracks/33/imported = false
+tracks/33/enabled = true
 tracks/33/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -368,7 +436,9 @@ tracks/33/keys = {
 tracks/34/type = "value"
 tracks/34/path = NodePath("Note:position")
 tracks/34/interp = 1
+tracks/34/loop_wrap = true
 tracks/34/imported = false
+tracks/34/enabled = true
 tracks/34/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -376,9 +446,11 @@ tracks/34/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( -0.361008, 16.7868 ) ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("Note:rotation_deg")
+tracks/35/path = NodePath("Note:rotation_degrees")
 tracks/35/interp = 1
+tracks/35/loop_wrap = true
 tracks/35/imported = false
+tracks/35/enabled = true
 tracks/35/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -394,7 +466,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Note/Exclaimation mark:visible")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -404,7 +478,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Note/Talk Bubble:visible")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -414,7 +490,9 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/path = NodePath("Note/Paper clip:position")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 0.6, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -422,19 +500,23 @@ tracks/2/keys = {
 "values": [ Vector2( 6.19582, -48.9318 ), Vector2( 6.19582, -48.9318 ), Vector2( 6.19582, -48.9318 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Note/Paper clip:rotation_deg")
+tracks/3/path = NodePath("Note/Paper clip:rotation_degrees")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 0.6, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.0, 6.79478 ]
+"values": [ 0.0, 0.0, -6.79478 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Note/Paper clip/Left Eye:position")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -442,9 +524,11 @@ tracks/4/keys = {
 "values": [ Vector2( -15.0818, -16.3654 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Note/Paper clip/Left Eye:rotation_deg")
+tracks/5/path = NodePath("Note/Paper clip/Left Eye:rotation_degrees")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -454,7 +538,9 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/path = NodePath("Note/Paper clip/Right Eyebrow:position")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -462,19 +548,23 @@ tracks/6/keys = {
 "values": [ Vector2( 16.3168, -29.3703 ), Vector2( 16.3168, -29.3703 ), Vector2( 16.3168, -29.3703 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Note/Paper clip/Right Eyebrow:rotation_deg")
+tracks/7/path = NodePath("Note/Paper clip/Right Eyebrow:rotation_degrees")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 4.11414, 4.11414, 13.2162 ]
+"values": [ -4.11414, -4.11414, -13.2162 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Note/Paper clip/Left Eye/Eyeball:position")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -482,9 +572,11 @@ tracks/8/keys = {
 "values": [ Vector2( 2.67384, -0.106735 ), Vector2( 2.67384, -0.106735 ), Vector2( -4.10642, 1.894 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Note/Paper clip/Left Eye/Eyeball:rotation_deg")
+tracks/9/path = NodePath("Note/Paper clip/Left Eye/Eyeball:rotation_degrees")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -494,7 +586,9 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/path = NodePath("Note/Paper clip/Right Eye/Eyeball:position")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -502,9 +596,11 @@ tracks/10/keys = {
 "values": [ Vector2( -1.70938, 0.932388 ), Vector2( -1.70938, 0.932388 ), Vector2( -5.54412, 1.5993 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Note/Paper clip/Right Eye/Eyeball:rotation_deg")
+tracks/11/path = NodePath("Note/Paper clip/Right Eye/Eyeball:rotation_degrees")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -514,7 +610,9 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/path = NodePath("Note/Paper clip/Right Eye:position")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -522,9 +620,11 @@ tracks/12/keys = {
 "values": [ Vector2( 15.7236, -16.2049 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Note/Paper clip/Right Eye:rotation_deg")
+tracks/13/path = NodePath("Note/Paper clip/Right Eye:rotation_degrees")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -534,7 +634,9 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/path = NodePath("Note/Paper clip/Left Eyebrow:position")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -542,19 +644,23 @@ tracks/14/keys = {
 "values": [ Vector2( -14.9183, -30.1473 ), Vector2( -14.9183, -30.1473 ), Vector2( -14.9183, -30.1473 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Note/Paper clip/Left Eyebrow:rotation_deg")
+tracks/15/path = NodePath("Note/Paper clip/Left Eyebrow:rotation_degrees")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ -3.43807, -3.43807, 19.2785 ]
+"values": [ 3.43807, 3.43807, -19.2785 ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Note/Talk Bubble:position")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -562,9 +668,11 @@ tracks/16/keys = {
 "values": [ Vector2( -24.5919, -70.9496 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Note/Talk Bubble:rotation_deg")
+tracks/17/path = NodePath("Note/Talk Bubble:rotation_degrees")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -574,7 +682,9 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/path = NodePath("Note/Talk Bubble/Light bulb stand:position")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -582,9 +692,11 @@ tracks/18/keys = {
 "values": [ Vector2( -13.5364, -18.6728 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Note/Talk Bubble/Light bulb stand:rotation_deg")
+tracks/19/path = NodePath("Note/Talk Bubble/Light bulb stand:rotation_degrees")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -594,7 +706,9 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/path = NodePath("Note/Talk Bubble/Light bulb:position")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -602,9 +716,11 @@ tracks/20/keys = {
 "values": [ Vector2( -13.1653, -30.283 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Note/Talk Bubble/Light bulb:rotation_deg")
+tracks/21/path = NodePath("Note/Talk Bubble/Light bulb:rotation_degrees")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -614,7 +730,9 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/path = NodePath("Note/Exclaimation mark:position")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0, 0.5, 0.6, 0.8, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
@@ -622,19 +740,23 @@ tracks/22/keys = {
 "values": [ Vector2( 50.8315, -77.4231 ), Vector2( 50.8315, -77.4231 ), Vector2( 50.8315, -77.4231 ), Vector2( 50.8315, -77.4231 ), Vector2( 50.8315, -77.4231 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Note/Exclaimation mark:rotation_deg")
+tracks/23/path = NodePath("Note/Exclaimation mark:rotation_degrees")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0, 0.5, 0.6, 0.8, 1 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.0, 30.9182, -16.2717, 30.9182 ]
+"values": [ 0.0, 0.0, -30.9182, 16.2717, -30.9182 ]
 }
 tracks/24/type = "value"
 tracks/24/path = NodePath("Note/Paper clip:self_modulate")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -644,7 +766,9 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/path = NodePath("Note/Paper clip/Left Eye/Eyelid:visible")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -654,7 +778,9 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/path = NodePath("Note/Paper clip/Right Eye/Eyelid:visible")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -664,7 +790,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Note/Paper clip/Right Eye:self_modulate")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -674,7 +802,9 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/path = NodePath("Note:self_modulate")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -684,7 +814,9 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/path = NodePath("Note/Paper clip/Right Eye/Eyeball:scale")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -694,7 +826,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Note/Paper clip/Left Eye/Eyeball:scale")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -704,7 +838,9 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/path = NodePath("Note/Paper clip/Left Eye/Eyeball:texture")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -714,7 +850,9 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/path = NodePath("Note/Paper clip/Right Eye/Eyeball:texture")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -724,7 +862,9 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/path = NodePath("Note/Paper clip/Left Eye:self_modulate")
 tracks/33/interp = 1
+tracks/33/loop_wrap = true
 tracks/33/imported = false
+tracks/33/enabled = true
 tracks/33/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -734,7 +874,9 @@ tracks/33/keys = {
 tracks/34/type = "value"
 tracks/34/path = NodePath("Note:position")
 tracks/34/interp = 1
+tracks/34/loop_wrap = true
 tracks/34/imported = false
+tracks/34/enabled = true
 tracks/34/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -742,9 +884,11 @@ tracks/34/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("Note:rotation_deg")
+tracks/35/path = NodePath("Note:rotation_degrees")
 tracks/35/interp = 1
+tracks/35/loop_wrap = true
 tracks/35/imported = false
+tracks/35/enabled = true
 tracks/35/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -760,7 +904,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Note/Exclaimation mark:visible")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -770,7 +916,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Note/Talk Bubble:visible")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -780,7 +928,9 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/path = NodePath("Note/Paper clip:position")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -788,19 +938,23 @@ tracks/2/keys = {
 "values": [ Vector2( 1.99706, -38.3349 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Note/Paper clip:rotation_deg")
+tracks/3/path = NodePath("Note/Paper clip:rotation_degrees")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 13.5165 ]
+"values": [ -13.5165 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Note/Paper clip/Left Eye:position")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -808,9 +962,11 @@ tracks/4/keys = {
 "values": [ Vector2( -15.0818, -16.3654 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Note/Paper clip/Left Eye:rotation_deg")
+tracks/5/path = NodePath("Note/Paper clip/Left Eye:rotation_degrees")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -820,7 +976,9 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/path = NodePath("Note/Paper clip/Right Eyebrow:position")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -828,19 +986,23 @@ tracks/6/keys = {
 "values": [ Vector2( 24.5258, -26.849 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Note/Paper clip/Right Eyebrow:rotation_deg")
+tracks/7/path = NodePath("Note/Paper clip/Right Eyebrow:rotation_degrees")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -34.1175 ]
+"values": [ 34.1175 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Note/Paper clip/Left Eye/Eyeball:position")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -848,9 +1010,11 @@ tracks/8/keys = {
 "values": [ Vector2( 0.55526, 4.6925 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Note/Paper clip/Left Eye/Eyeball:rotation_deg")
+tracks/9/path = NodePath("Note/Paper clip/Left Eye/Eyeball:rotation_degrees")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -860,7 +1024,9 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/path = NodePath("Note/Paper clip/Right Eye/Eyeball:position")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -868,9 +1034,11 @@ tracks/10/keys = {
 "values": [ Vector2( 0.365969, 4.43454 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Note/Paper clip/Right Eye/Eyeball:rotation_deg")
+tracks/11/path = NodePath("Note/Paper clip/Right Eye/Eyeball:rotation_degrees")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -880,7 +1048,9 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/path = NodePath("Note/Paper clip/Right Eye:position")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -888,9 +1058,11 @@ tracks/12/keys = {
 "values": [ Vector2( 15.7236, -16.2049 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Note/Paper clip/Right Eye:rotation_deg")
+tracks/13/path = NodePath("Note/Paper clip/Right Eye:rotation_degrees")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -900,7 +1072,9 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/path = NodePath("Note/Paper clip/Left Eyebrow:position")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -908,19 +1082,23 @@ tracks/14/keys = {
 "values": [ Vector2( -25.3555, -24.3424 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Note/Paper clip/Left Eyebrow:rotation_deg")
+tracks/15/path = NodePath("Note/Paper clip/Left Eyebrow:rotation_degrees")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 26.896 ]
+"values": [ -26.896 ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Note/Talk Bubble:position")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -928,9 +1106,11 @@ tracks/16/keys = {
 "values": [ Vector2( -24.5919, -70.9496 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Note/Talk Bubble:rotation_deg")
+tracks/17/path = NodePath("Note/Talk Bubble:rotation_degrees")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -940,7 +1120,9 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/path = NodePath("Note/Talk Bubble/Light bulb stand:position")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -948,9 +1130,11 @@ tracks/18/keys = {
 "values": [ Vector2( -13.5364, -18.6728 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Note/Talk Bubble/Light bulb stand:rotation_deg")
+tracks/19/path = NodePath("Note/Talk Bubble/Light bulb stand:rotation_degrees")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -960,7 +1144,9 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/path = NodePath("Note/Talk Bubble/Light bulb:position")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -968,9 +1154,11 @@ tracks/20/keys = {
 "values": [ Vector2( -13.1653, -30.283 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Note/Talk Bubble/Light bulb:rotation_deg")
+tracks/21/path = NodePath("Note/Talk Bubble/Light bulb:rotation_degrees")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -980,7 +1168,9 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/path = NodePath("Note/Exclaimation mark:position")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -988,9 +1178,11 @@ tracks/22/keys = {
 "values": [ Vector2( 50.8315, -77.4231 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Note/Exclaimation mark:rotation_deg")
+tracks/23/path = NodePath("Note/Exclaimation mark:rotation_degrees")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1000,7 +1192,9 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/path = NodePath("Note/Paper clip:self_modulate")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1010,7 +1204,9 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/path = NodePath("Note/Paper clip/Left Eye/Eyelid:visible")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1020,7 +1216,9 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/path = NodePath("Note/Paper clip/Right Eye/Eyelid:visible")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1030,7 +1228,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Note/Paper clip/Right Eye:self_modulate")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1040,7 +1240,9 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/path = NodePath("Note:self_modulate")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1050,7 +1252,9 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/path = NodePath("Note/Paper clip/Right Eye/Eyeball:scale")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1060,7 +1264,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Note/Paper clip/Left Eye/Eyeball:scale")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1070,7 +1276,9 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/path = NodePath("Note/Paper clip/Left Eye/Eyeball:texture")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1080,7 +1288,9 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/path = NodePath("Note/Paper clip/Right Eye/Eyeball:texture")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1090,7 +1300,9 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/path = NodePath("Note/Paper clip/Left Eye:self_modulate")
 tracks/33/interp = 1
+tracks/33/loop_wrap = true
 tracks/33/imported = false
+tracks/33/enabled = true
 tracks/33/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1100,7 +1312,9 @@ tracks/33/keys = {
 tracks/34/type = "value"
 tracks/34/path = NodePath("Note:position")
 tracks/34/interp = 1
+tracks/34/loop_wrap = true
 tracks/34/imported = false
+tracks/34/enabled = true
 tracks/34/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1108,9 +1322,11 @@ tracks/34/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("Note:rotation_deg")
+tracks/35/path = NodePath("Note:rotation_degrees")
 tracks/35/interp = 1
+tracks/35/loop_wrap = true
 tracks/35/imported = false
+tracks/35/enabled = true
 tracks/35/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1126,7 +1342,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Note/Exclaimation mark:visible")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1136,7 +1354,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Note/Talk Bubble:visible")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 2.8 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1146,7 +1366,9 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/path = NodePath("Note/Paper clip:position")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1154,9 +1376,11 @@ tracks/2/keys = {
 "values": [ Vector2( 6.19582, -48.9318 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Note/Paper clip:rotation_deg")
+tracks/3/path = NodePath("Note/Paper clip:rotation_degrees")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1166,7 +1390,9 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/path = NodePath("Note/Paper clip/Left Eye:position")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1174,9 +1400,11 @@ tracks/4/keys = {
 "values": [ Vector2( -15.0818, -16.3654 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Note/Paper clip/Left Eye:rotation_deg")
+tracks/5/path = NodePath("Note/Paper clip/Left Eye:rotation_degrees")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1186,7 +1414,9 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/path = NodePath("Note/Paper clip/Right Eyebrow:position")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7, 1.2, 1.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
@@ -1194,19 +1424,23 @@ tracks/6/keys = {
 "values": [ Vector2( 16.3168, -29.3703 ), Vector2( 16.3168, -29.3703 ), Vector2( 19.4933, -26.3806 ), Vector2( 19.4933, -26.3806 ), Vector2( 10.0233, -26.0937 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Note/Paper clip/Right Eyebrow:rotation_deg")
+tracks/7/path = NodePath("Note/Paper clip/Right Eyebrow:rotation_degrees")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7, 1.2, 1.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 4.11414, 4.11414, -21.6719, -21.6719, 28.5859 ]
+"values": [ -4.11414, -4.11414, 21.6719, 21.6719, -28.5859 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Note/Paper clip/Left Eye/Eyeball:position")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7, 1.2, 1.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
@@ -1214,9 +1448,11 @@ tracks/8/keys = {
 "values": [ Vector2( 2.67384, -0.106735 ), Vector2( 2.67384, -0.106735 ), Vector2( -3.77265, -2.7227 ), Vector2( -3.77265, -2.7227 ), Vector2( 2.06199, 0.913376 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Note/Paper clip/Left Eye/Eyeball:rotation_deg")
+tracks/9/path = NodePath("Note/Paper clip/Left Eye/Eyeball:rotation_degrees")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7, 1.2, 1.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
@@ -1226,7 +1462,9 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/path = NodePath("Note/Paper clip/Right Eye/Eyeball:position")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7, 1.2, 1.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
@@ -1234,9 +1472,11 @@ tracks/10/keys = {
 "values": [ Vector2( -1.70938, 0.932388 ), Vector2( -1.70938, 0.932388 ), Vector2( -4.69906, -2.0573 ), Vector2( -4.69906, -2.0573 ), Vector2( -2.71387, 1.87165 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Note/Paper clip/Right Eye/Eyeball:rotation_deg")
+tracks/11/path = NodePath("Note/Paper clip/Right Eye/Eyeball:rotation_degrees")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7, 1.2, 1.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
@@ -1246,7 +1486,9 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/path = NodePath("Note/Paper clip/Right Eye:position")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1254,9 +1496,11 @@ tracks/12/keys = {
 "values": [ Vector2( 15.7236, -16.2049 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Note/Paper clip/Right Eye:rotation_deg")
+tracks/13/path = NodePath("Note/Paper clip/Right Eye:rotation_degrees")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1266,7 +1510,9 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/path = NodePath("Note/Paper clip/Left Eyebrow:position")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7, 1.2, 1.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
@@ -1274,19 +1520,23 @@ tracks/14/keys = {
 "values": [ Vector2( -14.9183, -30.1473 ), Vector2( -14.9183, -30.1473 ), Vector2( -11.7418, -28.1853 ), Vector2( -11.7418, -28.1853 ), Vector2( -10.3787, -26.894 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Note/Paper clip/Left Eyebrow:rotation_deg")
+tracks/15/path = NodePath("Note/Paper clip/Left Eyebrow:rotation_degrees")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7, 1.2, 1.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -3.43807, -3.43807, -24.3756, -24.3756, -34.1083 ]
+"values": [ 3.43807, 3.43807, 24.3756, 24.3756, 34.1083 ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Note/Talk Bubble:position")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1294,9 +1544,11 @@ tracks/16/keys = {
 "values": [ Vector2( -24.5919, -70.9496 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Note/Talk Bubble:rotation_deg")
+tracks/17/path = NodePath("Note/Talk Bubble:rotation_degrees")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1306,7 +1558,9 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/path = NodePath("Note/Talk Bubble/Light bulb stand:position")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1314,9 +1568,11 @@ tracks/18/keys = {
 "values": [ Vector2( -13.5364, -18.6728 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Note/Talk Bubble/Light bulb stand:rotation_deg")
+tracks/19/path = NodePath("Note/Talk Bubble/Light bulb stand:rotation_degrees")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1326,7 +1582,9 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/path = NodePath("Note/Talk Bubble/Light bulb:position")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1334,9 +1592,11 @@ tracks/20/keys = {
 "values": [ Vector2( -13.1653, -30.283 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Note/Talk Bubble/Light bulb:rotation_deg")
+tracks/21/path = NodePath("Note/Talk Bubble/Light bulb:rotation_degrees")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1346,7 +1606,9 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/path = NodePath("Note/Exclaimation mark:position")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1354,9 +1616,11 @@ tracks/22/keys = {
 "values": [ Vector2( 50.8315, -77.4231 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Note/Exclaimation mark:rotation_deg")
+tracks/23/path = NodePath("Note/Exclaimation mark:rotation_degrees")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1366,7 +1630,9 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/path = NodePath("Note/Paper clip:self_modulate")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1376,7 +1642,9 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/path = NodePath("Note/Paper clip/Left Eye/Eyelid:visible")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0, 1.4 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1386,7 +1654,9 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/path = NodePath("Note/Paper clip/Right Eye/Eyelid:visible")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0, 1.4 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1396,7 +1666,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Note/Paper clip/Right Eye:self_modulate")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1406,7 +1678,9 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/path = NodePath("Note:self_modulate")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1416,7 +1690,9 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/path = NodePath("Note/Paper clip/Right Eye/Eyeball:scale")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1426,7 +1702,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Note/Paper clip/Left Eye/Eyeball:scale")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1436,7 +1714,9 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/path = NodePath("Note/Paper clip/Left Eye/Eyeball:texture")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1446,7 +1726,9 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/path = NodePath("Note/Paper clip/Right Eye/Eyeball:texture")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1456,7 +1738,9 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/path = NodePath("Note/Paper clip/Left Eye:self_modulate")
 tracks/33/interp = 1
+tracks/33/loop_wrap = true
 tracks/33/imported = false
+tracks/33/enabled = true
 tracks/33/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1466,7 +1750,9 @@ tracks/33/keys = {
 tracks/34/type = "value"
 tracks/34/path = NodePath("Note:position")
 tracks/34/interp = 1
+tracks/34/loop_wrap = true
 tracks/34/imported = false
+tracks/34/enabled = true
 tracks/34/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1474,9 +1760,11 @@ tracks/34/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("Note:rotation_deg")
+tracks/35/path = NodePath("Note:rotation_degrees")
 tracks/35/interp = 1
+tracks/35/loop_wrap = true
 tracks/35/imported = false
+tracks/35/enabled = true
 tracks/35/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1486,7 +1774,9 @@ tracks/35/keys = {
 tracks/36/type = "value"
 tracks/36/path = NodePath("Note/Talk Bubble/Light bulb:scale")
 tracks/36/interp = 1
+tracks/36/loop_wrap = true
 tracks/36/imported = false
+tracks/36/enabled = true
 tracks/36/keys = {
 "times": PoolRealArray( 0, 1.5, 1.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -1496,7 +1786,9 @@ tracks/36/keys = {
 tracks/37/type = "value"
 tracks/37/path = NodePath("Note/Talk Bubble/Light bulb:self_modulate")
 tracks/37/interp = 1
+tracks/37/loop_wrap = true
 tracks/37/imported = false
+tracks/37/enabled = true
 tracks/37/keys = {
 "times": PoolRealArray( 0, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
@@ -1512,7 +1804,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Note/Exclaimation mark:visible")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1522,7 +1816,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Note/Talk Bubble:visible")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1532,7 +1828,9 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/path = NodePath("Note/Paper clip:position")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1540,9 +1838,11 @@ tracks/2/keys = {
 "values": [ Vector2( 6.19582, -48.9318 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Note/Paper clip:rotation_deg")
+tracks/3/path = NodePath("Note/Paper clip:rotation_degrees")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1552,7 +1852,9 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/path = NodePath("Note/Paper clip/Left Eye:position")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1560,9 +1862,11 @@ tracks/4/keys = {
 "values": [ Vector2( -15.0818, -16.3654 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Note/Paper clip/Left Eye:rotation_deg")
+tracks/5/path = NodePath("Note/Paper clip/Left Eye:rotation_degrees")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1572,7 +1876,9 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/path = NodePath("Note/Paper clip/Right Eyebrow:position")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1580,19 +1886,23 @@ tracks/6/keys = {
 "values": [ Vector2( 16.3168, -29.3703 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Note/Paper clip/Right Eyebrow:rotation_deg")
+tracks/7/path = NodePath("Note/Paper clip/Right Eyebrow:rotation_degrees")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 4.11414 ]
+"values": [ -4.11414 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Note/Paper clip/Left Eye/Eyeball:position")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1600,9 +1910,11 @@ tracks/8/keys = {
 "values": [ Vector2( 2.67384, -0.106735 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Note/Paper clip/Left Eye/Eyeball:rotation_deg")
+tracks/9/path = NodePath("Note/Paper clip/Left Eye/Eyeball:rotation_degrees")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1612,7 +1924,9 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/path = NodePath("Note/Paper clip/Right Eye/Eyeball:position")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1620,9 +1934,11 @@ tracks/10/keys = {
 "values": [ Vector2( -1.70938, 0.932388 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Note/Paper clip/Right Eye/Eyeball:rotation_deg")
+tracks/11/path = NodePath("Note/Paper clip/Right Eye/Eyeball:rotation_degrees")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1632,7 +1948,9 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/path = NodePath("Note/Paper clip/Right Eye:position")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1640,9 +1958,11 @@ tracks/12/keys = {
 "values": [ Vector2( 15.7236, -16.2049 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Note/Paper clip/Right Eye:rotation_deg")
+tracks/13/path = NodePath("Note/Paper clip/Right Eye:rotation_degrees")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1652,7 +1972,9 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/path = NodePath("Note/Paper clip/Left Eyebrow:position")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1660,19 +1982,23 @@ tracks/14/keys = {
 "values": [ Vector2( -14.9183, -30.1473 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Note/Paper clip/Left Eyebrow:rotation_deg")
+tracks/15/path = NodePath("Note/Paper clip/Left Eyebrow:rotation_degrees")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -3.43807 ]
+"values": [ 3.43807 ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Note/Talk Bubble:position")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1680,9 +2006,11 @@ tracks/16/keys = {
 "values": [ Vector2( -24.5919, -70.9496 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Note/Talk Bubble:rotation_deg")
+tracks/17/path = NodePath("Note/Talk Bubble:rotation_degrees")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1692,7 +2020,9 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/path = NodePath("Note/Talk Bubble/Light bulb stand:position")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1700,9 +2030,11 @@ tracks/18/keys = {
 "values": [ Vector2( -13.5364, -18.6728 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Note/Talk Bubble/Light bulb stand:rotation_deg")
+tracks/19/path = NodePath("Note/Talk Bubble/Light bulb stand:rotation_degrees")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1712,7 +2044,9 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/path = NodePath("Note/Talk Bubble/Light bulb:position")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1720,9 +2054,11 @@ tracks/20/keys = {
 "values": [ Vector2( -13.1653, -30.283 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Note/Talk Bubble/Light bulb:rotation_deg")
+tracks/21/path = NodePath("Note/Talk Bubble/Light bulb:rotation_degrees")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1732,7 +2068,9 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/path = NodePath("Note/Exclaimation mark:position")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1740,9 +2078,11 @@ tracks/22/keys = {
 "values": [ Vector2( 50.8315, -77.4231 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Note/Exclaimation mark:rotation_deg")
+tracks/23/path = NodePath("Note/Exclaimation mark:rotation_degrees")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1752,7 +2092,9 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/path = NodePath("Note/Paper clip:self_modulate")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1762,7 +2104,9 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/path = NodePath("Note/Paper clip/Left Eye/Eyelid:visible")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1772,7 +2116,9 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/path = NodePath("Note/Paper clip/Right Eye/Eyelid:visible")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1782,7 +2128,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Note/Paper clip/Right Eye:self_modulate")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1792,7 +2140,9 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/path = NodePath("Note:self_modulate")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1802,7 +2152,9 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/path = NodePath("Note/Paper clip/Right Eye/Eyeball:scale")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1812,7 +2164,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Note/Paper clip/Left Eye/Eyeball:scale")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1822,7 +2176,9 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/path = NodePath("Note/Paper clip/Left Eye/Eyeball:texture")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1832,7 +2188,9 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/path = NodePath("Note/Paper clip/Right Eye/Eyeball:texture")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1842,7 +2200,9 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/path = NodePath("Note/Paper clip/Left Eye:self_modulate")
 tracks/33/interp = 1
+tracks/33/loop_wrap = true
 tracks/33/imported = false
+tracks/33/enabled = true
 tracks/33/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1852,7 +2212,9 @@ tracks/33/keys = {
 tracks/34/type = "value"
 tracks/34/path = NodePath("Note:position")
 tracks/34/interp = 1
+tracks/34/loop_wrap = true
 tracks/34/imported = false
+tracks/34/enabled = true
 tracks/34/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1860,9 +2222,11 @@ tracks/34/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("Note:rotation_deg")
+tracks/35/path = NodePath("Note:rotation_degrees")
 tracks/35/interp = 1
+tracks/35/loop_wrap = true
 tracks/35/imported = false
+tracks/35/enabled = true
 tracks/35/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1878,7 +2242,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Note/Exclaimation mark:visible")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1888,7 +2254,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Note/Talk Bubble:visible")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1898,7 +2266,9 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/path = NodePath("Note/Paper clip:position")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1906,19 +2276,23 @@ tracks/2/keys = {
 "values": [ Vector2( -2.39025, -49.0681 ), Vector2( 26.5026, -45.7972 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Note/Paper clip:rotation_deg")
+tracks/3/path = NodePath("Note/Paper clip:rotation_degrees")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 13.1383, -15.45 ]
+"values": [ -13.1383, 15.45 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Note/Paper clip/Left Eye:position")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1926,9 +2300,11 @@ tracks/4/keys = {
 "values": [ Vector2( -15.0818, -16.3654 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Note/Paper clip/Left Eye:rotation_deg")
+tracks/5/path = NodePath("Note/Paper clip/Left Eye:rotation_degrees")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1938,7 +2314,9 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/path = NodePath("Note/Paper clip/Right Eyebrow:position")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1946,19 +2324,23 @@ tracks/6/keys = {
 "values": [ Vector2( 16.256, -40.323 ), Vector2( 16.3777, -28.4576 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Note/Paper clip/Right Eyebrow:rotation_deg")
+tracks/7/path = NodePath("Note/Paper clip/Right Eyebrow:rotation_degrees")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -2.54498, -2.54498 ]
+"values": [ 2.54498, 2.54498 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Note/Paper clip/Left Eye/Eyeball:position")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1966,19 +2348,23 @@ tracks/8/keys = {
 "values": [ Vector2( 0.779499, 0.450424 ), Vector2( 0.779499, 0.450424 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Note/Paper clip/Left Eye/Eyeball:rotation_deg")
+tracks/9/path = NodePath("Note/Paper clip/Left Eye/Eyeball:rotation_degrees")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 95.2784, 240.616 ]
+"values": [ -95.2784, -240.616 ]
 }
 tracks/10/type = "value"
 tracks/10/path = NodePath("Note/Paper clip/Right Eye/Eyeball:position")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0, 0.6 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1986,19 +2372,23 @@ tracks/10/keys = {
 "values": [ Vector2( 0.519258, 0.486664 ), Vector2( 0.519258, 0.486664 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Note/Paper clip/Right Eye/Eyeball:rotation_deg")
+tracks/11/path = NodePath("Note/Paper clip/Right Eye/Eyeball:rotation_degrees")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0, 0.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, -163.641 ]
+"values": [ 0.0, 163.641 ]
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("Note/Paper clip/Right Eye:position")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2006,9 +2396,11 @@ tracks/12/keys = {
 "values": [ Vector2( 15.7236, -16.2049 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Note/Paper clip/Right Eye:rotation_deg")
+tracks/13/path = NodePath("Note/Paper clip/Right Eye:rotation_degrees")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2018,7 +2410,9 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/path = NodePath("Note/Paper clip/Left Eyebrow:position")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -2026,19 +2420,23 @@ tracks/14/keys = {
 "values": [ Vector2( -14.8574, -28.261 ), Vector2( -14.6141, -42.743 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Note/Paper clip/Left Eyebrow:rotation_deg")
+tracks/15/path = NodePath("Note/Paper clip/Left Eyebrow:rotation_degrees")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -3.43807, -3.43807 ]
+"values": [ 3.43807, 3.43807 ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Note/Talk Bubble:position")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2046,9 +2444,11 @@ tracks/16/keys = {
 "values": [ Vector2( -24.5919, -70.9496 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Note/Talk Bubble:rotation_deg")
+tracks/17/path = NodePath("Note/Talk Bubble:rotation_degrees")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2058,7 +2458,9 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/path = NodePath("Note/Talk Bubble/Light bulb stand:position")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2066,9 +2468,11 @@ tracks/18/keys = {
 "values": [ Vector2( -13.5364, -18.6728 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Note/Talk Bubble/Light bulb stand:rotation_deg")
+tracks/19/path = NodePath("Note/Talk Bubble/Light bulb stand:rotation_degrees")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2078,7 +2482,9 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/path = NodePath("Note/Talk Bubble/Light bulb:position")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2086,9 +2492,11 @@ tracks/20/keys = {
 "values": [ Vector2( -13.1653, -30.283 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Note/Talk Bubble/Light bulb:rotation_deg")
+tracks/21/path = NodePath("Note/Talk Bubble/Light bulb:rotation_degrees")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2098,7 +2506,9 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/path = NodePath("Note/Exclaimation mark:position")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2106,9 +2516,11 @@ tracks/22/keys = {
 "values": [ Vector2( 50.8315, -77.4231 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Note/Exclaimation mark:rotation_deg")
+tracks/23/path = NodePath("Note/Exclaimation mark:rotation_degrees")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2118,7 +2530,9 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/path = NodePath("Note/Paper clip:self_modulate")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2128,7 +2542,9 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/path = NodePath("Note/Paper clip/Left Eye/Eyelid:visible")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2138,7 +2554,9 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/path = NodePath("Note/Paper clip/Right Eye/Eyelid:visible")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2148,7 +2566,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Note/Paper clip/Right Eye:self_modulate")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2158,7 +2578,9 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/path = NodePath("Note:self_modulate")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2168,7 +2590,9 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/path = NodePath("Note/Paper clip/Right Eye/Eyeball:scale")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2178,7 +2602,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Note/Paper clip/Left Eye/Eyeball:scale")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2188,7 +2614,9 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/path = NodePath("Note/Paper clip/Left Eye/Eyeball:texture")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2198,7 +2626,9 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/path = NodePath("Note/Paper clip/Right Eye/Eyeball:texture")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2208,7 +2638,9 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/path = NodePath("Note/Paper clip/Left Eye:self_modulate")
 tracks/33/interp = 1
+tracks/33/loop_wrap = true
 tracks/33/imported = false
+tracks/33/enabled = true
 tracks/33/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2218,7 +2650,9 @@ tracks/33/keys = {
 tracks/34/type = "value"
 tracks/34/path = NodePath("Note:position")
 tracks/34/interp = 1
+tracks/34/loop_wrap = true
 tracks/34/imported = false
+tracks/34/enabled = true
 tracks/34/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -2226,9 +2660,11 @@ tracks/34/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( -0.361313, -14.814 ) ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("Note:rotation_deg")
+tracks/35/path = NodePath("Note:rotation_degrees")
 tracks/35/interp = 1
+tracks/35/loop_wrap = true
 tracks/35/imported = false
+tracks/35/enabled = true
 tracks/35/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -2244,7 +2680,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Note/Exclaimation mark:visible")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2254,7 +2692,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Note/Talk Bubble:visible")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2264,7 +2704,9 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/path = NodePath("Note/Paper clip:position")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -2272,19 +2714,23 @@ tracks/2/keys = {
 "values": [ Vector2( 8.01128, -54.7337 ), Vector2( 6.74205, -48.5684 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Note/Paper clip:rotation_deg")
+tracks/3/path = NodePath("Note/Paper clip:rotation_degrees")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 1.67569, 1.30962 ]
+"values": [ -1.67569, -1.30962 ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("Note/Paper clip/Left Eye:position")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2292,9 +2738,11 @@ tracks/4/keys = {
 "values": [ Vector2( -15.0818, -16.3654 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Note/Paper clip/Left Eye:rotation_deg")
+tracks/5/path = NodePath("Note/Paper clip/Left Eye:rotation_degrees")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2304,7 +2752,9 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/path = NodePath("Note/Paper clip/Right Eyebrow:position")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -2312,19 +2762,23 @@ tracks/6/keys = {
 "values": [ Vector2( 16.3168, -29.3703 ), Vector2( 16.3168, -29.3703 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Note/Paper clip/Right Eyebrow:rotation_deg")
+tracks/7/path = NodePath("Note/Paper clip/Right Eyebrow:rotation_degrees")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 4.11414, -3.95384 ]
+"values": [ -4.11414, 3.95384 ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Note/Paper clip/Left Eye/Eyeball:position")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -2332,9 +2786,11 @@ tracks/8/keys = {
 "values": [ Vector2( 2.67384, -0.106735 ), Vector2( 1.76157, 0.045311 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Note/Paper clip/Left Eye/Eyeball:rotation_deg")
+tracks/9/path = NodePath("Note/Paper clip/Left Eye/Eyeball:rotation_degrees")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -2344,7 +2800,9 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/path = NodePath("Note/Paper clip/Right Eye/Eyeball:position")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -2352,9 +2810,11 @@ tracks/10/keys = {
 "values": [ Vector2( -1.70938, 0.932388 ), Vector2( -1.17722, 0.704323 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Note/Paper clip/Right Eye/Eyeball:rotation_deg")
+tracks/11/path = NodePath("Note/Paper clip/Right Eye/Eyeball:rotation_degrees")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -2364,7 +2824,9 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/path = NodePath("Note/Paper clip/Right Eye:position")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2372,9 +2834,11 @@ tracks/12/keys = {
 "values": [ Vector2( 15.7236, -16.2049 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Note/Paper clip/Right Eye:rotation_deg")
+tracks/13/path = NodePath("Note/Paper clip/Right Eye:rotation_degrees")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2384,7 +2848,9 @@ tracks/13/keys = {
 tracks/14/type = "value"
 tracks/14/path = NodePath("Note/Paper clip/Left Eyebrow:position")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -2392,19 +2858,23 @@ tracks/14/keys = {
 "values": [ Vector2( -14.9183, -30.1473 ), Vector2( -15.0695, -31.2056 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Note/Paper clip/Left Eyebrow:rotation_deg")
+tracks/15/path = NodePath("Note/Paper clip/Left Eyebrow:rotation_degrees")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -3.43807, -3.43807 ]
+"values": [ 3.43807, 3.43807 ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("Note/Talk Bubble:position")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2412,9 +2882,11 @@ tracks/16/keys = {
 "values": [ Vector2( -24.5919, -70.9496 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Note/Talk Bubble:rotation_deg")
+tracks/17/path = NodePath("Note/Talk Bubble:rotation_degrees")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2424,7 +2896,9 @@ tracks/17/keys = {
 tracks/18/type = "value"
 tracks/18/path = NodePath("Note/Talk Bubble/Light bulb stand:position")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2432,9 +2906,11 @@ tracks/18/keys = {
 "values": [ Vector2( -13.5364, -18.6728 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("Note/Talk Bubble/Light bulb stand:rotation_deg")
+tracks/19/path = NodePath("Note/Talk Bubble/Light bulb stand:rotation_degrees")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2444,7 +2920,9 @@ tracks/19/keys = {
 tracks/20/type = "value"
 tracks/20/path = NodePath("Note/Talk Bubble/Light bulb:position")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2452,9 +2930,11 @@ tracks/20/keys = {
 "values": [ Vector2( -13.1653, -30.283 ) ]
 }
 tracks/21/type = "value"
-tracks/21/path = NodePath("Note/Talk Bubble/Light bulb:rotation_deg")
+tracks/21/path = NodePath("Note/Talk Bubble/Light bulb:rotation_degrees")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2464,7 +2944,9 @@ tracks/21/keys = {
 tracks/22/type = "value"
 tracks/22/path = NodePath("Note/Exclaimation mark:position")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2472,9 +2954,11 @@ tracks/22/keys = {
 "values": [ Vector2( 50.8315, -77.4231 ) ]
 }
 tracks/23/type = "value"
-tracks/23/path = NodePath("Note/Exclaimation mark:rotation_deg")
+tracks/23/path = NodePath("Note/Exclaimation mark:rotation_degrees")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2484,7 +2968,9 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/path = NodePath("Note/Paper clip:self_modulate")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2494,7 +2980,9 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/path = NodePath("Note/Paper clip/Left Eye/Eyelid:visible")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2504,7 +2992,9 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/path = NodePath("Note/Paper clip/Right Eye/Eyelid:visible")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2514,7 +3004,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Note/Paper clip/Right Eye:self_modulate")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2524,7 +3016,9 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/path = NodePath("Note:self_modulate")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2534,7 +3028,9 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/path = NodePath("Note/Paper clip/Right Eye/Eyeball:scale")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2544,7 +3040,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Note/Paper clip/Left Eye/Eyeball:scale")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2554,7 +3052,9 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/path = NodePath("Note/Paper clip/Left Eye/Eyeball:texture")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2564,7 +3064,9 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/path = NodePath("Note/Paper clip/Right Eye/Eyeball:texture")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2574,7 +3076,9 @@ tracks/32/keys = {
 tracks/33/type = "value"
 tracks/33/path = NodePath("Note/Paper clip/Left Eye:self_modulate")
 tracks/33/interp = 1
+tracks/33/loop_wrap = true
 tracks/33/imported = false
+tracks/33/enabled = true
 tracks/33/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2584,7 +3088,9 @@ tracks/33/keys = {
 tracks/34/type = "value"
 tracks/34/path = NodePath("Note:position")
 tracks/34/interp = 1
+tracks/34/loop_wrap = true
 tracks/34/imported = false
+tracks/34/enabled = true
 tracks/34/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -2592,9 +3098,11 @@ tracks/34/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, -15 ) ]
 }
 tracks/35/type = "value"
-tracks/35/path = NodePath("Note:rotation_deg")
+tracks/35/path = NodePath("Note:rotation_degrees")
 tracks/35/interp = 1
+tracks/35/loop_wrap = true
 tracks/35/imported = false
+tracks/35/enabled = true
 tracks/35/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -2602,56 +3110,55 @@ tracks/35/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[node name="Cliffy" type="Node2D"]
+[node name="Cliffy" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
-[node name="Animation" type="Node2D" parent="."]
+[node name="Animation" type="Node2D" parent="." index="0"]
 
 scale = Vector2( 2, 2 )
 
-[node name="Dart Spawn Pos 1" type="Position2D" parent="Animation"]
+[node name="Dart Spawn Pos 1" type="Position2D" parent="Animation" index="0"]
 
 position = Vector2( -82.5, -106 )
 
-[node name="Dart Spawn Pos 2" type="Position2D" parent="Animation"]
+[node name="Dart Spawn Pos 2" type="Position2D" parent="Animation" index="1"]
 
 position = Vector2( -82.5, -33 )
 
-[node name="Dart Spawn Pos 3" type="Position2D" parent="Animation"]
+[node name="Dart Spawn Pos 3" type="Position2D" parent="Animation" index="2"]
 
 position = Vector2( -82.5, 45 )
 
-[node name="Bubble Spawn Pos" type="Position2D" parent="Animation"]
+[node name="Bubble Spawn Pos" type="Position2D" parent="Animation" index="3"]
 
 position = Vector2( -36.5, -100 )
 
-[node name="Damage Area" type="Area2D" parent="Animation"]
+[node name="Damage Area" type="Area2D" parent="Animation" index="4"]
 
 editor/display_folded = true
 input_pickable = true
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Transform2D( 1, 0, 0, 1, 0.511444, -36.8241 )
-shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 16
+collision_layer = 2
 collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area" index="0"]
 
 position = Vector2( 0.511444, -36.8241 )
 shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
 
-[node name="Note" type="Sprite" parent="Animation"]
+[node name="Note" type="Sprite" parent="Animation" index="5"]
 
+position = Vector2( 0, -5.15084 )
 texture = ExtResource( 2 )
 
-[node name="Talk Bubble" type="Sprite" parent="Animation/Note"]
+[node name="Talk Bubble" type="Sprite" parent="Animation/Note" index="0"]
 
 editor/display_folded = true
 visible = false
@@ -2659,107 +3166,111 @@ position = Vector2( -24.5919, -70.9496 )
 texture = ExtResource( 3 )
 offset = Vector2( -12.353, -19.7333 )
 
-[node name="Light bulb stand" type="Sprite" parent="Animation/Note/Talk Bubble"]
+[node name="Light bulb stand" type="Sprite" parent="Animation/Note/Talk Bubble" index="0"]
 
 position = Vector2( -13.5364, -18.6728 )
 texture = ExtResource( 4 )
 
-[node name="Light bulb" type="Sprite" parent="Animation/Note/Talk Bubble"]
+[node name="Light bulb" type="Sprite" parent="Animation/Note/Talk Bubble" index="1"]
 
+self_modulate = Color( 1, 0, 0, 1 )
 position = Vector2( -13.1653, -30.283 )
 scale = Vector2( 3, 3 )
 texture = ExtResource( 5 )
-self_modulate = Color( 1, 0.491912, 0.292969, 1 )
 
-[node name="Exclaimation mark" type="Sprite" parent="Animation/Note"]
+[node name="Exclaimation mark" type="Sprite" parent="Animation/Note" index="1"]
 
 visible = false
+self_modulate = Color( 1, 0.222656, 0.222656, 1 )
 position = Vector2( 50.8315, -77.4231 )
 texture = ExtResource( 6 )
-self_modulate = Color( 1, 0.222656, 0.222656, 1 )
 
-[node name="Paper clip" type="Sprite" parent="Animation/Note"]
+[node name="Paper clip" type="Sprite" parent="Animation/Note" index="2"]
 
 editor/display_folded = true
-position = Vector2( 6.19582, -48.9318 )
+position = Vector2( 7.57544, -52.6166 )
+rotation = -0.0270523
 texture = ExtResource( 7 )
 
-[node name="Left Eye" type="Sprite" parent="Animation/Note/Paper clip"]
+[node name="Left Eye" type="Sprite" parent="Animation/Note/Paper clip" index="0"]
 
 position = Vector2( -15.0818, -16.3654 )
 texture = ExtResource( 8 )
 
-[node name="Eyeball" type="Sprite" parent="Animation/Note/Paper clip/Left Eye"]
+[node name="Eyeball" type="Sprite" parent="Animation/Note/Paper clip/Left Eye" index="0"]
 
-position = Vector2( 2.67384, -0.106735 )
+position = Vector2( 2.3321, -0.0497775 )
 texture = ExtResource( 9 )
 
-[node name="Eyelid" type="Sprite" parent="Animation/Note/Paper clip/Left Eye"]
+[node name="Eyelid" type="Sprite" parent="Animation/Note/Paper clip/Left Eye" index="1"]
 
 visible = false
 position = Vector2( 1.51349, 0.447487 )
-rotation_deg = 26.8914
 scale = Vector2( 1.1, 1.1 )
 texture = ExtResource( 10 )
 offset = Vector2( -1.3759, -0.406807 )
 
-[node name="Right Eye" type="Sprite" parent="Animation/Note/Paper clip"]
+[node name="Right Eye" type="Sprite" parent="Animation/Note/Paper clip" index="1"]
 
 position = Vector2( 15.7236, -16.2049 )
 texture = ExtResource( 8 )
 
-[node name="Eyeball" type="Sprite" parent="Animation/Note/Paper clip/Right Eye"]
+[node name="Eyeball" type="Sprite" parent="Animation/Note/Paper clip/Right Eye" index="0"]
 
-position = Vector2( -1.70938, 0.932388 )
+position = Vector2( -1.39611, 0.798133 )
 texture = ExtResource( 9 )
 
-[node name="Eyelid" type="Sprite" parent="Animation/Note/Paper clip/Right Eye"]
+[node name="Eyelid" type="Sprite" parent="Animation/Note/Paper clip/Right Eye" index="1"]
 
 visible = false
-rotation_deg = -6.0626
 scale = Vector2( 1.1, 1.1 )
 texture = ExtResource( 10 )
 
-[node name="Left Eyebrow" type="Sprite" parent="Animation/Note/Paper clip"]
+[node name="Left Eyebrow" type="Sprite" parent="Animation/Note/Paper clip" index="2"]
 
-position = Vector2( -14.9183, -30.1473 )
-rotation_deg = 3.43807
+position = Vector2( -14.9702, -30.5107 )
+rotation = 0.0600056
 texture = ExtResource( 11 )
 
-[node name="Right Eyebrow" type="Sprite" parent="Animation/Note/Paper clip"]
+[node name="Right Eyebrow" type="Sprite" parent="Animation/Note/Paper clip" index="3"]
 
 position = Vector2( 16.3168, -29.3703 )
-rotation_deg = -4.11414
+rotation = -0.0234516
 texture = ExtResource( 11 )
 
-[node name="Number Spawn Pos" type="RemoteTransform2D" parent="Animation/Note"]
+[node name="Number Spawn Pos" type="RemoteTransform2D" parent="Animation/Note" index="3"]
 
 position = Vector2( 3.52063, 0.782364 )
 scale = Vector2( 0.5, 0.5 )
 remote_path = NodePath("../../../Number Spawn Pos")
+use_global_coordinates = true
+update_position = true
+update_rotation = true
+update_scale = true
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation" index="6"]
 
+root_node = NodePath("..")
+autoplay = "Still"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-root_node = NodePath("..")
+playback_speed = 1.0
 anims/Die = SubResource( 2 )
 anims/Exclaim = SubResource( 3 )
 anims/Hurt = SubResource( 4 )
-anims/Light bulb = SubResource( 5 )
+anims/Lightbulb = SubResource( 5 )
 anims/Still = SubResource( 6 )
 anims/Stunned = SubResource( 7 )
 anims/Walk = SubResource( 8 )
-playback/active = true
-playback/speed = 1.0
 blend_times = [  ]
-autoplay = "Still"
 
-[node name="Number Spawn Pos" type="Position2D" parent="."]
+[node name="Number Spawn Pos" type="Position2D" parent="." index="1"]
 
-position = Vector2( 7.04126, 1.56473 )
+position = Vector2( 7.04126, -8.73695 )
 script = ExtResource( 13 )
 
-[node name="Health Bar" parent="." instance=ExtResource( 14 )]
+[node name="Health Bar" parent="." index="2" instance=ExtResource( 14 )]
 
 position = Vector2( 2.62967, -246.137 )
+
+

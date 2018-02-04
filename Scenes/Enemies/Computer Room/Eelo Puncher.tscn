@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/EeloPuncher.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Puncher/Left Forearm.png" type="Texture" id=2]
@@ -49,7 +49,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Face:texture")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -59,7 +61,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:position")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -67,9 +71,11 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body:rotation_deg")
+tracks/2/path = NodePath("Body:rotation_degrees")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -79,7 +85,9 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("Body Remote Transform:position")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -87,19 +95,23 @@ tracks/3/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 17.6141, 42.7358 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body Remote Transform:rotation_deg")
+tracks/4/path = NodePath("Body Remote Transform:rotation_degrees")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, -89.8003 ]
+"values": [ 0.0, 89.8003 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:position")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -107,19 +119,23 @@ tracks/5/keys = {
 "values": [ Vector2( -3.13862, 25.8349 ), Vector2( -3.13862, 25.8349 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:rotation_deg")
+tracks/6/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:rotation_degrees")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 35.8569 ]
+"values": [ 0.0, -35.8569 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:position")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -127,19 +143,23 @@ tracks/7/keys = {
 "values": [ Vector2( 0, 19.5603 ), Vector2( 0, 19.5603 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:rotation_deg")
+tracks/8/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:rotation_degrees")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 42.3706 ]
+"values": [ 0.0, -42.3706 ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("Body Remote Transform/Right Arm Remote Transform:position")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -147,19 +167,23 @@ tracks/9/keys = {
 "values": [ Vector2( 34.575, -9.16374 ), Vector2( 34.575, -9.16374 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body Remote Transform/Right Arm Remote Transform:rotation_deg")
+tracks/10/path = NodePath("Body Remote Transform/Right Arm Remote Transform:rotation_degrees")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, -13.1261 ]
+"values": [ 0.0, 13.1261 ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("Body Remote Transform/Left Arm Remote Transform:position")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -167,19 +191,23 @@ tracks/11/keys = {
 "values": [ Vector2( -34.931, -13.5606 ), Vector2( -34.7779, -15.3235 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body Remote Transform/Left Arm Remote Transform:rotation_deg")
+tracks/12/path = NodePath("Body Remote Transform/Left Arm Remote Transform:rotation_degrees")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, -1.84533 ]
+"values": [ 0.0, 1.84533 ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:position")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -187,19 +215,23 @@ tracks/13/keys = {
 "values": [ Vector2( -0.432465, 20.184 ), Vector2( -0.432465, 20.184 ) ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:rotation_deg")
+tracks/14/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:rotation_degrees")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 8.31276 ]
+"values": [ 0.0, -8.31276 ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:position")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -207,19 +239,23 @@ tracks/15/keys = {
 "values": [ Vector2( 0.187592, 19.9117 ), Vector2( 0.187592, 19.9117 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:rotation_deg")
+tracks/16/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:rotation_degrees")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 42.5092 ]
+"values": [ 0.0, -42.5092 ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body Remote Transform/Left Arm:position")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -227,9 +263,11 @@ tracks/17/keys = {
 "values": [ Vector2( -34.931, -13.5606 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body Remote Transform/Left Arm:rotation_deg")
+tracks/18/path = NodePath("Body Remote Transform/Left Arm:rotation_degrees")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -239,7 +277,9 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/path = NodePath("Body Remote Transform/Right Arm:position")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -247,9 +287,11 @@ tracks/19/keys = {
 "values": [ Vector2( 34.575, -9.16374 ) ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Body Remote Transform/Right Arm:rotation_deg")
+tracks/20/path = NodePath("Body Remote Transform/Right Arm:rotation_degrees")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -259,7 +301,9 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/path = NodePath("Body Remote Transform/Wheel:position")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -267,19 +311,23 @@ tracks/21/keys = {
 "values": [ Vector2( -1.11425, 70.5867 ), Vector2( -98.6029, -142.724 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Body Remote Transform/Wheel:rotation_deg")
+tracks/22/path = NodePath("Body Remote Transform/Wheel:rotation_degrees")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 350.0 ]
+"values": [ 0.0, -350.0 ]
 }
 tracks/23/type = "value"
 tracks/23/path = NodePath("Body:self_modulate")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -289,7 +337,9 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/path = NodePath("Body Remote Transform/Right Arm:self_modulate")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -299,7 +349,9 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/path = NodePath("Body Remote Transform/Left Arm:self_modulate")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -309,7 +361,9 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:self_modulate")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -319,7 +373,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:self_modulate")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -329,7 +385,9 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:self_modulate")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -339,7 +397,9 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:self_modulate")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -349,7 +409,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Body Remote Transform/Wheel:self_modulate")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -359,7 +421,9 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/path = NodePath("Left Punch Area:collision_mask")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -369,7 +433,9 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/path = NodePath("Right Punch Area:collision_mask")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -386,7 +452,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Face:texture")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -396,7 +464,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:position")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -404,9 +474,11 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body:rotation_deg")
+tracks/2/path = NodePath("Body:rotation_degrees")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -416,7 +488,9 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("Body Remote Transform:position")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -424,9 +498,11 @@ tracks/3/keys = {
 "values": [ Vector2( 6.7471, 1.88087 ), Vector2( -5.56574, -0.349774 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body Remote Transform:rotation_deg")
+tracks/4/path = NodePath("Body Remote Transform:rotation_degrees")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -436,7 +512,9 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:position")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -444,19 +522,23 @@ tracks/5/keys = {
 "values": [ Vector2( -3.13862, 25.8349 ), Vector2( -3.13862, 25.8349 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:rotation_deg")
+tracks/6/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:rotation_degrees")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 17.837, 25.6796 ]
+"values": [ -17.837, -25.6796 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:position")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -464,9 +546,11 @@ tracks/7/keys = {
 "values": [ Vector2( 0, 19.5603 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:rotation_deg")
+tracks/8/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:rotation_degrees")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -476,7 +560,9 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/path = NodePath("Body Remote Transform/Right Arm Remote Transform:position")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -484,19 +570,23 @@ tracks/9/keys = {
 "values": [ Vector2( 33.9878, -9.75095 ), Vector2( 33.9878, -9.75095 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body Remote Transform/Right Arm Remote Transform:rotation_deg")
+tracks/10/path = NodePath("Body Remote Transform/Right Arm Remote Transform:rotation_degrees")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 21.3408, 6.81847 ]
+"values": [ -21.3408, -6.81847 ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("Body Remote Transform/Left Arm Remote Transform:position")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -504,19 +594,23 @@ tracks/11/keys = {
 "values": [ Vector2( -32.8758, -13.8542 ), Vector2( -35.2396, -13.8542 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body Remote Transform/Left Arm Remote Transform:rotation_deg")
+tracks/12/path = NodePath("Body Remote Transform/Left Arm Remote Transform:rotation_degrees")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -13.3358, 2.34348 ]
+"values": [ 13.3358, -2.34348 ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:position")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -524,19 +618,23 @@ tracks/13/keys = {
 "values": [ Vector2( -0.432465, 20.184 ), Vector2( -0.432465, 20.184 ) ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:rotation_deg")
+tracks/14/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:rotation_degrees")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -21.6312, -34.3866 ]
+"values": [ 21.6312, 34.3866 ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:position")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -544,9 +642,11 @@ tracks/15/keys = {
 "values": [ Vector2( 0.187592, 19.9117 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:rotation_deg")
+tracks/16/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:rotation_degrees")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -556,7 +656,9 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body Remote Transform/Left Arm:position")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -564,9 +666,11 @@ tracks/17/keys = {
 "values": [ Vector2( -34.931, -13.5606 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body Remote Transform/Left Arm:rotation_deg")
+tracks/18/path = NodePath("Body Remote Transform/Left Arm:rotation_degrees")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -576,7 +680,9 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/path = NodePath("Body Remote Transform/Right Arm:position")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -584,9 +690,11 @@ tracks/19/keys = {
 "values": [ Vector2( 34.575, -9.16374 ) ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Body Remote Transform/Right Arm:rotation_deg")
+tracks/20/path = NodePath("Body Remote Transform/Right Arm:rotation_degrees")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -596,7 +704,9 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/path = NodePath("Body Remote Transform/Wheel:position")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -604,19 +714,23 @@ tracks/21/keys = {
 "values": [ Vector2( -1.62462, 68.5452 ), Vector2( -0.859014, 71.0971 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Body Remote Transform/Wheel:rotation_deg")
+tracks/22/path = NodePath("Body Remote Transform/Wheel:rotation_degrees")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0, 1.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 65.0503 ]
+"values": [ 0.0, -65.0503 ]
 }
 tracks/23/type = "value"
 tracks/23/path = NodePath("Body:self_modulate")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -626,7 +740,9 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/path = NodePath("Body Remote Transform/Right Arm:self_modulate")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -636,7 +752,9 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/path = NodePath("Body Remote Transform/Left Arm:self_modulate")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -646,7 +764,9 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:self_modulate")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -656,7 +776,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:self_modulate")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -666,7 +788,9 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:self_modulate")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -676,7 +800,9 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:self_modulate")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -686,7 +812,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Body Remote Transform/Wheel:self_modulate")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -696,7 +824,9 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/path = NodePath("Left Punch Area:collision_mask")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -706,7 +836,9 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/path = NodePath("Right Punch Area:collision_mask")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -722,7 +854,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Face:texture")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -732,7 +866,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:position")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -740,9 +876,11 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body:rotation_deg")
+tracks/2/path = NodePath("Body:rotation_degrees")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -752,7 +890,9 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("Body Remote Transform:position")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -760,19 +900,23 @@ tracks/3/keys = {
 "values": [ Vector2( 3.49709, -0.437137 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body Remote Transform:rotation_deg")
+tracks/4/path = NodePath("Body Remote Transform:rotation_degrees")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -3.81955 ]
+"values": [ 3.81955 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:position")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -780,9 +924,11 @@ tracks/5/keys = {
 "values": [ Vector2( -3.13862, 25.8349 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:rotation_deg")
+tracks/6/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:rotation_degrees")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -792,7 +938,9 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:position")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -800,9 +948,11 @@ tracks/7/keys = {
 "values": [ Vector2( 0, 19.5603 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:rotation_deg")
+tracks/8/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:rotation_degrees")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -812,7 +962,9 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/path = NodePath("Body Remote Transform/Right Arm Remote Transform:position")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -820,19 +972,23 @@ tracks/9/keys = {
 "values": [ Vector2( 34.575, -9.16374 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body Remote Transform/Right Arm Remote Transform:rotation_deg")
+tracks/10/path = NodePath("Body Remote Transform/Right Arm Remote Transform:rotation_degrees")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ -4.38097 ]
+"values": [ 4.38097 ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("Body Remote Transform/Left Arm Remote Transform:position")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -840,19 +996,23 @@ tracks/11/keys = {
 "values": [ Vector2( -35.5633, -15.8991 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body Remote Transform/Left Arm Remote Transform:rotation_deg")
+tracks/12/path = NodePath("Body Remote Transform/Left Arm Remote Transform:rotation_degrees")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 8.40018 ]
+"values": [ -8.40018 ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:position")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -860,9 +1020,11 @@ tracks/13/keys = {
 "values": [ Vector2( -0.432465, 20.184 ) ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:rotation_deg")
+tracks/14/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:rotation_degrees")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -872,7 +1034,9 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:position")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -880,9 +1044,11 @@ tracks/15/keys = {
 "values": [ Vector2( 0.187592, 19.9117 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:rotation_deg")
+tracks/16/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:rotation_degrees")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -892,7 +1058,9 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body Remote Transform/Left Arm:position")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -900,9 +1068,11 @@ tracks/17/keys = {
 "values": [ Vector2( -34.931, -13.5606 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body Remote Transform/Left Arm:rotation_deg")
+tracks/18/path = NodePath("Body Remote Transform/Left Arm:rotation_degrees")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -912,7 +1082,9 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/path = NodePath("Body Remote Transform/Right Arm:position")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -920,9 +1092,11 @@ tracks/19/keys = {
 "values": [ Vector2( 34.575, -9.16374 ) ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Body Remote Transform/Right Arm:rotation_deg")
+tracks/20/path = NodePath("Body Remote Transform/Right Arm:rotation_degrees")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -932,7 +1106,9 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/path = NodePath("Body Remote Transform/Wheel:position")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -940,9 +1116,11 @@ tracks/21/keys = {
 "values": [ Vector2( -1.11425, 70.5867 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Body Remote Transform/Wheel:rotation_deg")
+tracks/22/path = NodePath("Body Remote Transform/Wheel:rotation_degrees")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -952,7 +1130,9 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/path = NodePath("Body:self_modulate")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -962,7 +1142,9 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/path = NodePath("Body Remote Transform/Right Arm:self_modulate")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -972,7 +1154,9 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/path = NodePath("Body Remote Transform/Left Arm:self_modulate")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -982,7 +1166,9 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:self_modulate")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -992,7 +1178,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:self_modulate")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1002,7 +1190,9 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:self_modulate")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1012,7 +1202,9 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:self_modulate")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1022,7 +1214,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Body Remote Transform/Wheel:self_modulate")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1032,7 +1226,9 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/path = NodePath("Right Punch Area:collision_mask")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1042,7 +1238,9 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/path = NodePath("Left Punch Area:collision_mask")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1058,7 +1256,9 @@ step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Face:texture")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1068,7 +1268,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:position")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1076,9 +1278,11 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body:rotation_deg")
+tracks/2/path = NodePath("Body:rotation_degrees")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1088,7 +1292,9 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("Body Remote Transform:position")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 0.15, 0.4, 0.55, 0.75, 1.05, 1.2, 1.4, 1.55, 1.75, 1.85, 2.2, 2.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
@@ -1096,19 +1302,23 @@ tracks/3/keys = {
 "values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body Remote Transform:rotation_deg")
+tracks/4/path = NodePath("Body Remote Transform:rotation_degrees")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0, 0.15, 0.4, 0.55, 0.75, 1.05, 1.2, 1.4, 1.55, 1.75, 1.85, 2.2, 2.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 5.56456, 5.56456, 0.0, -6.79193, -6.79193, 0.0, 5.56456, 5.56456, 0.0, -6.79193, -6.79193, 0.0 ]
+"values": [ 0.0, -5.56456, -5.56456, 0.0, 6.79193, 6.79193, 0.0, -5.56456, -5.56456, 0.0, 6.79193, 6.79193, 0.0 ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:position")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0, 0.15, 0.4, 0.55, 1.2, 1.4, 1.55, 1.75, 2.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
@@ -1116,19 +1326,23 @@ tracks/5/keys = {
 "values": [ Vector2( -3.13862, 25.8349 ), Vector2( -3.13862, 25.8349 ), Vector2( -3.13862, 25.8349 ), Vector2( -3.13862, 25.8349 ), Vector2( -3.13862, 25.8349 ), Vector2( -3.13862, 25.8349 ), Vector2( -3.13862, 25.8349 ), Vector2( -3.13862, 25.8349 ), Vector2( -3.13862, 25.8349 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:rotation_deg")
+tracks/6/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:rotation_degrees")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 0.15, 0.4, 0.55, 1.2, 1.4, 1.55, 1.75, 2.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, -40.4594, -40.4594, 0.0, 0.0, -40.4594, -40.4594, 0.0, 0.0 ]
+"values": [ 0.0, 40.4594, 40.4594, 0.0, 0.0, 40.4594, 40.4594, 0.0, 0.0 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:position")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 0.15, 0.4, 0.55, 1.2, 1.4, 1.55, 1.75, 2.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
@@ -1136,19 +1350,23 @@ tracks/7/keys = {
 "values": [ Vector2( 0, 19.5603 ), Vector2( 0.775665, 20.9412 ), Vector2( 0.775665, 20.9412 ), Vector2( 0, 19.5603 ), Vector2( 0, 19.5603 ), Vector2( 0.775665, 20.9412 ), Vector2( 0.775665, 20.9412 ), Vector2( 0, 19.5603 ), Vector2( 0, 19.5603 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:rotation_deg")
+tracks/8/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:rotation_degrees")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0, 0.15, 0.4, 0.55, 1.2, 1.4, 1.55, 1.75, 2.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 7.78039, 7.78039, 0.0, 0.0, 7.78039, 7.78039, 0.0, 0.0 ]
+"values": [ 0.0, -7.78039, -7.78039, 0.0, 0.0, -7.78039, -7.78039, 0.0, 0.0 ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("Body Remote Transform/Right Arm Remote Transform:position")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0, 0.55, 0.75, 1.05, 1.2, 1.75, 1.85, 2.2, 2.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
@@ -1156,19 +1374,23 @@ tracks/9/keys = {
 "values": [ Vector2( 34.575, -9.16374 ), Vector2( 34.575, -9.16374 ), Vector2( 32.1553, -9.26894 ), Vector2( 32.1553, -9.26894 ), Vector2( 34.575, -9.16374 ), Vector2( 34.575, -9.16374 ), Vector2( 32.1553, -9.26894 ), Vector2( 32.1553, -9.26894 ), Vector2( 34.575, -9.16374 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body Remote Transform/Right Arm Remote Transform:rotation_deg")
+tracks/10/path = NodePath("Body Remote Transform/Right Arm Remote Transform:rotation_degrees")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0, 0.55, 0.75, 1.05, 1.2, 1.75, 1.85, 2.2, 2.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.0, 59.7734, 59.7734, 0.0, 0.0, 59.7734, 59.7734, 0.0 ]
+"values": [ 0.0, 0.0, -59.7734, -59.7734, 0.0, 0.0, -59.7734, -59.7734, 0.0 ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("Body Remote Transform/Left Arm Remote Transform:position")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0, 0.15, 0.4, 0.55, 1.2, 1.4, 1.55, 1.75, 2.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
@@ -1176,19 +1398,23 @@ tracks/11/keys = {
 "values": [ Vector2( -34.931, -13.5606 ), Vector2( -30.461, -10.3172 ), Vector2( -30.461, -10.3172 ), Vector2( -34.931, -13.5606 ), Vector2( -34.931, -13.5606 ), Vector2( -30.461, -10.3172 ), Vector2( -30.461, -10.3172 ), Vector2( -34.931, -13.5606 ), Vector2( -34.931, -13.5606 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body Remote Transform/Left Arm Remote Transform:rotation_deg")
+tracks/12/path = NodePath("Body Remote Transform/Left Arm Remote Transform:rotation_degrees")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0, 0.15, 0.4, 0.55, 1.2, 1.4, 1.55, 1.75, 2.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, -67.7293, -67.7293, 0.0, 0.0, -67.7293, -67.7293, 0.0, 0.0 ]
+"values": [ 0.0, 67.7293, 67.7293, 0.0, 0.0, 67.7293, 67.7293, 0.0, 0.0 ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:position")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0, 0.55, 0.75, 1.05, 1.2, 1.75, 1.85, 2.2, 2.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
@@ -1196,19 +1422,23 @@ tracks/13/keys = {
 "values": [ Vector2( -0.432465, 20.184 ), Vector2( -0.432465, 20.184 ), Vector2( -0.432465, 20.184 ), Vector2( -0.432465, 20.184 ), Vector2( -0.432465, 20.184 ), Vector2( -0.432465, 20.184 ), Vector2( -0.432465, 20.184 ), Vector2( -0.432465, 20.184 ), Vector2( -0.432465, 20.184 ) ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:rotation_deg")
+tracks/14/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:rotation_degrees")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0, 0.55, 0.75, 1.05, 1.2, 1.75, 1.85, 2.2, 2.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.0, 46.9308, 46.9308, 0.0, 0.0, 46.9308, 46.9308, 0.0 ]
+"values": [ 0.0, 0.0, -46.9308, -46.9308, 0.0, 0.0, -46.9308, -46.9308, 0.0 ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:position")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0, 0.55, 0.75, 1.05, 1.2, 1.75, 1.85, 2.2, 2.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
@@ -1216,19 +1446,23 @@ tracks/15/keys = {
 "values": [ Vector2( 0.187592, 19.9117 ), Vector2( 0.187592, 19.9117 ), Vector2( 0.0967808, 21.3124 ), Vector2( 0.0967808, 21.3124 ), Vector2( 0.187592, 19.9117 ), Vector2( 0.187592, 19.9117 ), Vector2( 0.0967808, 21.3124 ), Vector2( 0.0967808, 21.3124 ), Vector2( 0.187592, 19.9117 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:rotation_deg")
+tracks/16/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:rotation_degrees")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0, 0.55, 0.75, 1.05, 1.2, 1.75, 1.85, 2.2, 2.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 0.0, -10.001, -10.001, 0.0, 0.0, -10.001, -10.001, 0.0 ]
+"values": [ 0.0, 0.0, 10.001, 10.001, 0.0, 0.0, 10.001, 10.001, 0.0 ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body Remote Transform/Left Arm:position")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1236,9 +1470,11 @@ tracks/17/keys = {
 "values": [ Vector2( -34.931, -13.5606 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body Remote Transform/Left Arm:rotation_deg")
+tracks/18/path = NodePath("Body Remote Transform/Left Arm:rotation_degrees")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1248,7 +1484,9 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/path = NodePath("Body Remote Transform/Right Arm:position")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1256,9 +1494,11 @@ tracks/19/keys = {
 "values": [ Vector2( 34.575, -9.16374 ) ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Body Remote Transform/Right Arm:rotation_deg")
+tracks/20/path = NodePath("Body Remote Transform/Right Arm:rotation_degrees")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1268,7 +1508,9 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/path = NodePath("Body Remote Transform/Wheel:position")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0, 0.15, 0.4, 0.55, 0.75, 1.05, 1.2, 1.4, 1.55, 1.75, 1.85, 2.2, 2.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
@@ -1276,9 +1518,11 @@ tracks/21/keys = {
 "values": [ Vector2( -1.11425, 70.5867 ), Vector2( -1.11425, 70.5867 ), Vector2( -1.11425, 70.5867 ), Vector2( -1.11425, 70.5867 ), Vector2( 2.23861, 70.3564 ), Vector2( 2.23861, 70.3564 ), Vector2( -1.11425, 70.5867 ), Vector2( -1.11425, 70.5867 ), Vector2( -1.11425, 70.5867 ), Vector2( -1.11425, 70.5867 ), Vector2( 2.23861, 70.3564 ), Vector2( 2.23861, 70.3564 ), Vector2( -1.11425, 70.5867 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Body Remote Transform/Wheel:rotation_deg")
+tracks/22/path = NodePath("Body Remote Transform/Wheel:rotation_degrees")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0, 0.15, 0.4, 0.55, 0.75, 1.05, 1.2, 1.4, 1.55, 1.75, 1.85, 2.2, 2.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
@@ -1288,7 +1532,9 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/path = NodePath("Body:self_modulate")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1298,7 +1544,9 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/path = NodePath("Body Remote Transform/Right Arm:self_modulate")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1308,7 +1556,9 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/path = NodePath("Body Remote Transform/Left Arm:self_modulate")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1318,7 +1568,9 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:self_modulate")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1328,7 +1580,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:self_modulate")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1338,7 +1592,9 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:self_modulate")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1348,7 +1604,9 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:self_modulate")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1358,7 +1616,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Body Remote Transform/Wheel:self_modulate")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1368,7 +1628,9 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/path = NodePath("Right Punch Area:collision_mask")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0, 0.7, 0.9, 1.8, 1.95 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
@@ -1378,7 +1640,9 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/path = NodePath("Left Punch Area:collision_mask")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0, 0.1, 0.3, 1.35, 1.55 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
@@ -1394,7 +1658,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Face:texture")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1404,7 +1670,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:position")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1412,9 +1680,11 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body:rotation_deg")
+tracks/2/path = NodePath("Body:rotation_degrees")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1424,7 +1694,9 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("Body Remote Transform:position")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1432,9 +1704,11 @@ tracks/3/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body Remote Transform:rotation_deg")
+tracks/4/path = NodePath("Body Remote Transform:rotation_degrees")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1444,7 +1718,9 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:position")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1452,9 +1728,11 @@ tracks/5/keys = {
 "values": [ Vector2( -3.13862, 25.8349 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:rotation_deg")
+tracks/6/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:rotation_degrees")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1464,7 +1742,9 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:position")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1472,9 +1752,11 @@ tracks/7/keys = {
 "values": [ Vector2( 0, 19.5603 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:rotation_deg")
+tracks/8/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:rotation_degrees")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1484,7 +1766,9 @@ tracks/8/keys = {
 tracks/9/type = "value"
 tracks/9/path = NodePath("Body Remote Transform/Right Arm Remote Transform:position")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1492,9 +1776,11 @@ tracks/9/keys = {
 "values": [ Vector2( 34.575, -9.16374 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body Remote Transform/Right Arm Remote Transform:rotation_deg")
+tracks/10/path = NodePath("Body Remote Transform/Right Arm Remote Transform:rotation_degrees")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1504,7 +1790,9 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/path = NodePath("Body Remote Transform/Left Arm Remote Transform:position")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1512,9 +1800,11 @@ tracks/11/keys = {
 "values": [ Vector2( -34.931, -13.5606 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body Remote Transform/Left Arm Remote Transform:rotation_deg")
+tracks/12/path = NodePath("Body Remote Transform/Left Arm Remote Transform:rotation_degrees")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1524,7 +1814,9 @@ tracks/12/keys = {
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:position")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1532,9 +1824,11 @@ tracks/13/keys = {
 "values": [ Vector2( -0.432465, 20.184 ) ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:rotation_deg")
+tracks/14/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:rotation_degrees")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1544,7 +1838,9 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:position")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1552,9 +1848,11 @@ tracks/15/keys = {
 "values": [ Vector2( 0.187592, 19.9117 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:rotation_deg")
+tracks/16/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:rotation_degrees")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1564,7 +1862,9 @@ tracks/16/keys = {
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body Remote Transform/Left Arm:position")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1572,9 +1872,11 @@ tracks/17/keys = {
 "values": [ Vector2( -34.931, -13.5606 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body Remote Transform/Left Arm:rotation_deg")
+tracks/18/path = NodePath("Body Remote Transform/Left Arm:rotation_degrees")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1584,7 +1886,9 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/path = NodePath("Body Remote Transform/Right Arm:position")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1592,9 +1896,11 @@ tracks/19/keys = {
 "values": [ Vector2( 34.575, -9.16374 ) ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Body Remote Transform/Right Arm:rotation_deg")
+tracks/20/path = NodePath("Body Remote Transform/Right Arm:rotation_degrees")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1604,7 +1910,9 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/path = NodePath("Body Remote Transform/Wheel:position")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1612,9 +1920,11 @@ tracks/21/keys = {
 "values": [ Vector2( -1.11425, 70.5867 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Body Remote Transform/Wheel:rotation_deg")
+tracks/22/path = NodePath("Body Remote Transform/Wheel:rotation_degrees")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1624,7 +1934,9 @@ tracks/22/keys = {
 tracks/23/type = "value"
 tracks/23/path = NodePath("Body:self_modulate")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1634,7 +1946,9 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/path = NodePath("Body Remote Transform/Right Arm:self_modulate")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1644,7 +1958,9 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/path = NodePath("Body Remote Transform/Left Arm:self_modulate")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1654,7 +1970,9 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:self_modulate")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1664,7 +1982,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:self_modulate")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1674,7 +1994,9 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:self_modulate")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1684,7 +2006,9 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:self_modulate")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1694,7 +2018,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Body Remote Transform/Wheel:self_modulate")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1704,7 +2030,9 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/path = NodePath("Left Punch Area:collision_mask")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1714,7 +2042,9 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/path = NodePath("Right Punch Area:collision_mask")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1730,7 +2060,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Face:texture")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1740,7 +2072,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:position")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1748,9 +2082,11 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body:rotation_deg")
+tracks/2/path = NodePath("Body:rotation_degrees")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1760,7 +2096,9 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("Body Remote Transform:position")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1768,9 +2106,11 @@ tracks/3/keys = {
 "values": [ Vector2( -5.45453, 0 ), Vector2( 7.7273, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body Remote Transform:rotation_deg")
+tracks/4/path = NodePath("Body Remote Transform:rotation_degrees")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1780,7 +2120,9 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:position")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1788,19 +2130,23 @@ tracks/5/keys = {
 "values": [ Vector2( -3.13862, 25.8349 ), Vector2( -3.13862, 25.8349 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:rotation_deg")
+tracks/6/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:rotation_degrees")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 0.9 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 3.01311 ]
+"values": [ 0.0, -3.01311 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:position")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1808,19 +2154,23 @@ tracks/7/keys = {
 "values": [ Vector2( 0, 19.5603 ), Vector2( 0, 19.5603 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:rotation_deg")
+tracks/8/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:rotation_degrees")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 18.0805 ]
+"values": [ 0.0, -18.0805 ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("Body Remote Transform/Right Arm Remote Transform:position")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0, 0.6 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1828,19 +2178,23 @@ tracks/9/keys = {
 "values": [ Vector2( 34.575, -9.16374 ), Vector2( 34.575, -9.16374 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body Remote Transform/Right Arm Remote Transform:rotation_deg")
+tracks/10/path = NodePath("Body Remote Transform/Right Arm Remote Transform:rotation_degrees")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0, 0.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 17.4767 ]
+"values": [ 0.0, -17.4767 ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("Body Remote Transform/Left Arm Remote Transform:position")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1848,19 +2202,23 @@ tracks/11/keys = {
 "values": [ Vector2( -34.931, -13.5606 ), Vector2( -34.931, -13.5606 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body Remote Transform/Left Arm Remote Transform:rotation_deg")
+tracks/12/path = NodePath("Body Remote Transform/Left Arm Remote Transform:rotation_degrees")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, -12.6536 ]
+"values": [ 0.0, 12.6536 ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:position")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1868,19 +2226,23 @@ tracks/13/keys = {
 "values": [ Vector2( -0.432465, 20.184 ), Vector2( -0.432465, 20.184 ) ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:rotation_deg")
+tracks/14/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:rotation_degrees")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 20.6195 ]
+"values": [ 0.0, -20.6195 ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:position")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1888,19 +2250,23 @@ tracks/15/keys = {
 "values": [ Vector2( 0.187592, 19.9117 ), Vector2( 0.187592, 19.9117 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:rotation_deg")
+tracks/16/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:rotation_degrees")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, -29.8124 ]
+"values": [ 0.0, 29.8124 ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body Remote Transform/Left Arm:position")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1908,9 +2274,11 @@ tracks/17/keys = {
 "values": [ Vector2( -34.931, -13.5606 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body Remote Transform/Left Arm:rotation_deg")
+tracks/18/path = NodePath("Body Remote Transform/Left Arm:rotation_degrees")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1920,7 +2288,9 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/path = NodePath("Body Remote Transform/Right Arm:position")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1928,9 +2298,11 @@ tracks/19/keys = {
 "values": [ Vector2( 34.575, -9.16374 ) ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Body Remote Transform/Right Arm:rotation_deg")
+tracks/20/path = NodePath("Body Remote Transform/Right Arm:rotation_degrees")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1940,7 +2312,9 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/path = NodePath("Body Remote Transform/Wheel:position")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -1948,19 +2322,23 @@ tracks/21/keys = {
 "values": [ Vector2( -1.11425, 70.5867 ), Vector2( -1.11425, 70.5867 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Body Remote Transform/Wheel:rotation_deg")
+tracks/22/path = NodePath("Body Remote Transform/Wheel:rotation_degrees")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0, 0.8 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, -41.3095 ]
+"values": [ 0.0, 41.3095 ]
 }
 tracks/23/type = "value"
 tracks/23/path = NodePath("Body:self_modulate")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1970,7 +2348,9 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/path = NodePath("Body Remote Transform/Right Arm:self_modulate")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1980,7 +2360,9 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/path = NodePath("Body Remote Transform/Left Arm:self_modulate")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -1990,7 +2372,9 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:self_modulate")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2000,7 +2384,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:self_modulate")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2010,7 +2396,9 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:self_modulate")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2020,7 +2408,9 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:self_modulate")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2030,7 +2420,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Body Remote Transform/Wheel:self_modulate")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2040,7 +2432,9 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/path = NodePath("Right Punch Area:collision_mask")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2050,7 +2444,9 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/path = NodePath("Left Punch Area:collision_mask")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2066,7 +2462,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Face:texture")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2076,7 +2474,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:position")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2084,9 +2484,11 @@ tracks/1/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Body:rotation_deg")
+tracks/2/path = NodePath("Body:rotation_degrees")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2096,7 +2498,9 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("Body Remote Transform:position")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2104,9 +2508,11 @@ tracks/3/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Body Remote Transform:rotation_deg")
+tracks/4/path = NodePath("Body Remote Transform:rotation_degrees")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2116,7 +2522,9 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:position")
 tracks/5/interp = 1
+tracks/5/loop_wrap = true
 tracks/5/imported = false
+tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -2124,19 +2532,23 @@ tracks/5/keys = {
 "values": [ Vector2( -3.13862, 25.8349 ), Vector2( -3.13862, 25.8349 ), Vector2( -3.13862, 25.8349 ), Vector2( -3.13862, 25.8349 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:rotation_deg")
+tracks/6/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:rotation_degrees")
 tracks/6/interp = 1
+tracks/6/loop_wrap = true
 tracks/6/imported = false
+tracks/6/enabled = true
 tracks/6/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 34.7535, 0.644507, 34.7535, 0.644507 ]
+"values": [ -34.7535, -0.644507, -34.7535, -0.644507 ]
 }
 tracks/7/type = "value"
 tracks/7/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:position")
 tracks/7/interp = 1
+tracks/7/loop_wrap = true
 tracks/7/imported = false
+tracks/7/enabled = true
 tracks/7/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -2144,19 +2556,23 @@ tracks/7/keys = {
 "values": [ Vector2( 0, 19.5603 ), Vector2( 0, 19.5603 ), Vector2( 0, 19.5603 ), Vector2( 0, 19.5603 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:rotation_deg")
+tracks/8/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:rotation_degrees")
 tracks/8/interp = 1
+tracks/8/loop_wrap = true
 tracks/8/imported = false
+tracks/8/enabled = true
 tracks/8/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -17.6494, 6.66474, -17.6494, 6.66474 ]
+"values": [ 17.6494, -6.66474, 17.6494, -6.66474 ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("Body Remote Transform/Right Arm Remote Transform:position")
 tracks/9/interp = 1
+tracks/9/loop_wrap = true
 tracks/9/imported = false
+tracks/9/enabled = true
 tracks/9/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -2164,19 +2580,23 @@ tracks/9/keys = {
 "values": [ Vector2( 34.575, -9.16374 ), Vector2( 34.575, -9.16374 ), Vector2( 34.575, -9.16374 ), Vector2( 34.575, -9.16374 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Body Remote Transform/Right Arm Remote Transform:rotation_deg")
+tracks/10/path = NodePath("Body Remote Transform/Right Arm Remote Transform:rotation_degrees")
 tracks/10/interp = 1
+tracks/10/loop_wrap = true
 tracks/10/imported = false
+tracks/10/enabled = true
 tracks/10/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 25.1537, 0.0, 25.1537 ]
+"values": [ 0.0, -25.1537, 0.0, -25.1537 ]
 }
 tracks/11/type = "value"
 tracks/11/path = NodePath("Body Remote Transform/Left Arm Remote Transform:position")
 tracks/11/interp = 1
+tracks/11/loop_wrap = true
 tracks/11/imported = false
+tracks/11/enabled = true
 tracks/11/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -2184,19 +2604,23 @@ tracks/11/keys = {
 "values": [ Vector2( -34.931, -13.5606 ), Vector2( -34.931, -13.5606 ), Vector2( -34.931, -13.5606 ), Vector2( -34.931, -13.5606 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Body Remote Transform/Left Arm Remote Transform:rotation_deg")
+tracks/12/path = NodePath("Body Remote Transform/Left Arm Remote Transform:rotation_degrees")
 tracks/12/interp = 1
+tracks/12/loop_wrap = true
 tracks/12/imported = false
+tracks/12/enabled = true
 tracks/12/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -10.179, 4.1674, -10.179, 4.1674 ]
+"values": [ 10.179, -4.1674, 10.179, -4.1674 ]
 }
 tracks/13/type = "value"
 tracks/13/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:position")
 tracks/13/interp = 1
+tracks/13/loop_wrap = true
 tracks/13/imported = false
+tracks/13/enabled = true
 tracks/13/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -2204,19 +2628,23 @@ tracks/13/keys = {
 "values": [ Vector2( -0.432465, 20.184 ), Vector2( -0.432465, 20.184 ), Vector2( -0.432465, 20.184 ), Vector2( -0.432465, 20.184 ) ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:rotation_deg")
+tracks/14/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:rotation_degrees")
 tracks/14/interp = 1
+tracks/14/loop_wrap = true
 tracks/14/imported = false
+tracks/14/enabled = true
 tracks/14/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, -51.3095, 0.0, -51.3095 ]
+"values": [ 0.0, 51.3095, 0.0, 51.3095 ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:position")
 tracks/15/interp = 1
+tracks/15/loop_wrap = true
 tracks/15/imported = false
+tracks/15/enabled = true
 tracks/15/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
@@ -2224,19 +2652,23 @@ tracks/15/keys = {
 "values": [ Vector2( 0.187592, 19.9117 ), Vector2( 0.187592, 19.9117 ), Vector2( 0.187592, 19.9117 ), Vector2( 0.187592, 19.9117 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:rotation_deg")
+tracks/16/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:rotation_degrees")
 tracks/16/interp = 1
+tracks/16/loop_wrap = true
 tracks/16/imported = false
+tracks/16/enabled = true
 tracks/16/keys = {
 "times": PoolRealArray( 0, 0.5, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 25.7121, 0.0, 25.7121 ]
+"values": [ 0.0, -25.7121, 0.0, -25.7121 ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Body Remote Transform/Left Arm:position")
 tracks/17/interp = 1
+tracks/17/loop_wrap = true
 tracks/17/imported = false
+tracks/17/enabled = true
 tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2244,9 +2676,11 @@ tracks/17/keys = {
 "values": [ Vector2( -34.931, -13.5606 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("Body Remote Transform/Left Arm:rotation_deg")
+tracks/18/path = NodePath("Body Remote Transform/Left Arm:rotation_degrees")
 tracks/18/interp = 1
+tracks/18/loop_wrap = true
 tracks/18/imported = false
+tracks/18/enabled = true
 tracks/18/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2256,7 +2690,9 @@ tracks/18/keys = {
 tracks/19/type = "value"
 tracks/19/path = NodePath("Body Remote Transform/Right Arm:position")
 tracks/19/interp = 1
+tracks/19/loop_wrap = true
 tracks/19/imported = false
+tracks/19/enabled = true
 tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2264,9 +2700,11 @@ tracks/19/keys = {
 "values": [ Vector2( 34.575, -9.16374 ) ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("Body Remote Transform/Right Arm:rotation_deg")
+tracks/20/path = NodePath("Body Remote Transform/Right Arm:rotation_degrees")
 tracks/20/interp = 1
+tracks/20/loop_wrap = true
 tracks/20/imported = false
+tracks/20/enabled = true
 tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2276,7 +2714,9 @@ tracks/20/keys = {
 tracks/21/type = "value"
 tracks/21/path = NodePath("Body Remote Transform/Wheel:position")
 tracks/21/interp = 1
+tracks/21/loop_wrap = true
 tracks/21/imported = false
+tracks/21/enabled = true
 tracks/21/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2284,19 +2724,23 @@ tracks/21/keys = {
 "values": [ Vector2( -1.11425, 70.5867 ) ]
 }
 tracks/22/type = "value"
-tracks/22/path = NodePath("Body Remote Transform/Wheel:rotation_deg")
+tracks/22/path = NodePath("Body Remote Transform/Wheel:rotation_degrees")
 tracks/22/interp = 1
+tracks/22/loop_wrap = true
 tracks/22/imported = false
+tracks/22/enabled = true
 tracks/22/keys = {
 "times": PoolRealArray( 0, 1, 2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, 180.0, 360.0 ]
+"values": [ 0.0, -180.0, -360.0 ]
 }
 tracks/23/type = "value"
 tracks/23/path = NodePath("Body:self_modulate")
 tracks/23/interp = 1
+tracks/23/loop_wrap = true
 tracks/23/imported = false
+tracks/23/enabled = true
 tracks/23/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2306,7 +2750,9 @@ tracks/23/keys = {
 tracks/24/type = "value"
 tracks/24/path = NodePath("Body Remote Transform/Right Arm:self_modulate")
 tracks/24/interp = 1
+tracks/24/loop_wrap = true
 tracks/24/imported = false
+tracks/24/enabled = true
 tracks/24/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2316,7 +2762,9 @@ tracks/24/keys = {
 tracks/25/type = "value"
 tracks/25/path = NodePath("Body Remote Transform/Left Arm:self_modulate")
 tracks/25/interp = 1
+tracks/25/loop_wrap = true
 tracks/25/imported = false
+tracks/25/enabled = true
 tracks/25/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2326,7 +2774,9 @@ tracks/25/keys = {
 tracks/26/type = "value"
 tracks/26/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm/Fist:self_modulate")
 tracks/26/interp = 1
+tracks/26/loop_wrap = true
 tracks/26/imported = false
+tracks/26/enabled = true
 tracks/26/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2336,7 +2786,9 @@ tracks/26/keys = {
 tracks/27/type = "value"
 tracks/27/path = NodePath("Body Remote Transform/Right Arm Remote Transform/Right Forearm:self_modulate")
 tracks/27/interp = 1
+tracks/27/loop_wrap = true
 tracks/27/imported = false
+tracks/27/enabled = true
 tracks/27/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2346,7 +2798,9 @@ tracks/27/keys = {
 tracks/28/type = "value"
 tracks/28/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm/Fist:self_modulate")
 tracks/28/interp = 1
+tracks/28/loop_wrap = true
 tracks/28/imported = false
+tracks/28/enabled = true
 tracks/28/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2356,7 +2810,9 @@ tracks/28/keys = {
 tracks/29/type = "value"
 tracks/29/path = NodePath("Body Remote Transform/Left Arm Remote Transform/Left Forearm:self_modulate")
 tracks/29/interp = 1
+tracks/29/loop_wrap = true
 tracks/29/imported = false
+tracks/29/enabled = true
 tracks/29/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2366,7 +2822,9 @@ tracks/29/keys = {
 tracks/30/type = "value"
 tracks/30/path = NodePath("Body Remote Transform/Wheel:self_modulate")
 tracks/30/interp = 1
+tracks/30/loop_wrap = true
 tracks/30/imported = false
+tracks/30/enabled = true
 tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2376,7 +2834,9 @@ tracks/30/keys = {
 tracks/31/type = "value"
 tracks/31/path = NodePath("Left Punch Area:collision_mask")
 tracks/31/interp = 1
+tracks/31/loop_wrap = true
 tracks/31/imported = false
+tracks/31/enabled = true
 tracks/31/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2386,7 +2846,9 @@ tracks/31/keys = {
 tracks/32/type = "value"
 tracks/32/path = NodePath("Right Punch Area:collision_mask")
 tracks/32/interp = 1
+tracks/32/loop_wrap = true
 tracks/32/imported = false
+tracks/32/enabled = true
 tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -2394,197 +2856,204 @@ tracks/32/keys = {
 "values": [ 0 ]
 }
 
-[node name="Eelo Puncher" type="KinematicBody2D"]
+[node name="Eelo Puncher" type="KinematicBody2D" index="0"]
 
 input_pickable = false
-shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Transform2D( 1, 0, 0, 1, 0.851868, 54.5194 )
-shapes/0/trigger = false
-collision_layer = 16
-collision_mask = 2
-collision/margin = 0.08
+collision_layer = 0
+collision_mask = 20
+collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
 fountain_path = null
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
 position = Vector2( 0.851868, 54.5194 )
 shape = SubResource( 1 )
-trigger = false
-_update_shape_index = 0
 
-[node name="Animation" type="Node2D" parent="."]
+[node name="Animation" type="Node2D" parent="." index="1"]
 
 position = Vector2( -0.4953, 10.8967 )
 scale = Vector2( 2.2, 2.2 )
 
-[node name="Left Punch Area" type="Area2D" parent="Animation"]
+[node name="Left Punch Area" type="Area2D" parent="Animation" index="0"]
 
 editor/display_folded = true
 position = Vector2( -58.1689, -1.18273 )
 input_pickable = true
-shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Transform2D( 1, 0, 0, 1, 0.107521, -2.15042 )
-shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 64
+collision_layer = 0
 collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Left Punch Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Left Punch Area" index="0"]
 
 position = Vector2( 0.107521, -2.15042 )
 shape = SubResource( 2 )
-trigger = false
-_update_shape_index = 0
 
-[node name="Right Punch Area" type="Area2D" parent="Animation"]
+[node name="Right Punch Area" type="Area2D" parent="Animation" index="1"]
 
 editor/display_folded = true
 position = Vector2( 57.3087, 3.11811 )
 input_pickable = true
-shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Transform2D( 1, 0, 0, 1, -1.18274, -1.39777 )
-shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 64
+collision_layer = 0
 collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Right Punch Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Right Punch Area" index="0"]
 
 position = Vector2( -1.18274, -1.39777 )
 shape = SubResource( 3 )
-trigger = false
-_update_shape_index = 0
 
-[node name="Damage Area" type="Area2D" parent="Animation"]
+[node name="Damage Area" type="Area2D" parent="Animation" index="2"]
 
 editor/display_folded = true
 input_pickable = true
-shapes/0/shape = SubResource( 4 )
-shapes/0/transform = Transform2D( 1, 0, 0, 1, -0.537956, 12.2387 )
-shapes/0/trigger = false
-shapes/1/shape = SubResource( 5 )
-shapes/1/transform = Transform2D( 1, 0, 0, 1, -0.40347, 5.51412 )
-shapes/1/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 16
+collision_layer = 2
 collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area" index="0"]
 
 position = Vector2( -0.537956, 12.2387 )
 shape = SubResource( 4 )
-trigger = false
-_update_shape_index = 0
 
-[node name="CollisionShape2D 2" type="CollisionShape2D" parent="Animation/Damage Area"]
+[node name="CollisionShape2D 2" type="CollisionShape2D" parent="Animation/Damage Area" index="1"]
 
 position = Vector2( -0.40347, 5.51412 )
 shape = SubResource( 5 )
-trigger = false
-_update_shape_index = 1
 
-[node name="Body Remote Transform" type="RemoteTransform2D" parent="Animation"]
+[node name="Body Remote Transform" type="RemoteTransform2D" parent="Animation" index="3"]
 
-position = Vector2( 0.847701, 0.812113 )
 remote_path = NodePath("../Body")
+use_global_coordinates = true
+update_position = true
+update_rotation = true
+update_scale = true
 
-[node name="Face Remote Transform" type="RemoteTransform2D" parent="Animation/Body Remote Transform"]
+[node name="Face Remote Transform" type="RemoteTransform2D" parent="Animation/Body Remote Transform" index="0"]
 
 position = Vector2( -1.22857, -27.6427 )
 remote_path = NodePath("../../Face")
+use_global_coordinates = true
+update_position = true
+update_rotation = true
+update_scale = true
 
-[node name="Left Arm Remote Transform" type="RemoteTransform2D" parent="Animation/Body Remote Transform"]
+[node name="Left Arm Remote Transform" type="RemoteTransform2D" parent="Animation/Body Remote Transform" index="1"]
 
 editor/display_folded = true
-position = Vector2( -34.0084, -13.8542 )
-rotation_deg = 5.82343
+position = Vector2( -34.931, -13.5606 )
+rotation = 0.034497
 remote_path = NodePath("../Left Arm")
+use_global_coordinates = true
+update_position = true
+update_rotation = true
+update_scale = true
 
-[node name="Left Forearm" type="Sprite" parent="Animation/Body Remote Transform/Left Arm Remote Transform"]
+[node name="Left Forearm" type="Sprite" parent="Animation/Body Remote Transform/Left Arm Remote Transform" index="0"]
 
 position = Vector2( -3.13862, 25.8349 )
-rotation_deg = -21.5946
+rotation = -0.266196
 texture = ExtResource( 2 )
 offset = Vector2( 1.19654, 7.76813 )
 
-[node name="Fist" type="Sprite" parent="Animation/Body Remote Transform/Left Arm Remote Transform/Left Forearm"]
+[node name="Fist" type="Sprite" parent="Animation/Body Remote Transform/Left Arm Remote Transform/Left Forearm" index="0"]
 
 position = Vector2( 0, 19.5603 )
+rotation = 0.0654139
 texture = ExtResource( 3 )
 offset = Vector2( 0.399933, 6.53002 )
 
-[node name="Right Arm Remote Transform" type="RemoteTransform2D" parent="Animation/Body Remote Transform"]
+[node name="Right Arm Remote Transform" type="RemoteTransform2D" parent="Animation/Body Remote Transform" index="2"]
 
 editor/display_folded = true
-position = Vector2( 33.9878, -9.75095 )
-rotation_deg = -14.3828
+position = Vector2( 34.575, -9.16374 )
+rotation = -0.251004
 remote_path = NodePath("../Right Arm")
+use_global_coordinates = true
+update_position = true
+update_rotation = true
+update_scale = true
 
-[node name="Right Forearm" type="Sprite" parent="Animation/Body Remote Transform/Right Arm Remote Transform"]
+[node name="Right Forearm" type="Sprite" parent="Animation/Body Remote Transform/Right Arm Remote Transform" index="0"]
 
 position = Vector2( -0.432465, 20.184 )
-rotation_deg = 27.7427
+rotation = 0.512008
 texture = ExtResource( 4 )
 offset = Vector2( 0.530978, 8.1318 )
 
-[node name="Fist" type="Sprite" parent="Animation/Body Remote Transform/Right Arm Remote Transform/Right Forearm"]
+[node name="Fist" type="Sprite" parent="Animation/Body Remote Transform/Right Arm Remote Transform/Right Forearm" index="0"]
 
 position = Vector2( 0.187592, 19.9117 )
+rotation = -0.256576
 texture = ExtResource( 3 )
 offset = Vector2( 0.100763, 5.89921 )
 
-[node name="Left Arm" type="Sprite" parent="Animation/Body Remote Transform"]
+[node name="Left Arm" type="Sprite" parent="Animation/Body Remote Transform" index="3"]
 
-position = Vector2( -34.0084, -13.8542 )
-rotation_deg = 5.82343
+position = Vector2( -34.931, -13.5606 )
+rotation = 0.034497
 texture = ExtResource( 5 )
 offset = Vector2( -0.356948, 10.6082 )
 
-[node name="Right Arm" type="Sprite" parent="Animation/Body Remote Transform"]
+[node name="Right Arm" type="Sprite" parent="Animation/Body Remote Transform" index="4"]
 
-position = Vector2( 33.9878, -9.75095 )
-rotation_deg = -14.3828
+position = Vector2( 34.575, -9.16374 )
+rotation = -0.251004
 texture = ExtResource( 6 )
 offset = Vector2( 0.312895, 7.17249 )
 
-[node name="Wheel" type="Sprite" parent="Animation/Body Remote Transform"]
+[node name="Wheel" type="Sprite" parent="Animation/Body Remote Transform" index="5"]
 
-position = Vector2( -1.2578, 69.7679 )
-rotation_deg = -31.1673
+position = Vector2( -1.11425, 70.5867 )
+rotation = -0.898093
 texture = ExtResource( 7 )
 offset = Vector2( 0.589759, 0.25804 )
 
-[node name="Number Spawn Pos" type="RemoteTransform2D" parent="Animation/Body Remote Transform"]
+[node name="Number Spawn Pos" type="RemoteTransform2D" parent="Animation/Body Remote Transform" index="6"]
 
 position = Vector2( -0.471191, -57.4814 )
 scale = Vector2( 0.4, 0.4 )
 remote_path = NodePath("../../../Number Spawn Pos")
+use_global_coordinates = true
+update_position = true
+update_rotation = true
+update_scale = true
 
-[node name="Body" type="Sprite" parent="Animation"]
+[node name="Body" type="Sprite" parent="Animation" index="4"]
 
-position = Vector2( 0.847701, 0.812113 )
 texture = ExtResource( 8 )
 
-[node name="Face" type="Sprite" parent="Animation"]
+[node name="Face" type="Sprite" parent="Animation" index="5"]
 
-position = Vector2( -0.380869, -26.8306 )
+position = Vector2( -1.22857, -27.6427 )
 texture = ExtResource( 9 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation" index="6"]
 
+root_node = NodePath("..")
+autoplay = "Still"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-root_node = NodePath("..")
+playback_speed = 1.0
 anims/Die = SubResource( 6 )
 anims/Healing = SubResource( 7 )
 anims/Hurt = SubResource( 8 )
@@ -2592,21 +3061,20 @@ anims/Punch = SubResource( 9 )
 anims/Still = SubResource( 10 )
 anims/Stunned = SubResource( 11 )
 anims/Walk = SubResource( 12 )
-playback/active = true
-playback/speed = 1.0
 blend_times = [  ]
-autoplay = "Still"
 
-[node name="Health Bar" parent="." instance=ExtResource( 14 )]
+[node name="Health Bar" parent="." index="2" instance=ExtResource( 14 )]
 
 position = Vector2( 3.23474, -200.555 )
 
-[node name="Number Spawn Pos" type="Position2D" parent="."]
+[node name="Number Spawn Pos" type="Position2D" parent="." index="3"]
 
-position = Vector2( 0.333021, -113.776 )
+position = Vector2( -1.53192, -115.562 )
 scale = Vector2( 0.88, 0.88 )
 script = ExtResource( 15 )
 
-[connection signal="area_entered"  from="Animation/Left Punch Area"  to="." method="on_left_attack_hit" binds=[  ]]
+[connection signal="area_entered" from="Animation/Left Punch Area" to="." method="on_left_attack_hit"]
 
-[connection signal="area_entered"  from="Animation/Right Punch Area"  to="." method="on_right_attack_hit" binds=[  ]]
+[connection signal="area_entered" from="Animation/Right Punch Area" to="." method="on_right_attack_hit"]
+
+

@@ -1,19 +1,19 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/Power Ups/DwarfPotion.gd" type="Script" id=1]
-[ext_resource path="res://Graphics/Powerups/Drink Me Pot.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Power Ups/DefensivePotion.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Powerups/Defense Potion.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 81.8644, 96.8717 )
+extents = Vector2( 33.7668, 100.587 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 82.8735, 94.0807 )
+extents = Vector2( 36.6408, 105.392 )
 
-[node name="Dwarf Potion" type="KinematicBody2D" index="0"]
+[node name="DefensivePotion" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 0
@@ -22,15 +22,15 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 
-[node name="Movement Collision Shape" type="CollisionShape2D" parent="." index="0"]
+[node name="Movement Collision Shape " type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 1.74341, -98.7921 )
+position = Vector2( 3.25677, -100.665 )
 shape = SubResource( 1 )
 
 [node name="Trigger Area" type="Area2D" parent="." index="1"]
 
 editor/display_folded = true
-position = Vector2( 3.5304, -96.3301 )
+position = Vector2( 4.07415, -99.5248 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -43,13 +43,13 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger Area" index="0"]
 
-position = Vector2( 0, -0.861237 )
+position = Vector2( -0.651489, 0.651482 )
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="." index="2"]
 
-position = Vector2( 3.5304, -96.3301 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 4.07415, -99.5248 )
+scale = Vector2( 0.7, 0.7 )
 texture = ExtResource( 2 )
 
 [connection signal="area_entered" from="Trigger Area" to="." method="on_area_entered"]

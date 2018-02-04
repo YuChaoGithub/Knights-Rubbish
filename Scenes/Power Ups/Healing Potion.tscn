@@ -1,36 +1,35 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/Power Ups/DwarfPotion.gd" type="Script" id=1]
-[ext_resource path="res://Graphics/Powerups/Drink Me Pot.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Power Ups/HealPotion.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Powerups/Health Potion.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 81.8644, 96.8717 )
+extents = Vector2( 64.2819, 59.2364 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 82.8735, 94.0807 )
+extents = Vector2( 71.5266, 65.503 )
 
-[node name="Dwarf Potion" type="KinematicBody2D" index="0"]
+[node name="HealPotion" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 0
 collision_mask = 4
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Pickable" ]
+heal_amount = 150
 
 [node name="Movement Collision Shape" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 1.74341, -98.7921 )
+position = Vector2( 3.34881, -61.1916 )
 shape = SubResource( 1 )
 
 [node name="Trigger Area" type="Area2D" parent="." index="1"]
 
-editor/display_folded = true
-position = Vector2( 3.5304, -96.3301 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -43,12 +42,12 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger Area" index="0"]
 
-position = Vector2( 0, -0.861237 )
+position = Vector2( 3.41061, -61.3182 )
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="." index="2"]
 
-position = Vector2( 3.5304, -96.3301 )
+position = Vector2( 3.41068, -60.4858 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 

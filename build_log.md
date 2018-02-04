@@ -504,11 +504,24 @@ Milestone: Completed scripting all enemies in Computer Room.
 * Design level part 1-5-1, 1-5-2. Not tested yet.
 
 [2018.02.04]
-* Holy, I screwed up! I accidentally converted the project to 3.0, not knowing that many things broke. damn.
+* Holy, I screwed up! I accidentally converted the project to 3.0, not knowing that many things broke. Should've added a branch. damn.
+
+**Commit** [Godot 3.0]
+
+* Ported fonts to Godot 3.0.
+* Wrote a python script to process `.tscn` files to fix the rotation values of animations. Processed all `.tscn` files.
+* Reset project settings for Godot 3.0.
+* Redesigned physics layers and reassign the layers/masks of existing physic bodies.
+* Redesigned render layers and reassign the layers/masks.
+Comment: Seems that it's not that hard to migrate to Godot 3.0. Worth it!
 
 **Commit**
 
 To Do List:
+* Simplify character movement script.
+* Change the term "Character" to "Hero".
+* Fix particles (Keshia Ult Eraser, Ult eye, Ignited, sockute lightning ball).
+* Fix scripts to Godot 3.0.
 
 Planned Prototype Stages:
 [Ver 0.1] First level completed. (Est. May 2018)

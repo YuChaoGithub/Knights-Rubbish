@@ -13,7 +13,7 @@ export(float) var off_duration = 2.0
 const ACTIVATE_RANGE = 3000
 
 const WARNING_DURATION = 0.5
-const PLAYER_LAYER = 1
+const PLAYER_LAYER = 1 ##### FIX THIS ######
 
 const DAMAGE = 5
 const DAMAGE_COLLIDER_ON_INTERVAL = 0.2
