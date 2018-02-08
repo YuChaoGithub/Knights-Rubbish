@@ -43,14 +43,12 @@ const DOWN_SKILL_DEFENSE_MODIFIER = 0.3
 const ULT_TOTAL_DURATION = 4.5
 const ULT_FIRE_TIME = 3.9
 
-# To get the can_move/can_cast_skill variables.
-onready var character = get_node("..")
-
-# For horizontal skill.
 var countdown_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var pencil_dart = preload("res://Scenes/Characters/Keshia Erasia/Pencil Dart.tscn")
-onready var pencil_toss_pos = get_node("../Pencil Toss Pos").get_pos()
-onready var dart_spawn_node = character.get_node("..")
+
+onready var character = $".."
+onready var pencil_toss_pos = $"../Pencil Toss Pos"
+onready var dart_spawn_node = $"../.."
 
 # When this is true, _process() will perform basic skill landing when the player detects the ground.
 var detecting_landing = false
@@ -75,8 +73,6 @@ var ult_timer = null
 var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 
 func _ready():
-	set_process(true)
-
 	# Jumping will always reset the availability of up skill.
 	character.jump_event.push_back([self, "reset_up_skill_available"])
 
@@ -130,7 +126,7 @@ func on_basic_attack_hit(area):
 		var enemy_node = area.get_node("../..")
 		var damage = rng.randi_range(BASIC_ATTACK_DAMAGE_MIN, BASIC_ATTACK_DAMAGE_MAX)
 		enemy_node.damaged(damage * character.damage_modifier)
-		enemy_node.knocked_back(sign(enemy_node.get_global_pos().x - get_global_pos().x) * BASIC_ATTACK_KNOCK_BACK_VEL_X * character.enemy_knock_back_modifier,-BASIC_ATTACK_KNOCK_BACK_VEL_Y * character.enemy_knock_back_modifier, BASIC_ATTACK_KNOCK_BACK_FADE_RATE * character.enemy_knock_back_modifier)
+		enemy_node.knocked_back(sign(enemy_node.global_position.x - global_position.x) * BASIC_ATTACK_KNOCK_BACK_VEL_X * character.enemy_knock_back_modifier,-BASIC_ATTACK_KNOCK_BACK_VEL_Y * character.enemy_knock_back_modifier, BASIC_ATTACK_KNOCK_BACK_FADE_RATE * character.enemy_knock_back_modifier)
 
 # ===========
 # Basic Skill: Hop, when it hits the ground, stun enemies around.
@@ -183,7 +179,7 @@ func on_basic_skill_hit(area):
 		var damage = rng.randi_range(BASIC_SKILL_DAMAGE_MIN, BASIC_SKILL_DAMAGE_MAX)
 		enemy.damaged(damage * character.damage_modifier)
 		enemy.stunned(BASIC_SKILL_STUN_DURATION)
-		enemy.knocked_back(sign(enemy.get_global_pos().x - get_global_pos().x) * BASIC_SKILL_KNOCK_BACK_VEL_X * character.enemy_knock_back_modifier,-BASIC_SKILL_KNOCK_BACK_VEL_Y * character.enemy_knock_back_modifier, BASIC_SKILL_KNOCK_BACK_FADE_RATE * character.enemy_knock_back_modifier)		
+		enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * BASIC_SKILL_KNOCK_BACK_VEL_X * character.enemy_knock_back_modifier,-BASIC_SKILL_KNOCK_BACK_VEL_Y * character.enemy_knock_back_modifier, BASIC_SKILL_KNOCK_BACK_FADE_RATE * character.enemy_knock_back_modifier)		
 
 # ================
 # Horizontal Skill: Short range poke. (toss the pencil).
@@ -212,10 +208,10 @@ func horizontal_skill_toss(side):
 	# Spawn pencil dart.
 	var dart = pencil_dart.instance()
 
-	dart.initialize(side, character.damage_modifier, character.get_scale().x)
+	dart.initialize(side, character.damage_modifier, character.scale.x)
 
 	dart_spawn_node.add_child(dart)
-	dart.set_pos(character.get_pos() + pencil_toss_pos)
+	dart.global_position = pencil_toss_pos.global_position
 
 	character.unregister_timer("interruptable_skill")
 
@@ -261,7 +257,7 @@ func on_up_skill_hit(area):
 			var damage = rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX)
 			var enemy = area.get_node("../..")
 			enemy.damaged(damage * character.damage_modifier)
-			enemy.knocked_back(sign(enemy.get_global_pos().x - get_global_pos().x) * UP_SKILL_KNOCK_BACK_VEL_X * character.enemy_knock_back_modifier,-UP_SKILL_KNOCK_BACK_VEL_Y * character.enemy_knock_back_modifier, BASIC_ATTACK_KNOCK_BACK_FADE_RATE * character.enemy_knock_back_modifier)
+			enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * UP_SKILL_KNOCK_BACK_VEL_X * character.enemy_knock_back_modifier,-UP_SKILL_KNOCK_BACK_VEL_Y * character.enemy_knock_back_modifier, BASIC_ATTACK_KNOCK_BACK_FADE_RATE * character.enemy_knock_back_modifier)
 			up_skill_targets.push_back(area)
 	
 # ==========
@@ -327,14 +323,14 @@ func ult():
 
 func fire_ult():
 	character.release_ult()
-	character.get_node("Ult Hit Box").set_global_pos(character.following_camera.get_global_pos())
+	character.get_node("Ult Hit Box").global_position = character.following_camera.global_position
 
 func ult_hit(area):
 	if area.is_in_group("enemy_collider"):
 		var new_eraser = ult_eraser.instance()
-		new_eraser.initialize(character.get_global_pos(), area.get_node("../.."))
+		new_eraser.initialize(character.global_position, area.get_node("../.."))
 		character.get_node("..").add_child(new_eraser)
-		new_eraser.set_global_pos(character.get_global_pos())
+		new_eraser.global_position = character.global_position
 
 func cancel_skills_when_falling_off():
 	# Basic Skill Falling.

@@ -5,12 +5,13 @@ extends Node2D
 # 2. Turn on for a certain duration.
 # 3. Turn off for a certain duration. Repeat 1.
 
+export(int) var activate_range_x = 3000
+export(int) var activate_range_y = 1500
+
 enum { NONE, INACTIVE, WARNING, TURN_ON, TURN_OFF }
 
 export(float) var on_duration = 2.0
 export(float) var off_duration = 2.0
-
-const ACTIVATE_RANGE = 3000
 
 const WARNING_DURATION = 0.5
 const PLAYER_LAYER = 1 ##### FIX THIS ######
@@ -25,23 +26,25 @@ var laser_timer = null
 
 var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 
-onready var animator = get_node("AnimationPlayer")
-onready var attack_collider = get_node("Attack Area")
-onready var char_average_pos = get_node("../../../../Character Average Position")
+onready var hero_layer = ProjectSettings.get_setting("layer_names/2d_physics/hero")
+
+onready var animator = $AnimationPlayer
+onready var attack_collider = $Attack Area
+onready var char_average_pos = $"../../../../Character Average Position"
 
 func _ready():
 	animator.play("Still")
-	set_process(true)
 
 func _process(delta):
-	if status == INACTIVE:
-		check_for_active()
-	elif status == WARNING:
-		display_warning()
-	elif status == TURN_ON:
-		turn_laser_on()
-	elif status == TURN_OFF:
-		turn_laser_off()
+	match status:
+		INACTIVE:
+			check_for_active()
+		WARNING:
+			display_warning()
+		TURN_ON:
+			turn_laser_on()
+		TURN_OFF:
+			turn_laser_off()
 
 func change_status(to_status):
 	status = to_status
@@ -50,7 +53,7 @@ func change_status(to_status):
 		status_timer = null
 
 func check_for_active():
-	if char_average_pos.get_global_pos().distance_squared_to(get_global_pos()) <= ACTIVATE_RANGE * ACTIVATE_RANGE:
+	if char_average_pos.in_range_of(global_position, activate_range_x, activate_range_y):
 		change_status(WARNING)
 
 func display_warning():
@@ -71,17 +74,17 @@ func turn_laser_off():
 	status_timer = cd_timer.new(off_duration, self, "change_status", WARNING)
 
 func attack_collider_on_sequence():
-	attack_collider.set_collision_mask(PLAYER_LAYER)
+	attack_collider.set_collision_mask_bit(hero_layer, true)
 	laser_timer = cd_timer.new(DAMAGE_COLLIDER_ON_INTERVAL, self, "attack_collider_off_sequence")
 
 func attack_collider_off_sequence():
-	attack_collider.set_collision_mask(0)
+	attack_collider.set_collision_mask_bit(hero_layer, false)
 	laser_timer = cd_timer.new(DAMAGE_COLLIDER_OFF_INTERVAL, self, "attack_collider_on_sequence")
 
 func end_attack_collider_sequence():
 	laser_timer.destroy_timer()
 	laser_timer = null
-	attack_collider.set_collision_mask(0)
+	attack_collider.set_collision_mask_bit(hero_layer, false)
 
 func on_attack_hit(area):
 	if area.is_in_group("player_collider"):

@@ -8,7 +8,7 @@
 [ext_resource path="res://Scenes/Power Ups/Defense Icon.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Power Ups/Attack Icon.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Power Ups/Slowed Icon.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Utils/Fire Particle.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Particles/Fire Particle.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Left Brow.png" type="Texture" id=10]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Right Brow.png" type="Texture" id=11]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Eye.png" type="Texture" id=12]
@@ -9538,6 +9538,7 @@ extents = Vector2( 1300, 750 )
 [node name="Keshia Erasia" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 player_constants_filepath = "res://Scripts/Constants/KeshiaErasiaConstants.gd"
 defense_icon_path = NodePath("Sprite/Animation/Body/Defense Icon")
 damage_icon_path = NodePath("Sprite/Animation/Body/Attack Icon")
@@ -9595,7 +9596,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Right Arm" type="Sprite" parent="Sprite" index="0"]
 
-position = Vector2( 88.0745, -38.8329 )
+position = Vector2( 88.0745, -38.8325 )
 rotation = -0.881391
 scale = Vector2( 0.9, 0.9 )
 texture = ExtResource( 4 )
@@ -9629,7 +9630,7 @@ scale = Vector2( 0.6, 0.6 )
 
 [node name="Fire Particle" parent="Sprite/Animation/Body" index="3" instance=ExtResource( 9 )]
 
-position = Vector2( 9.06551, -161.744 )
+position = Vector2( 18.89, -164.551 )
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Face" type="Node2D" parent="Sprite/Animation/Body" index="4"]
@@ -9722,8 +9723,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Weapon" type="Sprite" parent="Sprite/Animation/Body/Left Arm" index="0"]
 
 editor/display_folded = true
-position = Vector2( 6.01704, -0.178236 )
-rotation = -0.846485
+position = Vector2( 6.01707, -0.17823 )
+rotation = -0.84648
 scale = Vector2( 1.44, 1.44 )
 texture = ExtResource( 15 )
 offset = Vector2( 3.92352, -79.9531 )

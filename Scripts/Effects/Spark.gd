@@ -5,8 +5,7 @@ const LIFETIME = 0.3
 var timestamp = 0.0
 
 func _ready():
-	get_node("AnimationPlayer").play("Play")
-	set_process(true)
+	$AnimationPlayer.play("Play")
 
 func _process(delta):
 	timestamp += delta

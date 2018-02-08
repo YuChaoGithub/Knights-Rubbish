@@ -13,7 +13,8 @@ var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 
 var node
 var status
-var activate_range_squared
+var activate_range_x
+var activate_range_y
 var char_average_pos
 var animator
 var health_system
@@ -43,26 +44,29 @@ var hurt_timer = null
 var stun_timer = null
 
 func _init(node, default_status = 0):
+    node.set_process(false)
+
     self.node = node
     self.status = default_status
-    self.activate_range_squared = node.ACTIVATE_RANGE * node.ACTIVATE_RANGE
+    self.activate_range_x = node.activate_range_x
+    self.activate_range_y = node.activate_range_y
     self.char_average_pos = node.get_node("../../../../Character Average Position")
     self.animator = node.get_node("Animation/AnimationPlayer")
     self.health_system = preload("res://Scripts/Utils/HealthSystem.gd").new(node, node.MAX_HEALTH)
     self.health_bar = node.get_node("Health Bar")
     self.number_spawn_pos = node.get_node("Number Spawn Pos")
     self.sprites = node.get_node("Animation")
-    self.is_kinematic_body = node.get_type() == "KinematicBody2D"
+    self.is_kinematic_body = node.is_class("KinematicBody2D")
     self.slowed_label = preload("res://Scenes/Enemies/Enemy Slowed Icon.tscn").instance()
     
     # Slowed label.
     number_spawn_pos.add_child(slowed_label)
-    slowed_label.hide()
+    slowed_label.visible = false
 
     # Set up check activate timer.
     activate_timer = Timer.new()
-    activate_timer.set_one_shot(false)
-    activate_timer.set_wait_time(CHECK_ACTIVATE_IN_SECS)
+    activate_timer.one_shot = false
+    activate_timer.wait_time = CHECK_ACTIVATE_IN_SECS
     activate_timer.connect("timeout", self, "perform_activate_check")
     node.add_child(activate_timer)
     activate_timer.start()
@@ -74,7 +78,7 @@ func change_status(to_status):
         node.status_timer = null
 
 func perform_activate_check():
-    if node.get_global_pos().distance_squared_to(char_average_pos.get_global_pos()) <= activate_range_squared:
+    if char_average_pos.in_range_of(node.global_position, activate_range_x, activate_range_y):
         node.call("activate")
         activate_timer.stop()
         activate_timer.queue_free()
@@ -84,7 +88,7 @@ func init_gravity_movement(gravity):
     gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(node, gravity)
 
 func perform_gravity_movement(delta):
-    node.move_to(gravity_movement.movement(node.get_global_pos(), delta))
+    node.move_and_collide(gravity_movement.movement(delta))
 
 # Straight Line Movement.
 func init_straight_line_movement(dx, dy):
@@ -92,9 +96,9 @@ func init_straight_line_movement(dx, dy):
 
 func perform_straight_line_movement(delta):
     if is_kinematic_body:
-        node.move_to(straight_line_movement.movement(node.get_global_pos(), delta))
+        node.move_and_collide(straight_line_movement.movement(delta))
     else:
-        node.set_global_pos(straight_line_movement.movement(node.get_global_pos(), delta))
+        node.global_position += straight_line_movement.movement(delta)
 
 # Random Movement.
 func init_random_movement(movement_not_ended_func, movement_ended_func, dx, dy, always_change_dir = true, min_steps = 2, max_steps = 4, min_time_per_step = 0.25, max_time_per_step = 0.75):
@@ -107,14 +111,14 @@ func perform_random_movement(delta):
         node.call(random_movement_ended_func)
         discard_random_movement()
     else:
-        var original_pos = node.get_global_pos()
+        var original_pos = node.global_position
 
         if is_kinematic_body:
-            node.move_to(random_movement.movement(node.get_global_pos(), delta))
+            node.move_and_collide(random_movement.movement(delta))
         else:
-            node.set_global_pos(random_movement.movement(node.get_global_pos(), delta))
+            node.global_position += random_movement.movement(delta)
         
-        node.call(random_movement_not_ended_func, sign(int(node.get_global_pos().x) - int(original_pos.x)))
+        node.call(random_movement_not_ended_func, sign(int(node.global_position.x) - int(original_pos.x)))
 
 func discard_random_movement():
     random_movement = null
@@ -122,7 +126,7 @@ func discard_random_movement():
     random_movement_ended_func = null
 
 func play_animation(key):
-    if !disable_animation && animator.get_current_animation() != key:
+    if !disable_animation && animator.current_animation != key:
         animator.play(key)
 
 func play_animation_and_diable_others(key):
@@ -131,10 +135,10 @@ func play_animation_and_diable_others(key):
 
 func turn_sprites_x(facing):
     if facing != 0:
-        sprites.set_scale(Vector2(-1 * abs(sprites.get_scale().x) * facing, sprites.get_scale().y))
+        sprites.scale = Vector2(-1 * abs(sprites.scale.x) * facing, sprites.scale.y)
 
 func not_hurt_dying_stunned():
-    var key = animator.get_current_animation()
+    var key = animator.current_animation
     return key != "Hurt" && key != "Die" && key != "Stunned"
 
 func change_and_refill_full_health(full_health):
@@ -162,7 +166,7 @@ func slowed(multiplier, duration):
     }
     slowed_timer_label += 1
 
-    slowed_label.show()
+    slowed_label.visible = true
     slowed_label.get_node("AnimationPlayer").play("Pop")
 
 func slowed_recover(label):
@@ -177,7 +181,7 @@ func slowed_recover(label):
     slowed_timers.erase(label)
 
     if slowed_timers.size() == 0:
-        slowed_label.hide()
+        slowed_label.visible = false
 
 func knocked_back(vel_x, vel_y, fade_rate):
     knock_back_dx = vel_x
@@ -192,11 +196,11 @@ func perform_knock_back_movement(delta):
     knock_back_dx = sign(knock_back_dx) * max(0, abs(knock_back_dx) - abs(delta * knock_back_fade_rate))
     knock_back_dy = sign(knock_back_dy) * max(0, abs(knock_back_dy) - abs(delta * knock_back_fade_rate))
 
-    var destination = node.get_global_pos() + Vector2(knock_back_dx, knock_back_dy) * delta
+    var rel_movement = Vector2(knock_back_dx, knock_back_dy) * delta
     if is_kinematic_body:
-        node.move_to(destination)
+        node.move_and_collide(rel_movement)
     else:
-        node.set_global_pos(destination)
+        node.global_position += rel_movement
     
 func damaged(val, play_hurt_animation = true):
     health_system.change_health_by(-val)
@@ -212,7 +216,7 @@ func damaged(val, play_hurt_animation = true):
         hurt_timer = null
 
     # Won't play hurt animation if it is stunned.
-    var curr_anim = animator.get_current_animation()
+    var curr_anim = animator.current_animation
     if (curr_anim == "Hurt" || play_hurt_animation) && curr_anim != "Stunned":
         play_animation("Hurt")
         hurt_timer = cd_timer.new(HURT_ANIM_DURATION, node, "resume_from_damaged")
@@ -267,7 +271,7 @@ func healed(val):
     health_bar.set_health_bar_and_show(float(health_system.health) / float(health_system.full_health))
 
 func die():
-    slowed_label.hide()
+    slowed_label.visible = false
 
     # Can't be hurt any more.
     node.get_node("Animation/Damage Area").remove_from_group("enemy_collider")

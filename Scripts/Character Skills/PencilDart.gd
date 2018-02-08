@@ -22,7 +22,7 @@ var timestamp = 0.0
 
 onready var movement_pattern = preload("res://Scripts/Movements/StraightLineMovement.gd").new(side * SPEED_X, 0)
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
-onready var sprite = get_node("Sprite")
+onready var sprite = $Sprite
 
 func initialize(side, damage_modifier, size):
 	self.side = side
@@ -32,21 +32,18 @@ func initialize(side, damage_modifier, size):
 
 func _ready():
 	# Set facing.
-	sprite.set_scale(Vector2(sprite.get_scale().x * side, sprite.get_scale().y))
+	sprite.scale = Vector2(sprite.scale.x * side, sprite.scale.y)
 
 	# Set size.
-	set_scale(get_scale() * size)
-
-	set_process(true)
+	scale = scale * size
 
 func _process(delta):
 	# Move.
-	var final_pos = movement_pattern.movement(get_global_pos(), delta)
-	final_pos = gravity_movement.movement(final_pos, delta)
-	move_to(final_pos)
+	var rel_movement = movement_pattern.movement(delta) + gravity_movement.movement(delta)
+	move_and_collide(rel_movement)
 
 	# Destroy when touches a platform.
-	if self.is_colliding():
+	if is_on_wall():
 		movement_pattern.dx = 0
 		gravity_movement.dy = 0
 		gravity_movement.gravity = 0

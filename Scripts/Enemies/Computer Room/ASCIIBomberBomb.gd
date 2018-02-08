@@ -17,7 +17,7 @@ var exploding = false
 var die_timer
 var dir_x
 
-onready var animator = get_node("Animation/AnimationPlayer")
+onready var animator = $"Animation/AnimationPlayer"
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
 
 func _ready():
@@ -27,15 +27,12 @@ func initialize(dir_x):
 	self.dir_x = dir_x
 	movement_pattern = preload("res://Scripts/Movements/StraightLineMovement.gd").new(dir_x * SPEED_X, 0)
 	lifetime_timestamp = OS.get_unix_time()
-	set_process(true)
 
 func _process(delta):
 	if exploding:
 		return
 
-	var final_pos = gravity_movement.movement(get_global_pos(), delta)
-	final_pos = movement_pattern.movement(final_pos, delta)
-	move_to(final_pos)
+	move_and_collide(gravity_movement.movement(delta) + movement_pattern.movement(delta))
 
 	if gravity_movement.is_landed() || OS.get_unix_time() - lifetime_timestamp >= LIFETIME:
 		explode()

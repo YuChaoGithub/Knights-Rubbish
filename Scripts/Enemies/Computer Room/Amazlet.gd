@@ -11,10 +11,12 @@ extends Node2D
 # Only play hurt animation if it is in 1.
 # Cannot be stunned.
 
+export(int) activate_range_x = 1000
+export(int) activate_range_y = 1000
+
 enum { NONE, FACE, ANDROID_ANIM, SPAWN_ANDROID, FRIZBEE_ANIM, SPAWN_FRIZBEE, THROW_FRIZBEE, RESUME_FACE }
 
 const MAX_HEALTH = 1000
-const ACTIVATE_RANGE = 1000
 
 # Attack.
 const TOUCH_DAMAGE = 50
@@ -46,9 +48,9 @@ var frizbees = []
 var paranoid_android = preload("res://Scenes/Enemies/Computer Room/Paranoid Android.tscn")
 var frizbee = preload("res://Scenes/Enemies/Computer Room/Amazlet Frizbee.tscn")
 
-onready var spawn_node = get_node("..")
-onready var android_spawn_pos = get_node("Android Spawn Pos")
-onready var frizbee_spawn_pos = get_node("Frizbee Spawn Pos")
+onready var spawn_node = $".."
+onready var android_spawn_pos = $"Android Spawn Pos"
+onready var frizbee_spawn_pos = $"Frizbee Spawn Pos"
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
@@ -56,24 +58,25 @@ func activate():
 	ec.health_bar.show_health_bar()
 	set_process(true)
 	ec.change_status(FACE)
-	get_node("Animation/Damage Area").add_to_group("enemy_collider")
+	$"Animation/Damage Area".add_to_group("enemy_collider")
 
 func _process(delta):
 	if ec.not_hurt_dying_stunned():
-		if ec.status == FACE:
-			show_face_and_play_voice()
-		elif ec.status == ANDROID_ANIM:
-			play_android_anim()
-		elif ec.status == SPAWN_ANDROID:
-			spawn_android()
-		elif ec.status == FRIZBEE_ANIM:
-			play_frizbee_anim()
-		elif ec.status == SPAWN_FRIZBEE:
-			spawn_frizbee()
-		elif ec.status == THROW_FRIZBEE:
-			throw_frizbee()
-		elif ec.status == RESUME_FACE:
-			resume_face()
+		match ec.status:
+			FACE:
+				show_face_and_play_voice()
+			ANDROID_ANIM:
+				play_android_anim()
+			SPAWN_ANDROID:
+				spawn_android()
+			FRIZBEE_ANIM:
+				play_frizbee_anim()
+			SPAWN_FRIZBEE:
+				spawn_frizbee()
+			THROW_FRIZBEE:
+				throw_frizbee()
+			RESUME_FACE:
+				resume_face()
 
 func change_status(to_status):
 	ec.change_status(to_status)
@@ -106,7 +109,7 @@ func spawn_android():
 	# Spawn android.
 	var new_android = paranoid_android.instance()
 	spawn_node.add_child(new_android)
-	new_android.set_global_pos(android_spawn_pos.get_global_pos())
+	new_android.global_position = android_spawn_pos.global_position
 
 	# Keep on spawning or go back to face.
 	ec.change_status(NONE)
@@ -124,7 +127,7 @@ func spawn_frizbee():
 	for i in range(count):
 		var new_frizbee = frizbee.instance()
 		spawn_node.add_child(new_frizbee)
-		new_frizbee.set_global_pos(frizbee_spawn_pos.get_global_pos())
+		new_frizbee.global_position = frizbee_spawn_pos.global_position
 		frizbees.push_back(new_frizbee)
 
 	ec.change_status(NONE)
@@ -149,7 +152,7 @@ func spawn_num_according_to_health(min_count, max_count):
 func touch_attack_hit(area):
 	if area.is_in_group("player_collider"):
 		var character = area.get_node("..")
-		var knock_back_dir = -1 if character.get_global_pos().x < get_global_pos().x else 1
+		var knock_back_dir = -1 if character.global_position.x < global_position.x else 1
 		character.knocked_back(knock_back_dir * KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 		character.damaged(TOUCH_DAMAGE)
 
@@ -171,7 +174,7 @@ func die():
 	ec.health_bar.drop_health_bar()
 
 	# Disable touch damage.
-	get_node("Animation/Attack Area").queue_free()
+	$"Animation/Attack Area".queue_free()
 
 	# Remove the frizbees (if any).
 	for f in frizbees:

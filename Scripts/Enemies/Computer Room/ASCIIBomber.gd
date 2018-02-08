@@ -5,11 +5,12 @@ extends KinematicBody2D
 # 2. Face the nearest character, throws Bomb.
 # 3. Repeat 1.
 
+export(int) var activate_range_x = 1500
+export(int) var activate_range_y = 10000
+
 enum { NONE, MOVE, THROW_ANIM, THROW }
 
 const MAX_HEALTH = 100
-
-const ACTIVATE_RANGE = 1500
 
 # Movement.
 const SPEED_X = 200
@@ -28,26 +29,26 @@ var facing = -1
 
 # Throw bomb.
 onready var bomb = preload("res://Scenes/Enemies/Computer Room/ASCII Bomber bomb.tscn")
-onready var bomb_spawn_pos = get_node("Animation/Bomb Spawn Pos")
-onready var spawn_node = get_node("..")
+onready var bomb_spawn_pos = $"Animation/Bomb Spawn Pos"
+onready var spawn_node = $".."
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
 func activate():
 	ec.init_gravity_movement(GRAVITY)
-
 	set_process(true)
 	ec.change_status(MOVE)
-	get_node("Animation/Damage Area").add_to_group("enemy_collider")
+	$"Animation/Damage Area".add_to_group("enemy_collider")
 
 func _process(delta):
 	if ec.not_hurt_dying_stunned():
-		if ec.status == MOVE:
-			apply_movement(delta)
-		elif ec.status == THROW_ANIM:
-			play_throw_anim()
-		elif ec.status == THROW:
-			throw_bomb()
+		match ec.status:
+			MOVE:
+				apply_movement(delta)
+			THROW_ANIM:
+				play_throw_anim()
+			THROW:
+				throw_bomb()	
 
 	ec.perform_gravity_movement(delta)
 	ec.perform_knock_back_movement(delta)
@@ -72,8 +73,8 @@ func movement_ended():
 
 func play_throw_anim():
 	# Face the nearest character.
-	var target_pos = ec.target_detect.get_nearest(self, ec.char_average_pos.characters).get_global_pos()
-	facing = sign(target_pos.x - get_global_pos().x)
+	var target_pos = ec.target_detect.get_nearest(self, ec.char_average_pos.characters).global_position
+	facing = sign(target_pos.x - global_position.x)
 	ec.turn_sprites_x(facing)
 
 	ec.play_animation("Throw Bomb")
@@ -85,13 +86,13 @@ func throw_bomb():
 	var new_bomb = bomb.instance()
 	new_bomb.initialize(facing)
 	spawn_node.add_child(new_bomb)
-	new_bomb.set_global_pos(bomb_spawn_pos.get_global_pos())
+	new_bomb.global_position = bomb_spawn_pos.global_position
 
 	ec.change_status(NONE)
 	status_timer = ec.cd_timer.new(THROWING_DURATION, self, "change_status", MOVE)
 
 func damaged(val):
-	ec.damaged(val, ec.animator.get_current_animation() == "Walk")
+	ec.damaged(val, ec.animator.current_animation == "Walk")
 
 func resume_from_damaged():
 	ec.resume_from_damaged()

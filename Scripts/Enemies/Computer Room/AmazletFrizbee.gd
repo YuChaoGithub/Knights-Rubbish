@@ -25,23 +25,21 @@ onready var movement_pattern = preload("res://Scripts/Movements/StraightLineMove
 
 func _ready():
 	# Random starting rotation.
-	set_rot(deg2rad(rng.randf_range(0.0, 359.0)))
+	rotation_degrees = rng.randf_range(0.0, 359.0)
 
 	# Random spin cap.
 	spin_speed_cap = rng.randi_range(MIN_SPIN_SPEED_CAP, MAX_SPIN_SPEED_CAP)
-
-	set_process(true)
 
 func _process(delta):
 	if !traveling:
 		accelerate_spin(delta)
 	else:
-		set_pos(movement_pattern.movement(get_pos(), delta))
+		position += movement_pattern.movement(delta)
 
 		if OS.get_unix_time() - lifetime_timestamp >= LIFETIME:
 			queue_free()
 
-	rotate(deg2rad(curr_spin_speed) * delta)
+	rotation_degrees += curr_spin_speed * delta
 
 func accelerate_spin(delta):
 	curr_spin_speed += delta * spin_speed_cap / ACCELERATE_DURATION

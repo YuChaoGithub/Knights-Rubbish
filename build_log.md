@@ -517,10 +517,24 @@ Comment: Seems that it's not that hard to migrate to Godot 3.0. Worth it!
 
 **Commit**
 
+[2018.02.07]
+* Reset particle systems for Godot 3.0.
+* Changed the `movement(...)` function of all movement types. It returns the relative movement vector instead of the absolute position now.
+* Completed updating scripts in Algorithms, Character Skills, Constants, Effects folders for Godot 3.0.
+
+[2018.02.08]
+* Change `ACTIVATE_RANGE`s of enemies to `activate_range_x` and `activate_range_y`.
+* Updated scripts in `Enemies/Common` and `Enemies/Computer Room/Amazlet.gd to Batterio.gd` for Godot 3.0.
+* Added `in_range_of(...)` to `CharacterAveragePosition.gd` so that range detection can be more convenient.
+Comment: Having a surgery the day after tomorrow. Good luck, me!
+
+**Commit**
+
 To Do List:
 * Simplify character movement script.
+* Use tilemaps to layout the level.
+* Don't use level parts. UNITE THEM! (Use parts only in transitions [aka. black out screen])
 * Change the term "Character" to "Hero".
-* Fix particles (Keshia Ult Eraser, Ult eye, Ignited, sockute lightning ball).
 * Fix scripts to Godot 3.0.
 
 Planned Prototype Stages:

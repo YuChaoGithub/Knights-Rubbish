@@ -8,6 +8,13 @@
 
 config_version=3
 
+[2d_physics_layer_bit]
+
+hero=1
+enemy=2
+platform=4
+hero_only_platform=8
+
 [application]
 
 config/name="Revenge of the Forgotten"
@@ -54,6 +61,11 @@ player_up=[ Object(InputEventKey,"resource_local_to_scene":false,"resource_name"
 2d_physics/layer_19="eyeMac Eyeframe"
 2d_render/layer_20="Keshia Ult"
 2d_physics/layer_20="eyeMac Frame"
+2d_physics/hero=0
+2d_physics/enemy=1
+2d_physics/platform=2
+2d_physics/hero_only_platform=3
+2d_physics/enemy_only_platform=4
 
 [rendering]
 

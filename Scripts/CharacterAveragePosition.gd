@@ -39,3 +39,11 @@ func update_camera():
 		max_y = max(max_y, character.get_global_pos().y)
 
 	following_camera.check_camera_update(get_global_pos().x, max_y)
+
+# Returns true if a character is in range of a position.
+func in_range_of(pos, range_x, range_y):
+	for character in characters:
+		if abs(character.global_position.x - pos.x) <= range_x && abs(character.global_position.y - pos.y) <= range_y:
+			return true
+	
+	return false

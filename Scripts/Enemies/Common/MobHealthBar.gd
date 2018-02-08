@@ -4,8 +4,8 @@ const SHOW_DURATION = 3
 
 var timer = null
 
-onready var bar = get_node("Bar/Bar")
-onready var animator = get_node("AnimationPlayer")
+onready var bar = $"Bar/Bar"
+onready var animator = $AnimationPlayer
 
 func _ready():
     animator.play("Hide")
@@ -15,7 +15,7 @@ func set_health_bar_and_show(percentage):
     fade_in_or_show()
 
 func set_health_bar(percentage):
-    bar.set_scale(Vector2(percentage, 1))
+    bar.scale = Vector2(percentage, 1)
 
 func fade_in_or_show():
     if timer == null:

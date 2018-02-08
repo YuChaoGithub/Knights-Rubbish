@@ -35,10 +35,10 @@ func generate_random_movements():
         steps.push_back(rng.randf_range(min_time_per_step, max_time_per_step + 1))
 
 # Should always check if the random movement ended by calling movement_ended().
-func movement(curr_pos, delta):
+func movement(delta):
     timestamp += delta
 
-    var result = curr_pos + Vector2(dx * delta * dir_x, dy * delta * dir_y)
+    var result = Vector2(dx * delta * dir_x, dy * delta * dir_y)
 
     if timestamp >= steps[index]:
         timestamp -= steps[index]

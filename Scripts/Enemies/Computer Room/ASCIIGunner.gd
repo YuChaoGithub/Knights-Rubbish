@@ -8,11 +8,12 @@ extends KinematicBody2D
 # Play hurt animation only when roaming.
 # When stunned, go to 1.
 
+export(int) var activate_range_x = 1500
+export(int) var activate_range_y = 10000
+
 enum { NONE, ROAM, ATTACK }
 
 const MAX_HEALTH = 100
-
-const ACTIVATE_RANGE = 1500
 
 # Attack.
 const ATTACK_RANGE_X = 750
@@ -44,14 +45,15 @@ func activate():
 	ec.init_gravity_movement(GRAVITY)
 	set_process(true)
 	ec.change_status(ROAM)
-	get_node("Animation/Damage Area").add_to_group("enemy_collider")
+	$"Animation/Damage Area".add_to_group("enemy_collider")
 
 func _process(delta):
 	if ec.not_hurt_dying_stunned():
-		if ec.status == ROAM:
-			roam(delta)
-		elif ec.status == ATTACK:
-			attack()
+		match ec.status:
+			ROAM:
+				roam(delta)
+			ATTACK:
+				attack()
 
 	ec.perform_gravity_movement(delta)
 	ec.perform_knock_back_movement(delta)
@@ -82,8 +84,8 @@ func check_target_in_range():
 	target_detect_timer = null
 	
 	var nearest_target = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
-	if abs(get_global_pos().x - nearest_target.get_global_pos().x) <= ATTACK_RANGE_X && abs(get_global_pos().y - nearest_target.get_global_pos().y) <= ATTACK_RANGE_Y:
-		facing = sign(nearest_target.get_global_pos().x - get_global_pos().x)
+	if abs(global_position.x - nearest_target.global_position.x) <= ATTACK_RANGE_X && abs(global_position.y - nearest_target.global_position.y) <= ATTACK_RANGE_Y:
+		facing = sign(nearest_target.global_position.x - global_position.x)
 		ec.turn_sprites_x(facing)
 		ec.change_status(ATTACK)
 
@@ -99,7 +101,7 @@ func on_attack_hit(area):
 		character.knocked_back(facing * KNOCK_BACK_VEL_X, -KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 
 func damaged(val):
-	ec.damaged(val, ec.animator.get_current_animation() == "Walk")
+	ec.damaged(val, ec.animator.current_animation == "Walk")
 	
 func resume_from_damaged():
 	ec.resume_from_damaged()
