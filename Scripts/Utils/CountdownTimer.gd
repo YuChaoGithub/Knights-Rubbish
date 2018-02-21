@@ -16,8 +16,8 @@ func _init(duration, target, time_out_method_name, args = null):
 	self.args = args
 	
 	timer = Timer.new()
-	timer.set_one_shot(true)
-	timer.set_wait_time(duration)
+	timer.one_shot = true
+	timer.wait_time = duration
 	timer.connect("timeout", self, "time_out")
 	target.add_child(timer)
 	timer.start()

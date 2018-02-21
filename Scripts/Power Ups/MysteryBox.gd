@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+export(int) var activate_range_x = 2000
+export(int) var activate_range_y = 2000
 export(String, FILE) var additional_spawn_1 = "Null"
 export(String, FILE) var additional_spawn_2 = "Null"
 export(String, FILE) var additional_spawn_3 = "Null"
@@ -16,10 +18,14 @@ var scenes = [
 ]
 
 var timer
+var activated = false
 
-onready var spawn_pos = get_node("Spawn Pos")
+onready var enemy_layer = ProjectSettings.get_setting("layer_names/2d_physics/enemy")
+onready var damage_area = $"Animation/Damage Area"
+onready var char_average_pos = $"../../../../Character Average Position"
+onready var spawn_pos = $"Spawn Pos"
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
-onready var animator = get_node("Animation/AnimationPlayer")
+onready var animator = $"Animation/AnimationPlayer"
 
 func _ready():
 	animator.play("Still")
@@ -33,10 +39,12 @@ func _ready():
 	if additional_spawn_3 != "Null":
 		scenes.push_back(load(additional_spawn_3))
 
-	set_process(true)
-
 func _process(delta):
-	move_to(gravity_movement.movement(get_global_pos(), delta))
+	if activated:
+		gravity_movement.move(delta)
+	elif char_average_pos.in_range_of(global_position, activate_range_x, activate_range_y):
+		activated = true
+		damage_area.set_collision_layer_bit(enemy_layer, true)
 
 func damaged(val):
 	open_box()
@@ -51,8 +59,8 @@ func open_box():
 	animator.play("Explode")
 
 	var spawned_scene = scenes[randi() % scenes.size()].instance()
-	get_node("..").add_child(spawned_scene)
-	spawned_scene.set_global_pos(spawn_pos.get_global_pos())
+	$"..".add_child(spawned_scene)
+	spawned_scene.global_position = spawn_pos.global_position
 
 	set_process(false)
 	timer = preload("res://Scripts/Utils/CountdownTimer.gd").new(EXPLODE_DURATION, self, "queue_free")

@@ -10,12 +10,13 @@ extends KinematicBody2D
 
 enum { NONE, PRE_SPEED_WALK_STAND, SPEED_WALK, RNG_STEP, KICK_MOVE, KICK_STAND, KICK, MOVE_TO_CENTER, PREPARE_FIRE, FIRE, FIRE_LANDING_PAUSE, FIRE_LAND, HEAL, THROW_MINE_ANIM, THROW_MINE }
 
+export(int) var activate_range_x = 1500
+export(int) var activate_range_y = 1500
 export(NodePath) var kick_right_pos_path
 export(NodePath) var kick_left_pos_path
 export(NodePath) var shoot_center_pos_path
 
 const MAX_HEALTH = 1500
-const ACTIVATE_RANGE = 2000
 
 # Attack.
 const KICK_DAMAGE = 50
@@ -64,21 +65,21 @@ onready var shoot_center_pos = get_node(shoot_center_pos_path)
 # Missles.
 var missle = preload("res://Scenes/Enemies/Computer Room/Canmera Missle.tscn")
 onready var missle_land_poses = [
-	get_node("Missle Pos 1"),
-	get_node("Missle Pos 2"),
-	get_node("Missle Pos 3"),
-	get_node("Missle Pos 4"),
-	get_node("Missle Pos 5"),
-	get_node("Missle Pos 6"),
-	get_node("Missle Pos 7"),
-	get_node("Missle Pos 8")
+	$"Missle Pos 1",
+	$"Missle Pos 2",
+	$"Missle Pos 3",
+	$"Missle Pos 4",
+	$"Missle Pos 5",
+	$"Missle Pos 6",
+	$"Missle Pos 7",
+	$"Missle Pos 8"
 ]
 
 # Flaggomine.
 var flaggomine = preload("res://Scenes/Enemies/Computer Room/Godotbos Mine.tscn")
-onready var mine_spawn_pos = get_node("Animation/Mine Throw Pos")
+onready var mine_spawn_pos = $"Animation/Mine Throw Pos"
 
-onready var spawn_node = get_node("..")
+onready var spawn_node = $".."
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
@@ -87,39 +88,40 @@ func activate():
 	ec.init_gravity_movement(GRAVITY)
 	ec.init_straight_line_movement(0, 0)
 	set_process(true)
-	get_node("Animation/Damage Area").add_to_group("enemy_collider")
+	$"Animation/Damage Area".add_to_group("enemy")
 	ec.change_status(PRE_SPEED_WALK_STAND)
 
 func _process(delta):
 	if ec.not_hurt_dying_stunned():
-		if ec.status == PRE_SPEED_WALK_STAND:
-			pre_speed_walk_stand()
-		elif ec.status == SPEED_WALK:
-			speed_walk(delta)
-		elif ec.status == RNG_STEP:
-			rng_step_while_standing()
-		elif ec.status == KICK_MOVE:
-			kick_move(delta)
-		elif ec.status == KICK_STAND:
-			kick_stand()
-		elif ec.status == KICK:
-			kick(delta)
-		elif ec.status == MOVE_TO_CENTER:
-			move_to_center(delta)
-		elif ec.status == PREPARE_FIRE:
-			prepare_fire()
-		elif ec.status == FIRE:
-			fire()
-		elif ec.status == FIRE_LANDING_PAUSE:
-			fire_landing_pause()
-		elif ec.status == FIRE_LAND:
-			land_fire()
-		elif ec.status == HEAL:
-			heal_up()
-		elif ec.status == THROW_MINE_ANIM:
-			play_throw_mine_anim()
-		elif ec.status == THROW_MINE:
-			throw_mine()
+		match ec.status:
+			PRE_SPEED_WALK_STAND:
+				pre_speed_walk_stand()
+			SPEED_WALK:
+				speed_walk(delta)
+			RNG_STEP:
+				rng_step_while_standing()
+			KICK_MOVE:
+				kick_move(delta)
+			KICK_STAND:
+				kick_stand()
+			KICK:
+				kick(delta)
+			MOVE_TO_CENTER:
+				move_to_center(delta)
+			PREPARE_FIRE:
+				prepare_fire()
+			FIRE:
+				fire()
+			FIRE_LANDING_PAUSE:
+				fire_landing_pause()
+			FIRE_LAND:
+				land_fire()
+			HEAL:
+				heal_up()
+			THROW_MINE_ANIM:
+				play_throw_mine_anim()
+			THROW_MINE:
+				throw_mine()
 	
 	ec.perform_gravity_movement(delta)
 
@@ -166,12 +168,12 @@ func kick_move(delta):
 	ec.play_animation("Walk")
 	
 	# Determine whether to left/right according to facing.
-	var target_x = kick_pos_right.get_global_pos().x if facing == 1 else kick_pos_left.get_global_pos().x
+	var target_x = kick_pos_right.global_position.x if facing == 1 else kick_pos_left.global_position.x
 
 	ec.straight_line_movement.dx = facing * ATTACK_WALK_SPEED
 	ec.perform_straight_line_movement(delta)
 	
-	if facing == -1 && get_global_pos().x < target_x || facing == 1 && get_global_pos().x > target_x:
+	if facing == -1 && global_position.x < target_x || facing == 1 && global_position.x > target_x:
 		facing = -facing
 		ec.turn_sprites_x(facing)
 		ec.change_status(KICK_STAND)
@@ -197,7 +199,7 @@ func kick(delta):
 		ec.change_status(PRE_SPEED_WALK_STAND)
 
 func on_kick_hit(area):
-	if area.is_in_group("player_collider"):
+	if area.is_in_group("hero"):
 		var character = area.get_node("..")
 		if !(character in kicked_targets):
 			kicked_targets.push_back(character)
@@ -208,12 +210,12 @@ func on_kick_hit(area):
 func move_to_center(delta):
 	ec.play_animation("Walk")
 
-	facing = sign(shoot_center_pos.get_global_pos().x - get_global_pos().x)
+	facing = sign(shoot_center_pos.global_position.x - global_position.x)
 	ec.turn_sprites_x(facing)
 	ec.straight_line_movement.dx = facing * ATTACK_WALK_SPEED
 	ec.perform_straight_line_movement(delta)
 
-	if abs(get_global_pos().x - shoot_center_pos.get_global_pos().x) < CENTER_POS_RADIUS:
+	if abs(global_position.x - shoot_center_pos.global_position.x) < CENTER_POS_RADIUS:
 		ec.change_status(PREPARE_FIRE)
 
 func prepare_fire():
@@ -236,7 +238,7 @@ func land_fire():
 		var new_missle = missle.instance()
 		new_missle.initialize(0, 1)
 		spawn_node.add_child(new_missle)
-		new_missle.set_global_pos(spawn_pos.get_global_pos())
+		new_missle.global_position = spawn_pos.global_position
 
 	ec.change_status(PRE_SPEED_WALK_STAND)
 
@@ -268,12 +270,12 @@ func throw_mine():
 	var new_mine = flaggomine.instance()
 	new_mine.initialize(facing)
 	spawn_node.add_child(new_mine)
-	new_mine.set_global_pos(mine_spawn_pos.get_global_pos())
+	new_mine.global_position = mine_spawn_pos.global_position
 
 	status_timer = ec.cd_timer.new(COMPLETE_THROW_DURATION, self, "change_status", PRE_SPEED_WALK_STAND)
 
 func damaged(val):
-	var curr_anim = ec.animator.get_current_animation()
+	var curr_anim = ec.animator.current_animation
 	if curr_anim == "Heal":
 		interrupt_heal()
 	
@@ -283,7 +285,7 @@ func resume_from_damaged():
 	ec.resume_from_damaged()
 
 func stunned(duration):
-	if ec.animator.get_current_animation() == "Heal":
+	if ec.animator.current_animation == "Heal":
 		interrupt_heal()
 	else:
 		ec.display_immune_text()

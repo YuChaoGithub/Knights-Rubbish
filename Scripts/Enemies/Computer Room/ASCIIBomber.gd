@@ -38,7 +38,7 @@ func activate():
 	ec.init_gravity_movement(GRAVITY)
 	set_process(true)
 	ec.change_status(MOVE)
-	$"Animation/Damage Area".add_to_group("enemy_collider")
+	$"Animation/Damage Area".add_to_group("enemy")
 
 func _process(delta):
 	if ec.not_hurt_dying_stunned():

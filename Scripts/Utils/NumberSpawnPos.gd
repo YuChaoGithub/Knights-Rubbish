@@ -13,6 +13,6 @@ func get_curr_pos(number):
             available_slot = i
             break
     
-    var res_y = get_global_pos().y - available_slot * OFFSET_Y
+    var res_y = global_position.y - available_slot * OFFSET_Y
     numbers[available_slot] = weakref(number)
-    return Vector2(get_global_pos().x, res_y)
+    return Vector2(global_position.x, res_y)

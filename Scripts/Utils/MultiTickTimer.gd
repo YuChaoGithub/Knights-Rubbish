@@ -20,8 +20,8 @@ func _init(tick_immediately, time_between_ticks, total_ticks, target, tick_func_
     self.args = args
 
     timer = Timer.new()
-    timer.set_one_shot(false)
-    timer.set_wait_time(time_between_ticks)
+    timer.one_shot = false
+    timer.wait_time = time_between_ticks
     timer.connect("timeout", self, "perform_tick")
     target.add_child(timer)
     timer.start()

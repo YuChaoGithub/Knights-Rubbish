@@ -17,23 +17,23 @@ var status_timer = null
 var status = NONE
 
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
-onready var left_spawn_pos = get_node("Spawn Pos Left")
-onready var right_spawn_pos = get_node("Spawn Pos Right")
-onready var spawn_node = get_node("..")
-onready var animator = get_node("AnimationPlayer")
+onready var left_spawn_pos = $"Spawn Pos Left"
+onready var right_spawn_pos = $"Spawn Pos Right"
+onready var spawn_node = $".."
+onready var animator = $"AnimationPlayer"
 
 func _ready():
 	animator.play("Still")
 	status = DROP
-	set_process(true)
 
 func _process(delta):
-	if status == DROP:
-		drop(delta)
-	elif status == ANIM:
-		play_spawn_anim()
-	elif status == SPAWN:
-		spawn_floopies()
+	match status:
+		DROP:
+			drop(delta)
+		ANIM:
+			play_spawn_anim()
+		SPAWN:
+			spawn_floopies()
 
 func change_status(to_status):
 	status = to_status
@@ -42,9 +42,9 @@ func change_status(to_status):
 		status_timer = null
 
 func drop(delta):
-	move_to(gravity_movement.movement(get_global_pos(), delta))
+	gravity_movement.move(delta)
 
-	if gravity_movement.is_landed():
+	if gravity_movement.is_landed:
 		status = ANIM
 
 func play_spawn_anim():
@@ -62,5 +62,5 @@ func spawn_floopies():
 	spawn_node.add_child(left_floopy)
 	spawn_node.add_child(right_floopy)
 
-	left_floopy.set_global_pos(left_spawn_pos.get_global_pos())
-	right_floopy.set_global_pos(right_spawn_pos.get_global_pos())
+	left_floopy.global_position = left_spawn_pos.global_position
+	right_floopy.global_position = right_spawn_pos.global_position

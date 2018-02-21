@@ -10,9 +10,10 @@ extends Node2D
 
 enum { NONE, RISE, STILL, LASER }
 
-const MAX_HEALTH = 100
+export(int) var activate_range_x = 2000
+export(int) var activate_range_y = 2000
 
-const ACTIVATE_RANGE = 2000
+const MAX_HEALTH = 100
 
 # Attack.
 const DAMAGE = 10
@@ -32,28 +33,29 @@ const LASER_COLOR = Color(1, 0, 0)
 
 var status_timer = null
 
-onready var laser_pos_left = get_node("Laser Pos Left")
-onready var laser_pos_right = get_node("Laser Pos Right")
-onready var drawing_node = get_node("Drawing")
+onready var laser_pos_left = $"Laser Pos Left"
+onready var laser_pos_right = $"Laser Pos Right"
+onready var drawing_node = $"Drawing"
 
-onready var rise_to_pos_y = get_global_pos().y - RISE_LENGTH
+onready var rise_to_pos_y = global_position.y - RISE_LENGTH
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
 func activate():
 	ec.init_straight_line_movement(0, -RISE_SPEED_Y)
 	set_process(true)
-	get_node("Animation/Damage Area").add_to_group("enemy_collider")
+	$"Animation/Damage Area".add_to_group("enemy")
 	ec.change_status(RISE)
 
 func _process(delta):
 	if ec.not_hurt_dying_stunned():
-		if ec.status == RISE:
-			rise(delta)
-		elif ec.status == STILL:
-			still()
-		elif ec.status == LASER:
-			shoot_laser()
+		match ec.status:
+			RISE:
+				rise(delta)
+			STILL:
+				still()
+			LASER:
+				shoot_laser()
 
 func change_status(to_status):
 	ec.change_status(to_status)
@@ -63,7 +65,7 @@ func rise(delta):
 	
 	ec.perform_straight_line_movement(delta)
 
-	if get_global_pos().y <= rise_to_pos_y:
+	if global_position.y <= rise_to_pos_y:
 		ec.change_status(LASER)
 
 func still():
@@ -78,9 +80,9 @@ func shoot_laser():
 	ec.change_status(NONE)
 
 	var attack_target = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
-	var left_from = laser_pos_left.get_global_pos() - get_global_pos()
-	var right_from = laser_pos_right.get_global_pos() - get_global_pos()
-	var to = left_from + attack_target.get_global_pos() - laser_pos_left.get_global_pos()
+	var left_from = laser_pos_left.global_position - global_position
+	var right_from = laser_pos_right.global_position - global_position
+	var to = left_from + attack_target.global_position - laser_pos_left.global_position
 	var left_laser_line = {
 		from_pos = left_from,
 		to_pos = to,

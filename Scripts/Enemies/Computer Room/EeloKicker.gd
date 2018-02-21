@@ -12,11 +12,11 @@ extends KinematicBody2D
 
 enum { NONE, ROAM, MOVE_TO_CHAR, KICK, SEEK_HEAL, HEALING }
 
+export(int) var activate_range_x = 1000
+export(int) var activate_range_y = 1500
 export(NodePath) var fountain_path
 
 const MAX_HEALTH = 150
-
-const ACTIVATE_RANGE = 1000
 
 # Attack.
 const ATTACK_RANGE_X = 100
@@ -57,20 +57,21 @@ func activate():
 	ec.init_straight_line_movement(0, 0)
 	set_process(true)
 	ec.change_status(ROAM)
-	get_node("Animation/Damage Area").add_to_group("enemy_collider")
+	$"Animation/Damage Area".add_to_group("enemy")
 
 func _process(delta):
 	if ec.not_hurt_dying_stunned():
-		if ec.status == ROAM:
-			roam_randomly(delta)
-		elif ec.status == MOVE_TO_CHAR:
-			move_to_attack_target(delta)
-		elif ec.status == KICK:
-			kick()
-		elif ec.status == SEEK_HEAL:
-			move_to_healing_fountain(delta)
-		elif ec.status == HEALING:
-			heal_up()
+		match ec.status:
+			ROAM:
+				roam_randomly(delta)
+			MOVE_TO_CHAR:
+			 move_to_attack_target(delta)
+			KICK:
+				kick()
+			SEEK_HEAL:
+				move_to_healing_fountain(delta)
+			HEALING:
+				heal_up()
 
 	ec.perform_gravity_movement(delta)
 	ec.perform_knock_back_movement(delta)
@@ -86,7 +87,7 @@ func roam_randomly(delta):
 	ec.perform_random_movement(delta)
 
 	for character in ec.char_average_pos.characters:
-		if abs(character.get_global_pos().x - get_global_pos().x) <= CHASE_RANGE:
+		if abs(character.global_position.x - global_position.x) <= CHASE_RANGE:
 			attack_target = character
 			ec.change_status(MOVE_TO_CHAR)
 			ec.discard_random_movement()
@@ -102,12 +103,12 @@ func movement_ended():
 func move_to_attack_target(delta):
 	ec.play_animation("Walk")
 
-	facing = sign(attack_target.get_global_pos().x - get_global_pos().x)
+	facing = sign(attack_target.global_position.x - global_position.x)
 	ec.turn_sprites_x(facing)
 	ec.straight_line_movement.dx = facing * SPEED_X
 	ec.perform_straight_line_movement(delta)
 
-	if abs(attack_target.get_global_pos().x - get_global_pos().x) <= ATTACK_RANGE_X && abs(attack_target.get_global_pos().y - get_global_pos().y) <= ATTACK_RANGE_Y:
+	if abs(attack_target.global_position.x - global_position.x) <= ATTACK_RANGE_X && abs(attack_target.global_position.y - global_position.y) <= ATTACK_RANGE_Y:
 		ec.change_status(KICK)
 
 func kick():
@@ -133,11 +134,11 @@ func perform_kick_sequence(index):
 	kick_timer = ec.cd_timer.new(SINGLE_KICK_DURATION, self, "perform_kick_sequence", index + 1)
 
 func on_right_kick_hit(area):
-	if area.is_in_group("player_collider"):
+	if area.is_in_group("hero"):
 		apply_kick_damage(area.get_node(".."), -facing)
 
 func on_left_kick_hit(area):
-	if area.is_in_group("player_collider"):
+	if area.is_in_group("hero"):
 		apply_kick_damage(area.get_node(".."), facing)
 
 func apply_kick_damage(character, dir):
@@ -147,12 +148,12 @@ func apply_kick_damage(character, dir):
 func move_to_healing_fountain(delta):
 	ec.play_animation("Walk")
 
-	facing = sign(heal_pos.get_global_pos().x - get_global_pos().x)
+	facing = sign(heal_pos.global_position.x - global_position.x)
 	ec.straight_line_movement.dx = facing * SEEK_HEAL_SPEED
 	ec.turn_sprites_x(facing)
 	ec.perform_straight_line_movement(delta)
 
-	if abs(get_global_pos().x - heal_pos.get_global_pos().x) <= HEAL_RANGE:
+	if abs(global_position.x - heal_pos.global_position.x) <= HEAL_RANGE:
 		ec.change_status(HEALING)
 
 func heal_up():
@@ -161,7 +162,7 @@ func heal_up():
 	status_timer = ec.cd_timer.new(HEAL_DURATION, self, "change_status", ROAM)
 
 func damaged(val):
-	ec.damaged(val, ec.animator.get_current_animation() != "Walk")
+	ec.damaged(val, ec.animator.current_animation != "Walk")
 
 func resume_from_damaged():
 	ec.resume_from_damaged()

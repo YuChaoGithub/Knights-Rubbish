@@ -10,9 +10,10 @@ extends Node2D
 
 enum { NONE, MOVE, BUBBLE_ANIM, SHOOT_BUBBLE, DART_ANIM, SHOOT_DART }
 
-const MAX_HEALTH = 125
+export(int) var activate_range_x = 1500
+export(int) var activate_range_y = 1500
 
-const ACTIVATE_RANGE = 1250
+const MAX_HEALTH = 125
 
 # Movement.
 const SPEED_X = 250
@@ -31,18 +32,18 @@ var status_timer = null
 var dart_spawn_timer = null
 var facing = -1
 
-onready var spawn_node = get_node("..")
+onready var spawn_node = $".."
 
 # Bubble.
 var bubble = preload("res://Scenes/Enemies/Computer Room/Cliffy Light Bulb.tscn")
-onready var bubble_spawn_pos = get_node("Animation/Bubble Spawn Pos")
+onready var bubble_spawn_pos = $"Animation/Bubble Spawn Pos"
 
 # Dart.
 var dart = preload("res://Scenes/Enemies/Computer Room/Cliffy Clip Shuriken.tscn")
 onready var dart_spawn_poses = [
-	get_node("Animation/Dart Spawn Pos 1"),
-	get_node("Animation/Dart Spawn Pos 2"),
-	get_node("Animation/Dart Spawn Pos 3")
+	$"Animation/Dart Spawn Pos 1",
+	$"Animation/Dart Spawn Pos 2",
+	$"Animation/Dart Spawn Pos 3"
 ]
 var darts = []
 
@@ -51,20 +52,21 @@ onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self
 func activate():
 	set_process(true)
 	ec.change_status(MOVE)
-	get_node("Animation/Damage Area").add_to_group("enemy_collider")
+	$"Animation/Damage Area".add_to_group("enemy")
 
 func _process(delta):
 	if ec.not_hurt_dying_stunned():
-		if ec.status == MOVE:
-			apply_movement(delta)
-		elif ec.status == BUBBLE_ANIM:
-			play_bubble_anim()
-		elif ec.status == SHOOT_BUBBLE:
-			shoot_bubble()
-		elif ec.status == DART_ANIM:
-			play_dart_anim()
-		elif ec.status == SHOOT_DART:
-			shoot_dart()
+		match ec.status:
+			MOVE:
+				apply_movement(delta)
+			BUBBLE_ANIM:
+				play_bubble_anim()
+			SHOOT_BUBBLE:
+				shoot_bubble()
+			DART_ANIM:
+				play_dart_anim()
+			SHOOT_DART:
+				shoot_dart()
 
 	ec.perform_knock_back_movement(delta)
 		
@@ -91,7 +93,7 @@ func movement_ended():
 
 func face_nearest_target():
 	var target = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
-	facing = sign(target.get_global_pos().x - get_global_pos().x)
+	facing = sign(target.global_position.x - global_position.x)
 	ec.turn_sprites_x(facing)
 
 func play_bubble_anim():
@@ -105,7 +107,7 @@ func shoot_bubble():
 	var new_bubble = bubble.instance()
 	new_bubble.initialize(facing)
 	spawn_node.add_child(new_bubble)
-	new_bubble.set_global_pos(bubble_spawn_pos.get_global_pos())
+	new_bubble.global_position = bubble_spawn_pos.global_position
 
 	status_timer = ec.cd_timer.new(SHOOT_BUBBLE_DURATION, self, "change_status", MOVE)
 
@@ -124,7 +126,7 @@ func spawn_dart(count):
 	new_dart.initialize(facing)
 	darts.push_back(new_dart)
 	spawn_node.add_child(new_dart)
-	new_dart.set_global_pos(dart_spawn_poses[count].get_global_pos())
+	new_dart.global_position = dart_spawn_poses[count].global_position
 	
 	dart_spawn_timer = ec.cd_timer.new(SPAWN_DART_INTERVAL, self, "spawn_dart", count + 1)
 
@@ -149,7 +151,7 @@ func cancel_dart_spawn_and_dart_instaces():
 	darts.clear()
 
 func damaged(val):
-	ec.damaged(val, ec.animator.get_current_animation() == "Walk")
+	ec.damaged(val, ec.animator.current_animation == "Walk")
 
 func resume_from_damaged():
 	ec.resume_from_damaged()
@@ -166,7 +168,7 @@ func healed(val):
 	ec.healed(val)
 
 func knocked_back(vel_x, vel_y, fade_rate):
-	var curr_anim = ec.animator.get_current_animation()
+	var curr_anim = ec.animator.current_animation
 	if curr_anim != "Exclaim" && curr_anim != "Light bulb":
 		ec.knocked_back(vel_x, 0, fade_rate)
 

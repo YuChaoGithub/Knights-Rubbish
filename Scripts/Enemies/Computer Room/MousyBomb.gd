@@ -21,21 +21,18 @@ var die_timer = null
 onready var movement_pattern = preload("res://Scripts/Movements/StraightLineMovement.gd").new(facing * SPEED_X, 0)
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
 
-onready var animator = get_node("AnimationPlayer")
+onready var animator = $AnimationPlayer
 
 func _ready():
 	# Facing.
-	set_scale(Vector2(-1 * get_scale().x * facing, get_scale().y))
+	scale = Vector2(-1 * scale.x * facing, scale.y)
 
 	animator.play("Blink")
 	lifetime_timestamp = OS.get_unix_time()
 
-	set_process(true)
-
 func _process(delta):
-	var final_pos = movement_pattern.movement(get_global_pos(), delta)
-	final_pos = gravity_movement.movement(final_pos, delta)
-	move_to(final_pos)
+	gravity_movement.move(delta)
+	move_and_collide(movement_pattern.movement(delta))
 
 	if OS.get_unix_time() - lifetime_timestamp >= LIFETIME:
 		explode()
@@ -50,7 +47,7 @@ func explode():
 	set_process(false)
 
 func attack_hit(area):
-	if !exploding && area.is_in_group("player_collider"):
+	if !exploding && area.is_in_group("hero"):
 		explode()
 		
 		var character = area.get_node("..")

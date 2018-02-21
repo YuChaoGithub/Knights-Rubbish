@@ -11,9 +11,10 @@ extends Node2D
 
 enum { NONE, WAITING, DROP, TURN_ON, LASER, TURN_OFF, CLIMB }
 
-const MAX_HEALTH = 50
+export(int) var activate_range_x = 1500
+export(int) var activate_range_y = 1500
 
-const ACTIVATE_RANGE = 1500
+const MAX_HEALTH = 50
 
 # Attack.
 const ATTACK_COUNT = 4
@@ -42,40 +43,42 @@ var attack_target = null
 var attack_timer = null
 var status_timer = null
 
-onready var original_pos_y = get_pos().y
-onready var silk_attach_spot = get_node("Silk Attach Pos")
-onready var silk_attach_spot_original_pos = silk_attach_spot.get_global_pos()
-onready var laser_pos = get_node("Laser Pos")
-onready var drawing_node = get_node("Drawing")
+onready var original_pos_y = position.y
+onready var silk_attach_spot = $"Silk Attach Pos"
+onready var silk_attach_spot_original_pos = silk_attach_spot.global_position
+onready var laser_pos = $"Laser Pos"
+onready var drawing_node = $Drawing
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
 func activate():
 	ec.init_straight_line_movement(0, 0)
 	set_process(true)
-	get_node("Animation/Damage Area").add_to_group("enemy_collider")
+	$"Animation/Damage Area".add_to_group("enemy")
 	ec.change_status(WAITING)
 
 func _process(delta):
-	update()  # For _draw()
+	update()
+
 	if ec.not_hurt_dying_stunned():
-		if ec.status == WAITING:
-			wait_till_character_is_near()
-		elif ec.status == DROP:
-			drop_down(delta)
-		elif ec.status == TURN_ON:
-			play_turn_on_animation()
-		elif ec.status == LASER:
-			shoot_laser()
-		elif ec.status == TURN_OFF:
-			play_turn_off_animation()
-		elif ec.status == CLIMB:
-			climb_up(delta)
+		match ec.status:
+			WAITING:
+				wait_till_character_is_near()
+			DROP:
+				drop_down(delta)
+			TURN_ON:
+				play_turn_on_animation()
+			LASER:
+				shoot_laser()
+			TURN_OFF:
+				play_turn_off_animation()
+			CLIMB:
+				climb_up(delta)
 
 func _draw():
 	# Silk.
-	var from_pos = silk_attach_spot.get_global_pos() - get_global_pos()
-	var to_pos = Vector2(from_pos.x, from_pos.y - (silk_attach_spot.get_global_pos().y - silk_attach_spot_original_pos.y))
+	var from_pos = silk_attach_spot.global_position - global_position
+	var to_pos = Vector2(from_pos.x, from_pos.y - (silk_attach_spot.global_position.y - silk_attach_spot_original_pos.y))
 	draw_line(from_pos, to_pos, SILK_COLOR, ATTACHED_SILK_THICKNESS)
 
 	# Laser line is drawn in the drawing node so that it appears at the front.
@@ -86,7 +89,7 @@ func change_status(to_status):
 func wait_till_character_is_near():
 	ec.play_animation("Still")
 	attack_target = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
-	if abs(attack_target.get_global_pos().x - get_global_pos().x) <= ATTACK_RANGE_X:
+	if abs(attack_target.global_position.x - global_position.x) <= ATTACK_RANGE_X:
 		ec.change_status(DROP)
 
 func drop_down(delta):
@@ -98,8 +101,8 @@ func drop_down(delta):
 		ec.change_status(TURN_ON)
 
 func close_enough_for_attack():
-	var target_y = attack_target.get_global_pos().y
-	var curr_y = get_global_pos().y
+	var target_y = attack_target.global_position.y
+	var curr_y = global_position.y
 	return curr_y > target_y || abs(curr_y - target_y) < DROPPING_TO_CHAR_OFFSET_Y
 
 func play_turn_on_animation():
@@ -113,8 +116,8 @@ func shoot_laser():
 	status_timer = ec.cd_timer.new((LASER_SHOW_DURATION + LASER_HIDE_DURATION) * ATTACK_COUNT, self, "change_status", TURN_OFF)
 
 func laser_sequence_on():
-	var from = laser_pos.get_global_pos() - get_global_pos()
-	var to = from + attack_target.get_global_pos() - laser_pos.get_global_pos()
+	var from = laser_pos.global_position - global_position
+	var to = from + attack_target.global_position - laser_pos.global_position
 	var laser_line = {
 		from_pos = from,
 		to_pos = to,
@@ -145,7 +148,7 @@ func climb_up(delta):
 	ec.straight_line_movement.set_velocity(0, CLIMB_SPEED)
 	ec.perform_straight_line_movement(delta)
 
-	if get_pos().y <= original_pos_y:
+	if position.y <= original_pos_y:
 		ec.change_status(WAITING)
 
 func damaged(val):

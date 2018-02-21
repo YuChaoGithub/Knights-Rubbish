@@ -7,13 +7,12 @@ var target
 
 func initialize(target):
 	self.target = target
-	set_process(true)
 
 func _process(delta):
-	var dir = (target.get_global_pos() - get_global_pos()).normalized()
+	var dir = (target.global_position - global_position).normalized()
 	translate(dir * MOVEMENT_SPEED * delta)
 
-	if get_global_pos().distance_squared_to(target.get_global_pos()) <= OFFSET * OFFSET:
+	if global_position.distance_squared_to(target.global_position) <= OFFSET * OFFSET:
 		target.gain_ult()
 
 		queue_free()

@@ -11,13 +11,11 @@ func initialize(curr_alpha, end_alpha, duration):
 	self.end_alpha = end_alpha
 	self.smooth = 1.0 / duration
 
-	set_process(true)
-
 func _process(delta):
 	curr_alpha = lerp(curr_alpha, end_alpha, smooth * delta)
-	get_node("..").set_opacity(curr_alpha)
+	$"..".modulate.a = curr_alpha
 
 	if curr_alpha > CAP:
-		get_node("..").set_opacity(1.0)
+		$"..".modulate.a = 1.0
 
 		queue_free()

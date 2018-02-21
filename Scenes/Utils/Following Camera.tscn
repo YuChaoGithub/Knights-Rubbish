@@ -1,15 +1,18 @@
-[gd_scene load_steps=1 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Scripts/FollowingCamera.gd" type="Script" id=1]
 
 [node name="Following Camera" type="Node2D"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing" ]
 drag_margin_right = 0.5
 drag_margin_left = 0.3
 drag_margin_top = 0.5
 drag_margin_bottom = 0.8
-right_limit = 1000000
-left_limit = -1000000
-top_limit = -1000000
-bottom_limit = 1000000
+right_limit = 1000000000
+left_limit = -1000000000
+top_limit = -1000000000
+bottom_limit = 1410065408
+
+

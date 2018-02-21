@@ -45,7 +45,7 @@ func accelerate_spin(delta):
 	curr_spin_speed += delta * spin_speed_cap / ACCELERATE_DURATION
 
 func attack_hit(area):
-	if traveling && area.is_in_group("player_collider"):
+	if traveling && area.is_in_group("hero"):
 		var character = area.get_node("..")
 		character.damaged(DAMAGE)
 		character.knocked_back(-KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)

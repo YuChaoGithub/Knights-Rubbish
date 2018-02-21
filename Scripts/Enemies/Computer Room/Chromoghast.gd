@@ -9,9 +9,10 @@ extends Node2D
 
 enum { NONE, FIRST_MOVE, TURN_INVISIBLE, INVISIBLE_MOVE, TURN_OPAQUE, SECOND_MOVE, THROW_ANIM, THROW }
 
-const MAX_HEALTH = 300
+export(int) var activate_range_x = 1500
+export(int) var activate_range_y = 1000
 
-const ACTIVATE_RANGE = 1500
+const MAX_HEALTH = 300
 
 # Movement.
 const SPEED_X = 250
@@ -32,32 +33,33 @@ var facing = -1
 
 # Shuriken.
 var shuriken = preload("res://Scenes/Enemies/Computer Room/Chromoghast Shuriken.tscn")
-onready var shuriken_spawn_pos = get_node("Animation/Shuriken Spawn Pos")
-onready var spawn_node = get_node("..")
+onready var shuriken_spawn_pos = $"Animation/Shuriken Spawn Pos"
+onready var spawn_node = $".."
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
 func activate():
 	set_process(true)
 	ec.change_status(FIRST_MOVE)
-	get_node("Animation/Damage Area").add_to_group("enemy_collider")
+	$"Animation/Damage Area".add_to_group("enemy")
 
 func _process(delta):
 	if ec.not_hurt_dying_stunned():
-		if ec.status == FIRST_MOVE:
-			perform_first_move(delta)
-		elif ec.status == TURN_INVISIBLE:
-			turn_invisible()
-		elif ec.status == INVISIBLE_MOVE:
-			perform_invisible_move(delta)
-		elif ec.status == TURN_OPAQUE:
-			turn_opaque()
-		elif ec.status == SECOND_MOVE:
-			perform_second_move(delta)
-		elif ec.status == THROW_ANIM:
-			play_throw_anim()
-		elif ec.status == THROW:
-			throw_shuriken()
+		match ec.status:
+			FIRST_MOVE:
+				perform_first_move(delta)
+			TURN_INVISIBLE:
+				turn_invisible()
+			INVISIBLE_MOVE:
+				perform_invisible_move(delta)
+			TURN_OPAQUE:
+				turn_opaque()
+			SECOND_MOVE:
+				perform_second_move(delta)
+			THROW_ANIM:
+				play_throw_anim()
+			THROW:
+				throw_shuriken()
 
 	ec.perform_knock_back_movement(delta)
 
@@ -104,7 +106,7 @@ func perform_second_move(delta):
 func second_move_ended():
 	# Face the nearest target.
 	var target = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
-	facing = sign(target.get_global_pos().x - get_global_pos().x)
+	facing = sign(target.global_position.x - global_position.x)
 	ec.turn_sprites_x(facing)
 
 	ec.change_status(THROW_ANIM)
@@ -121,12 +123,12 @@ func throw_shuriken():
 	
 	new_shuriken.initialize(facing)
 	spawn_node.add_child(new_shuriken)
-	new_shuriken.set_global_pos(shuriken_spawn_pos.get_global_pos())
+	new_shuriken.global_position = shuriken_spawn_pos.global_position
 
 	status_timer = ec.cd_timer.new(THROWING_DURATION, self, "change_status", FIRST_MOVE)
 
 func damaged(val):
-	ec.damaged(val, ec.animator.get_current_animation() == "Walk")
+	ec.damaged(val, ec.animator.current_animation == "Walk")
 
 func resume_from_damaged():
 	ec.resume_from_damaged()

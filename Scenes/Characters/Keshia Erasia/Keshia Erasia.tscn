@@ -1,29 +1,28 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=44 format=2]
 
-[ext_resource path="res://Scripts/CharacterCommon.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/MovementCollisionHandler.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/Character Skills/KeshiaErasiaSkills.gd" type="Script" id=3]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Hand Foot.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Body.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Power Ups/Defense Icon.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Power Ups/Attack Icon.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Power Ups/Slowed Icon.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Particles/Fire Particle.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Left Brow.png" type="Texture" id=10]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Right Brow.png" type="Texture" id=11]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Eye.png" type="Texture" id=12]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Mouth.png" type="Texture" id=13]
-[ext_resource path="res://Scenes/Characters/Ult Eye.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Weapon.png" type="Texture" id=15]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Hand.png" type="Texture" id=16]
-[ext_resource path="res://Scenes/Power Ups/Confused Icon.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/Power Ups/Speeded Icon.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Petrified.png" type="Texture" id=19]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=20]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned mouth.png" type="Texture" id=21]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=22]
-[ext_resource path="res://Scenes/UI/Character Health Bar.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Graphics/Powerups/Ult Ball/Ball.png" type="Texture" id=24]
+[ext_resource path="res://Scripts/HeroCommon.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Character Skills/KeshiaErasiaSkills.gd" type="Script" id=2]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Hand Foot.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Body.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Power Ups/Defense Icon.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Power Ups/Attack Icon.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Power Ups/Slowed Icon.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Particles/Fire Particle.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Left Brow.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Right Brow.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Eye.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Mouth.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Characters/Ult Eye.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Weapon.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Hand.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Power Ups/Confused Icon.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Power Ups/Speeded Icon.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Petrified.png" type="Texture" id=18]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=19]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned mouth.png" type="Texture" id=20]
+[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=21]
+[ext_resource path="res://Scenes/UI/Character Health Bar.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Graphics/Powerups/Ult Ball/Ball.png" type="Texture" id=23]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -33,7 +32,7 @@ extents = Vector2( 42.5948, 79.4558 )
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 54.573, 72.1083 )
+extents = Vector2( 54.573, 71.5076 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -47,6 +46,7 @@ extents = Vector2( 14.2277, 130.226 )
 
 [sub_resource type="Animation" id=5]
 
+resource_name = "Basic Attack"
 length = 0.6
 loop = false
 step = 0.05
@@ -588,7 +588,7 @@ tracks/44/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -600,7 +600,7 @@ tracks/45/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:scale")
@@ -624,7 +624,7 @@ tracks/47/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visible")
@@ -684,7 +684,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Body/Left Arm/Weapon:self_modulate")
@@ -761,6 +761,7 @@ tracks/58/keys = {
 
 [sub_resource type="Animation" id=6]
 
+resource_name = "Basic Skill"
 length = 0.6
 loop = false
 step = 0.05
@@ -1302,7 +1303,7 @@ tracks/44/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -1314,7 +1315,7 @@ tracks/45/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:scale")
@@ -1338,7 +1339,7 @@ tracks/47/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visible")
@@ -1398,7 +1399,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Body/Left Arm/Weapon:self_modulate")
@@ -1475,6 +1476,7 @@ tracks/58/keys = {
 
 [sub_resource type="Animation" id=7]
 
+resource_name = "Basic Skill Landing"
 length = 0.1
 loop = false
 step = 0.05
@@ -2016,7 +2018,7 @@ tracks/44/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -2028,7 +2030,7 @@ tracks/45/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:scale")
@@ -2052,7 +2054,7 @@ tracks/47/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visible")
@@ -2112,7 +2114,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Body/Left Arm/Weapon:self_modulate")
@@ -2189,6 +2191,7 @@ tracks/58/keys = {
 
 [sub_resource type="Animation" id=8]
 
+resource_name = "Down Skill"
 length = 0.6
 loop = false
 step = 0.05
@@ -2730,7 +2733,7 @@ tracks/44/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -2742,7 +2745,7 @@ tracks/45/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:scale")
@@ -2766,7 +2769,7 @@ tracks/47/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visible")
@@ -2826,7 +2829,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0, 0.25 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 19 ) ]
+"values": [ ExtResource( 4 ), ExtResource( 18 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Body/Left Arm/Weapon:self_modulate")
@@ -2903,6 +2906,7 @@ tracks/58/keys = {
 
 [sub_resource type="Animation" id=9]
 
+resource_name = "Down Skill Resume"
 length = 1.0
 loop = false
 step = 0.05
@@ -3444,7 +3448,7 @@ tracks/44/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -3456,7 +3460,7 @@ tracks/45/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:scale")
@@ -3480,7 +3484,7 @@ tracks/47/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visible")
@@ -3540,7 +3544,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 19 ), ExtResource( 5 ) ]
+"values": [ ExtResource( 18 ), ExtResource( 4 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Body/Left Arm/Weapon:self_modulate")
@@ -3617,6 +3621,7 @@ tracks/58/keys = {
 
 [sub_resource type="Animation" id=10]
 
+resource_name = "Horizontal Skill"
 length = 0.7
 loop = false
 step = 0.05
@@ -4158,7 +4163,7 @@ tracks/44/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -4170,7 +4175,7 @@ tracks/45/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:scale")
@@ -4194,7 +4199,7 @@ tracks/47/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visible")
@@ -4254,7 +4259,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Body/Left Arm/Weapon:self_modulate")
@@ -4884,7 +4889,7 @@ tracks/45/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Left Eye:texture")
@@ -4896,7 +4901,7 @@ tracks/46/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/47/type = "value"
 tracks/47/path = NodePath("Animation/Body/Face/Mouth:texture")
@@ -4908,7 +4913,7 @@ tracks/47/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visible")
@@ -4968,7 +4973,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Body/Left Arm/Weapon:self_modulate")
@@ -5586,7 +5591,7 @@ tracks/44/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -5598,7 +5603,7 @@ tracks/45/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:scale")
@@ -5622,7 +5627,7 @@ tracks/47/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visible")
@@ -5682,7 +5687,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Body/Left Arm/Weapon:self_modulate")
@@ -6300,7 +6305,7 @@ tracks/44/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -6312,7 +6317,7 @@ tracks/45/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:scale")
@@ -6336,7 +6341,7 @@ tracks/47/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visible")
@@ -6396,7 +6401,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Body/Left Arm/Weapon:self_modulate")
@@ -7014,7 +7019,7 @@ tracks/44/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 20 ) ]
+"values": [ ExtResource( 19 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -7026,7 +7031,7 @@ tracks/45/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 20 ) ]
+"values": [ ExtResource( 19 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:scale")
@@ -7050,7 +7055,7 @@ tracks/47/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 21 ) ]
+"values": [ ExtResource( 20 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visible")
@@ -7110,7 +7115,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Body/Left Arm/Weapon:self_modulate")
@@ -7728,7 +7733,7 @@ tracks/44/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -7740,7 +7745,7 @@ tracks/45/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:scale")
@@ -7764,7 +7769,7 @@ tracks/47/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visible")
@@ -7824,7 +7829,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Body/Left Arm/Weapon:self_modulate")
@@ -7901,6 +7906,7 @@ tracks/58/keys = {
 
 [sub_resource type="Animation" id=16]
 
+resource_name = "Up Skill"
 length = 0.2
 loop = false
 step = 0.05
@@ -8442,7 +8448,7 @@ tracks/44/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -8454,7 +8460,7 @@ tracks/45/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:scale")
@@ -8478,7 +8484,7 @@ tracks/47/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visible")
@@ -8538,7 +8544,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Body/Left Arm/Weapon:self_modulate")
@@ -9156,7 +9162,7 @@ tracks/44/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Left Eye:texture")
@@ -9168,7 +9174,7 @@ tracks/45/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:scale")
@@ -9192,7 +9198,7 @@ tracks/47/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visible")
@@ -9252,7 +9258,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ) ]
+"values": [ ExtResource( 4 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Body/Left Arm/Weapon:self_modulate")
@@ -9334,6 +9340,7 @@ extents = Vector2( 298.67, 78.0224 )
 
 [sub_resource type="Animation" id=19]
 
+resource_name = "Forming Circle"
 length = 4.0
 loop = false
 step = 0.1
@@ -9535,10 +9542,14 @@ tracks/15/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 1300, 750 )
 
-[node name="Keshia Erasia" type="Node2D" index="0"]
+[node name="Keshia Erasia" type="KinematicBody2D"]
 
+input_pickable = false
+collision_layer = 0
+collision_mask = 12
+collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 player_constants_filepath = "res://Scripts/Constants/KeshiaErasiaConstants.gd"
 defense_icon_path = NodePath("Sprite/Animation/Body/Defense Icon")
 damage_icon_path = NodePath("Sprite/Animation/Body/Attack Icon")
@@ -9546,29 +9557,14 @@ slowed_icon_path = NodePath("Sprite/Animation/Body/Slowed Icon")
 speeded_icon_path = NodePath("Sprite/Animation/Speeded Icon")
 confused_icon_path = NodePath("Sprite/Animation/Body/Confused Icon")
 
-[node name="Collision Handler" type="Area2D" parent="." index="0" groups=[
-"player_collider",
-]]
-
-editor/display_folded = true
-input_pickable = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-collision_layer = 0
-collision_mask = 12
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 2 )
-_sections_unfolded = [ "Collision" ]
-
-[node name="Collision Box" type="CollisionShape2D" parent="Collision Handler" index="0"]
+[node name="Collision Box" type="CollisionShape2D" parent="." index="0"]
 
 position = Vector2( 0, -3.27921 )
 shape = SubResource( 1 )
 
-[node name="Damage Area" type="Area2D" parent="." index="1"]
+[node name="Damage Area" type="Area2D" parent="." index="1" groups=[
+"hero",
+]]
 
 editor/display_folded = true
 input_pickable = true
@@ -9583,14 +9579,16 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damage Area" index="0"]
 
+position = Vector2( 0, 10.3159 )
 shape = SubResource( 2 )
 
 [node name="Combo Handler" type="Node2D" parent="." index="2"]
 
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 scale = Vector2( 0.8, 0.8 )
 _sections_unfolded = [ "Transform" ]
 
@@ -9599,7 +9597,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 88.0745, -38.8325 )
 rotation = -0.881391
 scale = Vector2( 0.9, 0.9 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 offset = Vector2( -1.23269, 16.6908 )
 
 [node name="Animation" type="Node2D" parent="Sprite" index="1"]
@@ -9609,27 +9607,28 @@ position = Vector2( -1.12968, 100.492 )
 [node name="Body" type="Sprite" parent="Sprite/Animation" index="0"]
 
 position = Vector2( -0.297318, -52.4157 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 offset = Vector2( 0, -75 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Defense Icon" parent="Sprite/Animation/Body" index="0" instance=ExtResource( 6 )]
+[node name="Defense Icon" parent="Sprite/Animation/Body" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 67.583, -45.2085 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Attack Icon" parent="Sprite/Animation/Body" index="1" instance=ExtResource( 7 )]
+[node name="Attack Icon" parent="Sprite/Animation/Body" index="1" instance=ExtResource( 6 )]
 
 position = Vector2( -20.7225, -44.3487 )
 scale = Vector2( 0.55, 0.55 )
 
-[node name="Slowed Icon" parent="Sprite/Animation/Body" index="2" instance=ExtResource( 8 )]
+[node name="Slowed Icon" parent="Sprite/Animation/Body" index="2" instance=ExtResource( 7 )]
 
 position = Vector2( 24.982, -118.167 )
 scale = Vector2( 0.6, 0.6 )
 
-[node name="Fire Particle" parent="Sprite/Animation/Body" index="3" instance=ExtResource( 9 )]
+[node name="Fire Particle" parent="Sprite/Animation/Body" index="3" instance=ExtResource( 8 )]
 
+visible = false
 position = Vector2( 18.89, -164.551 )
 scale = Vector2( 1.5, 1.5 )
 
@@ -9642,39 +9641,39 @@ scale = Vector2( 1.1, 1.1 )
 [node name="Left Brow" type="Sprite" parent="Sprite/Animation/Body/Face" index="0"]
 
 position = Vector2( -22.3623, -23.3092 )
-texture = ExtResource( 10 )
+texture = ExtResource( 9 )
 
 [node name="Right Brow" type="Sprite" parent="Sprite/Animation/Body/Face" index="1"]
 
 position = Vector2( 29.2886, -26.3653 )
-texture = ExtResource( 11 )
+texture = ExtResource( 10 )
 
 [node name="Left Eye" type="Sprite" parent="Sprite/Animation/Body/Face" index="2"]
 
 position = Vector2( -24.4068, -11.8411 )
 scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 
 [node name="Right Eye" type="Sprite" parent="Sprite/Animation/Body/Face" index="3"]
 
 position = Vector2( 30.1689, -12.2813 )
 scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 12 )
+texture = ExtResource( 11 )
 
 [node name="Mouth" type="Sprite" parent="Sprite/Animation/Body/Face" index="4"]
 
 position = Vector2( 2.9665, 22.6168 )
 scale = Vector2( 0.9625, 0.9625 )
-texture = ExtResource( 13 )
+texture = ExtResource( 12 )
 
 [node name="Ult Eyes" type="Node2D" parent="Sprite/Animation/Body/Face" index="5"]
 
 editor/display_folded = true
 visible = false
 
-[node name="Ult Eye Left" parent="Sprite/Animation/Body/Face/Ult Eyes" index="0" instance=ExtResource( 14 )]
+[node name="Ult Eye Left" parent="Sprite/Animation/Body/Face/Ult Eyes" index="0" instance=ExtResource( 13 )]
 
-[node name="Ult Eye Right" parent="Sprite/Animation/Body/Face/Ult Eyes" index="1" instance=ExtResource( 14 )]
+[node name="Ult Eye Right" parent="Sprite/Animation/Body/Face/Ult Eyes" index="1" instance=ExtResource( 13 )]
 
 position = Vector2( 55.1688, 0.692495 )
 
@@ -9683,7 +9682,7 @@ position = Vector2( 55.1688, 0.692495 )
 editor/display_folded = true
 position = Vector2( 17.1454, 13.0277 )
 rotation = 0.0334391
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 offset = Vector2( -1.72225, 17.8055 )
 
 [node name="Right Foot" type="Sprite" parent="Sprite/Animation/Body/Right Leg" index="0"]
@@ -9691,7 +9690,7 @@ offset = Vector2( -1.72225, 17.8055 )
 position = Vector2( -2.25239, 35.3849 )
 rotation = -1.74882
 scale = Vector2( 1, 0.8 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 offset = Vector2( -2.55776, 16.1404 )
 _sections_unfolded = [ "Transform" ]
 
@@ -9699,7 +9698,7 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( -30.1975, 11.7395 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 offset = Vector2( -1.72225, 17.8055 )
 
 [node name="Left Foot" type="Sprite" parent="Sprite/Animation/Body/Left Leg" index="0"]
@@ -9707,7 +9706,7 @@ offset = Vector2( -1.72225, 17.8055 )
 position = Vector2( -4.91125, 36.1676 )
 rotation = 1.43815
 scale = Vector2( 1, 0.7 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 offset = Vector2( 1.79243, -17.9243 )
 _sections_unfolded = [ "Offset", "Transform" ]
 
@@ -9716,17 +9715,17 @@ _sections_unfolded = [ "Offset", "Transform" ]
 editor/display_folded = true
 position = Vector2( -66.2904, -77.3851 )
 rotation = 0.759218
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 offset = Vector2( -1.99024, 18.262 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Weapon" type="Sprite" parent="Sprite/Animation/Body/Left Arm" index="0"]
 
 editor/display_folded = true
-position = Vector2( 6.01707, -0.17823 )
-rotation = -0.84648
+position = Vector2( 6.01704, -0.178232 )
+rotation = -0.846485
 scale = Vector2( 1.44, 1.44 )
-texture = ExtResource( 15 )
+texture = ExtResource( 14 )
 offset = Vector2( 3.92352, -79.9531 )
 
 [node name="Basic Attack Hit Box" type="Area2D" parent="Sprite/Animation/Body/Left Arm/Weapon" index="0"]
@@ -9775,7 +9774,7 @@ editor/display_folded = true
 position = Vector2( -3.15459, 36.6928 )
 rotation = 1.028
 scale = Vector2( 0.8, 0.8 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 offset = Vector2( 1.84393, -19.0845 )
 _sections_unfolded = [ "Transform" ]
 
@@ -9783,7 +9782,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 3.23194, -39.9086 )
 rotation = -2.92343
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 offset = Vector2( 6.49008, 6.4641 )
 _sections_unfolded = [ "Transform" ]
 
@@ -9820,7 +9819,7 @@ __meta__ = {
 position = Vector2( -3.78853, 37.4229 )
 rotation = 1.51844
 scale = Vector2( 0.888889, 0.777778 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 offset = Vector2( -2.25615, 16.4975 )
 _sections_unfolded = [ "Transform" ]
 
@@ -9828,15 +9827,15 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -3.54916, 37.1808 )
 rotation = 1.04371
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 offset = Vector2( 6.3133, 5.42676 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Confused Icon" parent="Sprite/Animation/Body" index="9" instance=ExtResource( 17 )]
+[node name="Confused Icon" parent="Sprite/Animation/Body" index="9" instance=ExtResource( 16 )]
 
 position = Vector2( 1.45558, -231.081 )
 
-[node name="Speeded Icon" parent="Sprite/Animation" index="1" instance=ExtResource( 18 )]
+[node name="Speeded Icon" parent="Sprite/Animation" index="1" instance=ExtResource( 17 )]
 
 position = Vector2( -6.10352e-05, -23.6296 )
 scale = Vector2( 0.5, 0.5 )
@@ -9848,18 +9847,18 @@ autoplay = "Still"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/BasicAttack = SubResource( 5 )
-anims/BasicSkill = SubResource( 6 )
-anims/BasicSkillLanding = SubResource( 7 )
-anims/DownSkill = SubResource( 8 )
-anims/DownSkillResume = SubResource( 9 )
-anims/HorizontalSkill = SubResource( 10 )
+"anims/Basic Attack" = SubResource( 5 )
+"anims/Basic Skill" = SubResource( 6 )
+"anims/Basic Skill Landing" = SubResource( 7 )
+"anims/Down Skill" = SubResource( 8 )
+"anims/Down Skill Resume" = SubResource( 9 )
+"anims/Horizontal Skill" = SubResource( 10 )
 anims/Idle = SubResource( 11 )
 anims/Jump = SubResource( 12 )
 anims/Still = SubResource( 13 )
 anims/Stunned = SubResource( 14 )
 anims/Ult = SubResource( 15 )
-anims/UpSkill = SubResource( 16 )
+"anims/Up Skill" = SubResource( 16 )
 anims/Walk = SubResource( 17 )
 blend_times = [  ]
 
@@ -9889,9 +9888,9 @@ position = Vector2( 75, -70 )
 [node name="Number Spawn Pos" type="Position2D" parent="." index="5"]
 
 position = Vector2( 0, -115.316 )
-script = ExtResource( 22 )
+script = ExtResource( 21 )
 
-[node name="Health Bar" parent="." index="6" instance=ExtResource( 23 )]
+[node name="Health Bar" parent="." index="6" instance=ExtResource( 22 )]
 
 [node name="Keshia Ult" type="Node2D" parent="." index="7"]
 
@@ -9904,7 +9903,7 @@ light_mask = 524288
 position = Vector2( 253.382, -229.931 )
 rotation = 1.01781
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 offset = Vector2( -0.828125, -71.8146 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -9915,7 +9914,7 @@ light_mask = 524288
 position = Vector2( 249.206, -5.73128 )
 rotation = 2.10516
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 offset = Vector2( -0.828125, -71.8146 )
 
 [node name="Sprite2" type="Sprite" parent="Keshia Ult" index="2"]
@@ -9925,7 +9924,7 @@ light_mask = 524288
 position = Vector2( 116.461, 129.587 )
 rotation = 2.68666
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 offset = Vector2( -0.828125, -71.8146 )
 
 [node name="Sprite3" type="Sprite" parent="Keshia Ult" index="3"]
@@ -9935,7 +9934,7 @@ light_mask = 524288
 position = Vector2( -99.5316, 122.942 )
 rotation = 3.34518
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 offset = Vector2( -0.828125, -71.8146 )
 
 [node name="Sprite4" type="Sprite" parent="Keshia Ult" index="4"]
@@ -9945,7 +9944,7 @@ light_mask = 524288
 position = Vector2( -243.458, 36.4296 )
 rotation = -2.1398
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 offset = Vector2( -0.828125, -71.8146 )
 
 [node name="Sprite5" type="Sprite" parent="Keshia Ult" index="5"]
@@ -9955,7 +9954,7 @@ light_mask = 524288
 position = Vector2( -272.11, -194.779 )
 rotation = -1.27287
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 offset = Vector2( -0.828125, -71.8146 )
 
 [node name="Sprite6" type="Sprite" parent="Keshia Ult" index="6"]
@@ -9965,7 +9964,7 @@ light_mask = 524288
 position = Vector2( -149.872, -358.127 )
 rotation = -0.326939
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 offset = Vector2( -0.828125, -71.8146 )
 
 [node name="Sprite7" type="Sprite" parent="Keshia Ult" index="7"]
@@ -9975,7 +9974,7 @@ light_mask = 524288
 position = Vector2( 98.5137, -379.696 )
 rotation = 0.0221657
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 5 )
+texture = ExtResource( 4 )
 offset = Vector2( -0.828125, -71.8146 )
 
 [node name="Light2D" type="Light2D" parent="Keshia Ult" index="8"]
@@ -9984,7 +9983,7 @@ position = Vector2( 0.717346, -126.586 )
 scale = Vector2( 1.5, 1.5 )
 enabled = true
 editor_only = false
-texture = ExtResource( 24 )
+texture = ExtResource( 23 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
@@ -10012,7 +10011,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/FormingCircle = SubResource( 19 )
+"anims/Forming Circle" = SubResource( 19 )
 blend_times = [  ]
 
 [node name="Ult Hit Box" type="Area2D" parent="." index="8"]

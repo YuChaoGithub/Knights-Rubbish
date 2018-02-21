@@ -11,9 +11,10 @@ extends KinematicBody2D
 
 enum { NONE, MOVE, TYPE, SHOOT }
 
-const MAX_HEALTH = 200
+export(int) var activate_range_x = 2000
+export(int) var activate_range_y = 1500
 
-const ACTIVATE_RANGE = 2000
+const MAX_HEALTH = 200
 
 # Movement.
 const SPEED_X = 150
@@ -42,15 +43,15 @@ var bullet_spawning_timer = null
 var mt_timer = preload("res://Scripts/Utils/MultiTickTimer.gd")
 var bullet = preload("res://Scenes/Enemies/Computer Room/Calcasio Bullet.tscn")
 onready var bullet_spawn_pos = [
-    get_node("Animation/Bullet Spawn Pos/0"),
-    get_node("Animation/Bullet Spawn Pos/1"),
-    get_node("Animation/Bullet Spawn Pos/2"),
-    get_node("Animation/Bullet Spawn Pos/3"),
-    get_node("Animation/Bullet Spawn Pos/4"),
-    get_node("Animation/Bullet Spawn Pos/5")
+    $"Animation/Bullet Spawn Pos/0",
+    $"Animation/Bullet Spawn Pos/1",
+    $"Animation/Bullet Spawn Pos/2",
+    $"Animation/Bullet Spawn Pos/3",
+    $"Animation/Bullet Spawn Pos/4",
+    $"Animation/Bullet Spawn Pos/5"
 ]
-onready var bullet_type_animator = get_node("Animation/Body/Number Buttons/AnimationPlayer")
-onready var spawn_node = get_node("..")
+onready var bullet_type_animator = $"Animation/Body/Number Buttons/AnimationPlayer"
+onready var spawn_node = $".."
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
@@ -58,16 +59,17 @@ func activate():
     ec.init_gravity_movement(GRAVITY)
     set_process(true)
     ec.change_status(MOVE)
-    get_node("Animation/Damage Area").add_to_group("enemy_collider")
+    $"Animation/Damage Area".add_to_group("enemy")
 
 func _process(delta):
     if ec.not_hurt_dying_stunned():
-        if ec.status == MOVE:
-            apply_random_movement(delta)
-        elif ec.status == TYPE:
-            type_digit_bullets()
-        elif ec.status == SHOOT:
-            shoot_digit_bullets()
+        match ec.status:
+            MOVE:
+                apply_random_movement(delta)
+            TYPE:
+                type_digit_bullets()
+            SHOOT:
+                shoot_digit_bullets()
         
     ec.perform_gravity_movement(delta)
     ec.perform_knock_back_movement(delta)
@@ -109,7 +111,7 @@ func spawn_bullet():
     var new_bullet = bullet.instance()
     new_bullet.initialize(digit, facing)
     spawn_node.add_child(new_bullet)
-    new_bullet.set_global_pos(bullet_spawn_pos[spawned_bullets.size()].get_global_pos())
+    new_bullet.global_position = bullet_spawn_pos[spawned_bullets.size()].global_position
     spawned_bullets.push_back(new_bullet)
 
     # Last tick.
@@ -138,7 +140,7 @@ func cancel_bullet_spawning():
     spawned_bullets.clear()
 
 func damaged(val):
-    var curr_anim = ec.animator.get_current_animation()
+    var curr_anim = ec.animator.current_animation
     var play_anim = curr_anim != "Typing" && curr_anim != "Shoot"
     ec.damaged(val, play_anim)
 
@@ -163,7 +165,7 @@ func slowed_recover(label):
     ec.slowed_recover(label)
 
 func knocked_back(vel_x, vel_y, fade_rate):
-    if ec.animator.get_current_animation() != "Typing":
+    if ec.animator.current_animation != "Typing":
         ec.knocked_back(vel_x, vel_y, fade_rate)
 
 func die():

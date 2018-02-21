@@ -19,8 +19,8 @@ func perform_tick(count):
         return
 
     if amount_per_tick < 0:
-        get_node("..").damaged(-amount_per_tick)
+        $"..".damaged(-amount_per_tick)
     else:
-        get_node("..").healed(amount_per_tick)
+        $"..".healed(amount_per_tick)
     
     timer = preload("res://Scripts/Utils/CountdownTimer.gd").new(time_per_tick, self, "perform_tick", count + 1)

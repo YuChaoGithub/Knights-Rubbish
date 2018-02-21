@@ -11,8 +11,8 @@ extends Node2D
 # Only play hurt animation if it is in 1.
 # Cannot be stunned.
 
-export(int) activate_range_x = 1000
-export(int) activate_range_y = 1000
+export(int) var activate_range_x = 1000
+export(int) var activate_range_y = 1000
 
 enum { NONE, FACE, ANDROID_ANIM, SPAWN_ANDROID, FRIZBEE_ANIM, SPAWN_FRIZBEE, THROW_FRIZBEE, RESUME_FACE }
 
@@ -58,7 +58,7 @@ func activate():
 	ec.health_bar.show_health_bar()
 	set_process(true)
 	ec.change_status(FACE)
-	$"Animation/Damage Area".add_to_group("enemy_collider")
+	$"Animation/Damage Area".add_to_group("enemy")
 
 func _process(delta):
 	if ec.not_hurt_dying_stunned():
@@ -150,7 +150,7 @@ func spawn_num_according_to_health(min_count, max_count):
 	return int(lerp(float(min_count), float(max_count), 1.0 - (float(ec.health_system.health) / float(MAX_HEALTH))))
 
 func touch_attack_hit(area):
-	if area.is_in_group("player_collider"):
+	if area.is_in_group("hero"):
 		var character = area.get_node("..")
 		var knock_back_dir = -1 if character.global_position.x < global_position.x else 1
 		character.knocked_back(knock_back_dir * KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)

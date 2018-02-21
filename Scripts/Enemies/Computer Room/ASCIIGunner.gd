@@ -45,7 +45,7 @@ func activate():
 	ec.init_gravity_movement(GRAVITY)
 	set_process(true)
 	ec.change_status(ROAM)
-	$"Animation/Damage Area".add_to_group("enemy_collider")
+	$"Animation/Damage Area".add_to_group("enemy")
 
 func _process(delta):
 	if ec.not_hurt_dying_stunned():
@@ -95,7 +95,7 @@ func attack():
 	status_timer = ec.cd_timer.new(SHOOT_ANIMATION_DURATION, self, "change_status", ROAM)
 
 func on_attack_hit(area):
-	if area.is_in_group("player_collider"):
+	if area.is_in_group("hero"):
 		var character = area.get_node("..")
 		character.damaged(DAMAGE)
 		character.knocked_back(facing * KNOCK_BACK_VEL_X, -KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)

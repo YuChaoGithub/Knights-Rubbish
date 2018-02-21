@@ -13,7 +13,7 @@ extents = Vector2( 100.834, 14.4014 )
 custom_solver_bias = 0.0
 extents = Vector2( 16.9969, 13.9076 )
 
-[node name="Pencil Dart" type="KinematicBody2D" index="0"]
+[node name="Pencil Dart" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
@@ -22,7 +22,16 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="Sprite" type="Node2D" parent="." index="0"]
+[node name="Tween" type="Tween" parent="." index="0"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="Sprite" type="Node2D" parent="." index="1"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -53,7 +62,7 @@ _sections_unfolded = [ "Collision" ]
 position = Vector2( 22.2668, -7.62939e-06 )
 shape = SubResource( 1 )
 
-[node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="." index="1"]
+[node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( 0.110206, -0.984758 )
 shape = SubResource( 2 )

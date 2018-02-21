@@ -2,9 +2,6 @@ extends Node2D
 
 var draw_list = []
 
-func _ready():
-    set_process(true)
-
 func _process(delta):
     update()
 

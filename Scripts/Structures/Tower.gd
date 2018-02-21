@@ -22,9 +22,9 @@ var collapsing = false
 var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 
-onready var bar = get_node("Health Bar/Inner")
-onready var tower_sprite = get_node("Tower Sprite")
-onready var animator = get_node("AnimationPlayer")
+onready var bar = $"Health Bar/Inner"
+onready var tower_sprite = $"Tower Sprite"
+onready var animator = $"AnimationPlayer"
 
 func _ready():
 	curr_health = full_health
@@ -36,25 +36,25 @@ func movement_sequence():
 	timer = cd_timer.new(rng.randi_range(DANCE_INTERVAL_MIN, DANCE_INTERVAL_MAX) + DANCE_ANIMATION_DURATION, self, "movement_sequence")
 
 func update_health_bar():
-	bar.set_scale(Vector2(1.0, float(curr_health) / float(full_health)))
+	bar.scale = Vector2(1.0, float(curr_health) / float(full_health))
 
 func collapsed():
 	emit_signal("destroyed")
 
-	get_node("Damage Area").remove_from_group("enemy_collider")
+	$"Damage Area".remove_from_group("enemy")
 
 	animator.play("Collapse")
 
 	# HARD CODING, YEAH!
 	if collapsed_spawn_path_1 != "Null":
 		var new_mob = load(collapsed_spawn_path_1).instance()
-		get_node("..").add_child(new_mob)
-		new_mob.set_global_pos(get_node("Collapse Spawn Pos 1").get_global_pos())
+		$"..".add_child(new_mob)
+		new_mob.global_position = $"Collapse Spawn Pos 1".global_position
 
 	if collapsed_spawn_path_2 != "Null":
 		var new_mob = load(collapsed_spawn_path_2).instance()
-		get_node("..").add_child(new_mob)
-		new_mob.set_global_pos(get_node("Collapse Spawn Pos 2").get_global_pos())
+		$"..".add_child(new_mob)
+		new_mob.global_position = $"Collapse Spawn Pos 2".global_position
 
 	timer.destroy_timer()
 	timer = cd_timer.new(COLLAPSE_ANIMATION_DURATION, self, "queue_free")
@@ -76,13 +76,13 @@ func blink():
 	if blink_timer != null:
 		blink_timer.destroy_timer()
 
-	tower_sprite.set_opacity(BLINK_ALPHA)
+	tower_sprite.modulate.a = BLINK_ALPHA
 
 	blink_timer = cd_timer.new(BLINK_DURATION, self, "cancel_blink")
 
 func cancel_blink():
 	blink_timer = null
-	tower_sprite.set_opacity(1.0)
+	tower_sprite.modulate.a = 1.0
 
 func stunned(duration):
 	pass

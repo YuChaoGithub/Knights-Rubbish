@@ -12,9 +12,10 @@ enum { NONE, SEARCH, MOVE, ATTACK }
 
 signal defeated
 
-const MAX_HEALTH = 200
+export(int) var activate_range_x = 1000
+export(int) var activate_range_y = 1000
 
-export(int) var ACTIVATE_RANGE = 1000
+const MAX_HEALTH = 200
 
 # Attack.
 const ATTACK_RANGE_X = 350
@@ -35,7 +36,6 @@ const SEARCHING_DURATION = 2.0
 const DIE_ANIMATION_DURATION = 0.5
 const ATTACK_ANIMATION_DURATION = 0.65
 
-var attack_hit = false
 var status_timer = null
 var turn_stagger_timer = null
 var attack_target = null
@@ -49,16 +49,17 @@ func activate():
     attack_target = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
     set_process(true)
     ec.change_status(SEARCH)
-    get_node("Animation/Damage Area").add_to_group("enemy_collider")
+    $"Animation/Damage Area".add_to_group("enemy")
 
 func _process(delta):
     if ec.not_hurt_dying_stunned():
-        if ec.status == SEARCH:
-            search_for_target()
-        elif ec.status == MOVE:
-            apply_movement(delta)
-        elif ec.status == ATTACK:
-            attack()
+        match ec.status:
+            SEARCH:
+                search_for_target()
+            MOVE:
+                apply_movement(delta)
+            ATTACK:
+                attack()
 
     ec.perform_gravity_movement(delta)
     ec.perform_knock_back_movement(delta)
@@ -77,14 +78,14 @@ func search_for_target():
 func apply_movement(delta):
     ec.play_animation("Walk")
 
-    var target_pos = attack_target.get_global_pos()
+    var target_pos = attack_target.global_position
 
-    if target_pos.x < get_global_pos().x && facing > 0:
+    if target_pos.x < global_position.x && facing > 0:
         # Should turn left, but stagger the turn.
         if turn_stagger_timer == null:
             turn_stagger_timer = ec.cd_timer.new(ec.rng.randf_range(TURN_STAGGER_MIN_DELAY, TURN_STAGGER_MAX_DELAY), self, "turn_and_set_stagger_timer_to_null")
         
-    elif target_pos.x > get_global_pos().x && facing < 0:
+    elif target_pos.x > global_position.x && facing < 0:
         # Should turn right, but stagger the turn.
         if turn_stagger_timer == null:
             turn_stagger_timer = ec.cd_timer.new(ec.rng.randf_range(TURN_STAGGER_MIN_DELAY, TURN_STAGGER_MAX_DELAY), self, "turn_and_set_stagger_timer_to_null")
@@ -92,16 +93,11 @@ func apply_movement(delta):
     ec.perform_straight_line_movement(delta)
 
     # If the target is in attack range, switch to attack state.
-    if in_attack_range():
+    if abs(target_pos.x - global_position.x) <= ATTACK_RANGE_X && abs(target_pos.y - global_position.y) <= ATTACK_RANGE_Y:
         ec.change_status(ATTACK)
-
-func in_attack_range():
-    var target_pos = attack_target.get_global_pos()
-    return abs(target_pos.x - get_global_pos().x) <= ATTACK_RANGE_X && abs(target_pos.y - get_global_pos().y) <= ATTACK_RANGE_Y
 
 func attack():
     ec.play_animation("Attack")
-    attack_hit = false
 
     ec.change_status(NONE)
     status_timer = ec.cd_timer.new(ATTACK_ANIMATION_DURATION, self, "change_status", SEARCH)
@@ -152,8 +148,7 @@ func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
     ec.healed_over_time(time_per_tick, total_ticks, heal_per_tick)
 
 func on_attack_hit(area):
-    if !attack_hit && area.is_in_group("player_collider"):
+    if area.is_in_group("hero"):
         var character = area.get_node("..")
         character.damaged(ATTACK_DAMAGE)
         character.knocked_back(facing * KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
-        attack_hit = true  # Avoid hitting multiple targets.

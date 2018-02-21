@@ -530,11 +530,22 @@ Comment: Having a surgery the day after tomorrow. Good luck, me!
 
 **Commit**
 
+[2018.02.20]
+Comment: I'm back.
+* Changed `GravityMovement.gd` and `BouncyMovement.gd`'s `movement(delta)` to `move(delta)`, which directly moves the physics body. (to suit Godot 3.0's physics body api).
+* Updated all the scripts to Godot 3.0 except `MovementCollisionHandler.gd` and `CharacterCommon.gd`.
+
+[2018.02.21]
+* Deleted `MovementCollisionHandler.gd`. Changed `CharacterCommon.gd` into Kinematic Body 2D, use `move_and_slide` for movement.
+* Renamed `Character-.gd` to `Hero-.gd`.
+* Renamed groups from `player_collider` to `hero`, `enemy_collider` to `enemy`.
+* Used Tween to fade out Keshia's dart. The dart will now slide a bit when landed on the ground.
+
+**Commit**
+
 To Do List:
-* Simplify character movement script.
 * Use tilemaps to layout the level.
 * Don't use level parts. UNITE THEM! (Use parts only in transitions [aka. black out screen])
-* Change the term "Character" to "Hero".
 * Fix scripts to Godot 3.0.
 
 Planned Prototype Stages:

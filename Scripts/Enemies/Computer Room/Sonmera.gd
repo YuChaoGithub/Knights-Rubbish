@@ -9,7 +9,7 @@ extends Node2D
 
 enum { NONE, INACTIVE, WAIT, COUNTDOWN, CAPTURE, FLASHLIGHT }
 
-const ACTIVATE_RANGE = 3000
+export(int) var activate_range_x = 3000
 
 const IDLE_INTERVAL_MIN = 2.0
 const IDLE_INTERVAL_MAX = 5.0
@@ -26,25 +26,25 @@ var screen_captured = false
 var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 
-onready var animator = get_node("Animation/AnimationPlayer")
-onready var flashlight_animator = get_node("Flashlight/AnimationPlayer")
-onready var char_average_pos = get_node("../../../../Character Average Position")
+onready var animator = $"Animation/AnimationPlayer"
+onready var flashlight_animator = $"Flashlight/AnimationPlayer"
+onready var char_average_pos = $"../../../../Character Average Position"
 
 func _ready():
 	animator.play("Still")
-	set_process(true)
 
 func _process(delta):
-	if status == INACTIVE:
-		check_nearest_char()
-	elif status == WAIT:
-		wait_for_interval()
-	elif status == COUNTDOWN:
-		start_countdown()
-	elif status == CAPTURE:
-		capture_screenshot()
-	elif status == FLASHLIGHT:
-		activate_flashlight()
+	match status:
+		INACTIVE:
+			check_nearest_char()
+		WAIT:
+			wait_for_interval()
+		COUNTDOWN:
+			start_countdown()
+		CAPTURE:
+			capture_screenshot()
+		FLASHLIGHT:
+			activate_flashlight()
 
 func change_status(to_status):
 	status = to_status
@@ -53,7 +53,7 @@ func change_status(to_status):
 		status_timer = null
 
 func check_nearest_char():
-	if char_average_pos.get_global_pos().distance_squared_to(self.get_global_pos()) <= ACTIVATE_RANGE * ACTIVATE_RANGE:
+	if char_average_pos.global_position.distance_squared_to(global_position) <= activate_range_x * activate_range_x:
 		change_status(WAIT)
 
 func wait_for_interval():

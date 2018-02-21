@@ -1,4 +1,5 @@
-const CHECK_ACTIVATE_IN_SECS = 1
+const CHECK_ACTIVATE_IN_SECS_MIN = 0.2
+const CHECK_ACTIVATE_IN_SECS_MAX = 0.6
 const DAMAGE_NUMBER_COLOR = Color(1.0, 0.0, 0.0)
 const HEAL_NUMBER_COLOR = Color(0.0, 100.0 / 255.0, 0.0)
 const STUNNED_TEXT_COLOR = Color(1.0, 1.0, 0.0)
@@ -66,7 +67,7 @@ func _init(node, default_status = 0):
     # Set up check activate timer.
     activate_timer = Timer.new()
     activate_timer.one_shot = false
-    activate_timer.wait_time = CHECK_ACTIVATE_IN_SECS
+    activate_timer.wait_time = rng.randf_range(CHECK_ACTIVATE_IN_SECS_MIN, CHECK_ACTIVATE_IN_SECS_MAX)
     activate_timer.connect("timeout", self, "perform_activate_check")
     node.add_child(activate_timer)
     activate_timer.start()
@@ -88,7 +89,7 @@ func init_gravity_movement(gravity):
     gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(node, gravity)
 
 func perform_gravity_movement(delta):
-    node.move_and_collide(gravity_movement.movement(delta))
+    gravity_movement.move(delta)
 
 # Straight Line Movement.
 func init_straight_line_movement(dx, dy):
@@ -274,7 +275,7 @@ func die():
     slowed_label.visible = false
 
     # Can't be hurt any more.
-    node.get_node("Animation/Damage Area").remove_from_group("enemy_collider")
+    node.get_node("Animation/Damage Area").remove_from_group("enemy")
     
     # No other movement or stuff.
     change_status(node.NONE)

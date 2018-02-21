@@ -23,37 +23,35 @@ var fading = false
 var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var dot = preload("res://Scenes/Utils/Change Health OT.tscn")
 
-onready var animator = get_node("AnimationPlayer")
+onready var animator = $"AnimationPlayer"
 
 onready var movement_pattern = preload("res://Scripts/Movements/StraightLineMovement.gd").new(0, 0)
 
 func _ready():
 	lifetime_timestamp = OS.get_unix_time()
-	set_process(true)
-
 	animator.play("Anim")
 
 func _process(delta):
 	enlarge(delta)
 
 	if traveling:
-		set_global_pos(movement_pattern.movement(get_global_pos(), delta))
+		global_position += movement_pattern.movement(delta)
 
 	if OS.get_unix_time() - lifetime_timestamp >= LIFETIME:
 		fade_out_and_queue_free()
 
 func enlarge(delta):
-	set_scale(get_scale() + Vector2(1.0, 1.0) * ENLARGE_RATE * delta)
+	scale += Vector2(1.0, 1.0) * ENLARGE_RATE * delta
 
 func start_travel(target_pos):
-	var dir = (target_pos - get_global_pos()).normalized()
+	var dir = (target_pos - global_position).normalized()
 	movement_pattern.dx = dir.x * SPEED
 	movement_pattern.dy = dir.y * SPEED
 
 	traveling = true
 
 func on_attack_hit(area):
-	if area.is_in_group("player_collider"):
+	if area.is_in_group("hero"):
 		var character = area.get_node("..")
 
 		var damage_over_time = dot.instance()

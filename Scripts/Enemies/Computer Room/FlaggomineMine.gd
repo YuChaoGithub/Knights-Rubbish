@@ -17,22 +17,22 @@ var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var timer = null
 var triggered = false
 
-onready var animator = get_node("Animation/AnimationPlayer")
+onready var animator = $"Animation/AnimationPlayer"
 
 func _ready():
 	animator.play("Invisible")
 
 func on_triggered(area):
-	if !triggered && area.is_in_group("player_collider"):
+	if !triggered && area.is_in_group("hero"):
 		animator.play("Blinking")
 		triggered = true
 		timer = cd_timer.new(BLINKING_DURATION, self, "explode")
 
 func on_attack_hit(area):
-	if area.is_in_group("player_collider"):
+	if area.is_in_group("hero"):
 		var character = area.get_node("..")
 		character.damaged(DAMAGE)
-		character.knocked_back(sign(character.get_global_pos().x - get_global_pos().x) * KNOCK_BACK_VEL_X, -KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
+		character.knocked_back(sign(character.global_position.x - global_position.x) * KNOCK_BACK_VEL_X, -KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 
 func explode():
 	animator.play("Explode")

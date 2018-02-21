@@ -1,58 +1,58 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scripts/Power Ups/HyperPotion.gd" type="Script" id=1]
-[ext_resource path="res://Graphics/Powerups/Attack Potion.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Power Ups/PowerUpCommon.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Power Ups/HyperPotion.gd" type="Script" id=2]
+[ext_resource path="res://Graphics/Powerups/Attack Potion.png" type="Texture" id=3]
 
-[sub_resource type="RectangleShape2D" id=3]
-
-custom_solver_bias = 0.0
-extents = Vector2( 40.3915, 148.51 )
-
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 45.7605, 151.545 )
 
-[node name="Hyper Potion" type="KinematicBody2D"]
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 40.3915, 148.51 )
+
+[node name="Hyper Potion" type="KinematicBody2D" index="0"]
 
 input_pickable = false
-shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Transform2D( 1, 0, 0, 1, -0.456726, -145.523 )
-shapes/0/trigger = false
 collision_layer = 0
 collision_mask = 2
-collision/margin = 0.08
+collision/safe_margin = 0.08
 script = ExtResource( 1 )
+activate_range_x = 2000
+activate_range_y = 2000
 
-[node name="Trigger Area" type="Area2D" parent="."]
+[node name="Trigger Area" type="Area2D" parent="." index="0"]
 
 input_pickable = true
-shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Transform2D( 1, 0, 0, 1, 1.974, -143.602 )
-shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 8
+collision_layer = 0
+collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 2 )
+_sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger Area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger Area" index="0"]
 
 position = Vector2( 1.974, -143.602 )
-shape = SubResource( 2 )
-trigger = false
-_update_shape_index = 0
+shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="Sprite" parent="." index="1"]
 
 position = Vector2( 1.8266, -142.497 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 
-[node name="Movement Collision Shape" type="CollisionShape2D" parent="."]
+[node name="Movement Collision Shape" type="CollisionShape2D" parent="." index="2"]
 
 position = Vector2( -0.456726, -145.523 )
-shape = SubResource( 3 )
-trigger = false
-_update_shape_index = 0
+shape = SubResource( 2 )
 
-[connection signal="area_entered"  from="Trigger Area"  to="." method="on_area_entered" binds=[  ]]
+[connection signal="area_entered" from="Trigger Area" to="Trigger Area" method="on_area_entered"]
+
+

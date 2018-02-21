@@ -14,7 +14,6 @@ export(float) var on_duration = 2.0
 export(float) var off_duration = 2.0
 
 const WARNING_DURATION = 0.5
-const PLAYER_LAYER = 1 ##### FIX THIS ######
 
 const DAMAGE = 5
 const DAMAGE_COLLIDER_ON_INTERVAL = 0.2
@@ -29,7 +28,7 @@ var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 onready var hero_layer = ProjectSettings.get_setting("layer_names/2d_physics/hero")
 
 onready var animator = $AnimationPlayer
-onready var attack_collider = $Attack Area
+onready var attack_collider = $"Attack Area"
 onready var char_average_pos = $"../../../../Character Average Position"
 
 func _ready():
@@ -87,5 +86,5 @@ func end_attack_collider_sequence():
 	attack_collider.set_collision_mask_bit(hero_layer, false)
 
 func on_attack_hit(area):
-	if area.is_in_group("player_collider"):
+	if area.is_in_group("hero"):
 		area.get_node("..").damaged(DAMAGE)

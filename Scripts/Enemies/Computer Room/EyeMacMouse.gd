@@ -25,22 +25,18 @@ var transformed_textures = [
 
 var spark = preload("res://Scenes/Utils/Spark.tscn")
 
-onready var sprite = get_node("Sprite")
+onready var sprite = $Sprite
 
 func _ready():
 	texture_index = randi() % white_textures.size()
 	sprite.set_texture(white_textures[texture_index])
 
 func initialize(direction):
-	print(direction)
 	movement_pattern = preload("res://Scripts/Movements/StraightLineMovement.gd").new(direction.x * SPEED, direction.y * SPEED)
-	
-	set_rot(atan2(-direction.y, direction.x))
-	
-	set_process(true)
+	rotation = atan2(-direction.y, direction.x)
 
 func _process(delta):
-	set_global_pos(movement_pattern.movement(get_global_pos(), delta))
+	global_position += movement_pattern.movement(delta)
 
 	timestamp += delta
 	if timestamp > LIFETIME:
@@ -51,13 +47,13 @@ func transform_triggered(area):
 		sprite.set_texture(transformed_textures[texture_index])
 
 func on_attack_hit(area):
-	if area.is_in_group("player_collider"):
+	if area.is_in_group("hero"):
 		var character = area.get_node("..")
 		character.damaged(DAMAGE)
 		character.knocked_back(sign(movement_pattern.dx) * KNOCK_BACK_VEL_X, -KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 
 		var new_spark = spark.instance()
-		get_node("..").add_child(new_spark)
-		new_spark.set_global_pos(get_global_pos())
+		$"..".add_child(new_spark)
+		new_spark.global_position = global_position
 
 		queue_free()

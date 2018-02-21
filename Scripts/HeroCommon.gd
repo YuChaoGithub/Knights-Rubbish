@@ -1,4 +1,4 @@
-extends Node2D
+extends KinematicBody2D
 
 export(String, FILE) var player_constants_filepath
 export(NodePath) var defense_icon_path
@@ -31,10 +31,6 @@ var animator
 
 # Record the time which the player is idle.
 var idle_timestamp
-
-# Sprite node (the parent node of the animator).
-# Loaded in _ready().
-var sprite
 
 # Calculated values, so that movement could be done more conveniently.
 var gravity
@@ -77,9 +73,6 @@ var status = {
 	cc_immune = false
 }
 
-# Calculated in every frame. Some skills may use the value.
-var landed_on_ground = false
-
 var countdown_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 
@@ -97,14 +90,13 @@ var fall_off_timer = null
 var top_fist = null
 
 # Child nodes.
-onready var collision_handler = get_node("Collision Handler")
-onready var combo_handler = get_node("Combo Handler")
+onready var combo_handler = $"Combo Handler"
 
 # Character Average Position (used to control the following camera.)
-onready var char_average_pos = get_node("../Character Average Position")
+onready var char_average_pos = $"../Character Average Position"
 
 # Camera. For clamping within view bounds.
-onready var following_camera = get_node("../Following Camera")
+onready var following_camera = $"../Following Camera"
 
 # Character stats.
 onready var player_constants = load(player_constants_filepath)
@@ -119,9 +111,10 @@ onready var ult_eyes = get_node(player_constants.ult_eyes_node_path)
 
 # Damage, heal numbers indicator.
 var number_indicator = preload("res://Scenes/Utils/Numbers/Number Indicator.tscn")
-onready var number_spawn_pos = get_node("Number Spawn Pos")
+onready var number_spawn_pos = $"Number Spawn Pos"
 
-onready var health_bar = get_node("Health Bar")
+onready var health_bar = $"Health Bar"
+onready var sprite = $Sprite
 
 onready var status_icons = {
 	defense = get_node(defense_icon_path),
@@ -137,30 +130,29 @@ func _ready():
 	recalculate_vertical_movement_variables()
 	
 	# Default animator.
-	sprite = get_node("Sprite")
 	animator = sprite.get_node(player_constants.default_animator_path)
 
 	# Hide all status icons.
 	for icon in status_icons:
-		status_icons[icon].hide()
+		status_icons[icon].visible = false
 
 	# Hide all particles.
-	fire_particle.hide()
+	fire_particle.visible = false
 
 	# Initialize timestamp.
 	idle_timestamp = OS.get_unix_time()
 
 	# Register itself to character average position.
 	char_average_pos.characters.push_back(self)
-	char_average_pos.add_character(get_global_pos())
+	char_average_pos.add_character(global_position)
 
 	# Health bar.
 	health_bar.initialize(player_constants.full_health, avatar_texture)
 
-	set_process(true)
-
 func _process(delta):
 	check_combo_and_perform()
+
+func _physics_process(delta):
 	update_movement(delta)
 
 # Move by keyboard inputs. Also play movement animations.
@@ -176,17 +168,15 @@ func update_movement(delta):
 	# The movement animation name (key) supposed to be played.
 	var animation_key = null
 
-	landed_on_ground = collision_handler.collided_sides[collision_handler.BOTTOM]
-
 	# Play the "Still" animation if the player is currently landed on the ground.
 	# Else, play the "Jump" animation (when in air).
-	if landed_on_ground:
+	if is_on_floor():
 		animation_key = "Still"
 	else:
 		animation_key = "Jump"
 
 	# If hit above or hit below, reset velocity.
-	if collision_handler.collided_sides[collision_handler.TOP] or landed_on_ground:
+	if is_on_ceiling() or is_on_floor():
 		velocity.y = 0
 	
 	var horizontal_movement = 0
@@ -203,16 +193,16 @@ func update_movement(delta):
 			top_fist.perform_movement(horizontal_movement, delta)
 
 			var final_pos = top_fist.get_drop_pos()
-			char_average_pos.update_pos(get_global_pos(), final_pos)
-			set_global_pos(final_pos)
+			char_average_pos.update_pos(global_position, final_pos)
+			global_position = final_pos
 			return
  
 		# Override the "Still" animation if the character is walking (on the ground).
-		if horizontal_movement != 0 and landed_on_ground:
+		if horizontal_movement != 0 && is_on_floor():
 			animation_key = "Walk"
 			
 		# Jumping.
-		if Input.is_action_pressed("player_jump") and status.can_jump and collision_handler.collided_sides[collision_handler.BOTTOM]:
+		if Input.is_action_pressed("player_jump") && is_on_floor():
 			velocity.y += jump_speed
 			
 			# Triggers events when jumping.
@@ -220,8 +210,8 @@ func update_movement(delta):
 				obj_func[0].call(obj_func[1])
 	
 	# Change the x scale of the sprite according to which side the character is facing.
-	if horizontal_movement != 0 and sign(sprite.get_scale().x) != horizontal_movement:
-		sprite.set_scale(Vector2(sprite.get_scale().x * -1, sprite.get_scale().y))
+	if horizontal_movement != 0 and sign(sprite.scale.x) != horizontal_movement:
+		sprite.scale.x *= -1
 
 	# Apply vertical velocity modifier if there is one.
 	if velocity_replacement_y != null:
@@ -236,23 +226,22 @@ func update_movement(delta):
 	velocity.x = horizontal_movement * speed + additional_speed_x
 	velocity.y += gravity * delta
 	
-	# Pass to the collision handler, and get the collision-modified movement from its return value.
-	var final_pos = get_global_pos() + collision_handler.movement_after_collision(velocity * delta)
+	var original_position = global_position
+
+	move_and_slide(velocity, Vector2(0, -1))
 
 	# Pass to the following camera, so that the character won't go beyond the camera.
-	var camera_clamped_pos = following_camera.clamp_pos_within_cam_bounds(final_pos)
+	var camera_clamped_pos = following_camera.clamp_pos_within_cam_bounds(global_position)
 	
 	# Fall off check.
-	if !status.fallen_off && camera_clamped_pos.y < final_pos.y:
+	if !status.fallen_off && camera_clamped_pos.y < global_position.y:
 		falls_off()
-	
-	final_pos = camera_clamped_pos
-	
+		
 	# Update Character Average Position (so that the camera is updated).
-	char_average_pos.update_pos(get_global_pos(), final_pos)
+	char_average_pos.update_pos(original_position, camera_clamped_pos)
 
 	# Update the position of the character.
-	set_global_pos(final_pos)
+	global_position = camera_clamped_pos
 
 	# Play the movement animation if no skill animation is currently being played.
 	if status.animate_movement && animation_key != null:
@@ -272,8 +261,8 @@ func falls_off():
 	combo_handler.cancel_skills_when_falling_off()
 	damaged(FALL_OFF_DAMAGE, false)
 
-	hide()
-	following_camera.instance_bottom_grab(get_global_pos().x)
+	visible = false
+	following_camera.instance_bottom_grab(global_position.x)
 
 	set_status("can_move", false, GRABBING_DURATION)
 	set_status("can_cast_skill", false, GRABBING_DURATION + DROPPING_DURATION)
@@ -297,13 +286,16 @@ func drop_from_fist():
 
 	top_fist.release()
 	
-	var original_z = get_z()
-	set_z(top_fist.get_z() + 1)
-	show()
+	var original_z = z_index
+	z_index = top_fist.z_index + 1
+	visible = true
 
 	top_fist = null
-	fall_off_timer = countdown_timer.new(0.5, self, "set_z", original_z)
-	
+	fall_off_timer = countdown_timer.new(0.5, self, "reset_z_index", original_z)
+
+func reset_z_index(original_z):
+	z_index = original_z
+
 # Perform combo by its function name.
 func check_combo_and_perform():
 	if Input.is_action_pressed("player_ult"):
@@ -328,18 +320,18 @@ func check_combo_and_perform():
 func gain_ult():
 	status.has_ult = true
 	health_bar.change_to_ult_theme()
-	ult_eyes.show()
+	ult_eyes.visible = true
 
 	for eye_path in player_constants.eyes_node_path:
-		get_node(eye_path).hide()
+		get_node(eye_path).visible = false
 
 func release_ult():
 	status.has_ult = false
 	health_bar.change_to_ordinary_theme()
-	ult_eyes.hide()
+	ult_eyes.visible = false
 
 	for eye_path in player_constants.eyes_node_path:
-		get_node(eye_path).show()
+		get_node(eye_path).visible = true
 
 # Configure movement related variables.
 func recalculate_horizontal_movement_variables():
@@ -369,7 +361,7 @@ func play_animation(key):
 	if key != "Idle" && key != "Still":
 		idle_timestamp = OS.get_unix_time()
 
-	if animator.get_current_animation() != key:
+	if animator.current_animation != key:
 		animator.play(key)
 
 # Register and unregister common timers for character states.
@@ -384,7 +376,7 @@ func reset_status(args):
 
 # Change the facing of the sprite. (1: right, -1: left)
 func change_sprite_facing(side):
-	sprite.set_scale(Vector2(abs(sprite.get_scale().x) * side, sprite.get_scale().y))
+	sprite.scale.x = abs(sprite.scale.x) * side
 
 func display_immune_text():
 	var immune_text = number_indicator.instance()
@@ -394,11 +386,11 @@ func show_ignited_particles(duration):
 	var ignite_timer = countdown_timer.new(duration, self, "ignited_recover")
 	register_timer("ignite", ignite_timer)
 
-	fire_particle.show()
+	fire_particle.visible = true
 
 func ignited_recover():
 	unregister_timer("ignite")
-	fire_particle.hide()
+	fire_particle.visible = false
 
 # Common abnormal status.
 func defense_boosted(multiplier, duration):
@@ -407,12 +399,12 @@ func defense_boosted(multiplier, duration):
 
 	defense_modifier *= multiplier
 
-	status_icons.defense.show()
+	status_icons.defense.visible = true
 	status_icons.defense.get_node("AnimationPlayer").play("Pop")
 
 func defense_boost_recover(multiplier):
 	defense_modifier /= multiplier
-	status_icons.defense.hide()
+	status_icons.defense.visible = false
 	unregister_timer("defense_change")
 
 func damage_boosted(multiplier, duration):
@@ -421,12 +413,12 @@ func damage_boosted(multiplier, duration):
 
 	damage_modifier *= multiplier
 
-	status_icons.damage.show()
+	status_icons.damage.visible = true
 	status_icons.damage.get_node("AnimationPlayer").play("Pop")
 
 func damage_boost_recover(multiplier):
 	damage_modifier /= multiplier
-	status_icons.damage.hide()
+	status_icons.damage.visible = false
 	unregister_timer("damage_change")
 
 func dwarfed_or_gianted(multipliers, duration):
@@ -450,10 +442,7 @@ func dwarf_giant_recover(multipliers):
 
 func set_size(multiplier):	
 	# Update the actual size.
-	set_scale(Vector2(1.0, 1.0) * multiplier)
-	
-	# Reset collision raycast origins.
-	collision_handler.calculate_ray_spacings()
+	scale = Vector2(1.0, 1.0) * multiplier
 
 func speed_changed(multiplier, duration):
 	# Cannot be slowed while invincible.
@@ -466,11 +455,11 @@ func speed_changed(multiplier, duration):
 	var speed_timer = countdown_timer.new(duration, self, "speed_change_recover", speed_timer_label)
 
 	if multiplier < 1:
-		status_icons.slowed.show()
+		status_icons.slowed.visible = true
 		status_icons.slowed.get_node("AnimationPlayer").play("Pop")
 		slowed_count += 1
 	else:
-		status_icons.speeded.show()
+		status_icons.speeded.visible = true
 		speeded_count += 1
 
 	speed_timers[speed_timer_label] = {
@@ -487,11 +476,11 @@ func speed_change_recover(label):
 	if speed_data.multiplier < 1:
 		slowed_count -= 1
 		if slowed_count == 0:
-			status_icons.slowed.hide()
+			status_icons.slowed.visible = false
 	else:
 		speeded_count -= 1
 		if speeded_count == 0:
-			status_icons.speeded.hide()
+			status_icons.speeded.visible = false
 
 	speed_timers.erase(label)
 
@@ -535,7 +524,7 @@ func confused(duration):
 
 	status.confused = true
 
-	status_icons.confused.show()
+	status_icons.confused.visible = true
 	status_icons.confused.get_node("AnimationPlayer").play("Pop")
 
 	var confused_timer = countdown_timer.new(duration, self, "cancel_confused")
@@ -543,7 +532,7 @@ func confused(duration):
 
 func cancel_confused():
 	status.confused = false
-	status_icons.confused.hide()
+	status_icons.confused.visible = false
 	unregister_timer("confused")
 
 func knocked_back(vel_x, vel_y, x_fade_rate):
@@ -568,8 +557,8 @@ func damaged(val, randomness = true):
 		var curr_modulate = null
 		for node_path in player_constants.hurt_modulate_node_path:
 			if curr_modulate == null:
-				curr_modulate = get_node(node_path).get_modulate()
-			get_node(node_path).set_modulate(player_constants.hurt_modulate_color)
+				curr_modulate = get_node(node_path).modulate
+			get_node(node_path).modulate = player_constants.hurt_modulate_color
 
 		hurt_modulate_timer = countdown_timer.new(HURT_MODULATE_DURATION, self, "recover_modulate", curr_modulate)
 
@@ -582,7 +571,7 @@ func damaged(val, randomness = true):
 
 func recover_modulate(original_modulate):
 	for node_path in player_constants.hurt_modulate_node_path:
-		get_node(node_path).set_modulate(original_modulate)
+		get_node(node_path).modulate = original_modulate
 	hurt_modulate_timer = null
 
 func healed(val):

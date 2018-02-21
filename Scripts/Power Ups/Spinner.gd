@@ -20,23 +20,19 @@ onready var straight_line_movement = preload("res://Scripts/Movements/StraightLi
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
 
 onready var holes = [
-	get_node("Spinner/Hole 1"),
-	get_node("Spinner/Hole 2"),
-	get_node("Spinner/Hole 3")
+	$"Spinner/Hole 1",
+	$"Spinner/Hole 2",
+	$"Spinner/Hole 3"
 ]
 
-func _ready():
-	set_process(true)
-
 func _process(delta):
-	rotate(curr_spin_speed * delta)
+	rotation += curr_spin_speed * delta
 
 	if shoot:
-		var final_pos = straight_line_movement.movement(get_global_pos(), delta)
-		final_pos = gravity_movement.movement(final_pos, delta)
-		move_to(final_pos)
+		gravity_movement.move(delta)
+		move_and_collide(straight_line_movement.movement(delta))
 
-		set_scale(Vector2(1.0,1.0) * lerp(get_scale().x, TO_SCALE, delta * SMOOTH))
+		scale = Vector2(1.0, 1.0) * lerp(scale.x, TO_SCALE, delta * SMOOTH)
 
 func hit_and_check_if_complete():
 	holes[count].set_modulate(ON_COLOR)

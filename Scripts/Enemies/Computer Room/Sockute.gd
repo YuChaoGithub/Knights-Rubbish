@@ -8,9 +8,9 @@ extends Node2D
 
 enum { NONE, NOT_ACTIVE, ACTIVATE, SPAWN_BALL, RECOVER }
 
+export(int) var activate_range_x = 1500
+export(int) var activate_range_y = 1500
 export(float) var activate_interval = 5.0
-
-const ACTIVATE_RANGE = 1500
 
 const ACTIVATE_ANIMATION_DURATION = 0.5
 const RECOVER_ANIMATION_DURATION = 0.5
@@ -24,25 +24,25 @@ var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var target_detect = preload("res://Scripts/Algorithms/TargetDetection.gd")
 
 var lightning_ball = preload("res://Scenes/Enemies/Computer Room/Sockute Lightning Ball.tscn")
-onready var ball_spawn_pos = get_node("Lightning Ball Spawn Pos")
-onready var spawn_node = get_node("..")
+onready var ball_spawn_pos = $"Lightning Ball Spawn Pos"
+onready var spawn_node = $".."
 
-onready var animator = get_node("Animation/AnimationPlayer")
-onready var char_average_pos = get_node("../../../../Character Average Position")
+onready var animator = $"Animation/AnimationPlayer"
+onready var char_average_pos = $"../../../../Character Average Position"
 
 func _ready():
 	animator.play("Still")
-	set_process(true)
 
 func _process(delta):
-	if status == NOT_ACTIVE:
-		check_for_active()
-	elif status == ACTIVATE:
-		play_activate_animation()
-	elif status == SPAWN_BALL:
-		spawn_lightning_ball()
-	elif status == RECOVER:
-		play_recover_animation()
+	match status:
+		NOT_ACTIVE:
+			check_for_active()
+		ACTIVATE:
+			play_activate_animation()
+		SPAWN_BALL:
+			spawn_lightning_ball()
+		RECOVER:
+			play_recover_animation()
 
 func change_status(to_status):
 	status = to_status
@@ -51,7 +51,7 @@ func change_status(to_status):
 		status_timer = null
 
 func check_for_active():
-	if char_average_pos.get_global_pos().distance_squared_to(get_global_pos()) <= ACTIVATE_RANGE * ACTIVATE_RANGE:
+	if char_average_pos.global_position.distance_squared_to(global_position) <= ACTIVATE_RANGE * ACTIVATE_RANGE:
 		change_status(ACTIVATE)
 
 func play_activate_animation():
@@ -64,7 +64,7 @@ func spawn_lightning_ball():
 
 	curr_ball = lightning_ball.instance()
 	spawn_node.add_child(curr_ball)
-	curr_ball.set_global_pos(ball_spawn_pos.get_global_pos())
+	curr_ball.global_position = ball_spawn_pos.global_position
 	curr_ball = weakref(curr_ball)
 
 	status_timer = cd_timer.new(SPAWNING_DURATION, self, "change_status", RECOVER)
@@ -78,7 +78,7 @@ func play_recover_animation():
 	status_timer = cd_timer.new(RECOVER_ANIMATION_DURATION + activate_interval, self, "change_status", ACTIVATE)
 
 func release_lightning_ball():
-	var target_pos = target_detect.get_nearest(self, char_average_pos.characters).get_global_pos()
+	var target_pos = target_detect.get_nearest(self, char_average_pos.characters).global_position
 	
 	if curr_ball.get_ref() != null:
 		curr_ball.get_ref().start_travel(target_pos)

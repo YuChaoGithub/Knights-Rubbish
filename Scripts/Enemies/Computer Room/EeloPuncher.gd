@@ -12,11 +12,11 @@ extends KinematicBody2D
 
 enum { NONE, ROAM, DASH, PUNCH, INIT_FLEE, FLEE, SEEK_HEAL, HEALING }
 
+export(int) var activate_range_x = 1500
+export(int) var activate_range_y = 1500
 export(NodePath) var fountain_path
 
 const MAX_HEALTH = 150
-
-const ACTIVATE_RANGE = 1000
 
 # Attack.
 const ATTACK_RANGE_X = 125
@@ -57,24 +57,25 @@ func activate():
 	ec.init_straight_line_movement(0, 0)
 	set_process(true)
 	ec.change_status(ROAM)
-	get_node("Animation/Damage Area").add_to_group("enemy_collider")
+	$"Animation/Damage Area".add_to_group("enemy")
 
 func _process(delta):
 	if ec.not_hurt_dying_stunned():
-		if ec.status == ROAM:
-			roam_randomly(delta)
-		elif ec.status == DASH:
-			dash_to_target(delta)
-		elif ec.status == PUNCH:
-			punch()
-		elif ec.status == INIT_FLEE:
-			init_flee()
-		elif ec.status == FLEE:
-			flee(delta)
-		elif ec.status == SEEK_HEAL:
-			seek_heal(delta)
-		elif ec.status == HEALING:
-			check_health()
+		match ec.status:
+			ROAM:
+				roam_randomly(delta)
+			DASH:
+				dash_to_target(delta)
+			PUNCH:
+				punch()
+			INIT_FLEE:
+				init_flee()
+			FLEE:
+				flee(delta)
+			SEEK_HEAL:
+				seek_heal(delta)
+			HEALING:
+				check_health()
 
 	ec.perform_gravity_movement(delta)
 	ec.perform_knock_back_movement(delta)
@@ -91,7 +92,7 @@ func roam_randomly(delta):
 
 	# Check if a character is in dash range.
 	for character in ec.char_average_pos.characters:
-		if abs(character.get_global_pos().x - get_global_pos().x) <= DASH_RANGE:
+		if abs(character.global_position.x - global_position.x) <= DASH_RANGE:
 			attack_target = character
 			ec.change_status(DASH)
 			ec.discard_random_movement()
@@ -106,12 +107,12 @@ func movement_ended():
 func dash_to_target(delta):
 	ec.play_animation("Walk")
 	
-	var dir = sign(attack_target.get_global_pos().x - get_global_pos().x)
+	var dir = sign(attack_target.global_position.x -global_position.x)
 	ec.straight_line_movement.dx = dir * DASH_SPEED
 	ec.perform_straight_line_movement(delta)
 
 	# Check if in attack range.
-	if abs(attack_target.get_global_pos().x - get_global_pos().x) <= ATTACK_RANGE_X && abs(attack_target.get_global_pos().y - get_global_pos().y) <= ATTACK_RANGE_Y:
+	if abs(attack_target.global_position.x -global_position.x) <= ATTACK_RANGE_X && abs(attack_target.global_position.y -global_position.y) <= ATTACK_RANGE_Y:
 		ec.change_status(PUNCH)
 
 func punch():
@@ -120,11 +121,11 @@ func punch():
 	status_timer = ec.cd_timer.new(PUNCH_ANIMATION_DURATION, self, "change_status", INIT_FLEE)
 
 func on_left_attack_hit(area):
-	if area.is_in_group("player_collider"):
+	if area.is_in_group("hero"):
 		apply_attack(area.get_node(".."), -1)
 
 func on_right_attack_hit(area):
-	if area.is_in_group("player_collider"):
+	if area.is_in_group("hero"):
 		apply_attack(area.get_node(".."), 1)
 
 func apply_attack(character, dir):
@@ -140,7 +141,7 @@ func init_flee():
 func flee(delta):
 	ec.play_animation("Walk")
 
-	var dir = sign(get_global_pos().x - attack_target.get_global_pos().x)
+	var dir = sign(global_position.x - attack_target.global_position.x)
 	ec.straight_line_movement.dx = dir * FLEE_SPEED
 	ec.perform_straight_line_movement(delta)
 
@@ -150,11 +151,11 @@ func get_health_percentage():
 func seek_heal(delta):
 	ec.play_animation("Walk")
 
-	var dir = sign(heal_pos.get_global_pos().x - get_global_pos().x)
+	var dir = sign(heal_pos.global_position.x - global_position.x)
 	ec.straight_line_movement.dx = dir * FLEE_SPEED
 	ec.perform_straight_line_movement(delta)
 
-	if abs(get_global_pos().x - heal_pos.get_global_pos().x) <= HEAL_RANGE:
+	if abs(global_position.x - heal_pos.global_position.x) <= HEAL_RANGE:
 		ec.change_status(HEALING)
 
 func check_health():
@@ -164,7 +165,7 @@ func check_health():
 		ec.change_status(ROAM)
 
 func damaged(val):
-	ec.damaged(val, ec.animator.get_current_animation() != "Punch")
+	ec.damaged(val, ec.animator.current_animation != "Punch")
 	
 func resume_from_damaged():
 	ec.resume_from_damaged()

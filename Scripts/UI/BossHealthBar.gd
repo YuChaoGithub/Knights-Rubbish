@@ -6,17 +6,16 @@ const SMOOTH = 3.0
 
 var actual_value
 
-onready var bar = get_node("Container/Health Bar")
-onready var animator = get_node("AnimationPlayer")
+onready var bar = $"Container/Health Bar"
+onready var animator = $AnimationPlayer
 
 func _ready():
 	animator.play("Hide")
-	get_node("Container/Circular Frame/Avatar").set_texture(avatar_texture)
-	actual_value = bar.get_value()
-	set_process(true)
+	$"Container/Circular Frame/Avatar".texture = avatar_texture
+	actual_value = bar.value
 
 func _process(delta):
-	bar.set_value(lerp(bar.get_value(), actual_value, delta * SMOOTH))
+	bar.value = lerp(bar.value, actual_value, delta * SMOOTH)
 
 func show_health_bar():
 	animator.play("Appear")

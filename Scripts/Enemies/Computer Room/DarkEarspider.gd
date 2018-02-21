@@ -12,9 +12,10 @@ extends Node2D
 
 enum { NONE, MOVE, DROP, CLAP, CLIMB, RANDOM_MOVEMENT }
 
-const MAX_HEALTH = 200
+export(int) var activate_range_x = 1500
+export(int) var activate_range_y = 1500
 
-const ACTIVATE_RANGE = 1500
+const MAX_HEALTH = 200
 
 # Movement.
 const SPEED_X = 200
@@ -43,9 +44,9 @@ var attack_target = null
 var status_timer = null
 var curr_rand_movement = null
 
-onready var original_pos = get_pos()
-onready var silk_attach_spot = get_node("Animation/Body/Silk Pos")
-onready var silk_attach_spot_original_pos = silk_attach_spot.get_global_pos()
+onready var original_pos = position
+onready var silk_attach_spot = $"Animation/Body/Silk Pos"
+onready var silk_attach_spot_original_pos = silk_attach_spot.global_position
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 onready var movement_type = preload("res://Scripts/Movements/StraightLineMovement.gd").new(0, 0)
@@ -56,28 +57,30 @@ func activate():
 	search_for_target()
 
 	# Become damagable.
-	get_node("Animation/Damage Area").add_to_group("enemy_collider")
+	$"Animation/Damage Area".add_to_group("enemy")
 	
 	ec.change_status(MOVE)
 
 func _process(delta):
-	update()  # For _draw()
+	update()
+
 	if ec.not_hurt_dying_stunned():
-		if ec.status == MOVE:
-			move_horizontally_to_target(delta)
-		elif ec.status == DROP:
-			drop_down(delta)
-		elif ec.status == CLAP:
-			clap_attack()
-		elif ec.status == CLIMB:
-			climb_up(delta)
-		elif ec.status == RANDOM_MOVEMENT:
-			perform_random_movement(delta)
+		match ec.status:
+			MOVE:
+				move_horizontally_to_target(delta)
+			DROP:
+				drop_down(delta)
+			CLAP:
+				clap_attack()
+			CLIMB:
+				climb_up(delta)
+			RANDOM_MOVEMENT:
+				perform_random_movement(delta)
 
 func _draw():
 	# Draw the attached black silk.
-	var from_pos = silk_attach_spot.get_global_pos() - get_global_pos()
-	var to_pos = Vector2(from_pos.x, from_pos.y - (silk_attach_spot.get_global_pos().y - silk_attach_spot_original_pos.y))
+	var from_pos = silk_attach_spot.global_position - global_position
+	var to_pos = Vector2(from_pos.x, from_pos.y - (silk_attach_spot.global_position.y - silk_attach_spot_original_pos.y))
 	draw_line(from_pos, to_pos, Color(0, 0, 0), ATTACHED_SILK_THICKNESS)
 
 func change_status(to_status):
@@ -89,13 +92,13 @@ func search_for_target():
 
 func move_horizontally_to_target(delta):
 	ec.play_animation("Swing")
-	var difference_x = attack_target.get_global_pos().x - get_global_pos().x
+	var difference_x = attack_target.global_position.x - global_position.x
 
 	# Apply horizontal movement.
 	movement_type.set_velocity(sign(difference_x) * SPEED_X, 0)
-	var final_pos = movement_type.movement(get_pos(), delta)
+	var final_pos = position + movement_type.movement(delta)
 	final_pos.x = clamp(final_pos.x, original_pos.x - left_bound, original_pos.x + left_bound)
-	set_pos(final_pos)
+	position = final_pos
 
 	# Close enough, land after a delay.
 	if abs(difference_x) <= DROPPING_TO_CHAR_OFFSET_X:
@@ -104,11 +107,11 @@ func move_horizontally_to_target(delta):
 func drop_down(delta):
 	ec.play_animation("Drop")
 	movement_type.set_velocity(0, SPEED_Y)
-	set_pos(movement_type.movement(get_pos(), delta))
+	position += movement_type.movement(delta)
 
 	# Close enough or the target is above, perform clap attack.
-	var target_y = attack_target.get_global_pos().y
-	var curr_y = get_global_pos().y
+	var target_y = attack_target.global_position.y
+	var curr_y = global_position.y
 	if curr_y > target_y || abs(curr_y - target_y) < DROPPING_TO_CHAR_OFFSET_Y:
 		ec.change_status(CLAP)
 
@@ -119,16 +122,16 @@ func clap_attack():
 
 # Will be signalled if a character is clapped.
 func clap_attack_hit(area):
-	if area.is_in_group("player_collider"):
+	if area.is_in_group("hero"):
 		area.get_node("..").stunned(CLAP_STUN_DURATION)
 
 func climb_up(delta):
 	ec.play_animation("Still")
 	movement_type.set_velocity(0, -SPEED_Y)
-	set_pos(movement_type.movement(get_pos(), delta))
+	position += movement_type.movement(delta)
 
 	# Back to the original y position. Start random horizontal movement.
-	if get_pos().y <= original_pos.y:
+	if position.y <= original_pos.y:
 		search_for_target()
 		ec.change_status(RANDOM_MOVEMENT)
 
@@ -140,9 +143,9 @@ func perform_random_movement(delta):
 	
 	if !curr_rand_movement.movement_ended():
 		# Perform random movement sequence.
-		var final_pos = curr_rand_movement.movement(get_pos(), delta)
+		var final_pos = position + curr_rand_movement.movement(delta)
 		final_pos.x = clamp(final_pos.x, original_pos.x - left_bound, original_pos.x + left_bound)
-		set_pos(final_pos)
+		position = final_pos
 	else:
 		# Search for a new target and perform MOVE.
 		curr_rand_movement = null

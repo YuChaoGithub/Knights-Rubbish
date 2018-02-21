@@ -32,13 +32,12 @@ var countdown_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var target_detection = preload("res://Scripts/Algorithms/TargetDetection.gd")
 
 onready var movement_type = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
-onready var char_average_pos = get_node("../../../../Character Average Position")
-onready var animator = get_node("Animation/AnimationPlayer")
-onready var explosion_particles = get_node("Explosion Particles")
+onready var char_average_pos = $"../../../../Character Average Position"
+onready var animator = $"Animation/AnimationPlayer"
+onready var explosion_particles = $"Explosion Particles"
 
 func _ready():
 	animator.play("Still")
-	set_process(true)
 
 func _process(delta):
 	if status == WAITING:
@@ -46,7 +45,7 @@ func _process(delta):
 		return
 
 	# Movement.
-	move_to(movement_type.movement(get_global_pos(), delta))
+	move_and_collide(movement_type.movement(delta))
 
 	if status == COUNTDOWN && timer == null:
 		start_counting_down()
@@ -54,7 +53,7 @@ func _process(delta):
 func check_nearest_char():
 	var nearest_target = target_detection.get_nearest(self, char_average_pos.characters)
 
-	if abs(nearest_target.get_global_pos().x - get_global_pos().x) <= TRIGGER_RANGE_X:
+	if abs(nearest_target.global_position.x - global_position.x) <= TRIGGER_RANGE_X:
 		status = COUNTDOWN
 
 func start_counting_down():
@@ -68,15 +67,15 @@ func explode_attack():
 	timer = countdown_timer.new(EXPLOSION_ANIMATION_DURATION, self, "queue_free")
 
 func explosion_attack_hit(area):
-	if area.is_in_group("player_collider"):
+	if area.is_in_group("hero"):
 		var character = area.get_node("..")
 		character.stunned(STUN_DURATION)
 		character.damaged(DAMAGE)
 		knock_back(character)
 
 func knock_back(character):
-	var center_pos = get_node("Animation/Explosion Area/Center").get_global_pos()
-	var char_pos = character.get_global_pos()
+	var center_pos = $"Animation/Explosion Area/Center".global_position
+	var char_pos = character.global_position
 
 	var dir_x = 1 if center_pos.x < char_pos.x else -1
 	var dir_y = 1 if center_pos.y < char_pos.y else -1

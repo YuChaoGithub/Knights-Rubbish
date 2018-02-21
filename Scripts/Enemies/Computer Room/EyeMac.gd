@@ -16,8 +16,10 @@ enum { NONE, RNG_IDLE,
 	   DROP_APPEAR, DROP,
 	   SHOOT_APPEAR, SHOOT, SHOOT_DISAPPEAR }
 
+export(int) var activate_range_x = 1000
+export(int) var activate_range_y = 1500
+
 const MAX_HEALTH = 2000
-const ACTIVATE_RANGE = 1000
 
 # Attack.
 const CONSECUTIVE_ATTACK_COUNT = 2
@@ -54,38 +56,38 @@ var shoot_mouse_index = 0
 var mouse_bullet_timer = null
 var eyed_character = null
 
-onready var spawn_node = get_node("..")
+onready var spawn_node = $".."
 
 # Heart.
-onready var hurt_heart = get_node("Animation/Screen/Hurt Me Screen/Heart")
-onready var heart_left_pos_x = get_node("Animation/Screen/Hurt Me Screen/Left Pos").get_pos().x
-onready var heart_right_pos_x = get_node("Animation/Screen/Hurt Me Screen/Right Pos").get_pos().x
-onready var damage_area = get_node("Animation/Damage Area")
+onready var hurt_heart = $"Animation/Screen/Hurt Me Screen/Heart"
+onready var heart_left_pos_x = $"Animation/Screen/Hurt Me Screen/Left Pos".position.x
+onready var heart_right_pos_x = $"Animation/Screen/Hurt Me Screen/Right Pos".position.x
+onready var damage_area = $"Animation/Damage Area"
 
 # Shoot Mouse.
 var mouse = preload("res://Scenes/Enemies/Computer Room/Eye Mac Mouse.tscn")
-onready var mouse_cannon = get_node("Animation/Screen/Shoot Mouse Screen/Cannon")
+onready var mouse_cannon = $"Animation/Screen/Shoot Mouse Screen/Cannon"
 onready var mouse_spawn_pos = mouse_cannon.get_node("Spawn Pos")
 
 # Pump Harddies.
 var harddies = preload("res://Scenes/Enemies/Computer Room/Harddies.tscn")
-onready var harddies_spawn_pos = get_node("Animation/Harddies Spawn Pos")
+onready var harddies_spawn_pos = $"Animation/Harddies Spawn Pos"
 
 # Music.
 var plugobra = preload("res://Scenes/Enemies/Computer Room/Plugobra.tscn")
 onready var plugobra_spawn_poses = [
-	get_node("Animation/Plugobra Spawn Poses/1"),
-	get_node("Animation/Plugobra Spawn Poses/2"),
-	get_node("Animation/Plugobra Spawn Poses/3"),
-	get_node("Animation/Plugobra Spawn Poses/4")
+	$"Animation/Plugobra Spawn Poses/1",
+	$"Animation/Plugobra Spawn Poses/2",
+	$"Animation/Plugobra Spawn Poses/3",
+	$"Animation/Plugobra Spawn Poses/4"
 ]
 
 # USB Drop.
 var usb_bomb = preload("res://Scenes/Enemies/Computer Room/Eye Mac USB Bomb.tscn")
-onready var usb_bomb_frame = get_node("Animation/Screen/Drop USB Scene/Frame")
+onready var usb_bomb_frame = $"Animation/Screen/Drop USB Scene/Frame"
 onready var usb_bomb_spawn_pos = usb_bomb_frame.get_node("Spawn Pos")
-onready var usb_frame_bottom_left_pos = get_node("Animation/Screen/Drop USB Scene/Bottom Left")
-onready var usb_frame_top_right_pos = get_node("Animation/Screen/Drop USB Scene/Top Right")
+onready var usb_frame_bottom_left_pos = $"Animation/Screen/Drop USB Scene/Bottom Left"
+onready var usb_frame_top_right_pos = $"Animation/Screen/Drop USB Scene/Top Right"
 
 # Screen Crack.
 var screen_crack_textures = [
@@ -98,10 +100,10 @@ var screen_crack_textures = [
 	preload("res://Graphics/Enemies/Computer Room/Eyemac/Broken Screen 2.png"),
 	preload("res://Graphics/Enemies/Computer Room/Eyemac/Broken Screen 1.png")
 ]
-onready var screen_crack = get_node("Animation/Screen/Broken Screen")
+onready var screen_crack = $"Animation/Screen/Broken Screen"
 
 # Eyeball.
-onready var eyeball = get_node("Animation/Screen/Eye/Eyeball")
+onready var eyeball = $"Animation/Screen/Eye/Eyeball"
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
@@ -114,41 +116,42 @@ func activate():
 
 func _process(delta):
 	if ec.not_hurt_dying_stunned():
-		if ec.status == RNG_IDLE:
-			rng_idle()
-		elif ec.status == HEART_APPEAR:
-			heart_appear()
-		elif ec.status == HEART:
-			heart()
-		elif ec.status == HEART_DISAPPEAR:
-			heart_disappear()
-		elif ec.status == PUMP_UP_APPEAR:
-			pump_up_appear()
-		elif ec.status == PUMP_UP_ANIM:
-			pump_up_anim()
-		elif ec.status == PUMP:
-			pump()
-		elif ec.status == MUSIC_APPEAR:
-			music_appear()
-		elif ec.status == PLAY_MUSIC:
-			play_music()
-		elif ec.status == MUSIC_DISAPPEAR:
-			music_disappear()
-		elif ec.status == DROP_APPEAR:
-			drop_appear()
-		elif ec.status == DROP:
-			drop()
-		elif ec.status == SHOOT_APPEAR:
-			shoot_appear()
-		elif ec.status == SHOOT:
-			shoot(delta)
-		elif ec.status == SHOOT_DISAPPEAR:
-			shoot_disappear()
+		match ec.status:
+			RNG_IDLE:
+				rng_idle()
+			HEART_APPEAR:
+				heart_appear()
+			HEART:
+				heart()
+			HEART_DISAPPEAR:
+				heart_disappear()
+			PUMP_UP_APPEAR:
+				pump_up_appear()
+			PUMP_UP_ANIM:
+				pump_up_anim()
+			PUMP:
+				pump()
+			MUSIC_APPEAR:
+				music_appear()
+			PLAY_MUSIC:
+				play_music()
+			MUSIC_DISAPPEAR:
+				music_disappear()
+			DROP_APPEAR:
+				drop_appear()
+			DROP:
+				drop()
+			SHOOT_APPEAR:
+				shoot_appear()
+			SHOOT:
+				shoot(delta)
+			SHOOT_DISAPPEAR:
+				shoot_disappear()
 	
 	eyeball_follow_character(delta)
 
 func eyeball_follow_character(delta):
-	var direction = (eyed_character.get_global_pos() - eyeball.get_global_pos()).normalized()
+	var direction = (eyed_character.global_position - eyeball.global_position).normalized()
 	eyeball.move(direction * EYEBALL_SPEED * delta)
 
 func change_status(to_status):
@@ -176,9 +179,9 @@ func rng_idle():
 func heart_appear():
 	# Determine the position of the heart.
 	var pos_x = ec.rng.randf_range(heart_left_pos_x, heart_right_pos_x)
-	hurt_heart.set_pos(Vector2(pos_x, hurt_heart.get_pos().y))
+	hurt_heart.set_pos(Vector2(pos_x, hurt_heart.position.y))
 
-	damage_area.add_to_group("enemy_collider")
+	damage_area.add_to_group("enemy")
 
 	ec.play_animation("Hurt Me Appear")
 	ec.change_status(NONE)
@@ -194,7 +197,7 @@ func heart_disappear():
 	ec.play_animation("Hurt Me Disappear")
 	ec.change_status(NONE)
 
-	damage_area.remove_from_group("enemy_collider")
+	damage_area.remove_from_group("enemy")
 	
 	status_timer = ec.cd_timer.new(HEART_DISAPPEAR_DURATION, self, "change_status", RNG_IDLE)
 
@@ -213,7 +216,7 @@ func pump():
 
 	var new_harddies = harddies.instance()
 	spawn_node.add_child(new_harddies)
-	new_harddies.set_global_pos(harddies_spawn_pos.get_global_pos())
+	new_harddies.global_position = harddies_spawn_pos.global_position
 
 	status_timer = ec.cd_timer.new(PUMP_UP_DURATION, self, "change_status", RNG_IDLE)
 
@@ -228,12 +231,12 @@ func play_music():
 
 	var spawn_poses_x = []
 	for index in range(0, plugobra_spawn_poses.size() - 1):
-		spawn_poses_x.push_back(ec.rng.randf_range(plugobra_spawn_poses[index].get_global_pos().x, plugobra_spawn_poses[index+1].get_global_pos().x))
+		spawn_poses_x.push_back(ec.rng.randf_range(plugobra_spawn_poses[index].global_position.x, plugobra_spawn_poses[index+1].global_position.x))
 
 	for spawn_pos_x in spawn_poses_x:
 		var new_plugobra = plugobra.instance()
 		spawn_node.add_child(new_plugobra)
-		new_plugobra.set_global_pos(Vector2(spawn_pos_x, plugobra_spawn_poses[0].get_global_pos().y))
+		new_plugobra.global_position = Vector2(spawn_pos_x, plugobra_spawn_poses[0].global_position.y)
 	
 	status_timer = ec.cd_timer.new(MUSIC_DURATION, self, "change_status", MUSIC_DISAPPEAR)
 
@@ -244,9 +247,9 @@ func music_disappear():
 
 func drop_appear():
 	# Randomize the position of the Drop Frame.
-	var pos_x = ec.rng.randf_range(usb_frame_bottom_left_pos.get_global_pos().x, usb_frame_top_right_pos.get_global_pos().x)
-	var pos_y = ec.rng.randf_range(usb_frame_top_right_pos.get_global_pos().y, usb_frame_bottom_left_pos.get_global_pos().y)
-	usb_bomb_frame.set_global_pos(Vector2(pos_x, pos_y))
+	var pos_x = ec.rng.randf_range(usb_frame_bottom_left_pos.global_position.x, usb_frame_top_right_pos.global_position.x)
+	var pos_y = ec.rng.randf_range(usb_frame_top_right_pos.global_position.y, usb_frame_bottom_left_pos.global_position.y)
+	usb_bomb_frame.global_position = Vector2(pos_x, pos_y)
 
 	ec.play_animation("USB Drop")
 	ec.change_status(NONE)
@@ -256,7 +259,7 @@ func drop_appear():
 func drop():
 	var new_usb = usb_bomb.instance()
 	spawn_node.add_child(new_usb)
-	new_usb.set_global_pos(usb_bomb_spawn_pos.get_global_pos())
+	new_usb.global_position = usb_bomb_spawn_pos.global_position
 
 	usb_bomb_count += 1
 
@@ -276,14 +279,14 @@ func shoot_appear():
 func shoot(delta):
 	ec.play_animation("Shoot Mouse Screen")
 	
-	mouse_cannon.rotate(deg2rad(SHOOT_ROTATE_SPEED) * delta)
+	mouse_cannon.rotation_degrees += SHOOT_ROTATE_SPEED * delta
 
 	if mouse_bullet_timer == null:
 		mouse_bullet_timer = ec.cd_timer.new(SHOOT_INTERVAL, self, "shoot_mouse_bullet", 0)
 
 func shoot_mouse_bullet(count):
 	if count < MOUSE_BULLET_COUNT:
-		spawn_mouse_bullet(Vector2(cos(mouse_cannon.get_rot()), -sin(mouse_cannon.get_rot())))
+		spawn_mouse_bullet(Vector2(cos(mouse_cannon.rotation), -sin(mouse_cannon.rotation)))
 		mouse_bullet_timer = ec.cd_timer.new(SHOOT_INTERVAL, self, "shoot_mouse_bullet", count + 1)
 	else:
 		mouse_bullet_timer = null
@@ -293,7 +296,7 @@ func spawn_mouse_bullet(direction):
 	var new_mouse = mouse.instance()
 	new_mouse.initialize(direction)
 	spawn_node.add_child(new_mouse)
-	new_mouse.set_global_pos(mouse_spawn_pos.get_global_pos())
+	new_mouse.global_position = mouse_spawn_pos.global_position
 
 func shoot_disappear():
 	ec.play_animation("Shoot Mouse Disappear")

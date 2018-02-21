@@ -77,7 +77,7 @@ func _ready():
 	character.jump_event.push_back([self, "reset_up_skill_available"])
 
 func _process(delta):
-	if character.landed_on_ground:
+	if character.is_on_floor():
 		# For Up Skill.
 		if not up_skill_available and up_skill_available_timer == null and OS.get_unix_time() - up_skill_cast_timestamp > UP_SKILL_LANDED_DETECTION_DELAY:
 			# Set up skill to available after cooldown.
@@ -121,7 +121,7 @@ func basic_attack_strikes():
 
 # Will be signalled by pencil weapon's collder (Area2D).
 func on_basic_attack_hit(area):
-	if area.is_in_group("enemy_collider"):
+	if area.is_in_group("enemy"):
 		# Damage the enemy.
 		var enemy_node = area.get_node("../..")
 		var damage = rng.randi_range(BASIC_ATTACK_DAMAGE_MIN, BASIC_ATTACK_DAMAGE_MAX)
@@ -174,7 +174,7 @@ func basic_skill_strikes():
 
 # Will be signalled by the hit box when an enemy gets into it.
 func on_basic_skill_hit(area):
-	if area.is_in_group("enemy_collider"):
+	if area.is_in_group("enemy"):
 		var enemy = area.get_node("../..")
 		var damage = rng.randi_range(BASIC_SKILL_DAMAGE_MIN, BASIC_SKILL_DAMAGE_MAX)
 		enemy.damaged(damage * character.damage_modifier)
@@ -251,7 +251,7 @@ func up_skill_ended():
 
 # Will be signalled by the hit box of up skill.
 func on_up_skill_hit(area):
-	if area.is_in_group("enemy_collider"):
+	if area.is_in_group("enemy"):
 		# Can't hit the same object twice.
 		if !(area in up_skill_targets):
 			var damage = rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX)
@@ -326,7 +326,7 @@ func fire_ult():
 	character.get_node("Ult Hit Box").global_position = character.following_camera.global_position
 
 func ult_hit(area):
-	if area.is_in_group("enemy_collider"):
+	if area.is_in_group("enemy"):
 		var new_eraser = ult_eraser.instance()
 		new_eraser.initialize(character.global_position, area.get_node("../.."))
 		character.get_node("..").add_child(new_eraser)

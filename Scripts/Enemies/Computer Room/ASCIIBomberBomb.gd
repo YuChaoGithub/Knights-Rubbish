@@ -32,9 +32,10 @@ func _process(delta):
 	if exploding:
 		return
 
-	move_and_collide(gravity_movement.movement(delta) + movement_pattern.movement(delta))
+	gravity_movement.move(delta)
+	move_and_collide(movement_pattern.movement(delta))
 
-	if gravity_movement.is_landed() || OS.get_unix_time() - lifetime_timestamp >= LIFETIME:
+	if gravity_movement.is_landed || OS.get_unix_time() - lifetime_timestamp >= LIFETIME:
 		explode()
 
 func explode():
@@ -43,7 +44,7 @@ func explode():
 	die_timer = preload("res://Scripts/Utils/CountdownTimer.gd").new(DIE_ANIMATION_DURATION, self, "queue_free")
 
 func on_attack_hit(area):
-	if !exploding && area.is_in_group("player_collider"):
+	if !exploding && area.is_in_group("hero"):
 		explode()
 
 		var character = area.get_node("..")

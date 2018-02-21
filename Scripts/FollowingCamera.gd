@@ -29,13 +29,13 @@ var bottom_grab = preload("res://Scenes/UI/Bottom Grab.tscn")
 var top_fist = preload("res://Scenes/UI/Top Fist.tscn")
 
 # The target position for the camera.
-onready var target_pos = get_global_pos()
+onready var target_pos = global_position
 
 # A Vector2 storing the screen size.
 onready var screen_size = get_viewport_rect().size
 
 func _draw():
-	if get_tree().is_editor_hint():
+	if Engine.editor_hint:
 		for i in [0.1, 0.2, 0.3, 0.4, 0.5]:
 			draw_line(Vector2(-cam_width * i, -cam_height * 0.5), Vector2(-cam_width * i, cam_height * 0.5), Color(1.0, 0.0, 0.0), 1)
 			draw_line(Vector2(cam_width * i, -cam_height * 0.5), Vector2(cam_width * i, cam_height * 0.5), Color(1.0, 0.0, 0.0), 1)
@@ -45,21 +45,22 @@ func _draw():
 func _ready():
 	cam_width = screen_size.x * ZOOM_FACTOR
 	cam_height = screen_size.y * ZOOM_FACTOR
+	set_process(false)
 
-	if !get_tree().is_editor_hint():
+	if !Engine.editor_hint:
 		# Initialize the zooming of the viewport.
-		var canvas_transform = get_viewport().get_canvas_transform()
+		var canvas_transform = get_viewport().canvas_transform
 		canvas_transform.x /= ZOOM_FACTOR
 		canvas_transform.y /= ZOOM_FACTOR
-		get_viewport().set_canvas_transform(canvas_transform)
+		get_viewport().canvas_transform = canvas_transform
 		
 		set_process(true)
 	
 func _process(delta):
 	# Move the camera closer to its target position.
-	var new_pos_x = lerp(get_global_pos().x, target_pos.x, delta * CAMERA_SMOOTH)
-	var new_pos_y = lerp(get_global_pos().y, target_pos.y, delta * CAMERA_SMOOTH)
-	set_global_pos(Vector2(new_pos_x, new_pos_y))
+	var new_pos_x = lerp(global_position.x, target_pos.x, delta * CAMERA_SMOOTH)
+	var new_pos_y = lerp(global_position.y, target_pos.y, delta * CAMERA_SMOOTH)
+	global_position = Vector2(new_pos_x, new_pos_y)
 		
 	# Actually move the viewport.
 	update_viewport()
@@ -70,21 +71,20 @@ func check_camera_update(x_pos, y_pos):
 	if cam_lock_semaphore != 0:
 		return
 
-	var new_camera_pos = get_global_pos()
-	
+	var new_camera_pos = global_position
 	# Check if the character reaches the horizontal margins. If so, update the position of the camera.
-	if x_pos > get_global_pos().x + cam_width * (drag_margin_right - 0.5):
+	if x_pos > global_position.x + cam_width * (drag_margin_right - 0.5):
 		# Character reaches the right drag margin.
 		new_camera_pos.x = x_pos - cam_width * (drag_margin_right - 0.5)
-	elif x_pos < get_global_pos().x + cam_width * (drag_margin_left - 0.5):
+	elif x_pos < global_position.x + cam_width * (drag_margin_left - 0.5):
 		# Character reaches the left drag margin.
 		new_camera_pos.x = x_pos + cam_width * (0.5 - drag_margin_left)
 	
 	# Vertical margin checks.
-	if y_pos > get_global_pos().y + cam_height * (drag_margin_bottom - 0.5):
+	if y_pos > global_position.y + cam_height * (drag_margin_bottom - 0.5):
 		# Character reaches the bottom drag margin.
 		new_camera_pos.y = y_pos - cam_height * (drag_margin_bottom - 0.5)
-	elif y_pos < get_global_pos().y + cam_height * (drag_margin_top - 0.5):
+	elif y_pos < global_position.y + cam_height * (drag_margin_top - 0.5):
 		# Character reaches the top drag margin.
 		new_camera_pos.y = y_pos + cam_height * (0.5 - drag_margin_top)
 	
@@ -96,24 +96,24 @@ func check_camera_update(x_pos, y_pos):
 
 # Actually scroll the screen (update the viewport according to the position of the camera).
 func update_viewport():
-	var canvas_tranform = get_viewport().get_canvas_transform()
-	canvas_tranform.o = -get_global_pos() / ZOOM_FACTOR + screen_size / 2.0
-	get_viewport().set_canvas_transform(canvas_tranform)
+	var canvas_transform = get_viewport().canvas_transform
+	canvas_transform.origin = -global_position / ZOOM_FACTOR + screen_size / 2.0
+	get_viewport().canvas_transform = canvas_transform
 
 # Pass in the intended position of an object. Returns the position clamped within the viewing bounds of the camera.
 func clamp_pos_within_cam_bounds(pos):
-	pos.x = clamp(pos.x, get_global_pos().x - cam_width * 0.5, get_global_pos().x + cam_width * 0.5)
-	pos.y = clamp(pos.y, get_global_pos().y - cam_height * 0.5, get_global_pos().y + cam_height * 0.5)
+	pos.x = clamp(pos.x, global_position.x - cam_width * 0.5, global_position.x + cam_width * 0.5)
+	pos.y = clamp(pos.y, global_position.y - cam_height * 0.5, global_position.y + cam_height * 0.5)
 	return pos
 
 func instance_bottom_grab(pos_x):
 	var fist = bottom_grab.instance()
-	get_node("..").add_child(fist)
-	fist.set_global_pos(Vector2(pos_x, get_global_pos().y + cam_height * 0.5))
+	$"..".add_child(fist)
+	fist.global_position = Vector2(pos_x, global_position.y + cam_height * 0.5)
 
 func instance_top_fist():
 	var fist = top_fist.instance()
 	add_child(fist)
-	fist.set_global_pos(Vector2(get_global_pos().x, get_global_pos().y - cam_height * 0.5))
+	fist.global_position = Vector2(global_position.x, global_position.y - cam_height * 0.5)
 
 	return fist

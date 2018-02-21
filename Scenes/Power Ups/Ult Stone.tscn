@@ -13,6 +13,8 @@ radius = 255.58
 
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 1 )
+activate_range_x = 2000
+activate_range_y = 2000
 
 [node name="Ball" type="Sprite" parent="." index="0"]
 
@@ -25,7 +27,7 @@ collision/safe_margin = 0.08
 [node name="Damage Area" type="Node2D" parent="." index="2"]
 
 [node name="Damage Area" type="Area2D" parent="Damage Area" index="0" groups=[
-"enemy_collider",
+"enemy",
 ]]
 
 editor/display_folded = true
@@ -34,7 +36,7 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 2
+collision_layer = 0
 collision_mask = 0
 audio_bus_override = false
 audio_bus_name = "Master"

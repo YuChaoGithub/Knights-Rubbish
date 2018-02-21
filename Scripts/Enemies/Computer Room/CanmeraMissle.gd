@@ -20,28 +20,25 @@ var explode_timer = null
 var horizontal_movement
 var gravity_movement
 
-onready var animator = get_node("AnimationPlayer")
+onready var animator = $AnimationPlayer
 
 func initialize(dx, dy):
 	horizontal_movement = preload("res://Scripts/Movements/StraightLineMovement.gd").new(dx * SPEED, 0)
 	gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
 	gravity_movement.dy = dy * SPEED
-		
-	set_process(true)
 
 	lifetime_timestamp = OS.get_unix_time()
 
 func _process(delta):
 	# Movement.
-	var final_pos = horizontal_movement.movement(get_global_pos(), delta)
-	final_pos = gravity_movement.movement(final_pos, delta)
-	move_to(final_pos)
+	gravity_movement.move(delta)
+	move_and_collide(hoirzontal_movement.movement(delta))
 
 	# Rotation.
-	set_rot(atan2(-horizontal_movement.dx, -gravity_movement.dy) - PI * 0.5)
+	rotation = atan2(-horizontal_movement.dx, -gravity_movement.dy) - PI * 0.5
 
 	# Lifetime.
-	if gravity_movement.is_landed() || OS.get_unix_time() - lifetime_timestamp > LIFETIME:
+	if gravity_movement.is_landed || OS.get_unix_time() - lifetime_timestamp > LIFETIME:
 		explode()
 
 func explode():
@@ -53,7 +50,7 @@ func explode():
 	set_process(false)
 
 func attack_hit(area):
-	if !exploding && area.is_in_group("player_collider"):
+	if !exploding && area.is_in_group("hero"):
 		explode()
 
 		var character = area.get_node("..")

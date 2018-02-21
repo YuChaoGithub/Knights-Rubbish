@@ -12,9 +12,10 @@ extends Node2D
 
 enum { NONE, IDLE, INPUT, PROCESS, OUTPUT, SHOOT }
 
-const MAX_HEALTH = 2000
+export(int) var activate_range_x = 1500
+export(int) var activate_range_y = 1500
 
-const ACTIVATE_RANGE = 1500
+const MAX_HEALTH = 2000
 
 # Animation.
 const IDLE_ANIMATION_MIN_DURATION = 5.0
@@ -29,11 +30,11 @@ var attack_keys = ["confuse", "slow", "fire", "stun", "hurt"]
 var curr_attack = null
 
 onready var input_words = {
-	confuse = get_node("Animation/Body/Input/Confusion"),
-	slow = get_node("Animation/Body/Input/Slow"),
-	fire = get_node("Animation/Body/Input/Fire"),
-	stun = get_node("Animation/Body/Input/Stun"),
-	hurt = get_node("Animation/Body/Input/Hurt")
+	confuse = $"Animation/Body/Input/Confusion",
+	slow = $"Animation/Body/Input/Slow",
+	fire = $"Animation/Body/Input/Fire",
+	stun = $"Animation/Body/Input/Stun",
+	hurt = $"Animation/Body/Input/Hurt"
 }
 onready var output_balls = {
 	confuse = preload("res://Scenes/Enemies/Computer Room/Latortrans confusion ball.tscn"),
@@ -42,8 +43,8 @@ onready var output_balls = {
 	stun = preload("res://Scenes/Enemies/Computer Room/Latortrans stun ball.tscn"),
 	hurt = preload("res://Scenes/Enemies/Computer Room/Latortrans hurt ball.tscn")
 }
-onready var ball_spawn_pos = get_node("Output Pos")
-onready var spawn_node = get_node("..")
+onready var ball_spawn_pos = $"Output Pos"
+onready var spawn_node = $".."
 
 var ball_directions = [Vector2(-1, 0), Vector2(-0.87, 0.5), Vector2(-0.87, -0.5)]
 
@@ -56,20 +57,21 @@ func activate():
 	ec.health_bar.show_health_bar()
 	set_process(true)
 	ec.change_status(IDLE)
-	get_node("Animation/Damage Area").add_to_group("enemy_collider")
+	$"Animation/Damage Area".add_to_group("enemy")
 
 func _process(delta):
 	if ec.not_hurt_dying_stunned():
-		if ec.status == IDLE:
-			play_idle_anim()
-		elif ec.status == INPUT:
-			play_input_anim()
-		elif ec.status == PROCESS:
-			play_process_anim()
-		elif ec.status == OUTPUT:
-			play_output_anim()
-		elif ec.status == SHOOT:
-			shoot_ball()
+		match ec.status:
+			IDLE:
+				play_idle_anim()
+			INPUT:
+				play_input_anim()
+			PROCESS:
+				play_process_anim()
+			OUTPUT:
+				play_output_anim()
+			SHOOT:
+				shoot_ball()
 
 func change_status(to_status):
 	ec.change_status(to_status)
@@ -113,12 +115,12 @@ func shoot_ball():
 		var new_ball = output_balls[curr_attack].instance()
 		new_ball.initialize(dir)
 		spawn_node.add_child(new_ball)
-		new_ball.set_global_pos(ball_spawn_pos.get_global_pos())
+		new_ball.global_position = ball_spawn_pos.global_position
 
 	status_timer = ec.cd_timer.new(OUTPUT_ANIMATION_SECOND_DURATION, self, "change_status", IDLE)
 
 func damaged(val):
-	ec.damaged(val, ec.animator.get_current_animation() == "Idle")
+	ec.damaged(val, ec.animator.current_animation == "Idle")
 
 func resume_from_damaged():
 	ec.resume_from_damaged()

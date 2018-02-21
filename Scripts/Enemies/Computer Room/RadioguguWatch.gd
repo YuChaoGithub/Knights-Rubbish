@@ -18,16 +18,15 @@ func initialize(direction, node):
 	parent_node = node
 	movement_pattern = preload("res://Scripts/Movements/StraightLineMovement.gd").new(SPEED * direction.x, SPEED * direction.y)
 	lifetime_timestamp = OS.get_unix_time()
-	set_process(true)
 
 func _process(delta):
-	set_pos(movement_pattern.movement(get_pos(), delta))
+	position += movement_pattern.movement(delta)
 
 	if OS.get_unix_time() - lifetime_timestamp >= LIFETIME:
 		free_watch()
 
 func on_attack_hit(area):
-	if area.is_in_group("player_collider"):
+	if area.is_in_group("hero"):
 		var character = area.get_node("..")
 		character.damaged(DAMAGE)
 		character.knocked_back(KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)

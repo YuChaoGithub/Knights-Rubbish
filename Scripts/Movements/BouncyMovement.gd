@@ -10,11 +10,10 @@ func _init(physics_body, velocity, gravity, bounciness):
     self.gravity = gravity
     self.bounciness = bounciness
 
-func movement(delta):
-    if physics_body.is_colliding():
-        var normal = physics_body.get_collision_normal()
-        velocity = normal.reflect(velocity) * bounciness
+func move(delta):
+    var collision = physics_body.move_and_collide(velocity * delta)
+
+    if !collision.empty():
+        velocity = collision.normal.reflect(velocity) * bounciness
     else:
         velocity.y += gravity * delta
-
-    return velocity * delta

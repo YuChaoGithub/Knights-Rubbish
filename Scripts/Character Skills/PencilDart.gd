@@ -6,7 +6,8 @@ var size
 
 const SPEED_X = 2250
 const GRAVITY = 2000
-const LIFE_TIME = 0.1
+const SLIP_RATIO = 0.25
+const VANISH_TIME = 0.15
 const TOTAL_LIFE_TIME = 2.0
 const DAMAGE_INIT = 40
 const DAMAGE_FINAL = 20
@@ -17,12 +18,12 @@ var damage
 # Ensure that only one target is hit.
 var already_hit = false
 
-var lifetime_timer
 var timestamp = 0.0
 
 onready var movement_pattern = preload("res://Scripts/Movements/StraightLineMovement.gd").new(side * SPEED_X, 0)
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
 onready var sprite = $Sprite
+onready var fade_out_tween = $Tween
 
 func initialize(side, damage_modifier, size):
 	self.side = side
@@ -32,23 +33,25 @@ func initialize(side, damage_modifier, size):
 
 func _ready():
 	# Set facing.
-	sprite.scale = Vector2(sprite.scale.x * side, sprite.scale.y)
+	sprite.scale.x *= side
 
 	# Set size.
 	scale = scale * size
 
+	fade_out_tween.connect("tween_completed", self, "fade_out_completed")
+
 func _process(delta):
 	# Move.
-	var rel_movement = movement_pattern.movement(delta) + gravity_movement.movement(delta)
-	move_and_collide(rel_movement)
+	gravity_movement.move(delta)
+	var collision = move_and_collide(movement_pattern.movement(delta))
 
 	# Destroy when touches a platform.
-	if is_on_wall():
-		movement_pattern.dx = 0
+	if gravity_movement.is_landed || collision != null:
+		movement_pattern.dx *= SLIP_RATIO
 		gravity_movement.dy = 0
 		gravity_movement.gravity = 0
 
-		lifetime_timer = preload("res://Scripts/Utils/CountdownTimer.gd").new(LIFE_TIME, self, "queue_free")
+		fade_out()
 
 	timestamp += delta
 
@@ -59,11 +62,18 @@ func _process(delta):
 
 # Will be signalled when it hits an enemy.
 func on_enemy_hit(area):
-	if not already_hit and area.is_in_group("enemy_collider"):
-		# Deal damage to enemy.
+	if !already_hit && area.is_in_group("enemy"):
 		area.get_node("../..").damaged(damage * damage_modifier)
 
-		# Avoid damaging multiple targets.
-		already_hit = true
+		fade_out()
 
-		queue_free()
+func fade_out():
+	already_hit = true
+	fade_out_tween.interpolate_method(self, "fade_out_step", 1.0, 0.0, VANISH_TIME, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	fade_out_tween.start()
+
+func fade_out_step(progress):
+	sprite.modulate.a = progress
+
+func fade_out_completed(object, key):
+	queue_free()

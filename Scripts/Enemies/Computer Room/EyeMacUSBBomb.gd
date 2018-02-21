@@ -14,17 +14,16 @@ var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 
 var timer = null
 
-onready var animator = get_node("AnimationPlayer")
+onready var animator = $AnimationPlayer
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
 
 func _ready():
 	animator.play("Still")
-	set_process(true)
 
 func _process(delta):
-	move_to(gravity_movement.movement(get_global_pos(), delta))
+	gravity_movement.move(delta)
 
-	if gravity_movement.is_landed():
+	if gravity_movement.is_landed:
 		set_process(false)
 		animator.play("Blinking")
 		timer = cd_timer.new(BLINKING_DURATION, self, "explode")
@@ -34,7 +33,7 @@ func explode():
 	timer = cd_timer.new(EXPLODE_DURATION, self, "queue_free")
 
 func on_attack_hit(area):
-	if area.is_in_group("player_collider"):
+	if area.is_in_group("hero"):
 		var character = area.get_node("..")
 		character.damaged(DAMAGE)
-		character.knocked_back(sign(character.get_global_pos().x - get_global_pos().x) * KNOCK_BACK_VEL_X, -KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
+		character.knocked_back(sign(character.global_position.x - global_position.x) * KNOCK_BACK_VEL_X, -KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)

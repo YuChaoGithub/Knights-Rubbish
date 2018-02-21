@@ -5,13 +5,13 @@ export(float) var interval = 1.0
 
 var timer = null
 
-onready var animator = get_node("AnimationPlayer")
+onready var animator = $AnimationPlayer
 
 func _ready():
 	animator.play("Spawn")
 
 func on_potion_collided(area):
-	if area.is_in_group("player_collider"):
+	if area.is_in_group("hero"):
 		var character = area.get_node("..")
 		
 		# Won't consume the potion if the character is full health.

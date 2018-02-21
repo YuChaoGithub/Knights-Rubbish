@@ -16,8 +16,10 @@ enum { NONE, RANDOM_ROAM, SLOW_BOMB_ANIM, THROW_SLOW_BOMB, WAIT_SLOW_BOMB_FREED,
 	   WALK_TO_CHARACTER, SCRATCH_ANIM, SCRATCH, DROP_FLOOPY_ANIM, DROP_FLOOPY,
 	   LASER_EYES_ANIM, LASER_EYES_SHOOT, LASER_EYES_RECOVER }
 
+export(int) var activate_range_x = 1000
+export(int) var activate_range_y = 1000
+
 const MAX_HEALTH = 1200
-const ACTIVATE_RANGE = 1000
 
 # Attack.
 const SINGLE_SCRATCH_DAMAGE = 15
@@ -55,8 +57,6 @@ const THROW_WATCH_SECOND_DURATION = 0.6
 const LASER_COLOR = Color(1, 0, 0)
 const LASER_THICKNESS = 10
 
-const PLATFORM_LAYER = 2  ### FIX THIS ###
-
 var status_timer = null
 var laser_timer = null
 var facing = -1
@@ -65,11 +65,13 @@ var walk_back_dir = null
 var laser_target_left = null
 var laser_target_right = null
 
-onready var spawn_node = get_node("..")
+onready var platform_layer = ProjectSettings.get_setting("layer_names/2d_physics/platform")
+
+onready var spawn_node = $".."
 
 # Drop Floopy.
 var floopy_spawner = preload("res://Scenes/Enemies/Computer Room/Radiogugu Floopy Spawner.tscn")
-onready var floopy_spawn_pos = get_node("Animation/Body/Floopy Spawn Pos")
+onready var floopy_spawn_pos = $"Animation/Body/Floopy Spawn Pos"
 
 # Scratch.
 var scratch_anim = preload("res://Scenes/Enemies/Computer Room/Radiogugu Claw Skill.tscn")
@@ -78,51 +80,52 @@ var dot = preload("res://Scenes/Utils/Change Health OT.tscn")
 # Watch Attack.
 var watch = preload("res://Scenes/Enemies/Computer Room/Radiogugu Watch Skill.tscn")
 var curr_watch = null
-onready var watch_spawn_pos = get_node("Animation/Body/Watch Spawn Pos")
+onready var watch_spawn_pos = $"Animation/Body/Watch Spawn Pos"
 
 # Laser Eyes.
-onready var left_laser_spawn_pos = get_node("Animation/Body/Left Laser Spawn Pos")
-onready var right_laser_spawn_pos = get_node("Animation/Body/Right Laser Spawn Pos")
-onready var drawing_node = get_node("Drawing Node")
+onready var left_laser_spawn_pos = $"Animation/Body/Left Laser Spawn Pos"
+onready var right_laser_spawn_pos = $"Animation/Body/Right Laser Spawn Pos"
+onready var drawing_node = $"Drawing Node"
 onready var raycast_space = get_world_2d().get_direct_space_state()
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
-onready var display_screen = get_node("Animation/Body/Head/Display")
+onready var display_screen = $"Animation/Body/Head/Display"
 
 func activate():
 	ec.health_bar.show_health_bar()
 	ec.init_gravity_movement(GRAVITY)
 	set_process(true)
-	get_node("Animation/Damage Area").add_to_group("enemy_collider")
+	$"Animation/Damage Area".add_to_group("enemy")
 	turn_sprites_x(facing)
 	ec.change_status(RANDOM_ROAM)
 
 func _process(delta):
 	if ec.not_hurt_dying_stunned():
-		if ec.status == RANDOM_ROAM:
-			random_roam(delta)
-		elif ec.status == SLOW_BOMB_ANIM:
-			play_slow_bomb_anim()
-		elif ec.status == THROW_SLOW_BOMB:
-			throw_slow_bomb()
-		elif ec.status == WAIT_SLOW_BOMB_FREED:
-			walk_back_until_slow_bomb_freed(delta)
-		elif ec.status == WALK_TO_CHARACTER:
-			walk_to_attack_target(delta)
-		elif ec.status == SCRATCH_ANIM:
-			play_scratch_anim()
-		elif ec.status == SCRATCH:
-			scratch()
-		elif ec.status == DROP_FLOOPY_ANIM:
-			play_drop_floopy_anim()
-		elif ec.status == DROP_FLOOPY:
-			drop_floopy()
-		elif ec.status == LASER_EYES_ANIM:
-			play_laser_eyes_anim()
-		elif ec.status == LASER_EYES_SHOOT:
-			shoot_laser_eyes()
-		elif ec.status == LASER_EYES_RECOVER:
-			recover_laser_eyes()
+		match ec.status:
+			RANDOM_ROAM:
+				random_roam(delta)
+			SLOW_BOMB_ANIM:
+				play_slow_bomb_anim()
+			THROW_SLOW_BOMB:
+				throw_slow_bomb()
+			WAIT_SLOW_BOMB_FREED:
+				walk_back_until_slow_bomb_freed(delta)
+			WALK_TO_CHARACTER:
+				walk_to_attack_target(delta)
+			SCRATCH_ANIM:
+				play_scratch_anim()
+			SCRATCH:
+				scratch()
+			DROP_FLOOPY_ANIM:
+				play_drop_floopy_anim()
+			DROP_FLOOPY:
+				drop_floopy()
+			LASER_EYES_ANIM:
+				play_laser_eyes_anim()
+			LASER_EYES_SHOOT:
+				shoot_laser_eyes()
+			LASER_EYES_RECOVER:
+				recover_laser_eyes()
 	
 	ec.perform_gravity_movement(delta)
 
@@ -131,8 +134,7 @@ func change_status(to_status):
 
 func turn_sprites_x(facing):
 	ec.turn_sprites_x(facing)
-	var display_scale = display_screen.get_scale()
-	display_screen.set_scale(Vector2(abs(display_scale.x) * facing, display_scale.y))
+	display_screen.scale.x = abs(display_scale.x) * facing
 
 func random_roam(delta):
 	ec.play_animation("Walk")
@@ -171,7 +173,7 @@ func play_slow_bomb_anim():
 	attack_target = ec.target_detect.get_farthest(self, ec.char_average_pos.characters)
 
 	# Face the target
-	facing = sign(attack_target.get_global_pos().x - get_global_pos().x)
+	facing = sign(attack_target.global_position.x - global_position.x)
 	turn_sprites_x(facing)
 
 	status_timer = ec.cd_timer.new(THROW_WATCH_FIRST_DURATION, self, "change_status", THROW_SLOW_BOMB)
@@ -179,7 +181,7 @@ func play_slow_bomb_anim():
 func throw_slow_bomb():
 	ec.change_status(NONE)
 
-	var direction = (attack_target.get_global_pos() - watch_spawn_pos.get_global_pos()).normalized()
+	var direction = (attack_target.global_position - watch_spawn_pos.global_position).normalized()
 
 	# For walking back.
 	walk_back_dir = -facing
@@ -189,7 +191,7 @@ func throw_slow_bomb():
 	curr_watch = watch.instance()
 	curr_watch.initialize(direction, self)
 	spawn_node.add_child(curr_watch)
-	curr_watch.set_global_pos(watch_spawn_pos.get_global_pos())
+	curr_watch.global_position = watch_spawn_pos.global_position
 
 	status_timer = ec.cd_timer.new(THROW_WATCH_SECOND_DURATION, self, "change_status", WAIT_SLOW_BOMB_FREED)
 
@@ -199,7 +201,7 @@ func walk_back_until_slow_bomb_freed(delta):
 	facing = walk_back_dir
 	turn_sprites_x(facing)
 
-	move(Vector2(SPEED_X * facing * delta, 0))
+	move_and_collide(Vector2(SPEED_X * facing * delta, 0))
 
 	if curr_watch == null:
 		ec.change_status(WALK_TO_CHARACTER)
@@ -211,12 +213,12 @@ func walk_to_attack_target(delta):
 	if attack_target == null:
 		attack_target = ec.target_detect.get_farthest(self, ec.char_average_pos.characters)
 	
-	facing = sign(attack_target.get_global_pos().x - get_global_pos().x)
+	facing = sign(attack_target.global_position.x - global_position.x)
 	turn_sprites_x(facing)
 	
-	move(Vector2(RUSH_SPEED_X * facing * delta, 0))
+	move_and_collide(Vector2(RUSH_SPEED_X * facing * delta, 0))
 
-	if abs(attack_target.get_global_pos().x - get_global_pos().x) <= SCRATCH_PERFORM_RANGE:
+	if abs(attack_target.global_position.x - global_position.x) <= SCRATCH_PERFORM_RANGE:
 		ec.change_status(SCRATCH_ANIM)
 
 func play_scratch_anim():
@@ -233,7 +235,7 @@ func scratch():
 	var right_distance = 100000
 
 	for target in ec.char_average_pos.characters:
-		var distance = target.get_global_pos().x - get_global_pos().x
+		var distance = target.global_position.x - global_position.x
 
 		if left_target == null && distance < 0 && distance > -SCRATCH_RANGE && distance > left_distance:
 			left_target = target
@@ -274,7 +276,7 @@ func drop_floopy():
 
 	var floopy_spawner_instance = floopy_spawner.instance()
 	spawn_node.add_child(floopy_spawner_instance)
-	floopy_spawner_instance.set_global_pos(floopy_spawn_pos.get_global_pos())
+	floopy_spawner_instance.global_position = floopy_spawn_pos.global_position
 
 	status_timer = ec.cd_timer.new(DROP_FLOOPY_SECOND_DURATION, self, "change_status", RANDOM_ROAM)
 
@@ -294,25 +296,25 @@ func find_laser_targets():
 	laser_target_right = ec.target_detect.get_nearest(right_laser_spawn_pos, ec.char_average_pos.characters)
 
 func laser_sequence_on():
-	var left_laser_from = left_laser_spawn_pos.get_global_pos()
-	var right_laser_from = right_laser_spawn_pos.get_global_pos()
+	var left_laser_from = left_laser_spawn_pos.global_position
+	var right_laser_from = right_laser_spawn_pos.global_position
 
-	var left_laser_to = laser_target_left.get_global_pos()
-	var right_laser_to = laser_target_right.get_global_pos()
+	var left_laser_to = laser_target_left.global_position
+	var right_laser_to = laser_target_right.global_position
 
-	var left_ray_hit = raycast_space.intersect_ray(left_laser_from, left_laser_to, [self], PLATFORM_LAYER)
-	var right_ray_hit = raycast_space.intersect_ray(right_laser_from, right_laser_to, [self], PLATFORM_LAYER)
+	var left_ray_hit = raycast_space.intersect_ray(left_laser_from, left_laser_to, [self], platform_layer)
+	var right_ray_hit = raycast_space.intersect_ray(right_laser_from, right_laser_to, [self], platform_layer)
 
 	var laser_line_left = {
-		from_pos = left_laser_from - get_global_pos(),
-		to_pos = (left_ray_hit.position if left_ray_hit.size() != 0 else left_laser_to) - get_global_pos(),
+		from_pos = left_laser_from - global_position,
+		to_pos = (left_ray_hit.position if left_ray_hit.size() != 0 else left_laser_to) - global_position,
 		color = LASER_COLOR,
 		width = LASER_THICKNESS
 	}
 	
 	var laser_line_right = {
-		from_pos = right_laser_from - get_global_pos(),
-		to_pos = (right_ray_hit.position if right_ray_hit.size() != 0 else right_laser_to) - get_global_pos(),
+		from_pos = right_laser_from - global_position,
+		to_pos = (right_ray_hit.position if right_ray_hit.size() != 0 else right_laser_to) - global_position,
 		color = LASER_COLOR,
 		width = LASER_THICKNESS
 	}
@@ -345,7 +347,7 @@ func cancel_laser_sequence():
 		laser_timer = null
 
 func damaged(val):
-	var play_hurt_anim = ec.animator.get_current_animation() == "Walk"
+	var play_hurt_anim = ec.animator.current_animation == "Walk"
 	ec.damaged(val, play_hurt_anim)
 
 func resume_from_damaged():

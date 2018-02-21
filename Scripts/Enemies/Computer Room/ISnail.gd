@@ -8,9 +8,10 @@ extends KinematicBody2D
 
 enum { NONE, MOVE, SPIT, SPIT_INTERVAL }
 
-const MAX_HEALTH = 250
+export(int) var activate_range_x = 1600
+export(int) var activate_range_x = 1600
 
-const ACTIVATE_RANGE = 1600
+const MAX_HEALTH = 250
 
 # Movement.
 const SPEED_X = 50
@@ -29,14 +30,13 @@ const ATTACK_DURATION = 0.75
 const ATTACK_INTERVAL = 1.0
 
 var status_timer = null
-var curr_rand_movement = null
 var facing = -1
 var hourglass_count = null
 
 # Hourglass.
 var hourglass = preload("res://Scenes/Enemies/Computer Room/iSnail Hourglass.tscn")
-onready var hourglass_spawn_pos = get_node("Animation/Hourglass Spawn Pos")
-onready var spawn_node = get_node("..")
+onready var hourglass_spawn_pos = $"Animation/Hourglass Spawn Pos"
+onready var spawn_node = $".."
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
@@ -44,16 +44,17 @@ func activate():
     ec.init_gravity_movement(GRAVITY)
     set_process(true)
     ec.change_status(MOVE)
-    get_node("Animation/Damage Area").add_to_group("enemy_collider")
+    $"Animation/Damage Area".add_to_group("enemy")
 
 func _process(delta):
     if ec.not_hurt_dying_stunned():
-        if ec.status == MOVE:
-            perform_movement(delta)
-        elif ec.status == SPIT:
-            spit_hourglass()
-        elif ec.status == SPIT_INTERVAL:
-            spit_interval()
+        match ec.status:
+            MOVE:
+                perform_movement(delta)
+            SPIT:
+                spit_hourglass()
+            SPIT_INTERVAL:
+                spit_interval()
 
     ec.perform_gravity_movement(delta)
     ec.perform_knock_back_movement(delta)
@@ -79,7 +80,7 @@ func movement_ended():
 
 func face_nearest_target():
     var target = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
-    facing = sign(target.get_global_pos().x - get_global_pos().x)
+    facing = sign(target.global_position.x - global_position.x)
     ec.turn_sprites_x(facing)
 
 func spit_hourglass():
@@ -89,7 +90,7 @@ func spit_hourglass():
     var new_hourglass = hourglass.instance()
     new_hourglass.initialize(facing)
     spawn_node.add_child(new_hourglass)
-    new_hourglass.set_global_pos(hourglass_spawn_pos.get_global_pos())
+    new_hourglass.global_position = hourglass_spawn_pos.global_position
     
     hourglass_count += 1
     var to_status = MOVE if hourglass_count == ATTACK_TIMES else SPIT_INTERVAL
@@ -101,7 +102,7 @@ func spit_interval():
     status_timer = ec.cd_timer.new(ATTACK_INTERVAL, self, "change_status", SPIT)
 
 func damaged(val):
-    ec.damaged(val, ec.animator.get_current_animation() == "Walk")
+    ec.damaged(val, ec.animator.current_animation == "Walk")
 
 func resume_from_damaged():
     ec.resume_from_damaged()

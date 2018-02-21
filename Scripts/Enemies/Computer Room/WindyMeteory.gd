@@ -22,18 +22,17 @@ var activated = false
 
 var target_detect = preload("res://Scripts/Algorithms/TargetDetection.gd")
 
-onready var char_average_pos = get_node("../../../../Character Average Position")
+onready var char_average_pos = $"../../../../Character Average Position"
 onready var movement_pattern = preload("res://Scripts/Movements/StraightLineMovement.gd").new(0, SPEED_Y)
-onready var animator = get_node("Animation/AnimationPlayer")
+onready var animator = $"Animation/AnimationPlayer"
 
 func _ready():
 	animator.play("Still")
-	set_process(true)
 
 func _process(delta):
 	if start_falling:
 		# Movement.
-		set_global_pos(movement_pattern.movement(get_global_pos(), delta))
+		global_position += movement_pattern.movement(delta)
 
 		# Lifetime.
 		timestamp += delta
@@ -42,7 +41,7 @@ func _process(delta):
 	else:
 		var target = target_detect.get_nearest(self, char_average_pos.characters)
 		
-		var distance_x = abs(target.get_global_pos().x - get_global_pos().x)
+		var distance_x = abs(target.global_position.x - global_position.x)
 
 		# Activate.
 		if !activated && distance_x < APPEAR_RANGE:
@@ -53,7 +52,7 @@ func _process(delta):
 			start_falling = true
 
 func on_attack_hit(area):
-	if area.is_in_group("player_collider"):
+	if area.is_in_group("hero"):
 		var character = area.get_node("..")
 		character.damaged(DAMAGE)
-		character.knocked_back(sign(character.get_global_pos().x - get_global_pos().x) * KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
+		character.knocked_back(sign(character.global_position.x - global_position.x) * KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
