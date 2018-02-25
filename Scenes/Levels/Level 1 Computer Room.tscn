@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/HeroAveragePosition.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scripts/Utils/InitRandom.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/Platforms/Wooden Platform 400x100.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Tilesets/Wooden Floor.tres" type="TileSet" id=5]
 
 [node name="Game Level" type="Node2D" index="0"]
 
@@ -24,7 +24,7 @@ script = ExtResource( 2 )
 
 [node name="Keshia Erasia" parent="." index="2" instance=ExtResource( 3 )]
 
-position = Vector2( 250, -200 )
+position = Vector2( 250, -250 )
 
 [node name="RNG Initializer" type="Node2D" parent="." index="3"]
 
@@ -35,40 +35,25 @@ script = ExtResource( 4 )
 position = Vector2( 39900, -2000 )
 scale = Vector2( 10, 10 )
 
-[node name="Platforms" type="Node2D" parent="." index="5"]
+[node name="Platform" type="TileMap" parent="." index="5"]
 
-editor/display_folded = true
-
-[node name="Wooden Platform 400x100" parent="Platforms" index="0" instance=ExtResource( 5 )]
-
-position = Vector2( 200, -50 )
-
-[node name="Wooden Platform 400x101" parent="Platforms" index="1" instance=ExtResource( 5 )]
-
-position = Vector2( 600, -50 )
-
-[node name="Wooden Platform 400x103" parent="Platforms" index="2" instance=ExtResource( 5 )]
-
-position = Vector2( 750, -150 )
-
-[node name="Wooden Platform 400x102" parent="Platforms" index="3" instance=ExtResource( 5 )]
-
-position = Vector2( 1000, -50 )
-
-[node name="Wooden Platform 400x104" parent="Platforms" index="4" instance=ExtResource( 5 )]
-
-position = Vector2( 1400, -50 )
-
-[node name="Wooden Platform 400x105" parent="Platforms" index="5" instance=ExtResource( 5 )]
-
-position = Vector2( 1800, -50 )
-
-[node name="Wooden Platform 400x106" parent="Platforms" index="6" instance=ExtResource( 5 )]
-
-position = Vector2( 2200, -50 )
-
-[node name="Wooden Platform 400x107" parent="Platforms" index="7" instance=ExtResource( 5 )]
-
-position = Vector2( 2600, -50 )
+mode = 0
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 100, 100 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 4
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -393216, 0, 196609, -393215, 0, 0, -327680, 0, 1, -327679, 0, 131075, -262144, 0, 65542, -262143, 0, 6, -196608, 0, 1, -196607, 0, 6, -131072, 0, 65542, -131071, 0, 2, -131070, 0, 131076, -131069, 0, 196612, -131068, 0, 196612, -131067, 0, 131077, -131066, 0, 0, -65536, 0, 131072, -65535, 0, 131073, -65534, 0, 131078, -65533, 0, 131078, -65532, 0, 131073, -65531, 0, 196614, -65530, 0, 196611 )
+_sections_unfolded = [ "Cell", "Collision" ]
 
 

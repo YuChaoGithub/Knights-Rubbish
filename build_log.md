@@ -543,6 +543,17 @@ Comment: I'm back.
 
 **Commit**
 
+[2018.02.22]
+* Completed drawing wooden tileset.
+
+[2018.02.24]
+* Trying to make Background Wall tilesets, but it's a total failure.
+
+[2018.02.25]
+* Added more wooden floor tilesets and finally completed making its autotile.
+
+**Commit**
+
 To Do List:
 * Use tilemaps to layout the level.
 * Don't use level parts. UNITE THEM! (Use parts only in transitions [aka. black out screen])
