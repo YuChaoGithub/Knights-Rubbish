@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Power Ups/Spinner.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Powerups/Ult Ball/Spinner.png" type="Texture" id=2]
@@ -12,51 +12,53 @@
 input_pickable = false
 collision_layer = 0
 collision_mask = 0
-collision/margin = 0.08
+collision/safe_margin = 0.08
 script = ExtResource( 1 )
 
-[node name="Spinner" type="Sprite" parent="."]
+[node name="Spinner" type="Sprite" parent="." index="0"]
 
 position = Vector2( -4.67944, 0.11998 )
 texture = ExtResource( 2 )
 offset = Vector2( 22.1245, -10.0885 )
 
-[node name="Hole 1" type="Sprite" parent="Spinner"]
+[node name="Hole 1" type="Sprite" parent="Spinner" index="0"]
 
+self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 104.149, 29.977 )
 texture = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Spinner/Hole 1" index="0"]
+
 self_modulate = Color( 0, 0, 0, 1 )
-
-[node name="Sprite" type="Sprite" parent="Spinner/Hole 1"]
-
 position = Vector2( -84.3574, -23.9494 )
 texture = ExtResource( 4 )
+
+[node name="Hole 2" type="Sprite" parent="Spinner" index="1"]
+
 self_modulate = Color( 0, 0, 0, 1 )
-
-[node name="Hole 2" type="Sprite" parent="Spinner"]
-
 position = Vector2( -74.1308, 76.4607 )
-rotation_degrees = 116.376
+rotation = 2.03114
 texture = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Spinner/Hole 2" index="0"]
+
 self_modulate = Color( 0, 0, 0, 1 )
-
-[node name="Sprite" type="Sprite" parent="Spinner/Hole 2"]
-
 position = Vector2( -81.5691, -25.7947 )
-rotation_degrees = -115.09
+rotation = -2.0087
 texture = ExtResource( 5 )
+
+[node name="Hole 3" type="Sprite" parent="Spinner" index="2"]
+
 self_modulate = Color( 0, 0, 0, 1 )
-
-[node name="Hole 3" type="Sprite" parent="Spinner"]
-
 position = Vector2( -23.0157, -99.5769 )
-rotation_degrees = -122.581
+rotation = -2.13944
 texture = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="Spinner/Hole 3" index="0"]
+
 self_modulate = Color( 0, 0, 0, 1 )
-
-[node name="Sprite" type="Sprite" parent="Spinner/Hole 3"]
-
 position = Vector2( -75.5024, -24.1137 )
-rotation_degrees = 124.14
+rotation = 2.16665
 texture = ExtResource( 6 )
-self_modulate = Color( 0, 0, 0, 1 )
+
+

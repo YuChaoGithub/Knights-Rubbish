@@ -3,17 +3,18 @@ extends Node2D
 export(String, FILE) var mob_path
 export(int) var activate_range_x = 3000
 export(int) var activate_range_y = 3000
-export(int) var spawn_delay = 0.75
+export(float) var spawn_delay = 0.75
 export(int) var total_count
 
 const MOB_FADE_IN_DURATION = 0.5
-const PARTICLE_DURATION = 1.5
+const PARTICLE_DURATION = 1.0
 
 var curr_count = 0
 var stopped = false
 var timer = null
 var curr_particle
 var particle_timer
+var prev_mob
 
 var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var opacity_lerper = preload("res://Scenes/Utils/Parent Opacity Lerper.tscn")
@@ -22,6 +23,7 @@ var spawning_particle = preload("res://Scenes/Particles/Spawn Mob Particles.tscn
 onready var mob_to_spawn = load(mob_path)
 onready var spawn_pos = $".."
 
+# Will be emitted when the last spawned mob is defeated.
 signal completed
 
 # Call this function to spawn the first mob.
@@ -31,7 +33,7 @@ func spawn_mob():
 
     curr_particle = spawning_particle.instance()
     add_child(curr_particle)
-    particle_timer = cd_timer.new(PARTICLE_DURATION, curr_particle, "queue_free")
+    particle_timer = cd_timer.new(PARTICLE_DURATION + spawn_delay, curr_particle, "queue_free")
 
     timer = cd_timer.new(spawn_delay, self, "actually_spawn")
 
@@ -53,8 +55,11 @@ func actually_spawn():
     else:
         new_mob.connect("defeated", self, "spawn_mob")
 
+    prev_mob = new_mob
+
 func complete_spawning():
     emit_signal("completed")
 
 func stop_further_spawning():
     stopped = true
+    prev_mob.connect("defeated", self, "complete_spawning")

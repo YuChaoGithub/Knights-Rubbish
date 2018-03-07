@@ -8,6 +8,7 @@ var curr_count = 0
 
 func increment_count():
     curr_count += 1
+    print(curr_count)
 
     if curr_count == count_to_emit:
         emit_signal("count_reached")

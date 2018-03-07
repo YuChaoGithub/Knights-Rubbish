@@ -29,7 +29,7 @@ onready var hero_layer = ProjectSettings.get_setting("layer_names/2d_physics/her
 
 onready var animator = $AnimationPlayer
 onready var attack_collider = $"Attack Area"
-onready var char_average_pos = $"../../../../Character Average Position"
+onready var char_average_pos = $"../../Character Average Position"
 
 func _ready():
 	animator.play("Still")

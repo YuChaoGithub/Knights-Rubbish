@@ -103,4 +103,4 @@ func _process(delta):
 
 	# Alpha value.
 	for number in number_instances:
-		number.modulate = Color(color.r, color.g, color.b, lerp(1.0, 0.0, timepassed / SHOW_DURATION))
+		number.self_modulate = Color(color.r, color.g, color.b, lerp(1.0, 0.0, timepassed / SHOW_DURATION))

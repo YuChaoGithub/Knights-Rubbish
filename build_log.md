@@ -554,10 +554,30 @@ Comment: I'm back.
 
 **Commit**
 
+Comment: Spent a lot of time doing nothing for the past couple of weeks.
+
+[2018.03.05]
+* Fixed the bug of hurt animation due to the Animation Key changes in Godot 3.0.
+* Fixed the bug of Number Indicator's color modulating.
+* Laid out the original design of level 1 (1-3 ~ 1-5-2).
+* Smooth the corners of Wooden Platform Tiles.
+* Tuned some knock back values. (Seems like the physics engine in Godot 3.0 is a little different. Probably.)
+* Changed a little for the graphics of status icons for Hero so that it looks crisper.
+
+[2018.03.07]
+* Laid out the Passing Triggers and Count Triggers of level 1.
+* Relabeled the tags of parts of level 1 in Google Form.
+
+[2018.03.08]
+* Finally completed laying out the Triggers for (1-1).
+* Passing Triggers' "Lesser Y" condition now will only be triggered when the character with the greatest Y becoming lower than its y value.
+* Fixed some animation bugs.
+Comment: Aside for weekly commits, now all big milestones should be committed upon achieving.
+
+**Commit**
+
 To Do List:
-* Use tilemaps to layout the level.
-* Don't use level parts. UNITE THEM! (Use parts only in transitions [aka. black out screen])
-* Fix scripts to Godot 3.0.
+* Probably should let the camera update horizontally according to the player with the least x position.
 
 Planned Prototype Stages:
 [Ver 0.1] First level completed. (Est. May 2018)

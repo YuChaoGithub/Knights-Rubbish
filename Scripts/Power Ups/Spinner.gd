@@ -35,8 +35,8 @@ func _process(delta):
 		scale = Vector2(1.0, 1.0) * lerp(scale.x, TO_SCALE, delta * SMOOTH)
 
 func hit_and_check_if_complete():
-	holes[count].set_modulate(ON_COLOR)
-	holes[count].get_node("Sprite").set_modulate(ON_COLOR)
+	holes[count].self_modulate = ON_COLOR
+	holes[count].get_node("Sprite").self_modulate = ON_COLOR
 
 	curr_spin_speed = spin_speeds[count]
 

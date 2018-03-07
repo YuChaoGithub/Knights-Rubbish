@@ -1,6 +1,6 @@
 extends Area2D
 
-const SPEED_MODIFIER = 2.0
+const SPEED_MODIFIER = 1.5
 const DURATION = 10.0
 
 func on_area_entered(area):

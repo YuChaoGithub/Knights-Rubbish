@@ -1,11 +1,11 @@
 extends KinematicBody2D
 
 # Movement.
-const SPEED_X = 500
+const SPEED_X = 600
 const GRAVITY = 500
 
 # Attack.
-const DAMAGE = 10
+const DAMAGE = 18
 const KNOCK_BACK_VEL_X = 500
 const KNOCK_BACK_FADE_RATE = 1250
 const KNOCK_BACK_VEL_Y = 500

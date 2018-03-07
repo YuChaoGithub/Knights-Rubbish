@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 radius = 255.58
 
-[node name="Ult Stone" type="Node2D" index="0"]
+[node name="Ult Stone" type="Node2D"]
 
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 1 )
@@ -22,15 +22,12 @@ texture = ExtResource( 2 )
 
 [node name="Spinner" parent="." index="1" instance=ExtResource( 3 )]
 
-collision/safe_margin = 0.08
-
 [node name="Damage Area" type="Node2D" parent="." index="2"]
 
 [node name="Damage Area" type="Area2D" parent="Damage Area" index="0" groups=[
 "enemy",
 ]]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

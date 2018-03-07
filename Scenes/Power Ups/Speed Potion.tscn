@@ -132,6 +132,6 @@ blend_times = [  ]
 position = Vector2( 2.9113, -100.073 )
 shape = SubResource( 3 )
 
-[connection signal="area_entered" from="Trigger Area" to="." method="on_area_entered"]
+[connection signal="area_entered" from="Trigger Area" to="Trigger Area" method="on_area_entered"]
 
 

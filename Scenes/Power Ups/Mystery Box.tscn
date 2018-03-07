@@ -26,31 +26,31 @@ length = 0.3
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Top:self_modulate")
+tracks/0/path = NodePath("Damage Area:collision_layer")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Bottom Left:self_modulate")
+tracks/1/path = NodePath("Full Box:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Top Left:self_modulate")
+tracks/2/path = NodePath("Top:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -62,7 +62,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Top Right:self_modulate")
+tracks/3/path = NodePath("Bottom Left:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -74,7 +74,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Bottom Right:self_modulate")
+tracks/4/path = NodePath("Top Left:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -86,19 +86,19 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Full Box:visible")
+tracks/5/path = NodePath("Top Right:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Top Left:position")
+tracks/6/path = NodePath("Bottom Right:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -107,10 +107,10 @@ tracks/6/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -186.806, 48.7665 ), Vector2( -470.919, -122.741 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Top Left:rotation_deg")
+tracks/7/path = NodePath("Paper:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -119,10 +119,10 @@ tracks/7/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, -15.6077 ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Bottom Right:position")
+tracks/8/path = NodePath("Top:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -131,10 +131,10 @@ tracks/8/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 207.823, 121.439 ), Vector2( 512.726, 495.637 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( -3.732, -290.884 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Bottom Right:rotation_deg")
+tracks/9/path = NodePath("Bottom Left:position")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -143,10 +143,10 @@ tracks/9/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, 10.847 ]
+"values": [ Vector2( -77.5189, 159.408 ), Vector2( -503.732, 429.116 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Top Right:position")
+tracks/10/path = NodePath("Bottom Right:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -155,10 +155,10 @@ tracks/10/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 259.843, -15.0625 ), Vector2( 680.816, -259.331 ) ]
+"values": [ Vector2( 207.823, 121.439 ), Vector2( 476.268, 329.116 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Top Right:rotation_deg")
+tracks/11/path = NodePath("Top Right:position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -167,10 +167,10 @@ tracks/11/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, -17.4567 ]
+"values": [ Vector2( 259.843, -15.0625 ), Vector2( 556.268, -250.884 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Bottom Left:position")
+tracks/12/path = NodePath("Paper:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -179,10 +179,10 @@ tracks/12/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -77.5189, 159.408 ), Vector2( -245.561, 495.493 ) ]
+"values": [ Vector2( 63.4575, 87.6867 ), Vector2( 56.268, 209.116 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Bottom Left:rotation_deg")
+tracks/13/path = NodePath("Top Left:position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -191,115 +191,7 @@ tracks/13/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0, -10.9556 ]
-}
-tracks/14/type = "value"
-tracks/14/path = NodePath("Paper:position")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 63.4575, 87.6867 ), Vector2( 347.571, -364.469 ) ]
-}
-tracks/15/type = "value"
-tracks/15/path = NodePath("Paper:rotation_deg")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0 ]
-}
-tracks/16/type = "value"
-tracks/16/path = NodePath("Full Box:position")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 76.0918, 70.8784 ) ]
-}
-tracks/17/type = "value"
-tracks/17/path = NodePath("Full Box:rotation_deg")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/18/type = "value"
-tracks/18/path = NodePath("Top:position")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 22.521, -445.226 ) ]
-}
-tracks/19/type = "value"
-tracks/19/path = NodePath("Top:rotation_deg")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, -14.3123 ]
-}
-tracks/20/type = "value"
-tracks/20/path = NodePath("Paper:self_modulate")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/21/type = "value"
-tracks/21/path = NodePath("Paper/\?:self_modulate")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/22/type = "value"
-tracks/22/path = NodePath("Damage Area:collision_layer")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
+"values": [ Vector2( -186.806, 48.7665 ), Vector2( -623.732, -130.884 ) ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -308,7 +200,7 @@ length = 0.1
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Top:self_modulate")
+tracks/0/path = NodePath("Full Box:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -316,11 +208,11 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"update": 1,
+"values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Bottom Left:self_modulate")
+tracks/1/path = NodePath("Damage Area:collision_layer")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -328,11 +220,11 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"update": 1,
+"values": [ 16 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Top Left:self_modulate")
+tracks/2/path = NodePath("Paper:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -341,10 +233,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Top Right:self_modulate")
+tracks/3/path = NodePath("Bottom Right:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -356,7 +248,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("Bottom Right:self_modulate")
+tracks/4/path = NodePath("Top Right:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -368,7 +260,7 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("Full Box:visible")
+tracks/5/path = NodePath("Top Left:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -376,11 +268,11 @@ tracks/5/enabled = true
 tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("Top Left:position")
+tracks/6/path = NodePath("Bottom Left:modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -389,10 +281,10 @@ tracks/6/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -186.806, 48.7665 ) ]
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("Top Left:rotation_deg")
+tracks/7/path = NodePath("Top:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -401,10 +293,10 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("Bottom Right:position")
+tracks/8/path = NodePath("Top:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -413,10 +305,10 @@ tracks/8/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 207.823, 121.439 ) ]
+"values": [ Vector2( 0, 0 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("Bottom Right:rotation_deg")
+tracks/9/path = NodePath("Top:rotation_degrees")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -428,7 +320,7 @@ tracks/9/keys = {
 "values": [ 0.0 ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("Top Right:position")
+tracks/10/path = NodePath("Bottom Left:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -437,10 +329,10 @@ tracks/10/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 259.843, -15.0625 ) ]
+"values": [ Vector2( -77.5189, 159.408 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("Top Right:rotation_deg")
+tracks/11/path = NodePath("Bottom Left:rotation_degrees")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -452,7 +344,7 @@ tracks/11/keys = {
 "values": [ 0.0 ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("Bottom Left:position")
+tracks/12/path = NodePath("Top Left:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -461,10 +353,10 @@ tracks/12/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -77.5189, 159.408 ) ]
+"values": [ Vector2( -186.806, 48.7665 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("Bottom Left:rotation_deg")
+tracks/13/path = NodePath("Top Left:rotation_degrees")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -476,7 +368,7 @@ tracks/13/keys = {
 "values": [ 0.0 ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("Paper:position")
+tracks/14/path = NodePath("Top Right:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -485,10 +377,10 @@ tracks/14/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 63.4575, 87.6867 ) ]
+"values": [ Vector2( 259.843, -15.0625 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("Paper:rotation_deg")
+tracks/15/path = NodePath("Top Right:rotation_degrees")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
@@ -500,7 +392,7 @@ tracks/15/keys = {
 "values": [ 0.0 ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("Full Box:position")
+tracks/16/path = NodePath("Bottom Right:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -509,10 +401,10 @@ tracks/16/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 76.0918, 70.8784 ) ]
+"values": [ Vector2( 207.823, 121.439 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("Full Box:rotation_deg")
+tracks/17/path = NodePath("Bottom Right:rotation_degrees")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -523,68 +415,8 @@ tracks/17/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
-tracks/18/type = "value"
-tracks/18/path = NodePath("Top:position")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
-}
-tracks/19/type = "value"
-tracks/19/path = NodePath("Top:rotation_deg")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/20/type = "value"
-tracks/20/path = NodePath("Paper/\?:self_modulate")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/21/type = "value"
-tracks/21/path = NodePath("Paper:self_modulate")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/22/type = "value"
-tracks/22/path = NodePath("Damage Area:collision_layer")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 16 ]
-}
 
-[node name="Mystery Box" type="KinematicBody2D" index="0"]
+[node name="Mystery Box" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
@@ -592,6 +424,8 @@ collision_mask = 4
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
+activate_range_x = 2000
+activate_range_y = 2000
 additional_spawn_1 = "Null"
 additional_spawn_2 = "Null"
 additional_spawn_3 = "Null"
@@ -630,48 +464,51 @@ shape = SubResource( 2 )
 
 [node name="Top" type="Sprite" parent="Animation" index="1"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="Bottom Left" type="Sprite" parent="Animation" index="2"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -77.5189, 159.408 )
 texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="Top Left" type="Sprite" parent="Animation" index="3"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -186.806, 48.7665 )
 texture = ExtResource( 4 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="Top Right" type="Sprite" parent="Animation" index="4"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 259.843, -15.0625 )
 texture = ExtResource( 5 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="Bottom Right" type="Sprite" parent="Animation" index="5"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 207.823, 121.439 )
 texture = ExtResource( 6 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="Full Box" type="Sprite" parent="Animation" index="6"]
 
+visible = false
 position = Vector2( 76.0918, 70.8784 )
 texture = ExtResource( 7 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="Paper" type="Sprite" parent="Animation" index="7"]
 
-editor/display_folded = true
 position = Vector2( 63.4575, 87.6867 )
 texture = ExtResource( 8 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="?" type="Sprite" parent="Animation/Paper" index="0"]
 
 scale = Vector2( 2, 2 )
 texture = ExtResource( 9 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation" index="8"]
 

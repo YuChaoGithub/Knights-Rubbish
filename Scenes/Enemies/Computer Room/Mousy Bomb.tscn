@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 25.6746, 10 )
+extents = Vector2( 25.6746, 30.2606 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -148,7 +148,7 @@ tracks/4/keys = {
 "values": [ 0 ]
 }
 
-[node name="Mousy Bomb" type="KinematicBody2D" index="0"]
+[node name="Mousy Bomb" type="KinematicBody2D"]
 
 z_index = 1
 input_pickable = false
@@ -160,7 +160,7 @@ _sections_unfolded = [ "Collision", "collision" ]
 
 [node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( -25.3096, -10.3865 )
+position = Vector2( -26.6026, -30.3562 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]

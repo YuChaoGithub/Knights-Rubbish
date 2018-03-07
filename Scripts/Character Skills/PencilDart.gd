@@ -33,7 +33,7 @@ func initialize(side, damage_modifier, size):
 
 func _ready():
 	# Set facing.
-	sprite.scale.x *= side
+	scale.x *= side
 
 	# Set size.
 	scale = scale * size

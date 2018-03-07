@@ -20,7 +20,7 @@ const MAX_HEALTH = 150
 # Attack.
 const ATTACK_RANGE_X = 150
 const ATTACK_RANGE_Y = 100
-const DAMAGE = 30
+const DAMAGE = 15
 const KNOCK_BACK_VEL_X = 800
 const KNOCK_BACK_FADE_RATE = 1400
 const KNOCK_BACK_VEL_Y = 0

@@ -20,7 +20,7 @@ var ball = preload("res://Scenes/Power Ups/Traveling Ult Ball.tscn")
 onready var enemy_layer = ProjectSettings.get_setting("layer_names/2d_physics/enemy")
 onready var damage_area = $"Damage Area/Damage Area"
 onready var spinner = $Spinner
-onready var char_average_pos = $"../../../../Character Average Position"
+onready var char_average_pos = $"../../Character Average Position"
 
 func _process(delta):
 	if start_travel:

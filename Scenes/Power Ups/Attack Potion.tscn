@@ -14,13 +14,14 @@ extents = Vector2( 45.7605, 151.545 )
 custom_solver_bias = 0.0
 extents = Vector2( 40.3915, 148.51 )
 
-[node name="Hyper Potion" type="KinematicBody2D" index="0"]
+[node name="Hyper Potion" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
-collision_mask = 2
+collision_mask = 4
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "collision" ]
 activate_range_x = 2000
 activate_range_y = 2000
 

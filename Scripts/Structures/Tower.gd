@@ -5,6 +5,7 @@ signal destroyed
 export(int) var full_health = 1500
 export(String, FILE) var collapsed_spawn_path_1 = "Null"
 export(String, FILE) var collapsed_spawn_path_2 = "Null"
+export(NodePath) var counter_for_spawned_mobs
 
 const DANCE_INTERVAL_MIN = 5
 const DANCE_INTERVAL_MAX = 9
@@ -26,7 +27,8 @@ onready var bar = $"Health Bar/Inner"
 onready var tower_sprite = $"Tower Sprite"
 onready var animator = $"AnimationPlayer"
 
-func _ready():
+# Should be called by triggers to be activated.
+func activate():
 	curr_health = full_health
 	
 	movement_sequence()
@@ -41,20 +43,25 @@ func update_health_bar():
 func collapsed():
 	emit_signal("destroyed")
 
-	$"Damage Area".remove_from_group("enemy")
+	$"Damage Area/Damage Area".remove_from_group("enemy")
 
 	animator.play("Collapse")
+
+
+	var mob_counter = get_node(counter_for_spawned_mobs)
 
 	# HARD CODING, YEAH!
 	if collapsed_spawn_path_1 != "Null":
 		var new_mob = load(collapsed_spawn_path_1).instance()
 		$"..".add_child(new_mob)
 		new_mob.global_position = $"Collapse Spawn Pos 1".global_position
+		new_mob.connect("defeated", mob_counter, "increment_count")
 
 	if collapsed_spawn_path_2 != "Null":
 		var new_mob = load(collapsed_spawn_path_2).instance()
 		$"..".add_child(new_mob)
 		new_mob.global_position = $"Collapse Spawn Pos 2".global_position
+		new_mob.connect("defeated", mob_counter, "increment_count")
 
 	timer.destroy_timer()
 	timer = cd_timer.new(COLLAPSE_ANIMATION_DURATION, self, "queue_free")

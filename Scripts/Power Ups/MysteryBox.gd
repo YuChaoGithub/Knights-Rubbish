@@ -22,7 +22,7 @@ var activated = false
 
 onready var enemy_layer = ProjectSettings.get_setting("layer_names/2d_physics/enemy")
 onready var damage_area = $"Animation/Damage Area"
-onready var char_average_pos = $"../../../../Character Average Position"
+onready var char_average_pos = $"../../Character Average Position"
 onready var spawn_pos = $"Spawn Pos"
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
 onready var animator = $"Animation/AnimationPlayer"

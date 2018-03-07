@@ -24,6 +24,7 @@ var number_spawn_pos
 var sprites
 var is_kinematic_body
 var slowed_label
+var curr_anim_key = ""
 
 var fade_in_timer = null
 
@@ -51,7 +52,7 @@ func _init(node, default_status = 0):
     self.status = default_status
     self.activate_range_x = node.activate_range_x
     self.activate_range_y = node.activate_range_y
-    self.char_average_pos = node.get_node("../../../../Character Average Position")
+    self.char_average_pos = node.get_node("../../Character Average Position")
     self.animator = node.get_node("Animation/AnimationPlayer")
     self.health_system = preload("res://Scripts/Utils/HealthSystem.gd").new(node, node.MAX_HEALTH)
     self.health_bar = node.get_node("Health Bar")
@@ -127,7 +128,8 @@ func discard_random_movement():
     random_movement_ended_func = null
 
 func play_animation(key):
-    if !disable_animation && animator.current_animation != key:
+    if !disable_animation && curr_anim_key != key:
+        curr_anim_key = key
         animator.play(key)
 
 func play_animation_and_diable_others(key):
@@ -139,8 +141,7 @@ func turn_sprites_x(facing):
         sprites.scale = Vector2(-1 * abs(sprites.scale.x) * facing, sprites.scale.y)
 
 func not_hurt_dying_stunned():
-    var key = animator.current_animation
-    return key != "Hurt" && key != "Die" && key != "Stunned"
+    return curr_anim_key != "Hurt" && curr_anim_key != "Die" && curr_anim_key != "Stunned"
 
 func change_and_refill_full_health(full_health):
     health_system.full_health = full_health
@@ -217,8 +218,7 @@ func damaged(val, play_hurt_animation = true):
         hurt_timer = null
 
     # Won't play hurt animation if it is stunned.
-    var curr_anim = animator.current_animation
-    if (curr_anim == "Hurt" || play_hurt_animation) && curr_anim != "Stunned":
+    if (curr_anim_key == "Hurt" || play_hurt_animation) && curr_anim_key != "Stunned":
         play_animation("Hurt")
         hurt_timer = cd_timer.new(HURT_ANIM_DURATION, node, "resume_from_damaged")
 

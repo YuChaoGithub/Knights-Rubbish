@@ -1,7 +1,7 @@
 tool
 extends Node2D
 
-const CAMERA_SMOOTH = 3.0
+const CAMERA_SMOOTH = 2.0
 
 # The larger the zoom factor is, the more view the camera will cover.
 const ZOOM_FACTOR = 2.0
@@ -117,3 +117,27 @@ func instance_top_fist():
 	fist.global_position = Vector2(global_position.x, global_position.y - cam_height * 0.5)
 
 	return fist
+
+func update_right_margin(value):
+	drag_margin_right = value
+
+func update_left_margin(value):
+	drag_margin_left = value
+
+func update_top_margin(value):
+	drag_margin_top = value
+
+func update_bottom_margin(value):
+	drag_margin_bottom = value
+
+func update_left_limit(value):
+	left_limit = value
+
+func update_right_limit(value):
+	right_limit = value
+
+func update_top_limit(value):
+	top_limit = value
+
+func update_bottom_limit(value):
+	bottom_limit = value

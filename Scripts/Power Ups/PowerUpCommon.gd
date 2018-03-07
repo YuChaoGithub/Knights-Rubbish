@@ -9,7 +9,7 @@ var activated = false
 
 onready var hero_layer = ProjectSettings.get_setting("layer_names/2d_physics/hero")
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
-onready var char_average_pos = $"../../../../Character Average Position"
+onready var char_average_pos = $"../../Character Average Position"
 
 func _process(delta):
     if activated:

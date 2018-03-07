@@ -13,7 +13,7 @@ func _init(physics_body, velocity, gravity, bounciness):
 func move(delta):
     var collision = physics_body.move_and_collide(velocity * delta)
 
-    if !collision.empty():
+    if collision != null:
         velocity = collision.normal.reflect(velocity) * bounciness
     else:
         velocity.y += gravity * delta

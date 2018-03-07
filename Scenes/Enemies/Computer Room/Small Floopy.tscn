@@ -1378,10 +1378,10 @@ tracks/36/loop_wrap = true
 tracks/36/imported = false
 tracks/36/enabled = true
 tracks/36/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 1, 0 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -2743,7 +2743,8 @@ collision_mask = 20
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
-ACTIVATE_RANGE = 1500
+activate_range_x = 1500
+activate_range_y = 1500
 
 [node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -2776,7 +2777,6 @@ shape = SubResource( 2 )
 
 [node name="Body" type="Sprite" parent="Animation" index="1"]
 
-position = Vector2( 0, 2.12308 )
 texture = ExtResource( 2 )
 
 [node name="Hair" type="Sprite" parent="Animation/Body" index="0"]
@@ -2786,7 +2786,7 @@ texture = ExtResource( 3 )
 
 [node name="Mouth" type="Sprite" parent="Animation/Body" index="1"]
 
-position = Vector2( 4.15559, 24.297 )
+position = Vector2( 3.74959, 25.9211 )
 texture = ExtResource( 4 )
 
 [node name="Pants" type="Sprite" parent="Animation/Body" index="2"]
@@ -2798,14 +2798,14 @@ offset = Vector2( 0.763308, 8.99558 )
 [node name="Left Arm" type="Sprite" parent="Animation/Body" index="3"]
 
 position = Vector2( -51.7186, 0.0382042 )
-rotation = 0.797316
+rotation = 0.137809
 texture = ExtResource( 6 )
 offset = Vector2( -6.14893, 12.1975 )
 
 [node name="Left Forearm" type="Sprite" parent="Animation/Body/Left Arm" index="0"]
 
 position = Vector2( -12.9889, 25.3793 )
-rotation = -0.453477
+rotation = -0.123802
 texture = ExtResource( 7 )
 offset = Vector2( -1.47573, 12.7447 )
 
@@ -2831,20 +2831,20 @@ shape = SubResource( 3 )
 [node name="Left Fist" type="Sprite" parent="Animation/Body/Left Arm/Left Forearm" index="1"]
 
 position = Vector2( -1.05315, 28.3221 )
-rotation = 0.448233
+rotation = 0.232515
 texture = ExtResource( 8 )
 offset = Vector2( 0.601303, 4.70964 )
 
 [node name="Right Arm" type="Sprite" parent="Animation/Body" index="4"]
 
 position = Vector2( 57.4877, -6.32023 )
-rotation = -1.31751
+rotation = -0.997667
 texture = ExtResource( 6 )
 offset = Vector2( -7.03201, 13.8758 )
 
 [node name="Eyeball" type="Sprite" parent="Animation/Body" index="5"]
 
-position = Vector2( 2.80063, 1.49567 )
+position = Vector2( 2.47581, 0.521221 )
 texture = ExtResource( 9 )
 
 [node name="Freckles" type="Sprite" parent="Animation/Body" index="6"]
@@ -2854,34 +2854,30 @@ texture = ExtResource( 10 )
 
 [node name="Eyebrow" type="Sprite" parent="Animation/Body" index="7"]
 
-position = Vector2( 0.522353, -12.8426 )
+position = Vector2( 0.912139, -15.3761 )
 texture = ExtResource( 11 )
 
 [node name="Left Thigh" type="Sprite" parent="Animation/Body" index="8"]
 
-position = Vector2( -23.8591, 67.8053 )
-rotation = -0.40633
+position = Vector2( -31.2435, 66.1487 )
 texture = ExtResource( 12 )
 offset = Vector2( 0.268084, 13.7078 )
 
 [node name="Left Leg" type="Sprite" parent="Animation/Body/Left Thigh" index="0"]
 
 position = Vector2( -0.91489, 29.2763 )
-rotation = 0.361186
 texture = ExtResource( 13 )
 offset = Vector2( -0.653489, 8.10329 )
 
 [node name="Right Thigh" type="Sprite" parent="Animation/Body" index="9"]
 
-position = Vector2( 29.5914, 67.8044 )
-rotation = 0.406727
+position = Vector2( 36.7025, 66.7032 )
 texture = ExtResource( 12 )
 offset = Vector2( 0.00174205, 12.9088 )
 
 [node name="Right Leg" type="Sprite" parent="Animation/Body/Right Thigh" index="0"]
 
-position = Vector2( -1.50465, 30.1118 )
-rotation = -0.550164
+position = Vector2( -1.30286, 28.2721 )
 texture = ExtResource( 13 )
 offset = Vector2( -0.260569, 8.72918 )
 

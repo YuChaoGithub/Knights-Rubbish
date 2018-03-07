@@ -34,11 +34,14 @@ func update_pos(original_pos, new_pos):
 
 # Update the following camera according to its position.
 func update_camera():
+	following_camera.check_camera_update(global_position.x, get_max_y())
+
+func get_max_y():
 	var max_y = -10000000000.0
 	for character in characters:
 		max_y = max(max_y, character.global_position.y)
 
-	following_camera.check_camera_update(global_position.x, max_y)
+	return max_y
 
 # Returns true if a character is in range of a position.
 func in_range_of(pos, range_x, range_y):

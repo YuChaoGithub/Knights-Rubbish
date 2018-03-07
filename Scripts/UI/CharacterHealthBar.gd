@@ -35,8 +35,8 @@ func _process(delta):
 
 func change_to_ult_theme():
 	frame.texture = ult_frame_texture
-	scrap_paper.modulate = ULT_SCRAP_COLOR
+	scrap_paper.self_modulate = ULT_SCRAP_COLOR
 
 func change_to_ordinary_theme():
 	frame.texture = ordinary_frame_texture
-	scrap_paper.modulate = SCRAP_COLOR
+	scrap_paper.self_modulate = SCRAP_COLOR

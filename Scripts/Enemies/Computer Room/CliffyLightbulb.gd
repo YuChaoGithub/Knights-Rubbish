@@ -26,7 +26,7 @@ func initialize(dir_x):
 	movement_pattern = preload("res://Scripts/Movements/BouncyMovement.gd").new(self, Vector2(dir_x * SPEED.x, SPEED.y), GRAVITY, BOUNCINESS)
 
 func _process(delta):
-	move_and_collide(movement_pattern.movement(delta))
+	move_and_collide(movement_pattern.move(delta))
 
 	timestamp += delta
 	if timestamp > LIFETIME:
