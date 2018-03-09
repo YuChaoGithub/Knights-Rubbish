@@ -8,7 +8,7 @@
 [ext_resource path="res://Graphics/UI/Health Bar Inner.png" type="Texture" id=6]
 [ext_resource path="res://Fonts/Quickhand_font.tres" type="DynamicFont" id=7]
 
-[node name="Character Health Bar" type="CanvasLayer" index="0"]
+[node name="Hero Health Bar" type="CanvasLayer"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -50,6 +50,7 @@ size_flags_horizontal = 2
 size_flags_vertical = 2
 texture = ExtResource( 2 )
 stretch_mode = 0
+_sections_unfolded = [ "Material", "Visibility" ]
 
 [node name="Frame" type="TextureRect" parent="Control" index="1"]
 

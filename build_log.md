@@ -564,11 +564,11 @@ Comment: Spent a lot of time doing nothing for the past couple of weeks.
 * Tuned some knock back values. (Seems like the physics engine in Godot 3.0 is a little different. Probably.)
 * Changed a little for the graphics of status icons for Hero so that it looks crisper.
 
-[2018.03.07]
+[2018.03.06]
 * Laid out the Passing Triggers and Count Triggers of level 1.
 * Relabeled the tags of parts of level 1 in Google Form.
 
-[2018.03.08]
+[2018.03.07]
 * Finally completed laying out the Triggers for (1-1).
 * Passing Triggers' "Lesser Y" condition now will only be triggered when the character with the greatest Y becoming lower than its y value.
 * Fixed some animation bugs.
@@ -576,7 +576,21 @@ Comment: Aside for weekly commits, now all big milestones should be committed up
 
 **Commit**
 
+[2018.03.08]
+* Completed White Wall tilesets.
+* Added black outlines for Keshia and yellow lining for UI Scrap Paper so that they are more visible in white backgrounds.
+* Edited 6 images of wall decorations. Phew, so tired.
+
+[2018.03.09]
+* Edited images: 7 wall deocrations, 2 wood planks, 3 tapes, 16 wood stains, 12 wood holes, 11 woode cracks, 2 switches.
+
+
 To Do List:
+* Yellow light lamp decoration.
+* Electric plug decoration.
+(Decorations -> Dying mechanics)
+* Level Design: Force fall down gap.
+* Graphics: Reword Health Machine.
 * Probably should let the camera update horizontally according to the player with the least x position.
 
 Planned Prototype Stages:
@@ -596,3 +610,4 @@ Polishing:
 * [Script] Status icons showed in HUD. Blinking when about to vanish.
 * [Script] Adjust damage according to player numbers.
 * [Graphics] Dark level: wears mining hat.
+* [Easter Egg] Phone screen showing "Tall as the Sky" and "kQq".
