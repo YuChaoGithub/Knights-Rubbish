@@ -582,15 +582,31 @@ Comment: Aside for weekly commits, now all big milestones should be committed up
 * Edited 6 images of wall decorations. Phew, so tired.
 
 [2018.03.09]
-* Edited images: 7 wall deocrations, 2 wood planks, 3 tapes, 16 wood stains, 12 wood holes, 11 woode cracks, 2 switches.
+* Edited images: 7 wall deocrations, 2 wood planks, 3 tapes, 16 wood stains, 12 wood holes, 11 woode cracks, 5 switches/plugs, 2 wires.
 
+**Commit**
+
+[2018.03.12]
+* Edited images: 1 plug, 1 light.
+* Added some fonts.
+* Decorated the scene of the very beginning of level 1.
+* Reworked the graphics of Healing Machine.
+* Redesigned the beginning part of level 1 so that players could learn the falling off mechanic.
+
+[2018.03.13]
+* Completed graphics of Trash Can, Dead Mouse.
+* Edited images: 6 Tissues, 5 Papers.
+* Decorated the "Ministry of Love" and "Adventure Land".
+
+[2018.13.18]
+Comment: Caught a cold, otitis externa, and existential crisis. Back on work now.
+* Covered the "Adventure lan" sign with a scrap paper.
+* Decorated the Up Skill Tutorial and Kill Field.
 
 To Do List:
+* More White Stains. Crayon drawing "Tips" light bulb.
 * Yellow light lamp decoration.
-* Electric plug decoration.
 (Decorations -> Dying mechanics)
-* Level Design: Force fall down gap.
-* Graphics: Reword Health Machine.
 * Probably should let the camera update horizontally according to the player with the least x position.
 
 Planned Prototype Stages:

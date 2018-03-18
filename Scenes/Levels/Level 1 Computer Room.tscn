@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=91 format=2]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/HeroAveragePosition.gd" type="Script" id=2]
@@ -7,33 +7,125 @@
 [ext_resource path="res://Graphics/background/White Wall Decoration/break 1.png" type="Texture" id=5]
 [ext_resource path="res://Graphics/background/White Wall Decoration/Top Erode.png" type="Texture" id=6]
 [ext_resource path="res://Graphics/background/White Wall Decoration/break 2.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/background/White Wall Decoration/Stain 1.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/background/White Wall Decoration/Crack.png" type="Texture" id=9]
-[ext_resource path="res://Graphics/background/White Wall Decoration/paint 1.png" type="Texture" id=10]
-[ext_resource path="res://Tilesets/Wooden Floor.tres" type="TileSet" id=11]
-[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=12]
-[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=13]
-[ext_resource path="res://Scenes/Platforms/Enemy Blocking Platform.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Power Ups/Healing Machine.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Structures/Floopy Tower.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/Enemies/Computer Room/CD Punch.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Mouse.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Floopy.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Batterio.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Scripts/Utils/RepeatingSpawner.gd" type="Script" id=21]
-[ext_resource path="res://Scenes/Power Ups/Healing Potion.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Scenes/Power Ups/Defense Potion.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Scenes/Power Ups/Attack Potion.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Scenes/Power Ups/Ult Stone.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Scenes/Power Ups/Giant Potion.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Scenes/Power Ups/Speed Potion.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Graphics/background/White Wall Decoration/break 4.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Stain 4.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Crack.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 8.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 2.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 12.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 11.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 7.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Stain 5.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Stain 2.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 3.png" type="Texture" id=18]
+[ext_resource path="res://Graphics/background/White Wall Decoration/break 3.png" type="Texture" id=19]
+[ext_resource path="res://Graphics/background/General Decoration/Plug3.png" type="Texture" id=20]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 4.png" type="Texture" id=21]
+[ext_resource path="res://Graphics/background/White Wall Decoration/break 5.png" type="Texture" id=22]
+[ext_resource path="res://Tilesets/Wooden Floor.tres" type="TileSet" id=23]
+[ext_resource path="res://Graphics/UI/Frame.png" type="Texture" id=24]
+[ext_resource path="res://Fonts/Grafipaint.tres" type="DynamicFont" id=25]
+[ext_resource path="res://Graphics/UI/Curved Arrow.png" type="Texture" id=26]
+[ext_resource path="res://Fonts/scratchl.tres" type="DynamicFont" id=27]
+[ext_resource path="res://Fonts/edosz.tres" type="DynamicFont" id=28]
+[ext_resource path="res://Graphics/UI/White Curved Arrow.png" type="Texture" id=29]
+[ext_resource path="res://Graphics/UI/White Line.png" type="Texture" id=30]
+[ext_resource path="res://Graphics/UI/White Plus.png" type="Texture" id=31]
+[ext_resource path="res://Graphics/UI/White Arrow.png" type="Texture" id=32]
+[ext_resource path="res://Graphics/UI/Arrow.png" type="Texture" id=33]
+[ext_resource path="res://Graphics/UI/Plus.png" type="Texture" id=34]
+[ext_resource path="res://Graphics/UI/Circular Frame.png" type="Texture" id=35]
+[ext_resource path="res://Graphics/UI/Avatar/Keshia Erasia.png" type="Texture" id=36]
+[ext_resource path="res://Graphics/UI/Line.png" type="Texture" id=37]
+[ext_resource path="res://Fonts/Quickhand_font.tres" type="DynamicFont" id=38]
+[ext_resource path="res://Graphics/background/Level 1/Trash Can.png" type="Texture" id=39]
+[ext_resource path="res://Graphics/UI/Billboard.png" type="Texture" id=40]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 2.png" type="Texture" id=41]
+[ext_resource path="res://Graphics/background/Tapes/Tape 3.png" type="Texture" id=42]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 3.png" type="Texture" id=43]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 4.png" type="Texture" id=44]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 1.png" type="Texture" id=45]
+[ext_resource path="res://Graphics/background/General Decoration/Wires 1.png" type="Texture" id=46]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 1.png" type="Texture" id=47]
+[ext_resource path="res://Graphics/background/General Decoration/Plank with Screws.png" type="Texture" id=48]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 3.png" type="Texture" id=49]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 6.png" type="Texture" id=50]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 1.png" type="Texture" id=51]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 14.png" type="Texture" id=52]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 15.png" type="Texture" id=53]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 13.png" type="Texture" id=54]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 6.png" type="Texture" id=55]
+[ext_resource path="res://Graphics/background/General Decoration/Plank with Tapes.png" type="Texture" id=56]
+[ext_resource path="res://Graphics/UI/Scrap 1.png" type="Texture" id=57]
+[ext_resource path="res://Graphics/background/General Decoration/Light.png" type="Texture" id=58]
+[ext_resource path="res://Graphics/background/Tapes/Tape 1.png" type="Texture" id=59]
+[ext_resource path="res://Graphics/background/Level 1/Box and Bag.png" type="Texture" id=60]
+[ext_resource path="res://Graphics/background/Bags/Trash Bag 1.png" type="Texture" id=61]
+[ext_resource path="res://Graphics/background/Bags/Trash Bag 2.png" type="Texture" id=62]
+[ext_resource path="res://Graphics/background/Bags/Bag.png" type="Texture" id=63]
+[ext_resource path="res://Graphics/background/Bags/Trash Bag 3.png" type="Texture" id=64]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 5.png" type="Texture" id=65]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 11.png" type="Texture" id=66]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 3.png" type="Texture" id=67]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 10.png" type="Texture" id=68]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 6.png" type="Texture" id=69]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 10.png" type="Texture" id=70]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 1.png" type="Texture" id=71]
+[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=72]
+[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=73]
+[ext_resource path="res://Scenes/Platforms/Enemy Blocking Platform.tscn" type="PackedScene" id=74]
+[ext_resource path="res://Scenes/Power Ups/Healing Machine.tscn" type="PackedScene" id=75]
+[ext_resource path="res://Scenes/Structures/Floopy Tower.tscn" type="PackedScene" id=76]
+[ext_resource path="res://Scenes/Enemies/Computer Room/CD Punch.tscn" type="PackedScene" id=77]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Mouse.tscn" type="PackedScene" id=78]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Floopy.tscn" type="PackedScene" id=79]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Batterio.tscn" type="PackedScene" id=80]
+[ext_resource path="res://Scripts/Utils/RepeatingSpawner.gd" type="Script" id=81]
+[ext_resource path="res://Scenes/Power Ups/Healing Potion.tscn" type="PackedScene" id=82]
+[ext_resource path="res://Scenes/Power Ups/Defense Potion.tscn" type="PackedScene" id=83]
+[ext_resource path="res://Scenes/Power Ups/Attack Potion.tscn" type="PackedScene" id=84]
+[ext_resource path="res://Scenes/Power Ups/Ult Stone.tscn" type="PackedScene" id=85]
+[ext_resource path="res://Scenes/Power Ups/Giant Potion.tscn" type="PackedScene" id=86]
+[ext_resource path="res://Scenes/Power Ups/Speed Potion.tscn" type="PackedScene" id=87]
+[ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn" type="PackedScene" id=88]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 2.png" type="Texture" id=89]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "Fall"
+length = 0.6
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2880.61, -1421.15 ), Vector2( 2882.8, -1394.08 ), Vector2( 2882.8, -1394.08 ), Vector2( 2925.96, -1204.62 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 11.8584, 18.071, 18.071, 14.8983 ]
+}
 
 [node name="Game Level" type="Node2D" index="0"]
 
 [node name="Following Camera" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 1332, -818 )
+position = Vector2( 1350, -800 )
 z_index = 1
 drag_margin_right = 0.2
 drag_margin_left = 0.0
@@ -72,42 +164,160 @@ _sections_unfolded = [ "Cell" ]
 
 [node name="Background Deocration" type="Node2D" parent="." index="4"]
 
-[node name="Sprite" type="Sprite" parent="Background Deocration" index="0"]
+[node name="1" type="Node2D" parent="Background Deocration" index="0"]
 
-position = Vector2( 1200, -500 )
+editor/display_folded = true
+
+[node name="Second Scratch" type="Sprite" parent="Background Deocration/1" index="0"]
+
+position = Vector2( 1296.56, -692.964 )
+rotation = -0.34879
 texture = ExtResource( 5 )
 
-[node name="Sprite2" type="Sprite" parent="Background Deocration" index="1"]
+[node name="Top Scratch" type="Sprite" parent="Background Deocration/1" index="1"]
 
-position = Vector2( 1450, -1500 )
+position = Vector2( 900, -1500 )
 texture = ExtResource( 6 )
 
-[node name="Sprite3" type="Sprite" parent="Background Deocration" index="2"]
+[node name="First Scratch" type="Sprite" parent="Background Deocration/1" index="2"]
 
-position = Vector2( 1550, -900 )
+position = Vector2( 620.979, -544.062 )
+rotation = 0.361013
 texture = ExtResource( 7 )
 
-[node name="Sprite5" type="Sprite" parent="Background Deocration" index="3"]
+[node name="Sprite6" type="Sprite" parent="Background Deocration/1" index="3"]
 
-position = Vector2( 2450, -950 )
+position = Vector2( 3835.39, -1218.02 )
+rotation = 0.821095
 texture = ExtResource( 8 )
 
-[node name="Sprite4" type="Sprite" parent="Background Deocration" index="4"]
+[node name="Black Dotted Stain" type="Sprite" parent="Background Deocration/1" index="4"]
 
-position = Vector2( 2200, -1450 )
+position = Vector2( 3055.16, -601.265 )
 texture = ExtResource( 9 )
 
-[node name="Sprite6" type="Sprite" parent="Background Deocration" index="5"]
+[node name="Top Crack Thin" type="Sprite" parent="Background Deocration/1" index="5"]
 
-position = Vector2( 3200, -900 )
+position = Vector2( 2299.14, -1496.54 )
 texture = ExtResource( 10 )
 
-[node name="Writings" type="Node2D" parent="." index="5"]
+[node name="Yellow Stain" type="Sprite" parent="Background Deocration/1" index="6"]
 
-[node name="Platform" type="TileMap" parent="." index="6"]
+position = Vector2( 1827.4, -1291.89 )
+rotation = -0.416178
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
+[node name="Sprite8" type="Sprite" parent="Background Deocration/1" index="7"]
+
+position = Vector2( 3471.91, -878.721 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 12 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="Sprite9" type="Sprite" parent="Background Deocration/1" index="8"]
+
+modulate = Color( 1, 0.666667, 0.392157, 1 )
+position = Vector2( 3265.76, -392.25 )
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="Stain 11" type="Sprite" parent="Background Deocration/1" index="9"]
+
+modulate = Color( 0.880628, 0.454301, 1, 1 )
+position = Vector2( 4771.94, -821.167 )
+rotation = 0.260971
+scale = Vector2( 4, 4 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Stain 7" type="Sprite" parent="Background Deocration/1" index="10"]
+
+modulate = Color( 0.964508, 0.545699, 1, 1 )
+position = Vector2( 3984.88, -720.603 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Stain 5" type="Sprite" parent="Background Deocration/1" index="11"]
+
+position = Vector2( 700, -1150 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="2" type="Node2D" parent="Background Deocration" index="1"]
+
+editor/display_folded = true
+
+[node name="Stain 2" type="Sprite" parent="Background Deocration/2" index="0"]
+
+position = Vector2( 5700, -850 )
+texture = ExtResource( 17 )
+
+[node name="Stain 3" type="Sprite" parent="Background Deocration/2" index="1"]
+
+position = Vector2( 7618.39, -1384.11 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 18 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="break 3" type="Sprite" parent="Background Deocration/2" index="2"]
+
+position = Vector2( 7034.34, -1156.64 )
+rotation = 0.485636
+texture = ExtResource( 19 )
+
+[node name="Top Erode" type="Sprite" parent="Background Deocration/2" index="3"]
+
+position = Vector2( 8693.58, -591.269 )
+rotation = -3.13646
+texture = ExtResource( 6 )
+
+[node name="Stain 11" type="Sprite" parent="Background Deocration/2" index="4"]
+
+modulate = Color( 0, 0, 0, 0.49502 )
+position = Vector2( 8661.14, -980.056 )
+rotation = -2.45833
+scale = Vector2( 5, 5 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Plug3" type="Sprite" parent="Background Deocration/2" index="5"]
+
+position = Vector2( 10455.6, -924.281 )
+texture = ExtResource( 20 )
+
+[node name="Stain 4" type="Sprite" parent="Background Deocration/2" index="6"]
+
+position = Vector2( 9977.24, -1409.16 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 21 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Stain 7" type="Sprite" parent="Background Deocration/2" index="7"]
+
+position = Vector2( 10010.4, -1448.11 )
+rotation = 3.40701
+scale = Vector2( 2, 2 )
+texture = ExtResource( 15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="break 5" type="Sprite" parent="Background Deocration/2" index="8"]
+
+position = Vector2( 9755.84, -995.986 )
+rotation = -0.463517
+scale = Vector2( 1.3, 1.3 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Platform" type="TileMap" parent="." index="5"]
+
+position = Vector2( -0.0234375, 0 )
 mode = 0
-tile_set = ExtResource( 11 )
+tile_set = ExtResource( 23 )
 cell_size = Vector2( 100, 100 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -122,393 +332,2779 @@ collision_layer = 4
 collision_mask = 0
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -1375862, 0, 196609, -1375861, 0, 131076, -1375860, 0, 196612, -1375859, 0, 196613, -1375858, 0, 131077, -1375857, 0, 0, -1375853, 0, 196609, -1375852, 0, 131076, -1375851, 0, 196612, -1375850, 0, 131076, -1375849, 0, 131076, -1375848, 0, 196613, -1375847, 0, 196612, -1375846, 0, 3, -1375845, 0, 3, -1375844, 0, 0, -1310328, 0, 196609, -1310327, 0, 0, -1310326, 0, 131072, -1310325, 0, 131073, -1310324, 0, 131073, -1310323, 0, 131078, -1310322, 0, 131078, -1310321, 0, 196611, -1310317, 0, 131072, -1310316, 0, 196614, -1310315, 0, 131074, -1310314, 0, 5, -1310313, 0, 4, -1310312, 0, 5, -1310311, 0, 65541, -1310310, 0, 4, -1310309, 0, 65540, -1310308, 0, 131075, -1244795, 0, 196609, -1244794, 0, 0, -1244792, 0, 131072, -1244791, 0, 196611, -1244779, 0, 65542, -1244778, 0, 65538, -1244777, 0, 65540, -1244776, 0, 65540, -1244775, 0, 65541, -1244774, 0, 5, -1244773, 0, 4, -1244772, 0, 6, -1179262, 0, 196609, -1179261, 0, 0, -1179259, 0, 131072, -1179258, 0, 196611, -1179243, 0, 131072, -1179242, 0, 131073, -1179241, 0, 196614, -1179240, 0, 131074, -1179239, 0, 65538, -1179238, 0, 4, -1179237, 0, 65538, -1179236, 0, 131075, -1113732, 0, 196609, -1113731, 0, 0, -1113729, 0, 196609, -1113728, 0, 0, -1113726, 0, 131072, -1113725, 0, 196611, -1113704, 0, 131072, -1113703, 0, 196614, -1113702, 0, 131074, -1113701, 0, 65541, -1113700, 0, 6, -1048200, 0, 196609, -1048199, 0, 131077, -1048198, 0, 0, -1048196, 0, 131072, -1048195, 0, 196611, -1048193, 0, 131072, -1048192, 0, 196611, -1048166, 0, 1, -1048165, 0, 5, -1048164, 0, 6, -983040, 0, 196609, -983039, 0, 0, -982665, 0, 196609, -982664, 0, 196610, -982663, 0, 196614, -982662, 0, 196611, -982630, 0, 131072, -982629, 0, 131078, -982628, 0, 196611, -917504, 0, 1, -917503, 0, 6, -917138, 0, 196609, -917137, 0, 0, -917135, 0, 196609, -917134, 0, 0, -917132, 0, 196609, -917131, 0, 0, -917129, 0, 131072, -917128, 0, 196611, -851968, 0, 65542, -851967, 0, 131075, -851603, 0, 196609, -851602, 0, 196610, -851601, 0, 196611, -851599, 0, 131072, -851598, 0, 196611, -851596, 0, 131072, -851595, 0, 196611, -786432, 0, 65542, -786431, 0, 6, -786068, 0, 196609, -786067, 0, 196610, -786066, 0, 196611, -720896, 0, 65542, -720895, 0, 131075, -720682, 0, 196609, -720681, 0, 196612, -720680, 0, 131076, -720679, 0, 196613, -720678, 0, 131076, -720677, 0, 131077, -720676, 0, 131077, -720675, 0, 196613, -720674, 0, 0, -720533, 0, 196609, -720532, 0, 196610, -720531, 0, 196611, -655360, 0, 1, -655359, 0, 6, -655146, 0, 131072, -655145, 0, 131078, -655144, 0, 131073, -655143, 0, 131073, -655142, 0, 131078, -655141, 0, 196614, -655140, 0, 131078, -655139, 0, 131073, -655138, 0, 196611, -655021, 0, 196609, -655020, 0, 131077, -655019, 0, 196613, -655018, 0, 0, -654998, 0, 196609, -654997, 0, 196610, -654996, 0, 196611, -589824, 0, 65542, -589823, 0, 131075, -589494, 0, 196609, -589493, 0, 131077, -589492, 0, 131077, -589491, 0, 196613, -589490, 0, 131077, -589489, 0, 3, -589488, 0, 196612, -589487, 0, 196612, -589486, 0, 131077, -589485, 0, 65537, -589484, 0, 5, -589483, 0, 65540, -589482, 0, 2, -589481, 0, 131076, -589480, 0, 196612, -589479, 0, 196612, -589478, 0, 131076, -589477, 0, 196612, -589476, 0, 196613, -589475, 0, 196613, -589474, 0, 0, -589472, 0, 196609, -589471, 0, 196613, -589470, 0, 131077, -589469, 0, 3, -589468, 0, 3, -589467, 0, 0, -589465, 0, 196609, -589464, 0, 0, -589462, 0, 131072, -589461, 0, 196611, -524288, 0, 1, -524287, 0, 131075, -524216, 0, 196609, -524215, 0, 3, -524214, 0, 131076, -524213, 0, 196613, -524212, 0, 196613, -524211, 0, 196613, -524210, 0, 196612, -524209, 0, 196612, -524208, 0, 0, -524191, 0, 196609, -524190, 0, 196613, -524189, 0, 131076, -524188, 0, 196613, -524187, 0, 196612, -524186, 0, 3, -524185, 0, 131076, -524184, 0, 196613, -524183, 0, 3, -524182, 0, 0, -524130, 0, 196609, -524129, 0, 3, -524128, 0, 3, -524127, 0, 3, -524126, 0, 131077, -524125, 0, 196613, -524124, 0, 196612, -524123, 0, 131077, -524122, 0, 196613, -524121, 0, 196612, -524120, 0, 131076, -524119, 0, 196612, -524118, 0, 0, -523993, 0, 196609, -523992, 0, 0, -523987, 0, 196609, -523986, 0, 0, -523970, 0, 196609, -523969, 0, 196612, -523968, 0, 196612, -523967, 0, 131077, -523966, 0, 131076, -523965, 0, 196612, -523964, 0, 3, -523963, 0, 131077, -523962, 0, 131076, -523961, 0, 196613, -523960, 0, 3, -523959, 0, 131076, -523958, 0, 65537, -523957, 0, 65541, -523956, 0, 65538, -523955, 0, 65540, -523954, 0, 4, -523953, 0, 4, -523952, 0, 5, -523951, 0, 65540, -523950, 0, 65541, -523949, 0, 65538, -523948, 0, 65540, -523947, 0, 65541, -523946, 0, 5, -523945, 0, 65540, -523944, 0, 4, -523943, 0, 65541, -523942, 0, 65540, -523941, 0, 4, -523940, 0, 65538, -523939, 0, 65541, -523938, 0, 6, -523936, 0, 1, -523935, 0, 4, -523934, 0, 4, -523933, 0, 4, -523932, 0, 4, -523931, 0, 131075, -523929, 0, 131072, -523928, 0, 196611, -458752, 0, 65542, -458751, 0, 131075, -458680, 0, 1, -458679, 0, 65540, -458678, 0, 65541, -458677, 0, 65540, -458676, 0, 65541, -458675, 0, 65540, -458674, 0, 65540, -458673, 0, 65540, -458672, 0, 131075, -458655, 0, 1, -458654, 0, 5, -458653, 0, 5, -458652, 0, 4, -458651, 0, 4, -458650, 0, 65538, -458649, 0, 65540, -458648, 0, 65540, -458647, 0, 5, -458646, 0, 6, -458617, 0, 196609, -458616, 0, 3, -458615, 0, 3, -458614, 0, 131077, -458613, 0, 0, -458609, 0, 196609, -458608, 0, 196612, -458607, 0, 131076, -458606, 0, 131077, -458605, 0, 3, -458604, 0, 196612, -458603, 0, 3, -458602, 0, 131076, -458601, 0, 131077, -458600, 0, 3, -458599, 0, 196612, -458598, 0, 0, -458594, 0, 131072, -458593, 0, 131078, -458592, 0, 131073, -458591, 0, 131078, -458590, 0, 131073, -458589, 0, 131078, -458588, 0, 196614, -458587, 0, 131073, -458586, 0, 131078, -458585, 0, 131078, -458584, 0, 131078, -458583, 0, 131074, -458582, 0, 6, -458578, 0, 196609, -458577, 0, 3, -458576, 0, 196613, -458575, 0, 131077, -458574, 0, 131076, -458573, 0, 196613, -458572, 0, 131077, -458571, 0, 3, -458570, 0, 196613, -458569, 0, 3, -458568, 0, 196613, -458567, 0, 196612, -458566, 0, 0, -458562, 0, 196609, -458561, 0, 196612, -458560, 0, 3, -458559, 0, 3, -458558, 0, 0, -458546, 0, 196609, -458545, 0, 131077, -458544, 0, 3, -458543, 0, 3, -458542, 0, 196612, -458541, 0, 196612, -458540, 0, 196612, -458539, 0, 196613, -458538, 0, 0, -458530, 0, 196609, -458529, 0, 131077, -458528, 0, 196613, -458527, 0, 131076, -458526, 0, 131076, -458525, 0, 196612, -458524, 0, 3, -458523, 0, 196612, -458522, 0, 0, -458458, 0, 196609, -458457, 0, 65537, -458456, 0, 6, -458451, 0, 65542, -458450, 0, 2, -458449, 0, 0, -458442, 0, 196609, -458441, 0, 131076, -458440, 0, 196613, -458439, 0, 131077, -458438, 0, 131076, -458437, 0, 131076, -458436, 0, 196613, -458435, 0, 3, -458434, 0, 65537, -458433, 0, 65538, -458432, 0, 5, -458431, 0, 4, -458430, 0, 5, -458429, 0, 65541, -458428, 0, 4, -458427, 0, 65541, -458426, 0, 65540, -458425, 0, 5, -458424, 0, 5, -458423, 0, 65538, -458422, 0, 4, -458421, 0, 65540, -458420, 0, 5, -458419, 0, 65541, -458418, 0, 4, -458417, 0, 4, -458416, 0, 65538, -458415, 0, 5, -458414, 0, 65541, -458413, 0, 5, -458412, 0, 4, -458411, 0, 65540, -458410, 0, 65540, -458409, 0, 5, -458408, 0, 65538, -458407, 0, 65540, -458406, 0, 4, -458405, 0, 65538, -458404, 0, 65541, -458403, 0, 4, -458402, 0, 2, -458401, 0, 196613, -458400, 0, 65537, -458399, 0, 5, -458398, 0, 5, -458397, 0, 4, -458396, 0, 4, -458395, 0, 6, -393216, 0, 1, -393215, 0, 6, -393178, 0, 196609, -393177, 0, 196612, -393176, 0, 131077, -393175, 0, 131076, -393174, 0, 131076, -393173, 0, 196613, -393172, 0, 3, -393171, 0, 131076, -393170, 0, 196612, -393169, 0, 131076, -393168, 0, 131076, -393167, 0, 196612, -393166, 0, 196612, -393165, 0, 0, -393149, 0, 196609, -393148, 0, 196612, -393147, 0, 196612, -393146, 0, 131076, -393145, 0, 196613, -393144, 0, 65537, -393143, 0, 65541, -393142, 0, 65538, -393141, 0, 5, -393140, 0, 65538, -393139, 0, 65538, -393138, 0, 65540, -393137, 0, 65540, -393136, 0, 2, -393135, 0, 131076, -393134, 0, 3, -393133, 0, 196612, -393132, 0, 196613, -393131, 0, 131076, -393130, 0, 131077, -393129, 0, 131076, -393128, 0, 196613, -393127, 0, 131076, -393126, 0, 131077, -393125, 0, 131077, -393124, 0, 196612, -393123, 0, 131077, -393122, 0, 3, -393121, 0, 196612, -393120, 0, 131076, -393119, 0, 65537, -393118, 0, 4, -393117, 0, 5, -393116, 0, 65540, -393115, 0, 65541, -393114, 0, 65538, -393113, 0, 65541, -393112, 0, 65541, -393111, 0, 5, -393110, 0, 6, -393081, 0, 1, -393080, 0, 65540, -393079, 0, 65538, -393078, 0, 4, -393077, 0, 131075, -393073, 0, 1, -393072, 0, 65541, -393071, 0, 65540, -393070, 0, 5, -393069, 0, 65538, -393068, 0, 65540, -393067, 0, 65540, -393066, 0, 4, -393065, 0, 5, -393064, 0, 65540, -393063, 0, 65541, -393062, 0, 6, -393047, 0, 1, -393046, 0, 6, -393042, 0, 65542, -393041, 0, 5, -393040, 0, 4, -393039, 0, 4, -393038, 0, 5, -393037, 0, 4, -393036, 0, 65540, -393035, 0, 5, -393034, 0, 5, -393033, 0, 65538, -393032, 0, 65538, -393031, 0, 5, -393030, 0, 6, -393026, 0, 65542, -393025, 0, 65540, -393024, 0, 65538, -393023, 0, 65541, -393022, 0, 131075, -393010, 0, 131072, -393009, 0, 196614, -393008, 0, 131073, -393007, 0, 131078, -393006, 0, 131073, -393005, 0, 131073, -393004, 0, 131078, -393003, 0, 131078, -393002, 0, 196611, -392994, 0, 131072, -392993, 0, 196614, -392992, 0, 131073, -392991, 0, 196614, -392990, 0, 131078, -392989, 0, 196614, -392988, 0, 196614, -392987, 0, 131078, -392986, 0, 196611, -392965, 0, 196609, -392964, 0, 196613, -392963, 0, 131077, -392962, 0, 131077, -392961, 0, 3, -392960, 0, 131077, -392959, 0, 196612, -392958, 0, 196613, -392957, 0, 196612, -392956, 0, 131076, -392955, 0, 131077, -392954, 0, 196613, -392953, 0, 131076, -392952, 0, 196613, -392951, 0, 196613, -392950, 0, 3, -392949, 0, 3, -392948, 0, 196612, -392947, 0, 3, -392946, 0, 3, -392945, 0, 3, -392944, 0, 131077, -392943, 0, 196613, -392942, 0, 131077, -392941, 0, 131077, -392940, 0, 196612, -392939, 0, 131077, -392938, 0, 196613, -392937, 0, 131077, -392936, 0, 3, -392935, 0, 131076, -392934, 0, 3, -392933, 0, 3, -392932, 0, 196613, -392931, 0, 196612, -392930, 0, 196613, -392929, 0, 131076, -392928, 0, 3, -392927, 0, 131077, -392926, 0, 131077, -392925, 0, 3, -392924, 0, 196612, -392923, 0, 131077, -392922, 0, 65537, -392921, 0, 65541, -392920, 0, 2, -392919, 0, 196612, -392918, 0, 196613, -392917, 0, 196612, -392916, 0, 131077, -392915, 0, 65537, -392914, 0, 65540, -392913, 0, 2, -392912, 0, 3, -392911, 0, 196612, -392910, 0, 131076, -392909, 0, 196612, -392908, 0, 131077, -392907, 0, 131076, -392906, 0, 65537, -392905, 0, 65540, -392904, 0, 5, -392903, 0, 65541, -392902, 0, 5, -392901, 0, 5, -392900, 0, 65538, -392899, 0, 4, -392898, 0, 4, -392897, 0, 65541, -392896, 0, 5, -392895, 0, 5, -392894, 0, 65538, -392893, 0, 65538, -392892, 0, 65540, -392891, 0, 65540, -392890, 0, 65541, -392889, 0, 5, -392888, 0, 65540, -392887, 0, 65538, -392886, 0, 5, -392885, 0, 65541, -392884, 0, 4, -392883, 0, 4, -392882, 0, 65540, -392881, 0, 65538, -392880, 0, 4, -392879, 0, 5, -392878, 0, 65540, -392877, 0, 65541, -392876, 0, 5, -392875, 0, 65541, -392874, 0, 4, -392873, 0, 5, -392872, 0, 65538, -392871, 0, 65540, -392870, 0, 65538, -392869, 0, 65538, -392868, 0, 65538, -392867, 0, 65541, -392866, 0, 5, -392865, 0, 65540, -392864, 0, 65540, -392863, 0, 4, -392862, 0, 65538, -392861, 0, 65541, -392860, 0, 65541, -392859, 0, 131075, -327680, 0, 1, -327679, 0, 131075, -327642, 0, 65542, -327641, 0, 65541, -327640, 0, 65541, -327639, 0, 65540, -327638, 0, 4, -327637, 0, 65541, -327636, 0, 65540, -327635, 0, 5, -327634, 0, 65538, -327633, 0, 65538, -327632, 0, 65541, -327631, 0, 65541, -327630, 0, 65540, -327629, 0, 131075, -327613, 0, 1, -327612, 0, 65538, -327611, 0, 65538, -327610, 0, 5, -327609, 0, 65540, -327608, 0, 65541, -327607, 0, 65541, -327606, 0, 4, -327605, 0, 65541, -327604, 0, 65538, -327603, 0, 65538, -327602, 0, 65540, -327601, 0, 5, -327600, 0, 65541, -327599, 0, 65540, -327598, 0, 5, -327597, 0, 5, -327596, 0, 4, -327595, 0, 5, -327594, 0, 65541, -327593, 0, 65538, -327592, 0, 65538, -327591, 0, 65540, -327590, 0, 65538, -327589, 0, 65540, -327588, 0, 5, -327587, 0, 5, -327586, 0, 65540, -327585, 0, 5, -327584, 0, 65541, -327583, 0, 65538, -327582, 0, 4, -327581, 0, 65538, -327580, 0, 65541, -327579, 0, 65541, -327578, 0, 65538, -327577, 0, 4, -327576, 0, 4, -327575, 0, 5, -327574, 0, 131075, -327549, 0, 196609, -327548, 0, 196613, -327547, 0, 196612, -327546, 0, 196613, -327545, 0, 65537, -327544, 0, 65541, -327543, 0, 65540, -327542, 0, 65541, -327541, 0, 6, -327537, 0, 65542, -327536, 0, 65540, -327535, 0, 4, -327534, 0, 65541, -327533, 0, 4, -327532, 0, 65538, -327531, 0, 65541, -327530, 0, 4, -327529, 0, 5, -327528, 0, 65538, -327527, 0, 4, -327526, 0, 2, -327525, 0, 0, -327511, 0, 65542, -327510, 0, 6, -327506, 0, 1, -327505, 0, 4, -327504, 0, 65541, -327503, 0, 65538, -327502, 0, 65540, -327501, 0, 65541, -327500, 0, 4, -327499, 0, 4, -327498, 0, 5, -327497, 0, 65538, -327496, 0, 65540, -327495, 0, 65540, -327494, 0, 131075, -327490, 0, 1, -327489, 0, 65541, -327488, 0, 65538, -327487, 0, 4, -327486, 0, 2, -327485, 0, 3, -327484, 0, 196613, -327483, 0, 196612, -327482, 0, 0, -327437, 0, 196609, -327436, 0, 131077, -327435, 0, 0, -327433, 0, 196609, -327432, 0, 196613, -327431, 0, 0, -327429, 0, 65542, -327428, 0, 5, -327427, 0, 65540, -327426, 0, 65541, -327425, 0, 65541, -327424, 0, 65540, -327423, 0, 65540, -327422, 0, 5, -327421, 0, 65540, -327420, 0, 65538, -327419, 0, 65538, -327418, 0, 65539, -327417, 0, 196614, -327416, 0, 131073, -327415, 0, 196614, -327414, 0, 131073, -327413, 0, 131078, -327412, 0, 131078, -327411, 0, 131073, -327410, 0, 131073, -327409, 0, 196614, -327408, 0, 131073, -327407, 0, 131073, -327406, 0, 131073, -327405, 0, 131078, -327404, 0, 196614, -327403, 0, 131073, -327402, 0, 131078, -327401, 0, 196614, -327400, 0, 131073, -327399, 0, 131078, -327398, 0, 131073, -327397, 0, 196614, -327396, 0, 196614, -327395, 0, 131078, -327394, 0, 131078, -327393, 0, 131073, -327392, 0, 131073, -327391, 0, 131073, -327390, 0, 131073, -327389, 0, 196614, -327388, 0, 131078, -327387, 0, 131078, -327386, 0, 131078, -327385, 0, 196614, -327384, 0, 131078, -327383, 0, 131073, -327382, 0, 131073, -327381, 0, 196614, -327380, 0, 131078, -327379, 0, 196614, -327378, 0, 196614, -327377, 0, 131078, -327376, 0, 131073, -327375, 0, 131073, -327374, 0, 131073, -327373, 0, 196614, -327372, 0, 196614, -327371, 0, 196614, -327370, 0, 196614, -327369, 0, 131078, -327368, 0, 196614, -327367, 0, 131073, -327366, 0, 196614, -327365, 0, 131078, -327364, 0, 131073, -327363, 0, 196614, -327362, 0, 131078, -327361, 0, 131078, -327360, 0, 131078, -327359, 0, 196614, -327358, 0, 131073, -327357, 0, 196614, -327356, 0, 196614, -327355, 0, 131078, -327354, 0, 131073, -327353, 0, 131078, -327352, 0, 131078, -327351, 0, 131073, -327350, 0, 131078, -327349, 0, 131073, -327348, 0, 196614, -327347, 0, 196614, -327346, 0, 131078, -327345, 0, 131073, -327344, 0, 196614, -327343, 0, 196614, -327342, 0, 131073, -327341, 0, 131073, -327340, 0, 131073, -327339, 0, 131073, -327338, 0, 131073, -327337, 0, 131078, -327336, 0, 131078, -327335, 0, 196614, -327334, 0, 131073, -327333, 0, 131078, -327332, 0, 131078, -327331, 0, 131078, -327330, 0, 131073, -327329, 0, 131073, -327328, 0, 196614, -327327, 0, 196614, -327326, 0, 131078, -327325, 0, 131078, -327324, 0, 196614, -327323, 0, 196611, -262144, 0, 65542, -262143, 0, 6, -262123, 0, 196609, -262122, 0, 3, -262121, 0, 3, -262120, 0, 196612, -262119, 0, 131076, -262118, 0, 131076, -262117, 0, 131076, -262116, 0, 0, -262113, 0, 196609, -262112, 0, 196613, -262111, 0, 196612, -262110, 0, 131077, -262109, 0, 0, -262106, 0, 1, -262105, 0, 65540, -262104, 0, 5, -262103, 0, 65541, -262102, 0, 65538, -262101, 0, 4, -262100, 0, 65541, -262099, 0, 4, -262098, 0, 65541, -262097, 0, 4, -262096, 0, 4, -262095, 0, 5, -262094, 0, 5, -262093, 0, 6, -262077, 0, 65542, -262076, 0, 4, -262075, 0, 4, -262074, 0, 4, -262073, 0, 65538, -262072, 0, 5, -262071, 0, 4, -262070, 0, 65541, -262069, 0, 4, -262068, 0, 4, -262067, 0, 65538, -262066, 0, 65538, -262065, 0, 65541, -262064, 0, 4, -262063, 0, 65538, -262062, 0, 65538, -262061, 0, 65538, -262060, 0, 65540, -262059, 0, 4, -262058, 0, 65541, -262057, 0, 65541, -262056, 0, 65538, -262055, 0, 65540, -262054, 0, 4, -262053, 0, 65540, -262052, 0, 65541, -262051, 0, 65540, -262050, 0, 5, -262049, 0, 65540, -262048, 0, 65541, -262047, 0, 65538, -262046, 0, 5, -262045, 0, 65540, -262044, 0, 65538, -262043, 0, 65541, -262042, 0, 5, -262041, 0, 65540, -262040, 0, 5, -262039, 0, 65540, -262038, 0, 6, -262013, 0, 1, -262012, 0, 65540, -262011, 0, 65538, -262010, 0, 4, -262009, 0, 4, -262008, 0, 65540, -262007, 0, 65541, -262006, 0, 65540, -262005, 0, 131075, -262001, 0, 1, -262000, 0, 65540, -261999, 0, 65541, -261998, 0, 65541, -261997, 0, 65541, -261996, 0, 65541, -261995, 0, 65541, -261994, 0, 65538, -261993, 0, 65538, -261992, 0, 4, -261991, 0, 4, -261990, 0, 65541, -261989, 0, 131075, -261975, 0, 65542, -261974, 0, 131075, -261970, 0, 1, -261969, 0, 65540, -261968, 0, 65540, -261967, 0, 4, -261966, 0, 65538, -261965, 0, 65540, -261964, 0, 65538, -261963, 0, 4, -261962, 0, 65540, -261961, 0, 5, -261960, 0, 65541, -261959, 0, 65538, -261958, 0, 131075, -261954, 0, 1, -261953, 0, 65540, -261952, 0, 65538, -261951, 0, 4, -261950, 0, 65540, -261949, 0, 65538, -261948, 0, 4, -261947, 0, 5, -261946, 0, 131075, -261901, 0, 65542, -261900, 0, 65538, -261899, 0, 2, -261898, 0, 3, -261897, 0, 65537, -261896, 0, 65541, -261895, 0, 2, -261894, 0, 3, -261893, 0, 65537, -261892, 0, 5, -261891, 0, 65541, -261890, 0, 5, -261889, 0, 5, -261888, 0, 5, -261887, 0, 65541, -261886, 0, 5, -261885, 0, 5, -261884, 0, 65540, -261883, 0, 5, -261882, 0, 6, -196608, 0, 1, -196607, 0, 6, -196587, 0, 1, -196586, 0, 65538, -196585, 0, 65538, -196584, 0, 65540, -196583, 0, 65538, -196582, 0, 65541, -196581, 0, 65541, -196580, 0, 131075, -196577, 0, 65542, -196576, 0, 65540, -196575, 0, 65540, -196574, 0, 5, -196573, 0, 131075, -196570, 0, 65542, -196569, 0, 65541, -196568, 0, 65540, -196567, 0, 65540, -196566, 0, 65540, -196565, 0, 5, -196564, 0, 65538, -196563, 0, 65540, -196562, 0, 65538, -196561, 0, 5, -196560, 0, 65540, -196559, 0, 65538, -196558, 0, 65540, -196557, 0, 6, -196541, 0, 1, -196540, 0, 5, -196539, 0, 65541, -196538, 0, 65541, -196537, 0, 5, -196536, 0, 65541, -196535, 0, 65541, -196534, 0, 65540, -196533, 0, 65540, -196532, 0, 65538, -196531, 0, 65541, -196530, 0, 65538, -196529, 0, 65538, -196528, 0, 4, -196527, 0, 65541, -196526, 0, 4, -196525, 0, 65538, -196524, 0, 65540, -196523, 0, 4, -196522, 0, 65538, -196521, 0, 65540, -196520, 0, 5, -196519, 0, 65538, -196518, 0, 4, -196517, 0, 65540, -196516, 0, 65541, -196515, 0, 65538, -196514, 0, 5, -196513, 0, 65541, -196512, 0, 5, -196511, 0, 5, -196510, 0, 5, -196509, 0, 5, -196508, 0, 5, -196507, 0, 5, -196506, 0, 4, -196505, 0, 65541, -196504, 0, 65541, -196503, 0, 65541, -196502, 0, 2, -196501, 0, 131076, -196500, 0, 196613, -196499, 0, 196612, -196498, 0, 196613, -196497, 0, 131077, -196496, 0, 131077, -196495, 0, 131076, -196494, 0, 131076, -196493, 0, 3, -196492, 0, 3, -196491, 0, 3, -196490, 0, 196612, -196489, 0, 3, -196488, 0, 196612, -196487, 0, 131077, -196486, 0, 131077, -196485, 0, 131077, -196484, 0, 196612, -196483, 0, 196612, -196482, 0, 131076, -196481, 0, 131076, -196480, 0, 196612, -196479, 0, 196613, -196478, 0, 196613, -196477, 0, 65537, -196476, 0, 4, -196475, 0, 4, -196474, 0, 65540, -196473, 0, 4, -196472, 0, 65538, -196471, 0, 65541, -196470, 0, 65541, -196469, 0, 131075, -196465, 0, 1, -196464, 0, 65541, -196463, 0, 4, -196462, 0, 65538, -196461, 0, 65538, -196460, 0, 4, -196459, 0, 65540, -196458, 0, 5, -196457, 0, 5, -196456, 0, 65538, -196455, 0, 5, -196454, 0, 5, -196453, 0, 2, -196452, 0, 196613, -196451, 0, 0, -196439, 0, 65542, -196438, 0, 131075, -196434, 0, 65542, -196433, 0, 5, -196432, 0, 5, -196431, 0, 5, -196430, 0, 65540, -196429, 0, 65540, -196428, 0, 65540, -196427, 0, 4, -196426, 0, 65538, -196425, 0, 5, -196424, 0, 5, -196423, 0, 65541, -196422, 0, 6, -196418, 0, 65542, -196417, 0, 4, -196416, 0, 4, -196415, 0, 65541, -196414, 0, 65540, -196413, 0, 5, -196412, 0, 65540, -196411, 0, 65541, -196410, 0, 2, -196409, 0, 3, -196408, 0, 131077, -196407, 0, 196613, -196406, 0, 3, -196405, 0, 196612, -196404, 0, 131077, -196403, 0, 3, -196402, 0, 131077, -196401, 0, 131076, -196400, 0, 196612, -196399, 0, 196613, -196398, 0, 3, -196397, 0, 131076, -196396, 0, 131077, -196395, 0, 131076, -196394, 0, 131076, -196393, 0, 196612, -196392, 0, 3, -196391, 0, 196613, -196390, 0, 196613, -196389, 0, 131076, -196388, 0, 196613, -196387, 0, 196612, -196386, 0, 131076, -196385, 0, 131076, -196384, 0, 131076, -196383, 0, 131076, -196382, 0, 196613, -196381, 0, 196613, -196380, 0, 196613, -196379, 0, 131076, -196378, 0, 131077, -196377, 0, 196612, -196376, 0, 131076, -196375, 0, 3, -196374, 0, 131077, -196373, 0, 131076, -196372, 0, 3, -196371, 0, 196612, -196370, 0, 131077, -196369, 0, 3, -196368, 0, 131076, -196367, 0, 196613, -196366, 0, 196612, -196365, 0, 65537, -196364, 0, 65541, -196363, 0, 65541, -196362, 0, 4, -196361, 0, 5, -196360, 0, 5, -196359, 0, 5, -196358, 0, 65540, -196357, 0, 5, -196356, 0, 5, -196355, 0, 4, -196354, 0, 65540, -196353, 0, 5, -196352, 0, 65538, -196351, 0, 5, -196350, 0, 5, -196349, 0, 5, -196348, 0, 65538, -196347, 0, 4, -196346, 0, 6, -131072, 0, 65542, -131071, 0, 2, -131070, 0, 131076, -131069, 0, 196612, -131068, 0, 196612, -131067, 0, 131077, -131066, 0, 131077, -131065, 0, 196612, -131064, 0, 196613, -131063, 0, 196612, -131062, 0, 3, -131061, 0, 131076, -131060, 0, 131076, -131059, 0, 196612, -131058, 0, 196613, -131057, 0, 131076, -131056, 0, 196612, -131055, 0, 131077, -131054, 0, 131076, -131053, 0, 131077, -131052, 0, 196612, -131051, 0, 65537, -131050, 0, 65540, -131049, 0, 5, -131048, 0, 4, -131047, 0, 5, -131046, 0, 4, -131045, 0, 4, -131044, 0, 131075, -131041, 0, 65542, -131040, 0, 5, -131039, 0, 65538, -131038, 0, 5, -131037, 0, 6, -131034, 0, 1, -131033, 0, 4, -131032, 0, 5, -131031, 0, 5, -131030, 0, 65538, -131029, 0, 4, -131028, 0, 65541, -131027, 0, 65538, -131026, 0, 65541, -131025, 0, 65540, -131024, 0, 5, -131023, 0, 5, -131022, 0, 65538, -131021, 0, 2, -131020, 0, 196613, -131019, 0, 196613, -131018, 0, 131076, -131017, 0, 3, -131016, 0, 3, -131015, 0, 196613, -131014, 0, 131076, -131013, 0, 3, -131012, 0, 3, -131011, 0, 131076, -131010, 0, 3, -131009, 0, 131077, -131008, 0, 196612, -131007, 0, 3, -131006, 0, 3, -131005, 0, 65537, -131004, 0, 65538, -131003, 0, 65540, -131002, 0, 65541, -131001, 0, 65541, -131000, 0, 65541, -130999, 0, 4, -130998, 0, 65538, -130997, 0, 65541, -130996, 0, 65538, -130995, 0, 65540, -130994, 0, 65541, -130993, 0, 65540, -130992, 0, 65538, -130991, 0, 65541, -130990, 0, 65540, -130989, 0, 4, -130988, 0, 4, -130987, 0, 65541, -130986, 0, 65538, -130985, 0, 4, -130984, 0, 4, -130983, 0, 65538, -130982, 0, 65538, -130981, 0, 5, -130980, 0, 4, -130979, 0, 4, -130978, 0, 4, -130977, 0, 65540, -130976, 0, 4, -130975, 0, 65540, -130974, 0, 65541, -130973, 0, 4, -130972, 0, 65541, -130971, 0, 65540, -130970, 0, 65538, -130969, 0, 4, -130968, 0, 65541, -130967, 0, 65538, -130966, 0, 65538, -130965, 0, 65541, -130964, 0, 65538, -130963, 0, 65541, -130962, 0, 65540, -130961, 0, 4, -130960, 0, 65538, -130959, 0, 65540, -130958, 0, 65541, -130957, 0, 65541, -130956, 0, 65538, -130955, 0, 65541, -130954, 0, 4, -130953, 0, 65540, -130952, 0, 4, -130951, 0, 65541, -130950, 0, 65538, -130949, 0, 5, -130948, 0, 65540, -130947, 0, 65540, -130946, 0, 4, -130945, 0, 5, -130944, 0, 65540, -130943, 0, 65538, -130942, 0, 65541, -130941, 0, 4, -130940, 0, 65538, -130939, 0, 4, -130938, 0, 65538, -130937, 0, 65541, -130936, 0, 65541, -130935, 0, 4, -130934, 0, 5, -130933, 0, 131075, -130929, 0, 1, -130928, 0, 65540, -130927, 0, 65541, -130926, 0, 4, -130925, 0, 65540, -130924, 0, 65538, -130923, 0, 65540, -130922, 0, 65540, -130921, 0, 4, -130920, 0, 65541, -130919, 0, 5, -130918, 0, 4, -130917, 0, 65541, -130916, 0, 5, -130915, 0, 2, -130914, 0, 196613, -130913, 0, 196613, -130912, 0, 196613, -130911, 0, 196613, -130910, 0, 131076, -130909, 0, 131076, -130908, 0, 131076, -130907, 0, 131077, -130906, 0, 196612, -130905, 0, 131076, -130904, 0, 196612, -130903, 0, 65537, -130902, 0, 131075, -130898, 0, 131072, -130897, 0, 131073, -130896, 0, 131078, -130895, 0, 131078, -130894, 0, 131073, -130893, 0, 131073, -130892, 0, 131073, -130891, 0, 131078, -130890, 0, 196614, -130889, 0, 196614, -130888, 0, 131073, -130887, 0, 131073, -130886, 0, 196611, -130882, 0, 131072, -130881, 0, 131078, -130880, 0, 131078, -130879, 0, 196614, -130878, 0, 131073, -130877, 0, 131078, -130876, 0, 196614, -130875, 0, 196614, -130874, 0, 131073, -130873, 0, 131078, -130872, 0, 131073, -130871, 0, 131073, -130870, 0, 131073, -130869, 0, 131078, -130868, 0, 131073, -130867, 0, 196614, -130866, 0, 131073, -130865, 0, 196614, -130864, 0, 131078, -130863, 0, 196614, -130862, 0, 131078, -130861, 0, 196614, -130860, 0, 196614, -130859, 0, 131078, -130858, 0, 196614, -130857, 0, 131078, -130856, 0, 131073, -130855, 0, 196614, -130854, 0, 131073, -130853, 0, 131073, -130852, 0, 196614, -130851, 0, 196614, -130850, 0, 131078, -130849, 0, 131073, -130848, 0, 131073, -130847, 0, 196614, -130846, 0, 131078, -130845, 0, 196614, -130844, 0, 131078, -130843, 0, 196614, -130842, 0, 196614, -130841, 0, 131078, -130840, 0, 131073, -130839, 0, 131078, -130838, 0, 131078, -130837, 0, 131073, -130836, 0, 196614, -130835, 0, 131073, -130834, 0, 196614, -130833, 0, 196614, -130832, 0, 131078, -130831, 0, 131073, -130830, 0, 131073, -130829, 0, 131073, -130828, 0, 131073, -130827, 0, 131078, -130826, 0, 131073, -130825, 0, 196614, -130824, 0, 131073, -130823, 0, 131073, -130822, 0, 131073, -130821, 0, 131078, -130820, 0, 196614, -130819, 0, 196614, -130818, 0, 131073, -130817, 0, 131078, -130816, 0, 131078, -130815, 0, 131078, -130814, 0, 196614, -130813, 0, 196614, -130812, 0, 131078, -130811, 0, 131078, -130810, 0, 196611, -65536, 0, 131072, -65535, 0, 131073, -65534, 0, 131078, -65533, 0, 131078, -65532, 0, 131073, -65531, 0, 196614, -65530, 0, 196614, -65529, 0, 131078, -65528, 0, 131078, -65527, 0, 131073, -65526, 0, 196614, -65525, 0, 131078, -65524, 0, 131078, -65523, 0, 196614, -65522, 0, 196614, -65521, 0, 131073, -65520, 0, 131073, -65519, 0, 131078, -65518, 0, 131078, -65517, 0, 131073, -65516, 0, 131073, -65515, 0, 131078, -65514, 0, 131078, -65513, 0, 131073, -65512, 0, 131073, -65511, 0, 131073, -65510, 0, 196614, -65509, 0, 196614, -65508, 0, 196611, -65505, 0, 131072, -65504, 0, 131073, -65503, 0, 131078, -65502, 0, 196614, -65501, 0, 196611, -65498, 0, 131072, -65497, 0, 196614, -65496, 0, 196614, -65495, 0, 196614, -65494, 0, 196614, -65493, 0, 131073, -65492, 0, 196614, -65491, 0, 131078, -65490, 0, 196614, -65489, 0, 131078, -65488, 0, 131078, -65487, 0, 196614, -65486, 0, 131078, -65485, 0, 131078, -65484, 0, 131078, -65483, 0, 131073, -65482, 0, 131073, -65481, 0, 131073, -65480, 0, 131078, -65479, 0, 131078, -65478, 0, 131078, -65477, 0, 131078, -65476, 0, 196614, -65475, 0, 131073, -65474, 0, 131073, -65473, 0, 196614, -65472, 0, 196614, -65471, 0, 196614, -65470, 0, 131078, -65469, 0, 131078, -65468, 0, 131078, -65467, 0, 131073, -65466, 0, 196614, -65465, 0, 196614, -65464, 0, 131073, -65463, 0, 131078, -65462, 0, 196614, -65461, 0, 196614, -65460, 0, 131073, -65459, 0, 131073, -65458, 0, 131078, -65457, 0, 131078, -65456, 0, 196614, -65455, 0, 196614, -65454, 0, 131073, -65453, 0, 131078, -65452, 0, 131073, -65451, 0, 131073, -65450, 0, 196614, -65449, 0, 131078, -65448, 0, 196614, -65447, 0, 196614, -65446, 0, 196614, -65445, 0, 196614, -65444, 0, 131078, -65443, 0, 131078, -65442, 0, 131073, -65441, 0, 131078, -65440, 0, 196614, -65439, 0, 131073, -65438, 0, 196614, -65437, 0, 131078, -65436, 0, 196614, -65435, 0, 131073, -65434, 0, 196614, -65433, 0, 196614, -65432, 0, 131073, -65431, 0, 131078, -65430, 0, 131078, -65429, 0, 131073, -65428, 0, 131078, -65427, 0, 196614, -65426, 0, 131073, -65425, 0, 131078, -65424, 0, 131073, -65423, 0, 131078, -65422, 0, 196614, -65421, 0, 131073, -65420, 0, 196614, -65419, 0, 131078, -65418, 0, 196614, -65417, 0, 131078, -65416, 0, 196614, -65415, 0, 196614, -65414, 0, 196614, -65413, 0, 196614, -65412, 0, 131078, -65411, 0, 196614, -65410, 0, 196614, -65409, 0, 131073, -65408, 0, 131078, -65407, 0, 196614, -65406, 0, 131078, -65405, 0, 196614, -65404, 0, 131078, -65403, 0, 131078, -65402, 0, 131078, -65401, 0, 196614, -65400, 0, 196614, -65399, 0, 196614, -65398, 0, 131073, -65397, 0, 196611, -65393, 0, 131072, -65392, 0, 131073, -65391, 0, 131073, -65390, 0, 131078, -65389, 0, 131073, -65388, 0, 196614, -65387, 0, 131078, -65386, 0, 131078, -65385, 0, 196614, -65384, 0, 131073, -65383, 0, 196614, -65382, 0, 131078, -65381, 0, 131078, -65380, 0, 131073, -65379, 0, 131073, -65378, 0, 131073, -65377, 0, 131073, -65376, 0, 131078, -65375, 0, 131078, -65374, 0, 131073, -65373, 0, 131073, -65372, 0, 196614, -65371, 0, 131078, -65370, 0, 131073, -65369, 0, 131078, -65368, 0, 196614, -65367, 0, 196614, -65366, 0, 196611 )
+tile_data = PoolIntArray( -1375862, 0, 196609, -1375861, 0, 131076, -1375860, 0, 196612, -1375859, 0, 196613, -1375858, 0, 131077, -1375857, 0, 0, -1375853, 0, 196609, -1375852, 0, 131076, -1375851, 0, 196612, -1375850, 0, 131076, -1375849, 0, 131076, -1375848, 0, 196613, -1375847, 0, 196612, -1375846, 0, 3, -1375845, 0, 3, -1375844, 0, 0, -1310328, 0, 196609, -1310327, 0, 0, -1310326, 0, 131072, -1310325, 0, 131073, -1310324, 0, 131073, -1310323, 0, 131078, -1310322, 0, 131078, -1310321, 0, 196611, -1310317, 0, 131072, -1310316, 0, 196614, -1310315, 0, 131074, -1310314, 0, 5, -1310313, 0, 4, -1310312, 0, 5, -1310311, 0, 65541, -1310310, 0, 4, -1310309, 0, 65540, -1310308, 0, 131075, -1244795, 0, 196609, -1244794, 0, 0, -1244792, 0, 131072, -1244791, 0, 196611, -1244779, 0, 65542, -1244778, 0, 65538, -1244777, 0, 65540, -1244776, 0, 65540, -1244775, 0, 65541, -1244774, 0, 5, -1244773, 0, 4, -1244772, 0, 6, -1179262, 0, 196609, -1179261, 0, 0, -1179259, 0, 131072, -1179258, 0, 196611, -1179243, 0, 131072, -1179242, 0, 131073, -1179241, 0, 196614, -1179240, 0, 131074, -1179239, 0, 65538, -1179238, 0, 4, -1179237, 0, 65538, -1179236, 0, 131075, -1113732, 0, 196609, -1113731, 0, 0, -1113729, 0, 196609, -1113728, 0, 0, -1113726, 0, 131072, -1113725, 0, 196611, -1113704, 0, 131072, -1113703, 0, 196614, -1113702, 0, 131074, -1113701, 0, 65541, -1113700, 0, 6, -1048576, 0, 196609, -1048575, 0, 0, -1048200, 0, 196609, -1048199, 0, 131077, -1048198, 0, 0, -1048196, 0, 131072, -1048195, 0, 196611, -1048193, 0, 131072, -1048192, 0, 196611, -1048166, 0, 1, -1048165, 0, 5, -1048164, 0, 6, -983040, 0, 1, -983039, 0, 131075, -982665, 0, 196609, -982664, 0, 196610, -982663, 0, 196614, -982662, 0, 196611, -982630, 0, 131072, -982629, 0, 131078, -982628, 0, 196611, -917504, 0, 1, -917503, 0, 6, -917138, 0, 196609, -917137, 0, 0, -917135, 0, 196609, -917134, 0, 0, -917132, 0, 196609, -917131, 0, 0, -917129, 0, 131072, -917128, 0, 196611, -851968, 0, 65542, -851967, 0, 131075, -851603, 0, 196609, -851602, 0, 196610, -851601, 0, 196611, -851599, 0, 131072, -851598, 0, 196611, -851596, 0, 131072, -851595, 0, 196611, -786432, 0, 65542, -786431, 0, 6, -786068, 0, 196609, -786067, 0, 196610, -786066, 0, 196611, -720896, 0, 65542, -720895, 0, 131075, -720883, 0, 196609, -720882, 0, 131076, -720881, 0, 3, -720880, 0, 131076, -720879, 0, 131077, -720878, 0, 196612, -720877, 0, 196612, -720876, 0, 3, -720875, 0, 131077, -720874, 0, 196612, -720873, 0, 131077, -720872, 0, 3, -720871, 0, 3, -720870, 0, 3, -720869, 0, 196612, -720868, 0, 196613, -720867, 0, 196613, -720866, 0, 131077, -720865, 0, 131076, -720864, 0, 196613, -720863, 0, 131076, -720862, 0, 196613, -720861, 0, 131076, -720860, 0, 0, -720682, 0, 196609, -720681, 0, 196612, -720680, 0, 131076, -720679, 0, 196613, -720678, 0, 131076, -720677, 0, 131077, -720676, 0, 131077, -720675, 0, 196613, -720674, 0, 0, -720533, 0, 196609, -720532, 0, 196610, -720531, 0, 196611, -655360, 0, 1, -655359, 0, 6, -655347, 0, 131072, -655346, 0, 131073, -655345, 0, 196614, -655344, 0, 131073, -655343, 0, 196614, -655342, 0, 131073, -655341, 0, 196614, -655340, 0, 131078, -655339, 0, 131078, -655338, 0, 131078, -655337, 0, 131073, -655336, 0, 131073, -655335, 0, 196614, -655334, 0, 196614, -655333, 0, 131073, -655332, 0, 131078, -655331, 0, 131078, -655330, 0, 131078, -655329, 0, 131073, -655328, 0, 131078, -655327, 0, 131073, -655326, 0, 196614, -655325, 0, 131074, -655324, 0, 2, -655323, 0, 0, -655146, 0, 131072, -655145, 0, 131078, -655144, 0, 131073, -655143, 0, 131073, -655142, 0, 131078, -655141, 0, 196614, -655140, 0, 131078, -655139, 0, 131073, -655138, 0, 196611, -655021, 0, 196609, -655020, 0, 131077, -655019, 0, 196613, -655018, 0, 0, -654998, 0, 196609, -654997, 0, 196610, -654996, 0, 196611, -589824, 0, 65542, -589823, 0, 131075, -589789, 0, 131072, -589788, 0, 131074, -589787, 0, 2, -589786, 0, 0, -589494, 0, 196609, -589493, 0, 131077, -589492, 0, 131077, -589491, 0, 196613, -589490, 0, 131077, -589489, 0, 3, -589488, 0, 196612, -589487, 0, 196612, -589486, 0, 131077, -589485, 0, 65537, -589484, 0, 5, -589483, 0, 65540, -589482, 0, 2, -589481, 0, 131076, -589480, 0, 196612, -589479, 0, 196612, -589478, 0, 131076, -589477, 0, 196612, -589476, 0, 196613, -589475, 0, 196613, -589474, 0, 0, -589472, 0, 196609, -589471, 0, 196613, -589470, 0, 131077, -589469, 0, 3, -589468, 0, 3, -589467, 0, 0, -589465, 0, 196609, -589464, 0, 0, -589462, 0, 131072, -589461, 0, 196611, -524288, 0, 1, -524287, 0, 131075, -524252, 0, 131072, -524251, 0, 131074, -524250, 0, 2, -524249, 0, 0, -524216, 0, 196609, -524215, 0, 3, -524214, 0, 131076, -524213, 0, 196613, -524212, 0, 196613, -524211, 0, 196613, -524210, 0, 196612, -524209, 0, 196612, -524208, 0, 0, -524191, 0, 196609, -524190, 0, 196613, -524189, 0, 131076, -524188, 0, 196613, -524187, 0, 196612, -524186, 0, 3, -524185, 0, 131076, -524184, 0, 196613, -524183, 0, 3, -524182, 0, 0, -524130, 0, 196609, -524129, 0, 3, -524128, 0, 3, -524127, 0, 3, -524126, 0, 131077, -524125, 0, 196613, -524124, 0, 196612, -524123, 0, 131077, -524122, 0, 196613, -524121, 0, 196612, -524120, 0, 131076, -524119, 0, 196612, -524118, 0, 0, -523993, 0, 196609, -523992, 0, 0, -523987, 0, 196609, -523986, 0, 0, -523970, 0, 196609, -523969, 0, 196612, -523968, 0, 196612, -523967, 0, 131077, -523966, 0, 131076, -523965, 0, 196612, -523964, 0, 3, -523963, 0, 131077, -523962, 0, 131076, -523961, 0, 196613, -523960, 0, 3, -523959, 0, 131076, -523958, 0, 65537, -523957, 0, 65541, -523956, 0, 65538, -523955, 0, 65540, -523954, 0, 4, -523953, 0, 4, -523952, 0, 5, -523951, 0, 65540, -523950, 0, 65541, -523949, 0, 65538, -523948, 0, 65540, -523947, 0, 65541, -523946, 0, 5, -523945, 0, 65540, -523944, 0, 4, -523943, 0, 65541, -523942, 0, 65540, -523941, 0, 4, -523940, 0, 65538, -523939, 0, 65541, -523938, 0, 6, -523936, 0, 1, -523935, 0, 4, -523934, 0, 4, -523933, 0, 4, -523932, 0, 4, -523931, 0, 131075, -523929, 0, 131072, -523928, 0, 196611, -458752, 0, 65542, -458751, 0, 131075, -458715, 0, 131072, -458714, 0, 131074, -458713, 0, 2, -458712, 0, 196612, -458711, 0, 196612, -458710, 0, 131076, -458709, 0, 196613, -458708, 0, 131077, -458707, 0, 3, -458706, 0, 131076, -458705, 0, 3, -458704, 0, 196612, -458703, 0, 196612, -458702, 0, 196612, -458701, 0, 0, -458680, 0, 1, -458679, 0, 65540, -458678, 0, 65541, -458677, 0, 65540, -458676, 0, 65541, -458675, 0, 65540, -458674, 0, 65540, -458673, 0, 65540, -458672, 0, 131075, -458655, 0, 1, -458654, 0, 5, -458653, 0, 5, -458652, 0, 4, -458651, 0, 4, -458650, 0, 65538, -458649, 0, 65540, -458648, 0, 65540, -458647, 0, 5, -458646, 0, 6, -458617, 0, 196609, -458616, 0, 3, -458615, 0, 3, -458614, 0, 131077, -458613, 0, 0, -458609, 0, 196609, -458608, 0, 196612, -458607, 0, 131076, -458606, 0, 131077, -458605, 0, 3, -458604, 0, 196612, -458603, 0, 3, -458602, 0, 131076, -458601, 0, 131077, -458600, 0, 3, -458599, 0, 196612, -458598, 0, 0, -458594, 0, 131072, -458593, 0, 131078, -458592, 0, 131073, -458591, 0, 131078, -458590, 0, 131073, -458589, 0, 131078, -458588, 0, 196614, -458587, 0, 131073, -458586, 0, 131078, -458585, 0, 131078, -458584, 0, 131078, -458583, 0, 131074, -458582, 0, 6, -458578, 0, 196609, -458577, 0, 3, -458576, 0, 196613, -458575, 0, 131077, -458574, 0, 131076, -458573, 0, 196613, -458572, 0, 131077, -458571, 0, 3, -458570, 0, 196613, -458569, 0, 3, -458568, 0, 196613, -458567, 0, 196612, -458566, 0, 0, -458562, 0, 196609, -458561, 0, 196612, -458560, 0, 3, -458559, 0, 3, -458558, 0, 0, -458546, 0, 196609, -458545, 0, 131077, -458544, 0, 3, -458543, 0, 3, -458542, 0, 196612, -458541, 0, 196612, -458540, 0, 196612, -458539, 0, 196613, -458538, 0, 0, -458530, 0, 196609, -458529, 0, 131077, -458528, 0, 196613, -458527, 0, 131076, -458526, 0, 131076, -458525, 0, 196612, -458524, 0, 3, -458523, 0, 196612, -458522, 0, 0, -458458, 0, 196609, -458457, 0, 65537, -458456, 0, 6, -458451, 0, 65542, -458450, 0, 2, -458449, 0, 0, -458442, 0, 196609, -458441, 0, 131076, -458440, 0, 196613, -458439, 0, 131077, -458438, 0, 131076, -458437, 0, 131076, -458436, 0, 196613, -458435, 0, 3, -458434, 0, 65537, -458433, 0, 65538, -458432, 0, 5, -458431, 0, 4, -458430, 0, 5, -458429, 0, 65541, -458428, 0, 4, -458427, 0, 65541, -458426, 0, 65540, -458425, 0, 5, -458424, 0, 5, -458423, 0, 65538, -458422, 0, 4, -458421, 0, 65540, -458420, 0, 5, -458419, 0, 65541, -458418, 0, 4, -458417, 0, 4, -458416, 0, 65538, -458415, 0, 5, -458414, 0, 65541, -458413, 0, 5, -458412, 0, 4, -458411, 0, 65540, -458410, 0, 65540, -458409, 0, 5, -458408, 0, 65538, -458407, 0, 65540, -458406, 0, 4, -458405, 0, 65538, -458404, 0, 65541, -458403, 0, 4, -458402, 0, 2, -458401, 0, 196613, -458400, 0, 65537, -458399, 0, 5, -458398, 0, 5, -458397, 0, 4, -458396, 0, 4, -458395, 0, 6, -393216, 0, 1, -393215, 0, 6, -393178, 0, 65542, -393177, 0, 5, -393176, 0, 65541, -393175, 0, 65540, -393174, 0, 5, -393173, 0, 65540, -393172, 0, 5, -393171, 0, 65540, -393170, 0, 65538, -393169, 0, 4, -393168, 0, 65540, -393167, 0, 65540, -393166, 0, 5, -393165, 0, 131075, -393149, 0, 196609, -393148, 0, 196612, -393147, 0, 196612, -393146, 0, 131076, -393145, 0, 196613, -393144, 0, 65537, -393143, 0, 65541, -393142, 0, 65538, -393141, 0, 5, -393140, 0, 65538, -393139, 0, 65538, -393138, 0, 65540, -393137, 0, 65540, -393136, 0, 2, -393135, 0, 131076, -393134, 0, 3, -393133, 0, 196612, -393132, 0, 196613, -393131, 0, 131076, -393130, 0, 131077, -393129, 0, 131076, -393128, 0, 196613, -393127, 0, 131076, -393126, 0, 131077, -393125, 0, 131077, -393124, 0, 196612, -393123, 0, 131077, -393122, 0, 3, -393121, 0, 196612, -393120, 0, 131076, -393119, 0, 65537, -393118, 0, 4, -393117, 0, 5, -393116, 0, 65540, -393115, 0, 65541, -393114, 0, 65538, -393113, 0, 65541, -393112, 0, 65541, -393111, 0, 5, -393110, 0, 6, -393081, 0, 1, -393080, 0, 65540, -393079, 0, 65538, -393078, 0, 4, -393077, 0, 131075, -393073, 0, 1, -393072, 0, 65541, -393071, 0, 65540, -393070, 0, 5, -393069, 0, 65538, -393068, 0, 65540, -393067, 0, 65540, -393066, 0, 4, -393065, 0, 5, -393064, 0, 65540, -393063, 0, 65541, -393062, 0, 6, -393047, 0, 1, -393046, 0, 6, -393042, 0, 65542, -393041, 0, 5, -393040, 0, 4, -393039, 0, 4, -393038, 0, 5, -393037, 0, 4, -393036, 0, 65540, -393035, 0, 5, -393034, 0, 5, -393033, 0, 65538, -393032, 0, 65538, -393031, 0, 5, -393030, 0, 6, -393026, 0, 65542, -393025, 0, 65540, -393024, 0, 65538, -393023, 0, 65541, -393022, 0, 131075, -393010, 0, 131072, -393009, 0, 196614, -393008, 0, 131073, -393007, 0, 131078, -393006, 0, 131073, -393005, 0, 131073, -393004, 0, 131078, -393003, 0, 131078, -393002, 0, 196611, -392994, 0, 131072, -392993, 0, 196614, -392992, 0, 131073, -392991, 0, 196614, -392990, 0, 131078, -392989, 0, 196614, -392988, 0, 196614, -392987, 0, 131078, -392986, 0, 196611, -392965, 0, 196609, -392964, 0, 196613, -392963, 0, 131077, -392962, 0, 131077, -392961, 0, 3, -392960, 0, 131077, -392959, 0, 196612, -392958, 0, 196613, -392957, 0, 196612, -392956, 0, 131076, -392955, 0, 131077, -392954, 0, 196613, -392953, 0, 131076, -392952, 0, 196613, -392951, 0, 196613, -392950, 0, 3, -392949, 0, 3, -392948, 0, 196612, -392947, 0, 3, -392946, 0, 3, -392945, 0, 3, -392944, 0, 131077, -392943, 0, 196613, -392942, 0, 131077, -392941, 0, 131077, -392940, 0, 196612, -392939, 0, 131077, -392938, 0, 196613, -392937, 0, 131077, -392936, 0, 3, -392935, 0, 131076, -392934, 0, 3, -392933, 0, 3, -392932, 0, 196613, -392931, 0, 196612, -392930, 0, 196613, -392929, 0, 131076, -392928, 0, 3, -392927, 0, 131077, -392926, 0, 131077, -392925, 0, 3, -392924, 0, 196612, -392923, 0, 131077, -392922, 0, 65537, -392921, 0, 65541, -392920, 0, 2, -392919, 0, 196612, -392918, 0, 196613, -392917, 0, 196612, -392916, 0, 131077, -392915, 0, 65537, -392914, 0, 65540, -392913, 0, 2, -392912, 0, 3, -392911, 0, 196612, -392910, 0, 131076, -392909, 0, 196612, -392908, 0, 131077, -392907, 0, 131076, -392906, 0, 65537, -392905, 0, 65540, -392904, 0, 5, -392903, 0, 65541, -392902, 0, 5, -392901, 0, 5, -392900, 0, 65538, -392899, 0, 4, -392898, 0, 4, -392897, 0, 65541, -392896, 0, 5, -392895, 0, 5, -392894, 0, 65538, -392893, 0, 65538, -392892, 0, 65540, -392891, 0, 65540, -392890, 0, 65541, -392889, 0, 5, -392888, 0, 65540, -392887, 0, 65538, -392886, 0, 5, -392885, 0, 65541, -392884, 0, 4, -392883, 0, 4, -392882, 0, 65540, -392881, 0, 65538, -392880, 0, 4, -392879, 0, 5, -392878, 0, 65540, -392877, 0, 65541, -392876, 0, 5, -392875, 0, 65541, -392874, 0, 4, -392873, 0, 5, -392872, 0, 65538, -392871, 0, 65540, -392870, 0, 65538, -392869, 0, 65538, -392868, 0, 65538, -392867, 0, 65541, -392866, 0, 5, -392865, 0, 65540, -392864, 0, 65540, -392863, 0, 4, -392862, 0, 65538, -392861, 0, 65541, -392860, 0, 65541, -392859, 0, 131075, -327680, 0, 1, -327679, 0, 131075, -327642, 0, 65542, -327641, 0, 65541, -327640, 0, 65541, -327639, 0, 65540, -327638, 0, 4, -327637, 0, 65541, -327636, 0, 65540, -327635, 0, 5, -327634, 0, 65538, -327633, 0, 65538, -327632, 0, 65541, -327631, 0, 65541, -327630, 0, 65540, -327629, 0, 131075, -327613, 0, 1, -327612, 0, 65538, -327611, 0, 65538, -327610, 0, 5, -327609, 0, 65540, -327608, 0, 65541, -327607, 0, 65541, -327606, 0, 4, -327605, 0, 65541, -327604, 0, 65538, -327603, 0, 65538, -327602, 0, 65540, -327601, 0, 5, -327600, 0, 65541, -327599, 0, 65540, -327598, 0, 5, -327597, 0, 5, -327596, 0, 4, -327595, 0, 5, -327594, 0, 65541, -327593, 0, 65538, -327592, 0, 65538, -327591, 0, 65540, -327590, 0, 65538, -327589, 0, 65540, -327588, 0, 5, -327587, 0, 5, -327586, 0, 65540, -327585, 0, 5, -327584, 0, 65541, -327583, 0, 65538, -327582, 0, 4, -327581, 0, 65538, -327580, 0, 65541, -327579, 0, 65541, -327578, 0, 65538, -327577, 0, 4, -327576, 0, 4, -327575, 0, 5, -327574, 0, 131075, -327549, 0, 196609, -327548, 0, 196613, -327547, 0, 196612, -327546, 0, 196613, -327545, 0, 65537, -327544, 0, 65541, -327543, 0, 65540, -327542, 0, 65541, -327541, 0, 6, -327537, 0, 65542, -327536, 0, 65540, -327535, 0, 4, -327534, 0, 65541, -327533, 0, 4, -327532, 0, 65538, -327531, 0, 65541, -327530, 0, 4, -327529, 0, 5, -327528, 0, 65538, -327527, 0, 4, -327526, 0, 2, -327525, 0, 0, -327511, 0, 65542, -327510, 0, 6, -327506, 0, 1, -327505, 0, 4, -327504, 0, 65541, -327503, 0, 65538, -327502, 0, 65540, -327501, 0, 65541, -327500, 0, 4, -327499, 0, 4, -327498, 0, 5, -327497, 0, 65538, -327496, 0, 65540, -327495, 0, 65540, -327494, 0, 131075, -327490, 0, 1, -327489, 0, 65541, -327488, 0, 65538, -327487, 0, 4, -327486, 0, 2, -327485, 0, 3, -327484, 0, 196613, -327483, 0, 196612, -327482, 0, 0, -327437, 0, 196609, -327436, 0, 131077, -327435, 0, 0, -327433, 0, 196609, -327432, 0, 196613, -327431, 0, 0, -327429, 0, 65542, -327428, 0, 5, -327427, 0, 65540, -327426, 0, 65541, -327425, 0, 65541, -327424, 0, 65540, -327423, 0, 65540, -327422, 0, 5, -327421, 0, 65540, -327420, 0, 65538, -327419, 0, 65538, -327418, 0, 65539, -327417, 0, 196614, -327416, 0, 131073, -327415, 0, 196614, -327414, 0, 131073, -327413, 0, 131078, -327412, 0, 131078, -327411, 0, 131073, -327410, 0, 131073, -327409, 0, 196614, -327408, 0, 131073, -327407, 0, 131073, -327406, 0, 131073, -327405, 0, 131078, -327404, 0, 196614, -327403, 0, 131073, -327402, 0, 131078, -327401, 0, 196614, -327400, 0, 131073, -327399, 0, 131078, -327398, 0, 131073, -327397, 0, 196614, -327396, 0, 196614, -327395, 0, 131078, -327394, 0, 131078, -327393, 0, 131073, -327392, 0, 131073, -327391, 0, 131073, -327390, 0, 131073, -327389, 0, 196614, -327388, 0, 131078, -327387, 0, 131078, -327386, 0, 131078, -327385, 0, 196614, -327384, 0, 131078, -327383, 0, 131073, -327382, 0, 131073, -327381, 0, 196614, -327380, 0, 131078, -327379, 0, 196614, -327378, 0, 196614, -327377, 0, 131078, -327376, 0, 131073, -327375, 0, 131073, -327374, 0, 131073, -327373, 0, 196614, -327372, 0, 196614, -327371, 0, 196614, -327370, 0, 196614, -327369, 0, 131078, -327368, 0, 196614, -327367, 0, 131073, -327366, 0, 196614, -327365, 0, 131078, -327364, 0, 131073, -327363, 0, 196614, -327362, 0, 131078, -327361, 0, 131078, -327360, 0, 131078, -327359, 0, 196614, -327358, 0, 131073, -327357, 0, 196614, -327356, 0, 196614, -327355, 0, 131078, -327354, 0, 131073, -327353, 0, 131078, -327352, 0, 131078, -327351, 0, 131073, -327350, 0, 131078, -327349, 0, 131073, -327348, 0, 196614, -327347, 0, 196614, -327346, 0, 131078, -327345, 0, 131073, -327344, 0, 196614, -327343, 0, 196614, -327342, 0, 131073, -327341, 0, 131073, -327340, 0, 131073, -327339, 0, 131073, -327338, 0, 131073, -327337, 0, 131078, -327336, 0, 131078, -327335, 0, 196614, -327334, 0, 131073, -327333, 0, 131078, -327332, 0, 131078, -327331, 0, 131078, -327330, 0, 131073, -327329, 0, 131073, -327328, 0, 196614, -327327, 0, 196614, -327326, 0, 131078, -327325, 0, 131078, -327324, 0, 196614, -327323, 0, 196611, -262144, 0, 65542, -262143, 0, 6, -262125, 0, 196609, -262124, 0, 196612, -262123, 0, 196612, -262122, 0, 196613, -262121, 0, 131077, -262120, 0, 196612, -262119, 0, 3, -262118, 0, 131076, -262117, 0, 196613, -262116, 0, 0, -262113, 0, 196609, -262112, 0, 3, -262111, 0, 131077, -262110, 0, 131076, -262109, 0, 0, -262106, 0, 1, -262105, 0, 65540, -262104, 0, 5, -262103, 0, 65541, -262102, 0, 65538, -262101, 0, 4, -262100, 0, 65541, -262099, 0, 4, -262098, 0, 65541, -262097, 0, 4, -262096, 0, 4, -262095, 0, 5, -262094, 0, 5, -262093, 0, 6, -262077, 0, 65542, -262076, 0, 4, -262075, 0, 4, -262074, 0, 4, -262073, 0, 65538, -262072, 0, 5, -262071, 0, 4, -262070, 0, 65541, -262069, 0, 4, -262068, 0, 4, -262067, 0, 65538, -262066, 0, 65538, -262065, 0, 65541, -262064, 0, 4, -262063, 0, 65538, -262062, 0, 65538, -262061, 0, 65538, -262060, 0, 65540, -262059, 0, 4, -262058, 0, 65541, -262057, 0, 65541, -262056, 0, 65538, -262055, 0, 65540, -262054, 0, 4, -262053, 0, 65540, -262052, 0, 65541, -262051, 0, 65540, -262050, 0, 5, -262049, 0, 65540, -262048, 0, 65541, -262047, 0, 65538, -262046, 0, 5, -262045, 0, 65540, -262044, 0, 65538, -262043, 0, 65541, -262042, 0, 5, -262041, 0, 65540, -262040, 0, 5, -262039, 0, 65540, -262038, 0, 6, -262013, 0, 1, -262012, 0, 65540, -262011, 0, 65538, -262010, 0, 4, -262009, 0, 4, -262008, 0, 65540, -262007, 0, 65541, -262006, 0, 65540, -262005, 0, 131075, -262001, 0, 1, -262000, 0, 65540, -261999, 0, 65541, -261998, 0, 65541, -261997, 0, 65541, -261996, 0, 65541, -261995, 0, 65541, -261994, 0, 65538, -261993, 0, 65538, -261992, 0, 4, -261991, 0, 4, -261990, 0, 65541, -261989, 0, 131075, -261975, 0, 65542, -261974, 0, 131075, -261970, 0, 1, -261969, 0, 65540, -261968, 0, 65540, -261967, 0, 4, -261966, 0, 65538, -261965, 0, 65540, -261964, 0, 65538, -261963, 0, 4, -261962, 0, 65540, -261961, 0, 5, -261960, 0, 65541, -261959, 0, 65538, -261958, 0, 131075, -261954, 0, 1, -261953, 0, 65540, -261952, 0, 65538, -261951, 0, 4, -261950, 0, 65540, -261949, 0, 65538, -261948, 0, 4, -261947, 0, 5, -261946, 0, 131075, -261901, 0, 65542, -261900, 0, 65538, -261899, 0, 2, -261898, 0, 3, -261897, 0, 65537, -261896, 0, 65541, -261895, 0, 2, -261894, 0, 3, -261893, 0, 65537, -261892, 0, 5, -261891, 0, 65541, -261890, 0, 5, -261889, 0, 5, -261888, 0, 5, -261887, 0, 65541, -261886, 0, 5, -261885, 0, 5, -261884, 0, 65540, -261883, 0, 5, -261882, 0, 6, -196608, 0, 1, -196607, 0, 6, -196589, 0, 65542, -196588, 0, 4, -196587, 0, 65541, -196586, 0, 65540, -196585, 0, 65541, -196584, 0, 65540, -196583, 0, 4, -196582, 0, 65541, -196581, 0, 65540, -196580, 0, 131075, -196577, 0, 65542, -196576, 0, 65540, -196575, 0, 65538, -196574, 0, 4, -196573, 0, 6, -196570, 0, 65542, -196569, 0, 65541, -196568, 0, 65540, -196567, 0, 65540, -196566, 0, 65540, -196565, 0, 5, -196564, 0, 65538, -196563, 0, 65540, -196562, 0, 65538, -196561, 0, 5, -196560, 0, 65540, -196559, 0, 65538, -196558, 0, 65540, -196557, 0, 6, -196541, 0, 1, -196540, 0, 5, -196539, 0, 65541, -196538, 0, 65541, -196537, 0, 5, -196536, 0, 65541, -196535, 0, 65541, -196534, 0, 65540, -196533, 0, 65540, -196532, 0, 65538, -196531, 0, 65541, -196530, 0, 65538, -196529, 0, 65538, -196528, 0, 4, -196527, 0, 65541, -196526, 0, 4, -196525, 0, 65538, -196524, 0, 65540, -196523, 0, 4, -196522, 0, 65538, -196521, 0, 65540, -196520, 0, 5, -196519, 0, 65538, -196518, 0, 4, -196517, 0, 65540, -196516, 0, 65541, -196515, 0, 65538, -196514, 0, 5, -196513, 0, 65541, -196512, 0, 5, -196511, 0, 5, -196510, 0, 5, -196509, 0, 5, -196508, 0, 5, -196507, 0, 5, -196506, 0, 4, -196505, 0, 65541, -196504, 0, 65541, -196503, 0, 65541, -196502, 0, 2, -196501, 0, 131076, -196500, 0, 196613, -196499, 0, 196612, -196498, 0, 196613, -196497, 0, 131077, -196496, 0, 131077, -196495, 0, 131076, -196494, 0, 131076, -196493, 0, 3, -196492, 0, 3, -196491, 0, 3, -196490, 0, 196612, -196489, 0, 3, -196488, 0, 196612, -196487, 0, 131077, -196486, 0, 131077, -196485, 0, 131077, -196484, 0, 196612, -196483, 0, 196612, -196482, 0, 131076, -196481, 0, 131076, -196480, 0, 196612, -196479, 0, 196613, -196478, 0, 196613, -196477, 0, 65537, -196476, 0, 4, -196475, 0, 4, -196474, 0, 65540, -196473, 0, 4, -196472, 0, 65538, -196471, 0, 65541, -196470, 0, 65541, -196469, 0, 131075, -196465, 0, 1, -196464, 0, 65541, -196463, 0, 4, -196462, 0, 65538, -196461, 0, 65538, -196460, 0, 4, -196459, 0, 65540, -196458, 0, 5, -196457, 0, 5, -196456, 0, 65538, -196455, 0, 5, -196454, 0, 5, -196453, 0, 2, -196452, 0, 196613, -196451, 0, 0, -196439, 0, 65542, -196438, 0, 131075, -196434, 0, 65542, -196433, 0, 5, -196432, 0, 5, -196431, 0, 5, -196430, 0, 65540, -196429, 0, 65540, -196428, 0, 65540, -196427, 0, 4, -196426, 0, 65538, -196425, 0, 5, -196424, 0, 5, -196423, 0, 65541, -196422, 0, 6, -196418, 0, 65542, -196417, 0, 4, -196416, 0, 4, -196415, 0, 65541, -196414, 0, 65540, -196413, 0, 5, -196412, 0, 65540, -196411, 0, 65541, -196410, 0, 2, -196409, 0, 3, -196408, 0, 131077, -196407, 0, 196613, -196406, 0, 3, -196405, 0, 196612, -196404, 0, 131077, -196403, 0, 3, -196402, 0, 131077, -196401, 0, 131076, -196400, 0, 196612, -196399, 0, 196613, -196398, 0, 3, -196397, 0, 131076, -196396, 0, 131077, -196395, 0, 131076, -196394, 0, 131076, -196393, 0, 196612, -196392, 0, 3, -196391, 0, 196613, -196390, 0, 196613, -196389, 0, 131076, -196388, 0, 196613, -196387, 0, 196612, -196386, 0, 131076, -196385, 0, 131076, -196384, 0, 131076, -196383, 0, 131076, -196382, 0, 196613, -196381, 0, 196613, -196380, 0, 196613, -196379, 0, 131076, -196378, 0, 131077, -196377, 0, 196612, -196376, 0, 131076, -196375, 0, 3, -196374, 0, 131077, -196373, 0, 131076, -196372, 0, 3, -196371, 0, 196612, -196370, 0, 131077, -196369, 0, 3, -196368, 0, 131076, -196367, 0, 196613, -196366, 0, 196612, -196365, 0, 65537, -196364, 0, 65541, -196363, 0, 65541, -196362, 0, 4, -196361, 0, 5, -196360, 0, 5, -196359, 0, 5, -196358, 0, 65540, -196357, 0, 5, -196356, 0, 5, -196355, 0, 4, -196354, 0, 65540, -196353, 0, 5, -196352, 0, 65538, -196351, 0, 5, -196350, 0, 5, -196349, 0, 5, -196348, 0, 65538, -196347, 0, 4, -196346, 0, 6, -131072, 0, 65542, -131071, 0, 2, -131070, 0, 131076, -131069, 0, 196612, -131068, 0, 196612, -131067, 0, 131077, -131066, 0, 131077, -131065, 0, 196612, -131064, 0, 196613, -131063, 0, 196612, -131062, 0, 3, -131061, 0, 131076, -131060, 0, 131076, -131059, 0, 196612, -131058, 0, 196613, -131057, 0, 131076, -131056, 0, 196612, -131055, 0, 131077, -131054, 0, 131077, -131053, 0, 65537, -131052, 0, 65538, -131051, 0, 65538, -131050, 0, 65540, -131049, 0, 5, -131048, 0, 4, -131047, 0, 5, -131046, 0, 4, -131045, 0, 4, -131044, 0, 131075, -131041, 0, 65542, -131040, 0, 5, -131039, 0, 65538, -131038, 0, 4, -131037, 0, 131075, -131034, 0, 1, -131033, 0, 4, -131032, 0, 5, -131031, 0, 5, -131030, 0, 65538, -131029, 0, 4, -131028, 0, 65541, -131027, 0, 65538, -131026, 0, 65541, -131025, 0, 65540, -131024, 0, 5, -131023, 0, 5, -131022, 0, 65538, -131021, 0, 2, -131020, 0, 196613, -131019, 0, 196613, -131018, 0, 131076, -131017, 0, 3, -131016, 0, 3, -131015, 0, 196613, -131014, 0, 131076, -131013, 0, 3, -131012, 0, 3, -131011, 0, 131076, -131010, 0, 3, -131009, 0, 131077, -131008, 0, 196612, -131007, 0, 3, -131006, 0, 3, -131005, 0, 65537, -131004, 0, 65538, -131003, 0, 65540, -131002, 0, 65541, -131001, 0, 65541, -131000, 0, 65541, -130999, 0, 4, -130998, 0, 65538, -130997, 0, 65541, -130996, 0, 65538, -130995, 0, 65540, -130994, 0, 65541, -130993, 0, 65540, -130992, 0, 65538, -130991, 0, 65541, -130990, 0, 65540, -130989, 0, 4, -130988, 0, 4, -130987, 0, 65541, -130986, 0, 65538, -130985, 0, 4, -130984, 0, 4, -130983, 0, 65538, -130982, 0, 65538, -130981, 0, 5, -130980, 0, 4, -130979, 0, 4, -130978, 0, 4, -130977, 0, 65540, -130976, 0, 4, -130975, 0, 65540, -130974, 0, 65541, -130973, 0, 4, -130972, 0, 65541, -130971, 0, 65540, -130970, 0, 65538, -130969, 0, 4, -130968, 0, 65541, -130967, 0, 65538, -130966, 0, 65538, -130965, 0, 65541, -130964, 0, 65538, -130963, 0, 65541, -130962, 0, 65540, -130961, 0, 4, -130960, 0, 65538, -130959, 0, 65540, -130958, 0, 65541, -130957, 0, 65541, -130956, 0, 65538, -130955, 0, 65541, -130954, 0, 4, -130953, 0, 65540, -130952, 0, 4, -130951, 0, 65541, -130950, 0, 65538, -130949, 0, 5, -130948, 0, 65540, -130947, 0, 65540, -130946, 0, 4, -130945, 0, 5, -130944, 0, 65540, -130943, 0, 65538, -130942, 0, 65541, -130941, 0, 4, -130940, 0, 65538, -130939, 0, 4, -130938, 0, 65538, -130937, 0, 65541, -130936, 0, 65541, -130935, 0, 4, -130934, 0, 5, -130933, 0, 131075, -130929, 0, 1, -130928, 0, 65540, -130927, 0, 65541, -130926, 0, 4, -130925, 0, 65540, -130924, 0, 65538, -130923, 0, 65540, -130922, 0, 65540, -130921, 0, 4, -130920, 0, 65541, -130919, 0, 5, -130918, 0, 4, -130917, 0, 65541, -130916, 0, 5, -130915, 0, 2, -130914, 0, 196613, -130913, 0, 196613, -130912, 0, 196613, -130911, 0, 196613, -130910, 0, 131076, -130909, 0, 131076, -130908, 0, 131076, -130907, 0, 131077, -130906, 0, 196612, -130905, 0, 131076, -130904, 0, 196612, -130903, 0, 65537, -130902, 0, 131075, -130898, 0, 131072, -130897, 0, 131073, -130896, 0, 131078, -130895, 0, 131078, -130894, 0, 131073, -130893, 0, 131073, -130892, 0, 131073, -130891, 0, 131078, -130890, 0, 196614, -130889, 0, 196614, -130888, 0, 131073, -130887, 0, 131073, -130886, 0, 196611, -130882, 0, 131072, -130881, 0, 131078, -130880, 0, 131078, -130879, 0, 196614, -130878, 0, 131073, -130877, 0, 131078, -130876, 0, 196614, -130875, 0, 196614, -130874, 0, 131073, -130873, 0, 131078, -130872, 0, 131073, -130871, 0, 131073, -130870, 0, 131073, -130869, 0, 131078, -130868, 0, 131073, -130867, 0, 196614, -130866, 0, 131073, -130865, 0, 196614, -130864, 0, 131078, -130863, 0, 196614, -130862, 0, 131078, -130861, 0, 196614, -130860, 0, 196614, -130859, 0, 131078, -130858, 0, 196614, -130857, 0, 131078, -130856, 0, 131073, -130855, 0, 196614, -130854, 0, 131073, -130853, 0, 131073, -130852, 0, 196614, -130851, 0, 196614, -130850, 0, 131078, -130849, 0, 131073, -130848, 0, 131073, -130847, 0, 196614, -130846, 0, 131078, -130845, 0, 196614, -130844, 0, 131078, -130843, 0, 196614, -130842, 0, 196614, -130841, 0, 131078, -130840, 0, 131073, -130839, 0, 131078, -130838, 0, 131078, -130837, 0, 131073, -130836, 0, 196614, -130835, 0, 131073, -130834, 0, 196614, -130833, 0, 196614, -130832, 0, 131078, -130831, 0, 131073, -130830, 0, 131073, -130829, 0, 131073, -130828, 0, 131073, -130827, 0, 131078, -130826, 0, 131073, -130825, 0, 196614, -130824, 0, 131073, -130823, 0, 131073, -130822, 0, 131073, -130821, 0, 131078, -130820, 0, 196614, -130819, 0, 196614, -130818, 0, 131073, -130817, 0, 131078, -130816, 0, 131078, -130815, 0, 131078, -130814, 0, 196614, -130813, 0, 196614, -130812, 0, 131078, -130811, 0, 131078, -130810, 0, 196611, -65536, 0, 131072, -65535, 0, 131073, -65534, 0, 131078, -65533, 0, 131078, -65532, 0, 131073, -65531, 0, 196614, -65530, 0, 196614, -65529, 0, 131078, -65528, 0, 131078, -65527, 0, 131073, -65526, 0, 196614, -65525, 0, 131078, -65524, 0, 131078, -65523, 0, 196614, -65522, 0, 196614, -65521, 0, 131073, -65520, 0, 131073, -65519, 0, 131078, -65518, 0, 131078, -65517, 0, 131073, -65516, 0, 131073, -65515, 0, 131078, -65514, 0, 131078, -65513, 0, 131073, -65512, 0, 131073, -65511, 0, 131073, -65510, 0, 196614, -65509, 0, 196614, -65508, 0, 196611, -65505, 0, 131072, -65504, 0, 131073, -65503, 0, 131078, -65502, 0, 131078, -65501, 0, 196611, -65498, 0, 131072, -65497, 0, 196614, -65496, 0, 196614, -65495, 0, 196614, -65494, 0, 196614, -65493, 0, 131073, -65492, 0, 196614, -65491, 0, 131078, -65490, 0, 196614, -65489, 0, 131078, -65488, 0, 131078, -65487, 0, 196614, -65486, 0, 131078, -65485, 0, 131078, -65484, 0, 131078, -65483, 0, 131073, -65482, 0, 131073, -65481, 0, 131073, -65480, 0, 131078, -65479, 0, 131078, -65478, 0, 131078, -65477, 0, 131078, -65476, 0, 196614, -65475, 0, 131073, -65474, 0, 131073, -65473, 0, 196614, -65472, 0, 196614, -65471, 0, 196614, -65470, 0, 131078, -65469, 0, 131078, -65468, 0, 131078, -65467, 0, 131073, -65466, 0, 196614, -65465, 0, 196614, -65464, 0, 131073, -65463, 0, 131078, -65462, 0, 196614, -65461, 0, 196614, -65460, 0, 131073, -65459, 0, 131073, -65458, 0, 131078, -65457, 0, 131078, -65456, 0, 196614, -65455, 0, 196614, -65454, 0, 131073, -65453, 0, 131078, -65452, 0, 131073, -65451, 0, 131073, -65450, 0, 196614, -65449, 0, 131078, -65448, 0, 196614, -65447, 0, 196614, -65446, 0, 196614, -65445, 0, 196614, -65444, 0, 131078, -65443, 0, 131078, -65442, 0, 131073, -65441, 0, 131078, -65440, 0, 196614, -65439, 0, 131073, -65438, 0, 196614, -65437, 0, 131078, -65436, 0, 196614, -65435, 0, 131073, -65434, 0, 196614, -65433, 0, 196614, -65432, 0, 131073, -65431, 0, 131078, -65430, 0, 131078, -65429, 0, 131073, -65428, 0, 131078, -65427, 0, 196614, -65426, 0, 131073, -65425, 0, 131078, -65424, 0, 131073, -65423, 0, 131078, -65422, 0, 196614, -65421, 0, 131073, -65420, 0, 196614, -65419, 0, 131078, -65418, 0, 196614, -65417, 0, 131078, -65416, 0, 196614, -65415, 0, 196614, -65414, 0, 196614, -65413, 0, 196614, -65412, 0, 131078, -65411, 0, 196614, -65410, 0, 196614, -65409, 0, 131073, -65408, 0, 131078, -65407, 0, 196614, -65406, 0, 131078, -65405, 0, 196614, -65404, 0, 131078, -65403, 0, 131078, -65402, 0, 131078, -65401, 0, 196614, -65400, 0, 196614, -65399, 0, 196614, -65398, 0, 131073, -65397, 0, 196611, -65393, 0, 131072, -65392, 0, 131073, -65391, 0, 131073, -65390, 0, 131078, -65389, 0, 131073, -65388, 0, 196614, -65387, 0, 131078, -65386, 0, 131078, -65385, 0, 196614, -65384, 0, 131073, -65383, 0, 196614, -65382, 0, 131078, -65381, 0, 131078, -65380, 0, 131073, -65379, 0, 131073, -65378, 0, 131073, -65377, 0, 131073, -65376, 0, 131078, -65375, 0, 131078, -65374, 0, 131073, -65373, 0, 131073, -65372, 0, 196614, -65371, 0, 131078, -65370, 0, 131073, -65369, 0, 131078, -65368, 0, 196614, -65367, 0, 196614, -65366, 0, 196611 )
 _sections_unfolded = [ "Cell", "Collision" ]
 
-[node name="Camera Changing Triggers" type="Node2D" parent="." index="7"]
+[node name="Writings" type="Node2D" parent="." index="6"]
+
+[node name="Jump" type="Node2D" parent="Writings" index="0"]
+
+editor/display_folded = true
+position = Vector2( -50, -50 )
+
+[node name="Jump Frame" type="Sprite" parent="Writings/Jump" index="0"]
+
+position = Vector2( 1754.59, -303.028 )
+scale = Vector2( 0.75, 0.5 )
+texture = ExtResource( 24 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Jump Label" type="Label" parent="Writings/Jump" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1633.0
+margin_top = -349.0
+margin_right = 1717.0
+margin_bottom = -309.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "JUMP"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Jump Arrow" type="Sprite" parent="Writings/Jump" index="2"]
+
+position = Vector2( 1811.16, -485.37 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 26 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Gold, Treasures & Adventures" type="Node2D" parent="Writings" index="1"]
+
+editor/display_folded = true
+
+[node name="Gold" type="Label" parent="Writings/Gold, Treasures & Adventures" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 3090.0
+margin_top = -509.0
+margin_right = 3190.0
+margin_bottom = -469.0
+rect_rotation = -19.79
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 1, 0.985131, 0.0483871, 1 )
+text = "Gold,"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Treasures" type="Label" parent="Writings/Gold, Treasures & Adventures" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 3198.0
+margin_top = -485.0
+margin_right = 3348.0
+margin_bottom = -445.0
+rect_rotation = -28.0501
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 0.836442, 0.0483871, 1, 1 )
+text = "Treasures"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="&" type="Label" parent="Writings/Gold, Treasures & Adventures" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 3446.0
+margin_top = -565.0
+margin_right = 3496.0
+margin_bottom = -525.0
+rect_rotation = 33.5305
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0.0483871, 0.420111, 1, 1 )
+text = "&"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Adventures" type="Label" parent="Writings/Gold, Treasures & Adventures" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 3353.0
+margin_top = -512.0
+margin_right = 3510.0
+margin_bottom = -472.0
+rect_rotation = 8.56285
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 1, 0.382939, 0.0483871, 1 )
+text = "Adventures!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Arrow" type="Sprite" parent="Writings/Gold, Treasures & Adventures" index="4"]
+
+modulate = Color( 0.240882, 0.824219, 0.0775475, 1 )
+position = Vector2( 3712.46, -333.463 )
+rotation = 1.64653
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 29 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Arrow2" type="Sprite" parent="Writings/Gold, Treasures & Adventures" index="5"]
+
+modulate = Color( 0.925781, 0.152508, 0.114478, 1 )
+position = Vector2( 3035.9, -374.354 )
+rotation = 1.33903
+scale = Vector2( 0.5, -0.5 )
+texture = ExtResource( 29 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Adventure Land" type="Node2D" parent="Writings" index="2"]
+
+editor/display_folded = true
+position = Vector2( 166.338, -26.6962 )
+
+[node name="Adventure" type="Label" parent="Writings/Adventure Land" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2298.0
+margin_top = -1485.0
+margin_right = 2557.0
+margin_bottom = -1445.0
+rect_rotation = 7.50036
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.0636656, 0.151194, 0.550781, 1 )
+text = "ADVENTURE"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="LN" type="Label" parent="Writings/Adventure Land" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2839.0
+margin_top = -1439.0
+margin_right = 3098.0
+margin_bottom = -1399.0
+rect_rotation = -8.13434
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.0636656, 0.151194, 0.550781, 1 )
+text = "L  N"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="A" type="Label" parent="Writings/Adventure Land" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2864.0
+margin_top = -1411.0
+margin_right = 3123.0
+margin_bottom = -1371.0
+rect_rotation = -51.3542
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.0636656, 0.151194, 0.550781, 1 )
+text = "A"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="D" type="Label" parent="Writings" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 3300.0
+margin_top = -1110.0
+margin_right = 3559.0
+margin_bottom = -1070.0
+rect_rotation = -9.4725
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.0636656, 0.151194, 0.550781, 1 )
+text = "D"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Heal Up, Broken One" type="Node2D" parent="Writings" index="4"]
+
+editor/display_folded = true
+
+[node name="Line 1" type="Sprite" parent="Writings/Heal Up, Broken One" index="0"]
+
+modulate = Color( 1, 0.126344, 0.126344, 1 )
+position = Vector2( 4345.51, -1090.03 )
+rotation = -0.244523
+scale = Vector2( 0.5, 0.3 )
+texture = ExtResource( 30 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Line 2" type="Sprite" parent="Writings/Heal Up, Broken One" index="1"]
+
+modulate = Color( 1, 0.126344, 0.126344, 1 )
+position = Vector2( 4496.79, -1133.65 )
+rotation = -3.3718
+scale = Vector2( 0.5, 0.25 )
+texture = ExtResource( 30 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Heal" type="Label" parent="Writings/Heal Up, Broken One" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4202.0
+margin_top = -1183.0
+margin_right = 4267.0
+margin_bottom = -1143.0
+rect_rotation = -8.14829
+rect_scale = Vector2( 3.25, 3.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Heal"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="U" type="Label" parent="Writings/Heal Up, Broken One" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4450.0
+margin_top = -1236.0
+margin_right = 4515.0
+margin_bottom = -1196.0
+rect_rotation = 11.1839
+rect_scale = Vector2( 3.25, 3.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "U"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="P" type="Label" parent="Writings/Heal Up, Broken One" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4523.0
+margin_top = -1240.0
+margin_right = 4588.0
+margin_bottom = -1200.0
+rect_rotation = 384.821
+rect_scale = Vector2( 3.25, 3.25 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "P"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="," type="Label" parent="Writings/Heal Up, Broken One" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4594.0
+margin_top = -1237.0
+margin_right = 4659.0
+margin_bottom = -1197.0
+rect_rotation = 371.588
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = ","
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Broken" type="Label" parent="Writings/Heal Up, Broken One" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4509.0
+margin_top = -1138.0
+margin_right = 4614.0
+margin_bottom = -1098.0
+rect_rotation = 374.627
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0.71875, 0.0714886, 0.0714886, 1 )
+text = "Broken"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="O E" type="Label" parent="Writings/Heal Up, Broken One" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4639.0
+margin_top = -1138.0
+margin_right = 4744.0
+margin_bottom = -1098.0
+rect_rotation = 338.867
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0.777344, 0.22568, 0.22568, 1 )
+text = "O   E."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="N" type="Label" parent="Writings/Heal Up, Broken One" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 4751.0
+margin_top = -1132.0
+margin_right = 4856.0
+margin_bottom = -1092.0
+rect_rotation = 472.318
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0.777344, 0.22568, 0.22568, 1 )
+text = "N"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="+2" type="Sprite" parent="Writings/Heal Up, Broken One" index="9"]
+
+modulate = Color( 1, 0.467742, 0.467742, 1 )
+position = Vector2( 4331.16, -700.424 )
+rotation = -0.238351
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 31 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="+3" type="Sprite" parent="Writings/Heal Up, Broken One" index="10"]
+
+modulate = Color( 0.824219, 0.0775475, 0.305049, 1 )
+position = Vector2( 4710.24, -903.021 )
+rotation = 0.221265
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 31 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="+4" type="Sprite" parent="Writings/Heal Up, Broken One" index="11"]
+
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 4665.41, -821.212 )
+rotation = -1.6066
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 31 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="+5" type="Sprite" parent="Writings/Heal Up, Broken One" index="12"]
+
+modulate = Color( 1, 0.314516, 0.700101, 1 )
+position = Vector2( 4300.69, -779.645 )
+rotation = 1.93597
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 31 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="+6" type="Sprite" parent="Writings/Heal Up, Broken One" index="13"]
+
+modulate = Color( 1, 0.387097, 0.990423, 1 )
+position = Vector2( 4681.18, -739.273 )
+rotation = -0.303415
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 31 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="+8" type="Sprite" parent="Writings/Heal Up, Broken One" index="14"]
+
+modulate = Color( 0.996094, 0.337972, 0.23028, 1 )
+position = Vector2( 4218.93, -826.136 )
+rotation = -0.33845
+scale = Vector2( 0.42, 0.42 )
+texture = ExtResource( 31 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="+9" type="Sprite" parent="Writings/Heal Up, Broken One" index="15"]
+
+modulate = Color( 1, 0.234375, 0, 1 )
+position = Vector2( 4329.21, -872.918 )
+rotation = 0.249257
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 31 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="+10" type="Sprite" parent="Writings/Heal Up, Broken One" index="16"]
+
+modulate = Color( 1, 0.0295699, 0.84837, 1 )
+position = Vector2( 4758.97, -810.576 )
+rotation = -0.084022
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 31 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Jump + up + Skill" type="Node2D" parent="Writings" index="5"]
+
+editor/display_folded = true
+position = Vector2( 4400, -50 )
+
+[node name="Pre Arrow 1" type="Sprite" parent="Writings/Jump + up + Skill" index="0"]
+
+modulate = Color( 0.898438, 0.511277, 0.200458, 1 )
+position = Vector2( 939.412, -228.504 )
+rotation = 0.037268
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 32 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Pre Arrow 2" type="Sprite" parent="Writings/Jump + up + Skill" index="1"]
+
+modulate = Color( 0.925781, 0.915554, 0.271264, 1 )
+position = Vector2( 1226.2, -230.817 )
+rotation = 0.0516219
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 32 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Pre Arrow 3" type="Sprite" parent="Writings/Jump + up + Skill" index="2"]
+
+modulate = Color( 0.383127, 0.78125, 0.338122, 1 )
+position = Vector2( 1512.22, -239.298 )
+rotation = 0.0936948
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 32 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Arrow2" type="Sprite" parent="Writings/Jump + up + Skill" index="3"]
+
+position = Vector2( 2153.86, -771.288 )
+rotation = 0.314909
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 26 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Arrow1" type="Sprite" parent="Writings/Jump + up + Skill" index="4"]
+
+position = Vector2( 1981.52, -378.669 )
+rotation = -1.29954
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 33 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Jump Frame" type="Sprite" parent="Writings/Jump + up + Skill" index="5"]
+
+position = Vector2( 1978.09, -175.298 )
+scale = Vector2( 0.75, 0.5 )
+texture = ExtResource( 24 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Jump Label" type="Label" parent="Writings/Jump + up + Skill" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1856.0
+margin_top = -221.0
+margin_right = 1940.0
+margin_bottom = -181.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "JUMP"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Up Frame" type="Sprite" parent="Writings/Jump + up + Skill" index="7"]
+
+position = Vector2( 1860.31, -631.52 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 24 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Up Label" type="Label" parent="Writings/Jump + up + Skill" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1804.0
+margin_top = -674.0
+margin_right = 1888.0
+margin_bottom = -634.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "UP"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Skill Frame" type="Sprite" parent="Writings/Jump + up + Skill" index="9"]
+
+position = Vector2( 2219.42, -577.241 )
+rotation = 0.142195
+scale = Vector2( 0.75, 0.5 )
+texture = ExtResource( 24 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Skill Label" type="Label" parent="Writings/Jump + up + Skill" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2108.0
+margin_top = -635.0
+margin_right = 2192.0
+margin_bottom = -595.0
+rect_rotation = 8.41594
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "SKILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="+" type="Sprite" parent="Writings/Jump + up + Skill" index="11"]
+
+position = Vector2( 2011.27, -616.195 )
+rotation = -1.35221
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 34 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Attack Tutorial" type="Node2D" parent="Writings" index="6"]
+
+editor/display_folded = true
+
+[node name="Tips" type="Sprite" parent="Writings/Attack Tutorial" index="0"]
+
+position = Vector2( 8839.4, -1403.94 )
+rotation = 0.478509
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 35 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="Writings/Attack Tutorial/Tips" index="0"]
+
+position = Vector2( -1.76562, 1.81738 )
+rotation = -0.478509
+texture = ExtResource( 36 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LIFE HACKS" type="Label" parent="Writings/Attack Tutorial/Tips" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -129.0
+margin_top = 224.0
+margin_right = 14.0
+margin_bottom = 264.0
+rect_rotation = -24.4498
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "LIFE HACKS"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Line" type="Sprite" parent="Writings/Attack Tutorial" index="1"]
+
+position = Vector2( 8454.94, -1288.61 )
+rotation = -0.0505091
+scale = Vector2( 1.5, 0.3 )
+texture = ExtResource( 37 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Line2" type="Sprite" parent="Writings/Attack Tutorial" index="2"]
+
+position = Vector2( 9220.28, -1295.53 )
+rotation = -0.00125959
+scale = Vector2( 1.5, 0.3 )
+texture = ExtResource( 37 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Slash" type="Sprite" parent="Writings/Attack Tutorial" index="3"]
+
+position = Vector2( 8644.61, -1063.46 )
+rotation = 2.05315
+scale = Vector2( 1.25, 0.7 )
+texture = ExtResource( 37 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Attack Frame" type="Sprite" parent="Writings/Attack Tutorial" index="4"]
+
+position = Vector2( 8401.98, -1150.82 )
+rotation = -0.103841
+scale = Vector2( 0.8, 0.5 )
+texture = ExtResource( 24 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ATTACK" type="Label" parent="Writings/Attack Tutorial" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8268.0
+margin_top = -1184.0
+margin_right = 8365.0
+margin_bottom = -1149.0
+rect_rotation = -6.40552
+rect_scale = Vector2( 2.5, 2.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "ATTACK"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Skill Frame" type="Sprite" parent="Writings/Attack Tutorial" index="6"]
+
+position = Vector2( 8399.01, -969.299 )
+rotation = 0.162863
+scale = Vector2( 0.65, 0.5 )
+texture = ExtResource( 24 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="SKILL" type="Label" parent="Writings/Attack Tutorial" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8314.0
+margin_top = -1028.0
+margin_right = 8411.0
+margin_bottom = -993.0
+rect_rotation = 9.52915
+rect_scale = Vector2( 2.5, 2.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "SKILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Skill Frame 2" type="Sprite" parent="Writings/Attack Tutorial" index="8"]
+
+position = Vector2( 8891.22, -1075.15 )
+rotation = 0.162863
+scale = Vector2( 0.65, 0.5 )
+texture = ExtResource( 24 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="SKILL 2" type="Label" parent="Writings/Attack Tutorial" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8806.0
+margin_top = -1134.0
+margin_right = 8903.0
+margin_bottom = -1099.0
+rect_rotation = 9.52915
+rect_scale = Vector2( 2.5, 2.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "SKILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="+" type="Sprite" parent="Writings/Attack Tutorial" index="10"]
+
+position = Vector2( 9072.79, -1053.91 )
+rotation = -0.0909756
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 34 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Left Frame" type="Sprite" parent="Writings/Attack Tutorial" index="11"]
+
+position = Vector2( 9280.04, -1145.14 )
+rotation = -0.157019
+scale = Vector2( 0.65, 0.5 )
+texture = ExtResource( 24 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LEFT" type="Label" parent="Writings/Attack Tutorial" index="12"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 9198.0
+margin_top = -1182.0
+margin_right = 9295.0
+margin_bottom = -1147.0
+rect_rotation = -5.57843
+rect_scale = Vector2( 2.5, 2.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "LEFT"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Right Frame" type="Sprite" parent="Writings/Attack Tutorial" index="13"]
+
+position = Vector2( 9289.76, -982.806 )
+rotation = 0.166826
+scale = Vector2( 0.65, 0.5 )
+texture = ExtResource( 24 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="RIGHT" type="Label" parent="Writings/Attack Tutorial" index="14"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 9210.0
+margin_top = -1048.0
+margin_right = 9307.0
+margin_bottom = -1013.0
+rect_rotation = 13.4136
+rect_scale = Vector2( 2.5, 2.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "RIGHT"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Kill Field" type="Node2D" parent="Writings" index="7"]
+
+position = Vector2( 3106.28, 70.8994 )
+
+[node name="Tips" type="Sprite" parent="Writings/Kill Field" index="0"]
+
+editor/display_folded = true
+position = Vector2( 8902.96, -1360.32 )
+rotation = 0.478509
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 35 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="Writings/Kill Field/Tips" index="0"]
+
+position = Vector2( -6.06641, 11.5195 )
+rotation = 0.682431
+texture = ExtResource( 36 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="LIFE HACKS" type="Label" parent="Writings/Kill Field/Tips" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -254.0
+margin_top = 216.0
+margin_right = -111.0
+margin_bottom = 256.0
+rect_rotation = 20.0242
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "LIFE HACKS"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Line" type="Sprite" parent="Writings/Kill Field" index="1"]
+
+position = Vector2( 8355.67, -1162.25 )
+rotation = -0.197117
+scale = Vector2( 1.5, 0.3 )
+texture = ExtResource( 37 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Line2" type="Sprite" parent="Writings/Kill Field" index="2"]
+
+position = Vector2( 9145.77, -1221.87 )
+rotation = 0.161974
+scale = Vector2( 1.5, 0.3 )
+texture = ExtResource( 37 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="KILLs" type="Node2D" parent="Writings/Kill Field" index="3"]
+
+editor/display_folded = true
+
+[node name="KILL" type="Label" parent="Writings/Kill Field/KILLs" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8083.0
+margin_top = -1104.0
+margin_right = 8146.0
+margin_bottom = -1064.0
+rect_rotation = 14.7845
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 0.914062, 0.26783, 0.26783, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="KILL2" type="Label" parent="Writings/Kill Field/KILLs" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8344.0
+margin_top = -936.0
+margin_right = 8407.0
+margin_bottom = -896.0
+rect_rotation = -41.1487
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 0.75, 0.511624, 0.100806, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors" ]
+
+[node name="KILL16" type="Label" parent="Writings/Kill Field/KILLs" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8378.0
+margin_top = -692.0
+margin_right = 8441.0
+margin_bottom = -652.0
+rect_rotation = -41.1487
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 0.640625, 0.135334, 0.0361643, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="KILL17" type="Label" parent="Writings/Kill Field/KILLs" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 9239.0
+margin_top = -856.0
+margin_right = 9302.0
+margin_bottom = -816.0
+rect_rotation = -9.55317
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 1, 0.41129, 0.41129, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="KILL18" type="Label" parent="Writings/Kill Field/KILLs" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8877.0
+margin_top = -732.0
+margin_right = 8940.0
+margin_bottom = -692.0
+rect_rotation = -9.55317
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="KILL19" type="Label" parent="Writings/Kill Field/KILLs" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8666.0
+margin_top = -907.0
+margin_right = 8729.0
+margin_bottom = -867.0
+rect_rotation = -22.3173
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 0.773438, 0.432037, 0.386719, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="KILL20" type="Label" parent="Writings/Kill Field/KILLs" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8073.0
+margin_top = -888.0
+margin_right = 8136.0
+margin_bottom = -848.0
+rect_rotation = -22.3173
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 1, 0.459677, 0.459677, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="KILL21" type="Label" parent="Writings/Kill Field/KILLs" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8291.0
+margin_top = -1089.0
+margin_right = 8354.0
+margin_bottom = -1049.0
+rect_rotation = -22.3173
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 0.636719, 0.155756, 0.155756, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="KILL22" type="Label" parent="Writings/Kill Field/KILLs" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 9149.0
+margin_top = -1191.0
+margin_right = 9212.0
+margin_bottom = -1151.0
+rect_rotation = 9.40665
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="KILL3" type="Label" parent="Writings/Kill Field/KILLs" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8933.0
+margin_top = -1126.0
+margin_right = 8996.0
+margin_bottom = -1086.0
+rect_rotation = -1.57606
+rect_scale = Vector2( 3.5, 3.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 0.671875, 0.169775, 0.169775, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="KILL4" type="Label" parent="Writings/Kill Field/KILLs" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7982.0
+margin_top = -900.0
+margin_right = 8045.0
+margin_bottom = -860.0
+rect_rotation = 30.4905
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 0.792969, 0.211032, 0.211032, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Theme", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="KILL5" type="Label" parent="Writings/Kill Field/KILLs" index="11"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 9156.0
+margin_top = -992.0
+margin_right = 9219.0
+margin_bottom = -952.0
+rect_rotation = -41.1487
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 0.820312, 0.249181, 0.249181, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="KILL6" type="Label" parent="Writings/Kill Field/KILLs" index="12"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8770.0
+margin_top = -1068.0
+margin_right = 8833.0
+margin_bottom = -1028.0
+rect_rotation = 26.1661
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 0.867188, 0.158518, 0.158518, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="KILL7" type="Label" parent="Writings/Kill Field/KILLs" index="13"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8529.0
+margin_top = -1136.0
+margin_right = 8592.0
+margin_bottom = -1096.0
+rect_rotation = -5.44154
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="KILL8" type="Label" parent="Writings/Kill Field/KILLs" index="14"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8208.0
+margin_top = -691.0
+margin_right = 8271.0
+margin_bottom = -651.0
+rect_rotation = -62.9133
+rect_scale = Vector2( 3.5, 3.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 0.769531, 0.390972, 0.390972, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="KILL9" type="Label" parent="Writings/Kill Field/KILLs" index="15"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8536.0
+margin_top = -905.0
+margin_right = 8599.0
+margin_bottom = -865.0
+rect_rotation = 19.7316
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 0.816406, 0.111927, 0.111927, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="KILL10" type="Label" parent="Writings/Kill Field/KILLs" index="16"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8881.0
+margin_top = -834.0
+margin_right = 8944.0
+margin_bottom = -794.0
+rect_rotation = -67.2894
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 1, 0.373656, 0.373656, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="KILL11" type="Label" parent="Writings/Kill Field/KILLs" index="17"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 9397.0
+margin_top = -996.0
+margin_right = 9460.0
+margin_bottom = -956.0
+rect_rotation = 0.316996
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="KILL12" type="Label" parent="Writings/Kill Field/KILLs" index="18"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 9102.0
+margin_top = -836.0
+margin_right = 9165.0
+margin_bottom = -796.0
+rect_rotation = 24.9601
+rect_scale = Vector2( 3.5, 3.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 0.765625, 0.218162, 0.218162, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="KILL13" type="Label" parent="Writings/Kill Field/KILLs" index="19"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8627.0
+margin_top = -669.0
+margin_right = 8690.0
+margin_bottom = -629.0
+rect_rotation = -41.1487
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="KILL14" type="Label" parent="Writings/Kill Field/KILLs" index="20"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 9505.0
+margin_top = -1268.0
+margin_right = 9568.0
+margin_bottom = -1228.0
+rect_rotation = 72.8436
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 0.71875, 0.199009, 0.199009, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="KILL15" type="Label" parent="Writings/Kill Field/KILLs" index="21"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 9273.0
+margin_top = -698.0
+margin_right = 9336.0
+margin_bottom = -658.0
+rect_rotation = -41.1487
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "KILL"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="and survive" type="Node2D" parent="Writings/Kill Field" index="4"]
+
+[node name="dot dot dot" type="Label" parent="Writings/Kill Field/and survive" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 9598.0
+margin_top = -998.0
+margin_right = 9661.0
+margin_bottom = -958.0
+rect_rotation = -2.06745
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 27 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = ".................."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="and" type="Label" parent="Writings/Kill Field/and survive" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10153.0
+margin_top = -968.0
+margin_right = 10315.0
+margin_bottom = -928.0
+rect_rotation = 52.595
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0, 0.554688, 1, 1 )
+text = "and"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="s" type="Label" parent="Writings/Kill Field/and survive" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10065.0
+margin_top = -721.0
+margin_right = 10227.0
+margin_bottom = -681.0
+rect_rotation = -35.7931
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 1, 0.223118, 0.223118, 1 )
+text = "s"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="u" type="Label" parent="Writings/Kill Field/and survive" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10100.0
+margin_top = -750.0
+margin_right = 10262.0
+margin_bottom = -710.0
+rect_rotation = -35.7931
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.96875, 0.681152, 0, 1 )
+text = "u"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="r" type="Label" parent="Writings/Kill Field/and survive" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10152.0
+margin_top = -802.0
+margin_right = 10314.0
+margin_bottom = -762.0
+rect_rotation = -16.6935
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.96875, 1, 0, 1 )
+text = "r"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="v" type="Label" parent="Writings/Kill Field/and survive" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10192.0
+margin_top = -816.0
+margin_right = 10354.0
+margin_bottom = -776.0
+rect_rotation = -21.4441
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.0947266, 0.757812, 0.0733367, 1 )
+text = "v"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="i" type="Label" parent="Writings/Kill Field/and survive" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10284.0
+margin_top = -807.0
+margin_right = 10446.0
+margin_bottom = -767.0
+rect_rotation = 28.0992
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 38 )
+custom_colors/font_color = Color( 0, 0.671875, 1, 1 )
+text = "i"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="v2" type="Label" parent="Writings/Kill Field/and survive" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10344.0
+margin_top = -757.0
+margin_right = 10506.0
+margin_bottom = -717.0
+rect_rotation = 77.579
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0, 0.101318, 0.648438, 1 )
+text = "v"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="e" type="Label" parent="Writings/Kill Field/and survive" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10306.0
+margin_top = -741.0
+margin_right = 10468.0
+margin_bottom = -701.0
+rect_rotation = -35.7931
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 0.811, 0.14995, 0.996094, 1 )
+text = "e"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="dot" type="Label" parent="Writings/Kill Field/and survive" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 10343.0
+margin_top = -733.0
+margin_right = 10505.0
+margin_bottom = -693.0
+rect_rotation = -35.7931
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 25 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Platform Decorations" type="Node2D" parent="." index="7"]
+
+editor/display_folded = true
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Ministry of Love" type="Node2D" parent="Platform Decorations" index="0"]
+
+editor/display_folded = true
+
+[node name="Trash Can" type="Sprite" parent="Platform Decorations/Ministry of Love" index="0"]
+
+position = Vector2( 459.779, -642.33 )
+texture = ExtResource( 39 )
+
+[node name="Trash Can2" type="Sprite" parent="Platform Decorations/Ministry of Love" index="1"]
+
+position = Vector2( 1001.52, -642.156 )
+texture = ExtResource( 39 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Billboard" type="Sprite" parent="Platform Decorations/Ministry of Love" index="2"]
+
+editor/display_folded = true
+position = Vector2( 658.503, -198.153 )
+rotation = -3.06109
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 40 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Minis" type="Label" parent="Platform Decorations/Ministry of Love/Billboard" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -385.0
+margin_top = -47.0
+margin_right = -156.0
+margin_bottom = -7.0
+rect_rotation = -7.60241
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 1, 0.492188, 0, 1 )
+text = "Minis"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="try" type="Label" parent="Platform Decorations/Ministry of Love/Billboard" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -168.0
+margin_top = -59.0
+margin_right = 61.0
+margin_bottom = -24.0
+rect_rotation = 7.57868
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 1, 0.492188, 0, 1 )
+text = "try"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="O" type="Label" parent="Platform Decorations/Ministry of Love/Billboard" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 13.0
+margin_top = -42.0
+margin_right = 242.0
+margin_bottom = -7.0
+rect_rotation = 5.98001
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 1, 0.492188, 0, 1 )
+text = "o"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="F" type="Label" parent="Platform Decorations/Ministry of Love/Billboard" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 41.0
+margin_top = -50.0
+margin_right = 270.0
+margin_bottom = -15.0
+rect_rotation = -30.4828
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 1, 0.492188, 0, 1 )
+text = "f"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="l ve" type="Label" parent="Platform Decorations/Ministry of Love/Billboard" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 167.0
+margin_top = -65.0
+margin_right = 396.0
+margin_bottom = -30.0
+rect_rotation = 7.33435
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 1, 0.492188, 0, 1 )
+text = "l   ve"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="o" type="Label" parent="Platform Decorations/Ministry of Love/Billboard" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 182.0
+margin_top = 23.0
+margin_right = 411.0
+margin_bottom = 58.0
+rect_rotation = -89.0094
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 28 )
+custom_colors/font_color = Color( 1, 0.492188, 0, 1 )
+text = "o"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="Tissue 2" type="Sprite" parent="Platform Decorations/Ministry of Love" index="3"]
+
+position = Vector2( 372.355, -208.102 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 41 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Tape 3" type="Sprite" parent="Platform Decorations/Ministry of Love" index="4"]
+
+position = Vector2( 1047.69, -222.319 )
+rotation = 1.35393
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 42 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 4" type="Sprite" parent="Platform Decorations/Ministry of Love" index="5"]
+
+position = Vector2( 302.57, -183.596 )
+rotation = 2.70774
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 43 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Tissue 4" type="Sprite" parent="Platform Decorations/Ministry of Love" index="6"]
+
+position = Vector2( 837.692, -166.721 )
+rotation = 1.17871
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 44 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 1" type="Sprite" parent="Platform Decorations/Ministry of Love" index="7"]
+
+position = Vector2( 512.795, -179.148 )
+rotation = 0.812595
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 45 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Wires 1" type="Sprite" parent="Platform Decorations/Ministry of Love" index="8"]
+
+position = Vector2( 935.872, -185.191 )
+rotation = 1.96394
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 46 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Tissue 1" type="Sprite" parent="Platform Decorations/Ministry of Love" index="9"]
+
+position = Vector2( 985.73, -171.1 )
+rotation = 1.24766
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 47 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Plank with Screws" type="Sprite" parent="Platform Decorations/Ministry of Love" index="10"]
+
+position = Vector2( 1212.03, -202.582 )
+rotation = 0.0112057
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 48 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 3" type="Sprite" parent="Platform Decorations/Ministry of Love" index="11"]
+
+position = Vector2( 1334.03, -178.187 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 43 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Tissue 3" type="Sprite" parent="Platform Decorations/Ministry of Love" index="12"]
+
+position = Vector2( 1050.01, -187.094 )
+rotation = 2.72332
+scale = Vector2( 0.45, 0.45 )
+texture = ExtResource( 49 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Tissue 6" type="Sprite" parent="Platform Decorations/Ministry of Love" index="13"]
+
+position = Vector2( 1169.56, -161.979 )
+rotation = -1.20552
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 50 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Gold, Treasures & Adventures" type="Node2D" parent="Platform Decorations" index="1"]
+
+editor/display_folded = true
+
+[node name="Sprite" type="Sprite" parent="Platform Decorations/Gold, Treasures & Adventures" index="0"]
+
+modulate = Color( 1, 0.666667, 0.392157, 1 )
+position = Vector2( 2398.15, -218.484 )
+texture = ExtResource( 51 )
+
+[node name="Sprite2" type="Sprite" parent="Platform Decorations/Gold, Treasures & Adventures" index="1"]
+
+modulate = Color( 1, 0.666667, 0.392157, 1 )
+position = Vector2( 3274.64, -309.699 )
+rotation = 0.0888502
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 52 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite6" type="Sprite" parent="Platform Decorations/Gold, Treasures & Adventures" index="2"]
+
+modulate = Color( 1, 0.666667, 0.392157, 1 )
+position = Vector2( 3238.95, -309.448 )
+rotation = 3.12755
+scale = Vector2( 0.7, -0.7 )
+texture = ExtResource( 52 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite3" type="Sprite" parent="Platform Decorations/Gold, Treasures & Adventures" index="3"]
+
+modulate = Color( 1, 0.666667, 0.392157, 1 )
+position = Vector2( 3257.61, -308.636 )
+rotation = -0.035737
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 53 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite4" type="Sprite" parent="Platform Decorations/Gold, Treasures & Adventures" index="4"]
+
+modulate = Color( 1, 0.666667, 0.392157, 1 )
+position = Vector2( 3252.53, -320.836 )
+rotation = -0.035737
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 54 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite5" type="Sprite" parent="Platform Decorations/Gold, Treasures & Adventures" index="5"]
+
+modulate = Color( 1, 0.666667, 0.392157, 1 )
+position = Vector2( 3279.82, -297.729 )
+rotation = -0.260371
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 54 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite8" type="Sprite" parent="Platform Decorations/Gold, Treasures & Adventures" index="6"]
+
+position = Vector2( 4142.85, -390.835 )
+rotation = -0.782325
+scale = Vector2( 3, 3 )
+texture = ExtResource( 55 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Sprite7" type="Sprite" parent="Platform Decorations/Gold, Treasures & Adventures" index="7"]
+
+position = Vector2( 4118.5, -401.833 )
+rotation = -0.548696
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 56 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Adventure Land" type="Node2D" parent="Platform Decorations" index="2"]
+
+editor/display_folded = true
+
+[node name="Cover Paper" type="Sprite" parent="Platform Decorations/Adventure Land" index="0"]
+
+editor/display_folded = true
+position = Vector2( 2880.61, -1421.15 )
+rotation = 0.206968
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 57 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platform Decorations/Adventure Land/Cover Paper" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Fall = SubResource( 1 )
+blend_times = [  ]
+
+[node name="Stain 11" type="Sprite" parent="Platform Decorations/Adventure Land/Cover Paper" index="1"]
+
+position = Vector2( 247.873, -16.042 )
+rotation = 0.19797
+scale = Vector2( 3, 3 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="White Line" type="Sprite" parent="Platform Decorations/Adventure Land/Cover Paper" index="2"]
+
+modulate = Color( 0.792969, 0.577673, 0.577673, 1 )
+position = Vector2( -373.162, 11.5171 )
+rotation = 0.514347
+texture = ExtResource( 30 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="White Line2" type="Sprite" parent="Platform Decorations/Adventure Land/Cover Paper" index="3"]
+
+modulate = Color( 0.839844, 0.702251, 0.232537, 1 )
+position = Vector2( -98.085, -11.561 )
+rotation = -0.142376
+texture = ExtResource( 30 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="White Line3" type="Sprite" parent="Platform Decorations/Adventure Land/Cover Paper" index="4"]
+
+modulate = Color( 0.292675, 0.8125, 0.373897, 1 )
+position = Vector2( 112.777, 37.0581 )
+rotation = -0.14134
+texture = ExtResource( 30 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="White Line4" type="Sprite" parent="Platform Decorations/Adventure Land/Cover Paper" index="5"]
+
+modulate = Color( 0.235656, 0.894531, 0.894531, 1 )
+position = Vector2( 386.124, -17.8604 )
+rotation = 0.452265
+texture = ExtResource( 30 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Light" type="Sprite" parent="Platform Decorations/Adventure Land" index="1"]
+
+position = Vector2( 2860, -1166.56 )
+rotation = 0.405529
+texture = ExtResource( 58 )
+
+[node name="Tape 3" type="Sprite" parent="Platform Decorations/Adventure Land" index="2"]
+
+position = Vector2( 2639.96, -1536.81 )
+rotation = 1.01856
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 42 )
+
+[node name="Tape 1" type="Sprite" parent="Platform Decorations/Adventure Land" index="3"]
+
+position = Vector2( 3024.23, -1497.98 )
+rotation = 1.05011
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 59 )
+
+[node name="Box and Bag" type="Sprite" parent="Platform Decorations/Adventure Land" index="4"]
+
+position = Vector2( 2229.04, -1213.41 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 60 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Trash Bag 1" type="Sprite" parent="Platform Decorations/Adventure Land" index="5"]
+
+position = Vector2( 2327.86, -1136.53 )
+rotation = 0.127499
+texture = ExtResource( 61 )
+
+[node name="Trash Bag 7" type="Sprite" parent="Platform Decorations/Adventure Land" index="6"]
+
+position = Vector2( 2721.99, -1144.38 )
+texture = ExtResource( 62 )
+
+[node name="Trash Bag 2" type="Sprite" parent="Platform Decorations/Adventure Land" index="7"]
+
+position = Vector2( 2884.03, -1099.74 )
+rotation = 1.21535
+scale = Vector2( 1, -1 )
+texture = ExtResource( 61 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Trash Bag 4" type="Sprite" parent="Platform Decorations/Adventure Land" index="8"]
+
+position = Vector2( 2538, -1223.98 )
+rotation = 3.13548
+scale = Vector2( 1, -1 )
+texture = ExtResource( 63 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Trash Bag 3" type="Sprite" parent="Platform Decorations/Adventure Land" index="9"]
+
+position = Vector2( 2664.3, -1136.71 )
+rotation = 3.13548
+scale = Vector2( 1, -1 )
+texture = ExtResource( 64 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Trash Bag 6" type="Sprite" parent="Platform Decorations/Adventure Land" index="10"]
+
+position = Vector2( 3082.07, -1135.84 )
+rotation = 0.00610805
+texture = ExtResource( 64 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Trash Bag 5" type="Sprite" parent="Platform Decorations/Adventure Land" index="11"]
+
+position = Vector2( 3204.05, -1143.68 )
+texture = ExtResource( 62 )
+
+[node name="Paper 3" type="Sprite" parent="Platform Decorations/Adventure Land" index="12"]
+
+position = Vector2( 2061.85, -1083.52 )
+rotation = 2.71549
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 43 )
+
+[node name="Paper 5" type="Sprite" parent="Platform Decorations/Adventure Land" index="13"]
+
+position = Vector2( 2754.1, -1062.61 )
+rotation = -2.02589
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 65 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Tissue 1" type="Sprite" parent="Platform Decorations/Adventure Land" index="14"]
+
+position = Vector2( 3100.46, -1061.47 )
+rotation = -1.13095
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 47 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Tissue 6" type="Sprite" parent="Platform Decorations/Adventure Land" index="15"]
+
+position = Vector2( 2652.45, -1059.49 )
+rotation = 1.5428
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 50 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 1" type="Sprite" parent="Platform Decorations/Adventure Land" index="16"]
+
+position = Vector2( 2507.64, -1078 )
+rotation = 1.24942
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 45 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="First Fighting" type="Node2D" parent="Platform Decorations" index="3"]
+
+editor/display_folded = true
+
+[node name="Crack 11" type="Sprite" parent="Platform Decorations/First Fighting" index="0"]
+
+position = Vector2( 7584.46, -170.182 )
+rotation = 0.401051
+scale = Vector2( 3, 3 )
+texture = ExtResource( 66 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Crack 12" type="Sprite" parent="Platform Decorations/First Fighting" index="1"]
+
+position = Vector2( 7924.29, -656.619 )
+rotation = 0.794203
+scale = Vector2( 2, 2 )
+texture = ExtResource( 67 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Tape 1" type="Sprite" parent="Platform Decorations/First Fighting" index="2"]
+
+position = Vector2( 7286.68, -311.592 )
+rotation = 0.527947
+scale = Vector2( 0.5, 1 )
+texture = ExtResource( 59 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Tape 2" type="Sprite" parent="Platform Decorations/First Fighting" index="3"]
+
+position = Vector2( 7286.68, -311.592 )
+rotation = 1.85286
+scale = Vector2( 0.4, 0.5 )
+texture = ExtResource( 42 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Stain 8" type="Sprite" parent="Platform Decorations/First Fighting" index="4"]
+
+position = Vector2( 8240.65, -324.892 )
+texture = ExtResource( 11 )
+
+[node name="Stain 10" type="Sprite" parent="Platform Decorations/First Fighting" index="5"]
+
+position = Vector2( 8860.46, -308.985 )
+rotation = 1.20628
+texture = ExtResource( 68 )
+
+[node name="Stain 6" type="Sprite" parent="Platform Decorations/First Fighting" index="6"]
+
+position = Vector2( 9301.35, -462.169 )
+texture = ExtResource( 69 )
+
+[node name="Hole 10" type="Sprite" parent="Platform Decorations/First Fighting" index="7"]
+
+position = Vector2( 8614.97, -236.321 )
+rotation = 0.301642
+texture = ExtResource( 70 )
+
+[node name="Hole 1" type="Sprite" parent="Platform Decorations/First Fighting" index="8"]
+
+position = Vector2( 9530.3, -384.493 )
+rotation = 0.324558
+texture = ExtResource( 71 )
+
+[node name="Camera Changing Triggers" type="Node2D" parent="." index="8"]
 
 editor/display_folded = true
 
 [node name="Pass Trigger 1" type="Position2D" parent="Camera Changing Triggers" index="0"]
 
 position = Vector2( 150, -150 )
-script = ExtResource( 12 )
+script = ExtResource( 72 )
 _sections_unfolded = [ "Transform" ]
 range_x = 1000
 range_y = 1000
 x_check = 2
 y_check = 0
 
-[node name="Pass Trigger 2" type="Position2D" parent="Camera Changing Triggers" index="1"]
+[node name="Pass Trigger 7" type="Position2D" parent="Camera Changing Triggers" index="1"]
+
+position = Vector2( 2800, -1050 )
+script = ExtResource( 72 )
+_sections_unfolded = [ "Transform" ]
+range_x = 1000
+range_y = 1000
+x_check = 0
+y_check = 1
+
+[node name="Pass Trigger 2" type="Position2D" parent="Camera Changing Triggers" index="2"]
 
 position = Vector2( 8050, -750 )
-script = ExtResource( 12 )
+script = ExtResource( 72 )
 range_x = 1000
 range_y = 1000
 x_check = 2
 y_check = 0
 
-[node name="Pass Trigger 3" type="Position2D" parent="Camera Changing Triggers" index="2"]
+[node name="Pass Trigger 3" type="Position2D" parent="Camera Changing Triggers" index="3"]
 
 position = Vector2( 10650, -750 )
-script = ExtResource( 12 )
+script = ExtResource( 72 )
 range_x = 1000
 range_y = 1000
 x_check = 2
 y_check = 0
 
-[node name="Enemy Defeated Count Trigger 1" type="Node2D" parent="Camera Changing Triggers" index="3"]
+[node name="Enemy Defeated Count Trigger 1" type="Node2D" parent="Camera Changing Triggers" index="4"]
 
-script = ExtResource( 13 )
+script = ExtResource( 73 )
 _sections_unfolded = [ "Transform" ]
 count_to_emit = 2
 
-[node name="Enemy Defeated Count Trigger 2" type="Node2D" parent="Camera Changing Triggers" index="4"]
+[node name="Enemy Defeated Count Trigger 2" type="Node2D" parent="Camera Changing Triggers" index="5"]
 
-script = ExtResource( 13 )
+script = ExtResource( 73 )
 count_to_emit = 2
 
-[node name="Pass Trigger 4" type="Position2D" parent="Camera Changing Triggers" index="5"]
+[node name="Pass Trigger 4" type="Position2D" parent="Camera Changing Triggers" index="6"]
 
 position = Vector2( 20950, -250 )
 scale = Vector2( 0.5, 0.5 )
-script = ExtResource( 12 )
+script = ExtResource( 72 )
 _sections_unfolded = [ "Transform" ]
 range_x = 1000
 range_y = 2000
 x_check = 2
 y_check = 0
 
-[node name="Enemy Defeated Count Trigger 3" type="Node2D" parent="Camera Changing Triggers" index="6"]
+[node name="Enemy Defeated Count Trigger 3" type="Node2D" parent="Camera Changing Triggers" index="7"]
 
-script = ExtResource( 13 )
+script = ExtResource( 73 )
 count_to_emit = 5
 
-[node name="Pass Trigger 5" type="Position2D" parent="Camera Changing Triggers" index="7"]
+[node name="Pass Trigger 5" type="Position2D" parent="Camera Changing Triggers" index="8"]
 
 position = Vector2( 25850, -550 )
-script = ExtResource( 12 )
+script = ExtResource( 72 )
 _sections_unfolded = [ "Transform" ]
 range_x = 1000
 range_y = 1000
 x_check = 2
 y_check = 1
 
-[node name="Enemy Defeated Counter Trigger 4" type="Node2D" parent="Camera Changing Triggers" index="8"]
+[node name="Enemy Defeated Counter Trigger 4" type="Node2D" parent="Camera Changing Triggers" index="9"]
 
-script = ExtResource( 13 )
+script = ExtResource( 73 )
 count_to_emit = 4
 
-[node name="Enemy Defeated Counter Trigger 5" type="Node2D" parent="Camera Changing Triggers" index="9"]
+[node name="Enemy Defeated Counter Trigger 5" type="Node2D" parent="Camera Changing Triggers" index="10"]
 
-script = ExtResource( 13 )
+script = ExtResource( 73 )
 count_to_emit = 2
 
-[node name="Pass Trigger 6" type="Position2D" parent="Camera Changing Triggers" index="10"]
+[node name="Pass Trigger 6" type="Position2D" parent="Camera Changing Triggers" index="11"]
 
 position = Vector2( 35000, -850 )
-script = ExtResource( 12 )
+script = ExtResource( 72 )
 _sections_unfolded = [ "Transform" ]
 range_x = 1000
 range_y = 1000
 x_check = 2
 y_check = 0
 
-[node name="Other Platforms" type="Node2D" parent="." index="8"]
+[node name="Other Platforms" type="Node2D" parent="." index="9"]
 
 editor/display_folded = true
 position = Vector2( 0, 100 )
 
-[node name="Enemy Blocking Platform" parent="Other Platforms" index="0" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform" parent="Other Platforms" index="0" instance=ExtResource( 74 )]
 
 position = Vector2( 15800, -850 )
 
-[node name="Enemy Blocking Platform2" parent="Other Platforms" index="1" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform2" parent="Other Platforms" index="1" instance=ExtResource( 74 )]
 
 position = Vector2( 15800, -950 )
 
-[node name="Enemy Blocking Platform3" parent="Other Platforms" index="2" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform3" parent="Other Platforms" index="2" instance=ExtResource( 74 )]
 
 position = Vector2( 17100, -850 )
 
-[node name="Enemy Blocking Platform4" parent="Other Platforms" index="3" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform4" parent="Other Platforms" index="3" instance=ExtResource( 74 )]
 
 position = Vector2( 17100, -950 )
 
-[node name="Enemy Blocking Platform5" parent="Other Platforms" index="4" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform5" parent="Other Platforms" index="4" instance=ExtResource( 74 )]
 
 position = Vector2( 17400, -750 )
 
-[node name="Enemy Blocking Platform6" parent="Other Platforms" index="5" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform6" parent="Other Platforms" index="5" instance=ExtResource( 74 )]
 
 position = Vector2( 17400, -850 )
 
-[node name="Enemy Blocking Platform7" parent="Other Platforms" index="6" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform7" parent="Other Platforms" index="6" instance=ExtResource( 74 )]
 
 position = Vector2( 18700, -750 )
 
-[node name="Enemy Blocking Platform8" parent="Other Platforms" index="7" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform8" parent="Other Platforms" index="7" instance=ExtResource( 74 )]
 
 position = Vector2( 18700, -850 )
 
-[node name="Enemy Blocking Platform9" parent="Other Platforms" index="8" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform9" parent="Other Platforms" index="8" instance=ExtResource( 74 )]
 
 position = Vector2( 20600, -750 )
 
-[node name="Enemy Blocking Platform10" parent="Other Platforms" index="9" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform10" parent="Other Platforms" index="9" instance=ExtResource( 74 )]
 
 position = Vector2( 20600, -850 )
 
-[node name="Enemy Blocking Platform11" parent="Other Platforms" index="10" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform11" parent="Other Platforms" index="10" instance=ExtResource( 74 )]
 
 position = Vector2( 21500, -750 )
 
-[node name="Enemy Blocking Platform12" parent="Other Platforms" index="11" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform12" parent="Other Platforms" index="11" instance=ExtResource( 74 )]
 
 position = Vector2( 21500, -850 )
 
-[node name="Enemy Blocking Platform13" parent="Other Platforms" index="12" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform13" parent="Other Platforms" index="12" instance=ExtResource( 74 )]
 
 position = Vector2( 21400, -1150 )
 
-[node name="Enemy Blocking Platform14" parent="Other Platforms" index="13" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform14" parent="Other Platforms" index="13" instance=ExtResource( 74 )]
 
 position = Vector2( 21400, -1250 )
 
-[node name="Enemy Blocking Platform15" parent="Other Platforms" index="14" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform15" parent="Other Platforms" index="14" instance=ExtResource( 74 )]
 
 position = Vector2( 22200, -750 )
 
-[node name="Enemy Blocking Platform16" parent="Other Platforms" index="15" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform16" parent="Other Platforms" index="15" instance=ExtResource( 74 )]
 
 position = Vector2( 22200, -850 )
 
-[node name="Enemy Blocking Platform17" parent="Other Platforms" index="16" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform17" parent="Other Platforms" index="16" instance=ExtResource( 74 )]
 
 position = Vector2( 22300, -1150 )
 
-[node name="Enemy Blocking Platform18" parent="Other Platforms" index="17" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform18" parent="Other Platforms" index="17" instance=ExtResource( 74 )]
 
 position = Vector2( 22300, -1250 )
 
-[node name="Enemy Blocking Platform19" parent="Other Platforms" index="18" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform19" parent="Other Platforms" index="18" instance=ExtResource( 74 )]
 
 position = Vector2( 23100, -750 )
 
-[node name="Enemy Blocking Platform20" parent="Other Platforms" index="19" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform20" parent="Other Platforms" index="19" instance=ExtResource( 74 )]
 
 position = Vector2( 23100, -850 )
 
-[node name="Enemy Blocking Platform21" parent="Other Platforms" index="20" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform21" parent="Other Platforms" index="20" instance=ExtResource( 74 )]
 
 position = Vector2( 23900, -500 )
 
-[node name="Enemy Blocking Platform22" parent="Other Platforms" index="21" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform22" parent="Other Platforms" index="21" instance=ExtResource( 74 )]
 
 position = Vector2( 23900, -400 )
 
-[node name="Enemy Blocking Platform23" parent="Other Platforms" index="22" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform23" parent="Other Platforms" index="22" instance=ExtResource( 74 )]
 
 position = Vector2( 26600, -700 )
 
-[node name="Enemy Blocking Platform32" parent="Other Platforms" index="23" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform32" parent="Other Platforms" index="23" instance=ExtResource( 74 )]
 
 position = Vector2( 40000, -2150 )
 
-[node name="Enemy Blocking Platform33" parent="Other Platforms" index="24" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform33" parent="Other Platforms" index="24" instance=ExtResource( 74 )]
 
 position = Vector2( 40000, -2250 )
 
-[node name="Enemy Blocking Platform34" parent="Other Platforms" index="25" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform34" parent="Other Platforms" index="25" instance=ExtResource( 74 )]
 
 position = Vector2( 40000, -2350 )
 
-[node name="Enemy Blocking Platform35" parent="Other Platforms" index="26" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform35" parent="Other Platforms" index="26" instance=ExtResource( 74 )]
 
 position = Vector2( 40000, -2450 )
 
-[node name="Enemy Blocking Platform36" parent="Other Platforms" index="27" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform36" parent="Other Platforms" index="27" instance=ExtResource( 74 )]
 
 position = Vector2( 39400, -2150 )
 
-[node name="Enemy Blocking Platform37" parent="Other Platforms" index="28" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform37" parent="Other Platforms" index="28" instance=ExtResource( 74 )]
 
 position = Vector2( 39400, -2250 )
 
-[node name="Enemy Blocking Platform38" parent="Other Platforms" index="29" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform38" parent="Other Platforms" index="29" instance=ExtResource( 74 )]
 
 position = Vector2( 39400, -2350 )
 
-[node name="Enemy Blocking Platform39" parent="Other Platforms" index="30" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform39" parent="Other Platforms" index="30" instance=ExtResource( 74 )]
 
 position = Vector2( 39400, -2450 )
 
-[node name="Enemy Blocking Platform40" parent="Other Platforms" index="31" instance=ExtResource( 14 )]
+[node name="Enemy Blocking Platform40" parent="Other Platforms" index="31" instance=ExtResource( 74 )]
 
 position = Vector2( 28750, -700 )
 
-[node name="Healing Machines" type="Node2D" parent="." index="9"]
+[node name="Healing Machines" type="Node2D" parent="." index="10"]
 
 editor/display_folded = true
 
-[node name="Healing Machine" parent="Healing Machines" index="0" instance=ExtResource( 15 )]
+[node name="Healing Machine" parent="Healing Machines" index="0" instance=ExtResource( 75 )]
 
-position = Vector2( 4200, -800 )
+position = Vector2( 4500, -850 )
 
-[node name="Healing Machine2" parent="Healing Machines" index="1" instance=ExtResource( 15 )]
+[node name="Healing Machine2" parent="Healing Machines" index="1" instance=ExtResource( 75 )]
 
 position = Vector2( 21900, -1300 )
 
-[node name="Healing Machine3" parent="Healing Machines" index="2" instance=ExtResource( 15 )]
+[node name="Healing Machine3" parent="Healing Machines" index="2" instance=ExtResource( 75 )]
 
 position = Vector2( 34700, -1150 )
 
-[node name="Healing Machine4" parent="Healing Machines" index="3" instance=ExtResource( 15 )]
+[node name="Healing Machine4" parent="Healing Machines" index="3" instance=ExtResource( 75 )]
 
 position = Vector2( 29900, -1000 )
 
-[node name="Structures" type="Node2D" parent="." index="10"]
+[node name="Structures" type="Node2D" parent="." index="11"]
 
 editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="Floopy Tower" parent="Structures" index="0" instance=ExtResource( 16 )]
+[node name="Floopy Tower" parent="Structures" index="0" instance=ExtResource( 76 )]
 
 position = Vector2( 28448.4, -1169.14 )
 counter_for_spawned_mobs = NodePath("../../Camera Changing Triggers/Enemy Defeated Counter Trigger 4")
 
-[node name="Enemies" type="Node2D" parent="." index="11"]
+[node name="Enemies" type="Node2D" parent="." index="12"]
 
 editor/display_folded = true
 
-[node name="CD Punch" parent="Enemies" index="0" instance=ExtResource( 17 )]
+[node name="CD Punch" parent="Enemies" index="0" instance=ExtResource( 77 )]
 
 position = Vector2( 9400, -700 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 1800
 activate_range_y = 1500
 
-[node name="CD Punch2" parent="Enemies" index="1" instance=ExtResource( 17 )]
+[node name="CD Punch2" parent="Enemies" index="1" instance=ExtResource( 77 )]
 
 position = Vector2( 12000, -400 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 1700
 activate_range_y = 1500
 
-[node name="CD Punch3" parent="Enemies" index="2" instance=ExtResource( 17 )]
+[node name="CD Punch3" parent="Enemies" index="2" instance=ExtResource( 77 )]
 
 position = Vector2( 12950, -400 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 2000
 activate_range_y = 1500
 
-[node name="CD Punch5" parent="Enemies" index="3" instance=ExtResource( 17 )]
+[node name="CD Punch5" parent="Enemies" index="3" instance=ExtResource( 77 )]
 
 position = Vector2( 22800, -800 )
 activate_range_x = 2000
 activate_range_y = 2000
 
-[node name="CD Punch6" parent="Enemies" index="4" instance=ExtResource( 17 )]
+[node name="CD Punch6" parent="Enemies" index="4" instance=ExtResource( 77 )]
 
 position = Vector2( 20900, -800 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 1850
 activate_range_y = 2000
 
-[node name="Mouse" parent="Enemies" index="5" instance=ExtResource( 18 )]
+[node name="Mouse" parent="Enemies" index="5" instance=ExtResource( 78 )]
 
 position = Vector2( 21150, -700 )
 activate_range_x = 1900
 activate_range_y = 2000
 
-[node name="Mouse2" parent="Enemies" index="6" instance=ExtResource( 18 )]
+[node name="Mouse2" parent="Enemies" index="6" instance=ExtResource( 78 )]
 
 position = Vector2( 22500, -700 )
 activate_range_x = 2000
 activate_range_y = 2000
 
-[node name="Mouse3" parent="Enemies" index="7" instance=ExtResource( 18 )]
+[node name="Mouse3" parent="Enemies" index="7" instance=ExtResource( 78 )]
 
 position = Vector2( 21900, -1100 )
 activate_range_x = 1850
 activate_range_y = 2500
 
-[node name="Mouse4" parent="Enemies" index="8" instance=ExtResource( 18 )]
+[node name="Mouse4" parent="Enemies" index="8" instance=ExtResource( 78 )]
 
 position = Vector2( 29100, -600 )
 activate_range_x = 1850
 
-[node name="Floopy" parent="Enemies" index="9" instance=ExtResource( 19 )]
+[node name="Floopy" parent="Enemies" index="9" instance=ExtResource( 79 )]
 
 position = Vector2( 30900, -650 )
 activate_range_x = 1850
 
-[node name="Batterio" parent="Enemies" index="10" instance=ExtResource( 20 )]
+[node name="Batterio" parent="Enemies" index="10" instance=ExtResource( 80 )]
 
 position = Vector2( 33900, -850 )
 
-[node name="Batterio2" parent="Enemies" index="11" instance=ExtResource( 20 )]
+[node name="Batterio2" parent="Enemies" index="11" instance=ExtResource( 80 )]
 
 position = Vector2( 34300, -850 )
 
-[node name="Batterio3" parent="Enemies" index="12" instance=ExtResource( 20 )]
+[node name="Batterio3" parent="Enemies" index="12" instance=ExtResource( 80 )]
 
 position = Vector2( 35099.7, -651.03 )
 
-[node name="Batterio4" parent="Enemies" index="13" instance=ExtResource( 20 )]
+[node name="Batterio4" parent="Enemies" index="13" instance=ExtResource( 80 )]
 
 position = Vector2( 35196.9, -650.773 )
 
-[node name="Batterio5" parent="Enemies" index="14" instance=ExtResource( 20 )]
+[node name="Batterio5" parent="Enemies" index="14" instance=ExtResource( 80 )]
 
 position = Vector2( 36800, -901.93 )
 
-[node name="Batterio6" parent="Enemies" index="15" instance=ExtResource( 20 )]
+[node name="Batterio6" parent="Enemies" index="15" instance=ExtResource( 80 )]
 
 position = Vector2( 37297.7, -903.989 )
 
-[node name="Batterio7" parent="Enemies" index="16" instance=ExtResource( 20 )]
+[node name="Batterio7" parent="Enemies" index="16" instance=ExtResource( 80 )]
 
 position = Vector2( 37800.2, -1047.48 )
 
-[node name="Batterio8" parent="Enemies" index="17" instance=ExtResource( 20 )]
+[node name="Batterio8" parent="Enemies" index="17" instance=ExtResource( 80 )]
 
 position = Vector2( 38542, -1260.9 )
 
-[node name="Batterio9" parent="Enemies" index="18" instance=ExtResource( 20 )]
+[node name="Batterio9" parent="Enemies" index="18" instance=ExtResource( 80 )]
 
 position = Vector2( 38892.7, -1387.69 )
 
-[node name="Batterio10" parent="Enemies" index="19" instance=ExtResource( 20 )]
+[node name="Batterio10" parent="Enemies" index="19" instance=ExtResource( 80 )]
 
 position = Vector2( 39397.8, -1558.85 )
 
-[node name="Batterio11" parent="Enemies" index="20" instance=ExtResource( 20 )]
+[node name="Batterio11" parent="Enemies" index="20" instance=ExtResource( 80 )]
 
 position = Vector2( 39849.2, -1548.26 )
 
-[node name="Floopy5" parent="Enemies" index="21" instance=ExtResource( 19 )]
+[node name="Floopy5" parent="Enemies" index="21" instance=ExtResource( 79 )]
 
 position = Vector2( 39700, -2150 )
 
-[node name="Mouse5" parent="Enemies" index="22" instance=ExtResource( 18 )]
+[node name="Mouse5" parent="Enemies" index="22" instance=ExtResource( 78 )]
 
 position = Vector2( 17950, -700 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 2000
 
-[node name="Mouse6" parent="Enemies" index="23" instance=ExtResource( 18 )]
+[node name="Mouse6" parent="Enemies" index="23" instance=ExtResource( 78 )]
 
 position = Vector2( 18350, -700 )
 activate_range_x = 2000
 
-[node name="Mouse7" parent="Enemies" index="24" instance=ExtResource( 18 )]
+[node name="Mouse7" parent="Enemies" index="24" instance=ExtResource( 78 )]
 
 position = Vector2( 16400, -800 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 2000
 
-[node name="Mouse8" parent="Enemies" index="25" instance=ExtResource( 18 )]
+[node name="Mouse8" parent="Enemies" index="25" instance=ExtResource( 78 )]
 
 position = Vector2( 16350, -200 )
 activate_range_x = 2000
@@ -516,7 +3112,7 @@ activate_range_x = 2000
 [node name="CD Punch Spawner" type="Position2D" parent="Enemies" index="26"]
 
 position = Vector2( 20050, -400 )
-script = ExtResource( 21 )
+script = ExtResource( 81 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/CD Punch.tscn"
 activate_range_x = 3000
@@ -527,7 +3123,7 @@ total_count = 1
 [node name="CD Punch Spawner2" type="Position2D" parent="Enemies" index="27"]
 
 position = Vector2( 23650, -400 )
-script = ExtResource( 21 )
+script = ExtResource( 81 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/CD Punch.tscn"
 activate_range_x = 3000
@@ -538,7 +3134,7 @@ total_count = 2
 [node name="Mouse Spawner" type="Position2D" parent="Enemies" index="28"]
 
 position = Vector2( 21050, -700 )
-script = ExtResource( 21 )
+script = ExtResource( 81 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/Mouse.tscn"
 activate_range_x = 3000
@@ -549,7 +3145,7 @@ total_count = 1
 [node name="Mouse Spawner2" type="Position2D" parent="Enemies" index="29"]
 
 position = Vector2( 22650, -700 )
-script = ExtResource( 21 )
+script = ExtResource( 81 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/Mouse.tscn"
 activate_range_x = 3000
@@ -560,7 +3156,7 @@ total_count = 1
 [node name="CD Punch Spawner3" type="Position2D" parent="Enemies" index="30"]
 
 position = Vector2( 28250, -700 )
-script = ExtResource( 21 )
+script = ExtResource( 81 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/CD Punch.tscn"
 activate_range_x = 3000
@@ -571,7 +3167,7 @@ total_count = -1
 [node name="Floopy Spawner1" type="Position2D" parent="Enemies" index="31"]
 
 position = Vector2( 32350, -850 )
-script = ExtResource( 21 )
+script = ExtResource( 81 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/Floopy.tscn"
 activate_range_x = 3000
@@ -582,7 +3178,7 @@ total_count = 3
 [node name="Floopy Spawner2" type="Position2D" parent="Enemies" index="32"]
 
 position = Vector2( 33550, -950 )
-script = ExtResource( 21 )
+script = ExtResource( 81 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/Floopy.tscn"
 activate_range_x = 3000
@@ -590,61 +3186,112 @@ activate_range_y = 3000
 spawn_delay = 0.5
 total_count = 3
 
-[node name="Power Ups" type="Node2D" parent="." index="12"]
+[node name="Power Ups" type="Node2D" parent="." index="13"]
 
 editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="HealPotion" parent="Power Ups" index="0" instance=ExtResource( 22 )]
+[node name="HealPotion" parent="Power Ups" index="0" instance=ExtResource( 82 )]
 
 position = Vector2( 13250, -450 )
 activate_range_x = 2500
 
-[node name="HealPotion2" parent="Power Ups" index="1" instance=ExtResource( 22 )]
+[node name="HealPotion2" parent="Power Ups" index="1" instance=ExtResource( 82 )]
 
 position = Vector2( 13450, -450 )
 activate_range_x = 2500
 
-[node name="DefensivePotion" parent="Power Ups" index="2" instance=ExtResource( 23 )]
+[node name="DefensivePotion" parent="Power Ups" index="2" instance=ExtResource( 83 )]
 
 position = Vector2( 15650, -250 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 1400
 
-[node name="HealPotion3" parent="Power Ups" index="3" instance=ExtResource( 22 )]
+[node name="HealPotion3" parent="Power Ups" index="3" instance=ExtResource( 82 )]
 
 position = Vector2( 19650, -450 )
 
-[node name="Hyper Potion" parent="Power Ups" index="4" instance=ExtResource( 24 )]
+[node name="Hyper Potion" parent="Power Ups" index="4" instance=ExtResource( 84 )]
 
 position = Vector2( 25050, -350 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 
-[node name="DefensivePotion2" parent="Power Ups" index="5" instance=ExtResource( 23 )]
+[node name="DefensivePotion2" parent="Power Ups" index="5" instance=ExtResource( 83 )]
 
 position = Vector2( 24650, -350 )
 
-[node name="Ult Stone" parent="Power Ups" index="6" instance=ExtResource( 25 )]
+[node name="Ult Stone" parent="Power Ups" index="6" instance=ExtResource( 85 )]
 
 position = Vector2( 21900, -450 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1850
 
-[node name="Giant Potion" parent="Power Ups" index="7" instance=ExtResource( 26 )]
+[node name="Giant Potion" parent="Power Ups" index="7" instance=ExtResource( 86 )]
 
 position = Vector2( 29900, -550 )
 
-[node name="Speed Potion" parent="Power Ups" index="8" instance=ExtResource( 27 )]
+[node name="Speed Potion" parent="Power Ups" index="8" instance=ExtResource( 87 )]
 
 position = Vector2( 34100, -950 )
 
-[node name="Keshia Erasia" parent="." index="13" instance=ExtResource( 28 )]
+[node name="Keshia Erasia" parent="." index="14" instance=ExtResource( 88 )]
 
 position = Vector2( 432, -618 )
 
-[node name="Position2D" type="Position2D" parent="." index="14"]
+[node name="Forground Decoration" type="Node2D" parent="." index="15"]
 
-position = Vector2( 400, -500 )
+[node name="Paper 3" type="Sprite" parent="Forground Decoration" index="0"]
+
+position = Vector2( 1199.71, -172.292 )
+rotation = 2.68662
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 43 )
+
+[node name="Paper 5" type="Sprite" parent="Forground Decoration" index="1"]
+
+position = Vector2( 641.059, -179.952 )
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 65 )
+
+[node name="Paper 2" type="Sprite" parent="Forground Decoration" index="2"]
+
+position = Vector2( 1399.39, -167.78 )
+rotation = 1.85422
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 89 )
+
+[node name="Paper 7" type="Sprite" parent="Forground Decoration" index="3"]
+
+position = Vector2( 3167.25, -1071.82 )
+rotation = 2.64522
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 43 )
+
+[node name="Paper 4" type="Sprite" parent="Forground Decoration" index="4"]
+
+position = Vector2( 2809.58, -1062.52 )
+rotation = 4.6602
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 89 )
+
+[node name="Paper 6" type="Sprite" parent="Forground Decoration" index="5"]
+
+position = Vector2( 2296.1, -1075.89 )
+rotation = 0.204855
+scale = Vector2( 0.35, 0.35 )
+texture = ExtResource( 65 )
+
+[node name="Paper 8" type="Sprite" parent="Forground Decoration" index="6"]
+
+position = Vector2( 3389.46, -1067.6 )
+rotation = 4.37019
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 45 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Position2D" type="Position2D" parent="." index="16"]
+
+position = Vector2( 3950, -300 )
 scale = Vector2( 10, 10 )
 _sections_unfolded = [ "Transform" ]
 
@@ -658,7 +3305,13 @@ _sections_unfolded = [ "Transform" ]
 
 [connection signal="passed" from="Camera Changing Triggers/Pass Trigger 1" to="Following Camera" method="update_left_limit" binds= [ 50 ]]
 
+[connection signal="passed" from="Camera Changing Triggers/Pass Trigger 1" to="Following Camera" method="update_right_limit" binds= [ 3950 ]]
+
 [connection signal="passed" from="Camera Changing Triggers/Pass Trigger 1" to="Following Camera" method="update_bottom_limit" binds= [ -50 ]]
+
+[connection signal="passed" from="Camera Changing Triggers/Pass Trigger 7" to="Following Camera" method="update_right_limit" binds= [ 100000000 ]]
+
+[connection signal="passed" from="Camera Changing Triggers/Pass Trigger 7" to="Platform Decorations/Adventure Land/Cover Paper/AnimationPlayer" method="play" binds= [ "Fall" ]]
 
 [connection signal="passed" from="Camera Changing Triggers/Pass Trigger 2" to="Following Camera" method="update_right_margin" binds= [ 0.5 ]]
 
@@ -740,9 +3393,9 @@ _sections_unfolded = [ "Transform" ]
 
 [connection signal="defeated" from="Enemies/Mouse4" to="Camera Changing Triggers/Enemy Defeated Counter Trigger 4" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Floopy" to="Enemies/Floopy Spawner2" method="spawn_mob"]
-
 [connection signal="defeated" from="Enemies/Floopy" to="Enemies/Floopy Spawner1" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Floopy" to="Enemies/Floopy Spawner2" method="spawn_mob"]
 
 [connection signal="defeated" from="Enemies/Mouse5" to="Camera Changing Triggers/Enemy Defeated Count Trigger 2" method="increment_count"]
 
