@@ -598,14 +598,28 @@ Comment: Aside for weekly commits, now all big milestones should be committed up
 * Edited images: 6 Tissues, 5 Papers.
 * Decorated the "Ministry of Love" and "Adventure Land".
 
-[2018.13.18]
+[2018.03.18]
 Comment: Caught a cold, otitis externa, and existential crisis. Back on work now.
 * Covered the "Adventure lan" sign with a scrap paper.
 * Decorated the Up Skill Tutorial and Kill Field.
 
+[2018.03.19]
+* Fixed some graphics of stains.
+* Completed Cone Light Mask of Light.
+* Decorated Kill Field and Mouse Land.
+* Fixed the graphical bug of mob health bar masking.
+
+[2018.03.20]
+* Fixed a level design bug (trapped beneath the mouse land).
+* Added particle effects to Power Ups (so the players could the difference between them and decorations.)
+* Darkened the decorations a little (by modulating).
+
+[2018.03.21]
+* Decorated Ult Zone, Fort, Inner Fort.
+
+**Commit**
+
 To Do List:
-* More White Stains. Crayon drawing "Tips" light bulb.
-* Yellow light lamp decoration.
 (Decorations -> Dying mechanics)
 * Probably should let the camera update horizontally according to the player with the least x position.
 

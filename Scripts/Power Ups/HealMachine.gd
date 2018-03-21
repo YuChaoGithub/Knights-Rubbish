@@ -18,6 +18,7 @@ func on_potion_collided(area):
 		if !character.health_system.is_full_health():
 			area.get_node("..").healed(heal_amount)
 		
+			$Particles2D.visible = false
 			animator.play("None")
 			timer = preload("res://Scripts/Utils/CountdownTimer.gd").new(interval, self, "spawn_potion")
 

@@ -4,7 +4,7 @@ export(int) var activate_range_x = 2000
 export(int) var activate_range_y = 2000
 
 const SPEED_Y = 125
-const SHOOT_DURATION = 3.0
+const SHOOT_DURATION = 2.0
 const PAUSE_DURATION = 0.2
 const INVISIBLE_DURATION = 8.0
 const TO_SCALE = 0.25
@@ -28,6 +28,7 @@ func _process(delta):
 		scale = Vector2(1.0, 1.0) * lerp(scale.x, TO_SCALE, delta * SCALE_SMOOTH)
 	elif !activated && char_average_pos.in_range_of(global_position, activate_range_x, activate_range_y):
 		damage_area.set_collision_layer_bit(enemy_layer, true)
+		$Particles2D.visible = true
 		activated = true
 
 func being_hit():
@@ -45,6 +46,7 @@ func pause_in_air():
 
 func spawn_ball_to_characters():
 	spinner.shoot = true
+	$Particles2D.visible = false
 
 	for character in char_average_pos.characters:
 		var new_ball = ball.instance()

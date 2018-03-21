@@ -1,20 +1,86 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Power Ups/PowerUpCommon.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Power Ups/HyperPotion.gd" type="Script" id=2]
-[ext_resource path="res://Graphics/Powerups/Attack Potion.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Powerups/Attack Icon.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Power Ups/HyperPotion.gd" type="Script" id=3]
+[ext_resource path="res://Graphics/Powerups/Attack Potion.png" type="Texture" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="Gradient" id=1]
+
+offsets = PoolRealArray( 0.00188679, 0.999057 )
+colors = PoolColorArray( 0.921875, 1, 0, 1, 0.10297, 1, 0.0510753, 0.0850196 )
+
+[sub_resource type="GradientTexture" id=2]
+
+flags = 4
+gradient = SubResource( 1 )
+width = 2048
+
+[sub_resource type="Curve" id=3]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.505565 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+
+flags = 4
+width = 2048
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 1
+emission_sphere_radius = 1.0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 50.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.0
+angular_velocity = -10.0
+angular_velocity_random = 0.3
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.5
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Scale", "Spread", "Trail" ]
+
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 45.7605, 151.545 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 40.3915, 148.51 )
 
-[node name="Hyper Potion" type="KinematicBody2D"]
+[node name="Hyper Potion" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 0
@@ -25,7 +91,33 @@ _sections_unfolded = [ "Collision", "collision" ]
 activate_range_x = 2000
 activate_range_y = 2000
 
-[node name="Trigger Area" type="Area2D" parent="." index="0"]
+[node name="Particles2D" type="Particles2D" parent="." index="0"]
+
+visible = false
+position = Vector2( 4.20624, -16.5659 )
+rotation = -1.56239
+scale = Vector2( 0.7, 0.7 )
+emitting = true
+amount = 30
+lifetime = 5.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.5
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 5 )
+texture = ExtResource( 2 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
+
+[node name="Trigger Area" type="Area2D" parent="." index="1"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -36,23 +128,23 @@ collision_layer = 0
 collision_mask = 0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger Area" index="0"]
 
 position = Vector2( 1.974, -143.602 )
-shape = SubResource( 1 )
+shape = SubResource( 6 )
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
+[node name="Sprite" type="Sprite" parent="." index="2"]
 
 position = Vector2( 1.8266, -142.497 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
-[node name="Movement Collision Shape" type="CollisionShape2D" parent="." index="2"]
+[node name="Movement Collision Shape" type="CollisionShape2D" parent="." index="3"]
 
 position = Vector2( -0.456726, -145.523 )
-shape = SubResource( 2 )
+shape = SubResource( 7 )
 
 [connection signal="area_entered" from="Trigger Area" to="Trigger Area" method="on_area_entered"]
 

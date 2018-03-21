@@ -1,15 +1,16 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scripts/Power Ups/PowerUpCommon.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Power Ups/DwarfPotion.gd" type="Script" id=2]
-[ext_resource path="res://Graphics/Powerups/Drink Me Pot.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Particles/Giant Dwaft Potion Particles.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Power Ups/DwarfPotion.gd" type="Script" id=3]
+[ext_resource path="res://Graphics/Powerups/Drink Me Pot.png" type="Texture" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
 extents = Vector2( 81.8644, 96.8717 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 82.8735, 94.0807 )
@@ -25,12 +26,16 @@ _sections_unfolded = [ "Collision" ]
 activate_range_x = 2000
 activate_range_y = 2000
 
-[node name="Movement Collision Shape" type="CollisionShape2D" parent="." index="0"]
+[node name="Particles2D" parent="." index="0" instance=ExtResource( 2 )]
+
+visible = false
+
+[node name="Movement Collision Shape" type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( 1.74341, -98.7921 )
-shape = SubResource( 1 )
+shape = SubResource( 4 )
 
-[node name="Trigger Area" type="Area2D" parent="." index="1"]
+[node name="Trigger Area" type="Area2D" parent="." index="2"]
 
 editor/display_folded = true
 position = Vector2( 3.5304, -96.3301 )
@@ -43,19 +48,19 @@ collision_layer = 0
 collision_mask = 0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger Area" index="0"]
 
 position = Vector2( 0, -0.861237 )
-shape = SubResource( 2 )
+shape = SubResource( 5 )
 
-[node name="Sprite" type="Sprite" parent="." index="2"]
+[node name="Sprite" type="Sprite" parent="." index="3"]
 
 position = Vector2( 3.5304, -96.3301 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [connection signal="area_entered" from="Trigger Area" to="Trigger Area" method="on_area_entered"]
 

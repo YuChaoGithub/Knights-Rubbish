@@ -1,15 +1,81 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Power Ups/PowerUpCommon.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Power Ups/DefensivePotion.gd" type="Script" id=2]
-[ext_resource path="res://Graphics/Powerups/Defense Potion.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Powerups/Defense Icon.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Power Ups/DefensivePotion.gd" type="Script" id=3]
+[ext_resource path="res://Graphics/Powerups/Defense Potion.png" type="Texture" id=4]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="Gradient" id=1]
+
+offsets = PoolRealArray( 0.278302, 0.998113 )
+colors = PoolColorArray( 0.146984, 0.0770224, 0.636719, 1, 0, 0.53952, 0.832031, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+
+flags = 4
+gradient = SubResource( 1 )
+width = 2048
+
+[sub_resource type="Curve" id=3]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.498609 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+
+flags = 4
+width = 2048
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 1
+emission_sphere_radius = 5.0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 50.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 60.0
+initial_velocity_random = 0.0
+angular_velocity = -5.0
+angular_velocity_random = 0.3
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = -90.0
+angle_random = 0.0
+scale = 0.7
+scale_random = 0.0
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread" ]
+
+[sub_resource type="RectangleShape2D" id=6]
 
 custom_solver_bias = 0.0
 extents = Vector2( 33.7668, 100.587 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 36.6408, 105.392 )
@@ -25,12 +91,37 @@ _sections_unfolded = [ "Collision" ]
 activate_range_x = 2000
 activate_range_y = 2000
 
-[node name="Movement Collision Shape " type="CollisionShape2D" parent="." index="0"]
+[node name="Particles2D" type="Particles2D" parent="." index="0"]
+
+visible = false
+position = Vector2( 6.20922, -29.1394 )
+rotation = -1.61843
+emitting = true
+amount = 30
+lifetime = 5.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.5
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 5 )
+texture = ExtResource( 2 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time" ]
+
+[node name="Movement Collision Shape " type="CollisionShape2D" parent="." index="1"]
 
 position = Vector2( 3.25677, -100.665 )
-shape = SubResource( 1 )
+shape = SubResource( 6 )
 
-[node name="Trigger Area" type="Area2D" parent="." index="1"]
+[node name="Trigger Area" type="Area2D" parent="." index="2"]
 
 editor/display_folded = true
 position = Vector2( 4.07415, -99.5248 )
@@ -43,19 +134,19 @@ collision_layer = 0
 collision_mask = 0
 audio_bus_override = false
 audio_bus_name = "Master"
-script = ExtResource( 2 )
+script = ExtResource( 3 )
 _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger Area" index="0"]
 
 position = Vector2( -0.651489, 0.651482 )
-shape = SubResource( 2 )
+shape = SubResource( 7 )
 
-[node name="Sprite" type="Sprite" parent="." index="2"]
+[node name="Sprite" type="Sprite" parent="." index="3"]
 
 position = Vector2( 4.07415, -99.5248 )
 scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 
 [connection signal="area_entered" from="Trigger Area" to="Trigger Area" method="on_area_entered"]
 

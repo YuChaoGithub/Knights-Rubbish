@@ -16,5 +16,6 @@ func _process(delta):
         gravity_movement.move(delta)
     elif char_average_pos.in_range_of(global_position, activate_range_x, activate_range_y):
         activated = true
+        $Particles2D.visible = true
         $"Trigger Area".set_collision_mask_bit(hero_layer, true)
         

@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Power Ups/HealMachine.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Powerups/Heal Machine Inner.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/Powerups/Health Potion.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/Powerups/Heal Machine.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Particles/Healing Potion Particles.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Graphics/Powerups/Health Potion.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Powerups/Heal Machine.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -52,6 +53,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 5.86865, -95.07 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Particles2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=3]
 
@@ -95,8 +108,20 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 5.86865, -95.07 ), Vector2( 5.86865, 59.586 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("Particles2D:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
-[node name="Healing Machine" type="Node2D"]
+[node name="Healing Machine" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 heal_amount = 150
@@ -108,16 +133,21 @@ position = Vector2( 4.86841, 44.6942 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
-[node name="Potion" type="Sprite" parent="." index="1"]
+[node name="Particles2D" parent="." index="1" instance=ExtResource( 3 )]
+
+visible = false
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Visibility" ]
+
+[node name="Potion" type="Sprite" parent="." index="2"]
 
 visible = false
 position = Vector2( 5.86865, -95.07 )
 scale = Vector2( 0.43, 0.43 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 region_rect = Rect2( 817, 416, 31, 64 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Potion Area" type="Area2D" parent="." index="2"]
+[node name="Potion Area" type="Area2D" parent="." index="3"]
 
 editor/display_folded = true
 input_pickable = true
@@ -135,12 +165,12 @@ audio_bus_name = "Master"
 position = Vector2( 4.74023, 60.438 )
 shape = SubResource( 1 )
 
-[node name="Frame" type="Sprite" parent="." index="3"]
+[node name="Frame" type="Sprite" parent="." index="4"]
 
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
 
 root_node = NodePath("..")
 autoplay = "None"

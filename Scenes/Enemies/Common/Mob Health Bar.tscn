@@ -129,7 +129,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Mob Health Bar" type="Node2D" index="0"]
+[node name="Mob Health Bar" type="Node2D"]
 
 scale = Vector2( 1, 1.2 )
 script = ExtResource( 1 )
@@ -155,7 +155,7 @@ range_z_min = -1024
 range_z_max = 1024
 range_layer_min = 0
 range_layer_max = 0
-range_item_cull_mask = 1
+range_item_cull_mask = 2
 shadow_enabled = false
 shadow_color = Color( 0, 0, 0, 0 )
 shadow_buffer_size = 2048
@@ -163,13 +163,15 @@ shadow_gradient_length = 0.0
 shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
+_sections_unfolded = [ "Range", "Visibility" ]
 
 [node name="Bar" type="Sprite" parent="Bar" index="1"]
 
-light_mask = 32
+light_mask = 2
 position = Vector2( -140, 0 )
 texture = ExtResource( 4 )
 offset = Vector2( 140, 0 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 
