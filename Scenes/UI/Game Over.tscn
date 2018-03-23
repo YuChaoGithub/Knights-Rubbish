@@ -1,0 +1,729 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Graphics/UI/Scrap 1.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/Grafipaint.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Graphics/UI/Scrap 2.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/UI/Bar Frame 3 White.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/UI/ButtonModulator.gd" type="Script" id=5]
+[ext_resource path="res://Fonts/edosz.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Graphics/UI/Scrap 3.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/UI/Frame White.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Scrap Paper.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/UI/Scrap 4.png" type="Texture" id=10]
+[ext_resource path="res://Fonts/scratchl.tres" type="DynamicFont" id=11]
+
+[node name="Game Over" type="CanvasLayer" index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+
+self_modulate = Color( 1, 1, 1, 0.392157 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 1 )
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="Title Scrap Paper" type="TextureRect" parent="ColorRect" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 312.0
+margin_top = -60.0
+margin_right = 1522.0
+margin_bottom = 373.0
+rect_rotation = 6.24677
+rect_scale = Vector2( 0.7, 0.7 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 1 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="ColorRect/Title Scrap Paper" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 155.0
+margin_top = 146.0
+margin_right = 356.0
+margin_bottom = 180.0
+rect_scale = Vector2( 4.5, 4.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "NO!!! you failed!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Quit Scrap Paper" type="TextureRect" parent="ColorRect" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -36.0
+margin_top = 524.0
+margin_right = 464.0
+margin_bottom = 863.0
+rect_rotation = -16.1155
+rect_scale = Vector2( 0.6, 0.6 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Quit Button" type="TextureButton" parent="ColorRect/Quit Scrap Paper" index="0"]
+
+editor/display_folded = true
+modulate = Color( 1, 0.451613, 0.451613, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 50.0
+margin_top = 51.0
+margin_right = 708.0
+margin_bottom = 251.0
+rect_scale = Vector2( 1.1, 1.1 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 4 )
+script = ExtResource( 5 )
+_sections_unfolded = [ "Rect", "Textures", "Visibility" ]
+hover_color = Color( 1, 0, 0, 1 )
+press_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="ColorRect/Quit Scrap Paper/Quit Button" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 38.0
+margin_top = 50.0
+margin_right = 149.0
+margin_bottom = 85.0
+rect_rotation = -3.68769
+rect_scale = Vector2( 2.8, 2.8 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.611765, 0.611765, 0.611765, 1 )
+text = "I give up"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Retry Scrap Paper" type="TextureRect" parent="ColorRect" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 511.0
+margin_top = 434.0
+margin_right = 1011.0
+margin_bottom = 773.0
+rect_rotation = -4.44282
+rect_scale = Vector2( 1.1, 1.1 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 7 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Quit Button" type="TextureButton" parent="ColorRect/Retry Scrap Paper" index="0"]
+
+modulate = Color( 0.125, 1, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 47.0
+margin_top = 61.0
+margin_right = 705.0
+margin_bottom = 349.0
+rect_rotation = 1.04295
+rect_scale = Vector2( 0.55, 0.55 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 8 )
+script = ExtResource( 5 )
+_sections_unfolded = [ "Rect", "Textures", "Visibility" ]
+hover_color = Color( 0.00561785, 0.417969, 0.176357, 1 )
+press_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="ColorRect/Retry Scrap Paper/Quit Button" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 67.0
+margin_top = 69.0
+margin_right = 178.0
+margin_bottom = 104.0
+rect_rotation = 6.99243
+rect_scale = Vector2( 3.3, 3.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.611765, 0.611765, 0.611765, 1 )
+text = "retry"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Scrap 1" type="Control" parent="." index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Other Scrap Paper 1" type="TextureRect" parent="Scrap 1" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -62.0
+margin_top = 146.0
+margin_right = 438.0
+margin_bottom = 336.0
+rect_rotation = 26.3724
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 9 )
+stretch_mode = 0
+
+[node name="NO" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 95.0
+margin_top = 34.0
+margin_right = 139.0
+margin_bottom = 74.0
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 1, 0.491852, 0.293011, 1 )
+text = "NO!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="NO2" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 380.0
+margin_top = 11.0
+margin_right = 424.0
+margin_bottom = 51.0
+rect_rotation = -4.63913
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.898438, 0.327329, 0.103852, 1 )
+text = "NO!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="NO11" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 423.0
+margin_top = 69.0
+margin_right = 467.0
+margin_bottom = 109.0
+rect_rotation = -61.8789
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.558594, 0.227257, 0.0976038, 1 )
+text = "NO!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="NO3" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 154.0
+margin_top = 124.0
+margin_right = 198.0
+margin_bottom = 164.0
+rect_rotation = -48.0121
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.804688, 0.445539, 0.305003, 1 )
+text = "NO!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="NO4" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 275.0
+margin_top = 93.0
+margin_right = 319.0
+margin_bottom = 133.0
+rect_rotation = -4.78234
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.953125, 0.579289, 0.433006, 1 )
+text = "NO!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="NO5" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 178.0
+margin_top = 31.0
+margin_right = 222.0
+margin_bottom = 71.0
+rect_rotation = 27.5478
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.882812, 0.622582, 0.125777, 1 )
+text = "NO!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="NO6" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 98.0
+margin_top = 78.0
+margin_right = 142.0
+margin_bottom = 118.0
+rect_rotation = 3.13043
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.980469, 0.701026, 0.108062, 1 )
+text = "NO!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="NO7" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 223.0
+margin_top = 117.0
+margin_right = 267.0
+margin_bottom = 157.0
+rect_rotation = 22.3365
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.871094, 0.421717, 0.245873, 1 )
+text = "NO!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="NO8" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 230.0
+margin_top = 69.0
+margin_right = 274.0
+margin_bottom = 109.0
+rect_rotation = -42.0313
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.738281, 0.375963, 0.234186, 1 )
+text = "NO!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="NO9" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 318.0
+margin_top = 33.0
+margin_right = 362.0
+margin_bottom = 73.0
+rect_rotation = 16.0082
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.882812, 0.550182, 0.329868, 1 )
+text = "NO!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="NO10" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 351.0
+margin_top = 95.0
+margin_right = 395.0
+margin_bottom = 135.0
+rect_rotation = -45.1764
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 1, 0.491852, 0.293011, 1 )
+text = "NO!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Scrap 2" type="Control" parent="." index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Other Scrap Paper 2" type="TextureRect" parent="Scrap 2" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1050.0
+margin_top = 292.0
+margin_right = 1550.0
+margin_bottom = 482.0
+rect_rotation = 63.5256
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 10 )
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Scrap 2/Other Scrap Paper 2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 48.0
+margin_top = 66.0
+margin_right = 433.0
+margin_bottom = 106.0
+rect_rotation = -2.10738
+rect_scale = Vector2( 2.5, 2.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 11 )
+custom_colors/font_color = Color( 0.133317, 0.581539, 0.71875, 1 )
+text = "WHYYYYYY"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Scrap 3" type="Control" parent="." index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Other Scrap Paper 3" type="TextureRect" parent="Scrap 3" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1344.0
+margin_top = 116.0
+margin_right = 1844.0
+margin_bottom = 405.0
+rect_rotation = 63.5256
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 7 )
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Scrap 3/Other Scrap Paper 3" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 11.0
+margin_top = 208.0
+margin_right = 396.0
+margin_bottom = 248.0
+rect_rotation = -59.5472
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.151378, 0.828125, 0.685374, 1 )
+text = ":("
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Scrap 4" type="Control" parent="." index="4"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Other Scrap Paper 4" type="TextureRect" parent="Scrap 4" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 195.0
+margin_top = 221.0
+margin_right = 695.0
+margin_bottom = 560.0
+rect_rotation = 201.098
+rect_scale = Vector2( 0.8, 0.8 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="Scrap 4/Other Scrap Paper 4" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 217.0
+margin_top = 197.0
+margin_right = 602.0
+margin_bottom = 237.0
+rect_rotation = 174.06
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.716593, 0.366358, 0.980469, 1 )
+text = "T_T"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+

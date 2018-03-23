@@ -113,6 +113,7 @@ onready var ult_eyes = get_node(player_constants.ult_eyes_node_path)
 var number_indicator = preload("res://Scenes/Utils/Numbers/Number Indicator.tscn")
 onready var number_spawn_pos = $"Number Spawn Pos"
 
+onready var door_check_area = $DoorCheckArea
 onready var health_bar = $"Health Bar"
 onready var sprite = $Sprite
 
@@ -316,6 +317,15 @@ func check_combo_and_perform():
 	elif Input.is_action_pressed("player_attack"):
 		# Attack.
 		combo_handler.basic_attack()
+	elif Input.is_action_pressed("player_up"):
+		check_door_to_enter()
+
+func check_door_to_enter():
+	var areas = door_check_area.get_overlapping_areas()
+	for area in areas:
+		if area.is_in_group("door"):
+			area.get_node("../..").hero_enter(self)
+			return
 
 func gain_ult():
 	status.has_ult = true

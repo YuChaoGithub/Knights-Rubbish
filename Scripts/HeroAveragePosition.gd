@@ -37,11 +37,18 @@ func update_camera():
 	following_camera.check_camera_update(global_position.x, get_max_y())
 
 func get_max_y():
-	var max_y = -10000000000.0
+	var max_y = -10000000000
 	for character in characters:
 		max_y = max(max_y, character.global_position.y)
 
 	return max_y
+
+func get_min_x():
+	var min_x = 10000000000
+	for character in characters:
+		min_x = min(min_x, character.global_position.x)
+
+	return min_x
 
 # Returns true if a character is in range of a position.
 func in_range_of(pos, range_x, range_y):

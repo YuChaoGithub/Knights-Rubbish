@@ -144,9 +144,6 @@ func die():
 func healed(val):
     ec.healed(val)
 
-func healed_over_time(time_per_tick, total_ticks, heal_per_tick):
-    ec.healed_over_time(time_per_tick, total_ticks, heal_per_tick)
-
 func on_attack_hit(area):
     if area.is_in_group("hero"):
         var character = area.get_node("..")

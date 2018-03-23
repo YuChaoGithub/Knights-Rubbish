@@ -50,16 +50,19 @@ func actually_spawn():
     new_mob.global_position = global_position
 
     curr_count += 1
-    if curr_count == total_count:
+    if curr_count == total_count || stopped:
         new_mob.connect("defeated", self, "complete_spawning")
     else:
         new_mob.connect("defeated", self, "spawn_mob")
 
-    prev_mob = new_mob
+    prev_mob = weakref(new_mob)
 
 func complete_spawning():
     emit_signal("completed")
 
 func stop_further_spawning():
     stopped = true
-    prev_mob.connect("defeated", self, "complete_spawning")
+
+    var mob = prev_mob.get_ref()
+    if mob != null:
+        mob.connect("defeated", self, "complete_spawning")

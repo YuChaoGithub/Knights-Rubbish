@@ -619,7 +619,20 @@ Comment: Caught a cold, otitis externa, and existential crisis. Back on work now
 
 **Commit**
 
+[2018.03.22]
+* Decorated Laser Zone.
+* Completed image: Door.
+
+[2018.03.23]
+* Completed Door.
+* Designed UIs for Game Over and Menu.
+
 To Do List:
+* Game Over scene animations.
+* Game Over mechanics.
+* Scene switching mechanics.
+* Door picker for level 1.
+* Change the graphics of number indicators.
 (Decorations -> Dying mechanics)
 * Probably should let the camera update horizontally according to the player with the least x position.
 

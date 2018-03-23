@@ -3,13 +3,14 @@ extends Node2D
 export(int) var activate_range_x = 2000
 export(int) var activate_range_y = 2000
 
-const SPEED_Y = 125
-const SHOOT_DURATION = 2.0
+const ACCELERATION_Y = 1200
+const SHOOT_DURATION = 1.0
 const PAUSE_DURATION = 0.2
 const INVISIBLE_DURATION = 8.0
 const TO_SCALE = 0.25
 const SCALE_SMOOTH = 1.0
 
+var speed_y = 1200
 var start_travel = false
 var timer
 var activated = false
@@ -24,7 +25,10 @@ onready var char_average_pos = $"../../Character Average Position"
 
 func _process(delta):
 	if start_travel:
-		position.y -= SPEED_Y * delta
+		position.y -= speed_y * delta
+		speed_y -= ACCELERATION_Y * delta
+		if speed_y < 0:
+			speed_y = 0
 		scale = Vector2(1.0, 1.0) * lerp(scale.x, TO_SCALE, delta * SCALE_SMOOTH)
 	elif !activated && char_average_pos.in_range_of(global_position, activate_range_x, activate_range_y):
 		damage_area.set_collision_layer_bit(enemy_layer, true)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Scripts/HeroCommon.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Character Skills/KeshiaErasiaSkills.gd" type="Script" id=2]
@@ -9542,6 +9542,11 @@ tracks/15/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 1300, 750 )
 
+[sub_resource type="RectangleShape2D" id=21]
+
+custom_solver_bias = 0.0
+extents = Vector2( 70, 80 )
+
 [node name="Keshia Erasia" type="KinematicBody2D"]
 
 input_pickable = false
@@ -9900,6 +9905,8 @@ script = ExtResource( 21 )
 
 [node name="Keshia Ult" type="Node2D" parent="." index="7"]
 
+editor/display_folded = true
+
 [node name="Sprite" type="Sprite" parent="Keshia Ult" index="0"]
 
 self_modulate = Color( 1, 1, 1, 0 )
@@ -10036,6 +10043,24 @@ _sections_unfolded = [ "Collision" ]
 
 visible = false
 shape = SubResource( 20 )
+
+[node name="DoorCheckArea" type="Area2D" parent="." index="9"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+collision_mask = 32
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DoorCheckArea" index="0"]
+
+shape = SubResource( 21 )
 
 [connection signal="area_entered" from="Sprite/Animation/Body/Left Arm/Weapon/Basic Attack Hit Box" to="Combo Handler" method="on_basic_attack_hit"]
 
