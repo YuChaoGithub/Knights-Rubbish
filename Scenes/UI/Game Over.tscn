@@ -1,27 +1,497 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://Graphics/UI/Scrap 1.png" type="Texture" id=1]
-[ext_resource path="res://Fonts/Grafipaint.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Graphics/UI/Scrap 2.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/UI/Bar Frame 3 White.png" type="Texture" id=4]
-[ext_resource path="res://Scripts/UI/ButtonModulator.gd" type="Script" id=5]
-[ext_resource path="res://Fonts/edosz.tres" type="DynamicFont" id=6]
-[ext_resource path="res://Graphics/UI/Scrap 3.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/UI/Frame White.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/Scrap Paper.png" type="Texture" id=9]
-[ext_resource path="res://Graphics/UI/Scrap 4.png" type="Texture" id=10]
-[ext_resource path="res://Fonts/scratchl.tres" type="DynamicFont" id=11]
+[ext_resource path="res://Scripts/UI/GameOverScene.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/UI/Scrap 1.png" type="Texture" id=2]
+[ext_resource path="res://Fonts/Grafipaint.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Graphics/UI/Scrap 2.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/UI/Bar Frame 3 White.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/UI/ButtonModulator.gd" type="Script" id=6]
+[ext_resource path="res://Fonts/edosz.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Graphics/UI/Scrap 3.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/UI/Frame White.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/UI/MouseOverAnimation.gd" type="Script" id=10]
+[ext_resource path="res://Graphics/Scrap Paper.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/UI/Scrap 4.png" type="Texture" id=12]
+[ext_resource path="res://Fonts/scratchl.tres" type="DynamicFont" id=13]
 
-[node name="Game Over" type="CanvasLayer" index="0"]
+[sub_resource type="Animation" id=1]
 
-layer = 1
+resource_name = "Enter"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("UI:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -359, 10 ), Vector2( -62, 146 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "Enter"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("UI:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1182, 579 ), Vector2( 1050, 292 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "Enter"
+length = 0.4
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("UI:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1433, 117 ), Vector2( 1344, 116 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "Enter"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("UI:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 188, 222 ), Vector2( 313, 279 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "Enter"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect/Title Scrap Paper:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 301, -385 ), Vector2( 367, -56 ), Vector2( 365, -47 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect/Title Scrap Paper:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -3.00918, 3.14625, 6.93445 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect/Retry Scrap Paper:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 499, 762 ), Vector2( 485, 758 ), Vector2( 519, 504 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ColorRect/Retry Scrap Paper:rect_rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -4.44282, -4.44282, -4.44282 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ColorRect/Quit Scrap Paper:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -333, 612 ), Vector2( -333, 612 ), Vector2( -13, 551 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ColorRect/Quit Scrap Paper:rect_rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -16.1155, -16.1155, -16.1155 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Scrap 1:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -62, 164 ), Vector2( -62, 164 ), Vector2( 4, 180 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Scrap 1:rect_rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Scrap 2:rect_position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 411, 362 ), Vector2( 411, 362 ), Vector2( 399, 276 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Scrap 2:rect_rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Scrap 3:rect_position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 573, 138 ), Vector2( 573, 138 ), Vector2( 512, 140 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Scrap 3:rect_rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Scrap 4:rect_position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -153, -51 ), Vector2( -153, -51 ), Vector2( -81, -23 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Scrap 4:rect_rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("ColorRect:color")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+
+resource_name = "Quit"
+length = 0.2
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect/Title Scrap Paper:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 365, -47 ), Vector2( 301, -385 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect/Title Scrap Paper:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 6.93445, -3.00918 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect/Retry Scrap Paper:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 519, 504 ), Vector2( 499, 762 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ColorRect/Retry Scrap Paper:rect_rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -4.44282, -4.44282 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ColorRect/Quit Scrap Paper:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -13, 551 ), Vector2( -333, 612 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("ColorRect/Quit Scrap Paper:rect_rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -16.1155, -16.1155 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Scrap 1:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4, 180 ), Vector2( -62, 164 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Scrap 1:rect_rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Scrap 2:rect_position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 399, 276 ), Vector2( 411, 362 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Scrap 2:rect_rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Scrap 3:rect_position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 512, 140 ), Vector2( 573, 138 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Scrap 3:rect_rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Scrap 4:rect_position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -81, -23 ), Vector2( -153, -51 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Scrap 4:rect_rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("ColorRect:color")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/15/type = "method"
+tracks/15/path = NodePath(".")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[node name="Game Over" type="CanvasLayer"]
+
+pause_mode = 2
+layer = 2
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
 
+editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0.392157 )
 anchor_left = 0.0
 anchor_top = 0.0
@@ -34,28 +504,27 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0, 0, 0, 1 )
-_sections_unfolded = [ "Rect", "Visibility" ]
+color = Color( 0, 0, 0, 0 )
+_sections_unfolded = [ "Mouse", "Rect", "Visibility" ]
 
 [node name="Title Scrap Paper" type="TextureRect" parent="ColorRect" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 312.0
-margin_top = -60.0
-margin_right = 1522.0
-margin_bottom = 373.0
-rect_rotation = 6.24677
-rect_scale = Vector2( 0.7, 0.7 )
+margin_left = 301.0
+margin_top = -385.0
+margin_right = 1511.0
+margin_bottom = 48.0
+rect_rotation = -3.00918
+rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -65,19 +534,19 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 155.0
-margin_top = 146.0
-margin_right = 356.0
-margin_bottom = 180.0
-rect_scale = Vector2( 4.5, 4.5 )
+margin_left = 210.0
+margin_top = 175.0
+margin_right = 481.0
+margin_bottom = 209.0
+rect_scale = Vector2( 3, 3 )
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "NO!!! you failed!"
+text = "NO!!! you have failed!"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -90,18 +559,18 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -36.0
-margin_top = 524.0
-margin_right = 464.0
-margin_bottom = 863.0
+margin_left = -333.0
+margin_top = 612.0
+margin_right = 167.0
+margin_bottom = 951.0
 rect_rotation = -16.1155
-rect_scale = Vector2( 0.6, 0.6 )
+rect_scale = Vector2( 0.3, 0.3 )
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -128,8 +597,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
-script = ExtResource( 5 )
+texture_normal = ExtResource( 5 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Rect", "Textures", "Visibility" ]
 hover_color = Color( 1, 0, 0, 1 )
 press_color = Color( 0, 0, 0, 1 )
@@ -151,7 +620,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.611765, 0.611765, 0.611765, 1 )
 text = "I give up"
 percent_visible = 1.0
@@ -166,18 +635,18 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 511.0
-margin_top = 434.0
-margin_right = 1011.0
-margin_bottom = 773.0
+margin_left = 499.0
+margin_top = 762.0
+margin_right = 998.0
+margin_bottom = 1101.0
 rect_rotation = -4.44282
-rect_scale = Vector2( 1.1, 1.1 )
+rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -204,8 +673,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
-script = ExtResource( 5 )
+texture_normal = ExtResource( 9 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Rect", "Textures", "Visibility" ]
 hover_color = Color( 0.00561785, 0.417969, 0.176357, 1 )
 press_color = Color( 0, 0, 0, 1 )
@@ -227,7 +696,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.611765, 0.611765, 0.611765, 1 )
 text = "retry"
 percent_visible = 1.0
@@ -242,35 +711,40 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = -62.0
+margin_top = 164.0
+margin_right = -22.0
+margin_bottom = 204.0
+rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 10 )
 
-[node name="Other Scrap Paper 1" type="TextureRect" parent="Scrap 1" index="0"]
+[node name="UI" type="TextureRect" parent="Scrap 1" index="0"]
 
 editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -62.0
-margin_top = 146.0
-margin_right = 438.0
-margin_bottom = 336.0
+margin_left = -359.0
+margin_top = 10.0
+margin_right = 141.0
+margin_bottom = 200.0
 rect_rotation = 26.3724
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 11 )
 stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
 
-[node name="NO" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="0"]
+[node name="NO" type="Label" parent="Scrap 1/UI" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -286,7 +760,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 1, 0.491852, 0.293011, 1 )
 text = "NO!"
 percent_visible = 1.0
@@ -294,7 +768,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="NO2" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="1"]
+[node name="NO2" type="Label" parent="Scrap 1/UI" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -311,7 +785,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.898438, 0.327329, 0.103852, 1 )
 text = "NO!"
 percent_visible = 1.0
@@ -319,7 +793,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="NO11" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="2"]
+[node name="NO11" type="Label" parent="Scrap 1/UI" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -336,7 +810,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.558594, 0.227257, 0.0976038, 1 )
 text = "NO!"
 percent_visible = 1.0
@@ -344,7 +818,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="NO3" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="3"]
+[node name="NO3" type="Label" parent="Scrap 1/UI" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -361,7 +835,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.804688, 0.445539, 0.305003, 1 )
 text = "NO!"
 percent_visible = 1.0
@@ -369,7 +843,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="NO4" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="4"]
+[node name="NO4" type="Label" parent="Scrap 1/UI" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -386,7 +860,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.953125, 0.579289, 0.433006, 1 )
 text = "NO!"
 percent_visible = 1.0
@@ -394,7 +868,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="NO5" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="5"]
+[node name="NO5" type="Label" parent="Scrap 1/UI" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -411,7 +885,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.882812, 0.622582, 0.125777, 1 )
 text = "NO!"
 percent_visible = 1.0
@@ -419,7 +893,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="NO6" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="6"]
+[node name="NO6" type="Label" parent="Scrap 1/UI" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -436,7 +910,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.980469, 0.701026, 0.108062, 1 )
 text = "NO!"
 percent_visible = 1.0
@@ -444,7 +918,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="NO7" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="7"]
+[node name="NO7" type="Label" parent="Scrap 1/UI" index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -461,7 +935,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.871094, 0.421717, 0.245873, 1 )
 text = "NO!"
 percent_visible = 1.0
@@ -469,7 +943,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="NO8" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="8"]
+[node name="NO8" type="Label" parent="Scrap 1/UI" index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -486,7 +960,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.738281, 0.375963, 0.234186, 1 )
 text = "NO!"
 percent_visible = 1.0
@@ -494,7 +968,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="NO9" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="9"]
+[node name="NO9" type="Label" parent="Scrap 1/UI" index="9"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -511,7 +985,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.882812, 0.550182, 0.329868, 1 )
 text = "NO!"
 percent_visible = 1.0
@@ -519,7 +993,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="NO10" type="Label" parent="Scrap 1/Other Scrap Paper 1" index="10"]
+[node name="NO10" type="Label" parent="Scrap 1/UI" index="10"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -536,13 +1010,23 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 1, 0.491852, 0.293011, 1 )
 text = "NO!"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scrap 1" index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Enter = SubResource( 1 )
+blend_times = [  ]
 
 [node name="Scrap 2" type="Control" parent="." index="2"]
 
@@ -551,35 +1035,39 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 411.0
+margin_top = 362.0
+margin_right = 451.0
+margin_bottom = 402.0
+rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 10 )
 
-[node name="Other Scrap Paper 2" type="TextureRect" parent="Scrap 2" index="0"]
+[node name="UI" type="TextureRect" parent="Scrap 2" index="0"]
 
 editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1050.0
-margin_top = 292.0
-margin_right = 1550.0
-margin_bottom = 482.0
+margin_left = 1182.0
+margin_top = 579.0
+margin_right = 1682.0
+margin_bottom = 769.0
 rect_rotation = 63.5256
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 12 )
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="Scrap 2/Other Scrap Paper 2" index="0"]
+[node name="Label" type="Label" parent="Scrap 2/UI" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -596,13 +1084,23 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 11 )
+custom_fonts/font = ExtResource( 13 )
 custom_colors/font_color = Color( 0.133317, 0.581539, 0.71875, 1 )
 text = "WHYYYYYY"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scrap 2" index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Enter = SubResource( 2 )
+blend_times = [  ]
 
 [node name="Scrap 3" type="Control" parent="." index="3"]
 
@@ -611,35 +1109,39 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 573.0
+margin_top = 138.0
+margin_right = 613.0
+margin_bottom = 178.0
+rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 10 )
 
-[node name="Other Scrap Paper 3" type="TextureRect" parent="Scrap 3" index="0"]
+[node name="UI" type="TextureRect" parent="Scrap 3" index="0"]
 
 editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1344.0
-margin_top = 116.0
-margin_right = 1844.0
-margin_bottom = 405.0
+margin_left = 1433.0
+margin_top = 117.0
+margin_right = 1933.0
+margin_bottom = 406.0
 rect_rotation = 63.5256
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="Scrap 3/Other Scrap Paper 3" index="0"]
+[node name="Label" type="Label" parent="Scrap 3/UI" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -656,13 +1158,23 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.151378, 0.828125, 0.685374, 1 )
 text = ":("
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scrap 3" index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Enter = SubResource( 3 )
+blend_times = [  ]
 
 [node name="Scrap 4" type="Control" parent="." index="4"]
 
@@ -671,25 +1183,29 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = -153.0
+margin_top = -51.0
+margin_right = -113.0
+margin_bottom = -11.0
+rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+script = ExtResource( 10 )
 
-[node name="Other Scrap Paper 4" type="TextureRect" parent="Scrap 4" index="0"]
+[node name="UI" type="TextureRect" parent="Scrap 4" index="0"]
 
 editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 195.0
-margin_top = 221.0
-margin_right = 695.0
-margin_bottom = 560.0
+margin_left = 188.0
+margin_top = 222.0
+margin_right = 688.0
+margin_bottom = 561.0
 rect_rotation = 201.098
 rect_scale = Vector2( 0.8, 0.8 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -697,11 +1213,11 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="Label" type="Label" parent="Scrap 4/Other Scrap Paper 4" index="0"]
+[node name="Label" type="Label" parent="Scrap 4/UI" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -718,12 +1234,33 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.716593, 0.366358, 0.980469, 1 )
 text = "T_T"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scrap 4" index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Enter = SubResource( 4 )
+blend_times = [  ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+
+root_node = NodePath("..")
+autoplay = "Enter"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Enter = SubResource( 5 )
+anims/Quit = SubResource( 6 )
+blend_times = [  ]
 
 

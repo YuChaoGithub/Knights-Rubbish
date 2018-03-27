@@ -7,6 +7,10 @@ var characters = []
 # The total numbers of characters.
 var character_count = 0
 
+var dead_character_count = 0
+
+var game_over_scene = preload("res://Scenes/UI/Game Over.tscn")
+
 onready var following_camera = $"../Following Camera"
 
 # Add a new character position to track. Also updates the following camera.
@@ -57,3 +61,10 @@ func in_range_of(pos, range_x, range_y):
 			return true
 	
 	return false
+
+func character_dead():
+	dead_character_count += 1
+
+	if dead_character_count == character_count:
+		var ui = game_over_scene.instance()
+		add_child(ui)

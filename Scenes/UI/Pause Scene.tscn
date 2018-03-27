@@ -1,0 +1,748 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Scripts/UI/PauseScene.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/UI/Scrap 1.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/UI/Hands/Grab 2.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/Grafipaint.tres" type="DynamicFont" id=4]
+[ext_resource path="res://Graphics/UI/Scrap 3.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/UI/Hands/Pinch.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/UI/Frame White.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/UI/ButtonModulator.gd" type="Script" id=8]
+[ext_resource path="res://Fonts/scratchl.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Graphics/UI/Scrap 4.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/UI/Bar Fram 1 White.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/UI/Hands/Grab 3.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/UI/Scrap 2.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/UI/Bar Frame 3 White.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Scrap Paper.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/UI/Cog.png" type="Texture" id=16]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "Enter"
+length = 1.2
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Retry Scrap Paper:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1070, 760 ), Vector2( 1070, 760 ), Vector2( 1069, 579 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Retry Scrap Paper:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Settings Scrap Paper:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1322, 33 ), Vector2( 1322, 33 ), Vector2( 1203, 28 ), Vector2( 1203, 28 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Settings Scrap Paper:rect_rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ -0.859245, -0.859245, -0.859245, -0.859245 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Title Scrap Paper:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4, 0.5, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 420, -218 ), Vector2( 397, 9 ), Vector2( 397, 9 ), Vector2( 393, 15 ), Vector2( 393, 15 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Title Scrap Paper:rect_rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.3, 0.4, 0.5, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.407227, 1.84885, 1.84885, 8.3341, 8.3341 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Resume Scrap Paper:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.7, 0.9, 1, 1.1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 428, 742 ), Vector2( 428, 742 ), Vector2( 437, 482 ), Vector2( 437, 482 ), Vector2( 437, 482 ), Vector2( 437, 482 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Resume Scrap Paper:rect_rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.7, 0.9, 1, 1.1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, -2.72205, 0.240081, 0.240081 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Quit Scrap Paper:rect_position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 29, 737 ), Vector2( 29, 737 ), Vector2( 26, 558 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Quit Scrap Paper:rect_rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "Quit"
+length = 0.2
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Retry Scrap Paper:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1069, 579 ), Vector2( 1070, 760 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Retry Scrap Paper:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Settings Scrap Paper:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1203, 28 ), Vector2( 1322, 33 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Settings Scrap Paper:rect_rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -0.859245, -0.859245 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Title Scrap Paper:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 393, 15 ), Vector2( 420, -218 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Title Scrap Paper:rect_rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 8.3341, 0.407227 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Resume Scrap Paper:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 437, 482 ), Vector2( 428, 742 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Resume Scrap Paper:rect_rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.240081, 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Quit Scrap Paper:rect_position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 26, 558 ), Vector2( 29, 737 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Quit Scrap Paper:rect_rotation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/10/type = "method"
+tracks/10/path = NodePath("..")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[node name="Pause Scene" type="CanvasLayer"]
+
+pause_mode = 2
+layer = 2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 0.686275 )
+_sections_unfolded = [ "Mouse", "Rect", "Visibility" ]
+
+[node name="Title Scrap Paper" type="TextureRect" parent="ColorRect" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 393.0
+margin_top = 15.0
+margin_right = 1603.0
+margin_bottom = 448.0
+rect_rotation = 8.3341
+rect_scale = Vector2( 0.4, 0.4 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Hand" type="TextureRect" parent="ColorRect/Title Scrap Paper" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 517.0
+margin_top = 500.0
+margin_right = 1017.0
+margin_bottom = 1100.0
+rect_rotation = 173.819
+rect_scale = Vector2( 1.3, 1.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="Label" type="Label" parent="ColorRect/Title Scrap Paper" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 460.0
+margin_top = 181.0
+margin_right = 569.0
+margin_bottom = 221.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "PAUSED"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Quit Scrap Paper" type="TextureRect" parent="ColorRect" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 26.0
+margin_top = 558.0
+margin_right = 526.0
+margin_bottom = 897.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 5 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Hand" type="TextureRect" parent="ColorRect/Quit Scrap Paper" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 215.0
+margin_top = 275.0
+margin_right = 359.0
+margin_bottom = 425.0
+rect_rotation = 113.655
+rect_scale = Vector2( 1.2, 1.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="TextureButton" type="TextureButton" parent="ColorRect/Quit Scrap Paper" index="1"]
+
+modulate = Color( 1, 0.430108, 0.430108, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 23.0
+margin_top = 79.0
+margin_right = 412.0
+margin_bottom = 367.0
+rect_rotation = -12.783
+rect_scale = Vector2( 0.6, 0.6 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 7 )
+script = ExtResource( 8 )
+_sections_unfolded = [ "Rect", "Textures", "Visibility" ]
+hover_color = Color( 1, 0, 0, 1 )
+press_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="ColorRect/Quit Scrap Paper/TextureButton" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 45.0
+margin_top = 71.0
+margin_right = 103.0
+margin_bottom = 111.0
+rect_scale = Vector2( 5, 5 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0.613281, 0.613281, 0.613281, 1 )
+text = "Quit"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Resume Scrap Paper" type="TextureRect" parent="ColorRect" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 437.0
+margin_top = 482.0
+margin_right = 937.0
+margin_bottom = 821.0
+rect_rotation = 0.240081
+rect_scale = Vector2( 0.8, 0.8 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 10 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="TextureButton" type="TextureButton" parent="ColorRect/Resume Scrap Paper" index="0"]
+
+modulate = Color( 0.536962, 1, 0.44086, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 55.0
+margin_top = 30.0
+margin_right = 713.0
+margin_bottom = 230.0
+rect_scale = Vector2( 0.6, 0.6 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 11 )
+script = ExtResource( 8 )
+_sections_unfolded = [ "Rect", "Textures", "Visibility" ]
+hover_color = Color( 0.0544773, 0.636719, 0.00513482, 1 )
+press_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="ColorRect/Resume Scrap Paper/TextureButton" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 26.0
+margin_top = 35.0
+margin_right = 176.0
+margin_bottom = 75.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 0.597656, 0.597656, 0.597656, 1 )
+text = "Resume"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Grow Direction", "Mouse", "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Hand" type="TextureRect" parent="ColorRect/Resume Scrap Paper" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 115.0
+margin_top = 68.0
+margin_right = 615.0
+margin_bottom = 668.0
+rect_rotation = -0.130023
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 12 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="Retry Scrap Paper" type="TextureRect" parent="ColorRect" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1069.0
+margin_top = 579.0
+margin_right = 1569.0
+margin_bottom = 918.0
+rect_scale = Vector2( 0.35, 0.35 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 13 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Hand" type="TextureRect" parent="ColorRect/Retry Scrap Paper" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 400.0
+margin_top = 238.0
+margin_right = 544.0
+margin_bottom = 388.0
+rect_rotation = 89.6738
+rect_scale = Vector2( 1.6, 1.6 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 6 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="TextureButton" type="TextureButton" parent="ColorRect/Retry Scrap Paper" index="1"]
+
+modulate = Color( 0.456989, 0.847278, 1, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 42.0
+margin_top = 51.0
+margin_right = 424.0
+margin_bottom = 251.0
+rect_scale = Vector2( 1.1, 1.1 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 14 )
+script = ExtResource( 8 )
+_sections_unfolded = [ "Rect", "Textures", "Visibility" ]
+hover_color = Color( 0, 0.34375, 1, 1 )
+press_color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="ColorRect/Retry Scrap Paper/TextureButton" index="0"]
+
+modulate = Color( 0.613281, 0.613281, 0.613281, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 56.0
+margin_top = 44.0
+margin_right = 134.0
+margin_bottom = 84.0
+rect_rotation = -6.73962
+rect_scale = Vector2( 3.4, 3.4 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 9 )
+text = "Retry"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Settings Scrap Paper" type="TextureRect" parent="ColorRect" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1203.0
+margin_top = 28.0
+margin_right = 2484.0
+margin_bottom = 748.0
+rect_rotation = -0.859245
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 15 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="TextureButton" type="TextureButton" parent="ColorRect/Settings Scrap Paper" index="0"]
+
+modulate = Color( 0.785156, 0.785156, 0.785156, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 24.0
+margin_top = 32.0
+margin_right = 248.0
+margin_bottom = 256.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 16 )
+script = ExtResource( 8 )
+_sections_unfolded = [ "Rect", "Textures", "Visibility" ]
+hover_color = Color( 0.292969, 0.292969, 0.292969, 1 )
+press_color = Color( 0, 0, 0, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" index="5"]
+
+root_node = NodePath("..")
+autoplay = "Enter"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Enter = SubResource( 1 )
+anims/Quit = SubResource( 2 )
+blend_times = [  ]
+_sections_unfolded = [ "Pause" ]
+
+[node name="TextureRect" type="TextureRect" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch_mode = 0
+
+[connection signal="pressed" from="ColorRect/Quit Scrap Paper/TextureButton" to="." method="quit_pressed"]
+
+[connection signal="pressed" from="ColorRect/Resume Scrap Paper/TextureButton" to="." method="resume_pressed"]
+
+[connection signal="pressed" from="ColorRect/Retry Scrap Paper/TextureButton" to="." method="retry_pressed"]
+
+[connection signal="pressed" from="ColorRect/Settings Scrap Paper/TextureButton" to="." method="settings_pressed"]
+
+

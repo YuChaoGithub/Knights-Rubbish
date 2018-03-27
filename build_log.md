@@ -627,12 +627,20 @@ Comment: Caught a cold, otitis externa, and existential crisis. Back on work now
 * Completed Door.
 * Designed UIs for Game Over and Menu.
 
+**Commit**
+
+[2018.03.26]
+* Completed Game Over animations.
+* Completed single player Game Over mechanics.
+
+[2018.03.27]
+* Added a Pause Button to the game scene.
+* Completed Pause Scene, Confirm Panel. (Except the functionality of Quit and Retry buttons).
+
 To Do List:
-* Game Over scene animations.
-* Game Over mechanics.
 * Scene switching mechanics.
+* Multiplayer game over mechanics (resurrection).
 * Door picker for level 1.
-* Change the graphics of number indicators.
 (Decorations -> Dying mechanics)
 * Probably should let the camera update horizontally according to the player with the least x position.
 

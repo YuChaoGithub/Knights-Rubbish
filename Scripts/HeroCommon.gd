@@ -14,6 +14,7 @@ const TIME_TO_IDLE_ANIMATION = 5
 const GRABBING_DURATION = 1.0
 const DROPPING_DURATION = 3.5
 const FALL_OFF_DAMAGE = 100
+const DIE_ANIMATION_DURATION = 2.0
 
 # The actual damage taken will be 20% less or more randomly.
 const DAMAGE_TAKEN_RAND_RATIO = 0.2
@@ -70,7 +71,8 @@ var status = {
 	confused = false,
 	has_ult = false,
 	fallen_off = false,
-	cc_immune = false
+	cc_immune = false,
+	dead = false
 }
 
 var countdown_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
@@ -79,9 +81,11 @@ var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 # Active timers for power ups.
 # For cancelling timers for conflicting power ups/state changes.
 # The data should be saved as dictionaries {tag:String -> CountdownTimer}.
+# tags: "status", ignite, defense_change, damage_change, giant_dwarf_potion, confused.
 var active_timers = {}
 
 var speed_timers = {} # Label -> {timer, multiplier}
+var die_timer
 var speed_timer_label = 0
 var slowed_count = 0
 var speeded_count = 0
@@ -245,7 +249,7 @@ func update_movement(delta):
 	global_position = camera_clamped_pos
 
 	# Play the movement animation if no skill animation is currently being played.
-	if status.animate_movement && animation_key != null:
+	if status.animate_movement && animation_key != null && !status.dead:
 
 		# Play idle animation if the character waits for too long.
 		if animation_key == "Still" && OS.get_unix_time() - idle_timestamp >= TIME_TO_IDLE_ANIMATION:
@@ -260,7 +264,6 @@ func falls_off():
 	following_camera.cam_lock_semaphore += 1
 
 	combo_handler.cancel_skills_when_falling_off()
-	damaged(FALL_OFF_DAMAGE, false)
 
 	visible = false
 	following_camera.instance_bottom_grab(global_position.x)
@@ -281,6 +284,9 @@ func show_fist():
 func drop_from_fist():
 	status.fallen_off = false
 
+	if !status.dead:
+		damaged(FALL_OFF_DAMAGE, false)
+
 	velocity = Vector2(0.0, 0.0)
 
 	following_camera.cam_lock_semaphore -= 1
@@ -299,6 +305,9 @@ func reset_z_index(original_z):
 
 # Perform combo by its function name.
 func check_combo_and_perform():
+	if status.dead && !status.can_cast_skill:
+		return
+
 	if Input.is_action_pressed("player_ult"):
 		# Ult.
 		combo_handler.ult()
@@ -496,7 +505,7 @@ func speed_change_recover(label):
 
 func stunned(duration):
 	# Can't be stunned while invincible.
-	if status.invincible || status.cc_immune:
+	if status.invincible || status.cc_immune || status.dead:
 		display_immune_text()
 		return
 
@@ -528,7 +537,7 @@ func stunned(duration):
 	play_animation("Stunned")
 
 func confused(duration):
-	if status.invincible || status.cc_immune:
+	if status.invincible || status.cc_immune || status.dead:
 		display_immune_text()
 		return
 
@@ -546,7 +555,7 @@ func cancel_confused():
 	unregister_timer("confused")
 
 func knocked_back(vel_x, vel_y, x_fade_rate):
-	if status.invincible || status.cc_immune:
+	if status.invincible || status.cc_immune || status.dead:
 		return
 
 	velocity_replacement_y = vel_y * self_knock_back_modifier
@@ -554,6 +563,9 @@ func knocked_back(vel_x, vel_y, x_fade_rate):
 	additional_speed_x_fading_rate = x_fade_rate * self_knock_back_modifier
 
 func damaged(val, randomness = true):
+	if status.dead:
+		return
+
 	if status.invincible:
 		display_immune_text()
 		return
@@ -585,6 +597,9 @@ func recover_modulate(original_modulate):
 	hurt_modulate_timer = null
 
 func healed(val):
+	if status.dead:
+		return
+
 	health_system.change_health_by(val)
 	health_bar.set_health_bar(health_system.health)
 
@@ -593,4 +608,7 @@ func healed(val):
 	num.initialize(val, HEAL_NUMBER_COLOR, number_spawn_pos, self)
 
 func die():
-	print("I died. QQ")
+	status.dead = true
+	play_animation("Die")
+	set_status("can_move", false, DIE_ANIMATION_DURATION)
+	die_timer = countdown_timer.new(DIE_ANIMATION_DURATION, char_average_pos, "character_dead")

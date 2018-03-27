@@ -1,12 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Graphics/Numbers/five inner.png" type="Texture" id=1]
 [ext_resource path="res://Graphics/Numbers/five frame.png" type="Texture" id=2]
 
 [node name="Number 5" type="Sprite"]
 
+z_index = 5
 texture = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
 
-[node name="Frame" type="Sprite" parent="."]
+[node name="Frame" type="Sprite" parent="." index="0"]
 
 texture = ExtResource( 2 )
+
+
