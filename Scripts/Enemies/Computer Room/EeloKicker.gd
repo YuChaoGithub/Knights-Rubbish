@@ -86,7 +86,7 @@ func roam_randomly(delta):
 
 	ec.perform_random_movement(delta)
 
-	for character in ec.char_average_pos.characters:
+	for character in ec.hero_average_pos.characters:
 		if abs(character.global_position.x - global_position.x) <= CHASE_RANGE:
 			attack_target = character
 			ec.change_status(MOVE_TO_CHAR)

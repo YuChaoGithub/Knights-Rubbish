@@ -11,7 +11,7 @@ var dead_character_count = 0
 
 var game_over_scene = preload("res://Scenes/UI/Game Over.tscn")
 
-onready var following_camera = $"../Following Camera"
+onready var following_camera = $"../FollowingCamera"
 
 # Add a new character position to track. Also updates the following camera.
 func add_character(pos):
@@ -38,7 +38,7 @@ func update_pos(original_pos, new_pos):
 
 # Update the following camera according to its position.
 func update_camera():
-	following_camera.check_camera_update(global_position.x, get_max_y())
+	following_camera.check_camera_update(get_min_x(), get_max_y())
 
 func get_max_y():
 	var max_y = -10000000000

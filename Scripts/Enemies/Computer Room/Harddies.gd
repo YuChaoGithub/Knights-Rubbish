@@ -98,7 +98,7 @@ func movement_ended():
 	ec.change_status(TOSS_ANIM)
 
 func detect_and_face_the_farthest_target():
-	attack_target = ec.target_detect.get_farthest(self, ec.char_average_pos.characters)
+	attack_target = ec.target_detect.get_farthest(self, ec.hero_average_pos.characters)
 	facing = -1 if attack_target.global_position.x < global_position.x else 1
 	ec.turn_sprites_x(facing)
 

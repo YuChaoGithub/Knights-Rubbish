@@ -112,7 +112,7 @@ func activate():
 	set_process(true)
 	ec.change_status(RNG_IDLE)
 
-	eyed_character = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
+	eyed_character = ec.target_detect.get_nearest(self, ec.hero_average_pos.characters)
 
 func _process(delta):
 	if ec.not_hurt_dying_stunned():

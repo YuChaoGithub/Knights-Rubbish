@@ -21,7 +21,7 @@ func retry_pressed():
 	add_child(ui)
 
 func retry_confirmed():
-	# TODO: Reload current level.
+	get_node("/root/LoadingScene").reload_curr_scene()
 	play_quit_animation()
 
 func quit_pressed():

@@ -96,11 +96,11 @@ var top_fist = null
 # Child nodes.
 onready var combo_handler = $"Combo Handler"
 
-# Character Average Position (used to control the following camera.)
-onready var char_average_pos = $"../Character Average Position"
+# Used to control the following camera.
+onready var hero_average_pos = $"../HeroAveragePos"
 
 # Camera. For clamping within view bounds.
-onready var following_camera = $"../Following Camera"
+onready var following_camera = $"../FollowingCamera"
 
 # Character stats.
 onready var player_constants = load(player_constants_filepath)
@@ -147,9 +147,9 @@ func _ready():
 	# Initialize timestamp.
 	idle_timestamp = OS.get_unix_time()
 
-	# Register itself to character average position.
-	char_average_pos.characters.push_back(self)
-	char_average_pos.add_character(global_position)
+	# Register itself to hero average position.
+	hero_average_pos.characters.push_back(self)
+	hero_average_pos.add_character(global_position)
 
 	# Health bar.
 	health_bar.initialize(player_constants.full_health, avatar_texture)
@@ -198,7 +198,7 @@ func update_movement(delta):
 			top_fist.perform_movement(horizontal_movement, delta)
 
 			var final_pos = top_fist.get_drop_pos()
-			char_average_pos.update_pos(global_position, final_pos)
+			hero_average_pos.update_pos(global_position, final_pos)
 			global_position = final_pos
 			return
  
@@ -242,8 +242,8 @@ func update_movement(delta):
 	if !status.fallen_off && camera_clamped_pos.y < global_position.y:
 		falls_off()
 		
-	# Update Character Average Position (so that the camera is updated).
-	char_average_pos.update_pos(original_position, camera_clamped_pos)
+	# Update Hero Average Position so that the camera is updated.
+	hero_average_pos.update_pos(original_position, camera_clamped_pos)
 
 	# Update the position of the character.
 	global_position = camera_clamped_pos
@@ -305,7 +305,7 @@ func reset_z_index(original_z):
 
 # Perform combo by its function name.
 func check_combo_and_perform():
-	if status.dead && !status.can_cast_skill:
+	if status.dead:
 		return
 
 	if Input.is_action_pressed("player_ult"):
@@ -611,4 +611,4 @@ func die():
 	status.dead = true
 	play_animation("Die")
 	set_status("can_move", false, DIE_ANIMATION_DURATION)
-	die_timer = countdown_timer.new(DIE_ANIMATION_DURATION, char_average_pos, "character_dead")
+	die_timer = countdown_timer.new(DIE_ANIMATION_DURATION, hero_average_pos, "character_dead")

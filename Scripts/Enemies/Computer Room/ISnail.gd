@@ -79,7 +79,7 @@ func movement_ended():
     ec.change_status(SPIT)
 
 func face_nearest_target():
-    var target = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
+    var target = ec.target_detect.get_nearest(self, ec.hero_average_pos.characters)
     facing = sign(target.global_position.x - global_position.x)
     ec.turn_sprites_x(facing)
 

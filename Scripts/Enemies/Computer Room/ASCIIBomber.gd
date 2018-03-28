@@ -73,7 +73,7 @@ func movement_ended():
 
 func play_throw_anim():
 	# Face the nearest character.
-	var target_pos = ec.target_detect.get_nearest(self, ec.char_average_pos.characters).global_position
+	var target_pos = ec.target_detect.get_nearest(self, ec.hero_average_pos.characters).global_position
 	facing = sign(target_pos.x - global_position.x)
 	ec.turn_sprites_x(facing)
 

@@ -21,7 +21,7 @@ var ball = preload("res://Scenes/Power Ups/Traveling Ult Ball.tscn")
 onready var enemy_layer = ProjectSettings.get_setting("layer_names/2d_physics/enemy")
 onready var damage_area = $"Damage Area/Damage Area"
 onready var spinner = $Spinner
-onready var char_average_pos = $"../../Character Average Position"
+onready var hero_average_pos = $"../../HeroAveragePos"
 
 func _process(delta):
 	if start_travel:
@@ -30,7 +30,7 @@ func _process(delta):
 		if speed_y < 0:
 			speed_y = 0
 		scale = Vector2(1.0, 1.0) * lerp(scale.x, TO_SCALE, delta * SCALE_SMOOTH)
-	elif !activated && char_average_pos.in_range_of(global_position, activate_range_x, activate_range_y):
+	elif !activated && hero_average_pos.in_range_of(global_position, activate_range_x, activate_range_y):
 		damage_area.set_collision_layer_bit(enemy_layer, true)
 		$Particles2D.visible = true
 		activated = true
@@ -52,7 +52,7 @@ func spawn_ball_to_characters():
 	spinner.shoot = true
 	$Particles2D.visible = false
 
-	for character in char_average_pos.characters:
+	for character in hero_average_pos.characters:
 		var new_ball = ball.instance()
 		get_node("..").add_child(new_ball)
 		new_ball.global_position = global_position

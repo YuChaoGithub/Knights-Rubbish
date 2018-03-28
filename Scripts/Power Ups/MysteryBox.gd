@@ -22,7 +22,7 @@ var activated = false
 
 onready var enemy_layer = ProjectSettings.get_setting("layer_names/2d_physics/enemy")
 onready var damage_area = $"Animation/Damage Area"
-onready var char_average_pos = $"../../Character Average Position"
+onready var hero_average_pos = $"../../HeroAveragePos"
 onready var spawn_pos = $"Spawn Pos"
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
 onready var animator = $"Animation/AnimationPlayer"
@@ -42,7 +42,7 @@ func _ready():
 func _process(delta):
 	if activated:
 		gravity_movement.move(delta)
-	elif char_average_pos.in_range_of(global_position, activate_range_x, activate_range_y):
+	elif hero_average_pos.in_range_of(global_position, activate_range_x, activate_range_y):
 		activated = true
 		damage_area.set_collision_layer_bit(enemy_layer, true)
 

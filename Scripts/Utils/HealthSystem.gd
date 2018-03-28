@@ -2,8 +2,6 @@
 var health
 var full_health
 var parent_node
-var dot_timer = null
-var hot_timer = null
 
 func _init(parent_node, full_health):
     self.parent_node = parent_node
@@ -16,9 +14,6 @@ func change_health_by(val):
 
     if health == 0:
         parent_node.call("die")
-
-    # DEBUG
-    print(str(parent_node), " Health Now: ", health)
 
 func is_full_health():
     return health == full_health

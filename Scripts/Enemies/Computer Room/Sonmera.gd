@@ -28,7 +28,7 @@ var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 
 onready var animator = $"Animation/AnimationPlayer"
 onready var flashlight_animator = $"Flashlight/AnimationPlayer"
-onready var char_average_pos = $"../../../../Character Average Position"
+onready var hero_average_pos = $"../../../../HeroAveragePos"
 
 func _ready():
 	animator.play("Still")
@@ -53,7 +53,7 @@ func change_status(to_status):
 		status_timer = null
 
 func check_nearest_char():
-	if char_average_pos.global_position.distance_squared_to(global_position) <= activate_range_x * activate_range_x:
+	if hero_average_pos.global_position.distance_squared_to(global_position) <= activate_range_x * activate_range_x:
 		change_status(WAIT)
 
 func wait_for_interval():

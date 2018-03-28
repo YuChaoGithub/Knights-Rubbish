@@ -88,7 +88,7 @@ func change_status(to_status):
 
 func search_for_target():
 	# Find the farthest character as its attacking target.
-	attack_target = ec.target_detect.get_farthest(self, ec.char_average_pos.characters)
+	attack_target = ec.target_detect.get_farthest(self, ec.hero_average_pos.characters)
 
 func move_horizontally_to_target(delta):
 	ec.play_animation("Swing")

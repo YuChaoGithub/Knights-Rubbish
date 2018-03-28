@@ -11,7 +11,6 @@ const BASIC_ATTACK_KNOCK_BACK_FADE_RATE = 600
 
 const BASIC_SKILL_HOP_DURATION = 0.6
 const BASIC_SKILL_LAND_DURATION = 0.25
-const BASIC_SKILL_HIT_BOX_DURATION = 0.1
 const BASIC_SKILL_COOLDOWN = 0.1
 const BASIC_SKILL_DAMAGE_MIN = 10
 const BASIC_SKILL_DAMAGE_MAX = 15
@@ -99,7 +98,7 @@ func reset_up_skill_available():
 # Basic Attack: Wield pencil, attacks the enemies in the front.
 # ============
 func basic_attack():
-	if character.status.can_move:
+	if character.status.can_move && character.status.can_cast_skill:
 		# Play animation.
 		character.play_animation("Basic Attack")
 
@@ -125,7 +124,7 @@ func on_basic_attack_hit(area):
 		# Damage the enemy.
 		var enemy_node = area.get_node("../..")
 		var damage = rng.randi_range(BASIC_ATTACK_DAMAGE_MIN, BASIC_ATTACK_DAMAGE_MAX)
-		enemy_node.damaged(damage * character.damage_modifier)
+		enemy_node.damaged(int(damage * character.damage_modifier))
 		enemy_node.knocked_back(sign(enemy_node.global_position.x - global_position.x) * BASIC_ATTACK_KNOCK_BACK_VEL_X * character.enemy_knock_back_modifier,-BASIC_ATTACK_KNOCK_BACK_VEL_Y * character.enemy_knock_back_modifier, BASIC_ATTACK_KNOCK_BACK_FADE_RATE * character.enemy_knock_back_modifier)
 
 # ===========
@@ -135,7 +134,7 @@ func on_basic_attack_hit(area):
 #           Landing animation (Can't move, perform attack).
 # ===========
 func basic_skill():
-	if character.status.can_move:
+	if character.status.can_move && character.status.can_cast_skill:
 		# Hopping animation.
 		character.play_animation("Basic Skill")
 
@@ -177,7 +176,7 @@ func on_basic_skill_hit(area):
 	if area.is_in_group("enemy"):
 		var enemy = area.get_node("../..")
 		var damage = rng.randi_range(BASIC_SKILL_DAMAGE_MIN, BASIC_SKILL_DAMAGE_MAX)
-		enemy.damaged(damage * character.damage_modifier)
+		enemy.damaged(int(damage * character.damage_modifier))
 		enemy.stunned(BASIC_SKILL_STUN_DURATION)
 		enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * BASIC_SKILL_KNOCK_BACK_VEL_X * character.enemy_knock_back_modifier,-BASIC_SKILL_KNOCK_BACK_VEL_Y * character.enemy_knock_back_modifier, BASIC_SKILL_KNOCK_BACK_FADE_RATE * character.enemy_knock_back_modifier)		
 
@@ -185,7 +184,7 @@ func on_basic_skill_hit(area):
 # Horizontal Skill: Short range poke. (toss the pencil).
 # ================
 func horizontal_skill(side):
-	if character.status.can_move:
+	if character.status.can_move && character.status.can_cast_skill:
 		# Make the character face left.
 		character.change_sprite_facing(side)
 
@@ -219,7 +218,7 @@ func horizontal_skill_toss(side):
 # Up Skill: Poke the pencil up and jump. (Refresh cooldown when landed on ground.)
 # ========
 func up_skill():
-	if up_skill_available and character.status.can_move:
+	if up_skill_available && character.status.can_move && character.status.can_cast_skill:
 		# Play animation.
 		character.play_animation("Up Skill")
 
@@ -256,7 +255,7 @@ func on_up_skill_hit(area):
 		if !(area in up_skill_targets):
 			var damage = rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX)
 			var enemy = area.get_node("../..")
-			enemy.damaged(damage * character.damage_modifier)
+			enemy.damaged(int(damage * character.damage_modifier))
 			enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * UP_SKILL_KNOCK_BACK_VEL_X * character.enemy_knock_back_modifier,-UP_SKILL_KNOCK_BACK_VEL_Y * character.enemy_knock_back_modifier, BASIC_ATTACK_KNOCK_BACK_FADE_RATE * character.enemy_knock_back_modifier)
 			up_skill_targets.push_back(area)
 	
@@ -264,7 +263,7 @@ func on_up_skill_hit(area):
 # Down Skill: Petrify himself, immobile but invicible. Press skill/attack/jump key to resume from petrification.
 # ==========
 func down_skill():
-	if character.status.can_move:
+	if character.status.can_move && character.status.can_cast_skill:
 		# Play animation.
 		character.play_animation("Down Skill")
 
@@ -306,7 +305,7 @@ func reset_status_from_down_skill():
 	down_skill_timer = null
 	
 func ult():
-	if character.status.can_move && character.status.has_ult:
+	if character.status.can_move && character.status.has_ult && character.status.can_cast_skill:
 		character.status.has_ult = false
 
 		character.set_status("can_move", false, ULT_TOTAL_DURATION)

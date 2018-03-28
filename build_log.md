@@ -637,28 +637,36 @@ Comment: Caught a cold, otitis externa, and existential crisis. Back on work now
 * Added a Pause Button to the game scene.
 * Completed Pause Scene, Confirm Panel. (Except the functionality of Quit and Retry buttons).
 
+**Commit**
+
+[2018.03.28]
+* Completed Loading Scene.
+* Completed Scene switching singleton.
+* Now the horizontal-update of camera will be triggered by the player with the least x position.
+* Naming changes: Character Average Position -> HeroAveragePos. Following Camera -> FollowingCamera. Later on, all the scene names should apply camel casing.
+* Started designing Door picker for level 1. (Level 1-0)
+* Updated Prototype Stages and To Do Lists.
+
 To Do List:
-* Scene switching mechanics.
-* Multiplayer game over mechanics (resurrection).
+(Branch testing: Combo vs. dedicated skill button (q: ult. w: up skill. s: basic attack. a, d: horizontal skill. down: down skill. up: jump))
 * Door picker for level 1.
-(Decorations -> Dying mechanics)
-* Probably should let the camera update horizontally according to the player with the least x position.
+* "Quit" option in Game Over Scene and Pause Scene.
+* Implement Wendy Vista.
+* Multiplayer game over mechanics (resurrection).
+* Show status, power up effects in number indicator.
+* Drink Potion animation.
 
 Planned Prototype Stages:
-[Ver 0.1] First level completed. (Est. May 2018)
-[Ver 0.1.1] Second character (Wendy Vista) completed.
+[Ver 0.1] First level completed. (Est. June 2018)
 [Ver 0.2] Main UI completed.
 
 Polishing:
 * [UI] A "GO" sign when the right camera margin is changing.
-* [Effect] Attack effects.
-* [Effect] Ult Stone particles.
-* [Animation] Parachute on potions before landing.
+* [Effect] Attack effects (particles).
 * [Animation] Radiogugu watch out skill blinks blue.
 * [Script] Slow down walking animation while slowed.
 * [Effect] Jumping dust for characters.
-* [Animation] Drink potion animation.
 * [Script] Status icons showed in HUD. Blinking when about to vanish.
 * [Script] Adjust damage according to player numbers.
-* [Graphics] Dark level: wears mining hat.
+* [Graphics] Dark level: wears mining hat (or simply a light on a stick).
 * [Easter Egg] Phone screen showing "Tall as the Sky" and "kQq".

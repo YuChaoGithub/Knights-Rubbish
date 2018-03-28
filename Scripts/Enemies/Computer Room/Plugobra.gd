@@ -79,7 +79,7 @@ func shoot_laser():
 	ec.play_animation("Still")
 	ec.change_status(NONE)
 
-	var attack_target = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
+	var attack_target = ec.target_detect.get_nearest(self, ec.hero_average_pos.characters)
 	var left_from = laser_pos_left.global_position - global_position
 	var right_from = laser_pos_right.global_position - global_position
 	var to = left_from + attack_target.global_position - laser_pos_left.global_position

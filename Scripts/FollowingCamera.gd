@@ -50,10 +50,10 @@ func _ready():
 	if !Engine.editor_hint:
 		# Initialize the zooming of the viewport.
 		var canvas_transform = get_viewport().canvas_transform
-		canvas_transform.x /= ZOOM_FACTOR
-		canvas_transform.y /= ZOOM_FACTOR
+		canvas_transform.x = Vector2(1, 0) / ZOOM_FACTOR
+		canvas_transform.y = Vector2(0, 1) / ZOOM_FACTOR
 		get_viewport().canvas_transform = canvas_transform
-		
+				
 		set_process(true)
 	
 func _process(delta):

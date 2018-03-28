@@ -86,7 +86,7 @@ func apply_movement(delta):
 
 	if attack_target == null:
 		ec.straight_line_movement.dx = facing * SPEED_X
-		attack_target = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
+		attack_target = ec.target_detect.get_nearest(self, ec.hero_average_pos.characters)
 
 	var target_pos = attack_target.global_position
 

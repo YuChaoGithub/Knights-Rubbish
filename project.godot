@@ -18,8 +18,13 @@ hero_only_platform=8
 [application]
 
 config/name="Revenge of the Forgotten"
-run/main_scene="res://Scenes/Levels/Level 1 Computer Room.tscn"
+run/main_scene="res://Scenes/UI/Menu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+LoadingScene="*res://Scripts/UI/LoadingScene.gd"
+RNGInitializer="*res://Scripts/Utils/InitRandom.gd"
 
 [display]
 

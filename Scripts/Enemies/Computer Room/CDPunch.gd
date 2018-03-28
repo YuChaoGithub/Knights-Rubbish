@@ -46,7 +46,7 @@ onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self
 func activate():
     ec.init_gravity_movement(GRAVITY)
     ec.init_straight_line_movement(facing * SPEED_X, 0)
-    attack_target = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
+    attack_target = ec.target_detect.get_nearest(self, ec.hero_average_pos.characters)
     set_process(true)
     ec.change_status(SEARCH)
     $"Animation/Damage Area".add_to_group("enemy")
@@ -70,7 +70,7 @@ func change_status(to_status):
 func search_for_target():
     ec.play_animation("Searching")
 
-    attack_target = ec.target_detect.get_nearest(self, ec.char_average_pos.characters)
+    attack_target = ec.target_detect.get_nearest(self, ec.hero_average_pos.characters)
 
     ec.change_status(NONE)
     status_timer = ec.cd_timer.new(SEARCHING_DURATION, self, "change_status", MOVE)

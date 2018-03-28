@@ -28,7 +28,7 @@ onready var ball_spawn_pos = $"Lightning Ball Spawn Pos"
 onready var spawn_node = $".."
 
 onready var animator = $"Animation/AnimationPlayer"
-onready var char_average_pos = $"../../../../Character Average Position"
+onready var hero_average_pos = $"../../../../HeroAveragePos"
 
 func _ready():
 	animator.play("Still")
@@ -51,7 +51,7 @@ func change_status(to_status):
 		status_timer = null
 
 func check_for_active():
-	if char_average_pos.global_position.distance_squared_to(global_position) <= ACTIVATE_RANGE * ACTIVATE_RANGE:
+	if hero_average_pos.global_position.distance_squared_to(global_position) <= ACTIVATE_RANGE * ACTIVATE_RANGE:
 		change_status(ACTIVATE)
 
 func play_activate_animation():
@@ -78,7 +78,7 @@ func play_recover_animation():
 	status_timer = cd_timer.new(RECOVER_ANIMATION_DURATION + activate_interval, self, "change_status", ACTIVATE)
 
 func release_lightning_ball():
-	var target_pos = target_detect.get_nearest(self, char_average_pos.characters).global_position
+	var target_pos = target_detect.get_nearest(self, hero_average_pos.characters).global_position
 	
 	if curr_ball.get_ref() != null:
 		curr_ball.get_ref().start_travel(target_pos)
