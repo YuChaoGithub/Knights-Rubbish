@@ -163,9 +163,7 @@ func healed(val):
 	ec.healed(val)
 
 func stunned(duration):
-	if ec.status == FALLING || ec.status == LANDED:
-		ec.display_immune_text()
-	else:
+	if ec.status != FALLING && ec.status != LANDED:
 		ec.change_status(FLY)
 		ec.stunned(duration)
 

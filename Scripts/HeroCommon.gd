@@ -330,6 +330,9 @@ func check_combo_and_perform():
 		check_door_to_enter()
 
 func check_door_to_enter():
+	if !status.can_move || status.dead:
+		return
+
 	var areas = door_check_area.get_overlapping_areas()
 	for area in areas:
 		if area.is_in_group("door"):
@@ -506,7 +509,6 @@ func speed_change_recover(label):
 func stunned(duration):
 	# Can't be stunned while invincible.
 	if status.invincible || status.cc_immune || status.dead:
-		display_immune_text()
 		return
 
 	# Spawn stunned text.
@@ -538,7 +540,6 @@ func stunned(duration):
 
 func confused(duration):
 	if status.invincible || status.cc_immune || status.dead:
-		display_immune_text()
 		return
 
 	status.confused = true

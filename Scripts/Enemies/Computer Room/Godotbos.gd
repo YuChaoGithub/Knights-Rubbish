@@ -287,8 +287,6 @@ func resume_from_damaged():
 func stunned(duration):
 	if ec.animator.current_animation == "Heal":
 		interrupt_heal()
-	else:
-		ec.display_immune_text()
 
 func healed(val):
 	ec.healed(val)

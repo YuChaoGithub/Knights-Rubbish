@@ -1,21 +1,28 @@
-extends Node2D
-
-const CAP = 0.95
+extends Tween
 
 var curr_alpha
 var end_alpha
-var smooth
+var duration
+var target
+var completion_func
 
-func initialize(curr_alpha, end_alpha, duration):
+func initialize(curr_alpha, end_alpha, duration, target = null, completion_func = null):
 	self.curr_alpha = curr_alpha
 	self.end_alpha = end_alpha
-	self.smooth = 1.0 / duration
+	self.duration = duration
+	self.target = target
+	self.completion_func = completion_func
 
-func _process(delta):
-	curr_alpha = lerp(curr_alpha, end_alpha, smooth * delta)
-	$"..".modulate.a = curr_alpha
+func _ready():
+	connect("tween_completed", self, "lerping_completed")
+	interpolate_method(self, "lerping_step", curr_alpha, end_alpha, duration, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	start()
 
-	if curr_alpha > CAP:
-		$"..".modulate.a = 1.0
+func lerping_step(progress):
+	$"..".modulate.a = progress
 
-		queue_free()
+func lerping_completed(object, key):
+	if target != null:
+		target.call(completion_func)
+		
+	queue_free()

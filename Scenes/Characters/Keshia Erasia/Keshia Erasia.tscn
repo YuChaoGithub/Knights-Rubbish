@@ -11011,6 +11011,7 @@ _sections_unfolded = [ "Transform" ]
 "hero",
 ]]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -11023,7 +11024,6 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damage Area" index="0"]
 
-visible = false
 position = Vector2( 0, 10.3159 )
 shape = SubResource( 2 )
 
@@ -11033,6 +11033,7 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 scale = Vector2( 0.8, 0.8 )
 _sections_unfolded = [ "Transform" ]
 
@@ -11241,8 +11242,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Weapon" type="Sprite" parent="Sprite/Animation/Body/Left Arm" index="0"]
 
 editor/display_folded = true
-position = Vector2( 6.00391, -0.181496 )
-rotation = -0.846562
+position = Vector2( 6.00381, -0.181528 )
+rotation = -0.84656
 scale = Vector2( 1.44, 1.44 )
 texture = ExtResource( 20 )
 offset = Vector2( 3.92352, -79.9531 )
@@ -11412,6 +11413,8 @@ script = ExtResource( 27 )
 [node name="Health Bar" parent="." index="6" instance=ExtResource( 28 )]
 
 [node name="Keshia Ult" type="Node2D" parent="." index="7"]
+
+editor/display_folded = true
 
 [node name="Sprite" type="Sprite" parent="Keshia Ult" index="0"]
 

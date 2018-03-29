@@ -181,7 +181,7 @@ func die():
 		f.queue_free()
 
 func stunned(duration):
-	ec.display_immune_text()
+	pass
 
 func healed(val):
 	ec.healed(val)

@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Structures/MainMenuDoor.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Structure/Main Menu Door.png" type="Texture" id=2]
+[ext_resource path="res://Fonts/edosz.tres" type="DynamicFont" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 148.769, 258.803 )
+
+[node name="Main Menu Door" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( -1.71375, -300.639 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Collision" type="Node2D" parent="." index="1"]
+
+[node name="CollisionArea" type="Area2D" parent="Collision" index="0" groups=[
+"door",
+]]
+
+position = Vector2( 14.5259, -248.15 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 32
+collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/CollisionArea" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -189.0
+margin_top = -742.0
+margin_right = -45.0
+margin_bottom = -702.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Main Menu"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts", "custom_styles" ]
+
+

@@ -130,7 +130,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.5, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 499, 762 ), Vector2( 485, 758 ), Vector2( 519, 504 ) ]
+"values": [ Vector2( 700, 762 ), Vector2( 700, 758 ), Vector2( 680, 504 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("ColorRect/Retry Scrap Paper:rect_rotation")
@@ -154,7 +154,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 0.7, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( -333, 612 ), Vector2( -333, 612 ), Vector2( -13, 551 ) ]
+"values": [ Vector2( 193, 788 ), Vector2( 193, 788 ), Vector2( 341, 555 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("ColorRect/Quit Scrap Paper:rect_rotation")
@@ -163,10 +163,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.7, 0.9 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.7, 0.9, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ -16.1155, -16.1155, -16.1155 ]
+"values": [ -16.1155, -16.1155, -16.1155, -7.38186 ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("Scrap 1:rect_position")
@@ -478,7 +478,7 @@ tracks/15/keys = {
 } ]
 }
 
-[node name="Game Over" type="CanvasLayer"]
+[node name="Game Over" type="CanvasLayer" index="0"]
 
 pause_mode = 2
 layer = 2
@@ -491,7 +491,6 @@ _sections_unfolded = [ "Pause" ]
 
 [node name="ColorRect" type="ColorRect" parent="." index="0"]
 
-editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0.392157 )
 anchor_left = 0.0
 anchor_top = 0.0
@@ -557,15 +556,14 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="Quit Scrap Paper" type="TextureRect" parent="ColorRect" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -333.0
-margin_top = 612.0
-margin_right = 167.0
-margin_bottom = 951.0
+margin_left = 193.0
+margin_top = 788.0
+margin_right = 693.0
+margin_bottom = 1127.0
 rect_rotation = -16.1155
 rect_scale = Vector2( 0.3, 0.3 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -580,7 +578,6 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Quit Button" type="TextureButton" parent="ColorRect/Quit Scrap Paper" index="0"]
 
-editor/display_folded = true
 modulate = Color( 1, 0.451613, 0.451613, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
@@ -636,14 +633,13 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="Retry Scrap Paper" type="TextureRect" parent="ColorRect" index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 499.0
+margin_left = 700.0
 margin_top = 762.0
-margin_right = 998.0
+margin_right = 1199.0
 margin_bottom = 1101.0
 rect_rotation = -4.44282
 rect_scale = Vector2( 0.6, 0.6 )
@@ -657,7 +653,7 @@ texture = ExtResource( 8 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="Quit Button" type="TextureButton" parent="ColorRect/Retry Scrap Paper" index="0"]
+[node name="Retry Button" type="TextureButton" parent="ColorRect/Retry Scrap Paper" index="0"]
 
 modulate = Color( 0.125, 1, 0, 1 )
 anchor_left = 0.0
@@ -687,7 +683,7 @@ _sections_unfolded = [ "Rect", "Textures", "Visibility" ]
 hover_color = Color( 0.00561785, 0.417969, 0.176357, 1 )
 press_color = Color( 0, 0, 0, 1 )
 
-[node name="Label" type="Label" parent="ColorRect/Retry Scrap Paper/Quit Button" index="0"]
+[node name="Label" type="Label" parent="ColorRect/Retry Scrap Paper/Retry Button" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -711,7 +707,7 @@ text = "retry"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "Mouse", "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="Scrap 1" type="Control" parent="." index="1"]
 
@@ -1293,5 +1289,9 @@ playback_speed = 1.0
 anims/Enter = SubResource( 5 )
 anims/Quit = SubResource( 6 )
 blend_times = [  ]
+
+[connection signal="pressed" from="ColorRect/Quit Scrap Paper/Quit Button" to="." method="quit_pressed"]
+
+[connection signal="pressed" from="ColorRect/Retry Scrap Paper/Retry Button" to="." method="retry_pressed"]
 
 

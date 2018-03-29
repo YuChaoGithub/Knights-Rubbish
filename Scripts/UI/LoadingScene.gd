@@ -3,6 +3,7 @@ extends Node
 const MAX_BLOCK_TIME = 50
 
 var curr_scene_path
+var quit_to_scene_path
 var loading_scene_instance
 var animator
 var loader
@@ -16,6 +17,9 @@ func _ready():
 
 func reload_curr_scene():
     goto_scene(curr_scene_path)
+
+func load_quit_scene():
+    goto_scene(quit_to_scene_path)
 
 func goto_scene(path):
     get_tree().paused = true

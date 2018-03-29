@@ -647,10 +647,20 @@ Comment: Caught a cold, otitis externa, and existential crisis. Back on work now
 * Started designing Door picker for level 1. (Level 1-0)
 * Updated Prototype Stages and To Do Lists.
 
+**Commit**
+
+[2018.03.29]
+Facepalms: Editor always breaks after Git operations...so annoying.
+* Mobs will now be freed as expected when being killed by Keshia's Basic Skill. (By calling `stunned(...)` before `damaged(...)`)
+* Added the functionality of Quit Button.
+* Completed the first door of Level 1 Door Picker.
+* "Immune Text" now will not be displayed when blocking a stun.
+* Changed the attack hit box of CDPunch so that it won't hit heroes twice per attack. Hopefully this works.
+* Implemented Main Menu Door.
+
+**Commit**
+
 To Do List:
-(Branch testing: Combo vs. dedicated skill button (q: ult. w: up skill. s: basic attack. a, d: horizontal skill. down: down skill. up: jump))
-* Door picker for level 1.
-* "Quit" option in Game Over Scene and Pause Scene.
 * Implement Wendy Vista.
 * Multiplayer game over mechanics (resurrection).
 * Show status, power up effects in number indicator.

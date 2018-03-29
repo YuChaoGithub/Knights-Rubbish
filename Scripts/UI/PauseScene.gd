@@ -30,7 +30,7 @@ func quit_pressed():
 	add_child(ui)
 
 func quit_confirmed():
-	# TODO: Go to door scene.
+	get_node("/root/LoadingScene").load_quit_scene()
 	play_quit_animation()
 
 func do_nothing():

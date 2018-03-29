@@ -8,7 +8,7 @@ func retry_pressed():
 	play_quit_animation()
 
 func quit_pressed():
-	# TODO: Go to door scene.
+	get_node("/root/LoadingScene").load_quit_scene()
 	play_quit_animation()
 
 func play_quit_animation():

@@ -159,7 +159,7 @@ func resume_from_damaged():
 	ec.resume_from_damaged()
 
 func stunned(duration):
-	ec.display_immune_text()
+	pass
 
 func slowed(multiplier, duration):
 	return
