@@ -124,7 +124,7 @@ func on_basic_attack_hit(area):
 		# Damage the enemy.
 		var enemy_node = area.get_node("../..")
 		var damage = rng.randi_range(BASIC_ATTACK_DAMAGE_MIN, BASIC_ATTACK_DAMAGE_MAX)
-		enemy_node.damaged(int(damage * character.damage_modifier))
+		enemy_node.damaged(int(damage * character.attack_modifier))
 		enemy_node.knocked_back(sign(enemy_node.global_position.x - global_position.x) * BASIC_ATTACK_KNOCK_BACK_VEL_X * character.enemy_knock_back_modifier,-BASIC_ATTACK_KNOCK_BACK_VEL_Y * character.enemy_knock_back_modifier, BASIC_ATTACK_KNOCK_BACK_FADE_RATE * character.enemy_knock_back_modifier)
 
 # ===========
@@ -177,7 +177,7 @@ func on_basic_skill_hit(area):
 		var enemy = area.get_node("../..")
 		var damage = rng.randi_range(BASIC_SKILL_DAMAGE_MIN, BASIC_SKILL_DAMAGE_MAX)
 		enemy.stunned(BASIC_SKILL_STUN_DURATION)
-		enemy.damaged(int(damage * character.damage_modifier))
+		enemy.damaged(int(damage * character.attack_modifier))
 		enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * BASIC_SKILL_KNOCK_BACK_VEL_X * character.enemy_knock_back_modifier,-BASIC_SKILL_KNOCK_BACK_VEL_Y * character.enemy_knock_back_modifier, BASIC_SKILL_KNOCK_BACK_FADE_RATE * character.enemy_knock_back_modifier)		
 
 # ================
@@ -207,7 +207,7 @@ func horizontal_skill_toss(side):
 	# Spawn pencil dart.
 	var dart = pencil_dart.instance()
 
-	dart.initialize(side, character.damage_modifier, character.scale.x)
+	dart.initialize(side, character.attack_modifier, character.scale.x)
 
 	dart_spawn_node.add_child(dart)
 	dart.global_position = pencil_toss_pos.global_position
@@ -255,7 +255,7 @@ func on_up_skill_hit(area):
 		if !(area in up_skill_targets):
 			var damage = rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX)
 			var enemy = area.get_node("../..")
-			enemy.damaged(int(damage * character.damage_modifier))
+			enemy.damaged(int(damage * character.attack_modifier))
 			enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * UP_SKILL_KNOCK_BACK_VEL_X * character.enemy_knock_back_modifier,-UP_SKILL_KNOCK_BACK_VEL_Y * character.enemy_knock_back_modifier, UP_SKILL_KNOCK_BACK_FADE_RATE * character.enemy_knock_back_modifier)
 			up_skill_targets.push_back(area)
 	

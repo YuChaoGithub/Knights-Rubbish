@@ -67,26 +67,31 @@ func _process(delta):
 	
 # Detmermine whether or not to update the camera according to the position of the character.
 # This function should be called by the player movement script.
-func check_camera_update(x_pos, y_pos):
+func check_camera_update(pos):
 	if cam_lock_semaphore != 0:
 		return
 
+	var min_x = pos[0].x
+	var max_x = pos[1].x
+	var min_y = pos[0].y
+	var max_y = pos[1].y
+
 	var new_camera_pos = global_position
 	# Check if the character reaches the horizontal margins. If so, update the position of the camera.
-	if x_pos > global_position.x + cam_width * (drag_margin_right - 0.5):
+	if min_x > global_position.x + cam_width * (drag_margin_right - 0.5):
 		# Character reaches the right drag margin.
-		new_camera_pos.x = x_pos - cam_width * (drag_margin_right - 0.5)
-	elif x_pos < global_position.x + cam_width * (drag_margin_left - 0.5):
+		new_camera_pos.x = min_x - cam_width * (drag_margin_right - 0.5)
+	elif max_x < global_position.x + cam_width * (drag_margin_left - 0.5):
 		# Character reaches the left drag margin.
-		new_camera_pos.x = x_pos + cam_width * (0.5 - drag_margin_left)
+		new_camera_pos.x = max_x + cam_width * (0.5 - drag_margin_left)
 	
 	# Vertical margin checks.
-	if y_pos > global_position.y + cam_height * (drag_margin_bottom - 0.5):
+	if min_y > global_position.y + cam_height * (drag_margin_bottom - 0.5):
 		# Character reaches the bottom drag margin.
-		new_camera_pos.y = y_pos - cam_height * (drag_margin_bottom - 0.5)
-	elif y_pos < global_position.y + cam_height * (drag_margin_top - 0.5):
+		new_camera_pos.y = min_y - cam_height * (drag_margin_bottom - 0.5)
+	elif max_y < global_position.y + cam_height * (drag_margin_top - 0.5):
 		# Character reaches the top drag margin.
-		new_camera_pos.y = y_pos + cam_height * (0.5 - drag_margin_top)
+		new_camera_pos.y = max_y + cam_height * (0.5 - drag_margin_top)
 	
 	# Clamp the new camera position within the limits.
 	new_camera_pos.x = clamp(new_camera_pos.x, left_limit + cam_width * 0.5, right_limit - cam_width * 0.5)

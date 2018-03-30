@@ -38,21 +38,20 @@ func update_pos(original_pos, new_pos):
 
 # Update the following camera according to its position.
 func update_camera():
-	following_camera.check_camera_update(get_min_x(), get_max_y())
+	following_camera.check_camera_update(get_min_max_pos())
 
-func get_max_y():
-	var max_y = -10000000000
+# Returns an array of [Vector2(min_x, min_y), Vector2(max_x, max_y)]
+func get_min_max_pos():
+	var min_vec = Vector2(1, 1) * 10000000000
+	var max_vec = Vector2(1, 1) * -10000000000
+
 	for character in characters:
-		max_y = max(max_y, character.global_position.y)
+		min_vec.x = min(min_vec.x, character.global_position.x)
+		max_vec.x = max(max_vec.x, character.global_position.x)
+		min_vec.y = min(min_vec.y, character.global_position.y)
+		max_vec.y = max(max_vec.y, character.global_position.y)
 
-	return max_y
-
-func get_min_x():
-	var min_x = 10000000000
-	for character in characters:
-		min_x = min(min_x, character.global_position.x)
-
-	return min_x
+	return [min_vec, max_vec]
 
 # Returns true if a character is in range of a position.
 func in_range_of(pos, range_x, range_y):

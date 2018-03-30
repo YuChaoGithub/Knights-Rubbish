@@ -660,11 +660,21 @@ Facepalms: Editor always breaks after Git operations...so annoying.
 
 **Commit**
 
+[2018.03.30]
+* Camera and passing trigger will now update left by max_x, top by min_y etc. (Not the hero average position anymore.)
+* Implemented "potion drinking" delay for picking up power ups.
+* Completed Drink, Size Change animation for Keshia Erasia.
+* Now "Attack++", "Defense++", and "Speed++" will be shown after picking up the corresponding powerups.
+* Size changing will now be performed gradually.
+* Reworked size potions. They last forever, until another size potion is picked up.
+* Renamed some variables for coherence.
+
+**Commit**
+
 To Do List:
+* "To normal size" shooter.
 * Implement Wendy Vista.
 * Multiplayer game over mechanics (resurrection).
-* Show status, power up effects in number indicator.
-* Drink Potion animation.
 
 Planned Prototype Stages:
 [Ver 0.1] First level completed. (Est. June 2018)

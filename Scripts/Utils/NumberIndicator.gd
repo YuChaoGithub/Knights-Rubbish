@@ -1,10 +1,13 @@
 extends Node2D
 
 const MOVEMENT_Y = -100
-const SHOW_DURATION = 0.25
+const TEXT_SHOW_DURATION = 1.3
+const NUMBER_SHOW_DURATION = 0.4
 const SPRITE_WIDTH = 75
 
-enum { STUNNED = -1, IMMUNE = -2 }
+enum { STUNNED = -1, IMMUNE = -2, DEFENSE = -3, ATTACK = -4, SPEED = -5 }
+
+var show_duration
 
 var number_scenes = [
 	preload("res://Scenes/Utils/Numbers/Number 0.tscn"),
@@ -20,6 +23,9 @@ var number_scenes = [
 ]
 var stunned_scene = preload("res://Scenes/Utils/Numbers/Stunned.tscn")
 var immune_scene = preload("res://Scenes/Utils/Numbers/Immune.tscn")
+var defense_scene = preload("res://Scenes/Utils/Numbers/Defense.tscn")
+var attack_scene = preload("res://Scenes/Utils/Numbers/Attack.tscn")
+var speed_scene = preload("res://Scenes/Utils/Numbers/Speed.tscn")
 
 var number_instances = []
 var timepassed = 0.0
@@ -36,11 +42,20 @@ func initialize(number, color, pos, node):
 	 
 	global_position = pos.get_curr_pos(self)
 
+	show_duration = TEXT_SHOW_DURATION
+
 	if number == STUNNED:
-		instance_stunned_text()
+		number_instances.push_back(stunned_scene.instance())
 	elif number == IMMUNE || number == 0:
-		instance_immune_text()
+		number_instances.push_back(immune_scene.instance())
+	elif number == DEFENSE:
+		number_instances.push_back(defense_scene.instance())
+	elif number == ATTACK:
+		number_instances.push_back(attack_scene.instance())
+	elif number == SPEED:
+		number_instances.push_back(speed_scene.instance())
 	else:
+		show_duration = NUMBER_SHOW_DURATION
 		instance_numbers(number)		
 	
 	settle_positions()
@@ -57,14 +72,6 @@ func instance_numbers(number):
 		var new_num = number_scenes[int(number) % 10].instance()
 		number_instances.push_back(new_num)
 		number = int(number / 10)
-
-func instance_stunned_text():
-	var stunned_text = stunned_scene.instance()
-	number_instances.push_back(stunned_text)
-
-func instance_immune_text():
-	var immune_text = immune_scene.instance()
-	number_instances.push_back(immune_text)
 
 func settle_positions():
 	var num_len = number_instances.size()
@@ -94,13 +101,13 @@ func add_numbers_as_children():
 func _process(delta):
 	timepassed += delta
 
-	if timepassed >= SHOW_DURATION:
+	if timepassed >= show_duration:
 		queue_free()
 		return
 
 	# Position (floating up).
-	global_position = Vector2(start_pos.x, lerp(start_pos.y, start_pos.y + MOVEMENT_Y, timepassed / SHOW_DURATION))
+	global_position = Vector2(start_pos.x, lerp(start_pos.y, start_pos.y + MOVEMENT_Y, timepassed / show_duration))
 
 	# Alpha value.
 	for number in number_instances:
-		number.self_modulate = Color(color.r, color.g, color.b, lerp(1.0, 0.0, timepassed / SHOW_DURATION))
+		number.self_modulate = Color(color.r, color.g, color.b, lerp(1.0, 0.0, timepassed / show_duration))

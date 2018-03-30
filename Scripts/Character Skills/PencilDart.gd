@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var side
-var damage_modifier
+var attack_modifier
 var size
 
 const SPEED_X = 2250
@@ -25,9 +25,9 @@ onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.
 onready var sprite = $Sprite
 onready var fade_out_tween = $Tween
 
-func initialize(side, damage_modifier, size):
+func initialize(side, attack_modifier, size):
 	self.side = side
-	self.damage_modifier = damage_modifier
+	self.attack_modifier = attack_modifier
 	self.size = size
 	damage = DAMAGE_INIT
 
@@ -63,7 +63,7 @@ func _process(delta):
 # Will be signalled when it hits an enemy.
 func on_enemy_hit(area):
 	if !already_hit && area.is_in_group("enemy"):
-		area.get_node("../..").damaged(damage * damage_modifier)
+		area.get_node("../..").damaged(damage * attack_modifier)
 
 		fade_out()
 

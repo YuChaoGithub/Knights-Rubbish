@@ -19,8 +19,9 @@ onready var hero_average_pos = $"../../HeroAveragePos"
 
 func _process(delta):
 	if in_range:
-		var success_x = x_check == NONE || (x_check == GREATER && hero_average_pos.global_position.x > global_position.x) || (x_check == LESSER && hero_average_pos.global_position.x < global_position.x)
-		var success_y = y_check == NONE || (y_check == GREATER && hero_average_pos.global_position.y > global_position.y) || (y_check == LESSER && hero_average_pos.get_max_y() < global_position.y)
+		var hero_min_max = hero_average_pos.get_min_max_pos()
+		var success_x = x_check == NONE || (x_check == GREATER && hero_min_max[0].x > global_position.x) || (x_check == LESSER && hero_min_max[1].x < global_position.x)
+		var success_y = y_check == NONE || (y_check == GREATER && hero_min_max[0].y > global_position.y) || (y_check == LESSER && hero_min_max[1].y < global_position.y)
 
 		# If both x and y of Hero Average Pos moved pass the point,
 		# trigger level part entering event and remove itself.

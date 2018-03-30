@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export(String, FILE) var player_constants_filepath
 export(NodePath) var defense_icon_path
-export(NodePath) var damage_icon_path
+export(NodePath) var attack_icon_path
 export(NodePath) var slowed_icon_path
 export(NodePath) var speeded_icon_path
 export(NodePath) var confused_icon_path
@@ -14,6 +14,11 @@ const TIME_TO_IDLE_ANIMATION = 5
 const GRABBING_DURATION = 1.0
 const DROPPING_DURATION = 3.5
 const FALL_OFF_DAMAGE = 100
+
+const DRINK_ANIMATION_DURATION = 1.5
+const POWERUP_RECOVER_ANIMATION_DURATION = 3.0
+const ABNORMAL_RECOVER_ANIMATION_DURATION = 0.5
+const SIZE_CHANGE_DURATION = 0.5
 const DIE_ANIMATION_DURATION = 2.0
 
 # The actual damage taken will be 20% less or more randomly.
@@ -24,6 +29,9 @@ const DAMAGE_NUMBER_COLOR = Color(255.0 / 255.0, 0.0 / 255.0, 210.0 / 255.0)
 const HEAL_NUMBER_COLOR = Color(110.0 / 255.0, 240.0 / 255.0, 15.0 / 255.0)
 const STUNNED_TEXT_COLOR = Color(180.0 / 255.0, 180.0 / 255.0, 0.0 / 255.0)
 const IMMUNE_TEXT_COLOR = Color(255.0 / 255.0, 230.0 / 255.0, 0.0 / 255.0)
+const DEFENSE_TEXT_COLOR = Color(60.0 / 255.0, 227.0 / 255.0, 255.0 / 255.0)
+const ATTACK_TEXT_COLOR = Color(255.0 / 255.0, 50.0 / 255.0, 0.0 / 255.0)
+const SPEED_TEXT_COLOR = Color(0.0 / 255.0, 200.0 / 255.0, 255.0 / 255.0)
 
 # Controls the basic animations (walk, jump, idle, etc.) of characters.
 # The name of the default animator is defined in player_constants.
@@ -40,7 +48,7 @@ var speed
 
 # State modifier (could be changed by power ups, debuffs, or skill).
 var movement_speed_modifier = 1.0
-var damage_modifier = 1.0
+var attack_modifier = 1.0
 var defense_modifier = 1.0
 var self_knock_back_modifier = 1.0
 var enemy_knock_back_modifier = 1.0
@@ -72,8 +80,17 @@ var status = {
 	has_ult = false,
 	fallen_off = false,
 	cc_immune = false,
-	dead = false
+	dead = false,
+	drinking = false
 }
+
+enum { DWARF = 0, NORMAL = 1, GIANT = 2 }
+var size_status = NORMAL
+var size_multipliers = [
+	{size = 0.5, attack = 0.75, defense = 1.2,  self_knock_back = 1.5, enemy_knock_back = 0.5},
+	{size = 1.0, attack = 1.0,  defense = 1.0,  self_knock_back = 1.0, enemy_knock_back = 1.0},
+	{size = 1.5, attack = 1.5,  defense = 0.75, self_knock_back = 0.5, enemy_knock_back = 2.0}
+]
 
 var countdown_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
@@ -81,7 +98,7 @@ var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 # Active timers for power ups.
 # For cancelling timers for conflicting power ups/state changes.
 # The data should be saved as dictionaries {tag:String -> CountdownTimer}.
-# tags: "status", ignite, defense_change, damage_change, giant_dwarf_potion, confused.
+# tags: "status", ignite, defense_change, attack_change, giant_dwarf_potion, confused.
 var active_timers = {}
 
 var speed_timers = {} # Label -> {timer, multiplier}
@@ -91,9 +108,10 @@ var slowed_count = 0
 var speeded_count = 0
 var hurt_modulate_timer = null
 var fall_off_timer = null
+var drink_timer
+var size_tween
 var top_fist = null
 
-# Child nodes.
 onready var combo_handler = $"Combo Handler"
 
 # Used to control the following camera.
@@ -117,13 +135,15 @@ onready var ult_eyes = get_node(player_constants.ult_eyes_node_path)
 var number_indicator = preload("res://Scenes/Utils/Numbers/Number Indicator.tscn")
 onready var number_spawn_pos = $"Number Spawn Pos"
 
+onready var drink_sprite = $"Sprite/Animation/Drink"
+
 onready var door_check_area = $DoorCheckArea
 onready var health_bar = $"Health Bar"
 onready var sprite = $Sprite
 
 onready var status_icons = {
 	defense = get_node(defense_icon_path),
-	damage = get_node(damage_icon_path),
+	attack = get_node(attack_icon_path),
 	slowed = get_node(slowed_icon_path),
 	confused = get_node(confused_icon_path),
 	speeded = get_node(speeded_icon_path)
@@ -165,7 +185,7 @@ func _physics_process(delta):
 func update_movement(delta):
 	# For debugging only.
 	if Input.is_action_pressed("debug_stun"):
-		stunned(2)
+		confused(3)
 
 	if status.no_movement:
 		return
@@ -377,6 +397,11 @@ func register_timer(tag, timer):
 func unregister_timer(tag):
 	active_timers.erase(tag)
 
+func timeout_timer_if_exist(tag):
+	if tag in active_timers:
+		active_timers[tag].time_out()
+	unregister_timer(tag)
+
 # Play the animation if it isn't played currently.
 func play_animation(key):
 	# Rest idle timer if the animation currently played isn't idle itself.
@@ -414,79 +439,145 @@ func ignited_recover():
 	unregister_timer("ignite")
 	fire_particle.visible = false
 
-# Common abnormal status.
-func defense_boosted(multiplier, duration):
-	var defense_timer = countdown_timer.new(duration, self, "defense_boost_recover", multiplier)
-	register_timer("defense_change", defense_timer)
+func drink_potion(potion_sprite, end_func, args):
+	set_status("animate_movement", false, DRINK_ANIMATION_DURATION)
+	set_status("can_move", false, DRINK_ANIMATION_DURATION)
+	set_status("drinking", true, DRINK_ANIMATION_DURATION)
+	
+	drink_sprite.texture = potion_sprite
+	
+	play_animation("Drink")
 
-	defense_modifier *= multiplier
+	drink_timer = countdown_timer.new(DRINK_ANIMATION_DURATION, self, end_func, args)
+
+# Common abnormal status. Func call sequence: original_func() -> original_func_blink() -> original_func_recover()
+# args: {multiplier: _, duration: _}
+func defense_boosted(args):
+	timeout_timer_if_exist("defense_boost_recover")
+
+	var defense_timer = countdown_timer.new(args.duration, self, "defense_boost_blink", args.multiplier)
+	register_timer("defense_boost", defense_timer)
+
+	defense_modifier *= args.multiplier
+
+	number_indicator.instance().initialize(-3, DEFENSE_TEXT_COLOR, number_spawn_pos, self)
 
 	status_icons.defense.visible = true
 	status_icons.defense.get_node("AnimationPlayer").play("Pop")
 
+func defense_boost_blink(multiplier):
+	var defense_recovering_timer = countdown_timer.new(POWERUP_RECOVER_ANIMATION_DURATION, self, "defense_boost_recover", multiplier)
+	register_timer("defense_boost_recover", defense_recovering_timer)
+
+	status_icons.defense.get_node("AnimationPlayer").play("Blink")
+
+	unregister_timer("defense_boost")
+
 func defense_boost_recover(multiplier):
 	defense_modifier /= multiplier
 	status_icons.defense.visible = false
-	unregister_timer("defense_change")
+	unregister_timer("defense_boost_recover")
 
-func damage_boosted(multiplier, duration):
-	var damage_timer = countdown_timer.new(duration, self, "damage_boost_recover", multiplier)
-	register_timer("damage_change", damage_timer)
+# args: {multiplier: _, duration: _}
+func attack_boosted(args):
+	timeout_timer_if_exist("attack_boost_recover")
 
-	damage_modifier *= multiplier
+	var attack_timer = countdown_timer.new(args.duration, self, "attack_boost_blink", args.multiplier)
+	register_timer("attack_boost", attack_timer)
 
-	status_icons.damage.visible = true
-	status_icons.damage.get_node("AnimationPlayer").play("Pop")
+	number_indicator.instance().initialize(-4, ATTACK_TEXT_COLOR, number_spawn_pos, self)
 
-func damage_boost_recover(multiplier):
-	damage_modifier /= multiplier
-	status_icons.damage.visible = false
-	unregister_timer("damage_change")
+	attack_modifier *= args.multiplier
 
-func dwarfed_or_gianted(multipliers, duration):
-	var dwarf_giant_timer = countdown_timer.new(duration, self, "dwarf_giant_recover", multipliers)
-	register_timer("giant_dwarf_potion", dwarf_giant_timer)
+	status_icons.attack.visible = true
+	status_icons.attack.get_node("AnimationPlayer").play("Pop")
 
-	set_size(multipliers.size)
-	defense_modifier *= multipliers.defense
-	damage_modifier *= multipliers.damage
-	self_knock_back_modifier *= multipliers.self_knock_back
-	enemy_knock_back_modifier *= multipliers.enemy_knock_back
+func attack_boost_blink(multiplier):
+	var attack_recovering_timer = countdown_timer.new(POWERUP_RECOVER_ANIMATION_DURATION, self, "attack_boost_recover", multiplier)
+	register_timer("attack_boost_recover", attack_recovering_timer)
 
-func dwarf_giant_recover(multipliers):
-	set_size(1.0)
-	defense_modifier /= multipliers.defense
-	damage_modifier /= multipliers.damage
-	self_knock_back_modifier /= multipliers.self_knock_back
-	enemy_knock_back_modifier /= multipliers.enemy_knock_back
+	status_icons.attack.get_node("AnimationPlayer").play("Blink")
 
-	unregister_timer("giant_dwarf_potion")
+	unregister_timer("attack_boost")
 
-func set_size(multiplier):	
-	# Update the actual size.
-	scale = Vector2(1.0, 1.0) * multiplier
+func attack_boost_recover(multiplier):
+	attack_modifier /= multiplier
+	status_icons.attack.visible = false
+	unregister_timer("attack_boost_recover")
 
-func speed_changed(multiplier, duration):
+# args: {multipliers: {_}, duration:_}
+func dwarfed_or_gianted(type):
+	print(size_status, " to ", type)
+	else size_status != NORMAL && type == NORMAL:
+		# Back to normal.
+		divided_by_multipliers(size_status)
+		start_size_tween(size_multipliers[1].size)
+		size_status = NORMAL
+	else:
+		# Perform potion.
+		multiplied_by_multipliers(type)
+		start_size_tween(size_multipliers[type].size)
+		size_status = type
+
+func multiplied_by_multipliers(index):
+	var m = size_multipliers[index]
+	defense_modifier *= m.defense
+	attack_modifier *= m.attack
+	self_knock_back_modifier *= m.self_knock_back
+	enemy_knock_back_modifier *= m.enemy_knock_back
+
+func divided_by_multipliers(index):
+	var m = size_multipliers[index]
+	defense_modifier /= m.defense
+	attack_modifier /= m.attack
+	self_knock_back_modifier /= m.self_knock_back
+	enemy_knock_back_modifier /= m.enemy_knock_back
+
+func start_size_tween(multiplier):
+	# Terminate the previous tween.
+	if size_tween != null:
+		size_tween_completed(null, "")
+	
+	set_status("animate_movement", false, SIZE_CHANGE_DURATION)
+	set_status("can_move", false, SIZE_CHANGE_DURATION)
+	play_animation("Size Change")
+
+	size_tween = Tween.new()
+	add_child(size_tween)
+	size_tween.connect("tween_completed", self, "size_tween_completed")
+	size_tween.interpolate_method(self, "size_tween_step", scale.x, multiplier, SIZE_CHANGE_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	size_tween.start()
+
+func size_tween_step(progress):	
+	scale = Vector2(1.0, 1.0) * progress
+
+func size_tween_completed(object, key):
+	size_tween.queue_free()
+	size_tween = null
+
+# args: {multiplier:_, duration:_}
+func speed_changed(args):
 	# Cannot be slowed while invincible.
-	if status.invincible && multiplier < 1.0:
+	if status.invincible && args.multiplier < 1.0:
 		return
 
-	movement_speed_modifier *= multiplier
+	movement_speed_modifier *= args.multiplier
 	recalculate_horizontal_movement_variables()
 
-	var speed_timer = countdown_timer.new(duration, self, "speed_change_recover", speed_timer_label)
+	var speed_timer = countdown_timer.new(args.duration, self, "speed_change_recover", speed_timer_label)
 
-	if multiplier < 1:
+	if args.multiplier < 1:
 		status_icons.slowed.visible = true
 		status_icons.slowed.get_node("AnimationPlayer").play("Pop")
 		slowed_count += 1
 	else:
+		number_indicator.instance().initialize(-5, SPEED_TEXT_COLOR, number_spawn_pos, self)
 		status_icons.speeded.visible = true
 		speeded_count += 1
 
 	speed_timers[speed_timer_label] = {
 		timer = speed_timer,
-		multiplier = multiplier
+		multiplier = args.multiplier
 	}
 	speed_timer_label += 1
 
@@ -494,7 +585,7 @@ func speed_change_recover(label):
 	var speed_data = speed_timers[label]
 	movement_speed_modifier /= speed_data.multiplier
 	recalculate_horizontal_movement_variables()
-
+	
 	if speed_data.multiplier < 1:
 		slowed_count -= 1
 		if slowed_count == 0:
@@ -539,7 +630,7 @@ func stunned(duration):
 	play_animation("Stunned")
 
 func confused(duration):
-	if status.invincible || status.cc_immune || status.dead:
+	if status.confused || status.invincible || status.cc_immune || status.dead:
 		return
 
 	status.confused = true
@@ -547,13 +638,21 @@ func confused(duration):
 	status_icons.confused.visible = true
 	status_icons.confused.get_node("AnimationPlayer").play("Pop")
 
-	var confused_timer = countdown_timer.new(duration, self, "cancel_confused")
+	var confused_timer = countdown_timer.new(duration, self, "confused_blink")
 	register_timer("confused", confused_timer)
 
-func cancel_confused():
+func confused_blink():
+	var confused_recovering_timer = countdown_timer.new(ABNORMAL_RECOVER_ANIMATION_DURATION, self, "confused_recover")
+	register_timer("confused_recover", confused_recovering_timer)
+
+	status_icons.confused.get_node("AnimationPlayer").play("Blink")
+
+	unregister_timer("confused")
+
+func confused_recover():
 	status.confused = false
 	status_icons.confused.visible = false
-	unregister_timer("confused")
+	unregister_timer("confused_recover")
 
 func knocked_back(vel_x, vel_y, x_fade_rate):
 	if status.invincible || status.cc_immune || status.dead:

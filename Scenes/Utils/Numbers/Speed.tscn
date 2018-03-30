@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Graphics/Numbers/speed inner.png" type="Texture" id=1]
+[ext_resource path="res://Graphics/Numbers/speed frame.png" type="Texture" id=2]
+
+[node name="Speed" type="Sprite" index="0"]
+
+z_index = 5
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Material", "Visibility", "Z Index" ]
+
+[node name="Frame" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+
+
