@@ -671,8 +671,25 @@ Facepalms: Editor always breaks after Git operations...so annoying.
 
 **Commit**
 
+[2018.04.03]
+* Completed Size Changing Light.
+* Made Basic Attack and Horizontal Skill animation of Wendy Vista.
+
+[2018.04.04]
+* Made Down Skill, Up Skill and Basic Skill animation of Wendy Vista.
+* Defined `WendyVistaConstants.gd`.
+* Modified some Keshia Erasia's skill/constants implementation for consistency.
+* Started implementing `WendyVistaSkills.gd`.
+
+[2018.04.05]
+* Replace `jump_events` in `HeroCommon.gd` with a `did_jump` signal.
+* Completed Drink animation of Wendy Vista.
+* Placed required scenes in Wendy Vista.
+* Completed Basic Attack of Wendy Vista.
+
+**Commit**
+
 To Do List:
-* "To normal size" shooter.
 * Implement Wendy Vista.
 * Multiplayer game over mechanics (resurrection).
 

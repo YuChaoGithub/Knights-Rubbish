@@ -7,6 +7,8 @@ export(NodePath) var slowed_icon_path
 export(NodePath) var speeded_icon_path
 export(NodePath) var confused_icon_path
 
+signal did_jump
+
 # The amount of time (in seconds) to play idle animation.
 const TIME_TO_IDLE_ANIMATION = 5
 
@@ -53,6 +55,8 @@ var defense_modifier = 1.0
 var self_knock_back_modifier = 1.0
 var enemy_knock_back_modifier = 1.0
 
+var side setget ,get_side
+
 # For knockback or movement skills.
 var additional_speed_x = 0
 var additional_speed_x_fading_rate = 0
@@ -62,10 +66,6 @@ var velocity_replacement_y = null
 
 # Current velocity of the character.
 var velocity = Vector2(0, 0)
-
-# Functions which would be called when jumping.
-# Should be in the form of [Object, "func_name"].
-var jump_event = []
 
 # The status of the character commonly used by timers.
 # A {tag:String -> Bool} dictionary.
@@ -155,7 +155,7 @@ func _ready():
 	recalculate_vertical_movement_variables()
 	
 	# Default animator.
-	animator = sprite.get_node(player_constants.default_animator_path)
+	animator = get_node(player_constants.default_animator_path)
 
 	# Hide all status icons.
 	for icon in status_icons:
@@ -231,8 +231,7 @@ func update_movement(delta):
 			velocity.y += jump_speed
 			
 			# Triggers events when jumping.
-			for obj_func in jump_event:
-				obj_func[0].call(obj_func[1])
+			emit_signal("did_jump")
 	
 	# Change the x scale of the sprite according to which side the character is facing.
 	if horizontal_movement != 0 and sign(sprite.scale.x) != horizontal_movement:
@@ -283,7 +282,8 @@ func falls_off():
 
 	following_camera.cam_lock_semaphore += 1
 
-	combo_handler.cancel_skills_when_falling_off()
+	combo_handler.cancel_all_skills()
+	interrupt_skills()
 
 	visible = false
 	following_camera.instance_bottom_grab(global_position.x)
@@ -297,7 +297,7 @@ func falls_off():
 	fall_off_timer = countdown_timer.new(GRABBING_DURATION, self, "show_fist")
 
 func show_fist():
-	top_fist = following_camera.instance_top_fist()
+	top_fist = following_camera.instance_top_fist(avatar_texture)
 	
 	fall_off_timer = countdown_timer.new(DROPPING_DURATION, self, "drop_from_fist")
 
@@ -440,6 +440,9 @@ func ignited_recover():
 	fire_particle.visible = false
 
 func drink_potion(potion_sprite, end_func, args):
+	interrupt_skills()
+	combo_handler.cancel_all_skills()
+	
 	set_status("animate_movement", false, DRINK_ANIMATION_DURATION)
 	set_status("can_move", false, DRINK_ANIMATION_DURATION)
 	set_status("drinking", true, DRINK_ANIMATION_DURATION)
@@ -507,17 +510,16 @@ func attack_boost_recover(multiplier):
 
 # args: {multipliers: {_}, duration:_}
 func dwarfed_or_gianted(type):
-	print(size_status, " to ", type)
-	else size_status != NORMAL && type == NORMAL:
-		# Back to normal.
-		divided_by_multipliers(size_status)
-		start_size_tween(size_multipliers[1].size)
-		size_status = NORMAL
+	if size_status != NORMAL && type == NORMAL:
+		change_to_size(NORMAL)
 	else:
-		# Perform potion.
-		multiplied_by_multipliers(type)
-		start_size_tween(size_multipliers[type].size)
-		size_status = type
+		change_to_size(type)
+
+func change_to_size(type):
+	divided_by_multipliers(size_status)
+	multiplied_by_multipliers(type)
+	start_size_tween(size_multipliers[type].size)
+	size_status = type
 
 func multiplied_by_multipliers(index):
 	var m = size_multipliers[index]
@@ -622,12 +624,13 @@ func stunned(duration):
 			active_timers[timeout_tag].time_out()
 			# The key (in the dictionary) should be erased by the time_out() function call.
 
-	# Interrupt skills if any.
+	interrupt_skills()
+	play_animation("Stunned")
+
+func interrupt_skills():
 	if active_timers.has("interruptable_skill"):
 		active_timers["interruptable_skill"].destroy_timer()
 		active_timers.erase("interruptable_skill")
-
-	play_animation("Stunned")
 
 func confused(duration):
 	if status.confused || status.invincible || status.cc_immune || status.dead:
@@ -712,3 +715,6 @@ func die():
 	play_animation("Die")
 	set_status("can_move", false, DIE_ANIMATION_DURATION)
 	die_timer = countdown_timer.new(DIE_ANIMATION_DURATION, hero_average_pos, "character_dead")
+
+func get_side():
+	return int(sign(sprite.scale.x))

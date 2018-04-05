@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/CurrentScenePathSetter.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=2]
@@ -6,9 +6,10 @@
 [ext_resource path="res://Tilesets/White Wall.tres" type="TileSet" id=4]
 [ext_resource path="res://Scenes/Structures/Main Menu Door.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Structures/Door.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Tilesets/Wooden Floor.tres" type="TileSet" id=7]
-[ext_resource path="res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Power Ups/Attack Potion.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Tilesets/Wooden Floor.tres" type="TileSet" id=8]
 [ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Characters/Wendy Vista/Wendy Vista.tscn" type="PackedScene" id=10]
 
 [node name="Game Level" type="Node2D" index="0"]
 
@@ -56,6 +57,8 @@ _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="Doors" type="Node2D" parent="." index="4"]
 
+editor/display_folded = true
+
 [node name="Main Menu Door" parent="Doors" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 591.929, -160.995 )
@@ -65,10 +68,14 @@ position = Vector2( 591.929, -160.995 )
 position = Vector2( 2173.69, -596.708 )
 enter_scene_path = "res://Scenes/Levels/Level 1-1.tscn"
 
+[node name="Hyper Potion" parent="Doors" index="2" instance=ExtResource( 7 )]
+
+position = Vector2( 1451.51, -214.864 )
+
 [node name="Platform" type="TileMap" parent="." index="5"]
 
 mode = 0
-tile_set = ExtResource( 7 )
+tile_set = ExtResource( 8 )
 cell_size = Vector2( 100, 100 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -92,10 +99,10 @@ _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="ForegroundDecorations" type="Node2D" parent="." index="8"]
 
-[node name="Keshia Erasia" parent="." index="9" instance=ExtResource( 8 )]
+[node name="PauseButton" parent="." index="9" instance=ExtResource( 9 )]
 
-position = Vector2( 1198.61, -271.741 )
+[node name="Wendy Vista" parent="." index="10" instance=ExtResource( 10 )]
 
-[node name="PauseButton" parent="." index="10" instance=ExtResource( 9 )]
+position = Vector2( 1199.03, -234.47 )
 
 

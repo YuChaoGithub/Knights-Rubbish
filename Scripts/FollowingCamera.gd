@@ -116,9 +116,10 @@ func instance_bottom_grab(pos_x):
 	$"..".add_child(fist)
 	fist.global_position = Vector2(pos_x, global_position.y + cam_height * 0.5)
 
-func instance_top_fist():
+func instance_top_fist(icon_texture):
 	var fist = top_fist.instance()
 	add_child(fist)
+	fist.set_icon_texture(icon_texture)
 	fist.global_position = Vector2(global_position.x, global_position.y - cam_height * 0.5)
 
 	return fist

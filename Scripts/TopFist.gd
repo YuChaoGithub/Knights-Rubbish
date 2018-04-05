@@ -14,7 +14,7 @@ func perform_movement(side, delta):
 
 	global_position = final_pos
 
-func initialize(icon_texture):
+func set_icon_texture(icon_texture):
 	char_icon.texture = icon_texture
 
 func get_drop_pos():

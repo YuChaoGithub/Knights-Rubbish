@@ -270,7 +270,7 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 
-[node name="Game Level" type="Node2D"]
+[node name="Game Level" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
@@ -8340,6 +8340,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="PauseButton" parent="." index="16" instance=ExtResource( 148 )]
 
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_right_limit" binds= [ 3950 ]]
+
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_right_margin" binds= [ 0.3 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
@@ -8350,13 +8352,13 @@ _sections_unfolded = [ "Transform" ]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_left_limit" binds= [ 50 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_right_limit" binds= [ 3950 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_bottom_limit" binds= [ -50 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 7" to="FollowingCamera" method="update_right_limit" binds= [ 100000000 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 8" to="PlatformDecorations/Adventure Land/Cover Paper/Cover Paper/AnimationPlayer" method="play" binds= [ "Fall" ]]
+
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 2" to="FollowingCamera" method="update_right_limit" binds= [ 10200 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 2" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
 
@@ -8364,7 +8366,7 @@ _sections_unfolded = [ "Transform" ]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 2" to="FollowingCamera" method="update_left_limit" binds= [ 7250 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 2" to="FollowingCamera" method="update_right_limit" binds= [ 10200 ]]
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 3" to="FollowingCamera" method="update_right_limit" binds= [ 13550 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 3" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
 
@@ -8372,23 +8374,23 @@ _sections_unfolded = [ "Transform" ]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 3" to="FollowingCamera" method="update_left_limit" binds= [ 9950 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 3" to="FollowingCamera" method="update_right_limit" binds= [ 13550 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Count Trigger 1" to="FollowingCamera" method="update_right_limit" binds= [ 17050 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Count Trigger 1" to="FollowingCamera" method="update_right_margin" binds= [ 0.3 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Count Trigger 1" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Count Trigger 1" to="FollowingCamera" method="update_right_limit" binds= [ 17050 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger" to="FollowingCamera" method="update_right_limit" binds= [ 18650 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.2 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger" to="FollowingCamera" method="update_left_limit" binds= [ 14350 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger" to="FollowingCamera" method="update_right_limit" binds= [ 18650 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger2" to="FollowingCamera" method="update_right_limit" binds= [ 1000000000 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger2" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger2" to="FollowingCamera" method="update_right_limit" binds= [ 1000000000 ]]
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 4" to="FollowingCamera" method="update_right_limit" binds= [ 23500 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 4" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
 
@@ -8396,13 +8398,11 @@ _sections_unfolded = [ "Transform" ]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 4" to="FollowingCamera" method="update_left_limit" binds= [ 20200 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 4" to="FollowingCamera" method="update_right_limit" binds= [ 23500 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Count Trigger 3" to="FollowingCamera" method="update_right_limit" binds= [ 10000000 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Count Trigger 3" to="FollowingCamera" method="update_right_margin" binds= [ 0.3 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Count Trigger 3" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
-
-[connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Count Trigger 3" to="FollowingCamera" method="update_right_limit" binds= [ 10000000 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 5" to="FollowingCamera" method="update_right_limit" binds= [ 29400 ]]
 
@@ -8414,29 +8414,29 @@ _sections_unfolded = [ "Transform" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Fort Defeated Count Trigger" to="FollowingCamera" method="update_right_limit" binds= [ 1000000000 ]]
 
+[connection signal="passed" from="CameraChangingTriggers/Floopy Pass Trigger" to="FollowingCamera" method="update_right_limit" binds= [ 33750 ]]
+
 [connection signal="passed" from="CameraChangingTriggers/Floopy Pass Trigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.2 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Floopy Pass Trigger" to="FollowingCamera" method="update_left_limit" binds= [ 30250 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Floopy Pass Trigger" to="FollowingCamera" method="update_right_limit" binds= [ 33750 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Counter Trigger 5" to="FollowingCamera" method="update_right_limit" binds= [ 41250 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Counter Trigger 5" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Counter Trigger 5" to="FollowingCamera" method="update_right_limit" binds= [ 41250 ]]
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 6" to="FollowingCamera" method="update_top_limit" binds= [ -2800 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 6" to="FollowingCamera" method="update_top_margin" binds= [ 0.4 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 6" to="FollowingCamera" method="update_top_limit" binds= [ -2800 ]]
+[connection signal="destroyed" from="Structures/Floopy Tower" to="OtherPlatforms/Enemy Blocking Platform40" method="queue_free"]
 
 [connection signal="destroyed" from="Structures/Floopy Tower" to="Enemies/CD Punch Spawner3" method="stop_further_spawning"]
 
-[connection signal="destroyed" from="Structures/Floopy Tower" to="OtherPlatforms/Enemy Blocking Platform40" method="queue_free"]
+[connection signal="defeated" from="Enemies/CD Punch" to="FollowingCamera" method="update_right_limit" binds= [ 1000000000 ]]
 
 [connection signal="defeated" from="Enemies/CD Punch" to="FollowingCamera" method="update_right_margin" binds= [ 0.3 ]]
 
 [connection signal="defeated" from="Enemies/CD Punch" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
-
-[connection signal="defeated" from="Enemies/CD Punch" to="FollowingCamera" method="update_right_limit" binds= [ 1000000000 ]]
 
 [connection signal="defeated" from="Enemies/CD Punch2" to="CameraChangingTriggers/Enemy Defeated Count Trigger 1" method="increment_count"]
 
