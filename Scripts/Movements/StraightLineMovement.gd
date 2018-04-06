@@ -7,8 +7,6 @@ func _init(dx, dy):
     self.dx = dx
     self.dy = dy
 
-# Pass in the current position and delta time of the node.
-# Returns the calculated position of the next frame.
 func movement(delta):
     return Vector2(dx * delta, dy * delta)
 

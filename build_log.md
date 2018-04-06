@@ -689,6 +689,11 @@ Facepalms: Editor always breaks after Git operations...so annoying.
 
 **Commit**
 
+[2018.04.06]
+* Completed Down Skill, Horizontal Skill and Basic Skill of Wendy Vista.
+
+**Commit**
+
 To Do List:
 * Implement Wendy Vista.
 * Multiplayer game over mechanics (resurrection).

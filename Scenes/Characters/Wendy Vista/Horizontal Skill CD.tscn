@@ -1,35 +1,30 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/Character Skills/WendyBasicAttackCD.gd" type="Script" id=1]
-[ext_resource path="res://Graphics/Characters/Wendy Vista/Stun CD.png" type="Texture" id=2]
-
-[sub_resource type="CircleShape2D" id=1]
-
-custom_solver_bias = 0.0
-radius = 72.3598
+[ext_resource path="res://Scripts/Character Skills/WendyHorizontalSkillCD.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Characters/Wendy Vista/Blue Shiny CD.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=2]
 
 custom_solver_bias = 0.0
-radius = 73.3987
+radius = 75.0661
 
-[node name="Basic Attack CD" type="KinematicBody2D"]
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 74.9322
+
+[node name="Horizontal Skill CD" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
 collision_mask = 4
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "Transform", "collision" ]
+_sections_unfolded = [ "Collision" ]
 
-[node name="ModulateTween" type="Tween" parent="." index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-repeat = false
-playback_process_mode = 1
-playback_speed = 1.0
-playback/active = false
-playback/repeat = false
-playback/speed = 1.0
+shape = SubResource( 2 )
 
 [node name="ScaleTween" type="Tween" parent="." index="1"]
 
@@ -40,17 +35,22 @@ playback/active = false
 playback/repeat = false
 playback/speed = 1.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+[node name="FadeTween" type="Tween" parent="." index="2"]
 
-shape = SubResource( 1 )
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
 
 [node name="Sprite" type="Sprite" parent="." index="3"]
 
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="Trigger Area" type="Area2D" parent="." index="4"]
 
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -64,7 +64,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger Area" index="0"]
 
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [connection signal="area_entered" from="Trigger Area" to="." method="on_enemy_hit"]
 

@@ -57,7 +57,7 @@ onready var sprite = $Sprite
 func initialize(side, attack_modifier, knock_back_modifier, size):
 	self.side = side
 	self.attack_modifier = attack_modifier
-	self.knock_back_modifier
+	self.knock_back_modifier = knock_back_modifier
 	self.size = size
 
 func _ready():
@@ -106,6 +106,8 @@ func on_enemy_hit(area):
 				enemy.slowed(SLOW_MULTIPLIER, SLOW_DURATION)
 			KNOCK_BACK:
 				enemy.knocked_back(side * KNOCK_BACK_VEL_X * knock_back_modifier, -KNOCK_BACK_VEL_Y * knock_back_modifier, KNOCK_BACK_FADE_RATE * knock_back_modifier)
+
+		fade_out()
 
 func fade_out():
 	already_hit = true

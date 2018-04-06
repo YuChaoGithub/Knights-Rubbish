@@ -12979,8 +12979,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Weapon" type="Sprite" parent="Sprite/Animation/Body/Left Arm" index="0"]
 
 editor/display_folded = true
-position = Vector2( 6.01704, -0.178232 )
-rotation = -0.846485
+position = Vector2( 6.01708, -0.17823 )
+rotation = -0.84648
 scale = Vector2( 1.44, 1.44 )
 texture = ExtResource( 20 )
 offset = Vector2( 3.92352, -79.9531 )
@@ -13133,6 +13133,7 @@ blend_times = [  ]
 [node name="Basic Skill Hit Box" type="Area2D" parent="Sprite" index="3"]
 
 editor/display_folded = true
+visible = false
 position = Vector2( 7, 20.8261 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -13147,7 +13148,6 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Basic Skill Hit Box" index="0"]
 
-visible = false
 shape = SubResource( 22 )
 
 [node name="Pencil Toss Pos" type="Position2D" parent="Sprite" index="4"]
