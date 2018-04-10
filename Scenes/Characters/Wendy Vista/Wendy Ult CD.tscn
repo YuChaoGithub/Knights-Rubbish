@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Character Skills/WendyUltCD.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Characters/Wendy Vista/Shiny CD.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Particles/Ult Stone Particles.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=5]
+
+custom_solver_bias = 0.0
+radius = 67.0479
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 75.3651
+
+[node name="WendyUltCD" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 0
+collision_mask = 4
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+
+shape = SubResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="FadeTween" type="Tween" parent="." index="1"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="ScaleTween" type="Tween" parent="." index="2"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="AttackArea" type="Area2D" parent="." index="3"]
+
+editor/display_folded = true
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+collision_mask = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="4"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="FloatParticles" parent="." index="5" instance=ExtResource( 3 )]
+
+visible = true
+position = Vector2( -0.771362, -2.39809 )
+scale = Vector2( 0.5, 0.5 )
+speed_scale = 3.0
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+
+[connection signal="area_entered" from="AttackArea" to="." method="on_enemy_hit"]
+
+

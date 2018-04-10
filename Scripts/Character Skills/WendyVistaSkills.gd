@@ -18,29 +18,42 @@ const HORIZONTAL_SKILL_COOLDOWN = 0.1
 
 const UP_SKILL_DURATION = 0.7
 const UP_SKILL_COOLDOWN = 0.2
-const UP_SKILL_LANDED_DETECTION_DELAY = 0.05
-const UP_SKILL_VELOCITY = -850
+const UP_SKILL_DISPLACEMENT = 150
+const UP_SKILL_DAMAGE_MIN = 10
+const UP_SKILL_DAMAGE_MAX = 20
+const UP_SKILL_KNOCK_BACK_VEL_X = 300
+const UP_SKILL_KNOCK_BACK_VEL_Y = 250
+const UP_SKILL_KNOCK_BACK_FADE_RATE = 300
+
+const ULT_PREPARE_DURATION = 1.0
+const ULT_FIRE_INTERVAL = 0.2
+const ULT_FIRE_COUNT = 10
+const ULT_ENDING_DURATION = 0.5
 
 const DOWN_SKILL_DURATION = 2.0
 const DOWN_SKILL_COOLDOWN = 0.3
 
 var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
+var multi_timer = preload("res://Scripts/Utils/MultiTickTimer.gd")
 
 onready var hero = $".."
 onready var basic_attack_shoot_pos = $"../Sprite/BasicAttackShootPos"
 onready var basic_skill_particles = $"../Sprite/Animation/BasicSkillParticles"
 onready var horizontal_skill_shoot_pos = $"../Sprite/HorizontalSkillShootPos"
-onready var up_skill_hat_spawn_pos = $"../Sprite/UpSkillHatSpawnPos"
+onready var ult_skill_shoot_pos = $"../Sprite/Animation/Body/UltFirePos"
 onready var spawn_node = get_node("../..")
 
 var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 
 var basic_attack_cd = preload("res://Scenes/Characters/Wendy Vista/Basic Attack CD.tscn")
 var horizontal_skill_cd = preload("res://Scenes/Characters/Wendy Vista/Horizontal Skill CD.tscn")
+var ult_cd = preload("res://Scenes/Characters/Wendy Vista/Wendy Ult CD.tscn")
 
 # Can only cast Up Skill one time until Wendy landed on the ground.
 var up_skill_available = true
 var up_skill_available_timer = null
+
+var ult_timer
 
 func _ready():
     hero.connect("did_jump", self, "reset_up_skill_available")
@@ -91,9 +104,14 @@ func basic_skill():
         hero.set_status("animate_movement", false, BASIC_SKILL_DURATION)
         hero.set_status("can_move", false, BASIC_SKILL_DURATION)
         hero.set_status("can_cast_skill", false, BASIC_SKILL_DURATION + BASIC_SKILL_COOLDOWN)
+        hero.set_status("no_movement", true, BASIC_SKILL_DURATION)
+
+        if hero.velocity.y < 0:
+           hero.velocity.y *= -1
 
 func basic_skill_hit(area):
     if area.is_in_group("enemy"):
+        print("hit")
         var enemy = area.get_node("../..")
         enemy.damaged(hero.attack_modifier * rng.randi_range(BASIC_SKILL_DAMAGE_MIN, BASIC_SKILL_DAMAGE_MAX))
         enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * BASIC_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -BASIC_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, BASIC_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
@@ -125,7 +143,28 @@ func horizontal_skill_shoots(side):
 # Up Skill: Throw the hat up and jump.
 # ===
 func up_skill():
-    pass
+    if up_skill_available && hero.status.can_move && hero.status.can_cast_skill:
+        hero.play_animation("Up Skill")
+
+        up_skill_available = false
+
+        hero.set_status("can_jump", false, UP_SKILL_DURATION)
+        hero.set_status("can_cast_skill", false, UP_SKILL_DURATION)
+        hero.set_status("animate_movement", false, UP_SKILL_DURATION)
+
+        hero.jump_to_height(UP_SKILL_DISPLACEMENT)
+
+        var jump_timer = cd_timer.new(UP_SKILL_DURATION, self, "up_skill_ended")
+        hero.register_timer("movement_skill", jump_timer)
+
+func up_skill_ended():
+    hero.unregister_timer("movement_skill")
+
+func on_up_skill_hit(area):
+    if area.is_in_group("enemy"):
+        var enemy = area.get_node("../..")
+        enemy.damaged(int(rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX) * hero.attack_modifier))
+        enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * UP_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -UP_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, UP_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
 
 # ===
 # Down Skill: Shrink and hide in the hat.
@@ -143,7 +182,33 @@ func down_skill():
 # Ult: Shoot consecutive high damage CDs.
 # ===
 func ult():
-    pass
+    if hero.status.can_move && hero.status.has_ult && hero.status.can_cast_skill:
+        hero.status.has_ult = false
+
+        var total_duration = ULT_PREPARE_DURATION + ULT_FIRE_COUNT * ULT_FIRE_INTERVAL + ULT_ENDING_DURATION
+        hero.set_status("can_move", false, total_duration)
+        hero.set_status("can_jump", false, total_duration)
+        hero.set_status("can_cast_skill", false, total_duration)
+        hero.set_status("animate_movement", false, total_duration)
+        hero.set_status("invincible", true, total_duration)
+        hero.set_status("no_movement", true, total_duration)
+
+        hero.play_animation("Ult")
+        hero.get_node("Ult").visible = true
+        ult_timer = cd_timer.new(ULT_PREPARE_DURATION, self, "start_firing_ult")
+
+func start_firing_ult():
+    ult_timer = multi_timer.new(true, ULT_FIRE_INTERVAL, ULT_FIRE_COUNT, self, "fire_ult", null, "end_ult")
+
+func fire_ult():
+    var cd = ult_cd.instance()
+    cd.initialize(hero.side, hero.attack_modifier, hero.enemy_knock_back_modifier, hero.scale.x)
+    spawn_node.add_child(cd)
+    cd.global_position = ult_skill_shoot_pos.global_position
+
+func end_ult():
+    hero.release_ult()
+    hero.get_node("Ult").visible = false
 
 func cancel_all_skills():
     pass

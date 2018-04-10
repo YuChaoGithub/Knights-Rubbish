@@ -1,4 +1,3 @@
-# Defines the constants of the character Keshia Erasia.
 const name = "Keshia Erasia"
 const id = 0
 const full_health = 350

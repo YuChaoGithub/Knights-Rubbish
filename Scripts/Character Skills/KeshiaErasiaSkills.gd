@@ -25,7 +25,7 @@ const HORIZONTAL_SKILL_COOLDOWN = 0.15
 
 const UP_SKILL_DURATION = 0.7
 const UP_SKILL_COOLDOWN = 0.2
-const UP_SKILL_VELOCITY = -850
+const UP_SKILL_DISPLACEMENT = 150.0
 const UP_SKILL_DAMAGE_MIN = 15
 const UP_SKILL_DAMAGE_MAX = 30
 const UP_SKILL_KNOCK_BACK_VEL_X = 500
@@ -224,7 +224,7 @@ func up_skill():
 		hero.set_status("animate_movement", false, UP_SKILL_DURATION)
 
 		# Jump.
-		hero.velocity_replacement_y = UP_SKILL_VELOCITY
+		hero.jump_to_height(UP_SKILL_DISPLACEMENT)
 
 		up_skill_targets.clear()
 

@@ -694,9 +694,19 @@ Facepalms: Editor always breaks after Git operations...so annoying.
 
 **Commit**
 
+[2018.04.09]
+* Up Skill velocity is now calculated by total vertical displacement.
+* Completed Up Skill of Wendy Vista.
+* Completed Die, Size Change animation of Wendy Vista.
+
+[2018.04.10]
+* Completed Wendy Vista Ult.
+* Fixed `status.no_movement` in `HeroCommon.gd` so that collision will still be detected even if it is set to true.
+* Changed `HeroAveragePosition.gd` to `HeroCommon.gd`. Also simplified its code.
+* Implemented 2 player controlling and hero spawning mechanic.
+
 To Do List:
-* Implement Wendy Vista.
-* Multiplayer game over mechanics (resurrection).
+* Multiplayer bug testing, scene swithcing (implement a global singleton), health bar spacing, custom key binding, game over mechanics (resurrection).
 
 Planned Prototype Stages:
 [Ver 0.1] First level completed. (Est. June 2018)

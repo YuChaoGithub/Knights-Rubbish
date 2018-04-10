@@ -84,6 +84,11 @@ var status = {
 	drinking = false
 }
 
+# Being set by HeroManager.
+# A dictionary of key binding strings:
+# The keys are: up, down, left, right, skill, attack, jump, ult.
+var action_strings
+
 enum { DWARF = 0, NORMAL = 1, GIANT = 2 }
 var size_status = NORMAL
 var size_multipliers = [
@@ -167,10 +172,6 @@ func _ready():
 	# Initialize timestamp.
 	idle_timestamp = OS.get_unix_time()
 
-	# Register itself to hero average position.
-	hero_average_pos.characters.push_back(self)
-	hero_average_pos.add_character(global_position)
-
 	# Health bar.
 	health_bar.initialize(player_constants.full_health, avatar_texture)
 
@@ -183,11 +184,8 @@ func _physics_process(delta):
 # Move by keyboard inputs. Also play movement animations.
 # Calculate the movement and pass it to Collision Handler. Set the position as the returned value and update the camera.
 func update_movement(delta):
-	# For debugging only.
-	if Input.is_action_pressed("debug_stun"):
-		confused(3)
-
 	if status.no_movement:
+		move_and_slide(Vector2(0, 0), Vector2(0, -1))
 		return
 
 	# The movement animation name (key) supposed to be played.
@@ -208,9 +206,9 @@ func update_movement(delta):
 	
 	if status.can_move:
 		# Horizontal keyboard input.
-		if Input.is_action_pressed("player_left"):
+		if Input.is_action_pressed(action_strings.left):
 			horizontal_movement += (1 if status.confused else -1)
-		if Input.is_action_pressed("player_right"):
+		if Input.is_action_pressed(action_strings.right):
 			horizontal_movement += (-1 if status.confused else 1)
 
 		# In fist.
@@ -218,7 +216,7 @@ func update_movement(delta):
 			top_fist.perform_movement(horizontal_movement, delta)
 
 			var final_pos = top_fist.get_drop_pos()
-			hero_average_pos.update_pos(global_position, final_pos)
+			hero_average_pos.update_pos()
 			global_position = final_pos
 			return
  
@@ -227,7 +225,7 @@ func update_movement(delta):
 			animation_key = "Walk"
 			
 		# Jumping.
-		if Input.is_action_pressed("player_jump") && is_on_floor():
+		if Input.is_action_pressed(action_strings.jump) && is_on_floor():
 			velocity.y += jump_speed
 			
 			# Triggers events when jumping.
@@ -262,7 +260,7 @@ func update_movement(delta):
 		falls_off()
 		
 	# Update Hero Average Position so that the camera is updated.
-	hero_average_pos.update_pos(original_position, camera_clamped_pos)
+	hero_average_pos.update_pos()
 
 	# Update the position of the character.
 	global_position = camera_clamped_pos
@@ -328,25 +326,25 @@ func check_combo_and_perform():
 	if status.dead:
 		return
 
-	if Input.is_action_pressed("player_ult"):
+	if Input.is_action_pressed(action_strings.ult):
 		# Ult.
 		combo_handler.ult()
-	elif Input.is_action_pressed("player_skill"):
+	elif Input.is_action_pressed(action_strings.skill):
 		# Skills.
-		if Input.is_action_pressed("player_left"):
+		if Input.is_action_pressed(action_strings.left):
 			combo_handler.horizontal_skill(-1)
-		elif Input.is_action_pressed("player_right"):
+		elif Input.is_action_pressed(action_strings.right):
 			combo_handler.horizontal_skill(1)
-		elif Input.is_action_pressed("player_up"):
+		elif Input.is_action_pressed(action_strings.up):
 			combo_handler.up_skill()
-		elif Input.is_action_pressed("player_down"):
+		elif Input.is_action_pressed(action_strings.down):
 			combo_handler.down_skill()
 		else:
 			combo_handler.basic_skill()
-	elif Input.is_action_pressed("player_attack"):
+	elif Input.is_action_pressed(action_strings.attack):
 		# Attack.
 		combo_handler.basic_attack()
-	elif Input.is_action_pressed("player_up"):
+	elif Input.is_action_pressed(action_strings.up):
 		check_door_to_enter()
 
 func check_door_to_enter():
@@ -718,3 +716,6 @@ func die():
 
 func get_side():
 	return int(sign(sprite.scale.x))
+
+func jump_to_height(height):
+	velocity_replacement_y = -pow(2.0 * height * gravity, 0.5)

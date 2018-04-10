@@ -97,7 +97,7 @@ func _process(delta):
 func on_enemy_hit(area):
 	if !already_hit && area.is_in_group("enemy"):
 		var enemy = area.get_node("../..")
-		enemy.damaged(rng.randi_range(DAMAGE_MIN, DAMAGE_MAX) * attack_modifier)
+		enemy.damaged(int(rng.randi_range(DAMAGE_MIN, DAMAGE_MAX) * attack_modifier))
 
 		match type:
 			STUN:

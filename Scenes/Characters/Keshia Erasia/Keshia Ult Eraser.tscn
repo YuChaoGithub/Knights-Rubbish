@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Character Skills/KeshiaUltEraser.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Body.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/Powerups/Ult Ball/Ball.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Particles/Ult Ball.png" type="Texture" id=3]
 
 [sub_resource type="Gradient" id=1]
 
@@ -43,7 +43,7 @@ damping = 0.0
 damping_random = 0.0
 angle = 0.0
 angle_random = 0.0
-scale = 0.15
+scale = 3.0
 scale_random = 0.0
 color_ramp = SubResource( 2 )
 hue_variation = 0.0
@@ -55,7 +55,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Hue Variation", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Resource", "Scale", "Spread", "Tangential Accel", "Trail" ]
 
-[node name="Keshia Ult Eraser" type="Node2D"]
+[node name="Keshia Ult Eraser" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 
@@ -85,6 +85,6 @@ texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time" ]
+_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform" ]
 
 

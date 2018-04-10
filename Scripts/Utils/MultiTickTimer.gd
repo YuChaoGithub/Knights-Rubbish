@@ -6,6 +6,7 @@ var parent
 
 # Being called every tick.
 var tick_func_name
+var end_func_name
 
 var total_ticks
 var curr_tick = 0
@@ -13,11 +14,12 @@ var curr_tick = 0
 # The arguments for the tick function.
 var args
 
-func _init(tick_immediately, time_between_ticks, total_ticks, target, tick_func_name, args = null):
+func _init(tick_immediately, time_between_ticks, total_ticks, target, tick_func_name, args = null, end_func_name = null):
     self.parent = target
     self.total_ticks = total_ticks
     self.tick_func_name = tick_func_name
     self.args = args
+    self.end_func_name = end_func_name
 
     timer = Timer.new()
     timer.one_shot = false
@@ -37,6 +39,8 @@ func perform_tick():
 
     curr_tick += 1
     if curr_tick == total_ticks:
+        if end_func_name != null:
+            parent.call(end_func_name)
         timer.stop()
 
 func destroy_timer():

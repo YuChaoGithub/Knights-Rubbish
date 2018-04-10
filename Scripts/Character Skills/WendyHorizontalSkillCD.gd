@@ -1,4 +1,4 @@
-extends Node2D
+extends KinematicBody2D
 
 const SPEED_X = 1500
 
@@ -8,8 +8,8 @@ const SCALE_INIT = 0.2
 const SCALE_FINAL = 0.8
 const SCALE_DURATION = 0.6
 
-const INIT_DAMAGE_MIN = 100
-const INIT_DAMAGE_MAX = 125
+const INIT_DAMAGE_MIN = 80
+const INIT_DAMAGE_MAX = 90
 const DAMAGE_MIN = 20
 const DAMAGE_REDUCE_RATE = 0.7
 
@@ -47,7 +47,7 @@ func initialize(side, attack_modifier, knock_back_modifier, size):
 func _ready():
 	scale = scale * SCALE_INIT * size
 	
-	damage = rng.randi_range(INIT_DAMAGE_MIN, INIT_DAMAGE_MAX) * attack_modifier
+	damage = int(rng.randi_range(INIT_DAMAGE_MIN, INIT_DAMAGE_MAX) * attack_modifier)
 
 	scale_tween.interpolate_method(self, "scale_tween_step", SCALE_INIT, SCALE_FINAL, SCALE_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	scale_tween.start()

@@ -63,7 +63,7 @@ func _process(delta):
 # Will be signalled when it hits an enemy.
 func on_enemy_hit(area):
 	if !already_hit && area.is_in_group("enemy"):
-		area.get_node("../..").damaged(damage * attack_modifier)
+		area.get_node("../..").damaged(int(damage * attack_modifier))
 
 		fade_out()
 

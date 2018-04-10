@@ -12717,7 +12717,7 @@ extents = Vector2( 1300, 750 )
 custom_solver_bias = 0.0
 extents = Vector2( 70, 80 )
 
-[node name="Keshia Erasia" type="KinematicBody2D"]
+[node name="Keshia Erasia" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 0
@@ -12765,7 +12765,7 @@ script = ExtResource( 2 )
 [node name="Sprite" type="Node2D" parent="." index="3"]
 
 scale = Vector2( 0.8, 0.8 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Right Arm" type="Sprite" parent="Sprite" index="0"]
 
@@ -12785,8 +12785,7 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 visible = false
-position = Vector2( -9.31313, -96.3066 )
-rotation = 0.255523
+position = Vector2( 0.888839, -92.2636 )
 scale = Vector2( 0.3, 0.3 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -12851,7 +12850,6 @@ blend_times = [  ]
 
 [node name="Body" type="Sprite" parent="Sprite/Animation" index="1"]
 
-editor/display_folded = true
 position = Vector2( -0.297318, -52.4157 )
 texture = ExtResource( 13 )
 offset = Vector2( 0, -75 )
@@ -12979,8 +12977,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Weapon" type="Sprite" parent="Sprite/Animation/Body/Left Arm" index="0"]
 
 editor/display_folded = true
-position = Vector2( 6.01708, -0.17823 )
-rotation = -0.84648
+position = Vector2( 6.01704, -0.178232 )
+rotation = -0.846485
 scale = Vector2( 1.44, 1.44 )
 texture = ExtResource( 20 )
 offset = Vector2( 3.92352, -79.9531 )
@@ -13170,7 +13168,7 @@ editor/display_folded = true
 
 self_modulate = Color( 1, 1, 1, 0 )
 light_mask = 524288
-position = Vector2( 253.382, -229.931 )
+position = Vector2( 144.013, -165.062 )
 rotation = 1.01781
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 13 )
@@ -13179,9 +13177,9 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Sprite1" type="Sprite" parent="Keshia Ult" index="1"]
 
-self_modulate = Color( 0.8125, 0.8125, 0.8125, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 light_mask = 524288
-position = Vector2( 249.206, -5.73128 )
+position = Vector2( 148.868, -58.257 )
 rotation = 2.10516
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 13 )
@@ -13189,9 +13187,9 @@ offset = Vector2( -0.828125, -71.8146 )
 
 [node name="Sprite2" type="Sprite" parent="Keshia Ult" index="2"]
 
-self_modulate = Color( 0.574219, 0.574219, 0.574219, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 light_mask = 524288
-position = Vector2( 116.461, 129.587 )
+position = Vector2( 76.0461, 24.2744 )
 rotation = 2.68666
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 13 )
@@ -13199,9 +13197,9 @@ offset = Vector2( -0.828125, -71.8146 )
 
 [node name="Sprite3" type="Sprite" parent="Keshia Ult" index="3"]
 
-self_modulate = Color( 0.789062, 0.789062, 0.789062, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 light_mask = 524288
-position = Vector2( -99.5316, 122.942 )
+position = Vector2( -50.9877, 25.8928 )
 rotation = 3.34518
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 13 )
@@ -13209,9 +13207,9 @@ offset = Vector2( -0.828125, -71.8146 )
 
 [node name="Sprite4" type="Sprite" parent="Keshia Ult" index="4"]
 
-self_modulate = Color( 0.871094, 0.871094, 0.871094, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 light_mask = 524288
-position = Vector2( -243.458, 36.4296 )
+position = Vector2( -133.519, -28.3192 )
 rotation = -2.1398
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 13 )
@@ -13221,7 +13219,7 @@ offset = Vector2( -0.828125, -71.8146 )
 
 self_modulate = Color( 1, 1, 1, 0 )
 light_mask = 524288
-position = Vector2( -272.11, -194.779 )
+position = Vector2( -145.656, -133.506 )
 rotation = -1.27287
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 13 )
@@ -13229,9 +13227,9 @@ offset = Vector2( -0.828125, -71.8146 )
 
 [node name="Sprite6" type="Sprite" parent="Keshia Ult" index="6"]
 
-self_modulate = Color( 0.621094, 0.621094, 0.621094, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
 light_mask = 524288
-position = Vector2( -149.872, -358.127 )
+position = Vector2( -65.552, -225.747 )
 rotation = -0.326939
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 13 )
@@ -13241,7 +13239,7 @@ offset = Vector2( -0.828125, -71.8146 )
 
 self_modulate = Color( 1, 1, 1, 0 )
 light_mask = 524288
-position = Vector2( 98.5137, -379.696 )
+position = Vector2( 48.5355, -226.557 )
 rotation = 0.0221657
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 13 )
