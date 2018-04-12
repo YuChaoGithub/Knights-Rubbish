@@ -705,8 +705,26 @@ Facepalms: Editor always breaks after Git operations...so annoying.
 * Changed `HeroAveragePosition.gd` to `HeroCommon.gd`. Also simplified its code.
 * Implemented 2 player controlling and hero spawning mechanic.
 
+**Commit**
+
+[2018.04.11]
+* Modify health bar position for Player 2.
+* Added a `PlayerSettings.gd` singleton node for storing hero choices (and other player settings in the future).
+* Modify naming of hero array from `characters` to `heroes` in `HeroManager.gd`.
+* Completed ghost health bar.
+
+[2018.04.12]
+* Redesigned the code of `NumberIndicator.gd`, it no longer needs `NumberSpawnPos.gd`.
+* Completed resurrection mechanic.
+* Completed Ghost Ball. (Deal damage in intervals to the player alive when being a ghost.)
+* Completed screen shaking effect when a hero falls off or revives.
+* Completed lightning effects upon revival.
+
+**Commit**
+
 To Do List:
-* Multiplayer bug testing, scene swithcing (implement a global singleton), health bar spacing, custom key binding, game over mechanics (resurrection).
+* Scale enemy health according to player numbers.
+* Multiplayer bug testing, scene swithcing (implement a global singleton), custom key binding, game over mechanics (resurrection).
 
 Planned Prototype Stages:
 [Ver 0.1] First level completed. (Est. June 2018)

@@ -170,7 +170,7 @@ func play_slow_bomb_anim():
 	ec.change_status(NONE)
 
 	# Get farthest character.
-	attack_target = ec.target_detect.get_farthest(self, ec.hero_average_pos.characters)
+	attack_target = ec.target_detect.get_farthest(self, ec.hero_manager.heroes)
 
 	# Face the target
 	facing = sign(attack_target.global_position.x - global_position.x)
@@ -211,7 +211,7 @@ func walk_to_attack_target(delta):
 	
 	# Watch didn't hit.
 	if attack_target == null:
-		attack_target = ec.target_detect.get_farthest(self, ec.hero_average_pos.characters)
+		attack_target = ec.target_detect.get_farthest(self, ec.hero_manager.heroes)
 	
 	facing = sign(attack_target.global_position.x - global_position.x)
 	turn_sprites_x(facing)
@@ -234,7 +234,7 @@ func scratch():
 	var right_target = null
 	var right_distance = 100000
 
-	for target in ec.hero_average_pos.characters:
+	for target in ec.hero_manager.heroes:
 		var distance = target.global_position.x - global_position.x
 
 		if left_target == null && distance < 0 && distance > -SCRATCH_RANGE && distance > left_distance:
@@ -292,8 +292,8 @@ func shoot_laser_eyes():
 	status_timer = ec.cd_timer.new((LASER_SHOW_DURATION + LASER_HIDE_DURATION) * LASER_COUNT, self, "change_status", LASER_EYES_RECOVER)
 
 func find_laser_targets():
-	laser_target_left = ec.target_detect.get_nearest(left_laser_spawn_pos, ec.hero_average_pos.characters)
-	laser_target_right = ec.target_detect.get_nearest(right_laser_spawn_pos, ec.hero_average_pos.characters)
+	laser_target_left = ec.target_detect.get_nearest(left_laser_spawn_pos, ec.hero_manager.heroes)
+	laser_target_right = ec.target_detect.get_nearest(right_laser_spawn_pos, ec.hero_manager.heroes)
 
 func laser_sequence_on():
 	var left_laser_from = left_laser_spawn_pos.global_position

@@ -1,9 +1,10 @@
 const name = "Wendy Vista"
 const id = 7
 const full_health = 175
+const ghost_health = 800
 const movement_speed = 350.0
 const jump_height = 300.0
-const time_to_jump_to_highest = 0.7
+const time_to_jump_to_highest = 0.65
 const hurt_modulate_color = Color(255.0 / 255.0, 150.0 / 255.0, 150.0 / 255.0)
 const hurt_modulate_node_path = ["Sprite/Animation/Body"]
 const ult_eyes_node_path = "Sprite/Animation/Body/UltEyes"

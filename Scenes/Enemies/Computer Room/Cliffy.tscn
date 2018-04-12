@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Cliffy.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Cliffy/Note.png" type="Texture" id=2]
@@ -12,8 +12,7 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Cliffy/Eyelids.png" type="Texture" id=10]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Cliffy/Eyebrow.png" type="Texture" id=11]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=12]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=13]
-[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -3113,6 +3112,8 @@ tracks/35/keys = {
 [node name="Cliffy" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+activate_range_x = 1500
+activate_range_y = 1500
 
 [node name="Animation" type="Node2D" parent="." index="0"]
 
@@ -3267,9 +3268,8 @@ blend_times = [  ]
 [node name="Number Spawn Pos" type="Position2D" parent="." index="1"]
 
 position = Vector2( 7.04126, -8.73695 )
-script = ExtResource( 13 )
 
-[node name="Health Bar" parent="." index="2" instance=ExtResource( 14 )]
+[node name="Health Bar" parent="." index="2" instance=ExtResource( 13 )]
 
 position = Vector2( 2.62967, -246.137 )
 

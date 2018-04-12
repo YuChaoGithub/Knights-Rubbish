@@ -105,7 +105,7 @@ func perform_second_move(delta):
 
 func second_move_ended():
 	# Face the nearest target.
-	var target = ec.target_detect.get_nearest(self, ec.hero_average_pos.characters)
+	var target = ec.target_detect.get_nearest(self, ec.hero_manager.heroes)
 	facing = sign(target.global_position.x - global_position.x)
 	ec.turn_sprites_x(facing)
 

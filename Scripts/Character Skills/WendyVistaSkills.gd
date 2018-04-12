@@ -5,7 +5,7 @@ const BASIC_ATTACK_DURATION = 0.8
 const BASIC_ATTACK_COOLDOWN = 0.2
 
 const BASIC_SKILL_DURATION = 0.8
-const BASIC_SKILL_COOLDOWN = 0.2
+const BASIC_SKILL_COOLDOWN = 0.35
 const BASIC_SKILL_DAMAGE_MIN = 5
 const BASIC_SKILL_DAMAGE_MAX = 10
 const BASIC_SKILL_KNOCK_BACK_VEL_X = 1200
@@ -86,7 +86,7 @@ func basic_attack():
 
 func basic_attack_shoots():
     var cd = basic_attack_cd.instance()
-    cd.initialize(hero.side, hero.attack_modifier, hero.enemy_knock_back_modifier, hero.scale.x)
+    cd.initialize(hero.side, hero.attack_modifier, hero.enemy_knock_back_modifier, hero.size)
 
     spawn_node.add_child(cd)
     cd.global_position = basic_attack_shoot_pos.global_position
@@ -111,7 +111,6 @@ func basic_skill():
 
 func basic_skill_hit(area):
     if area.is_in_group("enemy"):
-        print("hit")
         var enemy = area.get_node("../..")
         enemy.damaged(hero.attack_modifier * rng.randi_range(BASIC_SKILL_DAMAGE_MIN, BASIC_SKILL_DAMAGE_MAX))
         enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * BASIC_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -BASIC_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, BASIC_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
@@ -132,7 +131,7 @@ func horizontal_skill(side):
 
 func horizontal_skill_shoots(side):
     var cd = horizontal_skill_cd.instance()
-    cd.initialize(side, hero.attack_modifier, hero.enemy_knock_back_modifier, hero.scale.x)
+    cd.initialize(side, hero.attack_modifier, hero.enemy_knock_back_modifier, hero.size)
 
     spawn_node.add_child(cd)
     cd.global_position = horizontal_skill_shoot_pos.global_position
@@ -202,7 +201,7 @@ func start_firing_ult():
 
 func fire_ult():
     var cd = ult_cd.instance()
-    cd.initialize(hero.side, hero.attack_modifier, hero.enemy_knock_back_modifier, hero.scale.x)
+    cd.initialize(hero.side, hero.attack_modifier, hero.enemy_knock_back_modifier, hero.size)
     spawn_node.add_child(cd)
     cd.global_position = ult_skill_shoot_pos.global_position
 

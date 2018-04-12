@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Canmera.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Canmera/Cannon Body.png" type="Texture" id=2]
@@ -7,8 +7,7 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Canmera/1.png" type="Texture" id=5]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Canmera/Face.png" type="Texture" id=6]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Canmera/Stand.png" type="Texture" id=7]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=8]
-[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -433,6 +432,8 @@ tracks/6/keys = {
 [node name="Canmera" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+activate_range_x = 3000
+activate_range_y = 1000
 
 [node name="Animation" type="Node2D" parent="." index="0"]
 
@@ -522,9 +523,8 @@ blend_times = [  ]
 [node name="Number Spawn Pos" type="Position2D" parent="." index="1"]
 
 position = Vector2( -0.619324, -249.952 )
-script = ExtResource( 8 )
 
-[node name="Health Bar" parent="." index="2" instance=ExtResource( 9 )]
+[node name="Health Bar" parent="." index="2" instance=ExtResource( 8 )]
 
 position = Vector2( -4.34691, -291.09 )
 

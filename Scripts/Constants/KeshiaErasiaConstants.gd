@@ -1,6 +1,7 @@
 const name = "Keshia Erasia"
 const id = 0
 const full_health = 350
+const ghost_health = 500
 const movement_speed = 400.0
 const jump_height = 300.0
 const time_to_jump_to_highest = 0.5

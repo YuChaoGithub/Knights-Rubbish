@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Scripts/HeroCommon.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Character Skills/KeshiaErasiaSkills.gd" type="Script" id=2]
@@ -27,9 +27,9 @@
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=25]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Petrified.png" type="Texture" id=26]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned mouth.png" type="Texture" id=27]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=28]
-[ext_resource path="res://Scenes/UI/Hero Health Bar.tscn" type="PackedScene" id=29]
-[ext_resource path="res://Graphics/Powerups/Ult Ball/Ball.png" type="Texture" id=30]
+[ext_resource path="res://Scenes/UI/Hero Health Bar.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Graphics/Powerups/Ult Ball/Ball.png" type="Texture" id=29]
+[ext_resource path="res://Scripts/HeroGhost.gd" type="Script" id=30]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -12717,7 +12717,12 @@ extents = Vector2( 1300, 750 )
 custom_solver_bias = 0.0
 extents = Vector2( 70, 80 )
 
-[node name="Keshia Erasia" type="KinematicBody2D" index="0"]
+[sub_resource type="RectangleShape2D" id=26]
+
+custom_solver_bias = 0.0
+extents = Vector2( 79.7137, 95.9264 )
+
+[node name="Keshia Erasia" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
@@ -12764,6 +12769,7 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 scale = Vector2( 0.8, 0.8 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -12977,8 +12983,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Weapon" type="Sprite" parent="Sprite/Animation/Body/Left Arm" index="0"]
 
 editor/display_folded = true
-position = Vector2( 6.01704, -0.178232 )
-rotation = -0.846485
+position = Vector2( 6.01708, -0.17823 )
+rotation = -0.84648
 scale = Vector2( 1.44, 1.44 )
 texture = ExtResource( 20 )
 offset = Vector2( 3.92352, -79.9531 )
@@ -13156,9 +13162,8 @@ scale = Vector2( 1.25, 1.25 )
 [node name="Number Spawn Pos" type="Position2D" parent="." index="4"]
 
 position = Vector2( 0, -115.316 )
-script = ExtResource( 28 )
 
-[node name="Health Bar" parent="." index="5" instance=ExtResource( 29 )]
+[node name="Health Bar" parent="." index="5" instance=ExtResource( 28 )]
 
 [node name="Keshia Ult" type="Node2D" parent="." index="6"]
 
@@ -13251,7 +13256,7 @@ position = Vector2( 0.717346, -126.34 )
 scale = Vector2( 1.5, 1.5 )
 enabled = true
 editor_only = false
-texture = ExtResource( 30 )
+texture = ExtResource( 29 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
@@ -13319,6 +13324,33 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorCheckArea" index="0"]
 
 shape = SubResource( 25 )
+
+[node name="GhostHitBox" type="Node2D" parent="." index="9"]
+
+script = ExtResource( 30 )
+
+[node name="Node2D" type="Node2D" parent="GhostHitBox" index="0"]
+
+[node name="Area2D" type="Area2D" parent="GhostHitBox/Node2D" index="0" groups=[
+"enemy",
+]]
+
+editor/display_folded = true
+position = Vector2( -0.305908, -7.64764 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GhostHitBox/Node2D/Area2D" index="0"]
+
+shape = SubResource( 26 )
 
 [connection signal="area_entered" from="Sprite/Animation/Body/Left Arm/Weapon/Basic Attack Hit Box" to="Combo Handler" method="on_basic_attack_hit"]
 

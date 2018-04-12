@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Godotbos.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Body.png" type="Texture" id=2]
@@ -25,9 +25,8 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Flaggomine/Mine.png" type="Texture" id=23]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Sad Eye.png" type="Texture" id=24]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Canmera/Missle.png" type="Texture" id=25]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=26]
-[ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Graphics/UI/Avatar/Godotbos.png" type="Texture" id=28]
+[ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Graphics/UI/Avatar/Godotbos.png" type="Texture" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -8775,6 +8774,8 @@ collision_mask = 20
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
+activate_range_x = 1500
+activate_range_y = 1500
 kick_right_pos_path = null
 kick_left_pos_path = null
 shoot_center_pos_path = null
@@ -8787,6 +8788,7 @@ shape = SubResource( 1 )
 
 [node name="Animation" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 0, 26 )
 scale = Vector2( 2.25, 2.25 )
 
@@ -9067,7 +9069,6 @@ position = Vector2( -88.7303, -179.598 )
 [node name="Number Spawn Pos" type="Position2D" parent="." index="2"]
 
 position = Vector2( -1.08643, -296.594 )
-script = ExtResource( 26 )
 
 [node name="Missle Pos 1" type="Position2D" parent="." index="3"]
 
@@ -9101,9 +9102,9 @@ position = Vector2( -81.3569, -696.75 )
 
 position = Vector2( 648.77, -694.664 )
 
-[node name="Health Bar" parent="." index="11" instance=ExtResource( 27 )]
+[node name="Health Bar" parent="." index="11" instance=ExtResource( 26 )]
 
-avatar_texture = ExtResource( 28 )
+avatar_texture = ExtResource( 27 )
 
 [connection signal="area_entered" from="Animation/Kick Attack Area" to="." method="on_kick_hit"]
 

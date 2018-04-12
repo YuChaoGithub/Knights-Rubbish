@@ -17,3 +17,6 @@ func change_health_by(val):
 
 func is_full_health():
     return health == full_health
+
+func restore_to_full_health():
+    health = full_health

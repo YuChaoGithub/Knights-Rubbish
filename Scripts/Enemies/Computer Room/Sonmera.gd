@@ -10,6 +10,7 @@ extends Node2D
 enum { NONE, INACTIVE, WAIT, COUNTDOWN, CAPTURE, FLASHLIGHT }
 
 export(int) var activate_range_x = 3000
+export(int) var activate_range_y = 2000
 
 const IDLE_INTERVAL_MIN = 2.0
 const IDLE_INTERVAL_MAX = 5.0
@@ -28,7 +29,7 @@ var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 
 onready var animator = $"Animation/AnimationPlayer"
 onready var flashlight_animator = $"Flashlight/AnimationPlayer"
-onready var hero_average_pos = $"../../../../HeroAveragePos"
+onready var hero_manager = $"../../../../HeroManager"
 
 func _ready():
 	animator.play("Still")
@@ -53,7 +54,7 @@ func change_status(to_status):
 		status_timer = null
 
 func check_nearest_char():
-	if hero_average_pos.global_position.distance_squared_to(global_position) <= activate_range_x * activate_range_x:
+	if hero_manager.in_range_of(global_position, activate_range_x, activate_range_y):
 		change_status(WAIT)
 
 func wait_for_interval():

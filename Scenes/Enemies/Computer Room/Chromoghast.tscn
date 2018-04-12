@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Chromoghast.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Body.png" type="Texture" id=2]
@@ -10,8 +10,7 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Shuriken.png" type="Texture" id=8]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Right Hand.png" type="Texture" id=9]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=10]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=11]
-[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -2181,6 +2180,8 @@ tracks/21/keys = {
 [node name="Chromoghast" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+activate_range_x = 1500
+activate_range_y = 1000
 
 [node name="Animation" type="Node2D" parent="." index="0"]
 
@@ -2289,9 +2290,8 @@ blend_times = [  ]
 [node name="Number Spawn Pos" type="Position2D" parent="." index="1"]
 
 position = Vector2( -0.566376, -103.452 )
-script = ExtResource( 11 )
 
-[node name="Health Bar" parent="." index="2" instance=ExtResource( 12 )]
+[node name="Health Bar" parent="." index="2" instance=ExtResource( 11 )]
 
 position = Vector2( -1.84192, -156.252 )
 

@@ -1,0 +1,215 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Graphics/Effects/Lightning/background.png" type="Texture" id=1]
+[ext_resource path="res://Graphics/Effects/Lightning/main.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Effects/Lightning/left.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Effects/Lightning/left_left.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Effects/Lightning/left_right.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Effects/Lightning/right.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Effects/Lightning/right_left.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Effects/Lightning/top.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Effects/Lightning/top_right.png" type="Texture" id=9]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "Strikes"
+length = 0.3
+loop = false
+step = 0.03
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pivot/TopRight:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.09 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Pivot/Top:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.18 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Pivot/RightLeft:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Pivot/Right:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.24 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Pivot/LeftRight:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.21 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Pivot/LeftLeft:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.12 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Pivot/Left:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.27 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Pivot/Background:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.06 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Pivot/Main:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/9/type = "method"
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[node name="Lightning" type="Node2D" index="0"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="Pivot" type="Position2D" parent="." index="0"]
+
+position = Vector2( 79.7276, -654.87 )
+scale = Vector2( 2.7, 2.7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Background" type="Sprite" parent="Pivot" index="0"]
+
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Main" type="Sprite" parent="Pivot" index="1"]
+
+position = Vector2( -27.4002, -1.86819 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Left" type="Sprite" parent="Pivot" index="2"]
+
+position = Vector2( -108.496, -18.5141 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="LeftLeft" type="Sprite" parent="Pivot" index="3"]
+
+position = Vector2( -166.727, 33.3169 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="LeftRight" type="Sprite" parent="Pivot" index="4"]
+
+position = Vector2( -110.329, 29.8446 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Right" type="Sprite" parent="Pivot" index="5"]
+
+position = Vector2( 29.3633, 23.0144 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="RightLeft" type="Sprite" parent="Pivot" index="6"]
+
+position = Vector2( 16.4011, 75.3921 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Top" type="Sprite" parent="Pivot" index="7"]
+
+position = Vector2( 57.0611, -87.7314 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="TopRight" type="Sprite" parent="Pivot" index="8"]
+
+position = Vector2( 135.877, -10.3423 )
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+
+root_node = NodePath("..")
+autoplay = "Strikes"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Strikes = SubResource( 1 )
+blend_times = [  ]
+
+

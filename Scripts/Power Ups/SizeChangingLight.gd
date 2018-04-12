@@ -7,7 +7,7 @@ export(int, "Dwarf", "Normal", "Giant") var change_to = 1
 var activated = false
 
 onready var hero_layer = ProjectSettings.get_setting("layer_names/2d_physics/hero")
-onready var hero_average_pos = $"../../HeroAveragePos"
+onready var hero_manager = $"../../HeroManager"
 
 func _ready():
 	$TriggerArea.connect("area_entered", self, "hero_enter")
@@ -15,7 +15,7 @@ func _ready():
 func _process(delta):
 	if activated:
 		pass
-	elif hero_average_pos.in_range_of(global_position, activate_range_x, activate_range_y):
+	elif hero_manager.in_range_of(global_position, activate_range_x, activate_range_y):
 		activated = true
 		$Particles2D.emitting = true
 		$TriggerArea.set_collision_mask_bit(hero_layer, true)

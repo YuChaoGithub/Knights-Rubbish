@@ -22,7 +22,7 @@ var activated = false
 
 var target_detect = preload("res://Scripts/Algorithms/TargetDetection.gd")
 
-onready var hero_average_pos = $"../../../../HeroAveragePos"
+onready var hero_manager = $"../../../../HeroManager"
 onready var movement_pattern = preload("res://Scripts/Movements/StraightLineMovement.gd").new(0, SPEED_Y)
 onready var animator = $"Animation/AnimationPlayer"
 
@@ -39,7 +39,7 @@ func _process(delta):
 		if timestamp > LIFETIME:
 			queue_free()
 	else:
-		var target = target_detect.get_nearest(self, hero_average_pos.characters)
+		var target = target_detect.get_nearest(self, hero_manager.heroes)
 		
 		var distance_x = abs(target.global_position.x - global_position.x)
 

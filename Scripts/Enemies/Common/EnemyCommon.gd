@@ -16,7 +16,7 @@ var node
 var status
 var activate_range_x
 var activate_range_y
-var hero_average_pos
+var hero_manager
 var animator
 var health_system
 var health_bar
@@ -52,7 +52,7 @@ func _init(node, default_status = 0):
     self.status = default_status
     self.activate_range_x = node.activate_range_x
     self.activate_range_y = node.activate_range_y
-    self.hero_average_pos = node.get_node("../../HeroAveragePos")
+    self.hero_manager = node.get_node("../../HeroManager")
     self.animator = node.get_node("Animation/AnimationPlayer")
     self.health_system = preload("res://Scripts/Utils/HealthSystem.gd").new(node, node.MAX_HEALTH)
     self.health_bar = node.get_node("Health Bar")
@@ -80,7 +80,7 @@ func change_status(to_status):
         node.status_timer = null
 
 func perform_activate_check():
-    if hero_average_pos.in_range_of(node.global_position, activate_range_x, activate_range_y):
+    if hero_manager.in_range_of(node.global_position, activate_range_x, activate_range_y):
         node.call("activate")
         activate_timer.stop()
         activate_timer.queue_free()

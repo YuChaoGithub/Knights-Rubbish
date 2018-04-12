@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/ClockworkFox.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Clockwork Fox/Body.png" type="Texture" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Clockwork Fox/Grey Body.png" type="Texture" id=11]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Clockwork Fox/Eyeball.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -1587,6 +1586,8 @@ tracks/17/keys = {
 [node name="Clockwork Fox" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+activate_range_x = 800
+activate_range_y = 1000
 still_interval = 2.5
 
 [node name="Animation" type="Node2D" parent="." index="0"]
@@ -1724,7 +1725,6 @@ position = Vector2( 0.578491, -170.062 )
 [node name="Number Spawn Pos" type="Position2D" parent="." index="2"]
 
 position = Vector2( -0.57843, -171.218 )
-script = ExtResource( 14 )
 
 [connection signal="area_entered" from="Animation/Attack Area" to="." method="on_attack_hit"]
 

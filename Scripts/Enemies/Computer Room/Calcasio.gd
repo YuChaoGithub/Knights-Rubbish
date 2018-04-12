@@ -92,7 +92,7 @@ func movement_ended():
     ec.change_status(TYPE)
 
 func detect_and_face_the_nearest_target():
-    var attack_target = ec.target_detect.get_nearest(self, ec.hero_average_pos.characters)
+    var attack_target = ec.target_detect.get_nearest(self, ec.hero_manager.heroes)
     facing = -1 if attack_target.get_global_pos().x < get_global_pos().x else 1
     ec.turn_sprites_x(facing)
 

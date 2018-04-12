@@ -28,12 +28,16 @@ const DAMAGE_TAKEN_RAND_RATIO = 0.2
 
 const HURT_MODULATE_DURATION = 0.15
 const DAMAGE_NUMBER_COLOR = Color(255.0 / 255.0, 0.0 / 255.0, 210.0 / 255.0)
+const GHOST_DAMAGE_NUMBER_COLOR = Color(0.0, 0.0, 0.0)
 const HEAL_NUMBER_COLOR = Color(110.0 / 255.0, 240.0 / 255.0, 15.0 / 255.0)
 const STUNNED_TEXT_COLOR = Color(180.0 / 255.0, 180.0 / 255.0, 0.0 / 255.0)
 const IMMUNE_TEXT_COLOR = Color(255.0 / 255.0, 230.0 / 255.0, 0.0 / 255.0)
 const DEFENSE_TEXT_COLOR = Color(60.0 / 255.0, 227.0 / 255.0, 255.0 / 255.0)
 const ATTACK_TEXT_COLOR = Color(255.0 / 255.0, 50.0 / 255.0, 0.0 / 255.0)
 const SPEED_TEXT_COLOR = Color(0.0 / 255.0, 200.0 / 255.0, 255.0 / 255.0)
+
+# p1: 0, p2: 1
+var player_index
 
 # Controls the basic animations (walk, jump, idle, etc.) of characters.
 # The name of the default animator is defined in player_constants.
@@ -56,6 +60,7 @@ var self_knock_back_modifier = 1.0
 var enemy_knock_back_modifier = 1.0
 
 var side setget ,get_side
+var size setget ,get_size
 
 # For knockback or movement skills.
 var additional_speed_x = 0
@@ -116,11 +121,11 @@ var fall_off_timer = null
 var drink_timer
 var size_tween
 var top_fist = null
+var ghost_health
+
+var lightning = preload("res://Scenes/Effects/Lightning.tscn")
 
 onready var combo_handler = $"Combo Handler"
-
-# Used to control the following camera.
-onready var hero_average_pos = $"../HeroAveragePos"
 
 # Camera. For clamping within view bounds.
 onready var following_camera = $"../FollowingCamera"
@@ -144,6 +149,7 @@ onready var drink_sprite = $"Sprite/Animation/Drink"
 
 onready var door_check_area = $DoorCheckArea
 onready var health_bar = $"Health Bar"
+onready var ghost_hit_box = $GhostHitBox
 onready var sprite = $Sprite
 
 onready var status_icons = {
@@ -173,7 +179,8 @@ func _ready():
 	idle_timestamp = OS.get_unix_time()
 
 	# Health bar.
-	health_bar.initialize(player_constants.full_health, avatar_texture)
+	health_bar.initialize(player_constants.full_health, player_constants.ghost_health, avatar_texture)
+	health_bar.set_health_bar_position(player_index)
 
 func _process(delta):
 	check_combo_and_perform()
@@ -216,7 +223,6 @@ func update_movement(delta):
 			top_fist.perform_movement(horizontal_movement, delta)
 
 			var final_pos = top_fist.get_drop_pos()
-			hero_average_pos.update_pos()
 			global_position = final_pos
 			return
  
@@ -258,9 +264,6 @@ func update_movement(delta):
 	# Fall off check.
 	if !status.fallen_off && camera_clamped_pos.y < global_position.y:
 		falls_off()
-		
-	# Update Hero Average Position so that the camera is updated.
-	hero_average_pos.update_pos()
 
 	# Update the position of the character.
 	global_position = camera_clamped_pos
@@ -697,6 +700,15 @@ func recover_modulate(original_modulate):
 		get_node(node_path).modulate = original_modulate
 	hurt_modulate_timer = null
 
+func ghost_damaged(val):
+	ghost_health = max(0, ghost_health - val)
+	health_bar.set_dead_health(ghost_health)
+
+	number_indicator.instance().initialize(val, GHOST_DAMAGE_NUMBER_COLOR, number_spawn_pos, self)
+
+	if ghost_health == 0:
+		revive()
+
 func healed(val):
 	if status.dead:
 		return
@@ -710,12 +722,46 @@ func healed(val):
 
 func die():
 	status.dead = true
+
+	# Discard unused ult.
+	if status.has_ult:
+		release_ult()
+		status.has_ult = false
+
 	play_animation("Die")
 	set_status("can_move", false, DIE_ANIMATION_DURATION)
-	die_timer = countdown_timer.new(DIE_ANIMATION_DURATION, hero_average_pos, "character_dead")
+	die_timer = countdown_timer.new(DIE_ANIMATION_DURATION, $"../HeroManager", "hero_dead")
+	
+	# Show ghost health bar.
+	ghost_health = player_constants.ghost_health
+	health_bar.switch_to_dead_health_bar()
+	health_bar.set_dead_health(ghost_health)
+
+	ghost_hit_box.activate()
+
+func revive():
+	animator.play_backwards("Die")
+
+	add_child(lightning.instance())
+
+	following_camera.start_shake_effect()
+
+	set_status("can_move", false, DIE_ANIMATION_DURATION)
+	set_status("dead", true, DIE_ANIMATION_DURATION)
+
+	$"../HeroManager".dead_hero_count -= 1
+
+	health_system.restore_to_full_health()
+	health_bar.switch_from_dead_to_original_health_bar()
+	health_bar.set_health_bar(health_system.health)
+
+	ghost_hit_box.deactivate()
 
 func get_side():
 	return int(sign(sprite.scale.x))
+
+func get_size():
+	return scale.x
 
 func jump_to_height(height):
 	velocity_replacement_y = -pow(2.0 * height * gravity, 0.5)

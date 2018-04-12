@@ -29,7 +29,7 @@ drag_margin_bottom = 1.1
 left_limit = 50
 bottom_limit = -50
 
-[node name="HeroAveragePos" type="Position2D" parent="." index="1"]
+[node name="HeroManager" type="Position2D" parent="." index="1"]
 
 position = Vector2( 2070, -580 )
 script = ExtResource( 3 )
@@ -60,8 +60,6 @@ _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="Doors" type="Node2D" parent="." index="4"]
 
-editor/display_folded = true
-
 [node name="Main Menu Door" parent="Doors" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( 591.929, -160.995 )
@@ -78,6 +76,7 @@ position = Vector2( 2345.17, -271.443 )
 [node name="CD Punch" parent="Doors" index="3" instance=ExtResource( 8 )]
 
 position = Vector2( 780.548, -318.618 )
+activate_range_x = 2000
 
 [node name="CD Punch2" parent="Doors" index="4" instance=ExtResource( 8 )]
 

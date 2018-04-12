@@ -6,6 +6,9 @@ const CAMERA_SMOOTH = 2.0
 # The larger the zoom factor is, the more view the camera will cover.
 const ZOOM_FACTOR = 2.0
 
+const SHAKE_DURATION = 0.175
+const SHAKE_MULTITUDE = 10
+
 # Drag margins (from 0 to 1).
 export(float) var drag_margin_right = 0.5
 export(float) var drag_margin_left = 0.3
@@ -21,12 +24,17 @@ export(int, -1000000000, 1000000000) var bottom_limit = 10000000000
 var cam_width
 var cam_height
 
+var is_shaking = false
+var shake_timestamp
+
 # Only move camera when the semaphore is 0.
 var cam_lock_semaphore = 0
 
 # For grabbing and dropping the character from the screen edges.
 var bottom_grab = preload("res://Scenes/UI/Bottom Grab.tscn")
 var top_fist = preload("res://Scenes/UI/Top Fist.tscn")
+
+var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 
 # The target position for the camera.
 onready var target_pos = global_position
@@ -60,10 +68,20 @@ func _process(delta):
 	# Move the camera closer to its target position.
 	var new_pos_x = lerp(global_position.x, target_pos.x, delta * CAMERA_SMOOTH)
 	var new_pos_y = lerp(global_position.y, target_pos.y, delta * CAMERA_SMOOTH)
-	global_position = Vector2(new_pos_x, new_pos_y)
+	var original_pos = Vector2(new_pos_x, new_pos_y)
+	global_position = original_pos
+
+	if is_shaking:
+		global_position += rng.randvec_range(Vector2(-1, -1), Vector2(1, 1)) * SHAKE_MULTITUDE
+		shake_timestamp += delta
 		
+		if shake_timestamp > SHAKE_DURATION:
+			is_shaking = false
+
 	# Actually move the viewport.
 	update_viewport()
+
+	global_position = original_pos
 	
 # Detmermine whether or not to update the camera according to the position of the character.
 # This function should be called by the player movement script.
@@ -112,6 +130,8 @@ func clamp_pos_within_cam_bounds(pos):
 	return pos
 
 func instance_bottom_grab(pos_x):
+	start_shake_effect()
+
 	var fist = bottom_grab.instance()
 	$"..".add_child(fist)
 	fist.global_position = Vector2(pos_x, global_position.y + cam_height * 0.5)
@@ -123,6 +143,10 @@ func instance_top_fist(icon_texture):
 	fist.global_position = Vector2(global_position.x, global_position.y - cam_height * 0.5)
 
 	return fist
+
+func start_shake_effect():
+	shake_timestamp = 0.0
+	is_shaking = true
 
 func update_right_margin(value):
 	drag_margin_right = value

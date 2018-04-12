@@ -83,7 +83,7 @@ func movement_ended():
 func check_target_in_range():
 	target_detect_timer = null
 	
-	var nearest_target = ec.target_detect.get_nearest(self, ec.hero_average_pos.characters)
+	var nearest_target = ec.target_detect.get_nearest(self, ec.hero_manager.heroes)
 	if abs(global_position.x - nearest_target.global_position.x) <= ATTACK_RANGE_X && abs(global_position.y - nearest_target.global_position.y) <= ATTACK_RANGE_Y:
 		facing = sign(nearest_target.global_position.x - global_position.x)
 		ec.turn_sprites_x(facing)

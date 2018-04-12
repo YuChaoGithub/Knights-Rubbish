@@ -88,7 +88,7 @@ func change_status(to_status):
 
 func wait_till_character_is_near():
 	ec.play_animation("Still")
-	attack_target = ec.target_detect.get_nearest(self, ec.hero_average_pos.characters)
+	attack_target = ec.target_detect.get_nearest(self, ec.hero_manager.heroes)
 	if abs(attack_target.global_position.x - global_position.x) <= ATTACK_RANGE_X:
 		ec.change_status(DROP)
 

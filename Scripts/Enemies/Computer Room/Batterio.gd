@@ -29,7 +29,7 @@ onready var hero_layer = ProjectSettings.get_setting("layer_names/2d_physics/her
 
 onready var animator = $AnimationPlayer
 onready var attack_collider = $"Attack Area"
-onready var hero_average_pos = $"../../HeroAveragePos"
+onready var hero_manager = $"../../HeroManager"
 
 func _ready():
 	animator.play("Still")
@@ -52,7 +52,7 @@ func change_status(to_status):
 		status_timer = null
 
 func check_for_active():
-	if hero_average_pos.in_range_of(global_position, activate_range_x, activate_range_y):
+	if hero_manager.in_range_of(global_position, activate_range_x, activate_range_y):
 		change_status(WARNING)
 
 func display_warning():

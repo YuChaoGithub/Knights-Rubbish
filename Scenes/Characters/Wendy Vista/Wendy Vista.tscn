@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=59 format=2]
 
 [ext_resource path="res://Scripts/HeroCommon.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Character Skills/WendyVistaSkills.gd" type="Script" id=2]
@@ -13,32 +13,32 @@
 [ext_resource path="res://Graphics/Characters/Common/Ghost Ripple 2.png" type="Texture" id=11]
 [ext_resource path="res://Graphics/Characters/Common/Ghost Ripple 3.png" type="Texture" id=12]
 [ext_resource path="res://Graphics/Characters/Wendy Vista/Body.png" type="Texture" id=13]
-[ext_resource path="res://Graphics/Characters/Wendy Vista/Foot.png" type="Texture" id=14]
-[ext_resource path="res://Graphics/Characters/Wendy Vista/Mouth.png" type="Texture" id=15]
-[ext_resource path="res://Graphics/Characters/Wendy Vista/Teeth.png" type="Texture" id=16]
-[ext_resource path="res://Graphics/Characters/Wendy Vista/Skirt.png" type="Texture" id=17]
-[ext_resource path="res://Scenes/Characters/Ult Eye.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/Particles/Fire Particle.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Scenes/Power Ups/Confused Icon.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Scenes/Power Ups/Attack Icon.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Scenes/Power Ups/Defense Icon.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Scenes/Power Ups/Slowed Icon.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Graphics/Characters/Common/Power Up/Attack Potion.png" type="Texture" id=24]
-[ext_resource path="res://Scenes/Power Ups/Speeded Icon.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Graphics/Characters/Wendy Vista/Eye Angry.png" type="Texture" id=26]
+[ext_resource path="res://Graphics/Characters/Wendy Vista/Eye Angry.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Characters/Wendy Vista/Foot.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/Characters/Wendy Vista/Mouth.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/Characters/Wendy Vista/Teeth.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/Characters/Wendy Vista/Skirt.png" type="Texture" id=18]
+[ext_resource path="res://Scenes/Characters/Ult Eye.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Particles/Fire Particle.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Power Ups/Confused Icon.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Power Ups/Attack Icon.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Power Ups/Defense Icon.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Power Ups/Slowed Icon.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Graphics/Characters/Common/Power Up/Attack Potion.png" type="Texture" id=25]
+[ext_resource path="res://Scenes/Power Ups/Speeded Icon.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Graphics/Characters/Wendy Vista/Mouth Open.png" type="Texture" id=27]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Left Brow.png" type="Texture" id=28]
 [ext_resource path="res://Graphics/Characters/Wendy Vista/Eye Wink.png" type="Texture" id=29]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=30]
 [ext_resource path="res://Graphics/Particles/Blurred Dot.png" type="Texture" id=31]
 [ext_resource path="res://Scenes/Particles/Ult Stone Particles.tscn" type="PackedScene" id=32]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=33]
-[ext_resource path="res://Scenes/UI/Hero Health Bar.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Scenes/UI/Hero Health Bar.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Scripts/HeroGhost.gd" type="Script" id=34]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 52.7286, 84.4514 )
+extents = Vector2( 40.4066, 84.4514 )
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -634,7 +634,7 @@ tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 26 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/31/type = "value"
 tracks/31/path = NodePath("Animation/DownSkillHat:visible")
@@ -1108,7 +1108,7 @@ tracks/30/keys = {
 "times": PoolRealArray( 0, 0.1, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 6 ), ExtResource( 26 ), ExtResource( 6 ) ]
+"values": [ ExtResource( 6 ), ExtResource( 14 ), ExtResource( 6 ) ]
 }
 tracks/31/type = "value"
 tracks/31/path = NodePath("Animation/DownSkillHat:visible")
@@ -1132,7 +1132,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 16 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -1606,7 +1606,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 16 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -2116,7 +2116,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ), ExtResource( 15 ) ]
+"values": [ ExtResource( 16 ), ExtResource( 16 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -2614,7 +2614,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0, 0.5, 1.25 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ), ExtResource( 27 ), ExtResource( 15 ) ]
+"values": [ ExtResource( 16 ), ExtResource( 27 ), ExtResource( 16 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -3124,7 +3124,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0, 0.5, 1.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ), ExtResource( 27 ), ExtResource( 15 ) ]
+"values": [ ExtResource( 16 ), ExtResource( 27 ), ExtResource( 16 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -3598,7 +3598,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 16 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -4072,7 +4072,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 16 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -4547,7 +4547,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 16 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -5021,7 +5021,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 16 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -5495,7 +5495,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 16 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -5570,7 +5570,7 @@ tracks/38/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=20]
 
 resource_name = "Ult"
 length = 3.0
@@ -5946,7 +5946,7 @@ tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 26 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/31/type = "value"
 tracks/31/path = NodePath("Animation/DownSkillHat:visible")
@@ -6045,7 +6045,7 @@ tracks/38/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=21]
 
 length = 0.7
 loop = false
@@ -6444,7 +6444,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 16 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -6519,7 +6519,7 @@ tracks/38/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=22]
 
 length = 1.0
 loop = true
@@ -6918,7 +6918,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 16 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -6993,12 +6993,17 @@ tracks/38/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=23]
 
 custom_solver_bias = 0.0
 extents = Vector2( 54.6909, 85.7068 )
 
-[node name="Wendy Vista" type="KinematicBody2D"]
+[sub_resource type="RectangleShape2D" id=24]
+
+custom_solver_bias = 0.0
+extents = Vector2( 67.9078, 97.0608 )
+
+[node name="Wendy Vista" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 0
@@ -7042,6 +7047,7 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="Animation" type="Node2D" parent="Sprite" index="0"]
@@ -7075,8 +7081,6 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Visib
 
 editor/display_folded = true
 visible = false
-position = Vector2( -1.33395, 70.2544 )
-scale = Vector2( 0.3, 0.3 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Body" type="Sprite" parent="Sprite/Animation/Ghost" index="0"]
@@ -7135,6 +7139,8 @@ blend_times = [  ]
 
 [node name="Body" type="Sprite" parent="Sprite/Animation" index="2"]
 
+editor/display_folded = true
+position = Vector2( 0, -16 )
 texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -7145,8 +7151,9 @@ texture = ExtResource( 7 )
 
 [node name="Eye" type="Sprite" parent="Sprite/Animation/Body" index="1"]
 
-position = Vector2( 8.72646, -3.52772 )
-texture = ExtResource( 6 )
+position = Vector2( 7.1907, -3.38811 )
+scale = Vector2( 1.05714, 1.05714 )
+texture = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Pink" type="Sprite" parent="Sprite/Animation/Body" index="2"]
@@ -7157,19 +7164,22 @@ texture = ExtResource( 9 )
 [node name="Left Foot" type="Sprite" parent="Sprite/Animation/Body" index="3"]
 
 position = Vector2( -19.6812, 77.6028 )
-texture = ExtResource( 14 )
+rotation = 0.572194
+texture = ExtResource( 15 )
 offset = Vector2( -0.500076, 12.4878 )
 
 [node name="Right Foot" type="Sprite" parent="Sprite/Animation/Body" index="4"]
 
 position = Vector2( 19.522, 78.1469 )
-texture = ExtResource( 14 )
+rotation = 0.146333
+texture = ExtResource( 15 )
 offset = Vector2( -0.156494, 12.0443 )
 
 [node name="Hat" type="Sprite" parent="Sprite/Animation/Body" index="5"]
 
 editor/display_folded = true
-position = Vector2( -1.30359, -71.1389 )
+position = Vector2( -4.26978, -78.6892 )
+rotation = 0.0748602
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -7196,19 +7206,19 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 39.9342, 18.4681 )
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Teeth" type="Sprite" parent="Sprite/Animation/Body/Mouth" index="0"]
 
 position = Vector2( 4.55707, 3.35783 )
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Skirt" type="Sprite" parent="Sprite/Animation/Body" index="7"]
 
 position = Vector2( -2.07814, 64.6541 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="UltEyes" type="Node2D" parent="Sprite/Animation/Body" index="8"]
 
@@ -7216,37 +7226,37 @@ editor/display_folded = true
 visible = false
 position = Vector2( -5.01117, 0.850349 )
 
-[node name="Ult Eye" parent="Sprite/Animation/Body/UltEyes" index="0" instance=ExtResource( 18 )]
+[node name="Ult Eye" parent="Sprite/Animation/Body/UltEyes" index="0" instance=ExtResource( 19 )]
 
 position = Vector2( 5.59875, -5.16511 )
 scale = Vector2( 1.6, 1.6 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Fire Particle" parent="Sprite/Animation/Body" index="9" instance=ExtResource( 19 )]
+[node name="Fire Particle" parent="Sprite/Animation/Body" index="9" instance=ExtResource( 20 )]
 
 visible = false
 position = Vector2( -15.1939, -90.5042 )
 rotation = -0.241801
 
-[node name="Confused Icon" parent="Sprite/Animation/Body" index="10" instance=ExtResource( 20 )]
+[node name="Confused Icon" parent="Sprite/Animation/Body" index="10" instance=ExtResource( 21 )]
 
 position = Vector2( -0.264679, -131.216 )
 scale = Vector2( 0.8, 0.8 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Attack Icon" parent="Sprite/Animation/Body" index="11" instance=ExtResource( 21 )]
+[node name="Attack Icon" parent="Sprite/Animation/Body" index="11" instance=ExtResource( 22 )]
 
 position = Vector2( -31.7302, -32.5006 )
 scale = Vector2( 0.5, 0.5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Defense Icon" parent="Sprite/Animation/Body" index="12" instance=ExtResource( 22 )]
+[node name="Defense Icon" parent="Sprite/Animation/Body" index="12" instance=ExtResource( 23 )]
 
 position = Vector2( 30.4162, -33.7409 )
 scale = Vector2( 0.5, 0.5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Slowed Icon" parent="Sprite/Animation/Body" index="13" instance=ExtResource( 23 )]
+[node name="Slowed Icon" parent="Sprite/Animation/Body" index="13" instance=ExtResource( 24 )]
 
 position = Vector2( -0.517883, 46.2257 )
 scale = Vector2( 0.55, 0.55 )
@@ -7261,7 +7271,7 @@ position = Vector2( 51.9573, 15.9869 )
 visible = false
 position = Vector2( 75.8853, 40.3395 )
 rotation = -0.0386191
-texture = ExtResource( 24 )
+texture = ExtResource( 25 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="DownSkillHat" type="Sprite" parent="Sprite/Animation" index="4"]
@@ -7271,7 +7281,7 @@ position = Vector2( -1.30359, -71.1389 )
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Speeded Icon" parent="Sprite/Animation" index="5" instance=ExtResource( 25 )]
+[node name="Speeded Icon" parent="Sprite/Animation" index="5" instance=ExtResource( 26 )]
 
 position = Vector2( 6.14301, 83.5229 )
 scale = Vector2( 0.5, 0.5 )
@@ -7287,7 +7297,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 collision_layer = 0
-collision_mask = 2
+collision_mask = 0
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
@@ -7314,9 +7324,9 @@ anims/Jump = SubResource( 16 )
 "anims/Size Change" = SubResource( 17 )
 anims/Still = SubResource( 18 )
 anims/Stunned = SubResource( 19 )
-anims/Ult = SubResource( 23 )
-"anims/Up Skill" = SubResource( 20 )
-anims/Walk = SubResource( 21 )
+anims/Ult = SubResource( 20 )
+"anims/Up Skill" = SubResource( 21 )
+anims/Walk = SubResource( 22 )
 blend_times = [  ]
 
 [node name="BasicAttackShootPos" type="Position2D" parent="Sprite" index="2"]
@@ -7372,48 +7382,8 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Vis
 [node name="Number Spawn Pos" type="Position2D" parent="." index="5"]
 
 position = Vector2( -0.198761, -116.073 )
-script = ExtResource( 33 )
 
-[node name="Health Bar" parent="." index="6" instance=ExtResource( 34 )]
-
-editor/display_folded = true
-
-[node name="Control" parent="Health Bar" index="0"]
-
-visible = false
-rect_clip_content = false
-
-[node name="Scrap Paper" parent="Health Bar/Control" index="0"]
-
-rect_clip_content = false
-
-[node name="Frame" parent="Health Bar/Control" index="1"]
-
-rect_clip_content = false
-
-[node name="Character" parent="Health Bar/Control/Frame" index="0"]
-
-rect_clip_content = false
-
-[node name="Ult Ball" parent="Health Bar/Control/Frame" index="1"]
-
-rect_clip_content = false
-
-[node name="Bar" parent="Health Bar/Control" index="2"]
-
-rect_clip_content = false
-
-[node name="Health Left" parent="Health Bar/Control" index="3"]
-
-rect_clip_content = false
-
-[node name="Slash" parent="Health Bar/Control" index="4"]
-
-rect_clip_content = false
-
-[node name="Total Health" parent="Health Bar/Control" index="5"]
-
-rect_clip_content = false
+[node name="Health Bar" parent="." index="6" instance=ExtResource( 33 )]
 
 [node name="DoorCheckArea" type="Area2D" parent="." index="7"]
 
@@ -7432,11 +7402,38 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorCheckArea" index="0"]
 
-shape = SubResource( 22 )
+shape = SubResource( 23 )
+
+[node name="GhostHitBox" type="Node2D" parent="." index="8"]
+
+editor/display_folded = true
+script = ExtResource( 34 )
+
+[node name="Node2D" type="Node2D" parent="GhostHitBox" index="0"]
+
+[node name="Area2D" type="Area2D" parent="GhostHitBox/Node2D" index="0" groups=[
+"enemy",
+]]
+
+editor/display_folded = true
+position = Vector2( 0.541809, -10.2953 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GhostHitBox/Node2D/Area2D" index="0"]
+
+shape = SubResource( 24 )
 
 [connection signal="area_entered" from="Sprite/Animation/Body/Hat/UpSkillArea" to="Combo Handler" method="on_up_skill_hit"]
 
 [connection signal="area_entered" from="Sprite/Animation/BasicSkillArea" to="Combo Handler" method="basic_skill_hit"]
 
 
-[editable path="Health Bar"]

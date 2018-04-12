@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Plugobra.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Plugobra/Charger Plug.png" type="Texture" id=2]
@@ -6,8 +6,7 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Plugobra/Normal Segment.png" type="Texture" id=4]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Plugobra/Tail.png" type="Texture" id=5]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=7]
-[ext_resource path="res://Scripts/Utils/DrawingNode.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Utils/DrawingNode.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -1915,6 +1914,8 @@ tracks/38/keys = {
 [node name="Plugobra" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+activate_range_x = 2000
+activate_range_y = 2000
 
 [node name="Animation" type="Node2D" parent="." index="0"]
 
@@ -2048,7 +2049,6 @@ position = Vector2( 0.735229, -116.173 )
 [node name="Number Spawn Pos" type="Position2D" parent="." index="2"]
 
 position = Vector2( 0.709961, -115.729 )
-script = ExtResource( 7 )
 
 [node name="Laser Pos Left" type="Position2D" parent="." index="3"]
 
@@ -2060,6 +2060,6 @@ position = Vector2( 18.2601, -42.3025 )
 
 [node name="Drawing" type="Node2D" parent="." index="5"]
 
-script = ExtResource( 8 )
+script = ExtResource( 7 )
 
 

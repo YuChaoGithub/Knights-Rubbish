@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Radiogugu.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Radiogugu/Body.png" type="Texture" id=2]
@@ -21,10 +21,9 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Radiogugu/Left Leg.png" type="Texture" id=19]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Radiogugu/Left Foot.png" type="Texture" id=20]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Radiogugu/Right Thigh.png" type="Texture" id=21]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=22]
-[ext_resource path="res://Scripts/Utils/DrawingNode.gd" type="Script" id=23]
-[ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Graphics/UI/Avatar/Radiogugu.png" type="Texture" id=25]
+[ext_resource path="res://Scripts/Utils/DrawingNode.gd" type="Script" id=22]
+[ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Graphics/UI/Avatar/Radiogugu.png" type="Texture" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -6692,6 +6691,8 @@ collision_mask = 20
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
+activate_range_x = 1000
+activate_range_y = 1000
 
 [node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -6700,6 +6701,7 @@ shape = SubResource( 1 )
 
 [node name="Animation" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( -1.32568, -23.1999 )
 scale = Vector2( 1.5, 1.5 )
 
@@ -6912,14 +6914,13 @@ blend_times = [  ]
 [node name="Number Spawn Pos" type="Position2D" parent="." index="2"]
 
 position = Vector2( -1.25482, -442.962 )
-script = ExtResource( 22 )
 
 [node name="Drawing Node" type="Node2D" parent="." index="3"]
 
-script = ExtResource( 23 )
+script = ExtResource( 22 )
 
-[node name="Health Bar" parent="." index="4" instance=ExtResource( 24 )]
+[node name="Health Bar" parent="." index="4" instance=ExtResource( 23 )]
 
-avatar_texture = ExtResource( 25 )
+avatar_texture = ExtResource( 24 )
 
 

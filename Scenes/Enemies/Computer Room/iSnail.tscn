@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/ISnail.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/iSnail/Body Mouth Closed.png" type="Texture" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Mouth.png" type="Texture" id=10]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -1798,6 +1797,8 @@ collision_mask = 20
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
+activate_range_x = 1600
+activate_range_x = 1600
 
 [node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -1923,6 +1924,5 @@ position = Vector2( -2.16318, -105.995 )
 [node name="Number Spawn Pos" type="Position2D" parent="." index="3"]
 
 position = Vector2( 0, -108.591 )
-script = ExtResource( 13 )
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/CDPunch.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=2]
@@ -13,7 +13,6 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/Die Eye.png" type="Texture" id=11]
 [ext_resource path="res://Graphics/Characters/Bro SS/Big Bro Eyebrow.png" type="Texture" id=12]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=13]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -1017,7 +1016,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.3, 0.6, 0.9, 1.1, 1.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -18 ), Vector2( 0, -18 ), Vector2( -9.95697e-05, -27 ), Vector2( -5.76675e-05, -2.99994 ), Vector2( -5.76675e-05, -2.99994 ), Vector2( -9.95697e-05, -27 ) ]
+"values": [ Vector2( 0, -10.8603 ), Vector2( 0, -18 ), Vector2( -9.95697e-05, -27 ), Vector2( -5.76675e-05, -2.99994 ), Vector2( -5.76675e-05, -2.99994 ), Vector2( -9.95697e-05, -27 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:rotation_degrees")
@@ -1164,7 +1163,7 @@ tracks/12/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[node name="CD Punch" type="KinematicBody2D"]
+[node name="CD Punch" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 0
@@ -1215,8 +1214,7 @@ offset = Vector2( -99.7217, -0.654175 )
 
 [node name="Eye" type="Sprite" parent="Animation/Body" index="0"]
 
-position = Vector2( -70, -25.4349 )
-rotation = 1.00317
+position = Vector2( -77.254, -27.0201 )
 texture = ExtResource( 4 )
 
 [node name="Tear" type="Sprite" parent="Animation/Body" index="1"]
@@ -1238,7 +1236,7 @@ update_scale = true
 [node name="Attack Area" type="Area2D" parent="Animation" index="2"]
 
 editor/display_folded = true
-position = Vector2( -100.662, -3.33786 )
+position = Vector2( -101, 0 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -1275,7 +1273,6 @@ blend_times = [  ]
 
 position = Vector2( 50.8802, 78.0164 )
 rotation = -0.531032
-script = ExtResource( 14 )
 
 [connection signal="area_entered" from="Animation/Attack Area" to="." method="on_attack_hit"]
 

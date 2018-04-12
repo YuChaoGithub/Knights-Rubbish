@@ -91,7 +91,7 @@ func roam_randomly(delta):
 	ec.perform_random_movement(delta)
 
 	# Check if a character is in dash range.
-	for character in ec.hero_average_pos.characters:
+	for character in ec.hero_manager.heroes:
 		if abs(character.global_position.x - global_position.x) <= DASH_RANGE:
 			attack_target = character
 			ec.change_status(DASH)

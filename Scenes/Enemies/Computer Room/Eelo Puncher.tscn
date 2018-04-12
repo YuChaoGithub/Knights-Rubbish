@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/EeloPuncher.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Puncher/Left Forearm.png" type="Texture" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Puncher/Angry Face.png" type="Texture" id=12]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Puncher/Stunned Face.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -2864,6 +2863,8 @@ collision_mask = 20
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
+activate_range_x = 1500
+activate_range_y = 1500
 fountain_path = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
@@ -2873,6 +2874,7 @@ shape = SubResource( 1 )
 
 [node name="Animation" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( -0.4953, 10.8967 )
 scale = Vector2( 2.2, 2.2 )
 
@@ -3071,7 +3073,6 @@ position = Vector2( 3.23474, -200.555 )
 
 position = Vector2( -1.53192, -115.562 )
 scale = Vector2( 0.88, 0.88 )
-script = ExtResource( 15 )
 
 [connection signal="area_entered" from="Animation/Left Punch Area" to="." method="on_left_attack_hit"]
 

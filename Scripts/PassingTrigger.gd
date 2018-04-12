@@ -15,11 +15,11 @@ export(int, "None", "Lesser", "Greater") var y_check = 0
 
 var in_range = false
 
-onready var hero_average_pos = $"../../HeroAveragePos"
+onready var hero_manager = $"../../HeroManager"
 
 func _process(delta):
 	if in_range:
-		var hero_min_max = hero_average_pos.get_min_max_pos()
+		var hero_min_max = hero_manager.get_min_max_pos()
 		var success_x = x_check == NONE || (x_check == GREATER && hero_min_max[0].x > global_position.x) || (x_check == LESSER && hero_min_max[1].x < global_position.x)
 		var success_y = y_check == NONE || (y_check == GREATER && hero_min_max[0].y > global_position.y) || (y_check == LESSER && hero_min_max[1].y < global_position.y)
 
@@ -28,5 +28,5 @@ func _process(delta):
 		if success_x && success_y:
 			emit_signal("passed")
 			queue_free()
-	elif hero_average_pos.in_range_of(global_position, range_x, range_y):
+	elif hero_manager.in_range_of(global_position, range_x, range_y):
 		in_range = true

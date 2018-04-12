@@ -4,6 +4,9 @@ const MOVEMENT_Y = -100
 const TEXT_SHOW_DURATION = 1.3
 const NUMBER_SHOW_DURATION = 0.4
 const SPRITE_WIDTH = 75
+const POSITION_RANGE_X = 50
+const POSITION_RANGE_Y = 80
+const MIN_ALPHA = 0.15
 
 enum { STUNNED = -1, IMMUNE = -2, DEFENSE = -3, ATTACK = -4, SPEED = -5 }
 
@@ -28,19 +31,20 @@ var attack_scene = preload("res://Scenes/Utils/Numbers/Attack.tscn")
 var speed_scene = preload("res://Scenes/Utils/Numbers/Speed.tscn")
 
 var number_instances = []
-var timepassed = 0.0
 var color
 var parent
 
-onready var start_pos = self.global_position
+var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
+
+var start_pos
 
 # Pass in -1 to show "Stunned!".
 func initialize(number, color, pos, node):
 	self.color = color
 
 	parent = node.get_tree().get_root().get_node("Game Level")
-	 
-	global_position = pos.get_curr_pos(self)
+
+	start_pos = pos.global_position + Vector2(rng.randi_range(-POSITION_RANGE_X, POSITION_RANGE_X) / 2, -rng.randi_range(0, POSITION_RANGE_Y))
 
 	show_duration = TEXT_SHOW_DURATION
 
@@ -62,6 +66,25 @@ func initialize(number, color, pos, node):
 	add_numbers_as_children()
 
 	parent.add_child(self)
+
+func _ready():
+	global_position = start_pos
+
+	var tween = Tween.new()
+	add_child(tween)
+	
+	tween.connect("tween_completed", self, "completed_fade_tween")
+	tween.interpolate_method(self, "fade_step", 0.0, 1.0, show_duration, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	tween.start()
+
+func fade_step(progress):
+	global_position = Vector2(start_pos.x, start_pos.y + MOVEMENT_Y * progress)
+	
+	for number in number_instances:
+		number.self_modulate = Color(color.r, color.g, color.b, 1.0 - progress + MIN_ALPHA)
+
+func completed_fade_tween(object, key):
+	queue_free()
 
 func instance_numbers(number):
 	# Only 3 digits are allowed.
@@ -97,17 +120,3 @@ func settle_positions():
 func add_numbers_as_children():
 	for number in number_instances:
 		add_child(number)
-
-func _process(delta):
-	timepassed += delta
-
-	if timepassed >= show_duration:
-		queue_free()
-		return
-
-	# Position (floating up).
-	global_position = Vector2(start_pos.x, lerp(start_pos.y, start_pos.y + MOVEMENT_Y, timepassed / show_duration))
-
-	# Alpha value.
-	for number in number_instances:
-		number.self_modulate = Color(color.r, color.g, color.b, lerp(1.0, 0.0, timepassed / show_duration))

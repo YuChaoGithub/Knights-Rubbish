@@ -200,7 +200,7 @@ func horizontal_skill_toss(side):
 	# Spawn pencil dart.
 	var dart = pencil_dart.instance()
 
-	dart.initialize(side, hero.attack_modifier, hero.scale.x)
+	dart.initialize(side, hero.attack_modifier, hero.size)
 
 	dart_spawn_node.add_child(dart)
 	dart.global_position = pencil_toss_pos.global_position

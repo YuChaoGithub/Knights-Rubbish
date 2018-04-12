@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Mouse.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=2]
@@ -15,7 +15,6 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/Die Eye.png" type="Texture" id=13]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Mouth.png" type="Texture" id=14]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=15]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -4696,6 +4695,5 @@ blend_times = [  ]
 
 position = Vector2( 0.620667, -74.8943 )
 scale = Vector2( 0.8, 0.8 )
-script = ExtResource( 16 )
 
 

@@ -96,7 +96,7 @@ func spawn_mousy():
 	status_timer = ec.cd_timer.new(SPAWN_MOUSY_DURATION, self, "change_status", CLOSE)
 
 func face_the_nearest_target():
-	var target = ec.target_detect.get_nearest(self, ec.hero_average_pos.characters)
+	var target = ec.target_detect.get_nearest(self, ec.hero_manager.heroes)
 	facing = sign(target.global_position.x - global_position.x)
 	ec.turn_sprites_x(facing)
 

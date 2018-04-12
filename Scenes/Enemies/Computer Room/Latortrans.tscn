@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Latortrans.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Body.png" type="Texture" id=2]
@@ -16,9 +16,8 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Slow.png" type="Texture" id=14]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Stun.png" type="Texture" id=15]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Right Hole.png" type="Texture" id=16]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=17]
-[ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Graphics/UI/Avatar/Latortrans.png" type="Texture" id=19]
+[ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Graphics/UI/Avatar/Latortrans.png" type="Texture" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -3123,6 +3122,8 @@ tracks/35/keys = {
 [node name="Latortrans" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+activate_range_x = 1500
+activate_range_y = 1500
 
 [node name="Animation" type="Node2D" parent="." index="0"]
 
@@ -3287,10 +3288,9 @@ position = Vector2( -387.544, -152.29 )
 [node name="Number Spawn Pos" type="Position2D" parent="." index="2"]
 
 position = Vector2( 0.00445557, -400.729 )
-script = ExtResource( 17 )
 
-[node name="Health Bar" parent="." index="3" instance=ExtResource( 18 )]
+[node name="Health Bar" parent="." index="3" instance=ExtResource( 17 )]
 
-avatar_texture = ExtResource( 19 )
+avatar_texture = ExtResource( 18 )
 
 

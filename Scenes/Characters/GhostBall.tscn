@@ -1,0 +1,209 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scripts/Character Skills/GhostBall.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Particles/Blurred Dot.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Particles/Fire 2.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Powerups/Ult Ball/Ball.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/UI/Avatar/Ghost.png" type="Texture" id=5]
+
+[sub_resource type="Gradient" id=1]
+
+offsets = PoolRealArray( 0, 0.789279, 1 )
+colors = PoolColorArray( 0.165619, 0, 0.316406, 1, 0, 0, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+
+flags = 4
+gradient = SubResource( 1 )
+width = 2048
+
+[sub_resource type="Curve" id=3]
+
+min_value = 0.0
+max_value = 1.5
+bake_resolution = 100
+_data = [ Vector2( 0.00391527, 1.5 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.75 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+
+flags = 4
+width = 2048
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 180.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 800.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Color", "Gravity", "Initial Velocity", "Scale", "Spread" ]
+
+[sub_resource type="Gradient" id=6]
+
+offsets = PoolRealArray( 0, 0.146026, 0.402957, 0.567468, 0.998152 )
+colors = PoolColorArray( 0, 0, 0, 1, 0.00146914, 0, 0.00280671, 0.71502, 0.0789662, 0, 0.150861, 1, 0.080449, 0, 0.153694, 0.43502, 0.198334, 0, 0.378906, 1 )
+
+[sub_resource type="GradientTexture" id=7]
+
+flags = 4
+gradient = SubResource( 6 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=8]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 1
+emission_sphere_radius = 20.0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 180.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.0
+initial_velocity_random = 0.0
+angular_velocity = 10.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.3
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 50.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 180.0
+angle_random = 1.0
+scale = 1.0
+scale_random = 0.5
+color_ramp = SubResource( 7 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Scale", "Spread" ]
+
+[node name="GhostBall" type="Node2D"]
+
+position = Vector2( 1668.69, -449.462 )
+scale = Vector2( 0.6, 0.6 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="FadeInTween" type="Tween" parent="." index="0"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="FadeOutTween" type="Tween" parent="." index="1"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="ExplodeParticles" type="Particles2D" parent="." index="2"]
+
+emitting = false
+amount = 50
+lifetime = 0.3
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.6
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 5 )
+texture = ExtResource( 2 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time" ]
+
+[node name="SwirlParticles" type="Particles2D" parent="." index="3"]
+
+modulate = Color( 1, 1, 1, 0.784314 )
+emitting = true
+amount = 150
+lifetime = 3.0
+one_shot = false
+preprocess = 1.5
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 8 )
+texture = ExtResource( 3 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+
+[node name="Ball" type="Sprite" parent="." index="4"]
+
+self_modulate = Color( 1, 0, 0.375, 1 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Ghost" type="Sprite" parent="Ball" index="0"]
+
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( -5.46228, -31.0925 )
+scale = Vector2( 1.6, 1.6 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+

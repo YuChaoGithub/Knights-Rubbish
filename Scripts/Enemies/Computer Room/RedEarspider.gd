@@ -32,7 +32,7 @@ var countdown_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var target_detection = preload("res://Scripts/Algorithms/TargetDetection.gd")
 
 onready var movement_type = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
-onready var hero_average_pos = $"../../../../HeroAveragePos"
+onready var hero_manager = $"../../../../HeroManager"
 onready var animator = $"Animation/AnimationPlayer"
 onready var explosion_particles = $"Explosion Particles"
 
@@ -51,7 +51,7 @@ func _process(delta):
 		start_counting_down()
 
 func check_nearest_char():
-	var nearest_target = target_detection.get_nearest(self, hero_average_pos.characters)
+	var nearest_target = target_detection.get_nearest(self, hero_manager.heroes)
 
 	if abs(nearest_target.global_position.x - global_position.x) <= TRIGGER_RANGE_X:
 		status = COUNTDOWN

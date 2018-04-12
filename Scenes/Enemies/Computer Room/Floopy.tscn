@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Floopy.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/blue floppy.png" type="Texture" id=2]
@@ -17,7 +17,6 @@
 [ext_resource path="res://Graphics/Characters/Bro SS/Big Bro Eyebrow.png" type="Texture" id=15]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=16]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -2752,6 +2751,7 @@ shape = SubResource( 1 )
 
 [node name="Animation" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
 position = Vector2( 0, -38.3367 )
 scale = Vector2( 1.2, 1.2 )
 _sections_unfolded = [ "Transform" ]
@@ -2914,7 +2914,6 @@ position = Vector2( 2.7919, -149.134 )
 
 position = Vector2( -6.10351e-05, -84.763 )
 scale = Vector2( 0.96, 0.96 )
-script = ExtResource( 18 )
 
 [connection signal="area_entered" from="Animation/Body/Left Arm/Left Forearm/Attack Area" to="." method="on_attack_hit"]
 

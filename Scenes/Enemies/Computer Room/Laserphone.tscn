@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Laserphone.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Laserphone/Laserphone.png" type="Texture" id=2]
@@ -7,9 +7,8 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Laserphone/Outer Red.png" type="Texture" id=5]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Laserphone/Center Yellow.png" type="Texture" id=6]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Laserphone/Center Explode.png" type="Texture" id=7]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=8]
-[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scripts/Utils/DrawingNode.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scripts/Utils/DrawingNode.gd" type="Script" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -1353,6 +1352,8 @@ tracks/17/keys = {
 [node name="Laserphone" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+activate_range_x = 1500
+activate_range_y = 1500
 
 [node name="Animation" type="Node2D" parent="." index="0"]
 
@@ -1431,9 +1432,8 @@ position = Vector2( 0.193619, -77.6196 )
 [node name="Number Spawn Pos" type="Position2D" parent="." index="2"]
 
 position = Vector2( -0.349213, -99.5307 )
-script = ExtResource( 8 )
 
-[node name="Health Bar" parent="." index="3" instance=ExtResource( 9 )]
+[node name="Health Bar" parent="." index="3" instance=ExtResource( 8 )]
 
 position = Vector2( 5.36334, -108.935 )
 
@@ -1443,6 +1443,6 @@ position = Vector2( -35.5956, 0 )
 
 [node name="Drawing" type="Node2D" parent="." index="5"]
 
-script = ExtResource( 10 )
+script = ExtResource( 9 )
 
 

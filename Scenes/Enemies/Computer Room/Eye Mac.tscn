@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/EyeMac.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Shocked.png" type="Texture" id=2]
@@ -32,9 +32,8 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 1.png" type="Texture" id=30]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 2.png" type="Texture" id=31]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 3.png" type="Texture" id=32]
-[ext_resource path="res://Scripts/Utils/NumberSpawnPos.gd" type="Script" id=33]
-[ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=34]
-[ext_resource path="res://Graphics/UI/Avatar/Eyemac.png" type="Texture" id=35]
+[ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Graphics/UI/Avatar/Eyemac.png" type="Texture" id=34]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -9320,9 +9319,12 @@ tracks/49/keys = {
 [node name="Eye Mac" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
+activate_range_x = 1000
+activate_range_y = 1500
 
 [node name="Animation" type="Node2D" parent="." index="0"]
 
+editor/display_folded = true
 scale = Vector2( 1.75, 1.75 )
 
 [node name="Harddies" type="Sprite" parent="Animation" index="0"]
@@ -9797,10 +9799,9 @@ blend_times = [  ]
 [node name="Number Spawn Pos" type="Position2D" parent="." index="1"]
 
 position = Vector2( 4.15442, -454.899 )
-script = ExtResource( 33 )
 
-[node name="Health Bar" parent="." index="2" instance=ExtResource( 34 )]
+[node name="Health Bar" parent="." index="2" instance=ExtResource( 33 )]
 
-avatar_texture = ExtResource( 35 )
+avatar_texture = ExtResource( 34 )
 
 
