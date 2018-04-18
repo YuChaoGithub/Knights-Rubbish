@@ -1,5 +1,7 @@
 const name = "Wendy Vista"
-const id = 7
+const id = 1
+const avatar = preload("res://Graphics/UI/Avatar/Wendy Vista.png")
+const points = ["Fragile", "High Damage", "Cute"]
 const full_health = 175
 const ghost_health = 800
 const movement_speed = 350.0

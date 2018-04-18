@@ -6,13 +6,15 @@ var dead_hero_count = 0
 
 var hero_scenes = [
 	preload("res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn"),
-	null,
-	null,
-	null,
-	null,
-	null,
-	null,
-	preload("res://Scenes/Characters/Wendy Vista/Wendy Vista.tscn")
+	preload("res://Scenes/Characters/Wendy Vista/Wendy Vista.tscn"),
+	preload("res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn"),
+	preload("res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn"),
+	preload("res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn"),
+	preload("res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn"),
+	preload("res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn"),
+	preload("res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn"),
+	preload("res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn"),
+	preload("res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn")
 ]
 
 var game_over_scene = preload("res://Scenes/UI/Game Over.tscn")

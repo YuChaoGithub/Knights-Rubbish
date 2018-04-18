@@ -135,7 +135,6 @@ onready var player_constants = load(player_constants_filepath)
 
 # Manages healing, damaging, dying.
 onready var health_system = preload("res://Scripts/Utils/HealthSystem.gd").new(self, player_constants.full_health)
-onready var avatar_texture = load("res://Graphics/UI/Avatar/" + player_constants.name + ".png")
 
 # Particles.
 onready var fire_particle = get_node(player_constants.fire_particle_node_path)
@@ -179,7 +178,7 @@ func _ready():
 	idle_timestamp = OS.get_unix_time()
 
 	# Health bar.
-	health_bar.initialize(player_constants.full_health, player_constants.ghost_health, avatar_texture)
+	health_bar.initialize(player_constants.full_health, player_constants.ghost_health, player_constants.avatar)
 	health_bar.set_health_bar_position(player_index)
 
 func _process(delta):
@@ -298,7 +297,7 @@ func falls_off():
 	fall_off_timer = countdown_timer.new(GRABBING_DURATION, self, "show_fist")
 
 func show_fist():
-	top_fist = following_camera.instance_top_fist(avatar_texture)
+	top_fist = following_camera.instance_top_fist(player_constants.avatar)
 	
 	fall_off_timer = countdown_timer.new(DROPPING_DURATION, self, "drop_from_fist")
 

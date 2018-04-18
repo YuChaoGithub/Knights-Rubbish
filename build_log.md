@@ -722,6 +722,23 @@ Facepalms: Editor always breaks after Git operations...so annoying.
 
 **Commit**
 
+[2018.04.16]
+* Designed parts of Hero Selection Scene.
+
+[2018.04.17]
+* Added `avatar` and `points` to Hero Constants.
+* Changed Wendy's hero id to 1. Later hero ids should be the same of implementation order.
+* Designed Combo Tutorial Scene.
+* Implemented parts of hero selection scene.
+
+[2018.04.18]
+* Completed Hero Selection Scene.
+* Designed Key Setting Scene.
+
+**Commit**
+
+TODO: Level Selection Scene, Keyboard Settings.
+
 To Do List:
 * Scale enemy health according to player numbers.
 * Multiplayer bug testing, scene swithcing (implement a global singleton), custom key binding, game over mechanics (resurrection).

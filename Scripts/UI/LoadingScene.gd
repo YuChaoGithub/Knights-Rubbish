@@ -3,6 +3,7 @@ extends Node
 const MAX_BLOCK_TIME = 50
 
 var curr_scene_path
+var next_scene_path
 var quit_to_scene_path
 var loading_scene_instance
 var animator
@@ -21,7 +22,12 @@ func reload_curr_scene():
 func load_quit_scene():
     goto_scene(quit_to_scene_path)
 
+func load_next_scene():
+    goto_scene(next_scene_path)
+
 func goto_scene(path):
+    curr_scene_path = path
+
     get_tree().paused = true
     loading_scene_instance = preload("res://Scenes/UI/Loading Scene.tscn").instance()
     animator = loading_scene_instance.get_node("Background/AnimationPlayer")
