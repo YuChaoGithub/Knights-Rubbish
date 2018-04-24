@@ -737,7 +737,15 @@ Facepalms: Editor always breaks after Git operations...so annoying.
 
 **Commit**
 
-TODO: Level Selection Scene, Keyboard Settings.
+[2018.04.24]
+* Coded some Key Settings ui.
+
+[2018.04.25]
+* Completed scripting Key Settings Scene. Kind of hard and unintuitive.
+
+**Commit**
+
+TODO: Level Selection Scene.
 
 To Do List:
 * Scale enemy health according to player numbers.
@@ -748,6 +756,7 @@ Planned Prototype Stages:
 [Ver 0.2] Main UI completed.
 
 Polishing:
+* [Data] Make key settings persistent between game sessions (Single Player settings should be separated from Coop settings).
 * [UI] A "GO" sign when the right camera margin is changing.
 * [Effect] Attack effects (particles).
 * [Animation] Radiogugu watch out skill blinks blue.
@@ -757,3 +766,4 @@ Polishing:
 * [Script] Adjust damage according to player numbers.
 * [Graphics] Dark level: wears mining hat (or simply a light on a stick).
 * [Easter Egg] Phone screen showing "Tall as the Sky" and "kQq".
+* [Easter Egg] The real fake door. (www.fakedoors.com)
