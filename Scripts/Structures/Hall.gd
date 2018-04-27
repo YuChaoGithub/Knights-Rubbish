@@ -1,7 +1,8 @@
 extends Node2D
 
 const HERO_FADING_DURATION = 0.5
-const main_menu_scene_path = "res://Scenes/UI/Menu.tscn"
+
+export(String, FILE) var to_scene_path
 
 var parent_lerper = preload("res://Scenes/Utils/Parent Opacity Lerper.tscn")
 
@@ -13,4 +14,6 @@ func hero_enter(hero):
     hero.add_child(lerper)
 
 func switch_scene():
-    get_node("/root/LoadingScene").goto_scene(main_menu_scene_path)
+    var loading_scene = get_node("/root/LoadingScene")
+    loading_scene.pop_curr_scene_from_stack()
+    loading_scene.load_scene(to_scene_path)

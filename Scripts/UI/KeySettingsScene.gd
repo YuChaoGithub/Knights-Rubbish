@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+var combo_tutorial_scene = preload("res://Scenes/UI/Combo Tutorial.tscn")
+
 onready var mouse_disabler = $MouseDisabler
 onready var animator = $AnimationPlayer
 
@@ -19,3 +21,10 @@ func start_configuring():
 func end_configuring():
     mouse_disabler.visible = false
     animator.play("Still")
+
+func info_button_pressed():
+    add_child(combo_tutorial_scene.instance())
+
+func confirm_button_pressed():
+    # queue_free() will be called in this animation.
+    animator.play("Leave")

@@ -1,16 +1,20 @@
 extends CanvasLayer
 
 const RETRY_STRING = "Sure you want to retry?"
-const QUIT_STRING = "Sure you want to quit?"
+const QUIT_STRING = "Quit to main menu?"
 
+var combo_tutorial_scene = preload("res://Scenes/UI/Combo Tutorial.tscn")
+var key_setting_scene = preload("res://Scenes/UI/Key Setting Scene.tscn")
 var confirm_panel = preload("res://Scenes/UI/Confirm Panel.tscn")
 
 func _ready():
 	get_tree().paused = true
 
 func settings_pressed():
-	# TODO: Show settings scene.
-	pass
+	add_child(key_setting_scene.instance())
+
+func info_pressed():
+	add_child(combo_tutorial_scene.instance())
 
 func resume_pressed():
 	play_quit_animation()
@@ -30,7 +34,7 @@ func quit_pressed():
 	add_child(ui)
 
 func quit_confirmed():
-	get_node("/root/LoadingScene").load_quit_scene()
+	get_node("/root/LoadingScene").load_previous_scene()
 	play_quit_animation()
 
 func do_nothing():

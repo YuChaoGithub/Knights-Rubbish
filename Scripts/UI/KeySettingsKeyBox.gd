@@ -122,7 +122,6 @@ func remove_old_events():
     for event in action_list:
         if event is InputEventKey:
             $"../..".used_keys.erase(OS.get_scancode_string(event.scancode))
-            print($"../..".used_keys)
             InputMap.action_erase_event(action_key, event)
 
 func add_new_event(event):

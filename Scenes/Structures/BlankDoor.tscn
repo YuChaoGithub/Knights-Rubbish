@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Graphics/Structure/Door/Door Frame.png" type="Texture" id=1]
+[ext_resource path="res://Graphics/Structure/Door/Door Frame Inner.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/UI/White Circular Frame.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/UI/White Line.png" type="Texture" id=4]
+
+[node name="BlankDoor" type="Sprite"]
+
+position = Vector2( -0.181412, -488.566 )
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+show_behind_parent = true
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="NoEntry" type="Sprite" parent="." index="1"]
+
+editor/display_folded = true
+modulate = Color( 0.753906, 0, 0, 1 )
+position = Vector2( 9.84827, -635.172 )
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Sprite" type="Sprite" parent="NoEntry" index="0"]
+
+rotation = -0.504668
+texture = ExtResource( 4 )
+
+

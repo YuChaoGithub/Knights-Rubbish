@@ -2,9 +2,8 @@ extends Node
 
 const MAX_BLOCK_TIME = 50
 
-var curr_scene_path
+var scene_path_stack = []
 var next_scene_path
-var quit_to_scene_path
 var loading_scene_instance
 var animator
 var loader
@@ -16,18 +15,31 @@ func _ready():
     var root = get_tree().get_root()
     current_scene = root.get_child(root.get_child_count() - 1)
 
-func reload_curr_scene():
-    goto_scene(curr_scene_path)
+func load_previous_scene():
+    scene_path_stack.pop_back()
+    goto_scene(scene_path_stack.back())
 
-func load_quit_scene():
-    goto_scene(quit_to_scene_path)
+func pop_curr_scene_from_stack():
+    scene_path_stack.pop_back()
+
+func set_curr_scene_as_next_scene():
+    next_scene_path = scene_path_stack.back()
+
+func load_scene(path):
+    scene_path_stack.push_back(path)
+    goto_scene(path)
 
 func load_next_scene():
-    goto_scene(next_scene_path)
+    # Avoid stacking up the same scene (eg. Level Picker -> Hero Picker (self pop) -> Level Picker).
+    if next_scene_path == scene_path_stack.back():
+        scene_path_stack.pop_back()
+
+    load_scene(next_scene_path)
+
+func reload_curr_scene():
+    goto_scene(scene_path_stack.back())
 
 func goto_scene(path):
-    curr_scene_path = path
-
     get_tree().paused = true
     loading_scene_instance = preload("res://Scenes/UI/Loading Scene.tscn").instance()
     animator = loading_scene_instance.get_node("Background/AnimationPlayer")

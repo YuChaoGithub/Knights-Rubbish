@@ -737,22 +737,36 @@ Facepalms: Editor always breaks after Git operations...so annoying.
 
 **Commit**
 
-[2018.04.24]
+[2018.04.23]
 * Coded some Key Settings ui.
 
-[2018.04.25]
+[2018.04.24]
 * Completed scripting Key Settings Scene. Kind of hard and unintuitive.
 
 **Commit**
 
-TODO: Level Selection Scene.
+[2018.04.25]
+* Added Key Setting Button.
+* Redesigned scene loading system. A scene (path) stack is implemented.
+* Fixed an animation bug that the hero box wouldn't be locked down when a hero is selected.
+* Added Change Hero button in Level Picker.
+
+[2018.04.26]
+* Changed the scene transition of Key Setting and Combo Tutorial to node instancing. (So that the current scene won't be destroyed.)
+* Added Level Picker Scene. Implemented Level Picker Button Set.
+* Enemy's health will now scale according to the numbers of players. (Multiplier: 1 per player.)
+
+[2018.04.27]
+* Added Level Template, Level 1-2.
+* Implemented Portal.
+
+**Commit**
 
 To Do List:
-* Scale enemy health according to player numbers.
-* Multiplayer bug testing, scene swithcing (implement a global singleton), custom key binding, game over mechanics (resurrection).
+* Multiplayer bug testing.
 
 Planned Prototype Stages:
-[Ver 0.1] First level completed. (Est. June 2018)
+[Ver 0.1] First level completed. (Est. June 2018) -> Play test & dev article.
 [Ver 0.2] Main UI completed.
 
 Polishing:

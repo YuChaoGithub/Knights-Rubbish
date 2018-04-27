@@ -1,0 +1,219 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Scripts/Structures/Portal.gd" type="Script" id=1]
+[ext_resource path="res://Graphics/Structure/Portal Outline.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Structure/Portal.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Structure/PortalWhite.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Particles/Double Star.png" type="Texture" id=5]
+
+[sub_resource type="Animation" id=9]
+
+resource_name = "Blink"
+length = 0.2
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Gradient" id=10]
+
+offsets = PoolRealArray( 0, 0.471253, 1 )
+colors = PoolColorArray( 1, 1, 1, 0.951075, 0, 0, 0, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=11]
+
+flags = 4
+gradient = SubResource( 10 )
+width = 2048
+
+[sub_resource type="Curve" id=12]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 0.801931 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.52888 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=13]
+
+flags = 4
+width = 2048
+curve = SubResource( 12 )
+
+[sub_resource type="ParticlesMaterial" id=14]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 1
+emission_sphere_radius = 90.0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 180.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 15.0
+initial_velocity_random = 0.0
+angular_velocity = 10.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.05
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 180.0
+angle_random = 1.0
+scale = 0.5
+scale_random = 0.0
+scale_curve = SubResource( 13 )
+color_ramp = SubResource( 11 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Scale", "Spread" ]
+
+[sub_resource type="Animation" id=7]
+
+length = 2.5
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("CoverFrame:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=8]
+
+custom_solver_bias = 0.0
+extents = Vector2( 55.0813, 203.81 )
+
+[node name="Portal" type="Node2D"]
+
+modulate = Color( 1, 0.134409, 0.357569, 1 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+destination_node_path = NodePath("../../Position2D")
+
+[node name="Frame" type="Sprite" parent="." index="0"]
+
+position = Vector2( 2.08447, 2.08459 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CoverFrame" type="Sprite" parent="." index="1"]
+
+modulate = Color( 0, 0, 0, 0 )
+position = Vector2( 2.08447, 2.08459 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="BlackStuff" type="Sprite" parent="." index="2"]
+
+modulate = Color( 0, 0, 0, 1 )
+scale = Vector2( 0.585, 0.585 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="WhiteCover" type="Sprite" parent="." index="3"]
+
+editor/display_folded = true
+modulate = Color( 0, 0, 0, 1 )
+scale = Vector2( 0.585, 0.585 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="WhiteCover" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Blink = SubResource( 9 )
+blend_times = [  ]
+
+[node name="Particles2D" type="Particles2D" parent="." index="4"]
+
+position = Vector2( -0.533691, -12.8122 )
+emitting = true
+amount = 50
+lifetime = 3.0
+one_shot = false
+preprocess = 1.5
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 14 )
+texture = ExtResource( 5 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Z Index" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
+
+root_node = NodePath("..")
+autoplay = "Blink"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Blink = SubResource( 7 )
+blend_times = [  ]
+
+[node name="Collision" type="Node2D" parent="." index="6"]
+
+[node name="CollisionArea" type="Area2D" parent="Collision" index="0" groups=[
+"door",
+]]
+
+position = Vector2( 2.1167, 3.81036 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 32
+collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/CollisionArea" index="0"]
+
+visible = false
+shape = SubResource( 8 )
+
+

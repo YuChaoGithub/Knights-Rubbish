@@ -17,6 +17,8 @@ const GRABBING_DURATION = 1.0
 const DROPPING_DURATION = 3.5
 const FALL_OFF_DAMAGE = 100
 
+const PORTAL_DURATION = 0.15
+
 const DRINK_ANIMATION_DURATION = 1.5
 const POWERUP_RECOVER_ANIMATION_DURATION = 3.0
 const ABNORMAL_RECOVER_ANIMATION_DURATION = 0.5
@@ -103,6 +105,7 @@ var size_multipliers = [
 ]
 
 var countdown_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
+var opacity_lerper = preload("res://Scenes/Utils/Parent Opacity Lerper.tscn")
 var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 
 # Active timers for power ups.
@@ -764,3 +767,10 @@ func get_size():
 
 func jump_to_height(height):
 	velocity_replacement_y = -pow(2.0 * height * gravity, 0.5)
+
+func reset_alpha_and_teleport_to_position(pos):
+	var lerper = opacity_lerper.instance()
+	lerper.initialize(0.0, 1.0, PORTAL_DURATION)
+	add_child(lerper)
+	
+	global_position = pos

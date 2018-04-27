@@ -1,14 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/HeroManager.gd" type="Script" id=2]
 [ext_resource path="res://Tilesets/White Wall.tres" type="TileSet" id=3]
-[ext_resource path="res://Scenes/Structures/Hall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Tilesets/Wooden Floor.tres" type="TileSet" id=4]
 [ext_resource path="res://Scenes/Structures/Door.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Fonts/edosz.tres" type="DynamicFont" id=6]
-[ext_resource path="res://Tilesets/Wooden Floor.tres" type="TileSet" id=7]
-[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/UI/HeroPickerButton.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=6]
 
 [node name="Game Level" type="Node2D"]
 
@@ -54,47 +51,10 @@ _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="BackgroundDecorations" type="Node2D" parent="." index="3"]
 
-[node name="Doors" type="Node2D" parent="." index="4"]
-
-[node name="Back Door" parent="Doors" index="0" instance=ExtResource( 4 )]
-
-position = Vector2( 591.929, -160.995 )
-to_scene_path = "res://Scenes/Levels/Level Picker.tscn"
-
-[node name="Door1-1" parent="Doors" index="1" instance=ExtResource( 5 )]
-
-position = Vector2( 2173.69, -596.708 )
-enter_scene_path = "res://Scenes/Levels/Level 1-1.tscn"
-
-[node name="Label" type="Label" parent="Doors" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 545.0
-margin_top = -903.0
-margin_right = 614.0
-margin_bottom = -868.0
-rect_scale = Vector2( 3, 3 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Back"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
-
-[node name="Platform" type="TileMap" parent="." index="5"]
+[node name="Platform" type="TileMap" parent="." index="4"]
 
 mode = 0
-tile_set = ExtResource( 7 )
+tile_set = ExtResource( 4 )
 cell_size = Vector2( 100, 100 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -112,19 +72,41 @@ format = 1
 tile_data = PoolIntArray( -196592, 0, 196609, -196591, 0, 196612, -196590, 0, 131076, -196589, 0, 131076, -196588, 0, 131076, -196587, 0, 3, -196586, 0, 3, -196585, 0, 131077, -196584, 0, 0, -131072, 0, 196609, -131071, 0, 131077, -131070, 0, 131077, -131069, 0, 131076, -131068, 0, 131077, -131067, 0, 131076, -131066, 0, 131077, -131065, 0, 3, -131064, 0, 131076, -131063, 0, 131076, -131062, 0, 3, -131061, 0, 131076, -131060, 0, 196613, -131059, 0, 196613, -131058, 0, 131076, -131057, 0, 131077, -131056, 0, 65537, -131055, 0, 4, -131054, 0, 5, -131053, 0, 4, -131052, 0, 65538, -131051, 0, 5, -131050, 0, 5, -131049, 0, 65538, -131048, 0, 131075, -65536, 0, 131072, -65535, 0, 196614, -65534, 0, 131073, -65533, 0, 131078, -65532, 0, 131078, -65531, 0, 196614, -65530, 0, 131073, -65529, 0, 196614, -65528, 0, 131073, -65527, 0, 131073, -65526, 0, 131078, -65525, 0, 131078, -65524, 0, 131073, -65523, 0, 131073, -65522, 0, 196614, -65521, 0, 196614, -65520, 0, 196614, -65519, 0, 131078, -65518, 0, 196614, -65517, 0, 131078, -65516, 0, 196614, -65515, 0, 131073, -65514, 0, 131078, -65513, 0, 131073, -65512, 0, 196611 )
 _sections_unfolded = [ "Cell", "Collision" ]
 
-[node name="Writings" type="Node2D" parent="." index="6"]
+[node name="Writings" type="Node2D" parent="." index="5"]
 
 _sections_unfolded = [ "Z Index" ]
 
-[node name="PlatformDecorations" type="Node2D" parent="." index="7"]
+[node name="PlatformDecorations" type="Node2D" parent="." index="6"]
 
-[node name="ForegroundDecorations" type="Node2D" parent="." index="8"]
+[node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
+
+[node name="OtherPlatforms" type="Node2D" parent="." index="8"]
+
+[node name="HealingMachines" type="Node2D" parent="." index="9"]
+
+[node name="Structures" type="Node2D" parent="." index="10"]
+
+editor/display_folded = true
+
+[node name="Door1-1" parent="Structures" index="0" instance=ExtResource( 5 )]
+
+position = Vector2( 2173.69, -596.708 )
+enter_scene_path = "res://Scenes/Levels/Level 1-1.tscn"
+
+[node name="Enemies" type="Node2D" parent="." index="11"]
+
+[node name="PowerUps" type="Node2D" parent="." index="12"]
+
+[node name="ForegroundDecorations" type="Node2D" parent="." index="13"]
 
 z_index = 1
 _sections_unfolded = [ "Z Index" ]
 
-[node name="PauseButton" parent="." index="9" instance=ExtResource( 8 )]
+[node name="PauseButton" parent="." index="14" instance=ExtResource( 6 )]
 
-[node name="HeroPickerButton" parent="." index="10" instance=ExtResource( 9 )]
+[node name="Position2D" type="Position2D" parent="." index="15"]
+
+scale = Vector2( 10, 10 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 

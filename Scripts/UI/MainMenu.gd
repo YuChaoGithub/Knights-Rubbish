@@ -2,23 +2,31 @@ extends CanvasLayer
 
 const SELF_SCENE_PATH = "res://Scenes/UI/Menu.tscn"
 const HERO_SELECTION_SCENE_PATH = "res://Scenes/UI/Hero Choosing Scene.tscn"
-const LEVEL_PICKER_SCENE_PATH = "res://Scenes/Levels/Level 1-0.tscn"
+const LEVEL_PICKER_SCENE_PATH = "res://Scenes/Levels/Level Picker.tscn"
+const KEY_SETTING_SCENE_PATH = "res://Scenes/UI/Key Setting Scene.tscn"
 
 var confirm_panel = preload("res://Scenes/UI/Confirm Panel.tscn")
 
+onready var loading_scene = get_node("/root/LoadingScene")
+
+func _ready():
+    if loading_scene.scene_path_stack.empty():
+        loading_scene.scene_path_stack.push_back(SELF_SCENE_PATH)
+
 func single_player_pressed():
     get_node("/root/PlayerSettings").player_count = 1
-    load_level_picker_scene()
+    load_hero_selection_scene()
 
 func coop_pressed():
     get_node("/root/PlayerSettings").player_count = 2
-    load_level_picker_scene()
+    load_hero_selection_scene()
 
-func load_level_picker_scene():
-    var loading_scene = get_node("/root/LoadingScene")
-    loading_scene.quit_to_scene_path = SELF_SCENE_PATH
+func load_hero_selection_scene():
     loading_scene.next_scene_path = LEVEL_PICKER_SCENE_PATH
-    loading_scene.goto_scene(HERO_SELECTION_SCENE_PATH)
+    loading_scene.load_scene(HERO_SELECTION_SCENE_PATH)
+
+func setting_button_pressed():
+    loading_scene.load_scene(KEY_SETTING_SCENE_PATH)
 
 func arena_pressed():
     pass

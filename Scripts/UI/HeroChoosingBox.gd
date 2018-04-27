@@ -1,10 +1,10 @@
 extends Control
 
-onready var hero_image = $Hero
-onready var hero_name_label = $Name
-onready var point_labels = [$Point1, $Point2, $Point3]
-onready var checkmark = $Check
-onready var select_text = $SelectText
+onready var hero_image = $Paper/Hero
+onready var hero_name_label = $Paper/Name
+onready var point_labels = [$Paper/Point1, $Paper/Point2, $Paper/Point3]
+onready var checkmark = $Paper/Check
+onready var select_text = $Paper/SelectText
 onready var animator = $AnimationPlayer
 
 func hero_changed(hero):

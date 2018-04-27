@@ -5,6 +5,7 @@ const HEAL_NUMBER_COLOR = Color(0.0, 100.0 / 255.0, 0.0)
 const STUNNED_TEXT_COLOR = Color(1.0, 1.0, 0.0)
 const IMMUNE_TEXT_COLOR = Color(255.0 / 255.0, 200.0 / 255.0, 0.0 / 255.0)
 const HURT_ANIM_DURATION = 0.3
+const HEALTH_MULTIPLIER_PER_PLAYER = 1
 
 # Some commonly used scripts.
 var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
@@ -54,7 +55,7 @@ func _init(node, default_status = 0):
     self.activate_range_y = node.activate_range_y
     self.hero_manager = node.get_node("../../HeroManager")
     self.animator = node.get_node("Animation/AnimationPlayer")
-    self.health_system = preload("res://Scripts/Utils/HealthSystem.gd").new(node, node.MAX_HEALTH)
+    self.health_system = preload("res://Scripts/Utils/HealthSystem.gd").new(node, int(node.MAX_HEALTH * hero_manager.heroes.size() * HEALTH_MULTIPLIER_PER_PLAYER))
     self.health_bar = node.get_node("Health Bar")
     self.number_spawn_pos = node.get_node("Number Spawn Pos")
     self.sprites = node.get_node("Animation")

@@ -1,7 +1,7 @@
 const name = "Keshia Erasia"
 const id = 0
 const avatar = preload("res://Graphics/UI/Avatar/Keshia Erasia.png")
-const points = ["Tanky", "Mighty", "Can Erase"]
+const points = ["Tanky", "Melee", "Can Erase"]
 const full_health = 350
 const ghost_health = 500
 const movement_speed = 400.0

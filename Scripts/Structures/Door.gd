@@ -24,7 +24,9 @@ func hero_enter(hero):
 	hero.add_child(lerper)
 
 func switch_scene():
-	get_node("/root/LoadingScene").goto_scene(enter_scene_path)
+	var loading_scene = get_node("/root/LoadingScene")
+	loading_scene.pop_curr_scene_from_stack()
+	loading_scene.load_scene(enter_scene_path)
 
 func damaged(val):
 	break_open()

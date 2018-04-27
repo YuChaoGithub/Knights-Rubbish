@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/UI/ComboTutorialScene.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/UI/Wooden Background.png" type="Texture" id=2]
@@ -43,7 +43,7 @@ tracks/1/keys = {
 "values": [ Vector2( -124, 15 ), Vector2( -124, 15 ), Vector2( -124, 15 ), Vector2( -35, 15 ), Vector2( -56, 15 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("ColorRect:color")
+tracks/2/path = NodePath("WoodenBackground/ColorRect:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -52,19 +52,101 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("WoodenBackground/BackButtonScrap/TextureButton:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "Leave"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("WoodenBackground/Paper:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 83, 27 ), Vector2( 83, 364 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("WoodenBackground/BackButtonScrap:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -56, 15 ), Vector2( -126, 15 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("WoodenBackground/ColorRect:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("WoodenBackground/BackButtonScrap/TextureButton:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [node name="CanvasLayer" type="CanvasLayer"]
 
-layer = 1
+layer = 4
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
+_sections_unfolded = [ "Pause" ]
 
-[node name="WoodenBackground" type="TextureRect" parent="." index="0"]
+[node name="WoodenBackground" type="Control" parent="." index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -79,20 +161,38 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 2 )
-stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="Paper" type="TextureRect" parent="WoodenBackground" index="0"]
+[node name="ColorRect" type="TextureRect" parent="WoodenBackground" index="0"]
 
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+stretch_mode = 0
+_sections_unfolded = [ "Mouse", "Rect", "Visibility" ]
+
+[node name="Paper" type="TextureRect" parent="WoodenBackground" index="1"]
+
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 83.0
-margin_top = 27.0
+margin_top = 370.0
 margin_right = 1436.0
-margin_bottom = 1029.0
+margin_bottom = 1372.0
 rect_scale = Vector2( 0.4, 0.4 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1090,15 +1190,16 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "Visibility", "custom_fonts", "custom_styles" ]
 
-[node name="BackButtonScrap" type="TextureRect" parent="WoodenBackground" index="1"]
+[node name="BackButtonScrap" type="TextureRect" parent="WoodenBackground" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -56.0
+margin_left = -124.0
 margin_top = 15.0
-margin_right = 186.0
+margin_right = 118.0
 margin_bottom = 153.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -1113,6 +1214,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="TextureButton" type="TextureButton" parent="WoodenBackground/BackButtonScrap" index="0"]
 
+editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1170,23 +1272,9 @@ playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/Enter = SubResource( 1 )
+anims/Leave = SubResource( 2 )
 blend_times = [  ]
 
-[node name="ColorRect" type="ColorRect" parent="." index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 1280.0
-margin_bottom = 720.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-color = Color( 0, 0, 0, 0 )
-_sections_unfolded = [ "Mouse", "Rect" ]
+[connection signal="pressed" from="WoodenBackground/BackButtonScrap/TextureButton" to="." method="back_button_pressed"]
 
 

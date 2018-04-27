@@ -3,6 +3,7 @@ extends CanvasLayer
 const ICONS_COL_COUNT = 5
 const ICONS_ROW_COUNT = 2
 
+const ENTER_ANIMATION_DURATION = 1.5
 const LEAVE_ANIMATION_DURATION = 1.0
 
 var hero_infos = [
@@ -18,6 +19,8 @@ var hero_infos = [
     preload("res://Scripts/Constants/KeshiaErasiaConstants.gd"),
 ]
 
+var key_setting_scene = preload("res://Scenes/UI/Key Setting Scene.tscn")
+
 # Hero current selected.
 var p1_selection = 0
 var p2_selection = 0
@@ -25,7 +28,8 @@ var p2_selection = 0
 var p1_locked = false
 var p2_locked = false
 
-var timer
+var enter_timer
+var leave_timer
 
 var hero_icons_pos = []
 
@@ -45,6 +49,8 @@ onready var main_animator = $AnimationPlayer
 onready var countdown_animator = $CountdownBox/AnimationPlayer
 
 func _ready():
+    set_process(false)
+
     if player_count == 1:
         single_player_paper.visible = true
 
@@ -56,6 +62,15 @@ func _ready():
     # Store rect positions of hero icons.
     for index in range(ICONS_COL_COUNT * ICONS_ROW_COUNT):
         hero_icons_pos.push_back(get_node("HeroBox/HeroIcons/" + str(index + 1)).rect_position)
+
+    # Set frame.
+    var player_settings = get_node("/root/PlayerSettings")
+    p1_selection = player_settings.heroes_chosen[0]
+    if player_settings.heroes_chosen.size() == 2:
+        p2_selection = player_settings.heroes_chosen[1]
+    update_hero_selection_frames()
+
+    enter_timer = cd_timer.new(ENTER_ANIMATION_DURATION, self, "set_process", true)
 
 func _process(delta):
     # P1.
@@ -154,14 +169,19 @@ func ready_countdown_completed():
     get_node("/root/PlayerSettings").heroes_chosen = heroes_chosen
 
     main_animator.play("Leave")
-    timer = cd_timer.new(LEAVE_ANIMATION_DURATION, self, "switch_to_game_scene")
+    leave_timer = cd_timer.new(LEAVE_ANIMATION_DURATION, self, "switch_to_game_scene")
 
 func switch_to_game_scene():
-    get_node("/root/LoadingScene").load_next_scene()
+    var loading_scene = get_node("/root/LoadingScene")
+    loading_scene.pop_curr_scene_from_stack()    # So players can exit directly to main menu.
+    loading_scene.load_next_scene()
 
 func back_button_pressed():
     main_animator.play("Leave")
-    timer = cd_timer.new(LEAVE_ANIMATION_DURATION, self, "switch_back_to_original_scene")
+    leave_timer = cd_timer.new(LEAVE_ANIMATION_DURATION, self, "switch_back_to_original_scene")
+
+func setting_button_pressed():
+    add_child(key_setting_scene.instance())
 
 func switch_back_to_original_scene():
-    get_node("/root/LoadingScene").load_quit_scene()
+    get_node("/root/LoadingScene").load_previous_scene()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/UI/PauseScene.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/UI/Scrap 1.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Graphics/UI/Bar Frame 3 White.png" type="Texture" id=14]
 [ext_resource path="res://Graphics/Scrap Paper.png" type="Texture" id=15]
 [ext_resource path="res://Graphics/UI/Cog.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/UI/White Circular Frame.png" type="Texture" id=17]
 
 [sub_resource type="Animation" id=1]
 
@@ -142,6 +143,78 @@ tracks/9/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 0.0 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Info Scrap Paper:rect_position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -13, 99 ), Vector2( -13, 99 ), Vector2( 105, 99 ), Vector2( 105, 99 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Quit Scrap Paper/TextureButton:disabled")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Resume Scrap Paper/TextureButton:disabled")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Retry Scrap Paper/TextureButton:disabled")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Settings Scrap Paper/TextureButton:disabled")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Info Scrap Paper/TextureButton:disabled")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -284,6 +357,78 @@ tracks/10/keys = {
 "method": "queue_free"
 } ]
 }
+tracks/11/type = "value"
+tracks/11/path = NodePath("Info Scrap Paper:rect_position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 105, 99 ), Vector2( -12, 99 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Quit Scrap Paper/TextureButton:disabled")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Resume Scrap Paper/TextureButton:disabled")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Retry Scrap Paper/TextureButton:disabled")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Settings Scrap Paper/TextureButton:disabled")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Info Scrap Paper/TextureButton:disabled")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [node name="Pause Scene" type="CanvasLayer"]
 
@@ -319,11 +464,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 393.0
-margin_top = 15.0
-margin_right = 1603.0
-margin_bottom = 448.0
-rect_rotation = 8.3341
+margin_left = 420.0
+margin_top = -218.0
+margin_right = 1630.0
+margin_bottom = 215.0
+rect_rotation = 0.407227
 rect_scale = Vector2( 0.4, 0.4 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -388,10 +533,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 26.0
-margin_top = 558.0
-margin_right = 526.0
-margin_bottom = 897.0
+margin_left = 29.0
+margin_top = 737.0
+margin_right = 529.0
+margin_bottom = 1076.0
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -486,11 +631,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 437.0
-margin_top = 482.0
-margin_right = 937.0
-margin_bottom = 821.0
-rect_rotation = 0.240081
+margin_left = 428.0
+margin_top = 742.0
+margin_right = 928.0
+margin_bottom = 1081.0
 rect_scale = Vector2( 0.8, 0.8 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -585,10 +729,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1069.0
-margin_top = 579.0
-margin_right = 1569.0
-margin_bottom = 918.0
+margin_left = 1070.0
+margin_top = 760.0
+margin_right = 1570.0
+margin_bottom = 1099.0
 rect_scale = Vector2( 0.35, 0.35 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -683,10 +827,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1203.0
-margin_top = 28.0
-margin_right = 2484.0
-margin_bottom = 748.0
+margin_left = 1322.0
+margin_top = 33.0
+margin_right = 2603.0
+margin_bottom = 753.0
 rect_rotation = -0.859245
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -701,7 +845,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="TextureButton" type="TextureButton" parent="ColorRect/Settings Scrap Paper" index="0"]
 
-modulate = Color( 0.785156, 0.785156, 0.785156, 1 )
+modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -725,10 +869,88 @@ group = null
 texture_normal = ExtResource( 16 )
 script = ExtResource( 8 )
 _sections_unfolded = [ "Rect", "Textures", "Visibility" ]
-hover_color = Color( 0.292969, 0.292969, 0.292969, 1 )
-press_color = Color( 0, 0, 0, 1 )
+hover_color = Color( 0.332031, 0.332031, 0.332031, 1 )
+press_color = Color( 0.203125, 0.203125, 0.203125, 1 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" index="5"]
+[node name="Info Scrap Paper" type="TextureRect" parent="ColorRect" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -13.0
+margin_top = 99.0
+margin_right = 1268.0
+margin_bottom = 819.0
+rect_rotation = 170.076
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 15 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="TextureButton" type="TextureButton" parent="ColorRect/Info Scrap Paper" index="0"]
+
+editor/display_folded = true
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 29.0
+margin_top = 26.0
+margin_right = 375.0
+margin_bottom = 361.0
+rect_scale = Vector2( 0.4, 0.4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 17 )
+script = ExtResource( 8 )
+_sections_unfolded = [ "Rect", "Textures", "Visibility" ]
+hover_color = Color( 0, 0.460938, 1, 1 )
+press_color = Color( 0, 0.0859375, 1, 1 )
+
+[node name="Label" type="Label" parent="ColorRect/Info Scrap Paper/TextureButton" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 175.0
+margin_top = 307.0
+margin_right = 215.0
+margin_bottom = 347.0
+rect_rotation = -166.933
+rect_scale = Vector2( 8.2, 8.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 9 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "i"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Mouse", "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" index="6"]
 
 root_node = NodePath("..")
 autoplay = "Enter"
@@ -763,5 +985,7 @@ stretch_mode = 0
 [connection signal="pressed" from="ColorRect/Retry Scrap Paper/TextureButton" to="." method="retry_pressed"]
 
 [connection signal="pressed" from="ColorRect/Settings Scrap Paper/TextureButton" to="." method="settings_pressed"]
+
+[connection signal="pressed" from="ColorRect/Info Scrap Paper/TextureButton" to="." method="info_pressed"]
 
 
