@@ -1,15 +1,164 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/UI/BossHealthBar.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/UI/Scrap 1.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/UI/Circular Frame.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/UI/Avatar/Radiogugu.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/UI/Health Bar.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/UI/Health Bar Inner.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/UI/Scrap 1 Outline.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/UI/Circular Frame.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/UI/Avatar/Radiogugu.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/UI/Health Bar.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/UI/Health Bar Inner.png" type="Texture" id=7]
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "Blink"
+length = 2.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 1, 0, 0, 1 ) ]
+}
 
 [sub_resource type="Animation" id=1]
 
 resource_name = "Appear"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Container/Health Bar:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1403, 54 ), Vector2( 991, 43 ), Vector2( 991, 43 ), Vector2( 1010, 36 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Container/Background Scrap:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1301, 15 ), Vector2( 873, -1 ), Vector2( 873, -1 ), Vector2( 912, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Container/Circular Frame:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1340, 42 ), Vector2( 914, 29 ), Vector2( 914, 29 ), Vector2( 944, 28 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Container/Background Scrap:rect_rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Container/Circular Frame:rect_rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Container/Health Bar:rect_rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Container/Health Bar:rect_scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.176, 0.176 ), Vector2( 0.19, 0.19 ), Vector2( 0.19, 0.19 ), Vector2( 0.176, 0.176 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Container/Background Scrap:rect_scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.32, 0.24 ), Vector2( 0.35, 0.28 ), Vector2( 0.35, 0.28 ), Vector2( 0.32, 0.24 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Container/Circular Frame:rect_scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.16, 0.16 ), Vector2( 0.2, 0.2 ), Vector2( 0.2, 0.2 ), Vector2( 0.16, 0.16 ) ]
+}
+tracks/9/type = "method"
+tracks/9/path = NodePath("AnimationPlayer")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ "Floating" ],
+"method": "play"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "Disappear"
 length = 0.5
 loop = false
 step = 0.1
@@ -23,7 +172,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1429, 59 ), Vector2( 908, 62 ) ]
+"values": [ Vector2( 1010, 36 ), Vector2( 906, 925 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Container/Background Scrap:rect_position")
@@ -35,7 +184,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1301, 15 ), Vector2( 780, 18 ) ]
+"values": [ Vector2( 912, 1 ), Vector2( 804, 910 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Container/Circular Frame:rect_position")
@@ -47,7 +196,86 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1347, 45 ), Vector2( 826, 48 ) ]
+"values": [ Vector2( 944, 28 ), Vector2( 836, 937 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Container/Background Scrap:rect_rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 0.25 ),
+"update": 0,
+"values": [ 0.0, -14.4765 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Container/Circular Frame:rect_rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 0.25 ),
+"update": 0,
+"values": [ 0.0, -24.9681 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Container/Health Bar:rect_rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 0.25 ),
+"update": 0,
+"values": [ 0.0, -15.3769 ]
+}
+
+[sub_resource type="Animation" id=6]
+
+resource_name = "Floating"
+length = 1.7
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Container/Health Bar:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1010, 36 ), Vector2( 1010, 43 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Container/Background Scrap:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 912, 1 ), Vector2( 912, 8 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Container/Circular Frame:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 944, 28 ), Vector2( 944, 35 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Container/Background Scrap:rect_rotation")
@@ -85,84 +313,41 @@ tracks/5/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
-
-[sub_resource type="Animation" id=2]
-
-resource_name = "Disappear"
-length = 0.4
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Container/Health Bar:rect_position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+tracks/6/type = "value"
+tracks/6/path = NodePath("Container/Health Bar:rect_scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 908, 62 ), Vector2( 879, 947 ) ]
+"values": [ Vector2( 0.176, 0.176 ) ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("Container/Background Scrap:rect_position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+tracks/7/type = "value"
+tracks/7/path = NodePath("Container/Background Scrap:rect_scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 780, 18 ), Vector2( 758, 953 ) ]
+"values": [ Vector2( 0.32, 0.24 ) ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("Container/Circular Frame:rect_position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
+tracks/8/type = "value"
+tracks/8/path = NodePath("Container/Circular Frame:rect_scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 826, 48 ), Vector2( 793, 983 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Container/Circular Frame:rect_rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, -28.9417 ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Container/Background Scrap:rect_rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, -28.647 ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath("Container/Health Bar:rect_rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ 0.0, -24.4748 ]
+"values": [ Vector2( 0.16, 0.16 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -225,6 +410,7 @@ anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
@@ -233,42 +419,79 @@ _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Hint", "Margin", "M
 
 [node name="Background Scrap" type="TextureRect" parent="Container" index="0"]
 
+modulate = Color( 1, 0.994015, 0.846774, 1 )
 anchor_left = 1.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 0.0
-margin_left = 21.0
-margin_top = 15.0
-margin_right = 1231.0
-margin_bottom = 448.0
+margin_left = -368.0
+margin_top = 1.0
+margin_right = 842.0
+margin_bottom = 436.0
 rect_min_size = Vector2( 200, 200 )
-rect_scale = Vector2( 0.4, 0.3 )
+rect_scale = Vector2( 0.32, 0.24 )
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 texture = ExtResource( 2 )
 stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "Visibility" ]
 
-[node name="Circular Frame" type="TextureRect" parent="Container" index="1"]
+[node name="Outline" type="TextureRect" parent="Container/Background Scrap" index="0"]
 
+editor/display_folded = true
+modulate = Color( 0.548196, 0, 0, 1 )
+show_behind_parent = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1347.0
-margin_top = 45.0
-margin_right = 1693.0
-margin_bottom = 380.0
-rect_scale = Vector2( 0.2, 0.2 )
+margin_left = -20.0
+margin_top = -7.0
+margin_right = 1230.0
+margin_bottom = 440.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+stretch_mode = 0
+_sections_unfolded = [ "Visibility" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Container/Background Scrap/Outline" index="0"]
+
+root_node = NodePath("..")
+autoplay = "Blink"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Blink = SubResource( 5 )
+blend_times = [  ]
+
+[node name="Circular Frame" type="TextureRect" parent="Container" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 944.0
+margin_top = 28.0
+margin_right = 1290.0
+margin_bottom = 363.0
+rect_scale = Vector2( 0.16, 0.16 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -283,11 +506,12 @@ margin_top = 52.0
 margin_right = 296.0
 margin_bottom = 302.0
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 stretch_mode = 0
 
 [node name="Health Bar" type="TextureProgress" parent="Container" index="2"]
@@ -296,12 +520,13 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1429.0
-margin_top = 59.0
-margin_right = 2954.0
-margin_bottom = 232.0
-rect_scale = Vector2( 0.22, 0.22 )
+margin_left = 1010.0
+margin_top = 36.0
+margin_right = 2536.0
+margin_bottom = 209.0
+rect_scale = Vector2( 0.176, 0.176 )
 rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 2
@@ -313,13 +538,13 @@ page = 0.0
 value = 100.0
 exp_edit = false
 rounded = false
-texture_under = ExtResource( 5 )
+texture_under = ExtResource( 6 )
 texture_over = null
-texture_progress = ExtResource( 6 )
+texture_progress = ExtResource( 7 )
 radial_fill_degrees = 100.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Rect", "Textures" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 
@@ -329,7 +554,8 @@ playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/Appear = SubResource( 1 )
-anims/Disappear = SubResource( 2 )
+anims/Disappear = SubResource( 4 )
+anims/Floating = SubResource( 6 )
 anims/Hide = SubResource( 3 )
 blend_times = [  ]
 

@@ -195,5 +195,5 @@ func die():
 		animation_duration = DIE_ANIMATION_DURATION
 
 	change_status(NONE)
-	ec.play_animation_and_diable_others(animation_key)
+	ec.play_animation_and_disble_others(animation_key)
 	status_timer = ec.cd_timer.new(animation_duration, self, "queue_free")

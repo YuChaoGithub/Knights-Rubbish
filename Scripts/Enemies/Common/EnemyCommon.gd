@@ -133,7 +133,7 @@ func play_animation(key):
         curr_anim_key = key
         animator.play(key)
 
-func play_animation_and_diable_others(key):
+func play_animation_and_disble_others(key):
     disable_animation = true
     animator.play(key)
 
@@ -282,4 +282,4 @@ func die():
     change_status(node.NONE)
     
     # Play die animation.
-    play_animation_and_diable_others("Die")
+    play_animation_and_disble_others("Die")

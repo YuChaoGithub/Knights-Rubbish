@@ -2,7 +2,7 @@ extends Node2D
 
 const SPEED = 800
 
-const DAMAGE_PER_TICK = 20
+const DAMAGE_PER_TICK = 10
 const TIME_PER_TICK = 1.0
 const TOTAL_TICKS = 4
 const KNOCK_BACK_VEL_X = 200

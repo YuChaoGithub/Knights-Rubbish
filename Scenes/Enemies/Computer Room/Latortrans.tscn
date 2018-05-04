@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Latortrans.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Body.png" type="Texture" id=2]
@@ -10,14 +10,15 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Mouth.png" type="Texture" id=8]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Eye.png" type="Texture" id=9]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Left Hole.png" type="Texture" id=10]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Confusion.png" type="Texture" id=11]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Fire.png" type="Texture" id=12]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/hurt.png" type="Texture" id=13]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Slow.png" type="Texture" id=14]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Stun.png" type="Texture" id=15]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Right Hole.png" type="Texture" id=16]
-[ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Graphics/UI/Avatar/Latortrans.png" type="Texture" id=18]
+[ext_resource path="res://Scenes/Particles/LatortransBallParticles.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Confusion.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Fire.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/hurt.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Slow.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Stun.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Right Hole.png" type="Texture" id=17]
+[ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Graphics/UI/Avatar/Latortrans.png" type="Texture" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -28,6 +29,11 @@ extents = Vector2( 107.485, 110.424 )
 
 custom_solver_bias = 0.0
 extents = Vector2( 146.829, 20.794 )
+
+[sub_resource type="RectangleShape2D" id=12]
+
+custom_solver_bias = 0.0
+extents = Vector2( 66.0076, 10 )
 
 [sub_resource type="Animation" id=3]
 
@@ -465,6 +471,18 @@ tracks/35/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
+}
+tracks/36/type = "value"
+tracks/36/path = NodePath("Body/Input/InputAttackArea:collision_mask")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -904,6 +922,18 @@ tracks/35/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
+tracks/36/type = "value"
+tracks/36/path = NodePath("Body/Input/InputAttackArea:collision_mask")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
 [sub_resource type="Animation" id=5]
 
@@ -1342,6 +1372,18 @@ tracks/35/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
+tracks/36/type = "value"
+tracks/36/path = NodePath("Body/Input/InputAttackArea:collision_mask")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
 [sub_resource type="Animation" id=6]
 
@@ -1370,7 +1412,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1.5, 2, 2.3, 2.5, 3, 4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 243.184, -57.0315 ), Vector2( 243.184, -57.0315 ), Vector2( 243.184, -57.0315 ), Vector2( 243.184, -57.0315 ), Vector2( 243.184, -57.0315 ), Vector2( 243.184, -57.0315 ), Vector2( 105.579, -58.3371 ) ]
+"values": [ Vector2( 460, -4 ), Vector2( 460, -4 ), Vector2( 243.184, -57.0315 ), Vector2( 243.184, -57.0315 ), Vector2( 243.184, -57.0315 ), Vector2( 243.184, -57.0315 ), Vector2( 105.579, -58.3371 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("Body/Input:rotation_degrees")
@@ -1803,6 +1845,30 @@ tracks/37/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+tracks/38/type = "value"
+tracks/38/path = NodePath("Body/Input/InputAttackArea:collision_mask")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/keys = {
+"times": PoolRealArray( 0, 1, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 0 ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("Body/Input:z_index")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 0 ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -2242,6 +2308,18 @@ tracks/35/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
+tracks/36/type = "value"
+tracks/36/path = NodePath("Body/Input/InputAttackArea:collision_mask")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
 [sub_resource type="Animation" id=8]
 
@@ -2679,6 +2757,18 @@ tracks/35/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ), Vector2( 1.2, 1.2 ), Vector2( 1, 1 ) ]
+}
+tracks/36/type = "value"
+tracks/36/path = NodePath("Body/Input/InputAttackArea:collision_mask")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -3118,8 +3208,30 @@ tracks/35/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
+tracks/36/type = "value"
+tracks/36/path = NodePath("Body/Input/InputAttackArea:collision_mask")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
 
-[node name="Latortrans" type="Node2D" index="0"]
+[sub_resource type="RectangleShape2D" id=10]
+
+custom_solver_bias = 0.0
+extents = Vector2( 298.953, 324.931 )
+
+[sub_resource type="RectangleShape2D" id=11]
+
+custom_solver_bias = 0.0
+extents = Vector2( 399.053, 55.018 )
+
+[node name="Latortrans" type="Node2D"]
 
 script = ExtResource( 1 )
 activate_range_x = 1500
@@ -3131,6 +3243,7 @@ scale = Vector2( 3, 3 )
 
 [node name="Damage Area" type="Area2D" parent="Animation" index="0"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -3206,54 +3319,255 @@ offset = Vector2( -29.051, 3.72842 )
 
 [node name="Input" type="Node2D" parent="Animation/Body" index="3"]
 
-visible = false
-position = Vector2( 243.184, -57.0315 )
+position = Vector2( 460, -4 )
+scale = Vector2( 1e-05, 1e-05 )
+z_index = 1
+_sections_unfolded = [ "Transform", "Z Index" ]
 
-[node name="Confusion" type="Node2D" parent="Animation/Body/Input" index="0"]
+[node name="LatortransBallParticles" parent="Animation/Body/Input" index="0" instance=ExtResource( 11 )]
+
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( -46.8763, -1.7473 )
+rotation = -3.10441e-09
+speed_scale = 0.25
+
+[node name="LatortransBallParticles2" parent="Animation/Body/Input" index="1" instance=ExtResource( 11 )]
+
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1.38086, -4.78174 )
+rotation = -3.10441e-09
+speed_scale = 0.25
+
+[node name="LatortransBallParticles3" parent="Animation/Body/Input" index="2" instance=ExtResource( 11 )]
+
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 50.6248, -5.24799 )
+rotation = -3.10441e-09
+speed_scale = 0.25
+
+[node name="Confusion" type="Node2D" parent="Animation/Body/Input" index="3"]
 
 editor/display_folded = true
 
 [node name="Sprite" type="Sprite" parent="Animation/Body/Input/Confusion" index="0"]
 
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
+_sections_unfolded = [ "Material", "Visibility" ]
 
-[node name="Fire" type="Node2D" parent="Animation/Body/Input" index="1"]
+[node name="Fire" type="Node2D" parent="Animation/Body/Input" index="4"]
 
 editor/display_folded = true
+visible = false
+_sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="Animation/Body/Input/Fire" index="0"]
 
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="Hurt" type="Node2D" parent="Animation/Body/Input" index="2"]
+[node name="Sprite2" type="Sprite" parent="Animation/Body/Input/Fire" index="1"]
+
+position = Vector2( -53.096, 3.73111 )
+rotation = 0.0932997
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite5" type="Sprite" parent="Animation/Body/Input/Fire" index="2"]
+
+position = Vector2( -34.2427, -1.81812 )
+rotation = 0.413305
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite3" type="Sprite" parent="Animation/Body/Input/Fire" index="3"]
+
+position = Vector2( 57.0706, -0.706886 )
+rotation = 0.706607
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite4" type="Sprite" parent="Animation/Body/Input/Fire" index="4"]
+
+position = Vector2( 37.141, 0.982109 )
+rotation = -0.30451
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Hurt" type="Node2D" parent="Animation/Body/Input" index="5"]
 
 editor/display_folded = true
+visible = false
 
 [node name="Sprite" type="Sprite" parent="Animation/Body/Input/Hurt" index="0"]
 
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 
-[node name="Slow" type="Node2D" parent="Animation/Body/Input" index="3"]
+[node name="Sprite2" type="Sprite" parent="Animation/Body/Input/Hurt" index="1"]
+
+position = Vector2( 57.5218, -4.45877 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite3" type="Sprite" parent="Animation/Body/Input/Hurt" index="2"]
+
+position = Vector2( 57.4773, 4.13881 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite4" type="Sprite" parent="Animation/Body/Input/Hurt" index="3"]
+
+position = Vector2( 40.5733, -4.80867 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite5" type="Sprite" parent="Animation/Body/Input/Hurt" index="4"]
+
+position = Vector2( 40.3839, 4.42294 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite6" type="Sprite" parent="Animation/Body/Input/Hurt" index="5"]
+
+position = Vector2( -57.4132, -4.53212 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite7" type="Sprite" parent="Animation/Body/Input/Hurt" index="6"]
+
+position = Vector2( -40.693, -4.7144 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite8" type="Sprite" parent="Animation/Body/Input/Hurt" index="7"]
+
+position = Vector2( -57.8553, 4.38139 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite9" type="Sprite" parent="Animation/Body/Input/Hurt" index="8"]
+
+position = Vector2( -40.8252, 4.01772 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Slow" type="Node2D" parent="Animation/Body/Input" index="6"]
 
 editor/display_folded = true
+visible = false
 
 [node name="Sprite" type="Sprite" parent="Animation/Body/Input/Slow" index="0"]
 
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 
-[node name="Stun" type="Node2D" parent="Animation/Body/Input" index="4"]
+[node name="Stun" type="Node2D" parent="Animation/Body/Input" index="7"]
 
 editor/display_folded = true
+visible = false
 
 [node name="Sprite" type="Sprite" parent="Animation/Body/Input/Stun" index="0"]
 
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
+
+[node name="Sprite2" type="Sprite" parent="Animation/Body/Input/Stun" index="1"]
+
+position = Vector2( 36.8365, -0.24118 )
+rotation = 1.61159
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite3" type="Sprite" parent="Animation/Body/Input/Stun" index="2"]
+
+position = Vector2( 46.3961, 0.292793 )
+rotation = 1.61159
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite4" type="Sprite" parent="Animation/Body/Input/Stun" index="3"]
+
+position = Vector2( 55.0337, 0.721222 )
+rotation = 1.61159
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite5" type="Sprite" parent="Animation/Body/Input/Stun" index="4"]
+
+position = Vector2( 63.4158, 0.933594 )
+rotation = 1.61159
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite6" type="Sprite" parent="Animation/Body/Input/Stun" index="5"]
+
+position = Vector2( -34.5593, -0.755592 )
+rotation = 4.6266
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite7" type="Sprite" parent="Animation/Body/Input/Stun" index="6"]
+
+position = Vector2( -43.1498, 0.0356407 )
+rotation = 4.6266
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite8" type="Sprite" parent="Animation/Body/Input/Stun" index="7"]
+
+position = Vector2( -51.6981, 0.458084 )
+rotation = 4.6266
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite9" type="Sprite" parent="Animation/Body/Input/Stun" index="8"]
+
+position = Vector2( -60.5545, 1.12546 )
+rotation = 4.6266
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="InputAttackArea" type="Area2D" parent="Animation/Body/Input" index="8"]
+
+editor/display_folded = true
+visible = false
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Body/Input/InputAttackArea" index="0"]
+
+shape = SubResource( 12 )
 
 [node name="Right Hole" type="Sprite" parent="Animation/Body" index="4"]
 
 editor/display_folded = true
 position = Vector2( 77.9557, -58.1889 )
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 offset = Vector2( 31.1234, -0.644402 )
 
 [node name="Right Hole Otherside Remote Transform" type="RemoteTransform2D" parent="Animation/Body/Right Hole" index="0"]
@@ -3281,16 +3595,41 @@ anims/Processing = SubResource( 8 )
 anims/Still = SubResource( 9 )
 blend_times = [  ]
 
-[node name="Output Pos" type="Position2D" parent="." index="1"]
+[node name="TouchDamageArea" type="Area2D" parent="." index="1"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TouchDamageArea" index="0"]
+
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TouchDamageArea" index="1"]
+
+position = Vector2( -2.68121, 267.232 )
+shape = SubResource( 11 )
+
+[node name="Output Pos" type="Position2D" parent="." index="2"]
 
 position = Vector2( -387.544, -152.29 )
 
-[node name="Number Spawn Pos" type="Position2D" parent="." index="2"]
+[node name="Number Spawn Pos" type="Position2D" parent="." index="3"]
 
-position = Vector2( 0.00445557, -400.729 )
+position = Vector2( 0.867859, -234.094 )
 
-[node name="Health Bar" parent="." index="3" instance=ExtResource( 17 )]
+[node name="Health Bar" parent="." index="4" instance=ExtResource( 18 )]
 
-avatar_texture = ExtResource( 18 )
+avatar_texture = ExtResource( 19 )
+
+[connection signal="area_entered" from="Animation/Body/Input/InputAttackArea" to="." method="input_attack_hit"]
+
+[connection signal="area_entered" from="TouchDamageArea" to="." method="touch_damage_hit"]
 
 

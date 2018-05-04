@@ -31,6 +31,7 @@ const UP_SKILL_DAMAGE_MAX = 30
 const UP_SKILL_KNOCK_BACK_VEL_X = 500
 const UP_SKILL_KNOCK_BACK_VEL_Y = 300
 const UP_SKILL_KNOCK_BACK_FADE_RATE = 500
+const UP_SKILL_LANDING_DETECTION_DELAY_IN_MSEC = 250
 
 const DOWN_SKILL_DURATION = 0.6
 const DOWN_SKILL_RESUME_COOLDOWN = 0.2
@@ -55,6 +56,7 @@ var detecting_landing = false
 var up_skill_available = true
 var up_skill_available_timer = null
 var up_skill_targets = []
+var up_skill_timestamp = 0   # Offset the time to make sure the hero is in air.
 
 # Whether or not Keshia can cast any skill to resume from Down Skill.
 var down_skill_can_resume = false
@@ -73,7 +75,7 @@ func _ready():
 func _process(delta):
 	if hero.is_on_floor():
 		# For Up Skill.
-		if !up_skill_available && up_skill_available_timer == null:
+		if !up_skill_available && OS.get_ticks_msec() - up_skill_timestamp > UP_SKILL_LANDING_DETECTION_DELAY_IN_MSEC && up_skill_available_timer == null:
 			# Set up skill to available after cooldown.
 			up_skill_available_timer = cd_timer.new(UP_SKILL_COOLDOWN, self, "reset_up_skill_available")
 
@@ -217,6 +219,7 @@ func up_skill():
 
 		# Put Up Skill on cooldown until Keshia lands on ground (this is set in _process(delta)).
 		up_skill_available = false
+		up_skill_timestamp = OS.get_ticks_msec()
 
 		# Set hero status timer.
 		hero.set_status("can_jump", false, UP_SKILL_DURATION)

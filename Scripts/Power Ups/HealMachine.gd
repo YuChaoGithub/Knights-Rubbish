@@ -14,11 +14,9 @@ func _ready():
 
 func on_potion_collided(area):
 	if area.is_in_group("hero"):
-		var character = area.get_node("..")
-		
-		# Won't consume the potion if the character is full health.
-		if !character.health_system.is_full_health():
-			area.get_node("..").drink_potion(small_sprite, "healed", HEAL_AMOUNT)
+		var hero = area.get_node("..")
+		if !hero.health_system.is_full_health() && hero.status.can_move && !hero.status.fallen_off && !hero.status.dead:
+			hero.drink_potion(small_sprite, "healed", HEAL_AMOUNT)
 		
 			$Particles2D.visible = false
 			animator.play("None")

@@ -2,7 +2,7 @@ extends Node2D
 
 const SPEED = 850
 
-const CONFUSION_DURATION = 2.0
+const CONFUSION_DURATION = 3.0
 
 const LIFETIME = 6
 

@@ -10,16 +10,34 @@ extends Node2D
 # Cannot be stunned.
 # Play hurt animation only when idle.
 
+signal defeated
+
 enum { NONE, IDLE, INPUT, PROCESS, OUTPUT, SHOOT }
 
 export(int) var activate_range_x = 1500
 export(int) var activate_range_y = 1500
 
-const MAX_HEALTH = 2000
+const MAX_HEALTH = 2500
+
+# Touch Damage.
+const TOUCH_DAMAGE = 10
+const KNOCK_BACK_VEL_X = 1000
+const KNOCK_BACK_VEL_Y = 1000
+const KNOCK_BACK_FADE_RATE = 1000
+
+# Text Damage.
+const SLOW_RATE = 0.5
+const SLOW_DURATION = 4.0
+const CONFUSION_DURATION = 3.0
+const FIRE_DAMAGE_PER_TICK = 10
+const FIRE_TIME_PER_TICK = 1.0
+const FIRE_TOTAL_TICKS = 4
+const HURT_DAMAGE = 80
+const STUN_DURATION = 5.0
 
 # Animation.
-const IDLE_ANIMATION_MIN_DURATION = 5.0
-const IDLE_ANIMATION_MAX_DURATION = 8.0
+const IDLE_ANIMATION_MIN_DURATION = 3.0
+const IDLE_ANIMATION_MAX_DURATION = 5.0
 const DIE_ANIMATION_DURATION = 0.5
 const INPUT_ANIMATION_DURATION = 4.0
 const OUTPUT_ANIMATION_FIRST_DURATION = 0.7
@@ -46,7 +64,7 @@ onready var output_balls = {
 onready var ball_spawn_pos = $"Output Pos"
 onready var spawn_node = $".."
 
-var ball_directions = [Vector2(-1, 0), Vector2(-0.87, 0.5), Vector2(-0.87, -0.5)]
+var ball_directions = [Vector2(-1, 0), Vector2(-0.87, 0.5), Vector2(-0.5, 0.87), Vector2(0, 1)]
 
 var status_timer = null
 var idle_timer = null
@@ -89,9 +107,9 @@ func play_input_anim():
 	
 	# Hide all input words except the chosen one.
 	for key in attack_keys:
-		input_words[key].set_hidden(true)
+		input_words[key].visible = false
 
-	input_words[curr_attack].set_hidden(false)
+	input_words[curr_attack].visible = true
 
 	ec.play_animation("Input")
 	ec.change_status(NONE)
@@ -119,6 +137,35 @@ func shoot_ball():
 
 	status_timer = ec.cd_timer.new(OUTPUT_ANIMATION_SECOND_DURATION, self, "change_status", IDLE)
 
+func touch_damage_hit(area):
+	if area.is_in_group("hero"):
+		var hero = area.get_node("..")
+		var dir = sign(hero.global_position.x - global_position.x)
+		hero.knocked_back(dir * KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
+		hero.damaged(TOUCH_DAMAGE)
+
+func input_attack_hit(area):
+	if area.is_in_group("hero"):
+		var hero = area.get_node("..")
+		match curr_attack:
+			"confuse":
+				hero.confused(CONFUSION_DURATION)
+			"slow":
+				var args = {
+					multiplier = SLOW_RATE,
+					duration = SLOW_DURATION
+				}
+				hero.speed_changed(args)
+			"fire":
+				var dot = preload("res://Scenes/Utils/Change Health OT.tscn").instance()
+				hero.add_child(dot)
+				dot.initialize(-FIRE_DAMAGE_PER_TICK, FIRE_TIME_PER_TICK, FIRE_TOTAL_TICKS)
+				hero.show_ignited_particles(FIRE_TIME_PER_TICK * FIRE_TOTAL_TICKS)
+			"stun":
+				hero.stunned(STUN_DURATION)
+			"hurt":
+				hero.damaged(HURT_DAMAGE)
+
 func damaged(val):
 	ec.damaged(val, ec.animator.current_animation == "Idle")
 
@@ -138,6 +185,11 @@ func slowed(multiplier, duration):
 	return
 
 func die():
+	$TouchDamageArea.queue_free()
+	$Animation/Body/Input/InputAttackArea.queue_free()
+	
+	emit_signal("defeated")
+
 	ec.die()
 	ec.health_bar.drop_health_bar()
 	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

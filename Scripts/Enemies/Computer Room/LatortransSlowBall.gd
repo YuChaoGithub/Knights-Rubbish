@@ -3,7 +3,7 @@ extends Node2D
 const SPEED = 400
 
 const SLOW_RATE = 0.5
-const SLOW_DURATION = 3.0
+const SLOW_DURATION = 4.0
 
 const LIFETIME = 15
 
@@ -25,6 +25,10 @@ func _process(delta):
 
 func on_attack_hit(area):
 	if area.is_in_group("hero"):
-		area.get_node("..").speed_changed(SLOW_RATE, SLOW_DURATION)
+		var args = {
+			multiplier = SLOW_RATE,
+			duration = SLOW_DURATION
+		}
+		area.get_node("..").speed_changed(args)
 
 		queue_free()

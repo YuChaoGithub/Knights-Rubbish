@@ -1,10 +1,10 @@
-extends Node2D
+ extends Node2D
 
 export(String, FILE) var mob_path
 export(int) var activate_range_x = 3000
 export(int) var activate_range_y = 3000
 export(float) var spawn_delay = 0.75
-export(int) var total_count
+export(int) var total_count   # -1 if spawn infinately.
 
 const MOB_FADE_IN_DURATION = 0.5
 const PARTICLE_DURATION = 1.0

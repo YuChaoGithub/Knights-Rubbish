@@ -128,6 +128,8 @@ var ghost_health
 
 var lightning = preload("res://Scenes/Effects/Lightning.tscn")
 
+onready var hero_layer = ProjectSettings.get_setting("layer_names/2d_physics/hero")
+
 onready var combo_handler = $"Combo Handler"
 
 # Camera. For clamping within view bounds.
@@ -255,8 +257,6 @@ func update_movement(delta):
 
 	velocity.x = horizontal_movement * speed + additional_speed_x
 	velocity.y += gravity * delta
-	
-	var original_position = global_position
 
 	move_and_slide(velocity, Vector2(0, -1))
 
@@ -297,6 +297,8 @@ func falls_off():
 	set_status("can_jump", false, GRABBING_DURATION + DROPPING_DURATION)
 	set_status("invincible", true, GRABBING_DURATION + DROPPING_DURATION)
 
+	$"Damage Area".set_collision_layer_bit(hero_layer, false)
+
 	fall_off_timer = countdown_timer.new(GRABBING_DURATION, self, "show_fist")
 
 func show_fist():
@@ -322,6 +324,8 @@ func drop_from_fist():
 
 	top_fist = null
 	fall_off_timer = countdown_timer.new(0.5, self, "reset_z_index", original_z)
+
+	$"Damage Area".set_collision_layer_bit(hero_layer, true)
 
 func reset_z_index(original_z):
 	z_index = original_z
@@ -545,7 +549,10 @@ func start_size_tween(multiplier):
 	
 	set_status("animate_movement", false, SIZE_CHANGE_DURATION)
 	set_status("can_move", false, SIZE_CHANGE_DURATION)
-	play_animation("Size Change")
+	
+	# Don't animate when dead.
+	if !status.dead:
+		play_animation("Size Change")
 
 	size_tween = Tween.new()
 	add_child(size_tween)
@@ -734,10 +741,11 @@ func die():
 	set_status("can_move", false, DIE_ANIMATION_DURATION)
 	die_timer = countdown_timer.new(DIE_ANIMATION_DURATION, $"../HeroManager", "hero_dead")
 	
-	# Show ghost health bar.
-	ghost_health = player_constants.ghost_health
-	health_bar.switch_to_dead_health_bar()
-	health_bar.set_dead_health(ghost_health)
+	# Show ghost health bar only if its in coop mode.
+	if $"../HeroManager".heroes.size() > 1:
+		ghost_health = player_constants.ghost_health
+		health_bar.switch_to_dead_health_bar()
+		health_bar.set_dead_health(ghost_health)
 
 	ghost_hit_box.activate()
 

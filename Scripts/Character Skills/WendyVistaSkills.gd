@@ -24,6 +24,7 @@ const UP_SKILL_DAMAGE_MAX = 20
 const UP_SKILL_KNOCK_BACK_VEL_X = 300
 const UP_SKILL_KNOCK_BACK_VEL_Y = 250
 const UP_SKILL_KNOCK_BACK_FADE_RATE = 300
+const UP_SKILL_LANDING_DETECTION_DELAY_IN_MSEC = 250
 
 const ULT_PREPARE_DURATION = 1.0
 const ULT_FIRE_INTERVAL = 0.2
@@ -52,6 +53,7 @@ var ult_cd = preload("res://Scenes/Characters/Wendy Vista/Wendy Ult CD.tscn")
 # Can only cast Up Skill one time until Wendy landed on the ground.
 var up_skill_available = true
 var up_skill_available_timer = null
+var up_skill_timestamp = 0
 
 var ult_timer
 
@@ -60,7 +62,7 @@ func _ready():
 
 func _process(delta):
     if hero.is_on_floor():
-        if !up_skill_available && up_skill_available_timer == null:
+        if !up_skill_available && OS.get_ticks_msec() - up_skill_timestamp > UP_SKILL_LANDING_DETECTION_DELAY_IN_MSEC && up_skill_available_timer == null:
             up_skill_available_timer = cd_timer.new(UP_SKILL_COOLDOWN, self, "reset_up_skill_available")
 
 func reset_up_skill_available():
@@ -146,6 +148,7 @@ func up_skill():
         hero.play_animation("Up Skill")
 
         up_skill_available = false
+        up_skill_timestamp = OS.get_ticks_msec()
 
         hero.set_status("can_jump", false, UP_SKILL_DURATION)
         hero.set_status("can_cast_skill", false, UP_SKILL_DURATION)

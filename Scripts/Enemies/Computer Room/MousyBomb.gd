@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # Movement.
-const SPEED_X = 600
+const SPEED_X = 700
 const GRAVITY = 500
 
 # Attack.

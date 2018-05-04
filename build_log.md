@@ -762,6 +762,33 @@ Facepalms: Editor always breaks after Git operations...so annoying.
 
 **Commit**
 
+[2018.04.30]
+* Heroes will no longer consume potions when dead, immobile or in fist.
+* Fixed the bug that Wendy can cast Up Skill twice in air.
+* Arranged the basic structure of Level 1-2.
+
+[2018.05.01]
+* Arranged the Latortrans area of Level 1-2. Level design is actually pretty hard.
+
+[2018.05.02]
+* Set up all the camera controlling triggers of Level 1-2. (But not tested yet).
+
+[2018.05.03]
+* Make Wendy's Basic Attack stun first then damage so that fatal blows won't let enemies moving after dying.
+* Tested and modified some parts of Level 1-2.
+* Added touch damage and input damage to Latortrans.
+* Rearranged Latortrans area.
+* Changed the shooting angle, reduced the shooting interval and added more bullets per wave for Latortrans.
+
+[2018.05.04]
+* Added some animation to make Boss Health more visible and eye catching.
+* Added particles for Latortrans' input texts and balls.
+* No longer shows ghost health bar in single player mode.
+* Turn off Heroes' Damage Area when in fist, turn on again after they fall off from the Top Fist.
+* Completed the basic layout of Level 1-2.
+
+**Commit**
+
 To Do List:
 * Multiplayer bug testing.
 
@@ -776,8 +803,6 @@ Polishing:
 * [Animation] Radiogugu watch out skill blinks blue.
 * [Script] Slow down walking animation while slowed.
 * [Effect] Jumping dust for characters.
-* [Script] Status icons showed in HUD. Blinking when about to vanish.
-* [Script] Adjust damage according to player numbers.
 * [Graphics] Dark level: wears mining hat (or simply a light on a stick).
 * [Easter Egg] Phone screen showing "Tall as the Sky" and "kQq".
 * [Easter Egg] The real fake door. (www.fakedoors.com)
