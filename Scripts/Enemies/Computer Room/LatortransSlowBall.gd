@@ -3,6 +3,7 @@ extends Node2D
 const SPEED = 400
 
 const SLOW_RATE = 0.5
+const DAMAGE = 10
 const SLOW_DURATION = 4.0
 
 const LIFETIME = 15
@@ -29,6 +30,8 @@ func on_attack_hit(area):
 			multiplier = SLOW_RATE,
 			duration = SLOW_DURATION
 		}
-		area.get_node("..").speed_changed(args)
+		var hero = area.get_node("..")
+		hero.speed_changed(args)
+		hero.damaged(DAMAGE)
 
 		queue_free()

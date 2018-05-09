@@ -29,16 +29,17 @@ const KNOCK_BACK_FADE_RATE = 1000
 const SLOW_RATE = 0.5
 const SLOW_DURATION = 4.0
 const CONFUSION_DURATION = 3.0
+const ORDINARY_DAMAGE = 10
 const FIRE_DAMAGE_PER_TICK = 10
 const FIRE_TIME_PER_TICK = 1.0
 const FIRE_TOTAL_TICKS = 4
-const HURT_DAMAGE = 80
+const HURT_DAMAGE = 60
 const STUN_DURATION = 5.0
 
 # Animation.
 const IDLE_ANIMATION_MIN_DURATION = 3.0
 const IDLE_ANIMATION_MAX_DURATION = 5.0
-const DIE_ANIMATION_DURATION = 0.5
+const DIE_ANIMATION_DURATION = 5.0
 const INPUT_ANIMATION_DURATION = 4.0
 const OUTPUT_ANIMATION_FIRST_DURATION = 0.7
 const OUTPUT_ANIMATION_SECOND_DURATION = 0.6
@@ -68,6 +69,7 @@ var ball_directions = [Vector2(-1, 0), Vector2(-0.87, 0.5), Vector2(-0.5, 0.87),
 
 var status_timer = null
 var idle_timer = null
+var die_timer = null
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
@@ -150,12 +152,14 @@ func input_attack_hit(area):
 		match curr_attack:
 			"confuse":
 				hero.confused(CONFUSION_DURATION)
+				hero.damaged(ORDINARY_DAMAGE)
 			"slow":
 				var args = {
 					multiplier = SLOW_RATE,
 					duration = SLOW_DURATION
 				}
 				hero.speed_changed(args)
+				hero.damaged(ORDINARY_DAMAGE)
 			"fire":
 				var dot = preload("res://Scenes/Utils/Change Health OT.tscn").instance()
 				hero.add_child(dot)
@@ -163,6 +167,7 @@ func input_attack_hit(area):
 				hero.show_ignited_particles(FIRE_TIME_PER_TICK * FIRE_TOTAL_TICKS)
 			"stun":
 				hero.stunned(STUN_DURATION)
+				hero.damaged(ORDINARY_DAMAGE)
 			"hurt":
 				hero.damaged(HURT_DAMAGE)
 
@@ -187,9 +192,9 @@ func slowed(multiplier, duration):
 func die():
 	$TouchDamageArea.queue_free()
 	$Animation/Body/Input/InputAttackArea.queue_free()
-	
-	emit_signal("defeated")
 
 	ec.die()
 	ec.health_bar.drop_health_bar()
-	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
+	set_process(false)
+	
+	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "emit_signal", "defeated")

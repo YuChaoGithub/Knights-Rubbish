@@ -341,9 +341,9 @@ func check_combo_and_perform():
 	elif Input.is_action_pressed(action_strings.skill):
 		# Skills.
 		if Input.is_action_pressed(action_strings.left):
-			combo_handler.horizontal_skill(-1)
+			combo_handler.horizontal_skill(-1 if !status.confused else 1)
 		elif Input.is_action_pressed(action_strings.right):
-			combo_handler.horizontal_skill(1)
+			combo_handler.horizontal_skill(1 if !status.confused else -1)
 		elif Input.is_action_pressed(action_strings.up):
 			combo_handler.up_skill()
 		elif Input.is_action_pressed(action_strings.down):

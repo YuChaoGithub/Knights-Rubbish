@@ -789,6 +789,21 @@ Facepalms: Editor always breaks after Git operations...so annoying.
 
 **Commit**
 
+[2018.05.07]
+* Portals will now be disabled if its destination isn't in camera's view. Also changed some camera transition in Level 1-2.
+* Decorated half of Level 1-2.
+
+[2018.05.08]
+* Decorated Level 1-2. Only Latortrans' place left.
+
+[2018.05.09]
+* Completed decoration Level 1-2.
+* Changed Chinese font.
+* Latortrans' all attacks now do damage.
+* Fixed the bug that heroes fire the wrong direction when Confused.
+
+**Commit**
+
 To Do List:
 * Multiplayer bug testing.
 

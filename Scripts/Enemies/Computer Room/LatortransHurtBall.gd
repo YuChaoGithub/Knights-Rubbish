@@ -2,7 +2,7 @@ extends Node2D
 
 const SPEED = 700
 
-const DAMAGE = 80
+const DAMAGE = 60
 const KNOCK_BACK_VEL_X = 400
 const KNOCK_BACK_VEL_Y = 400
 const KNOCK_BACK_FADE_RATE = 800

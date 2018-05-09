@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/TopFist.gd" type="Script" id=1]
-[ext_resource path="res://Graphics/UI/Hands/Fist 4.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/UI/Avatar/Keshia Erasia.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/UI/Hands/Fist 1.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/UI/Hands/Fist 2.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/UI/Hands/Fist 3.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/UI/Avatar/Keshia Erasia.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/UI/Hands/Fist 1.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/UI/Hands/Fist 2.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/UI/Hands/Fist 3.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/UI/Hands/Fist 4.png" type="Texture" id=6]
 [ext_resource path="res://Graphics/UI/Scrap 3.png" type="Texture" id=7]
 [ext_resource path="res://Graphics/UI/Arrow.png" type="Texture" id=8]
 
@@ -25,7 +25,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ null, ExtResource( 4 ) ]
+"values": [ null, ExtResource( 3 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:position")
@@ -140,7 +140,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.05, 0.1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 2 ) ]
+"values": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:position")
@@ -237,15 +237,14 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( -0.719116, -522.26 )
-texture = ExtResource( 2 )
+position = Vector2( -4.2688, -494.386 )
 offset = Vector2( 7.73104, 296.463 )
 
 [node name="Icon" type="Sprite" parent="Sprite" index="0"]
 
-position = Vector2( -22.3128, 42.8695 )
+position = Vector2( -22.3128, 61.9086 )
 scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="Drop Pos" type="Position2D" parent="." index="1"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Latortrans.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Body.png" type="Texture" id=2]
@@ -17,8 +17,9 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Slow.png" type="Texture" id=15]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Stun.png" type="Texture" id=16]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Right Hole.png" type="Texture" id=17]
-[ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Graphics/UI/Avatar/Latortrans.png" type="Texture" id=19]
+[ext_resource path="res://Fonts/SourceHanSerifTC.tres" type="DynamicFont" id=18]
+[ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Graphics/UI/Avatar/Latortrans.png" type="Texture" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -30,14 +31,14 @@ extents = Vector2( 107.485, 110.424 )
 custom_solver_bias = 0.0
 extents = Vector2( 146.829, 20.794 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 66.0076, 10 )
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-length = 0.5
+length = 5.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -335,10 +336,10 @@ tracks/24/loop_wrap = true
 tracks/24/imported = false
 tracks/24/enabled = true
 tracks/24/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 3.5, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.347656, 0.347656, 0.347656, 1 ), Color( 0.347656, 0.347656, 0.347656, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 tracks/25/type = "value"
 tracks/25/path = NodePath("Body/Right Hole Otherside:self_modulate")
@@ -473,19 +474,115 @@ tracks/35/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 tracks/36/type = "value"
-tracks/36/path = NodePath("Body/Input/InputAttackArea:collision_mask")
+tracks/36/path = NodePath("Words/Doomed:text")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/imported = false
 tracks/36/enabled = true
 tracks/36/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0 ]
+"values": [ "", "", "W", "We", "We ar", "We are", "We are a", "We are al", "We are all", "We are all d", "We are all do", "We are all doo", "We are all doom", "We are all doome", "We are all doomed", "We are all doomed," ]
+}
+tracks/37/type = "value"
+tracks/37/path = NodePath("Words/DoomedChinese:text")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/keys = {
+"times": PoolRealArray( 0, 0.5, 1.9, 2, 2.1, 2.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "", "我　真", "我　真　的　不", "我　真　的　不　知　道", "我　真　的　不　知　道　，" ]
+}
+tracks/38/type = "value"
+tracks/38/path = NodePath("Words/Oblivion:text")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/keys = {
+"times": PoolRealArray( 0, 0.5, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "", "f", "fa", "fadi", "fading", "fading i", "fading int", "fading into o", "fading into ob", "fading into obli", "fading into obliv", "fading into oblivi", "fading into oblivio", "fading into oblivion." ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("Words/OblivionChinese:text")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0, 0.5, 2.5, 2.6, 2.7, 2.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "", "這　句", "這　句　該　怎", "這　句　該　怎　麼　翻", "這　句　該　怎　麼　翻　。" ]
+}
+tracks/40/type = "value"
+tracks/40/path = NodePath("Words/Doomed:modulate")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 0, 1.9, 2.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+tracks/41/type = "value"
+tracks/41/path = NodePath("Words/DoomedChinese:modulate")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/keys = {
+"times": PoolRealArray( 0, 2.2, 2.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0.539246, 0.726562, 1 ) ]
+}
+tracks/42/type = "value"
+tracks/42/path = NodePath("Words/Oblivion:modulate")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/keys = {
+"times": PoolRealArray( 0, 2.5, 2.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+tracks/43/type = "value"
+tracks/43/path = NodePath("Words/OblivionChinese:modulate")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/keys = {
+"times": PoolRealArray( 0, 2.8, 3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0.548645, 0.695312, 1 ) ]
+}
+tracks/44/type = "value"
+tracks/44/path = NodePath("Body:scale")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 
 length = 0.1
 loop = false
@@ -935,7 +1032,7 @@ tracks/36/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 
 length = 5.0
 loop = true
@@ -1385,7 +1482,7 @@ tracks/36/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 
 length = 4.0
 loop = false
@@ -1871,7 +1968,7 @@ tracks/39/keys = {
 "values": [ 1, 0 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 
 length = 1.3
 loop = false
@@ -2321,7 +2418,7 @@ tracks/36/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 
 length = 2.0
 loop = false
@@ -2771,7 +2868,7 @@ tracks/36/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 
 length = 0.1
 loop = false
@@ -3221,17 +3318,17 @@ tracks/36/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="RectangleShape2D" id=10]
+[sub_resource type="RectangleShape2D" id=11]
 
 custom_solver_bias = 0.0
 extents = Vector2( 298.953, 324.931 )
 
-[sub_resource type="RectangleShape2D" id=11]
+[sub_resource type="RectangleShape2D" id=12]
 
 custom_solver_bias = 0.0
 extents = Vector2( 399.053, 55.018 )
 
-[node name="Latortrans" type="Node2D"]
+[node name="Latortrans" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 activate_range_x = 1500
@@ -3244,6 +3341,7 @@ scale = Vector2( 3, 3 )
 [node name="Damage Area" type="Area2D" parent="Animation" index="0"]
 
 editor/display_folded = true
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -3269,6 +3367,7 @@ shape = SubResource( 2 )
 
 editor/display_folded = true
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Right Hole Otherside" type="Sprite" parent="Animation/Body" index="0"]
 
@@ -3319,6 +3418,7 @@ offset = Vector2( -29.051, 3.72842 )
 
 [node name="Input" type="Node2D" parent="Animation/Body" index="3"]
 
+editor/display_folded = true
 position = Vector2( 460, -4 )
 scale = Vector2( 1e-05, 1e-05 )
 z_index = 1
@@ -3561,7 +3661,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Body/Input/InputAttackArea" index="0"]
 
-shape = SubResource( 12 )
+shape = SubResource( 3 )
 
 [node name="Right Hole" type="Sprite" parent="Animation/Body" index="4"]
 
@@ -3586,17 +3686,111 @@ autoplay = "Still"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Die = SubResource( 3 )
-anims/Hurt = SubResource( 4 )
-anims/Idle = SubResource( 5 )
-anims/Input = SubResource( 6 )
-anims/Output = SubResource( 7 )
-anims/Processing = SubResource( 8 )
-anims/Still = SubResource( 9 )
+anims/Die = SubResource( 4 )
+anims/Hurt = SubResource( 5 )
+anims/Idle = SubResource( 6 )
+anims/Input = SubResource( 7 )
+anims/Output = SubResource( 8 )
+anims/Processing = SubResource( 9 )
+anims/Still = SubResource( 10 )
 blend_times = [  ]
+
+[node name="Words" type="Node2D" parent="Animation" index="3"]
+
+[node name="Doomed" type="Label" parent="Animation/Words" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -107.0
+margin_top = -126.0
+margin_right = 18.0
+margin_bottom = -112.0
+rect_scale = Vector2( 1.75, 1.75 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="DoomedChinese" type="Label" parent="Animation/Words" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -103.0
+margin_top = -107.0
+margin_right = 287.0
+margin_bottom = -62.0
+rect_scale = Vector2( 0.55, 0.55 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 18 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Oblivion" type="Label" parent="Animation/Words" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -111.0
+margin_top = -77.0
+margin_right = 15.0
+margin_bottom = -63.0
+rect_scale = Vector2( 1.75, 1.75 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="OblivionChinese" type="Label" parent="Animation/Words" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -104.0
+margin_top = -56.0
+margin_right = 286.0
+margin_bottom = -11.0
+rect_scale = Vector2( 0.55, 0.55 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 18 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
 
 [node name="TouchDamageArea" type="Area2D" parent="." index="1"]
 
+editor/display_folded = true
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -3609,12 +3803,12 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TouchDamageArea" index="0"]
 
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TouchDamageArea" index="1"]
 
 position = Vector2( -2.68121, 267.232 )
-shape = SubResource( 11 )
+shape = SubResource( 12 )
 
 [node name="Output Pos" type="Position2D" parent="." index="2"]
 
@@ -3624,9 +3818,9 @@ position = Vector2( -387.544, -152.29 )
 
 position = Vector2( 0.867859, -234.094 )
 
-[node name="Health Bar" parent="." index="4" instance=ExtResource( 18 )]
+[node name="Health Bar" parent="." index="4" instance=ExtResource( 19 )]
 
-avatar_texture = ExtResource( 19 )
+avatar_texture = ExtResource( 20 )
 
 [connection signal="area_entered" from="Animation/Body/Input/InputAttackArea" to="." method="input_attack_hit"]
 

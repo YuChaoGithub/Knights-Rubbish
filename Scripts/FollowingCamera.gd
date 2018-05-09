@@ -9,6 +9,8 @@ const ZOOM_FACTOR = 2.0
 const SHAKE_DURATION = 0.175
 const SHAKE_MULTITUDE = 10
 
+const CLAMP_OFFSET_X = 60
+
 # Drag margins (from 0 to 1).
 export(float) var drag_margin_right = 0.5
 export(float) var drag_margin_left = 0.3
@@ -125,7 +127,7 @@ func update_viewport():
 
 # Pass in the intended position of an object. Returns the position clamped within the viewing bounds of the camera.
 func clamp_pos_within_cam_bounds(pos):
-	pos.x = clamp(pos.x, global_position.x - cam_width * 0.5, global_position.x + cam_width * 0.5)
+	pos.x = clamp(pos.x, global_position.x - cam_width * 0.5 + CLAMP_OFFSET_X, global_position.x + cam_width * 0.5 - CLAMP_OFFSET_X)
 	pos.y = clamp(pos.y, global_position.y - cam_height * 0.5, global_position.y + cam_height * 0.5)
 	return pos
 
@@ -148,6 +150,13 @@ func start_shake_effect():
 	shake_timestamp = 0.0
 	is_shaking = true
 
+# Check if the point is in camera's view.
+func in_camera_view(pos):
+	if pos.x > global_position.x - cam_width * 0.5 && pos.x < global_position.x + cam_width * 0.5 && pos.y > global_position.y - cam_height * 0.5 && pos.y < global_position.y + cam_height * 0.5:
+		return true
+	else:
+		return false
+	
 func update_right_margin(value):
 	drag_margin_right = value
 

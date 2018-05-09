@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Structures/Portal.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Structure/Portal Outline.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/Structure/Portal.png" type="Texture" id=3]
 [ext_resource path="res://Graphics/Structure/PortalWhite.png" type="Texture" id=4]
 [ext_resource path="res://Graphics/Particles/Double Star.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/UI/White Circular Frame.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/UI/White Line.png" type="Texture" id=7]
 
 [sub_resource type="Animation" id=1]
 
@@ -144,7 +146,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="WhiteCover" type="Sprite" parent="." index="3"]
 
-editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
 scale = Vector2( 0.585, 0.585 )
 texture = ExtResource( 4 )
@@ -193,7 +194,26 @@ playback_speed = 1.0
 anims/Blink = SubResource( 7 )
 blend_times = [  ]
 
-[node name="Collision" type="Node2D" parent="." index="6"]
+[node name="BanSign" type="Node2D" parent="." index="6"]
+
+editor/display_folded = true
+visible = false
+modulate = Color( 1, 0, 0, 1 )
+scale = Vector2( 0.4, 0.4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Circle" type="Sprite" parent="BanSign" index="0"]
+
+texture = ExtResource( 6 )
+
+[node name="Line" type="Sprite" parent="BanSign" index="1"]
+
+rotation = -0.539238
+texture = ExtResource( 7 )
+
+[node name="Collision" type="Node2D" parent="." index="7"]
+
+editor/display_folded = true
 
 [node name="CollisionArea" type="Area2D" parent="Collision" index="0" groups=[
 "door",

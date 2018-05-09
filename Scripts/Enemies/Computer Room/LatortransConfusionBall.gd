@@ -3,6 +3,7 @@ extends Node2D
 const SPEED = 850
 
 const CONFUSION_DURATION = 3.0
+const DAMAGE = 10
 
 const LIFETIME = 6
 
@@ -24,6 +25,8 @@ func _process(delta):
 
 func on_attack_hit(area):
 	if area.is_in_group("hero"):
-		area.get_node("..").confused(CONFUSION_DURATION)
+		var hero = area.get_node("..")
+		hero.confused(CONFUSION_DURATION)
+		hero.damaged(DAMAGE)
 
 		queue_free()
