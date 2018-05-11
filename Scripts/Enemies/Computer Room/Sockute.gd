@@ -28,7 +28,8 @@ onready var ball_spawn_pos = $"Lightning Ball Spawn Pos"
 onready var spawn_node = $".."
 
 onready var animator = $"Animation/AnimationPlayer"
-onready var hero_manager = $"../../../../HeroManager"
+onready var hero_manager = $"../../HeroManager"
+onready var following_camera = $"../../Following Camera"
 
 func _ready():
 	animator.play("Still")
@@ -43,6 +44,10 @@ func _process(delta):
 			spawn_lightning_ball()
 		RECOVER:
 			play_recover_animation()
+
+	# Queue free if it is out of the view of the camera.
+	if status != NOT_ACTIVE && !following_camera.in_camera_view(global_position):
+		queue_free()
 
 func change_status(to_status):
 	status = to_status

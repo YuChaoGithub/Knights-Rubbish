@@ -804,6 +804,16 @@ Facepalms: Editor always breaks after Git operations...so annoying.
 
 **Commit**
 
+[2018.05.10]
+* Designed Level 1-3 a little.
+* Reworked Socute's particles.
+
+[2018.05.11]
+* Designed Level 1-3. Haven't tested yet.
+* Sockute will now be queued free when leaving the camera.
+
+**Commit**
+
 To Do List:
 * Multiplayer bug testing.
 
