@@ -90,7 +90,6 @@ change_to = 1
 
 [node name="Body" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
 texture = ExtResource( 2 )
 
 [node name="Lines" type="Sprite" parent="Body" index="0"]
@@ -139,7 +138,7 @@ explosiveness = 0.0
 randomness = 0.0
 fixed_fps = 0
 fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
+visibility_rect = Rect2( -100, -250, 1500, 500 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 3 )

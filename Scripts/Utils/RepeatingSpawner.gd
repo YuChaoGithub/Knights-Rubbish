@@ -58,6 +58,7 @@ func actually_spawn():
     prev_mob = weakref(new_mob)
 
 func complete_spawning():
+    print(mob_path)
     emit_signal("completed")
 
 func stop_further_spawning():

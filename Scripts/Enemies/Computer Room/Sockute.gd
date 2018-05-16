@@ -29,7 +29,7 @@ onready var spawn_node = $".."
 
 onready var animator = $"Animation/AnimationPlayer"
 onready var hero_manager = $"../../HeroManager"
-onready var following_camera = $"../../Following Camera"
+onready var following_camera = $"../../FollowingCamera"
 
 func _ready():
 	animator.play("Still")

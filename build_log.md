@@ -814,6 +814,19 @@ Facepalms: Editor always breaks after Git operations...so annoying.
 
 **Commit**
 
+[2018.05.14]
+* Fixed some bugs with Level 1-3 design.
+* Lost motivation again. Urg.
+
+[2018.05.15]
+* Decorated Level 1-3.
+
+[2018.05.16]
+* Completed decoring Level 1-3.
+* Fixed some level design in the beginning of Level 1-3 so that the shrinked heroes won't be stuck of the walls when dropping out from Fist. Not Tested Yet.
+
+**Commit**
+
 To Do List:
 * Multiplayer bug testing.
 

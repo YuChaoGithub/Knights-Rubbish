@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Graphics/background/Tissue and Papers/Paper 4.png" type="Texture" id=1]
 
-[sub_resource type="Curve" id=4]
+[sub_resource type="Curve" id=1]
 
 min_value = 0.0
 max_value = 1.0
@@ -10,18 +10,18 @@ bake_resolution = 100
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.252385, 0.493369 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.495781 ), 0.0, 0.0, 0, 0 ]
 _sections_unfolded = [ "Resource" ]
 
-[sub_resource type="CurveTexture" id=5]
+[sub_resource type="CurveTexture" id=2]
 
 flags = 4
 width = 2048
-curve = SubResource( 4 )
+curve = SubResource( 1 )
 
 [sub_resource type="ParticlesMaterial" id=3]
 
 render_priority = 0
 trail_divisor = 1
 emission_shape = 2
-emission_box_extents = Vector3( 50, 50, 1 )
+emission_box_extents = Vector3( 15, 50, 1 )
 flag_align_y = false
 flag_rotate_y = false
 flag_disable_z = true
@@ -46,7 +46,7 @@ angle = 180.0
 angle_random = 1.0
 scale = 1.0
 scale_random = 0.0
-scale_curve = SubResource( 5 )
+scale_curve = SubResource( 2 )
 color = Color( 1, 1, 1, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -55,7 +55,7 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Angle", "Damping", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread" ]
+_sections_unfolded = [ "Angle", "Angular Velocity", "Damping", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread", "Tangential Accel" ]
 
 [node name="TissueFall" type="Particles2D"]
 
@@ -71,7 +71,7 @@ explosiveness = 0.0
 randomness = 0.0
 fixed_fps = 0
 fract_delta = true
-visibility_rect = Rect2( -100, -100, 200, 200 )
+visibility_rect = Rect2( -2000, -150, 2400, 400 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 3 )
@@ -79,6 +79,6 @@ texture = ExtResource( 1 )
 normal_map = null
 h_frames = 1
 v_frames = 1
-_sections_unfolded = [ "Process Material", "Time", "Transform" ]
+_sections_unfolded = [ "Drawing", "Process Material", "Time", "Transform" ]
 
 
