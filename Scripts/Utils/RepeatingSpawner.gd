@@ -6,6 +6,8 @@ export(int) var activate_range_y = 3000
 export(float) var spawn_delay = 0.75
 export(int) var total_count   # -1 if spawn infinately.
 
+export(NodePath) var countdownTVHooked = null
+
 const MOB_FADE_IN_DURATION = 0.5
 const PARTICLE_DURATION = 1.0
 
@@ -55,10 +57,12 @@ func actually_spawn():
     else:
         new_mob.connect("defeated", self, "spawn_mob")
 
+    if countdownTVHooked != null:
+        new_mob.connect("defeated", get_node(countdownTVHooked), "tick")
+
     prev_mob = weakref(new_mob)
 
 func complete_spawning():
-    print(mob_path)
     emit_signal("completed")
 
 func stop_further_spawning():

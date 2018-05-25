@@ -36,6 +36,7 @@ const SHOOT_ANIMATION_DURATION = 3.0
 const TARGET_DETECT_INTERVAL = 1.0
 
 var status_timer = null
+var die_timer = null
 var target_detect_timer = null
 var facing = -1
 
@@ -127,4 +128,4 @@ func healed(val):
 
 func die():
 	ec.die()
-	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
+	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

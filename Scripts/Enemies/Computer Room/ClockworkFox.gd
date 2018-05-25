@@ -24,6 +24,7 @@ const ACTIVATE_ANIMATION_DURATION = 0.5
 const DIE_ANIMATION_DURATION = 0.8
 
 var status_timer = null
+var die_timer = null
 var activate_timer = null
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
@@ -100,4 +101,4 @@ func slowed(multiplier, duration):
 func die():
 	cancel_activate_timer()
 	ec.die()
-	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
+	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

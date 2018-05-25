@@ -29,6 +29,7 @@ const THROWING_DURATION = 0.4
 const DIE_ANIMATION_DURATION = 0.5
 
 var status_timer = null
+var die_timer = null
 var facing = -1
 
 # Shuriken.
@@ -154,4 +155,4 @@ func knocked_back(vel_x, vel_y, fade_rate):
 
 func die():
 	ec.die()
-	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
+	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

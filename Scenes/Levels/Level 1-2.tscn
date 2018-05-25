@@ -176,7 +176,7 @@ tracks/0/keys = {
 "values": [ true, false, true, false, true ]
 }
 
-[node name="Game Level" type="Node2D"]
+[node name="Game Level" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -752,12 +752,10 @@ _sections_unfolded = [ "Cell", "Collision", "Occluder", "Transform" ]
 
 [node name="Writings" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="InterdimensionalPortal" type="Node2D" parent="Writings" index="0"]
 
-editor/display_folded = true
 position = Vector2( 1991.21, -707.157 )
 
 [node name="behold" type="Label" parent="Writings/InterdimensionalPortal" index="0"]
@@ -1005,7 +1003,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 55 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "(schlami-plank model)"
+text = "(schlami-planck model)"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -1064,7 +1062,7 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 [node name="Arrow" type="Sprite" parent="Writings/InterdimensionalPortal" index="12"]
 
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 882.167, 243.718 )
+position = Vector2( 900.675, 246.803 )
 rotation = -3.12992
 scale = Vector2( -0.4, 0.4 )
 texture = ExtResource( 56 )
@@ -5085,6 +5083,7 @@ activate_range_x = 3000
 activate_range_y = 3000
 spawn_delay = 2.0
 total_count = 2
+countdownTVHooked = null
 
 [node name="CDPunchSpawnPoint" type="Position2D" parent="Enemies" index="8"]
 
@@ -5096,6 +5095,7 @@ activate_range_x = 3000
 activate_range_y = 3000
 spawn_delay = 1.5
 total_count = 2
+countdownTVHooked = null
 
 [node name="Floopy2" parent="Enemies" index="9" instance=ExtResource( 116 )]
 
@@ -5125,6 +5125,7 @@ activate_range_x = 3000
 activate_range_y = 3000
 spawn_delay = 2.0
 total_count = 1
+countdownTVHooked = null
 
 [node name="MouseSpawnPoint" type="Position2D" parent="Enemies" index="14"]
 
@@ -5136,6 +5137,7 @@ activate_range_x = 3000
 activate_range_y = 3000
 spawn_delay = 1.0
 total_count = 1
+countdownTVHooked = null
 
 [node name="Batterio5" parent="Enemies" index="15" instance=ExtResource( 115 )]
 
@@ -5268,6 +5270,7 @@ activate_range_x = 3000
 activate_range_y = 3000
 spawn_delay = 2.0
 total_count = -1
+countdownTVHooked = null
 
 [node name="CDPunchSpawner" type="Position2D" parent="Enemies" index="33"]
 
@@ -5279,6 +5282,7 @@ activate_range_x = 3000
 activate_range_y = 3000
 spawn_delay = 4.0
 total_count = -1
+countdownTVHooked = null
 
 [node name="FloopySpawner" type="Position2D" parent="Enemies" index="34"]
 
@@ -5290,6 +5294,7 @@ activate_range_x = 3000
 activate_range_y = 3000
 spawn_delay = 1.5
 total_count = -1
+countdownTVHooked = null
 
 [node name="Latortrans" parent="Enemies" index="35" instance=ExtResource( 120 )]
 

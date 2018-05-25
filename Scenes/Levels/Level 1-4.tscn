@@ -1,0 +1,1615 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/HeroManager.gd" type="Script" id=2]
+[ext_resource path="res://Tilesets/White Wall.tres" type="TileSet" id=3]
+[ext_resource path="res://Graphics/1x1 pixel square.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/UI/White Line.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/UI/Line.png" type="Texture" id=6]
+[ext_resource path="res://Tilesets/Wooden Floor.tres" type="TileSet" id=7]
+[ext_resource path="res://Scenes/Structures/CountdownTV.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Graphics/UI/Hook.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/UI/Scrap 3.png" type="Texture" id=10]
+[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/Platforms/Enemy Blocking Platform.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Power Ups/Healing Machine.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Power Ups/SizeChangingLight.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Structures/Door.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Structures/BlankDoor.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Structures/Portal.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Graphics/Structure/Portal Outline.png" type="Texture" id=19]
+[ext_resource path="res://Scenes/Enemies/Healing Fountain.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Eelo Kicker.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scripts/Utils/RepeatingSpawner.gd" type="Script" id=22]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Eelo Puncher.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Sockute.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Power Ups/Attack Potion.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Power Ups/Speed Potion.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Power Ups/Defense Potion.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=28]
+
+[node name="Game Level" type="Node2D" index="0"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="FollowingCamera" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 14964, -800 )
+z_index = 1
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", "Z Index" ]
+drag_margin_left = -0.1
+drag_margin_top = -0.1
+drag_margin_bottom = 1.1
+left_limit = 50
+bottom_limit = -50
+
+[node name="HeroManager" type="Position2D" parent="." index="1"]
+
+position = Vector2( 9700, -700 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WhiteWall" type="TileMap" parent="." index="2"]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 500, 500 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 0
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -262130, 0, 0, -262129, 0, 0, -262128, 0, 0, -262127, 0, 0, -262126, 0, 0, -262125, 0, 0, -262124, 0, 0, -262123, 0, 0, -262122, 0, 0, -262121, 0, 0, -262120, 0, 0, -262119, 0, 0, -262118, 0, 0, -262117, 0, 0, -262116, 0, 0, -262115, 0, 0, -262114, 0, 0, -262113, 0, 0, -262112, 0, 0, -262111, 0, 0, -262110, 0, 0, -262109, 0, 0, -262108, 0, 0, -262107, 0, 0, -262106, 0, 0, -262105, 0, 0, -262104, 0, 0, -262103, 0, 0, -262102, 0, 0, -262101, 0, 0, -262100, 0, 0, -262099, 0, 0, -262098, 0, 0, -262097, 0, 0, -262096, 0, 0, -262095, 0, 0, -262094, 0, 0, -262093, 0, 0, -262092, 0, 0, -196608, 0, 0, -196607, 0, 65539, -196606, 0, 65537, -196605, 0, 65540, -196604, 0, 65538, -196603, 0, 65539, -196602, 0, 65538, -196601, 0, 2, -196600, 0, 4, -196599, 0, 65538, -196598, 0, 65537, -196597, 0, 65540, -196596, 0, 65537, -196595, 0, 65539, -196594, 0, 65537, -196593, 0, 65539, -196592, 0, 4, -196591, 0, 0, -196590, 0, 65538, -196589, 0, 65537, -196588, 0, 65539, -196587, 0, 1, -196586, 0, 4, -196585, 0, 3, -196584, 0, 1, -196583, 0, 65539, -196582, 0, 1, -196581, 0, 65536, -196580, 0, 0, -196579, 0, 65540, -196578, 0, 4, -196577, 0, 2, -196576, 0, 65536, -196575, 0, 3, -196574, 0, 65538, -196573, 0, 3, -196572, 0, 65537, -196571, 0, 4, -196570, 0, 65538, -196569, 0, 65536, -196568, 0, 65537, -196567, 0, 4, -196566, 0, 0, -196565, 0, 1, -196564, 0, 2, -196563, 0, 65540, -196562, 0, 65536, -196561, 0, 0, -196560, 0, 2, -196559, 0, 65540, -196558, 0, 4, -196557, 0, 65539, -196556, 0, 0, -131072, 0, 0, -131071, 0, 65538, -131070, 0, 65540, -131069, 0, 65537, -131068, 0, 4, -131067, 0, 65536, -131066, 0, 65539, -131065, 0, 0, -131064, 0, 65540, -131063, 0, 4, -131062, 0, 65537, -131061, 0, 4, -131060, 0, 65539, -131059, 0, 1, -131058, 0, 65540, -131057, 0, 3, -131056, 0, 4, -131055, 0, 65538, -131054, 0, 65537, -131053, 0, 4, -131052, 0, 65536, -131051, 0, 65539, -131050, 0, 65539, -131049, 0, 2, -131048, 0, 65538, -131047, 0, 0, -131046, 0, 2, -131045, 0, 3, -131044, 0, 65537, -131043, 0, 65539, -131042, 0, 1, -131041, 0, 65538, -131040, 0, 1, -131039, 0, 65537, -131038, 0, 4, -131037, 0, 65540, -131036, 0, 0, -131035, 0, 65536, -131034, 0, 65537, -131033, 0, 0, -131032, 0, 65536, -131031, 0, 65538, -131030, 0, 0, -131029, 0, 0, -131028, 0, 65539, -131027, 0, 65539, -131026, 0, 3, -131025, 0, 65537, -131024, 0, 65540, -131023, 0, 65540, -131022, 0, 2, -131021, 0, 2, -131020, 0, 0, -65536, 0, 0, -65535, 0, 3, -65534, 0, 65537, -65533, 0, 65540, -65532, 0, 65540, -65531, 0, 65540, -65530, 0, 1, -65529, 0, 65537, -65528, 0, 0, -65527, 0, 4, -65526, 0, 65540, -65525, 0, 4, -65524, 0, 0, -65523, 0, 65539, -65522, 0, 65537, -65521, 0, 65540, -65520, 0, 65540, -65519, 0, 65536, -65518, 0, 65538, -65517, 0, 0, -65516, 0, 65536, -65515, 0, 65539, -65514, 0, 65539, -65513, 0, 65538, -65512, 0, 65537, -65511, 0, 65539, -65510, 0, 65536, -65509, 0, 4, -65508, 0, 4, -65507, 0, 65537, -65506, 0, 2, -65505, 0, 4, -65504, 0, 4, -65503, 0, 3, -65502, 0, 0, -65501, 0, 2, -65500, 0, 65536, -65499, 0, 65536, -65498, 0, 65537, -65497, 0, 2, -65496, 0, 65539, -65495, 0, 1, -65494, 0, 65537, -65493, 0, 0, -65492, 0, 65538, -65491, 0, 65536, -65490, 0, 65537, -65489, 0, 65538, -65488, 0, 65540, -65487, 0, 65538, -65486, 0, 3, -65485, 0, 65536, -65484, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 35, 0, 0, 36, 0, 0, 37, 0, 0, 38, 0, 0, 39, 0, 0, 40, 0, 0, 41, 0, 0, 42, 0, 0, 43, 0, 0, 44, 0, 0, 45, 0, 0, 46, 0, 0, 47, 0, 0, 48, 0, 0, 49, 0, 0, 50, 0, 0, 51, 0, 0, 52, 0, 5 )
+_sections_unfolded = [ "Cell", "Collision" ]
+
+[node name="BackgroundDecorations" type="Node2D" parent="." index="3"]
+
+[node name="Start" type="Node2D" parent="BackgroundDecorations" index="0"]
+
+editor/display_folded = true
+
+[node name="Wires" type="Node2D" parent="BackgroundDecorations/Start" index="0"]
+
+editor/display_folded = true
+
+[node name="1x1 pixel square" type="Sprite" parent="BackgroundDecorations/Start/Wires" index="0"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 2535.33, -500.894 )
+scale = Vector2( 100, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square2" type="Sprite" parent="BackgroundDecorations/Start/Wires" index="1"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 2544.52, -110.892 )
+scale = Vector2( 10, 400 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square3" type="Sprite" parent="BackgroundDecorations/Start/Wires" index="2"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 2513.5, -472.018 )
+scale = Vector2( 100, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square4" type="Sprite" parent="BackgroundDecorations/Start/Wires" index="3"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 2513.48, -125.554 )
+scale = Vector2( 10, 350 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="White Line" type="Sprite" parent="BackgroundDecorations/Start" index="1"]
+
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 3048.36, -1338.97 )
+rotation = 1.56399
+scale = Vector2( 1.4, 0.25 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="chamber" type="Node2D" parent="BackgroundDecorations" index="1"]
+
+editor/display_folded = true
+position = Vector2( 5160.17, -760.09 )
+
+[node name="Wires" type="Node2D" parent="BackgroundDecorations/chamber" index="0"]
+
+editor/display_folded = true
+position = Vector2( -470.516, -132.502 )
+
+[node name="1x1 pixel square6" type="Sprite" parent="BackgroundDecorations/chamber/Wires" index="0"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 84.2471, 306.813 )
+scale = Vector2( 10, 400 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square7" type="Sprite" parent="BackgroundDecorations/chamber/Wires" index="1"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 878.71, 306.813 )
+scale = Vector2( 10, 400 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square5" type="Sprite" parent="BackgroundDecorations/chamber/Wires" index="2"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 55.5972, 326.416 )
+scale = Vector2( 10, 400 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square8" type="Sprite" parent="BackgroundDecorations/chamber/Wires" index="3"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 850.06, 326.416 )
+scale = Vector2( 10, 400 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="White Line" type="Sprite" parent="BackgroundDecorations/chamber" index="1"]
+
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 2184.71, -601.627 )
+rotation = 1.57471
+scale = Vector2( 1, 0.2 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Portrait" type="Node2D" parent="BackgroundDecorations" index="2"]
+
+editor/display_folded = true
+position = Vector2( 9936.36, -852.942 )
+
+[node name="Wires" type="Node2D" parent="BackgroundDecorations/Portrait" index="0"]
+
+editor/display_folded = true
+
+[node name="1x1 pixel square10" type="Sprite" parent="BackgroundDecorations/Portrait/Wires" index="0"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 308.001, 740.094 )
+scale = Vector2( 10, 400 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square12" type="Sprite" parent="BackgroundDecorations/Portrait/Wires" index="1"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 306.966, 350.115 )
+scale = Vector2( 50, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square9" type="Sprite" parent="BackgroundDecorations/Portrait/Wires" index="2"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( -71.3945, 749.098 )
+scale = Vector2( 10, 400 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square11" type="Sprite" parent="BackgroundDecorations/Portrait/Wires" index="3"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( -31.0938, 359.09 )
+scale = Vector2( 50, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="DoubleDeckFirst" type="Node2D" parent="BackgroundDecorations" index="3"]
+
+editor/display_folded = true
+position = Vector2( 13418.5, -747.009 )
+
+[node name="Wires" type="Node2D" parent="BackgroundDecorations/DoubleDeckFirst" index="0"]
+
+[node name="1x1 pixel square13" type="Sprite" parent="BackgroundDecorations/DoubleDeckFirst/Wires" index="0"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( -153.111, -420.444 )
+scale = Vector2( 10, 400 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square14" type="Sprite" parent="BackgroundDecorations/DoubleDeckFirst/Wires" index="1"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( -180.249, -417.574 )
+scale = Vector2( 10, 400 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square16" type="Sprite" parent="BackgroundDecorations/DoubleDeckFirst/Wires" index="2"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 1344.8, 661.528 )
+scale = Vector2( 10, 400 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square17" type="Sprite" parent="BackgroundDecorations/DoubleDeckFirst/Wires" index="3"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 1344.83, 270.805 )
+scale = Vector2( 100, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square15" type="Sprite" parent="BackgroundDecorations/DoubleDeckFirst/Wires" index="4"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 1317.67, 688.602 )
+scale = Vector2( 10, 400 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square18" type="Sprite" parent="BackgroundDecorations/DoubleDeckFirst/Wires" index="5"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 1317.35, 298.615 )
+scale = Vector2( 50, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square19" type="Sprite" parent="BackgroundDecorations/DoubleDeckFirst/Wires" index="6"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 1606.16, -374.747 )
+scale = Vector2( 50, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square21" type="Sprite" parent="BackgroundDecorations/DoubleDeckFirst/Wires" index="7"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 1562.58, -374.701 )
+scale = Vector2( 10, 200 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square26" type="Sprite" parent="BackgroundDecorations/DoubleDeckFirst/Wires" index="8"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 1702.62, -582.509 )
+scale = Vector2( 10, 200 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square23" type="Sprite" parent="BackgroundDecorations/DoubleDeckFirst/Wires" index="9"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 1702.57, -574.065 )
+scale = Vector2( 150, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square20" type="Sprite" parent="BackgroundDecorations/DoubleDeckFirst/Wires" index="10"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 1908.31, -378.611 )
+scale = Vector2( 100, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square24" type="Sprite" parent="BackgroundDecorations/DoubleDeckFirst/Wires" index="11"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 1910.9, -574.777 )
+scale = Vector2( 150, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square22" type="Sprite" parent="BackgroundDecorations/DoubleDeckFirst/Wires" index="12"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 1910.86, -378.557 )
+scale = Vector2( 10, 200 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square25" type="Sprite" parent="BackgroundDecorations/DoubleDeckFirst/Wires" index="13"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 1770.9, -580.616 )
+scale = Vector2( 10, 200 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="DoubleDeckMiddle" type="Node2D" parent="BackgroundDecorations" index="4"]
+
+editor/display_folded = true
+position = Vector2( 17575.4, -774.442 )
+
+[node name="Wires" type="Node2D" parent="BackgroundDecorations/DoubleDeckMiddle" index="0"]
+
+[node name="1x1 pixel square24" type="Sprite" parent="BackgroundDecorations/DoubleDeckMiddle/Wires" index="0"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 714.076, 408.851 )
+scale = Vector2( 10, 300 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square30" type="Sprite" parent="BackgroundDecorations/DoubleDeckMiddle/Wires" index="1"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 714.076, 408.851 )
+scale = Vector2( 100, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square27" type="Sprite" parent="BackgroundDecorations/DoubleDeckMiddle/Wires" index="2"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 1604.05, 99.3012 )
+scale = Vector2( 10, 100 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square25" type="Sprite" parent="BackgroundDecorations/DoubleDeckMiddle/Wires" index="3"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 1604.08, 109.012 )
+scale = Vector2( 900, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square23" type="Sprite" parent="BackgroundDecorations/DoubleDeckMiddle/Wires" index="4"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 685.392, 373.069 )
+scale = Vector2( 10, 300 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square29" type="Sprite" parent="BackgroundDecorations/DoubleDeckMiddle/Wires" index="5"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 685.392, 373.069 )
+scale = Vector2( 60, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square28" type="Sprite" parent="BackgroundDecorations/DoubleDeckMiddle/Wires" index="6"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 1475.31, 70.2878 )
+scale = Vector2( 10, 100 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square26" type="Sprite" parent="BackgroundDecorations/DoubleDeckMiddle/Wires" index="7"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 1475.4, 73.5703 )
+scale = Vector2( 800, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Line" type="Sprite" parent="BackgroundDecorations/DoubleDeckMiddle" index="1"]
+
+position = Vector2( -279.154, -566.802 )
+rotation = 1.5651
+scale = Vector2( 1.2, 0.2 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DoubleDeckLast" type="Node2D" parent="BackgroundDecorations" index="5"]
+
+position = Vector2( 17575.4, -774.442 )
+
+[node name="Wires" type="Node2D" parent="BackgroundDecorations/DoubleDeckLast" index="0"]
+
+editor/display_folded = true
+
+[node name="1x1 pixel square26" type="Sprite" parent="BackgroundDecorations/DoubleDeckLast/Wires" index="0"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 1832.74, -399.384 )
+scale = Vector2( 50, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square36" type="Sprite" parent="BackgroundDecorations/DoubleDeckLast/Wires" index="1"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 1792.72, -104.578 )
+scale = Vector2( 10, 300 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square39" type="Sprite" parent="BackgroundDecorations/DoubleDeckLast/Wires" index="2"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 1792.7, -95.3244 )
+scale = Vector2( 200, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square40" type="Sprite" parent="BackgroundDecorations/DoubleDeckLast/Wires" index="3"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 1602.66, -49.4273 )
+scale = Vector2( 10, 50 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square25" type="Sprite" parent="BackgroundDecorations/DoubleDeckLast/Wires" index="4"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 1853.9, -433.302 )
+scale = Vector2( 100, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square37" type="Sprite" parent="BackgroundDecorations/DoubleDeckLast/Wires" index="5"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 1763.91, -126.63 )
+scale = Vector2( 300, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square38" type="Sprite" parent="BackgroundDecorations/DoubleDeckLast/Wires" index="6"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 1473.91, -66.7923 )
+scale = Vector2( 10, 60 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square35" type="Sprite" parent="BackgroundDecorations/DoubleDeckLast/Wires" index="7"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 1763.91, -136.401 )
+scale = Vector2( 10, 300 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
+
+[node name="1x1 pixel square28" type="Sprite" parent="BackgroundDecorations/DoubleDeckLast/Wires" index="8"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 3108.81, 502.632 )
+scale = Vector2( 10, 190 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square33" type="Sprite" parent="BackgroundDecorations/DoubleDeckLast/Wires" index="9"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 3948.79, 694.818 )
+scale = Vector2( 10, 190 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square29" type="Sprite" parent="BackgroundDecorations/DoubleDeckLast/Wires" index="10"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 3108.81, 322.481 )
+scale = Vector2( 50, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square31" type="Sprite" parent="BackgroundDecorations/DoubleDeckLast/Wires" index="11"]
+
+modulate = Color( 0, 0.196777, 0.96875, 1 )
+position = Vector2( 3948.8, 512.246 )
+scale = Vector2( 850, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square27" type="Sprite" parent="BackgroundDecorations/DoubleDeckLast/Wires" index="12"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 3133.97, 483.812 )
+scale = Vector2( 10, 200 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square34" type="Sprite" parent="BackgroundDecorations/DoubleDeckLast/Wires" index="13"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 3974.21, 677.816 )
+scale = Vector2( 10, 200 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square30" type="Sprite" parent="BackgroundDecorations/DoubleDeckLast/Wires" index="14"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 3126.78, 293.84 )
+scale = Vector2( 70, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="1x1 pixel square32" type="Sprite" parent="BackgroundDecorations/DoubleDeckLast/Wires" index="15"]
+
+modulate = Color( 0.96875, 0, 0, 1 )
+position = Vector2( 3974.27, 483.823 )
+scale = Vector2( 850, 10 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Line" type="Sprite" parent="BackgroundDecorations/DoubleDeckLast" index="1"]
+
+position = Vector2( 6714.78, -735.768 )
+rotation = 1.33674
+scale = Vector2( 1.3, 0.2 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Line2" type="Sprite" parent="BackgroundDecorations/DoubleDeckLast" index="2"]
+
+position = Vector2( 7243.29, -708.195 )
+rotation = 2.08096
+scale = Vector2( 1.3, 0.2 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Platform" type="TileMap" parent="." index="4"]
+
+mode = 0
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 100, 100 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 4
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -1376210, 0, 196609, -1376209, 0, 196613, -1376208, 0, 0, -1376202, 0, 196609, -1376201, 0, 131076, -1376200, 0, 0, -1310674, 0, 65542, -1310673, 0, 65538, -1310672, 0, 6, -1310666, 0, 1, -1310665, 0, 5, -1310664, 0, 6, -1245138, 0, 65542, -1245137, 0, 65541, -1245136, 0, 6, -1245130, 0, 1, -1245129, 0, 4, -1245128, 0, 131075, -1179602, 0, 65542, -1179601, 0, 65538, -1179600, 0, 6, -1179594, 0, 65542, -1179593, 0, 65540, -1179592, 0, 6, -1114066, 0, 1, -1114065, 0, 65541, -1114064, 0, 6, -1114058, 0, 1, -1114057, 0, 4, -1114056, 0, 6, -1048576, 0, 196609, -1048575, 0, 0, -1048530, 0, 65542, -1048529, 0, 4, -1048528, 0, 6, -1048522, 0, 1, -1048521, 0, 65541, -1048520, 0, 131075, -983040, 0, 65542, -983039, 0, 6, -982994, 0, 65542, -982993, 0, 65540, -982992, 0, 6, -982986, 0, 1, -982985, 0, 5, -982984, 0, 131075, -917504, 0, 1, -917503, 0, 131075, -917458, 0, 1, -917457, 0, 5, -917456, 0, 6, -917450, 0, 1, -917449, 0, 4, -917448, 0, 6, -851968, 0, 1, -851967, 0, 6, -851922, 0, 1, -851921, 0, 5, -851920, 0, 131075, -851914, 0, 1, -851913, 0, 65540, -851912, 0, 131075, -786432, 0, 1, -786431, 0, 6, -786391, 0, 196609, -786390, 0, 196613, -786389, 0, 196612, -786388, 0, 3, -786387, 0, 196612, -786386, 0, 65537, -786385, 0, 65540, -786384, 0, 131075, -786378, 0, 65542, -786377, 0, 5, -786376, 0, 2, -786375, 0, 196612, -786374, 0, 196612, -786373, 0, 196613, -786372, 0, 3, -786371, 0, 0, -720896, 0, 65542, -720895, 0, 6, -720856, 0, 196609, -720855, 0, 65537, -720854, 0, 5, -720853, 0, 5, -720852, 0, 65538, -720851, 0, 65541, -720850, 0, 5, -720849, 0, 5, -720848, 0, 131075, -720842, 0, 65542, -720841, 0, 4, -720840, 0, 65538, -720839, 0, 4, -720838, 0, 65541, -720837, 0, 65538, -720836, 0, 65541, -720835, 0, 2, -720834, 0, 0, -655360, 0, 65542, -655359, 0, 131075, -655321, 0, 196609, -655320, 0, 65537, -655319, 0, 5, -655318, 0, 65539, -655317, 0, 131078, -655316, 0, 131073, -655315, 0, 131078, -655314, 0, 131078, -655313, 0, 196614, -655312, 0, 196611, -655306, 0, 131072, -655305, 0, 196614, -655304, 0, 196614, -655303, 0, 196614, -655302, 0, 196614, -655301, 0, 131078, -655300, 0, 131074, -655299, 0, 4, -655298, 0, 2, -655297, 0, 0, -655262, 0, 196609, -655261, 0, 3, -655260, 0, 196612, -655259, 0, 131076, -655258, 0, 0, -589824, 0, 1, -589823, 0, 131075, -589786, 0, 196609, -589785, 0, 65537, -589784, 0, 65541, -589783, 0, 65539, -589782, 0, 196611, -589764, 0, 131072, -589763, 0, 131074, -589762, 0, 65540, -589761, 0, 2, -589760, 0, 0, -589726, 0, 131072, -589725, 0, 131073, -589724, 0, 131073, -589723, 0, 131078, -589722, 0, 196611, -589706, 0, 196609, -589705, 0, 131076, -589704, 0, 196613, -589703, 0, 196612, -589702, 0, 131076, -589701, 0, 3, -589700, 0, 196613, -589699, 0, 196613, -589698, 0, 131077, -589697, 0, 196613, -589696, 0, 131077, -589695, 0, 196612, -589694, 0, 131077, -589693, 0, 131076, -589692, 0, 3, -589691, 0, 131077, -589690, 0, 131076, -589689, 0, 196612, -589688, 0, 131076, -589687, 0, 196613, -589686, 0, 3, -589685, 0, 196613, -589684, 0, 131076, -589683, 0, 196613, -589682, 0, 131076, -589681, 0, 196612, -589680, 0, 3, -589679, 0, 196612, -589678, 0, 131076, -589677, 0, 131076, -589676, 0, 131077, -589675, 0, 131076, -589674, 0, 3, -589673, 0, 196613, -589672, 0, 196612, -589671, 0, 131076, -589670, 0, 131076, -589669, 0, 131077, -589668, 0, 131077, -589667, 0, 196612, -589666, 0, 131077, -589665, 0, 196613, -589664, 0, 131077, -589663, 0, 196612, -589662, 0, 131076, -589661, 0, 196612, -589660, 0, 3, -589659, 0, 3, -589658, 0, 196612, -589657, 0, 196613, -589656, 0, 0, -589647, 0, 196609, -589646, 0, 196613, -589645, 0, 196613, -589644, 0, 3, -589643, 0, 3, -589642, 0, 131077, -589641, 0, 131077, -589640, 0, 196613, -589639, 0, 131076, -589638, 0, 131076, -589637, 0, 3, -589636, 0, 131077, -589635, 0, 3, -589634, 0, 196612, -589633, 0, 3, -589632, 0, 196613, -589631, 0, 196613, -589630, 0, 131077, -589629, 0, 131077, -589628, 0, 196613, -589627, 0, 131077, -589626, 0, 131076, -589625, 0, 131076, -589624, 0, 131077, -589623, 0, 131076, -589622, 0, 131077, -589621, 0, 131076, -589620, 0, 196613, -589619, 0, 196612, -589618, 0, 131077, -589617, 0, 3, -589616, 0, 196613, -589615, 0, 0, -589611, 0, 196609, -589610, 0, 131077, -589609, 0, 131077, -589608, 0, 3, -589607, 0, 0, -589603, 0, 196609, -589602, 0, 196612, -589601, 0, 3, -589600, 0, 196612, -589599, 0, 196612, -589598, 0, 0, -524288, 0, 1, -524287, 0, 131075, -524250, 0, 65542, -524249, 0, 65538, -524248, 0, 65539, -524247, 0, 196611, -524227, 0, 131072, -524226, 0, 131074, -524225, 0, 65540, -524224, 0, 6, -524170, 0, 131072, -524169, 0, 196614, -524168, 0, 131078, -524167, 0, 196614, -524166, 0, 131073, -524165, 0, 131078, -524164, 0, 196614, -524163, 0, 196614, -524162, 0, 131078, -524161, 0, 131078, -524160, 0, 131078, -524159, 0, 131073, -524158, 0, 131078, -524157, 0, 131078, -524156, 0, 196614, -524155, 0, 131073, -524154, 0, 196614, -524153, 0, 131073, -524152, 0, 131073, -524151, 0, 131078, -524150, 0, 131078, -524149, 0, 131073, -524148, 0, 131078, -524147, 0, 131078, -524146, 0, 131078, -524145, 0, 131073, -524144, 0, 131078, -524143, 0, 196614, -524142, 0, 196614, -524141, 0, 131078, -524140, 0, 131073, -524139, 0, 196614, -524138, 0, 131073, -524137, 0, 196614, -524136, 0, 131078, -524135, 0, 131073, -524134, 0, 131078, -524133, 0, 131078, -524132, 0, 131078, -524131, 0, 131078, -524130, 0, 196614, -524129, 0, 131078, -524128, 0, 131073, -524127, 0, 131074, -524126, 0, 65539, -524125, 0, 196614, -524124, 0, 131078, -524123, 0, 131073, -524122, 0, 131078, -524121, 0, 196614, -524120, 0, 196611, -524111, 0, 131072, -524110, 0, 196614, -524109, 0, 131073, -524108, 0, 196614, -524107, 0, 131078, -524106, 0, 131073, -524105, 0, 131073, -524104, 0, 196614, -524103, 0, 131078, -524102, 0, 131073, -524101, 0, 131073, -524100, 0, 196614, -524099, 0, 131073, -524098, 0, 131078, -524097, 0, 196614, -524096, 0, 131078, -524095, 0, 196614, -524094, 0, 131073, -524093, 0, 131073, -524092, 0, 196614, -524091, 0, 131073, -524090, 0, 131073, -524089, 0, 131073, -524088, 0, 196614, -524087, 0, 131073, -524086, 0, 196614, -524085, 0, 131073, -524084, 0, 131078, -524083, 0, 196614, -524082, 0, 131078, -524081, 0, 196614, -524080, 0, 131078, -524079, 0, 196611, -524075, 0, 131072, -524074, 0, 131078, -524073, 0, 131073, -524072, 0, 131078, -524071, 0, 196611, -524067, 0, 131072, -524066, 0, 131078, -524065, 0, 131078, -524064, 0, 131073, -524063, 0, 131073, -524062, 0, 196611, -524037, 0, 196609, -524036, 0, 196612, -524035, 0, 131077, -524034, 0, 196613, -524033, 0, 196612, -524032, 0, 131077, -524031, 0, 0, -458752, 0, 65542, -458751, 0, 131075, -458714, 0, 1, -458713, 0, 65538, -458712, 0, 131075, -458690, 0, 1, -458689, 0, 65541, -458688, 0, 6, -458591, 0, 65542, -458590, 0, 6, -458516, 0, 196609, -458515, 0, 131076, -458514, 0, 131076, -458513, 0, 0, -458503, 0, 196609, -458502, 0, 131077, -458501, 0, 65537, -458500, 0, 65541, -458499, 0, 65538, -458498, 0, 65540, -458497, 0, 65541, -458496, 0, 65541, -458495, 0, 131075, -393216, 0, 1, -393215, 0, 131075, -393178, 0, 65542, -393177, 0, 65541, -393176, 0, 131075, -393154, 0, 1, -393153, 0, 65541, -393152, 0, 131075, -393055, 0, 1, -393054, 0, 131075, -392982, 0, 196609, -392981, 0, 131076, -392980, 0, 65537, -392979, 0, 4, -392978, 0, 4, -392977, 0, 2, -392976, 0, 3, -392975, 0, 0, -392969, 0, 196609, -392968, 0, 196612, -392967, 0, 65537, -392966, 0, 65541, -392965, 0, 5, -392964, 0, 65538, -392963, 0, 65541, -392962, 0, 65541, -392961, 0, 65541, -392960, 0, 65541, -392959, 0, 131075, -327680, 0, 1, -327679, 0, 6, -327642, 0, 65542, -327641, 0, 65538, -327640, 0, 6, -327618, 0, 1, -327617, 0, 65538, -327616, 0, 6, -327519, 0, 65542, -327518, 0, 6, -327448, 0, 196609, -327447, 0, 131077, -327446, 0, 65537, -327445, 0, 65541, -327444, 0, 4, -327443, 0, 65538, -327442, 0, 5, -327441, 0, 4, -327440, 0, 65540, -327439, 0, 2, -327438, 0, 0, -327435, 0, 196609, -327434, 0, 3, -327433, 0, 65537, -327432, 0, 5, -327431, 0, 5, -327430, 0, 65538, -327429, 0, 5, -327428, 0, 65540, -327427, 0, 4, -327426, 0, 65540, -327425, 0, 4, -327424, 0, 5, -327423, 0, 6, -262144, 0, 1, -262143, 0, 6, -262106, 0, 1, -262105, 0, 4, -262104, 0, 6, -262082, 0, 65542, -262081, 0, 5, -262080, 0, 131075, -261983, 0, 65542, -261982, 0, 131075, -261914, 0, 196609, -261913, 0, 3, -261912, 0, 65537, -261911, 0, 65541, -261910, 0, 65538, -261909, 0, 4, -261908, 0, 4, -261907, 0, 5, -261906, 0, 65541, -261905, 0, 65541, -261904, 0, 4, -261903, 0, 65538, -261902, 0, 2, -261901, 0, 196613, -261900, 0, 196612, -261899, 0, 65537, -261898, 0, 65540, -261897, 0, 5, -261896, 0, 65540, -261895, 0, 5, -261894, 0, 65538, -261893, 0, 4, -261892, 0, 5, -261891, 0, 65538, -261890, 0, 4, -261889, 0, 5, -261888, 0, 65540, -261887, 0, 131075, -196608, 0, 65542, -196607, 0, 6, -196595, 0, 196609, -196594, 0, 131077, -196593, 0, 0, -196570, 0, 65542, -196569, 0, 65541, -196568, 0, 6, -196546, 0, 65542, -196545, 0, 65541, -196544, 0, 131075, -196447, 0, 1, -196446, 0, 6, -196380, 0, 196609, -196379, 0, 196612, -196378, 0, 65537, -196377, 0, 5, -196376, 0, 5, -196375, 0, 65541, -196374, 0, 4, -196373, 0, 65538, -196372, 0, 65540, -196371, 0, 65538, -196370, 0, 65538, -196369, 0, 5, -196368, 0, 5, -196367, 0, 65540, -196366, 0, 4, -196365, 0, 65538, -196364, 0, 4, -196363, 0, 65541, -196362, 0, 65541, -196361, 0, 65541, -196360, 0, 5, -196359, 0, 65540, -196358, 0, 65538, -196357, 0, 65541, -196356, 0, 65538, -196355, 0, 65540, -196354, 0, 4, -196353, 0, 5, -196352, 0, 4, -196351, 0, 131075, -131072, 0, 65542, -131071, 0, 2, -131070, 0, 196612, -131069, 0, 196613, -131068, 0, 131077, -131067, 0, 131076, -131066, 0, 131077, -131065, 0, 3, -131064, 0, 131076, -131063, 0, 131076, -131062, 0, 3, -131061, 0, 131076, -131060, 0, 131077, -131059, 0, 65537, -131058, 0, 65538, -131057, 0, 2, -131056, 0, 131076, -131055, 0, 196612, -131054, 0, 196613, -131053, 0, 196612, -131052, 0, 196613, -131051, 0, 131076, -131050, 0, 196613, -131049, 0, 131077, -131048, 0, 131076, -131047, 0, 131077, -131046, 0, 196612, -131045, 0, 3, -131044, 0, 3, -131043, 0, 131077, -131042, 0, 131077, -131041, 0, 3, -131040, 0, 131077, -131039, 0, 196612, -131038, 0, 196613, -131037, 0, 131077, -131036, 0, 131077, -131035, 0, 131076, -131034, 0, 65537, -131033, 0, 65540, -131032, 0, 2, -131031, 0, 131076, -131030, 0, 131077, -131029, 0, 131077, -131028, 0, 131077, -131027, 0, 196613, -131026, 0, 196612, -131025, 0, 131077, -131024, 0, 196612, -131023, 0, 196612, -131022, 0, 3, -131021, 0, 3, -131020, 0, 131076, -131019, 0, 131077, -131018, 0, 196613, -131017, 0, 131076, -131016, 0, 196613, -131015, 0, 196612, -131014, 0, 196612, -131013, 0, 3, -131012, 0, 131077, -131011, 0, 131076, -131010, 0, 65537, -131009, 0, 5, -131008, 0, 2, -131007, 0, 196613, -131006, 0, 131076, -131005, 0, 196612, -131004, 0, 196613, -131003, 0, 196612, -131002, 0, 131076, -131001, 0, 196613, -131000, 0, 196612, -130999, 0, 131077, -130998, 0, 131077, -130997, 0, 131076, -130996, 0, 196612, -130995, 0, 131077, -130994, 0, 131076, -130993, 0, 131076, -130992, 0, 196612, -130991, 0, 196613, -130990, 0, 0, -130985, 0, 196609, -130984, 0, 131076, -130983, 0, 196612, -130982, 0, 196613, -130981, 0, 196612, -130980, 0, 196613, -130979, 0, 196613, -130978, 0, 196612, -130977, 0, 196613, -130976, 0, 3, -130975, 0, 3, -130974, 0, 131076, -130973, 0, 131076, -130972, 0, 196613, -130971, 0, 131077, -130970, 0, 196612, -130969, 0, 131076, -130968, 0, 131076, -130967, 0, 131076, -130966, 0, 131077, -130965, 0, 196613, -130964, 0, 131077, -130963, 0, 131076, -130962, 0, 196612, -130961, 0, 196613, -130960, 0, 196612, -130959, 0, 0, -130954, 0, 196609, -130953, 0, 196612, -130952, 0, 131076, -130951, 0, 3, -130950, 0, 196613, -130949, 0, 131077, -130948, 0, 196613, -130947, 0, 131076, -130946, 0, 131077, -130945, 0, 196612, -130944, 0, 3, -130943, 0, 131077, -130942, 0, 3, -130941, 0, 196613, -130940, 0, 3, -130939, 0, 131076, -130938, 0, 131077, -130937, 0, 196612, -130936, 0, 131076, -130935, 0, 131077, -130934, 0, 131076, -130933, 0, 196613, -130932, 0, 196612, -130931, 0, 3, -130930, 0, 131076, -130929, 0, 3, -130928, 0, 196612, -130927, 0, 3, -130926, 0, 196613, -130925, 0, 131076, -130924, 0, 196612, -130923, 0, 131077, -130922, 0, 196612, -130921, 0, 0, -130915, 0, 196609, -130914, 0, 131077, -130913, 0, 131076, -130912, 0, 131076, -130911, 0, 65537, -130910, 0, 2, -130909, 0, 196612, -130908, 0, 131076, -130907, 0, 3, -130906, 0, 196612, -130905, 0, 196612, -130904, 0, 131076, -130903, 0, 131077, -130902, 0, 131076, -130901, 0, 196613, -130900, 0, 196612, -130899, 0, 3, -130898, 0, 196612, -130897, 0, 131076, -130896, 0, 196612, -130895, 0, 3, -130894, 0, 3, -130893, 0, 131076, -130892, 0, 3, -130891, 0, 196613, -130890, 0, 131076, -130889, 0, 131076, -130888, 0, 196612, -130887, 0, 196613, -130886, 0, 131076, -130885, 0, 131076, -130884, 0, 196612, -130883, 0, 196613, -130882, 0, 196612, -130881, 0, 196613, -130880, 0, 196613, -130879, 0, 131076, -130878, 0, 0, -130873, 0, 196609, -130872, 0, 131077, -130871, 0, 131077, -130870, 0, 131076, -130869, 0, 196612, -130868, 0, 131076, -130867, 0, 196613, -130866, 0, 196612, -130865, 0, 131077, -130864, 0, 196613, -130863, 0, 131076, -130862, 0, 196613, -130861, 0, 196612, -130860, 0, 196613, -130859, 0, 131077, -130858, 0, 131076, -130857, 0, 131077, -130856, 0, 3, -130855, 0, 0, -130851, 0, 196609, -130850, 0, 196612, -130849, 0, 131077, -130848, 0, 196612, -130847, 0, 3, -130846, 0, 131077, -130845, 0, 196612, -130844, 0, 65537, -130843, 0, 65540, -130842, 0, 5, -130841, 0, 65540, -130840, 0, 65538, -130839, 0, 65540, -130838, 0, 65538, -130837, 0, 65540, -130836, 0, 5, -130835, 0, 65538, -130834, 0, 65541, -130833, 0, 65538, -130832, 0, 65538, -130831, 0, 65538, -130830, 0, 65538, -130829, 0, 65541, -130828, 0, 65538, -130827, 0, 65538, -130826, 0, 4, -130825, 0, 4, -130824, 0, 65540, -130823, 0, 65540, -130822, 0, 65540, -130821, 0, 4, -130820, 0, 65541, -130819, 0, 65541, -130818, 0, 65538, -130817, 0, 65540, -130816, 0, 65541, -130815, 0, 6, -65536, 0, 131072, -65535, 0, 196614, -65534, 0, 131073, -65533, 0, 131078, -65532, 0, 131078, -65531, 0, 196614, -65530, 0, 131073, -65529, 0, 196614, -65528, 0, 131073, -65527, 0, 131073, -65526, 0, 131078, -65525, 0, 131078, -65524, 0, 131073, -65523, 0, 131073, -65522, 0, 196614, -65521, 0, 196614, -65520, 0, 196614, -65519, 0, 131078, -65518, 0, 196614, -65517, 0, 131078, -65516, 0, 196614, -65515, 0, 131073, -65514, 0, 131078, -65513, 0, 131073, -65512, 0, 196614, -65511, 0, 196614, -65510, 0, 131073, -65509, 0, 131078, -65508, 0, 131078, -65507, 0, 196614, -65506, 0, 131078, -65505, 0, 131073, -65504, 0, 131078, -65503, 0, 131078, -65502, 0, 131078, -65501, 0, 131073, -65500, 0, 131078, -65499, 0, 131073, -65498, 0, 131078, -65497, 0, 131073, -65496, 0, 131078, -65495, 0, 196614, -65494, 0, 131073, -65493, 0, 131078, -65492, 0, 131073, -65491, 0, 196614, -65490, 0, 131073, -65489, 0, 131078, -65488, 0, 131073, -65487, 0, 131078, -65486, 0, 196614, -65485, 0, 131078, -65484, 0, 131078, -65483, 0, 196614, -65482, 0, 196614, -65481, 0, 196614, -65480, 0, 131073, -65479, 0, 131073, -65478, 0, 196614, -65477, 0, 196614, -65476, 0, 131073, -65475, 0, 196614, -65474, 0, 131078, -65473, 0, 196614, -65472, 0, 131078, -65471, 0, 131073, -65470, 0, 131073, -65469, 0, 131073, -65468, 0, 131078, -65467, 0, 131073, -65466, 0, 131073, -65465, 0, 131073, -65464, 0, 196614, -65463, 0, 131078, -65462, 0, 131078, -65461, 0, 131078, -65460, 0, 131078, -65459, 0, 131073, -65458, 0, 196614, -65457, 0, 131073, -65456, 0, 196614, -65455, 0, 131073, -65454, 0, 196611, -65449, 0, 131072, -65448, 0, 131073, -65447, 0, 196614, -65446, 0, 131073, -65445, 0, 196614, -65444, 0, 131078, -65443, 0, 131073, -65442, 0, 131073, -65441, 0, 131073, -65440, 0, 196614, -65439, 0, 131073, -65438, 0, 196614, -65437, 0, 131078, -65436, 0, 131078, -65435, 0, 131073, -65434, 0, 131073, -65433, 0, 196614, -65432, 0, 196614, -65431, 0, 196614, -65430, 0, 131078, -65429, 0, 196614, -65428, 0, 196614, -65427, 0, 196614, -65426, 0, 131073, -65425, 0, 131078, -65424, 0, 131073, -65423, 0, 196611, -65418, 0, 131072, -65417, 0, 131073, -65416, 0, 131073, -65415, 0, 196614, -65414, 0, 196614, -65413, 0, 131078, -65412, 0, 131073, -65411, 0, 131078, -65410, 0, 196614, -65409, 0, 196614, -65408, 0, 131073, -65407, 0, 131078, -65406, 0, 131073, -65405, 0, 131073, -65404, 0, 196614, -65403, 0, 131073, -65402, 0, 131078, -65401, 0, 131078, -65400, 0, 131078, -65399, 0, 131078, -65398, 0, 131078, -65397, 0, 131078, -65396, 0, 131073, -65395, 0, 131073, -65394, 0, 131078, -65393, 0, 131073, -65392, 0, 196614, -65391, 0, 131078, -65390, 0, 131078, -65389, 0, 196614, -65388, 0, 196614, -65387, 0, 131078, -65386, 0, 196614, -65385, 0, 196611, -65379, 0, 131072, -65378, 0, 196614, -65377, 0, 131073, -65376, 0, 131073, -65375, 0, 131073, -65374, 0, 131078, -65373, 0, 131078, -65372, 0, 131073, -65371, 0, 131073, -65370, 0, 196614, -65369, 0, 196614, -65368, 0, 131073, -65367, 0, 131073, -65366, 0, 196614, -65365, 0, 131078, -65364, 0, 131078, -65363, 0, 131073, -65362, 0, 196614, -65361, 0, 131078, -65360, 0, 131073, -65359, 0, 196614, -65358, 0, 131078, -65357, 0, 131073, -65356, 0, 196614, -65355, 0, 196614, -65354, 0, 196614, -65353, 0, 131073, -65352, 0, 131078, -65351, 0, 131073, -65350, 0, 196614, -65349, 0, 131078, -65348, 0, 196614, -65347, 0, 131078, -65346, 0, 131078, -65345, 0, 131073, -65344, 0, 131078, -65343, 0, 196614, -65342, 0, 196611, -65337, 0, 131072, -65336, 0, 196614, -65335, 0, 196614, -65334, 0, 131078, -65333, 0, 131078, -65332, 0, 131078, -65331, 0, 196614, -65330, 0, 131078, -65329, 0, 131073, -65328, 0, 196614, -65327, 0, 196614, -65326, 0, 131073, -65325, 0, 131078, -65324, 0, 131078, -65323, 0, 196614, -65322, 0, 196614, -65321, 0, 131078, -65320, 0, 196614, -65319, 0, 196611, -65315, 0, 131072, -65314, 0, 131078, -65313, 0, 131073, -65312, 0, 196614, -65311, 0, 131078, -65310, 0, 131078, -65309, 0, 131073, -65308, 0, 131073, -65307, 0, 131073, -65306, 0, 131073, -65305, 0, 131078, -65304, 0, 131073, -65303, 0, 131073, -65302, 0, 131078, -65301, 0, 196614, -65300, 0, 196614, -65299, 0, 196614, -65298, 0, 131073, -65297, 0, 131078, -65296, 0, 131073, -65295, 0, 131073, -65294, 0, 131073, -65293, 0, 196614, -65292, 0, 196614, -65291, 0, 131078, -65290, 0, 131078, -65289, 0, 131078, -65288, 0, 196614, -65287, 0, 196614, -65286, 0, 196614, -65285, 0, 131073, -65284, 0, 196614, -65283, 0, 196614, -65282, 0, 131078, -65281, 0, 196614, -65280, 0, 131073, -65279, 0, 196611 )
+_sections_unfolded = [ "Cell", "Collision", "Transform" ]
+
+[node name="Writings" type="Node2D" parent="." index="5"]
+
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="CountdownTV1" parent="Writings" index="0" instance=ExtResource( 8 )]
+
+position = Vector2( 5152.72, -803.263 )
+total_count = 6
+
+[node name="CountdownTV2" parent="Writings" index="1" instance=ExtResource( 8 )]
+
+position = Vector2( 10048.1, -691.305 )
+
+[node name="CountdownTV3" parent="Writings" index="2" instance=ExtResource( 8 )]
+
+position = Vector2( 15445.8, -479.766 )
+total_count = 7
+
+[node name="CountdownTV4" parent="Writings" index="3" instance=ExtResource( 8 )]
+
+position = Vector2( 17716.2, -291.52 )
+rotation = -0.28507
+total_count = 4
+
+[node name="CountdownTV5" parent="Writings" index="4" instance=ExtResource( 8 )]
+
+position = Vector2( 21550.3, -498.521 )
+rotation = 0.00731674
+total_count = 9
+
+[node name="PlatformDecorations" type="Node2D" parent="." index="6"]
+
+[node name="Start" type="Node2D" parent="PlatformDecorations" index="0"]
+
+[node name="chamber" type="Node2D" parent="PlatformDecorations" index="1"]
+
+editor/display_folded = true
+position = Vector2( 5160.17, -760.09 )
+
+[node name="TV Hook" type="Node2D" parent="PlatformDecorations/chamber" index="0"]
+
+position = Vector2( -9.64307, -238.406 )
+rotation = 0.046913
+scale = Vector2( 1, 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="PlatformDecorations/chamber/TV Hook" index="0"]
+
+modulate = Color( 0.332031, 0.332031, 0.332031, 1 )
+position = Vector2( -13.1792, -8.14624 )
+rotation = -1.33791
+scale = Vector2( -0.2, 0.2 )
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite2" type="Sprite" parent="PlatformDecorations/chamber/TV Hook" index="1"]
+
+modulate = Color( 0.332031, 0.332031, 0.332031, 1 )
+position = Vector2( 1.37207, 60.8348 )
+rotation = -1.55821
+scale = Vector2( 0.25, 0.2 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite3" type="Sprite" parent="PlatformDecorations/chamber/TV Hook" index="2"]
+
+modulate = Color( 0.304688, 0.304688, 0.304688, 1 )
+position = Vector2( -7.74268, -10.4199 )
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 10 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Portrait" type="Node2D" parent="PlatformDecorations" index="2"]
+
+position = Vector2( 9936.36, -852.942 )
+
+[node name="DoubleDeckFirst" type="Node2D" parent="PlatformDecorations" index="3"]
+
+position = Vector2( 13418.5, -747.009 )
+
+[node name="DoubleDeckMiddle" type="Node2D" parent="PlatformDecorations" index="4"]
+
+position = Vector2( 17575.4, -774.442 )
+
+[node name="TV Strings" type="Node2D" parent="PlatformDecorations/DoubleDeckMiddle" index="0"]
+
+position = Vector2( 15.2969, 102.58 )
+
+[node name="White Line" type="Sprite" parent="PlatformDecorations/DoubleDeckMiddle/TV Strings" index="0"]
+
+modulate = Color( 0.384314, 0.34902, 0.313726, 1 )
+position = Vector2( 144.291, 195.427 )
+rotation = 1.62205
+scale = Vector2( 0.5, 0.2 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="White Line2" type="Sprite" parent="PlatformDecorations/DoubleDeckMiddle/TV Strings" index="1"]
+
+modulate = Color( 0.384314, 0.34902, 0.313726, 1 )
+position = Vector2( 14.582, 248.193 )
+rotation = 0.80979
+scale = Vector2( 0.4, 0.2 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Sprite" type="Sprite" parent="PlatformDecorations/DoubleDeckMiddle/TV Strings" index="2"]
+
+modulate = Color( 0.34902, 0.317647, 0.286275, 1 )
+position = Vector2( -33.7051, 197.046 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 10 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Sprite2" type="Sprite" parent="PlatformDecorations/DoubleDeckMiddle/TV Strings" index="3"]
+
+modulate = Color( 0.34902, 0.317647, 0.286275, 1 )
+position = Vector2( 149.078, 114.828 )
+rotation = 1.0978
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 10 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="DoubleDeckLast" type="Node2D" parent="PlatformDecorations" index="5"]
+
+position = Vector2( 17575.4, -774.442 )
+
+[node name="TV Strings" type="Node2D" parent="PlatformDecorations/DoubleDeckLast" index="0"]
+
+modulate = Color( 0.367188, 0.367188, 0.367188, 1 )
+position = Vector2( 2.11133, -24.915 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Line3" type="Sprite" parent="PlatformDecorations/DoubleDeckLast/TV Strings" index="0"]
+
+position = Vector2( 3934.99, 115.814 )
+rotation = 1.77459
+scale = Vector2( 0.52, 0.15 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Line5" type="Sprite" parent="PlatformDecorations/DoubleDeckLast/TV Strings" index="1"]
+
+position = Vector2( 4021.91, 114.274 )
+rotation = 4.58838
+scale = Vector2( 0.55, 0.15 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Line4" type="Sprite" parent="PlatformDecorations/DoubleDeckLast/TV Strings" index="2"]
+
+position = Vector2( 3981.74, 22.4233 )
+rotation = 2.12553
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="PlatformDecorations/DoubleDeckLast/TV Strings" index="3"]
+
+position = Vector2( 3981.02, 20.5655 )
+rotation = -0.00866337
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 10 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
+
+editor/display_folded = true
+
+[node name="First" type="Position2D" parent="CameraChangingTriggers" index="0"]
+
+position = Vector2( 750, -150 )
+script = ExtResource( 11 )
+_sections_unfolded = [ "Transform" ]
+range_x = 1000
+range_y = 1000
+x_check = 2
+y_check = 0
+
+[node name="FirstMob" type="Node2D" parent="CameraChangingTriggers" index="1"]
+
+script = ExtResource( 12 )
+count_to_emit = 2
+
+[node name="Well" type="Node2D" parent="CameraChangingTriggers" index="2"]
+
+script = ExtResource( 12 )
+count_to_emit = 2
+
+[node name="PortraitMob" type="Node2D" parent="CameraChangingTriggers" index="3"]
+
+script = ExtResource( 12 )
+count_to_emit = 2
+
+[node name="DoubleDeckEnter" type="Position2D" parent="CameraChangingTriggers" index="4"]
+
+position = Vector2( 13350, -150 )
+script = ExtResource( 11 )
+range_x = 500
+range_y = 2000
+x_check = 2
+y_check = 0
+
+[node name="DoubleDeckFirstMob" type="Node2D" parent="CameraChangingTriggers" index="5"]
+
+script = ExtResource( 12 )
+count_to_emit = 5
+
+[node name="DoubleDeckSecondMob" type="Node2D" parent="CameraChangingTriggers" index="6"]
+
+script = ExtResource( 12 )
+count_to_emit = 2
+
+[node name="LastDoubleDeckEnter" type="Position2D" parent="CameraChangingTriggers" index="7"]
+
+position = Vector2( 20050, -150 )
+script = ExtResource( 11 )
+range_x = 500
+range_y = 2000
+x_check = 2
+y_check = 0
+
+[node name="LastDoubleDeckMob" type="Node2D" parent="CameraChangingTriggers" index="8"]
+
+script = ExtResource( 12 )
+count_to_emit = 5
+
+[node name="OtherPlatforms" type="Node2D" parent="." index="8"]
+
+editor/display_folded = true
+
+[node name="Enemy Blocking Platform" parent="OtherPlatforms" index="0" instance=ExtResource( 13 )]
+
+position = Vector2( 8698.11, -139.984 )
+
+[node name="Enemy Blocking Platform2" parent="OtherPlatforms" index="1" instance=ExtResource( 13 )]
+
+position = Vector2( 8698.11, -239.984 )
+
+[node name="Enemy Blocking Platform3" parent="OtherPlatforms" index="2" instance=ExtResource( 13 )]
+
+position = Vector2( 11398.1, -139.984 )
+
+[node name="Enemy Blocking Platform4" parent="OtherPlatforms" index="3" instance=ExtResource( 13 )]
+
+position = Vector2( 11398.1, -239.984 )
+
+[node name="Enemy Blocking Platform5" parent="OtherPlatforms" index="4" instance=ExtResource( 13 )]
+
+position = Vector2( 11800, -150 )
+
+[node name="Enemy Blocking Platform6" parent="OtherPlatforms" index="5" instance=ExtResource( 13 )]
+
+position = Vector2( 11800, -250 )
+
+[node name="Enemy Blocking Platform7" parent="OtherPlatforms" index="6" instance=ExtResource( 13 )]
+
+position = Vector2( 11800, -850 )
+
+[node name="Enemy Blocking Platform8" parent="OtherPlatforms" index="7" instance=ExtResource( 13 )]
+
+position = Vector2( 11800, -950 )
+
+[node name="Enemy Blocking Platform9" parent="OtherPlatforms" index="8" instance=ExtResource( 13 )]
+
+position = Vector2( 15200, -150 )
+
+[node name="Enemy Blocking Platform10" parent="OtherPlatforms" index="9" instance=ExtResource( 13 )]
+
+position = Vector2( 15200, -250 )
+
+[node name="Enemy Blocking Platform11" parent="OtherPlatforms" index="10" instance=ExtResource( 13 )]
+
+position = Vector2( 15700, -150 )
+
+[node name="Enemy Blocking Platform12" parent="OtherPlatforms" index="11" instance=ExtResource( 13 )]
+
+position = Vector2( 15700, -250 )
+
+[node name="Enemy Blocking Platform13" parent="OtherPlatforms" index="12" instance=ExtResource( 13 )]
+
+position = Vector2( 16250, -1000 )
+
+[node name="Enemy Blocking Platform14" parent="OtherPlatforms" index="13" instance=ExtResource( 13 )]
+
+position = Vector2( 16250, -900 )
+
+[node name="Enemy Blocking Platform15" parent="OtherPlatforms" index="14" instance=ExtResource( 13 )]
+
+position = Vector2( 17700, -850 )
+
+[node name="Enemy Blocking Platform16" parent="OtherPlatforms" index="15" instance=ExtResource( 13 )]
+
+position = Vector2( 17700, -950 )
+
+[node name="Enemy Blocking Platform27" parent="OtherPlatforms" index="16" instance=ExtResource( 13 )]
+
+position = Vector2( 18850, -1000 )
+
+[node name="Enemy Blocking Platform29" parent="OtherPlatforms" index="17" instance=ExtResource( 13 )]
+
+position = Vector2( 18950, -1000 )
+
+[node name="Enemy Blocking Platform30" parent="OtherPlatforms" index="18" instance=ExtResource( 13 )]
+
+position = Vector2( 18950, -900 )
+
+[node name="Enemy Blocking Platform28" parent="OtherPlatforms" index="19" instance=ExtResource( 13 )]
+
+position = Vector2( 18850, -900 )
+
+[node name="Enemy Blocking Platform18" parent="OtherPlatforms" index="20" instance=ExtResource( 13 )]
+
+position = Vector2( 18900, -200 )
+
+[node name="Enemy Blocking Platform19" parent="OtherPlatforms" index="21" instance=ExtResource( 13 )]
+
+position = Vector2( 19900, -150 )
+
+[node name="Enemy Blocking Platform20" parent="OtherPlatforms" index="22" instance=ExtResource( 13 )]
+
+position = Vector2( 19900, -250 )
+
+[node name="Enemy Blocking Platform21" parent="OtherPlatforms" index="23" instance=ExtResource( 13 )]
+
+position = Vector2( 21000, -850 )
+
+[node name="Enemy Blocking Platform22" parent="OtherPlatforms" index="24" instance=ExtResource( 13 )]
+
+position = Vector2( 21000, -950 )
+
+[node name="Enemy Blocking Platform25" parent="OtherPlatforms" index="25" instance=ExtResource( 13 )]
+
+position = Vector2( 22700, -850 )
+
+[node name="Enemy Blocking Platform26" parent="OtherPlatforms" index="26" instance=ExtResource( 13 )]
+
+position = Vector2( 22700, -950 )
+
+[node name="Enemy Blocking Platform31" parent="OtherPlatforms" index="27" instance=ExtResource( 13 )]
+
+position = Vector2( 22100, -950 )
+
+[node name="Enemy Blocking Platform32" parent="OtherPlatforms" index="28" instance=ExtResource( 13 )]
+
+position = Vector2( 22100, -850 )
+
+[node name="Enemy Blocking Platform33" parent="OtherPlatforms" index="29" instance=ExtResource( 13 )]
+
+position = Vector2( 22100, -150 )
+
+[node name="Enemy Blocking Platform34" parent="OtherPlatforms" index="30" instance=ExtResource( 13 )]
+
+position = Vector2( 22100, -250 )
+
+[node name="Enemy Blocking Platform35" parent="OtherPlatforms" index="31" instance=ExtResource( 13 )]
+
+position = Vector2( 21800, -250 )
+
+[node name="Enemy Blocking Platform36" parent="OtherPlatforms" index="32" instance=ExtResource( 13 )]
+
+position = Vector2( 21800, -150 )
+
+[node name="HealingMachines" type="Node2D" parent="." index="9"]
+
+editor/display_folded = true
+
+[node name="Healing Machine" parent="HealingMachines" index="0" instance=ExtResource( 14 )]
+
+position = Vector2( 8098.11, -389.984 )
+
+[node name="Structures" type="Node2D" parent="." index="10"]
+
+editor/display_folded = true
+
+[node name="SizeChangingLight" parent="Structures" index="0" instance=ExtResource( 15 )]
+
+position = Vector2( 3053.43, -1080.86 )
+scale = Vector2( 0.7, 0.7 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+change_to = 2
+
+[node name="Door1-1" parent="Structures" index="1" instance=ExtResource( 16 )]
+
+position = Vector2( 25448.1, -1089.98 )
+enter_scene_path = "res://Scenes/Levels/Level 1-1.tscn"
+
+[node name="BlankDoor" parent="Structures" index="2" instance=ExtResource( 17 )]
+
+position = Vector2( 848.11, -639.984 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="BluePortal1-1" parent="Structures" index="3" instance=ExtResource( 18 )]
+
+modulate = Color( 0.18037, 0.431292, 0.753906, 1 )
+position = Vector2( 3648.11, -389.984 )
+destination_node_path = NodePath("../BlueFrame1")
+
+[node name="BlueFrame1" type="Sprite" parent="Structures" index="4"]
+
+modulate = Color( 0.180392, 0.431373, 0.752941, 1 )
+position = Vector2( 4248.11, -389.984 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 19 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="OrangePortal1-1" parent="Structures" index="5" instance=ExtResource( 18 )]
+
+modulate = Color( 1, 0.588235, 0, 1 )
+position = Vector2( 5148.11, -339.984 )
+scale = Vector2( 0.7, 0.7 )
+destination_node_path = NodePath("../OrangeFrame1")
+
+[node name="OrangeFrame1" type="Sprite" parent="Structures" index="6"]
+
+modulate = Color( 1, 0.588235, 0, 1 )
+position = Vector2( 5148.11, -1239.98 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 19 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="GreenPortal1-1" parent="Structures" index="7" instance=ExtResource( 18 )]
+
+modulate = Color( 0, 0.570312, 0.115845, 1 )
+position = Vector2( 6048.11, -389.984 )
+destination_node_path = NodePath("../GreenFrame1")
+
+[node name="GreenFrame1" type="Sprite" parent="Structures" index="8"]
+
+modulate = Color( 0.027451, 0.576471, 0.133333, 1 )
+position = Vector2( 6648.11, -389.984 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 19 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="GreenPortal2-1" parent="Structures" index="9" instance=ExtResource( 18 )]
+
+modulate = Color( 0, 0.570312, 0.115845, 1 )
+position = Vector2( 15950, -450 )
+destination_node_path = NodePath("../GreenPortal2-2")
+
+[node name="GreenPortal2-2" parent="Structures" index="10" instance=ExtResource( 18 )]
+
+modulate = Color( 0, 0.570312, 0.115845, 1 )
+position = Vector2( 13900, -1150 )
+destination_node_path = NodePath("../GreenPortal2-1")
+
+[node name="BluePortal2-1" parent="Structures" index="11" instance=ExtResource( 18 )]
+
+modulate = Color( 0, 0.320312, 1, 1 )
+position = Vector2( 18600, -450 )
+destination_node_path = NodePath("../BluePortal2-2")
+
+[node name="BluePortal2-2" parent="Structures" index="12" instance=ExtResource( 18 )]
+
+modulate = Color( 0, 0.320312, 1, 1 )
+position = Vector2( 16600, -1150 )
+destination_node_path = NodePath("../BluePortal2-1")
+
+[node name="OrangePortal2-1" parent="Structures" index="13" instance=ExtResource( 18 )]
+
+modulate = Color( 1, 0.65625, 0, 1 )
+position = Vector2( 16600, -450 )
+destination_node_path = NodePath("../OrangePortal2-2")
+
+[node name="OrangePortal2-2" parent="Structures" index="14" instance=ExtResource( 18 )]
+
+modulate = Color( 1, 0.65625, 0, 1 )
+position = Vector2( 18600, -1150 )
+destination_node_path = NodePath("../OrangePortal2-1")
+
+[node name="RedPortal1-1" parent="Structures" index="15" instance=ExtResource( 18 )]
+
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 21100, -1150 )
+destination_node_path = NodePath("../RedFrame1")
+
+[node name="RedFrame1" type="Sprite" parent="Structures" index="16"]
+
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 19700, -350 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 19 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="GreenPortal3-1" parent="Structures" index="17" instance=ExtResource( 18 )]
+
+modulate = Color( 0, 0.609375, 0.209473, 1 )
+position = Vector2( 20700, -1150 )
+destination_node_path = NodePath("../GreenPortal3-2")
+
+[node name="GreenPortal3-2" parent="Structures" index="18" instance=ExtResource( 18 )]
+
+modulate = Color( 0, 0.609375, 0.209473, 1 )
+position = Vector2( 22300, -450 )
+destination_node_path = NodePath("../GreenPortal3-1")
+
+[node name="SizeChangingLight2" parent="Structures" index="19" instance=ExtResource( 15 )]
+
+position = Vector2( 7348.8, -1084.39 )
+scale = Vector2( 0.7, 0.7 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="SizeChangingLight3" parent="Structures" index="20" instance=ExtResource( 15 )]
+
+position = Vector2( 17300, -1081.06 )
+scale = Vector2( 0.7, 0.7 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+change_to = 2
+
+[node name="SizeChangingLight4" parent="Structures" index="21" instance=ExtResource( 15 )]
+
+position = Vector2( 24367.8, -1293.06 )
+rotation = -0.40565
+scale = Vector2( 0.7, 0.7 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="SizeChangingLight5" parent="Structures" index="22" instance=ExtResource( 15 )]
+
+position = Vector2( 24675.2, -1266.21 )
+rotation = 0.666773
+scale = Vector2( 0.75, 0.75 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Enemies" type="Node2D" parent="." index="11"]
+
+editor/display_folded = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="HealingFountains" type="Node2D" parent="Enemies" index="0"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="Healing Fountain" parent="Enemies/HealingFountains" index="0" instance=ExtResource( 20 )]
+
+position = Vector2( 2298.11, -139.984 )
+
+[node name="Healing Fountain2" parent="Enemies/HealingFountains" index="1" instance=ExtResource( 20 )]
+
+position = Vector2( 4698.2, -139.408 )
+
+[node name="Healing Fountain3" parent="Enemies/HealingFountains" index="2" instance=ExtResource( 20 )]
+
+position = Vector2( 5598.11, -139.984 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Healing Fountain4" parent="Enemies/HealingFountains" index="3" instance=ExtResource( 20 )]
+
+position = Vector2( 10048.1, -139.984 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Healing Fountain5" parent="Enemies/HealingFountains" index="4" instance=ExtResource( 20 )]
+
+position = Vector2( 14550, -150 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Healing Fountain6" parent="Enemies/HealingFountains" index="5" instance=ExtResource( 20 )]
+
+position = Vector2( 13250, -850 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Healing Fountain7" parent="Enemies/HealingFountains" index="6" instance=ExtResource( 20 )]
+
+position = Vector2( 15150, -850 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Healing Fountain8" parent="Enemies/HealingFountains" index="7" instance=ExtResource( 20 )]
+
+position = Vector2( 19550, -850 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Healing Fountain10" parent="Enemies/HealingFountains" index="8" instance=ExtResource( 20 )]
+
+position = Vector2( 18050, -150 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Healing Fountain9" parent="Enemies/HealingFountains" index="9" instance=ExtResource( 20 )]
+
+position = Vector2( 20500, -150 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Eelo Kicker" parent="Enemies" index="1" instance=ExtResource( 21 )]
+
+position = Vector2( 2100, -400 )
+_sections_unfolded = [ "Collision", "Transform" ]
+activate_range_x = 1500
+
+[node name="Eelo Kicker12" parent="Enemies" index="2" instance=ExtResource( 21 )]
+
+position = Vector2( 3150, -400 )
+_sections_unfolded = [ "Collision", "Transform" ]
+activate_range_x = 2000
+
+[node name="Eelo Kicker2" parent="Enemies" index="3" instance=ExtResource( 21 )]
+
+position = Vector2( 5000, -2000 )
+_sections_unfolded = [ "Collision", "Transform" ]
+activate_range_x = 800
+activate_range_y = 2000
+
+[node name="Eelo Kicker3" parent="Enemies" index="4" instance=ExtResource( 21 )]
+
+position = Vector2( 5300, -2000 )
+_sections_unfolded = [ "Collision", "Transform" ]
+activate_range_x = 1100
+activate_range_y = 2000
+
+[node name="EeloKickerSpawner" type="Position2D" parent="Enemies" index="5"]
+
+position = Vector2( 5148.11, -1939.98 )
+script = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+mob_path = "res://Scenes/Enemies/Computer Room/Eelo Kicker.tscn"
+activate_range_x = 3000
+activate_range_y = 3000
+spawn_delay = 0.75
+total_count = 2
+countdownTVHooked = NodePath("../../Writings/CountdownTV1")
+
+[node name="EeloKickerSpawner10" type="Position2D" parent="Enemies" index="6"]
+
+position = Vector2( 5148.11, -1939.98 )
+script = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+mob_path = "res://Scenes/Enemies/Computer Room/Eelo Kicker.tscn"
+activate_range_x = 3000
+activate_range_y = 3000
+spawn_delay = 0.75
+total_count = 2
+countdownTVHooked = NodePath("../../Writings/CountdownTV1")
+
+[node name="Eelo Kicker4" parent="Enemies" index="7" instance=ExtResource( 21 )]
+
+position = Vector2( 11150, -400 )
+_sections_unfolded = [ "Collision", "Transform" ]
+activate_range_x = 2500
+
+[node name="EeloKickerSpawner2" type="Position2D" parent="Enemies" index="8"]
+
+position = Vector2( 10850, -1800 )
+script = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+mob_path = "res://Scenes/Enemies/Computer Room/Eelo Kicker.tscn"
+activate_range_x = 3000
+activate_range_y = 3000
+spawn_delay = 0.75
+total_count = 1
+countdownTVHooked = NodePath("../../Writings/CountdownTV2")
+
+[node name="EeloKickerSpawner3" type="Position2D" parent="Enemies" index="9"]
+
+position = Vector2( 9150, -1800 )
+script = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+mob_path = "res://Scenes/Enemies/Computer Room/Eelo Kicker.tscn"
+activate_range_x = 3000
+activate_range_y = 3000
+spawn_delay = 0.75
+total_count = 1
+countdownTVHooked = NodePath("../../Writings/CountdownTV2")
+
+[node name="EeloKickerSpawner4" type="Position2D" parent="Enemies" index="10"]
+
+position = Vector2( 10650, -1800 )
+script = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+mob_path = "res://Scenes/Enemies/Computer Room/Eelo Kicker.tscn"
+activate_range_x = 3000
+activate_range_y = 3000
+spawn_delay = 0.75
+total_count = 1
+countdownTVHooked = NodePath("../../Writings/CountdownTV2")
+
+[node name="EeloKickerSpawner5" type="Position2D" parent="Enemies" index="11"]
+
+position = Vector2( 9450, -1800 )
+script = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+mob_path = "res://Scenes/Enemies/Computer Room/Eelo Puncher.tscn"
+activate_range_x = 3000
+activate_range_y = 3000
+spawn_delay = 0.75
+total_count = 1
+countdownTVHooked = NodePath("../../Writings/CountdownTV2")
+
+[node name="Eelo Kicker6" parent="Enemies" index="12" instance=ExtResource( 21 )]
+
+position = Vector2( 12700, -1100 )
+_sections_unfolded = [ "Collision", "Transform" ]
+activate_range_x = 850
+activate_range_y = 2000
+
+[node name="Eelo Kicker7" parent="Enemies" index="13" instance=ExtResource( 21 )]
+
+position = Vector2( 13800, -400 )
+_sections_unfolded = [ "Collision", "Transform" ]
+activate_range_x = 1950
+activate_range_y = 2000
+
+[node name="Eelo Kicker14" parent="Enemies" index="14" instance=ExtResource( 21 )]
+
+position = Vector2( 14950, -400 )
+activate_range_x = 2000
+activate_range_y = 2000
+
+[node name="Eelo Kicker13" parent="Enemies" index="15" instance=ExtResource( 21 )]
+
+position = Vector2( 14500, -1100 )
+_sections_unfolded = [ "Collision", "Transform" ]
+activate_range_x = 2500
+activate_range_y = 2000
+
+[node name="Eelo Kicker8" parent="Enemies" index="16" instance=ExtResource( 21 )]
+
+position = Vector2( 15800, -1100 )
+activate_range_x = 2500
+activate_range_y = 2000
+
+[node name="EeloKickerSpawner6" type="Position2D" parent="Enemies" index="17"]
+
+position = Vector2( 13850, -1850 )
+script = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+mob_path = "res://Scenes/Enemies/Computer Room/Eelo Kicker.tscn"
+activate_range_x = 3000
+activate_range_y = 3000
+spawn_delay = 0.75
+total_count = 1
+countdownTVHooked = NodePath("../../Writings/CountdownTV3")
+
+[node name="EeloKickerSpawner7" type="Position2D" parent="Enemies" index="18"]
+
+position = Vector2( 14450, -1850 )
+script = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+mob_path = "res://Scenes/Enemies/Computer Room/Eelo Kicker.tscn"
+activate_range_x = 3000
+activate_range_y = 3000
+spawn_delay = 0.75
+total_count = 1
+countdownTVHooked = NodePath("../../Writings/CountdownTV3")
+
+[node name="Eelo Kicker9" parent="Enemies" index="19" instance=ExtResource( 21 )]
+
+position = Vector2( 16950, -400 )
+
+[node name="Eelo Puncher3" parent="Enemies" index="20" instance=ExtResource( 23 )]
+
+position = Vector2( 18550, -350 )
+
+[node name="EeloPuncherSpawn" type="Position2D" parent="Enemies" index="21"]
+
+position = Vector2( 16600, -1950 )
+script = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+mob_path = "res://Scenes/Enemies/Computer Room/Eelo Puncher.tscn"
+activate_range_x = 3000
+activate_range_y = 3000
+spawn_delay = 0.75
+total_count = 1
+countdownTVHooked = NodePath("../../Writings/CountdownTV4")
+
+[node name="EeloPuncherSpawn2" type="Position2D" parent="Enemies" index="22"]
+
+position = Vector2( 18200, -1900 )
+script = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+mob_path = "res://Scenes/Enemies/Computer Room/Eelo Puncher.tscn"
+activate_range_x = 3000
+activate_range_y = 3000
+spawn_delay = 0.75
+total_count = 1
+countdownTVHooked = NodePath("../../Writings/CountdownTV4")
+
+[node name="Eelo Puncher" parent="Enemies" index="23" instance=ExtResource( 23 )]
+
+position = Vector2( 20150, -350 )
+
+[node name="Eelo Puncher2" parent="Enemies" index="24" instance=ExtResource( 23 )]
+
+position = Vector2( 20050, -1050 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="Eelo Kicker11" parent="Enemies" index="25" instance=ExtResource( 21 )]
+
+position = Vector2( 21150, -400 )
+activate_range_x = 1300
+
+[node name="Eelo Puncher4" parent="Enemies" index="26" instance=ExtResource( 23 )]
+
+position = Vector2( 22550, -350 )
+
+[node name="Eelo Puncher5" parent="Enemies" index="27" instance=ExtResource( 23 )]
+
+position = Vector2( 22400, -1050 )
+
+[node name="EeloPuncherSpawn3" type="Position2D" parent="Enemies" index="28"]
+
+position = Vector2( 20450, -1900 )
+script = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+mob_path = "res://Scenes/Enemies/Computer Room/Eelo Puncher.tscn"
+activate_range_x = 3000
+activate_range_y = 3000
+spawn_delay = 0.75
+total_count = 1
+countdownTVHooked = NodePath("../../Writings/CountdownTV5")
+
+[node name="EeloKickerSpawner9" type="Position2D" parent="Enemies" index="29"]
+
+position = Vector2( 19950, -1900 )
+script = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+mob_path = "res://Scenes/Enemies/Computer Room/Eelo Kicker.tscn"
+activate_range_x = 3000
+activate_range_y = 3000
+spawn_delay = 0.75
+total_count = 1
+countdownTVHooked = NodePath("../../Writings/CountdownTV5")
+
+[node name="EeloPuncherSpawn5" type="Position2D" parent="Enemies" index="30"]
+
+position = Vector2( 21200, -1850 )
+script = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+mob_path = "res://Scenes/Enemies/Computer Room/Eelo Puncher.tscn"
+activate_range_x = 3000
+activate_range_y = 3000
+spawn_delay = 0.75
+total_count = 1
+countdownTVHooked = NodePath("../../Writings/CountdownTV5")
+
+[node name="EeloKickerSpawner8" type="Position2D" parent="Enemies" index="31"]
+
+position = Vector2( 22400, -1850 )
+script = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+mob_path = "res://Scenes/Enemies/Computer Room/Eelo Kicker.tscn"
+activate_range_x = 3000
+activate_range_y = 3000
+spawn_delay = 0.75
+total_count = 1
+countdownTVHooked = NodePath("../../Writings/CountdownTV5")
+
+[node name="Sockute" parent="Enemies" index="32" instance=ExtResource( 24 )]
+
+position = Vector2( 18100, -1050 )
+activate_range_x = 1215
+activate_range_y = 2000
+
+[node name="PowerUps" type="Node2D" parent="." index="12"]
+
+editor/display_folded = true
+
+[node name="Hyper Potion" parent="PowerUps" index="0" instance=ExtResource( 25 )]
+
+position = Vector2( 7750, -150 )
+
+[node name="Speed Potion" parent="PowerUps" index="1" instance=ExtResource( 26 )]
+
+position = Vector2( 12550, -150 )
+
+[node name="DefensivePotion" parent="PowerUps" index="2" instance=ExtResource( 27 )]
+
+position = Vector2( 21600, -850 )
+
+[node name="ForegroundDecorations" type="Node2D" parent="." index="13"]
+
+z_index = 1
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Start" type="Node2D" parent="ForegroundDecorations" index="0"]
+
+[node name="chamber" type="Node2D" parent="ForegroundDecorations" index="1"]
+
+position = Vector2( 5160.17, -760.09 )
+
+[node name="Portrait" type="Node2D" parent="ForegroundDecorations" index="2"]
+
+position = Vector2( 9936.36, -852.942 )
+
+[node name="DoubleDeckFirst" type="Node2D" parent="ForegroundDecorations" index="3"]
+
+position = Vector2( 13418.5, -747.009 )
+
+[node name="DoubleDeckMiddle" type="Node2D" parent="ForegroundDecorations" index="4"]
+
+position = Vector2( 17575.4, -774.442 )
+
+[node name="DoubleDeckLast" type="Node2D" parent="ForegroundDecorations" index="5"]
+
+position = Vector2( 17575.4, -774.442 )
+
+[node name="PauseButton" parent="." index="14" instance=ExtResource( 28 )]
+
+[node name="Position2D" type="Position2D" parent="." index="15"]
+
+position = Vector2( 16850, -850 )
+scale = Vector2( 10, 10 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[connection signal="passed" from="CameraChangingTriggers/First" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/First" to="FollowingCamera" method="update_right_limit" binds= [ 3950 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/FirstMob" to="FollowingCamera" method="update_right_limit" binds= [ 6450 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/Well" to="FollowingCamera" method="update_right_limit" binds= [ 11350 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/PortraitMob" to="FollowingCamera" method="update_right_limit" binds= [ 16250 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/DoubleDeckEnter" to="FollowingCamera" method="update_right_margin" binds= [ 0.6 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/DoubleDeckEnter" to="FollowingCamera" method="update_left_margin" binds= [ 0.4 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/DoubleDeckEnter" to="FollowingCamera" method="update_left_limit" binds= [ 11850 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckFirstMob" to="FollowingCamera" method="update_right_margin" binds= [ 0.3 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckFirstMob" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckFirstMob" to="FollowingCamera" method="update_right_limit" binds= [ 18850 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckSecondMob" to="FollowingCamera" method="update_right_limit" binds= [ 22850 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/LastDoubleDeckEnter" to="FollowingCamera" method="update_right_margin" binds= [ 0.6 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/LastDoubleDeckEnter" to="FollowingCamera" method="update_left_margin" binds= [ 0.4 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/LastDoubleDeckEnter" to="FollowingCamera" method="update_left_limit" binds= [ 18850 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/LastDoubleDeckMob" to="FollowingCamera" method="update_right_limit" binds= [ 25750 ]]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker" to="CameraChangingTriggers/FirstMob" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker12" to="CameraChangingTriggers/FirstMob" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker2" to="Writings/CountdownTV1" method="tick"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker2" to="Enemies/EeloKickerSpawner" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker3" to="Writings/CountdownTV1" method="tick"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker3" to="Enemies/EeloKickerSpawner10" method="spawn_mob"]
+
+[connection signal="completed" from="Enemies/EeloKickerSpawner" to="CameraChangingTriggers/Well" method="increment_count"]
+
+[connection signal="completed" from="Enemies/EeloKickerSpawner10" to="CameraChangingTriggers/Well" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker4" to="Enemies/EeloKickerSpawner2" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker4" to="Enemies/EeloKickerSpawner3" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker4" to="Writings/CountdownTV2" method="tick"]
+
+[connection signal="completed" from="Enemies/EeloKickerSpawner2" to="Enemies/EeloKickerSpawner5" method="spawn_mob"]
+
+[connection signal="completed" from="Enemies/EeloKickerSpawner3" to="Enemies/EeloKickerSpawner4" method="spawn_mob"]
+
+[connection signal="completed" from="Enemies/EeloKickerSpawner4" to="CameraChangingTriggers/PortraitMob" method="increment_count"]
+
+[connection signal="completed" from="Enemies/EeloKickerSpawner5" to="CameraChangingTriggers/PortraitMob" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker6" to="Writings/CountdownTV3" method="tick"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker6" to="Enemies/EeloKickerSpawner7" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker7" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker7" to="Writings/CountdownTV3" method="tick"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker14" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker14" to="Writings/CountdownTV3" method="tick"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker13" to="Writings/CountdownTV3" method="tick"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker13" to="Enemies/EeloKickerSpawner6" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker8" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker8" to="Writings/CountdownTV3" method="tick"]
+
+[connection signal="completed" from="Enemies/EeloKickerSpawner6" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
+
+[connection signal="completed" from="Enemies/EeloKickerSpawner7" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker9" to="Writings/CountdownTV4" method="tick"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker9" to="Enemies/EeloPuncherSpawn2" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher3" to="Writings/CountdownTV4" method="tick"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher3" to="Enemies/EeloPuncherSpawn" method="spawn_mob"]
+
+[connection signal="completed" from="Enemies/EeloPuncherSpawn" to="CameraChangingTriggers/DoubleDeckSecondMob" method="increment_count"]
+
+[connection signal="completed" from="Enemies/EeloPuncherSpawn2" to="CameraChangingTriggers/DoubleDeckSecondMob" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher" to="Enemies/EeloPuncherSpawn3" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher" to="Writings/CountdownTV5" method="tick"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher2" to="Enemies/EeloKickerSpawner9" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher2" to="Writings/CountdownTV5" method="tick"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker11" to="Enemies/EeloPuncherSpawn5" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker11" to="Writings/CountdownTV5" method="tick"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher4" to="CameraChangingTriggers/LastDoubleDeckMob" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher4" to="Writings/CountdownTV5" method="tick"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher5" to="Enemies/EeloKickerSpawner8" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher5" to="Writings/CountdownTV5" method="tick"]
+
+[connection signal="completed" from="Enemies/EeloPuncherSpawn3" to="CameraChangingTriggers/LastDoubleDeckMob" method="increment_count"]
+
+[connection signal="completed" from="Enemies/EeloKickerSpawner9" to="CameraChangingTriggers/LastDoubleDeckMob" method="increment_count"]
+
+[connection signal="completed" from="Enemies/EeloPuncherSpawn5" to="CameraChangingTriggers/LastDoubleDeckMob" method="increment_count"]
+
+[connection signal="completed" from="Enemies/EeloKickerSpawner8" to="CameraChangingTriggers/LastDoubleDeckMob" method="increment_count"]
+
+

@@ -58,6 +58,7 @@ const LASER_COLOR = Color(1, 0, 0)
 const LASER_THICKNESS = 10
 
 var status_timer = null
+var die_timer = null
 var laser_timer = null
 var facing = -1
 var attack_target = null
@@ -369,4 +370,4 @@ func die():
 	ec.die()
 	ec.health_bar.drop_health_bar()
 	cancel_laser_sequence()
-	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
+	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

@@ -827,6 +827,31 @@ Facepalms: Editor always breaks after Git operations...so annoying.
 
 **Commit**
 
+[2018.05.18]
+* Designed Level 1-4.
+
+[2018.05.21]
+* Made Eelo Kicker/Puncher seek the nearest healing fountain automatically so that they can be instanced by Spawner.
+* Completed setting the triggers of Level 1-4.
+
+[2018.05.22]
+* Healing Fountains now can also heal heroes for half of the original amount.
+* Added Landing status to Eelo Kicker/Puncher.
+* Change facing of Eelo Puncher so that it's wheel won't turn the wrong direction.
+* Added a `die_timer` to all mobs so that `status_timer` cancels won't affect `queue_free`.
+* Made Eelo Kicker/Puncher go back to healing fountain if they can't reach the hero (in range y). (So as to avoid it flipping around in the same place like idiots.)
+
+[2018.05.23]
+Comment: Recently I sacrificed most of my time for studying NTU's transfer exam ... don't know if it's worth it.
+* Fixed Eelo Puncher's many bugs.
+* Implemented CountdownTV.
+
+[2018.05.25]
+* Place and hooked all the CountdownTVs with mobs and mob spawners.
+* Decorated Level 1-4.
+
+**Commit**
+
 To Do List:
 * Multiplayer bug testing.
 

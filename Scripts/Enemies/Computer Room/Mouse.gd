@@ -34,6 +34,7 @@ const SPAWN_MOUSY_DURATION = 0.25
 const DIE_ANIMATION_DURATION = 0.5
 
 var status_timer = null
+var die_timer = null
 var facing = -1
 
 var mousy_bomb = preload("res://Scenes/Enemies/Computer Room/Mousy Bomb.tscn")
@@ -134,4 +135,4 @@ func slowed_recover(label):
 func die():
 	ec.die()
 	emit_signal("defeated")
-	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
+	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

@@ -42,6 +42,7 @@ const LASER_COLOR = Color(1, 0, 0)
 var attack_target = null
 var attack_timer = null
 var status_timer = null
+var die_timer = null
 
 onready var original_pos_y = position.y
 onready var silk_attach_spot = $"Silk Attach Pos"
@@ -170,7 +171,7 @@ func knocked_back(vel_x, vel_y, fade_rate):
 func die():
 	ec.die()
 	cancel_attack_sequence()
-	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
+	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
 
 func healed(val):
 	ec.healed(val)

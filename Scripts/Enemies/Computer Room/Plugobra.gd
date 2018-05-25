@@ -32,6 +32,7 @@ const LASER_THICKNESS = 5
 const LASER_COLOR = Color(1, 0, 0)
 
 var status_timer = null
+var die_timer = null
 
 onready var laser_pos_left = $"Laser Pos Left"
 onready var laser_pos_right = $"Laser Pos Right"
@@ -121,4 +122,4 @@ func knocked_back(vel_x, vel_y, fade_rate):
 
 func die():
 	ec.die()
-	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
+	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

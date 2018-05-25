@@ -34,6 +34,7 @@ const TYPE_MIN_DIGIT = 1
 const TYPE_MAX_DIGIT = 7
 
 var status_timer = null
+var die_timer = null
 var facing = -1
 
 var spawned_bullets = []
@@ -171,4 +172,4 @@ func knocked_back(vel_x, vel_y, fade_rate):
 func die():
     cancel_bullet_spawning()
     ec.die()
-    status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
+    die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

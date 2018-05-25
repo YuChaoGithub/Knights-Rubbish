@@ -42,6 +42,7 @@ export(int) var right_bound
 
 var attack_target = null
 var status_timer = null
+var die_timer = null
 var curr_rand_movement = null
 
 onready var original_pos = position
@@ -168,7 +169,7 @@ func resume_from_stunned():
 
 func die():
 	ec.die()
-	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
+	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
 
 func healed(val):
 	ec.healed(val)

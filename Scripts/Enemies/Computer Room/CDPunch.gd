@@ -37,6 +37,7 @@ const DIE_ANIMATION_DURATION = 0.5
 const ATTACK_ANIMATION_DURATION = 0.65
 
 var status_timer = null
+var die_timer = null
 var turn_stagger_timer = null
 var attack_target = null
 var facing = -1
@@ -139,7 +140,7 @@ func knocked_back(vel_x, vel_y, fade_rate):
 func die():
     ec.die()
     emit_signal("defeated")
-    status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
+    die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
 
 func healed(val):
     ec.healed(val)

@@ -27,6 +27,7 @@ const COUNTDOWN_ANIMATION_DURATION = 3.0
 const SHOOT_DURATION = 0.5
 
 var status_timer = null
+var die_timer = null
 var curr_target_angle = null
 var curr_speed = null
 
@@ -121,4 +122,4 @@ func slowed(multiplier, duration):
 
 func die():
 	ec.die()
-	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
+	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

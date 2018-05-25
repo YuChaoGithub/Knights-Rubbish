@@ -29,6 +29,7 @@ const SHOOT_BUBBLE_DURATION = 0.2
 const SPAWN_DART_INTERVAL = 0.3
 
 var status_timer = null
+var die_timer = null
 var dart_spawn_timer = null
 var facing = -1
 
@@ -181,4 +182,4 @@ func slowed_recover(label):
 func die():
 	cancel_dart_spawn_and_dart_instaces()
 	ec.die()
-	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
+	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

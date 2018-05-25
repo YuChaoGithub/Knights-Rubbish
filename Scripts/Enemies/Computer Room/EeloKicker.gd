@@ -10,27 +10,28 @@ extends KinematicBody2D
 # Don't play hurt animation while kicking.
 # When stunned, go to 1.
 
-enum { NONE, ROAM, MOVE_TO_CHAR, KICK, SEEK_HEAL, HEALING }
+signal defeated
+
+enum { NONE, LANDING, ROAM, MOVE_TO_CHAR, KICK, SEEK_HEAL, HEALING }
 
 export(int) var activate_range_x = 1000
 export(int) var activate_range_y = 1500
-export(NodePath) var fountain_path
 
-const MAX_HEALTH = 150
+const MAX_HEALTH = 250
 
 # Attack.
 const ATTACK_RANGE_X = 100
 const ATTACK_RANGE_Y = 250
-const DAMAGE = 40
+const DAMAGE = 15
 const KNOCK_BACK_VEL_X = 700
 const KNOCK_BACK_VEL_Y = 250
 const KNOCK_BACK_FADE_RATE = 1100
 
 # Movement.
-const SPEED_X = 200
+const SPEED_X = 300
 const GRAVITY = 600
 const CHASE_RANGE = 700
-const SEEK_HEAL_SPEED = 300
+const SEEK_HEAL_SPEED = 500
 const HEAL_DURATION = 2.2
 const RANDOM_MOVEMENT_STEP = 5
 const RANDOM_MOVEMENT_MIN_TIME_PER_STEP = 1.5
@@ -43,25 +44,37 @@ const DIE_ANIMATION_DURATION = 0.8
 const SINGLE_KICK_DURATION = 0.6
 
 var status_timer = null
+var die_timer = null
 var kick_timer = null
 var kick_sequence = ["Left Kick", "Right Kick", "Double Kick"]
 var attack_target = null
 var facing = -1
+var heal_pos
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
-
-onready var heal_pos = get_node(fountain_path)
 
 func activate():
 	ec.init_gravity_movement(GRAVITY)
 	ec.init_straight_line_movement(0, 0)
+	get_heal_pos()
 	set_process(true)
-	ec.change_status(ROAM)
+	ec.change_status(LANDING)
 	$"Animation/Damage Area".add_to_group("enemy")
+
+func get_heal_pos():
+	var nearest_distance = 1000000000
+	for heal_fountain in get_node("../HealingFountains").get_children():
+		var pos = heal_fountain.global_position
+		var distance = pos.distance_squared_to(global_position)
+		if distance < nearest_distance:
+			heal_pos = pos
+			nearest_distance = distance
 
 func _process(delta):
 	if ec.not_hurt_dying_stunned():
 		match ec.status:
+			LANDING:
+				check_landing()
 			ROAM:
 				roam_randomly(delta)
 			MOVE_TO_CHAR:
@@ -78,6 +91,11 @@ func _process(delta):
 
 func change_status(to_status):
 	ec.change_status(to_status)
+
+func check_landing():
+	ec.play_animation("Landing")
+	if ec.gravity_movement.is_landed:
+		ec.change_status(ROAM)
 
 func roam_randomly(delta):
 	ec.play_animation("Walk")
@@ -108,8 +126,11 @@ func move_to_attack_target(delta):
 	ec.straight_line_movement.dx = facing * SPEED_X
 	ec.perform_straight_line_movement(delta)
 
-	if abs(attack_target.global_position.x - global_position.x) <= ATTACK_RANGE_X && abs(attack_target.global_position.y - global_position.y) <= ATTACK_RANGE_Y:
-		ec.change_status(KICK)
+	if abs(attack_target.global_position.x - global_position.x) <= ATTACK_RANGE_X:
+		if abs(attack_target.global_position.y - global_position.y) <= ATTACK_RANGE_Y:
+			ec.change_status(KICK)
+		else: # If the hero isn't in the y range, roam again.
+			ec.change_status(SEEK_HEAL)
 
 func kick():
 	ec.change_status(NONE)
@@ -148,12 +169,12 @@ func apply_kick_damage(character, dir):
 func move_to_healing_fountain(delta):
 	ec.play_animation("Walk")
 
-	facing = sign(heal_pos.global_position.x - global_position.x)
+	facing = sign(heal_pos.x - global_position.x)
 	ec.straight_line_movement.dx = facing * SEEK_HEAL_SPEED
 	ec.turn_sprites_x(facing)
 	ec.perform_straight_line_movement(delta)
 
-	if abs(global_position.x - heal_pos.global_position.x) <= HEAL_RANGE:
+	if abs(global_position.x - heal_pos.x) <= HEAL_RANGE:
 		ec.change_status(HEALING)
 
 func heal_up():
@@ -187,5 +208,6 @@ func slowed_recover(label):
 	ec.slowed_recover(label)
 
 func die():
+	emit_signal("defeated")
 	ec.die()
-	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
+	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

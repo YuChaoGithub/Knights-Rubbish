@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/EeloKicker.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Left Leg.png" type="Texture" id=2]
@@ -26,12 +26,12 @@ extents = Vector2( 28.7709, 93.6066 )
 [sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
-extents = Vector2( 17.4068, 35.2912 )
+extents = Vector2( 17.4068, 18.0404 )
 
 [sub_resource type="RectangleShape2D" id=4]
 
 custom_solver_bias = 0.0
-extents = Vector2( 18.0726, 38.2289 )
+extents = Vector2( 18.0726, 19.9553 )
 
 [sub_resource type="Animation" id=5]
 
@@ -329,6 +329,7 @@ tracks/23/keys = {
 
 [sub_resource type="Animation" id=6]
 
+resource_name = "Double Kick"
 length = 0.6
 loop = false
 step = 0.1
@@ -603,7 +604,7 @@ tracks/22/loop_wrap = true
 tracks/22/imported = false
 tracks/22/enabled = true
 tracks/22/keys = {
-"times": PoolRealArray( 0, 0.2 ),
+"times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 1, 0 ]
@@ -615,7 +616,7 @@ tracks/23/loop_wrap = true
 tracks/23/imported = false
 tracks/23/enabled = true
 tracks/23/keys = {
-"times": PoolRealArray( 0, 0.2 ),
+"times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 1, 0 ]
@@ -1209,8 +1210,304 @@ tracks/23/keys = {
 "values": [ 0 ]
 }
 
+[sub_resource type="Animation" id=14]
+
+resource_name = "Landing"
+length = 0.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Left Leg:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Right Leg:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Left Thigh:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Right Thigh:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Body:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Left Foot:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Right Foot:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Body:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 16.088 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Body:rotation_degrees")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Body/Face:texture")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Body/Right Thigh Remote Transform:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 11.1942, 54.1172 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Body/Right Thigh Remote Transform:rotation_degrees")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -41.7467 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Body/Left Thigh Remote Transform:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -10.0851, 55.5573 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Body/Left Thigh Remote Transform:rotation_degrees")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 47.7589 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.02316, 33.5454 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform:rotation_degrees")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -35.4217 ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -2.84875, 31.4524 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform:rotation_degrees")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -84.9114 ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform/Left Foot Remote Transform:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -3.50114, 23.8827 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform/Left Foot Remote Transform:rotation_degrees")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 29.8155 ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform/Right Foot Remote Transform:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -0.125038, 23.1325 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform/Right Foot Remote Transform:rotation_degrees")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Body/Left Thigh Remote Transform/Left Kick Area:collision_mask")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Body/Right Thigh Remote Transform/Right Kick Area:collision_mask")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
 [sub_resource type="Animation" id=9]
 
+resource_name = "Left Kick"
 length = 0.6
 loop = false
 step = 0.1
@@ -1485,7 +1782,7 @@ tracks/22/loop_wrap = true
 tracks/22/imported = false
 tracks/22/enabled = true
 tracks/22/keys = {
-"times": PoolRealArray( 0, 0.3 ),
+"times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 1, 0 ]
@@ -1505,6 +1802,7 @@ tracks/23/keys = {
 
 [sub_resource type="Animation" id=10]
 
+resource_name = "Right Kick"
 length = 0.6
 loop = false
 step = 0.1
@@ -1779,7 +2077,7 @@ tracks/22/loop_wrap = true
 tracks/22/imported = false
 tracks/22/enabled = true
 tracks/22/keys = {
-"times": PoolRealArray( 0, 0.3 ),
+"times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 1, 0 ]
@@ -1896,7 +2194,7 @@ tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ) ]
+"values": [ Vector2( 0, 0.797709 ) ]
 }
 tracks/8/type = "value"
 tracks/8/path = NodePath("Body:rotation_degrees")
@@ -1944,7 +2242,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ -2.86909 ]
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("Body/Left Thigh Remote Transform:position")
@@ -1968,7 +2266,7 @@ tracks/13/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ 0.464367 ]
 }
 tracks/14/type = "value"
 tracks/14/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform:position")
@@ -2016,7 +2314,7 @@ tracks/17/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ -12.5885 ]
 }
 tracks/18/type = "value"
 tracks/18/path = NodePath("Body/Left Thigh Remote Transform/Left Leg Remote Transform/Left Foot Remote Transform:position")
@@ -2040,7 +2338,7 @@ tracks/19/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ 9.64124 ]
 }
 tracks/20/type = "value"
 tracks/20/path = NodePath("Body/Right Thigh Remote Transform/Right Leg Remote Transform/Right Foot Remote Transform:position")
@@ -2679,7 +2977,7 @@ tracks/23/keys = {
 "values": [ 0 ]
 }
 
-[node name="Eelo Kicker" type="KinematicBody2D" index="0"]
+[node name="Eelo Kicker" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
@@ -2689,7 +2987,6 @@ script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 activate_range_x = 1000
 activate_range_y = 1500
-fountain_path = null
 
 [node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -2698,7 +2995,6 @@ shape = SubResource( 1 )
 
 [node name="Animation" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
 position = Vector2( 0, -8.99997 )
 scale = Vector2( 2.2, 2.2 )
 
@@ -2723,53 +3019,54 @@ shape = SubResource( 2 )
 
 [node name="Left Leg" type="Sprite" parent="Animation" index="1"]
 
-position = Vector2( 6.23015, 83.2202 )
-rotation = -1.04428
+position = Vector2( -13.1887, 87.7833 )
+rotation = -0.211605
 scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 offset = Vector2( -1.37547, 10.5142 )
 
 [node name="Left Thigh" type="Sprite" parent="Animation" index="2"]
 
-position = Vector2( -10.5317, 56.4544 )
-rotation = -0.649818
-scale = Vector2( 1, 1 )
+position = Vector2( -10.0851, 56.355 )
+rotation = 0.00810474
 texture = ExtResource( 3 )
 offset = Vector2( 0.0526185, 13.5829 )
 
 [node name="Left Foot" type="Sprite" parent="Animation" index="3"]
 
-position = Vector2( 25.1189, 98.2488 )
-rotation = -0.955919
+position = Vector2( -11.5956, 111.869 )
+rotation = -0.043334
 scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 offset = Vector2( -6.74521, 1.1897 )
 
 [node name="Right Leg" type="Sprite" parent="Animation" index="4"]
 
-position = Vector2( -4.02148, 87.1152 )
-rotation = 0.212903
+position = Vector2( 15.8927, 88.2669 )
+rotation = -0.0500751
+scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 offset = Vector2( -0.481429, 9.83557 )
 
 [node name="Right Thigh" type="Sprite" parent="Animation" index="5"]
 
-position = Vector2( 9.18448, 56.1308 )
-rotation = 0.492776
+position = Vector2( 11.1942, 54.9149 )
+rotation = -0.0500751
 scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 offset = Vector2( 1.55377, 14.6066 )
 
 [node name="Right Foot" type="Sprite" parent="Animation" index="6"]
 
-position = Vector2( -9.03155, 109.699 )
-rotation = 0.453918
+position = Vector2( 16.9257, 111.377 )
+rotation = -0.0500751
+scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 offset = Vector2( -6.56178, 1.61104 )
 
 [node name="Body" type="Sprite" parent="Animation" index="7"]
 
-position = Vector2( 0, 5.1399 )
+position = Vector2( 0, 0.797709 )
 texture = ExtResource( 7 )
 
 [node name="Face" type="Sprite" parent="Animation/Body" index="0"]
@@ -2779,8 +3076,8 @@ texture = ExtResource( 8 )
 
 [node name="Left Thigh Remote Transform" type="RemoteTransform2D" parent="Animation/Body" index="1"]
 
-position = Vector2( -10.5317, 51.3145 )
-rotation = -0.649818
+position = Vector2( -10.0851, 55.5573 )
+rotation = 0.00810474
 remote_path = NodePath("../../Left Thigh")
 use_global_coordinates = true
 update_position = true
@@ -2789,7 +3086,6 @@ update_scale = true
 
 [node name="Left Kick Area" type="Area2D" parent="Animation/Body/Left Thigh Remote Transform" index="0"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -2803,13 +3099,13 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Body/Left Thigh Remote Transform/Left Kick Area" index="0"]
 
-position = Vector2( -5.91713, 31.6486 )
+position = Vector2( -3.621, 51.5934 )
 shape = SubResource( 3 )
 
 [node name="Left Leg Remote Transform" type="RemoteTransform2D" parent="Animation/Body/Left Thigh Remote Transform" index="1"]
 
 position = Vector2( -2.84875, 31.4524 )
-rotation = -0.394465
+rotation = -0.21971
 remote_path = NodePath("../../../Left Leg")
 use_global_coordinates = true
 update_position = true
@@ -2819,7 +3115,7 @@ update_scale = true
 [node name="Left Foot Remote Transform" type="RemoteTransform2D" parent="Animation/Body/Left Thigh Remote Transform/Left Leg Remote Transform" index="0"]
 
 position = Vector2( -3.50114, 23.8827 )
-rotation = 0.0883639
+rotation = 0.168271
 remote_path = NodePath("../../../../Left Foot")
 use_global_coordinates = true
 update_position = true
@@ -2828,8 +3124,8 @@ update_scale = true
 
 [node name="Right Thigh Remote Transform" type="RemoteTransform2D" parent="Animation/Body" index="2"]
 
-position = Vector2( 9.18448, 50.9909 )
-rotation = 0.492776
+position = Vector2( 11.1942, 54.1172 )
+rotation = -0.0500751
 remote_path = NodePath("../../Right Thigh")
 use_global_coordinates = true
 update_position = true
@@ -2838,7 +3134,6 @@ update_scale = true
 
 [node name="Right Kick Area" type="Area2D" parent="Animation/Body/Right Thigh Remote Transform" index="0"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -2852,13 +3147,12 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Body/Right Thigh Remote Transform/Right Kick Area" index="0"]
 
-position = Vector2( -4.5841, 30.7503 )
+position = Vector2( 10.8908, 46.5187 )
 shape = SubResource( 4 )
 
 [node name="Right Leg Remote Transform" type="RemoteTransform2D" parent="Animation/Body/Right Thigh Remote Transform" index="1"]
 
 position = Vector2( 3.02316, 33.5454 )
-rotation = -0.279873
 remote_path = NodePath("../../../Right Leg")
 use_global_coordinates = true
 update_position = true
@@ -2868,7 +3162,6 @@ update_scale = true
 [node name="Right Foot Remote Transform" type="RemoteTransform2D" parent="Animation/Body/Right Thigh Remote Transform/Right Leg Remote Transform" index="0"]
 
 position = Vector2( -0.125038, 23.1325 )
-rotation = 0.241015
 remote_path = NodePath("../../../../Right Foot")
 use_global_coordinates = true
 update_position = true
@@ -2893,11 +3186,12 @@ playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/Die = SubResource( 5 )
-anims/DoubleKick = SubResource( 6 )
+"anims/Double Kick" = SubResource( 6 )
 anims/Healing = SubResource( 7 )
 anims/Hurt = SubResource( 8 )
-anims/LeftKick = SubResource( 9 )
-anims/RightKick = SubResource( 10 )
+anims/Landing = SubResource( 14 )
+"anims/Left Kick" = SubResource( 9 )
+"anims/Right Kick" = SubResource( 10 )
 anims/Still = SubResource( 11 )
 anims/Stunned = SubResource( 12 )
 anims/Walk = SubResource( 13 )
@@ -2909,7 +3203,7 @@ position = Vector2( -0.430573, -201.523 )
 
 [node name="Number Spawn Pos" type="Position2D" parent="." index="3"]
 
-position = Vector2( 0.530396, -111.191 )
+position = Vector2( 0.530396, -120.743 )
 scale = Vector2( 0.88, 0.88 )
 
 [connection signal="area_entered" from="Animation/Body/Left Thigh Remote Transform/Left Kick Area" to="." method="on_left_kick_hit"]

@@ -25,6 +25,7 @@ const THROW_ANIMATION_DURATION = 1.2
 const THROWING_DURATION = 0.3
 
 var status_timer = null
+var die_timer = null
 var facing = -1
 
 # Throw bomb.
@@ -118,4 +119,4 @@ func slowed_recover(label):
 
 func die():
 	ec.die()
-	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
+	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

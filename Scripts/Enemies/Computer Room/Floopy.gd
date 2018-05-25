@@ -42,6 +42,7 @@ const DIE_ANIMATION_DURATION = 0.8
 
 var attack_hit = false
 var status_timer = null
+var die_timer = null
 var turn_stagger_timer = null
 var attack_target = null
 var facing = -1
@@ -187,4 +188,4 @@ func slowed_recover(label):
 func die():
 	emit_signal("defeated")
 	ec.die()
-	status_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
+	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
