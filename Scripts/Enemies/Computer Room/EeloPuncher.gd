@@ -39,8 +39,8 @@ const RANDOM_MOVEMENT_STEPS = 5
 const RANDOM_MOVEMENT_MIN_TIME_PER_STEP = 1.0
 const RANDOM_MOVEMENT_MAX_TIME_PER_STEP = 2.0
 
+const HEAL_DURATION = 2.5
 const SEEK_HEAL_PERCENTAGE = 0.4
-const HEAL_TO_PERCENTAGE = 0.8
 const HEAL_RANGE = 175
 
 # Animation.
@@ -91,7 +91,7 @@ func _process(delta):
 			SEEK_HEAL:
 				seek_heal(delta)
 			HEALING:
-				check_health()
+				heal_up()
 
 	ec.perform_gravity_movement(delta)
 	ec.perform_knock_back_movement(delta)
@@ -186,11 +186,10 @@ func seek_heal(delta):
 	if abs(global_position.x - heal_pos.x) <= HEAL_RANGE:
 		ec.change_status(HEALING)
 
-func check_health():
+func heal_up():
 	ec.play_animation("Healing")
-	
-	if get_health_percentage() >= HEAL_TO_PERCENTAGE:
-		ec.change_status(ROAM)
+	ec.change_status(NONE)
+	status_timer = ec.cd_timer.new(HEAL_DURATION, self, "change_status", ROAM)
 
 func damaged(val):
 	ec.damaged(val, ec.animator.current_animation != "Punch")

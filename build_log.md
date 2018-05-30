@@ -852,6 +852,18 @@ Comment: Recently I sacrificed most of my time for studying NTU's transfer exam 
 
 **Commit**
 
+[2018.05.28]
+* Drawn golden portrait frame and elder Eelo portrait.
+
+[2018.05.29]
+* Finished decorating Level 1-4.
+
+[2018.05.30]
+* Fixed some code for Eelo Puncher. It's movement will now be more natural.
+* Tested Level 1-4. Good.
+
+**Commit**
+
 To Do List:
 * Multiplayer bug testing.
 
