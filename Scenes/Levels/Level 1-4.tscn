@@ -3438,23 +3438,23 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker12" to="CameraChangingTriggers/FirstMob" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker2" to="Writings/CountdownTV1" method="tick"]
-
 [connection signal="defeated" from="Enemies/Eelo Kicker2" to="Enemies/EeloKickerSpawner" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker3" to="Writings/CountdownTV1" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Kicker2" to="Writings/CountdownTV1" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker3" to="Enemies/EeloKickerSpawner10" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker3" to="Writings/CountdownTV1" method="tick"]
 
 [connection signal="completed" from="Enemies/EeloKickerSpawner" to="CameraChangingTriggers/Well" method="increment_count"]
 
 [connection signal="completed" from="Enemies/EeloKickerSpawner10" to="CameraChangingTriggers/Well" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker4" to="Writings/CountdownTV2" method="tick"]
-
 [connection signal="defeated" from="Enemies/Eelo Kicker4" to="Enemies/EeloKickerSpawner3" method="spawn_mob"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker4" to="Enemies/EeloKickerSpawner2" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker4" to="Writings/CountdownTV2" method="tick"]
 
 [connection signal="completed" from="Enemies/EeloKickerSpawner2" to="Enemies/EeloKickerSpawner5" method="spawn_mob"]
 
@@ -3464,61 +3464,61 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="completed" from="Enemies/EeloKickerSpawner5" to="CameraChangingTriggers/PortraitMob" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker6" to="Writings/CountdownTV3" method="tick"]
-
 [connection signal="defeated" from="Enemies/Eelo Kicker6" to="Enemies/EeloKickerSpawner7" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker7" to="Writings/CountdownTV3" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Kicker6" to="Writings/CountdownTV3" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker7" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker14" to="Writings/CountdownTV3" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Kicker7" to="Writings/CountdownTV3" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker14" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker13" to="Writings/CountdownTV3" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Kicker14" to="Writings/CountdownTV3" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker13" to="Enemies/EeloKickerSpawner6" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker8" to="Writings/CountdownTV3" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Kicker13" to="Writings/CountdownTV3" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker8" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker8" to="Writings/CountdownTV3" method="tick"]
 
 [connection signal="completed" from="Enemies/EeloKickerSpawner6" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
 
 [connection signal="completed" from="Enemies/EeloKickerSpawner7" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker9" to="Writings/CountdownTV4" method="tick"]
-
 [connection signal="defeated" from="Enemies/Eelo Kicker9" to="Enemies/EeloPuncherSpawn2" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Eelo Puncher3" to="Writings/CountdownTV4" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Kicker9" to="Writings/CountdownTV4" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Puncher3" to="Enemies/EeloPuncherSpawn" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher3" to="Writings/CountdownTV4" method="tick"]
 
 [connection signal="completed" from="Enemies/EeloPuncherSpawn" to="CameraChangingTriggers/DoubleDeckSecondMob" method="increment_count"]
 
 [connection signal="completed" from="Enemies/EeloPuncherSpawn2" to="CameraChangingTriggers/DoubleDeckSecondMob" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Puncher" to="Writings/CountdownTV5" method="tick"]
-
 [connection signal="defeated" from="Enemies/Eelo Puncher" to="Enemies/EeloPuncherSpawn3" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Eelo Puncher2" to="Writings/CountdownTV5" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Puncher" to="Writings/CountdownTV5" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Puncher2" to="Enemies/EeloKickerSpawner9" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker11" to="Writings/CountdownTV5" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Puncher2" to="Writings/CountdownTV5" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker11" to="Enemies/EeloPuncherSpawn5" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Eelo Puncher4" to="Writings/CountdownTV5" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Kicker11" to="Writings/CountdownTV5" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Puncher4" to="CameraChangingTriggers/LastDoubleDeckMob" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Puncher5" to="Writings/CountdownTV5" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Puncher4" to="Writings/CountdownTV5" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Puncher5" to="Enemies/EeloKickerSpawner8" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher5" to="Writings/CountdownTV5" method="tick"]
 
 [connection signal="completed" from="Enemies/EeloPuncherSpawn3" to="CameraChangingTriggers/LastDoubleDeckMob" method="increment_count"]
 

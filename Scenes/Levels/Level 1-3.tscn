@@ -1490,7 +1490,6 @@ _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="Writings" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Z Index" ]
 
 [node name="Smol" type="Node2D" parent="Writings" index="0"]
@@ -1878,7 +1877,6 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 
 [node name="DivergingPath" type="Node2D" parent="Writings" index="2"]
 
-editor/display_folded = true
 position = Vector2( 1334.29, -5114.88 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -2558,7 +2556,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
 
-[node name="cigarettes" type="Label" parent="Writings/DivergingPath" index="26"]
+[node name="conference" type="Label" parent="Writings/DivergingPath" index="26"]
 
 modulate = Color( 0.0102486, 0.400658, 0.953125, 1 )
 anchor_left = 0.0
@@ -2578,7 +2576,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 74 )
-text = "cygarettes"
+text = "conference"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -4407,6 +4405,7 @@ activate_range_x = 3000
 activate_range_y = 3000
 spawn_delay = 0.75
 total_count = 1
+countdownTVHooked = null
 
 [node name="Batterio3" parent="Enemies" index="7" instance=ExtResource( 112 )]
 
@@ -4431,6 +4430,7 @@ activate_range_x = 3000
 activate_range_y = 3000
 spawn_delay = 0.3
 total_count = 3
+countdownTVHooked = null
 
 [node name="FloopySpawner3" type="Position2D" parent="Enemies" index="10"]
 
@@ -4441,6 +4441,7 @@ activate_range_x = 3000
 activate_range_y = 3000
 spawn_delay = 0.75
 total_count = 2
+countdownTVHooked = null
 
 [node name="FloopySpawner5" type="Position2D" parent="Enemies" index="11"]
 
@@ -4451,6 +4452,7 @@ activate_range_x = 3000
 activate_range_y = 3000
 spawn_delay = 2.0
 total_count = 1
+countdownTVHooked = null
 
 [node name="FloopySpawner4" type="Position2D" parent="Enemies" index="12"]
 
@@ -4461,6 +4463,7 @@ activate_range_x = 3000
 activate_range_y = 3000
 spawn_delay = 1.35
 total_count = 2
+countdownTVHooked = null
 
 [node name="CDPunchSpawner2" type="Position2D" parent="Enemies" index="13"]
 
@@ -4471,6 +4474,7 @@ activate_range_x = 3000
 activate_range_y = 3000
 spawn_delay = 1.25
 total_count = 2
+countdownTVHooked = null
 
 [node name="Mouse3" parent="Enemies" index="14" instance=ExtResource( 109 )]
 
@@ -4511,6 +4515,7 @@ activate_range_x = 3000
 activate_range_y = 3000
 spawn_delay = 1.0
 total_count = 1
+countdownTVHooked = null
 
 [node name="Batterio" parent="Enemies" index="20" instance=ExtResource( 112 )]
 
@@ -5061,9 +5066,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Enemies/CD Punch" to="Enemies/CDPunchSpawner2" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/CD Punch2" to="Enemies/CDPunchSpawner" method="spawn_mob"]
-
 [connection signal="defeated" from="Enemies/CD Punch2" to="Enemies/FloopySpawner5" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/CD Punch2" to="Enemies/CDPunchSpawner" method="spawn_mob"]
 
 [connection signal="defeated" from="Enemies/Floopy3" to="Enemies/FloopySpawner4" method="spawn_mob"]
 

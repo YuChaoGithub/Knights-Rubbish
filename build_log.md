@@ -864,6 +864,28 @@ Comment: Recently I sacrificed most of my time for studying NTU's transfer exam 
 
 **Commit**
 
+[2018.05.31]
+* Started designing Level 1-5.
+
+[2018.06.01]
+* Completed the layout of Level 1-5.
+Comment: Too depressed to work.
+
+[2018.06.04]
+* Designed the portals, power ups, and lights of level 1-5.
+
+[2018.06.05]
+* Designed the mobs of level 1-5.
+* Set some of the camera changing triggers of level 1-5.
+
+[2018.06.07]
+* Set camera changing triggers of level 1-5.
+
+[2018.06.08]
+* Set camera changing triggers of level 1-5. (Inefficiently).
+
+**Commit**
+
 To Do List:
 * Multiplayer bug testing.
 
