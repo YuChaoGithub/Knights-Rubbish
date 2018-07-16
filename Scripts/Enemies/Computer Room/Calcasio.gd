@@ -9,12 +9,14 @@ extends KinematicBody2D
 # When hurt or stunned, go to 1.
 # Don't play hurt animation when typing or shooting.
 
+signal defeated
+
 enum { NONE, MOVE, TYPE, SHOOT }
 
 export(int) var activate_range_x = 2000
 export(int) var activate_range_y = 1500
 
-const MAX_HEALTH = 200
+const MAX_HEALTH = 300
 
 # Movement.
 const SPEED_X = 150
@@ -94,7 +96,7 @@ func movement_ended():
 
 func detect_and_face_the_nearest_target():
     var attack_target = ec.target_detect.get_nearest(self, ec.hero_manager.heroes)
-    facing = -1 if attack_target.get_global_pos().x < get_global_pos().x else 1
+    facing = -1 if attack_target.global_position.x < global_position.x else 1
     ec.turn_sprites_x(facing)
 
 func type_digit_bullets():
@@ -172,4 +174,5 @@ func knocked_back(vel_x, vel_y, fade_rate):
 func die():
     cancel_bullet_spawning()
     ec.die()
+    emit_signal("defeated")
     die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

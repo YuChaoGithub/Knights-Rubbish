@@ -16,7 +16,7 @@ var stopped = false
 var timer = null
 var curr_particle
 var particle_timer
-var prev_mob
+var prev_mob = null
 
 var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var opacity_lerper = preload("res://Scenes/Utils/Parent Opacity Lerper.tscn")
@@ -68,6 +68,7 @@ func complete_spawning():
 func stop_further_spawning():
     stopped = true
 
-    var mob = prev_mob.get_ref()
-    if mob != null:
-        mob.connect("defeated", self, "complete_spawning")
+    if prev_mob != null:
+        var mob = prev_mob.get_ref()
+        if mob != null:
+            mob.connect("defeated", self, "complete_spawning")

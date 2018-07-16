@@ -7,7 +7,7 @@ const ACCELERATE_DURATION = 5
 const SPEED_X = 1500
 
 # Attack.
-const DAMAGE = 40
+const DAMAGE = 25
 const KNOCK_BACK_VEL_X = 750
 const KNOCK_BACK_FADE_RATE = 1850
 const KNOCK_BACK_VEL_Y = 0

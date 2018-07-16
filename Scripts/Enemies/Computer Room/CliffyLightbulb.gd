@@ -43,6 +43,6 @@ func on_attack_hit(area):
 func explode():
 	var new_spark = spark.instance()
 	$"..".add_child(new_spark)
-	new_spark.set_global_pos(get_global_pos())
+	new_spark.global_position = global_position
 
 	queue_free()

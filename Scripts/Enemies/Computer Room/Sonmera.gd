@@ -7,6 +7,8 @@ extends Node2D
 # 4. Flashlight activated (white screen).
 # 5. Repeat 1.
 
+signal photo_taken
+
 enum { NONE, INACTIVE, WAIT, COUNTDOWN, CAPTURE, FLASHLIGHT }
 
 export(int) var activate_range_x = 3000
@@ -29,7 +31,7 @@ var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 
 onready var animator = $"Animation/AnimationPlayer"
 onready var flashlight_animator = $"Flashlight/AnimationPlayer"
-onready var hero_manager = $"../../../../HeroManager"
+onready var hero_manager = $"../../HeroManager"
 
 func _ready():
 	animator.play("Still")
@@ -73,6 +75,7 @@ func capture_screenshot():
 	# TODO: Capture Screenshot.
 	if !screen_captured:
 		print("Capture a screenshot")
+		emit_signal("photo_taken")
 		screen_captured = true
 
 	change_status(NONE)

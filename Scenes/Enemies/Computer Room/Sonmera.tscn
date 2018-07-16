@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Sonmera.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Sonmera/Body.png" type="Texture" id=2]
@@ -17,7 +17,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body/3:self_modulate")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -27,7 +29,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body/2:self_modulate")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 1, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -37,7 +41,9 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/path = NodePath("Body/1:self_modulate")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 2, 2.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -47,7 +53,9 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("Body/Smile:self_modulate")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 3, 3.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -57,7 +65,9 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/path = NodePath("Body/Flashlight:self_modulate")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
 "times": PoolRealArray( 0, 3.5, 3.6 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -74,7 +84,9 @@ step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body/3:self_modulate")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -84,7 +96,9 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body/2:self_modulate")
 tracks/1/interp = 1
+tracks/1/loop_wrap = true
 tracks/1/imported = false
+tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -94,7 +108,9 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/path = NodePath("Body/1:self_modulate")
 tracks/2/interp = 1
+tracks/2/loop_wrap = true
 tracks/2/imported = false
+tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -104,7 +120,9 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/path = NodePath("Body/Smile:self_modulate")
 tracks/3/interp = 1
+tracks/3/loop_wrap = true
 tracks/3/imported = false
+tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
@@ -114,28 +132,10 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/path = NodePath("Body/Flashlight:self_modulate")
 tracks/4/interp = 1
+tracks/4/loop_wrap = true
 tracks/4/imported = false
+tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
-}
-
-[sub_resource type="Theme" id=3]
-
-
-[sub_resource type="Animation" id=4]
-
-resource_name = "Blank"
-length = 0.1
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Color Frame:color")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -144,13 +144,34 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=5]
 
+resource_name = "Blank"
+length = 0.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Color Frame:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
 length = 0.4
 loop = false
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Color Frame:color")
 tracks/0/interp = 1
+tracks/0/loop_wrap = true
 tracks/0/imported = false
+tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
@@ -161,86 +182,92 @@ tracks/0/keys = {
 [node name="Sonmera" type="Node2D"]
 
 script = ExtResource( 1 )
+activate_range_x = 3000
+activate_range_y = 2000
 
-[node name="Animation" type="Node2D" parent="."]
+[node name="Animation" type="Node2D" parent="." index="0"]
 
 scale = Vector2( 1.5, 1.5 )
 
-[node name="Body" type="Sprite" parent="Animation"]
+[node name="Body" type="Sprite" parent="Animation" index="0"]
 
 texture = ExtResource( 2 )
 
-[node name="3" type="Sprite" parent="Animation/Body"]
+[node name="3" type="Sprite" parent="Animation/Body" index="0"]
 
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -119.226, -64.933 )
 texture = ExtResource( 3 )
+
+[node name="2" type="Sprite" parent="Animation/Body" index="1"]
+
 self_modulate = Color( 1, 1, 1, 0 )
-
-[node name="2" type="Sprite" parent="Animation/Body"]
-
 position = Vector2( -93.7978, -65.8918 )
 texture = ExtResource( 4 )
+
+[node name="1" type="Sprite" parent="Animation/Body" index="2"]
+
 self_modulate = Color( 1, 1, 1, 0 )
-
-[node name="1" type="Sprite" parent="Animation/Body"]
-
 position = Vector2( -68.8784, -66.0784 )
 texture = ExtResource( 5 )
+
+[node name="Smile" type="Sprite" parent="Animation/Body" index="3"]
+
 self_modulate = Color( 1, 1, 1, 0 )
-
-[node name="Smile" type="Sprite" parent="Animation/Body"]
-
 position = Vector2( -38.3591, -65.0518 )
 texture = ExtResource( 6 )
+
+[node name="Flashlight" type="Sprite" parent="Animation/Body" index="4"]
+
 self_modulate = Color( 1, 1, 1, 0 )
-
-[node name="Flashlight" type="Sprite" parent="Animation/Body"]
-
 position = Vector2( 8.69582, -68.5061 )
 texture = ExtResource( 7 )
-self_modulate = Color( 1, 1, 1, 0 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation" index="1"]
 
+root_node = NodePath("..")
+autoplay = "Still"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-root_node = NodePath("..")
-anims/Count Down = SubResource( 1 )
+playback_speed = 1.0
+"anims/Count Down" = SubResource( 1 )
 anims/Still = SubResource( 2 )
-playback/active = true
-playback/speed = 1.0
 blend_times = [  ]
-autoplay = "Still"
 
-[node name="Flashlight" type="CanvasLayer" parent="."]
+[node name="Flashlight" type="CanvasLayer" parent="." index="1"]
 
 layer = 1
 offset = Vector2( 0, 0 )
+rotation = 0.0
 scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="Color Frame" type="ColorFrame" parent="Flashlight"]
+[node name="Color Frame" type="ColorRect" parent="Flashlight" index="0"]
 
-anchor_right = 1
-anchor_bottom = 1
-focus_ignore_mouse = true
-focus_stop_mouse = false
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme = SubResource( 3 )
-margin_left = 0.0
-margin_top = 0.0
-margin_right = 0.0
-margin_bottom = 0.0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1280.0
+margin_bottom = 720.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
 color = Color( 1, 1, 1, 0 )
+_sections_unfolded = [ "Rect" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Flashlight"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Flashlight" index="1"]
 
+root_node = NodePath("..")
+autoplay = "Blank"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
-root_node = NodePath("..")
-anims/Blank = SubResource( 4 )
-anims/Flash = SubResource( 5 )
-playback/active = true
-playback/speed = 1.0
+playback_speed = 1.0
+anims/Blank = SubResource( 5 )
+anims/Flash = SubResource( 4 )
 blend_times = [  ]
-autoplay = "Blank"
+
+

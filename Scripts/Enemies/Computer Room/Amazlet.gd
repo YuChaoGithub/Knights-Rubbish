@@ -11,12 +11,14 @@ extends Node2D
 # Only play hurt animation if it is in 1.
 # Cannot be stunned.
 
+signal defeated
+
 export(int) var activate_range_x = 1000
 export(int) var activate_range_y = 1000
 
 enum { NONE, FACE, ANDROID_ANIM, SPAWN_ANDROID, FRIZBEE_ANIM, SPAWN_FRIZBEE, THROW_FRIZBEE, RESUME_FACE }
 
-const MAX_HEALTH = 1000
+const MAX_HEALTH = 3000
 
 # Attack.
 const TOUCH_DAMAGE = 50
@@ -172,6 +174,8 @@ func slowed(multiplier, duration):
 func die():
 	ec.die()
 	ec.health_bar.drop_health_bar()
+
+	emit_signal("defeated")
 
 	# Disable touch damage.
 	$"Animation/Attack Area".queue_free()

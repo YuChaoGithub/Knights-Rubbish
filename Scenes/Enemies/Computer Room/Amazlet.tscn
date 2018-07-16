@@ -1032,6 +1032,7 @@ tracks/40/keys = {
 
 [sub_resource type="Animation" id=6]
 
+resource_name = "Face Coming Back"
 length = 0.5
 loop = false
 step = 0.1
@@ -2028,6 +2029,7 @@ tracks/40/keys = {
 
 [sub_resource type="Animation" id=8]
 
+resource_name = "Spawn Android"
 length = 4.0
 loop = false
 step = 0.1
@@ -3024,6 +3026,7 @@ tracks/40/keys = {
 
 [sub_resource type="Animation" id=10]
 
+resource_name = "Throw Frizbee"
 length = 6.0
 loop = false
 step = 0.1
@@ -3520,7 +3523,7 @@ tracks/40/keys = {
 "values": [ 0 ]
 }
 
-[node name="Amazlet" type="Node2D" index="0"]
+[node name="Amazlet" type="Node2D"]
 
 scale = Vector2( 2, 2 )
 script = ExtResource( 1 )
@@ -3590,7 +3593,7 @@ texture = ExtResource( 4 )
 
 [node name="Right Eyebrow" type="Sprite" parent="Animation/Body/Face Screen" index="3"]
 
-position = Vector2( 54.4591, -111.678 )
+position = Vector2( 55.132, -111.678 )
 texture = ExtResource( 4 )
 
 [node name="Left Eye Wrinkle" type="Sprite" parent="Animation/Body/Face Screen" index="4"]
@@ -3716,11 +3719,11 @@ playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/Die = SubResource( 4 )
 anims/Face = SubResource( 5 )
-anims/FaceComingBack = SubResource( 6 )
+"anims/Face Coming Back" = SubResource( 6 )
 anims/Hurt = SubResource( 7 )
-anims/SpawnAndroid = SubResource( 8 )
+"anims/Spawn Android" = SubResource( 8 )
 anims/Still = SubResource( 9 )
-anims/ThrowFrizbee = SubResource( 10 )
+"anims/Throw Frizbee" = SubResource( 10 )
 blend_times = [  ]
 
 [node name="Android Spawn Pos" type="Position2D" parent="." index="1"]
@@ -3733,7 +3736,7 @@ position = Vector2( 2.4, 20.2 )
 
 [node name="Number Spawn Pos" type="Position2D" parent="." index="3"]
 
-position = Vector2( 0.394348, -255.143 )
+position = Vector2( 0.394348, -144.065 )
 
 [node name="Health Bar" parent="." index="4" instance=ExtResource( 17 )]
 

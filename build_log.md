@@ -886,8 +886,38 @@ Comment: Too depressed to work.
 
 **Commit**
 
+[2018.06.11]
+* Finished setting the camera changing triggers of level 1-5. (Not tested yet.)
+
+[2018.06.12]
+* Tested and fixed some bugs of the camera changing triggers of level 1-5.
+
+[2018.06.13]
+* Fully tested level 1-5. Fixed a minor bug. Level 1-5 is good to go.
+
+[2018.06.21]
+Comment: Preparing for the transfer exam. Will be developing this slower.
+* Started decorating level 1-5.
+
+[2018.06.22]
+* Keep on decorating level 1-5.
+
+[2018.07.15]
+* Finally back to development.
+* Completed level 1-5 and 1-6.
+
+[2018.07.16]
+* Completed level 1-7.
+Comment: Lose motivation once again. Might start a new project and come back to this later...
+
+**Commit**
+
+
 To Do List:
 * Multiplayer bug testing.
+
+Unfixed Bugs:
+* When a hero is hit while healing (by healing machine). Futher attacks will be disabled.
 
 Planned Prototype Stages:
 [Ver 0.1] First level completed. (Est. June 2018) -> Play test & dev article.

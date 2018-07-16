@@ -1210,7 +1210,7 @@ tracks/23/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=9]
 
 resource_name = "Landing"
 length = 0.1
@@ -1505,9 +1505,8 @@ tracks/23/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 
-resource_name = "Left Kick"
 length = 0.6
 loop = false
 step = 0.1
@@ -1800,9 +1799,8 @@ tracks/23/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 
-resource_name = "Right Kick"
 length = 0.6
 loop = false
 step = 0.1
@@ -2095,7 +2093,7 @@ tracks/23/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 
 length = 0.1
 loop = false
@@ -2389,7 +2387,7 @@ tracks/23/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=13]
 
 length = 1.2
 loop = true
@@ -2683,7 +2681,7 @@ tracks/23/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=14]
 
 length = 1.6
 loop = true
@@ -2977,7 +2975,7 @@ tracks/23/keys = {
 "values": [ 0 ]
 }
 
-[node name="Eelo Kicker" type="KinematicBody2D"]
+[node name="Eelo Kicker" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 0
@@ -3035,7 +3033,7 @@ offset = Vector2( 0.0526185, 13.5829 )
 [node name="Left Foot" type="Sprite" parent="Animation" index="3"]
 
 position = Vector2( -11.5956, 111.869 )
-rotation = -0.043334
+rotation = -0.0433343
 scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 offset = Vector2( -6.74521, 1.1897 )
@@ -3099,6 +3097,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Body/Left Thigh Remote Transform/Left Kick Area" index="0"]
 
+visible = false
 position = Vector2( -3.621, 51.5934 )
 shape = SubResource( 3 )
 
@@ -3147,6 +3146,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Body/Right Thigh Remote Transform/Right Kick Area" index="0"]
 
+visible = false
 position = Vector2( 10.8908, 46.5187 )
 shape = SubResource( 4 )
 
@@ -3189,12 +3189,12 @@ anims/Die = SubResource( 5 )
 "anims/Double Kick" = SubResource( 6 )
 anims/Healing = SubResource( 7 )
 anims/Hurt = SubResource( 8 )
-anims/Landing = SubResource( 14 )
-"anims/Left Kick" = SubResource( 9 )
-"anims/Right Kick" = SubResource( 10 )
-anims/Still = SubResource( 11 )
-anims/Stunned = SubResource( 12 )
-anims/Walk = SubResource( 13 )
+anims/Landing = SubResource( 9 )
+"anims/Left Kick" = SubResource( 10 )
+"anims/Right Kick" = SubResource( 11 )
+anims/Still = SubResource( 12 )
+anims/Stunned = SubResource( 13 )
+anims/Walk = SubResource( 14 )
 blend_times = [  ]
 
 [node name="Health Bar" parent="." index="2" instance=ExtResource( 12 )]

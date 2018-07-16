@@ -24,12 +24,14 @@ var movement_pattern
 var direction
 var lifetime_timestamp
 
+func _ready():
+	set_process(false)
+
 func initialize(number, direction):
 	self.number = number
 	self.direction = direction
 
 	$Sprite.set_texture(number_textures[int(number) - 1])
-	set_process(false)
 
 func start_travel():
 	lifetime_timestamp = OS.get_unix_time()
@@ -46,7 +48,7 @@ func _process(delta):
 func on_attack_hit(area):
 	if traveling && area.is_in_group("hero"):
 		var character = area.get_node("..")
-		character.damaged(number)
+		character.damaged(number, false)
 		character.knocked_back(sign(movement_pattern.dx) * KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 
 		queue_free()
