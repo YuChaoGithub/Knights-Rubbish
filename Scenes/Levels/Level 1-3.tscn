@@ -199,7 +199,7 @@ tracks/1/keys = {
 "values": [ true, false, true, false, true, false, true, false, true, false, true, false, true ]
 }
 
-[node name="Game Level" type="Node2D" index="0"]
+[node name="Game Level" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -5066,9 +5066,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Enemies/CD Punch" to="Enemies/CDPunchSpawner2" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/CD Punch2" to="Enemies/FloopySpawner5" method="spawn_mob"]
-
 [connection signal="defeated" from="Enemies/CD Punch2" to="Enemies/CDPunchSpawner" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/CD Punch2" to="Enemies/FloopySpawner5" method="spawn_mob"]
 
 [connection signal="defeated" from="Enemies/Floopy3" to="Enemies/FloopySpawner4" method="spawn_mob"]
 

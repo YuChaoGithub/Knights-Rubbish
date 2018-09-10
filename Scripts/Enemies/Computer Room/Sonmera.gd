@@ -64,7 +64,11 @@ func wait_for_interval():
 	flashlight_animator.play("Blank")
 
 	change_status(NONE)
-	status_timer = cd_timer.new(rng.randf_range(IDLE_INTERVAL_MIN, IDLE_INTERVAL_MAX), self, "change_status", COUNTDOWN)
+	if hero_manager.in_range_of(global_position, activate_range_x, activate_range_y):
+		status_timer = cd_timer.new(rng.randf_range(IDLE_INTERVAL_MIN, IDLE_INTERVAL_MAX), self, "change_status", COUNTDOWN)
+	else:
+		# Deactivate.
+		set_process(false)
 
 func start_countdown():
 	animator.play("Count Down")

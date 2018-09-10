@@ -1,0 +1,525 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/HeroManager.gd" type="Script" id=2]
+[ext_resource path="res://Tilesets/White Wall.tres" type="TileSet" id=3]
+[ext_resource path="res://Tilesets/Wooden Floor.tres" type="TileSet" id=4]
+[ext_resource path="res://Scenes/Structures/CountdownTV.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Structures/BlankDoor.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/Platforms/Enemy Blocking Platform.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Power Ups/Healing Machine.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Structures/Door.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Calcasio.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Canmera.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Sonmera.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Batterio.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Power Ups/Dwarf Potion.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Power Ups/SizeChangingLight.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Power Ups/Ult Stone.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Power Ups/Healing Potion.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=20]
+
+[node name="Game Level" type="Node2D" index="0"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="FollowingCamera" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 1350, -800 )
+z_index = 1
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", "Z Index" ]
+drag_margin_right = 0.4
+drag_margin_left = -0.1
+drag_margin_top = -0.1
+drag_margin_bottom = 1.1
+left_limit = 50
+bottom_limit = -50
+
+[node name="HeroManager" type="Position2D" parent="." index="1"]
+
+position = Vector2( 800, -600 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WhiteWall" type="TileMap" parent="." index="2"]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 500, 500 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 0
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -262130, 0, 0, -262129, 0, 0, -262128, 0, 0, -262127, 0, 0, -262126, 0, 0, -262125, 0, 0, -262124, 0, 0, -262123, 0, 0, -262122, 0, 0, -262121, 0, 0, -262120, 0, 0, -262119, 0, 0, -262118, 0, 0, -262117, 0, 0, -262116, 0, 0, -262115, 0, 0, -262114, 0, 0, -262113, 0, 0, -262112, 0, 0, -262111, 0, 0, -262110, 0, 0, -262109, 0, 0, -262108, 0, 0, -262107, 0, 0, -262106, 0, 0, -196608, 0, 0, -196607, 0, 65539, -196606, 0, 65537, -196605, 0, 65540, -196604, 0, 65538, -196603, 0, 4, -196602, 0, 65538, -196601, 0, 65537, -196600, 0, 65538, -196599, 0, 2, -196598, 0, 65536, -196597, 0, 3, -196596, 0, 2, -196595, 0, 65536, -196594, 0, 2, -196593, 0, 65540, -196592, 0, 65538, -196591, 0, 65540, -196590, 0, 0, -196589, 0, 65540, -196588, 0, 4, -196587, 0, 4, -196586, 0, 65537, -196585, 0, 0, -196584, 0, 1, -196583, 0, 65539, -196582, 0, 3, -196581, 0, 0, -196580, 0, 0, -196579, 0, 4, -196578, 0, 2, -196577, 0, 65539, -196576, 0, 65540, -196575, 0, 65538, -196574, 0, 65538, -196573, 0, 1, -196572, 0, 2, -196571, 0, 65540, -196570, 0, 0, -131072, 0, 0, -131071, 0, 65538, -131070, 0, 65540, -131069, 0, 65537, -131068, 0, 4, -131067, 0, 2, -131066, 0, 65540, -131065, 0, 65539, -131064, 0, 2, -131063, 0, 65539, -131062, 0, 3, -131061, 0, 0, -131060, 0, 2, -131059, 0, 0, -131058, 0, 3, -131057, 0, 1, -131056, 0, 3, -131055, 0, 65538, -131054, 0, 4, -131053, 0, 65540, -131052, 0, 0, -131051, 0, 4, -131050, 0, 3, -131049, 0, 65540, -131048, 0, 4, -131047, 0, 1, -131046, 0, 0, -131045, 0, 1, -131044, 0, 65536, -131043, 0, 65540, -131042, 0, 1, -131041, 0, 1, -131040, 0, 2, -131039, 0, 65540, -131038, 0, 4, -131037, 0, 3, -131036, 0, 1, -131035, 0, 2, -131034, 0, 0, -65536, 0, 0, -65535, 0, 3, -65534, 0, 65537, -65533, 0, 65540, -65532, 0, 65540, -65531, 0, 0, -65530, 0, 4, -65529, 0, 65537, -65528, 0, 3, -65527, 0, 65538, -65526, 0, 65536, -65525, 0, 65537, -65524, 0, 65539, -65523, 0, 4, -65522, 0, 1, -65521, 0, 3, -65520, 0, 65537, -65519, 0, 65536, -65518, 0, 65539, -65517, 0, 65539, -65516, 0, 65539, -65515, 0, 65539, -65514, 0, 4, -65513, 0, 65538, -65512, 0, 65540, -65511, 0, 0, -65510, 0, 3, -65509, 0, 65537, -65508, 0, 65538, -65507, 0, 65540, -65506, 0, 65540, -65505, 0, 65536, -65504, 0, 0, -65503, 0, 65540, -65502, 0, 65538, -65501, 0, 65538, -65500, 0, 2, -65499, 0, 65537, -65498, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 35, 0, 0, 36, 0, 0, 37, 0, 0, 38, 0, 5 )
+_sections_unfolded = [ "Cell", "Collision" ]
+
+[node name="BackgroundDecorations" type="Node2D" parent="." index="3"]
+
+[node name="Platform" type="TileMap" parent="." index="4"]
+
+mode = 0
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 100, 100 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 4
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -786305, 0, 196609, -786304, 0, 131077, -786303, 0, 3, -786302, 0, 0, -786298, 0, 196609, -786297, 0, 3, -786296, 0, 131076, -786295, 0, 0, -786291, 0, 196609, -786290, 0, 131076, -786289, 0, 3, -786288, 0, 0, -720848, 0, 196609, -720847, 0, 131077, -720846, 0, 131076, -720845, 0, 131076, -720844, 0, 131076, -720843, 0, 3, -720842, 0, 196613, -720841, 0, 0, -720819, 0, 196609, -720818, 0, 196613, -720817, 0, 196612, -720816, 0, 196613, -720815, 0, 131077, -720814, 0, 131077, -720813, 0, 196613, -720812, 0, 196612, -720811, 0, 196613, -720810, 0, 0, -720769, 0, 131072, -720768, 0, 196614, -720767, 0, 131073, -720766, 0, 196611, -720762, 0, 131072, -720761, 0, 131073, -720760, 0, 131073, -720759, 0, 196611, -720755, 0, 131072, -720754, 0, 196614, -720753, 0, 196614, -720752, 0, 196611, -655312, 0, 131072, -655311, 0, 196614, -655310, 0, 131078, -655309, 0, 131073, -655308, 0, 196614, -655307, 0, 131078, -655306, 0, 131078, -655305, 0, 196611, -655283, 0, 1, -655282, 0, 65540, -655281, 0, 65539, -655280, 0, 131073, -655279, 0, 131078, -655278, 0, 131073, -655277, 0, 131078, -655276, 0, 131073, -655275, 0, 131073, -655274, 0, 196611, -655182, 0, 196609, -655181, 0, 131076, -655180, 0, 0, -589747, 0, 1, -589746, 0, 65538, -589745, 0, 131075, -589646, 0, 1, -589645, 0, 5, -589644, 0, 6, -524217, 0, 196609, -524216, 0, 131076, -524215, 0, 196613, -524214, 0, 3, -524213, 0, 131076, -524212, 0, 131077, -524211, 0, 65537, -524210, 0, 5, -524209, 0, 131075, -524121, 0, 196609, -524120, 0, 131076, -524119, 0, 0, -524115, 0, 196609, -524114, 0, 196612, -524113, 0, 0, -524110, 0, 131072, -524109, 0, 131073, -524108, 0, 196611, -524104, 0, 196609, -524103, 0, 196613, -524102, 0, 196613, -524101, 0, 0, -458681, 0, 65542, -458680, 0, 65539, -458679, 0, 131078, -458678, 0, 196614, -458677, 0, 131073, -458676, 0, 196614, -458675, 0, 131074, -458674, 0, 65538, -458673, 0, 131075, -458585, 0, 65542, -458584, 0, 4, -458583, 0, 6, -458579, 0, 1, -458578, 0, 5, -458577, 0, 131075, -458568, 0, 1, -458567, 0, 5, -458566, 0, 5, -458565, 0, 6, -393152, 0, 196609, -393151, 0, 131076, -393150, 0, 131076, -393149, 0, 131076, -393148, 0, 196613, -393147, 0, 131076, -393146, 0, 196612, -393145, 0, 65537, -393144, 0, 131075, -393139, 0, 65542, -393138, 0, 4, -393137, 0, 131075, -393105, 0, 196609, -393104, 0, 196613, -393103, 0, 196613, -393102, 0, 196613, -393101, 0, 131077, -393100, 0, 3, -393099, 0, 0, -393095, 0, 196609, -393094, 0, 196613, -393093, 0, 3, -393092, 0, 196613, -393091, 0, 196612, -393090, 0, 3, -393089, 0, 3, -393088, 0, 196613, -393087, 0, 3, -393086, 0, 0, -393079, 0, 196609, -393078, 0, 3, -393077, 0, 196613, -393076, 0, 131077, -393075, 0, 131076, -393074, 0, 196613, -393073, 0, 0, -393049, 0, 131072, -393048, 0, 196614, -393047, 0, 196611, -393043, 0, 131072, -393042, 0, 196614, -393041, 0, 196611, -393032, 0, 131072, -393031, 0, 196614, -393030, 0, 131078, -393029, 0, 196611, -327659, 0, 196609, -327658, 0, 131076, -327657, 0, 0, -327652, 0, 196609, -327651, 0, 196613, -327650, 0, 0, -327645, 0, 196609, -327644, 0, 131077, -327643, 0, 0, -327616, 0, 1, -327615, 0, 65539, -327614, 0, 131073, -327613, 0, 131073, -327612, 0, 131073, -327611, 0, 196614, -327610, 0, 131078, -327609, 0, 196614, -327608, 0, 196611, -327603, 0, 65542, -327602, 0, 5, -327601, 0, 6, -327569, 0, 65542, -327568, 0, 65540, -327567, 0, 4, -327566, 0, 5, -327565, 0, 65541, -327564, 0, 65540, -327563, 0, 6, -327559, 0, 1, -327558, 0, 4, -327557, 0, 65538, -327556, 0, 5, -327555, 0, 65538, -327554, 0, 65538, -327553, 0, 65540, -327552, 0, 65540, -327551, 0, 5, -327550, 0, 6, -327543, 0, 65542, -327542, 0, 4, -327541, 0, 65538, -327540, 0, 65538, -327539, 0, 4, -327538, 0, 4, -327537, 0, 6, -327517, 0, 196609, -327516, 0, 131076, -327515, 0, 0, -262123, 0, 65542, -262122, 0, 4, -262121, 0, 131075, -262116, 0, 65542, -262115, 0, 65538, -262114, 0, 131075, -262109, 0, 1, -262108, 0, 65541, -262107, 0, 131075, -262080, 0, 1, -262079, 0, 6, -262067, 0, 65542, -262066, 0, 65538, -262065, 0, 6, -262033, 0, 1, -262032, 0, 4, -262031, 0, 65539, -262030, 0, 196614, -262029, 0, 131074, -262028, 0, 65540, -262027, 0, 6, -262023, 0, 1, -262022, 0, 65541, -262021, 0, 65539, -262020, 0, 131073, -262019, 0, 131078, -262018, 0, 196614, -262017, 0, 131078, -262016, 0, 131074, -262015, 0, 4, -262014, 0, 131075, -262007, 0, 1, -262006, 0, 65541, -262005, 0, 65539, -262004, 0, 131078, -262003, 0, 131074, -262002, 0, 4, -262001, 0, 6, -261981, 0, 65542, -261980, 0, 65541, -261979, 0, 131075, -196587, 0, 1, -196586, 0, 5, -196585, 0, 6, -196580, 0, 65542, -196579, 0, 65540, -196578, 0, 131075, -196573, 0, 65542, -196572, 0, 4, -196571, 0, 131075, -196544, 0, 1, -196543, 0, 6, -196531, 0, 1, -196530, 0, 65538, -196529, 0, 2, -196528, 0, 3, -196527, 0, 196612, -196526, 0, 196613, -196525, 0, 131076, -196524, 0, 131076, -196523, 0, 196612, -196522, 0, 196612, -196521, 0, 196612, -196520, 0, 196612, -196519, 0, 196612, -196518, 0, 131077, -196517, 0, 131076, -196516, 0, 131076, -196515, 0, 3, -196514, 0, 196613, -196513, 0, 196612, -196512, 0, 3, -196511, 0, 131077, -196510, 0, 131077, -196509, 0, 196613, -196508, 0, 3, -196507, 0, 3, -196506, 0, 196612, -196505, 0, 131076, -196504, 0, 131077, -196503, 0, 3, -196502, 0, 196612, -196501, 0, 196612, -196500, 0, 131076, -196499, 0, 196612, -196498, 0, 196613, -196497, 0, 65537, -196496, 0, 65538, -196495, 0, 131075, -196493, 0, 1, -196492, 0, 65538, -196491, 0, 2, -196490, 0, 196612, -196489, 0, 196613, -196488, 0, 131076, -196487, 0, 65537, -196486, 0, 5, -196485, 0, 6, -196480, 0, 65542, -196479, 0, 65541, -196478, 0, 2, -196477, 0, 196612, -196476, 0, 3, -196475, 0, 196612, -196474, 0, 196613, -196473, 0, 3, -196472, 0, 196612, -196471, 0, 65537, -196470, 0, 65538, -196469, 0, 6, -196467, 0, 1, -196466, 0, 65538, -196465, 0, 2, -196464, 0, 196613, -196463, 0, 3, -196462, 0, 131077, -196461, 0, 131077, -196460, 0, 196613, -196459, 0, 196612, -196458, 0, 3, -196457, 0, 196612, -196456, 0, 196613, -196455, 0, 3, -196454, 0, 0, -196450, 0, 196609, -196449, 0, 131077, -196448, 0, 0, -196445, 0, 131072, -196444, 0, 131078, -196443, 0, 196611, -131072, 0, 196609, -131071, 0, 131077, -131070, 0, 131077, -131069, 0, 131076, -131068, 0, 131077, -131067, 0, 131076, -131066, 0, 131077, -131065, 0, 3, -131064, 0, 131076, -131063, 0, 131076, -131062, 0, 3, -131061, 0, 131076, -131060, 0, 196613, -131059, 0, 196613, -131058, 0, 131076, -131057, 0, 131076, -131056, 0, 131077, -131055, 0, 131077, -131054, 0, 131077, -131053, 0, 3, -131052, 0, 196612, -131051, 0, 65537, -131050, 0, 65541, -131049, 0, 2, -131048, 0, 196613, -131047, 0, 131076, -131046, 0, 131076, -131045, 0, 196612, -131044, 0, 65537, -131043, 0, 65541, -131042, 0, 2, -131041, 0, 3, -131040, 0, 3, -131039, 0, 196613, -131038, 0, 131076, -131037, 0, 65537, -131036, 0, 65541, -131035, 0, 2, -131034, 0, 196612, -131033, 0, 131077, -131032, 0, 131077, -131031, 0, 131076, -131030, 0, 131077, -131029, 0, 196613, -131028, 0, 0, -131023, 0, 196609, -131022, 0, 131076, -131021, 0, 3, -131020, 0, 131076, -131019, 0, 131077, -131018, 0, 0, -131014, 0, 196609, -131013, 0, 131077, -131012, 0, 196612, -131011, 0, 3, -131010, 0, 131076, -131009, 0, 131076, -131008, 0, 65537, -131007, 0, 131075, -130995, 0, 65542, -130994, 0, 65540, -130993, 0, 65540, -130992, 0, 5, -130991, 0, 65540, -130990, 0, 65538, -130989, 0, 5, -130988, 0, 65540, -130987, 0, 4, -130986, 0, 5, -130985, 0, 5, -130984, 0, 4, -130983, 0, 5, -130982, 0, 4, -130981, 0, 65538, -130980, 0, 5, -130979, 0, 5, -130978, 0, 4, -130977, 0, 65541, -130976, 0, 65538, -130975, 0, 65541, -130974, 0, 65540, -130973, 0, 65538, -130972, 0, 65540, -130971, 0, 5, -130970, 0, 4, -130969, 0, 5, -130968, 0, 65540, -130967, 0, 5, -130966, 0, 4, -130965, 0, 65540, -130964, 0, 65541, -130963, 0, 65540, -130962, 0, 65538, -130961, 0, 65540, -130960, 0, 65541, -130959, 0, 131075, -130957, 0, 65542, -130956, 0, 4, -130955, 0, 65540, -130954, 0, 65538, -130953, 0, 4, -130952, 0, 5, -130951, 0, 65538, -130950, 0, 4, -130949, 0, 131075, -130944, 0, 1, -130943, 0, 5, -130942, 0, 5, -130941, 0, 65540, -130940, 0, 65538, -130939, 0, 65541, -130938, 0, 4, -130937, 0, 4, -130936, 0, 65540, -130935, 0, 4, -130934, 0, 65541, -130933, 0, 131075, -130931, 0, 65542, -130930, 0, 65540, -130929, 0, 5, -130928, 0, 65541, -130927, 0, 5, -130926, 0, 65540, -130925, 0, 5, -130924, 0, 5, -130923, 0, 5, -130922, 0, 5, -130921, 0, 65540, -130920, 0, 65540, -130919, 0, 65540, -130918, 0, 6, -130914, 0, 65542, -130913, 0, 4, -130912, 0, 6, -65536, 0, 131072, -65535, 0, 196614, -65534, 0, 131073, -65533, 0, 131078, -65532, 0, 131078, -65531, 0, 196614, -65530, 0, 131073, -65529, 0, 196614, -65528, 0, 131073, -65527, 0, 131073, -65526, 0, 131078, -65525, 0, 131078, -65524, 0, 131073, -65523, 0, 131073, -65522, 0, 196614, -65521, 0, 196614, -65520, 0, 196614, -65519, 0, 131078, -65518, 0, 196614, -65517, 0, 131078, -65516, 0, 196614, -65515, 0, 131073, -65514, 0, 131078, -65513, 0, 131073, -65512, 0, 131073, -65511, 0, 196614, -65510, 0, 131073, -65509, 0, 196614, -65508, 0, 131078, -65507, 0, 131078, -65506, 0, 196614, -65505, 0, 131078, -65504, 0, 131073, -65503, 0, 196614, -65502, 0, 131078, -65501, 0, 196614, -65500, 0, 131078, -65499, 0, 131078, -65498, 0, 131073, -65497, 0, 196614, -65496, 0, 131078, -65495, 0, 131073, -65494, 0, 131078, -65493, 0, 196614, -65492, 0, 196611, -65487, 0, 131072, -65486, 0, 131073, -65485, 0, 131078, -65484, 0, 131078, -65483, 0, 131078, -65482, 0, 196611, -65478, 0, 131072, -65477, 0, 131078, -65476, 0, 131078, -65475, 0, 131073, -65474, 0, 196614, -65473, 0, 131078, -65472, 0, 196614, -65471, 0, 196611, -65459, 0, 131072, -65458, 0, 131073, -65457, 0, 131078, -65456, 0, 131078, -65455, 0, 131078, -65454, 0, 196614, -65453, 0, 131078, -65452, 0, 131078, -65451, 0, 131073, -65450, 0, 196614, -65449, 0, 131078, -65448, 0, 131078, -65447, 0, 196614, -65446, 0, 131078, -65445, 0, 131073, -65444, 0, 196614, -65443, 0, 131073, -65442, 0, 196614, -65441, 0, 131078, -65440, 0, 196614, -65439, 0, 131078, -65438, 0, 196614, -65437, 0, 196614, -65436, 0, 196614, -65435, 0, 196614, -65434, 0, 131073, -65433, 0, 131078, -65432, 0, 131078, -65431, 0, 131078, -65430, 0, 196614, -65429, 0, 196614, -65428, 0, 196614, -65427, 0, 131078, -65426, 0, 131073, -65425, 0, 131073, -65424, 0, 131073, -65423, 0, 196611, -65421, 0, 131072, -65420, 0, 131078, -65419, 0, 131073, -65418, 0, 196614, -65417, 0, 196614, -65416, 0, 196614, -65415, 0, 196614, -65414, 0, 196614, -65413, 0, 196611, -65408, 0, 131072, -65407, 0, 196614, -65406, 0, 131073, -65405, 0, 131078, -65404, 0, 131078, -65403, 0, 131073, -65402, 0, 196614, -65401, 0, 131073, -65400, 0, 131073, -65399, 0, 196614, -65398, 0, 196614, -65397, 0, 196611, -65395, 0, 131072, -65394, 0, 131078, -65393, 0, 131073, -65392, 0, 131078, -65391, 0, 131073, -65390, 0, 131073, -65389, 0, 196614, -65388, 0, 131073, -65387, 0, 196614, -65386, 0, 131073, -65385, 0, 131073, -65384, 0, 131078, -65383, 0, 131078, -65382, 0, 196611, -65378, 0, 131072, -65377, 0, 196614, -65376, 0, 196611 )
+_sections_unfolded = [ "Cell", "Collision" ]
+
+[node name="Writings" type="Node2D" parent="." index="5"]
+
+_sections_unfolded = [ "Z Index" ]
+
+[node name="CountdownTV" parent="Writings" index="0" instance=ExtResource( 5 )]
+
+position = Vector2( 5200, -700 )
+total_count = 4
+
+[node name="CountdownTV2" parent="Writings" index="1" instance=ExtResource( 5 )]
+
+position = Vector2( 10653, -1100 )
+total_count = 6
+
+[node name="CountdownTV3" parent="Writings" index="2" instance=ExtResource( 5 )]
+
+position = Vector2( 14950, -1250 )
+total_count = 9
+
+[node name="PlatformDecorations" type="Node2D" parent="." index="6"]
+
+editor/display_folded = true
+
+[node name="BlankDoor" parent="PlatformDecorations" index="0" instance=ExtResource( 6 )]
+
+position = Vector2( 807.795, -641.889 )
+
+[node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
+
+editor/display_folded = true
+
+[node name="FirstTrigger" type="Position2D" parent="CameraChangingTriggers" index="0"]
+
+position = Vector2( 750, -150 )
+script = ExtResource( 7 )
+range_x = 500
+range_y = 1000
+x_check = 2
+y_check = 0
+
+[node name="FirstMobClear" type="Node2D" parent="CameraChangingTriggers" index="1"]
+
+script = ExtResource( 8 )
+count_to_emit = 4
+
+[node name="SecondMobTrigger" type="Position2D" parent="CameraChangingTriggers" index="2"]
+
+position = Vector2( 8650, -1050 )
+script = ExtResource( 7 )
+range_x = 500
+range_y = 1000
+x_check = 2
+y_check = 0
+
+[node name="SecondMobClear" type="Node2D" parent="CameraChangingTriggers" index="3"]
+
+script = ExtResource( 8 )
+count_to_emit = 6
+
+[node name="ThirdMobTrigger" type="Position2D" parent="CameraChangingTriggers" index="4"]
+
+position = Vector2( 12150, -550 )
+script = ExtResource( 7 )
+range_x = 500
+range_y = 1000
+x_check = 2
+y_check = 0
+
+[node name="ThirdMobClear" type="Node2D" parent="CameraChangingTriggers" index="5"]
+
+script = ExtResource( 8 )
+count_to_emit = 9
+
+[node name="OtherPlatforms" type="Node2D" parent="." index="8"]
+
+editor/display_folded = true
+
+[node name="Enemy Blocking Platform" parent="OtherPlatforms" index="0" instance=ExtResource( 9 )]
+
+position = Vector2( 4500, -150 )
+
+[node name="Enemy Blocking Platform2" parent="OtherPlatforms" index="1" instance=ExtResource( 9 )]
+
+position = Vector2( 4500, -250 )
+
+[node name="Enemy Blocking Platform3" parent="OtherPlatforms" index="2" instance=ExtResource( 9 )]
+
+position = Vector2( 5800, -150 )
+
+[node name="Enemy Blocking Platform4" parent="OtherPlatforms" index="3" instance=ExtResource( 9 )]
+
+position = Vector2( 5800, -250 )
+
+[node name="Enemy Blocking Platform7" parent="OtherPlatforms" index="4" instance=ExtResource( 9 )]
+
+position = Vector2( 15500, -250 )
+
+[node name="Enemy Blocking Platform8" parent="OtherPlatforms" index="5" instance=ExtResource( 9 )]
+
+position = Vector2( 15500, -350 )
+
+[node name="HealingMachines" type="Node2D" parent="." index="9"]
+
+editor/display_folded = true
+
+[node name="Healing Machine" parent="HealingMachines" index="0" instance=ExtResource( 10 )]
+
+position = Vector2( 11600, -800 )
+
+[node name="Healing Machine2" parent="HealingMachines" index="1" instance=ExtResource( 10 )]
+
+position = Vector2( 15950, -450 )
+
+[node name="Structures" type="Node2D" parent="." index="10"]
+
+[node name="Door1-1" parent="Structures" index="0" instance=ExtResource( 11 )]
+
+position = Vector2( 18600, -1026.78 )
+scale = Vector2( 0.8, 0.8 )
+_sections_unfolded = [ "Transform" ]
+enter_scene_path = "res://Scenes/Levels/Level 1-1.tscn"
+
+[node name="Enemies" type="Node2D" parent="." index="11"]
+
+[node name="Calcasio2" parent="Enemies" index="0" instance=ExtResource( 12 )]
+
+position = Vector2( 4111.99, -450 )
+
+[node name="Calcasio" parent="Enemies" index="1" instance=ExtResource( 12 )]
+
+position = Vector2( 6100, -450 )
+
+[node name="Canmera" parent="Enemies" index="2" instance=ExtResource( 13 )]
+
+position = Vector2( 5199.53, -142.922 )
+activate_range_x = 2000
+
+[node name="Canmera14" parent="Enemies" index="3" instance=ExtResource( 13 )]
+
+position = Vector2( 4263.87, -142.922 )
+activate_range_x = 2000
+activate_range_y = 2000
+
+[node name="Sonmera" parent="Enemies" index="4" instance=ExtResource( 14 )]
+
+position = Vector2( 5200, -1175.55 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 1250
+
+[node name="Sonmera2" parent="Enemies" index="5" instance=ExtResource( 14 )]
+
+position = Vector2( 9550, -850 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 1600
+
+[node name="Calcasio5" parent="Enemies" index="6" instance=ExtResource( 12 )]
+
+position = Vector2( 8353.03, -550 )
+_sections_unfolded = [ "Collision", "Transform" ]
+activate_range_x = 1850
+
+[node name="Calcasio6" parent="Enemies" index="7" instance=ExtResource( 12 )]
+
+position = Vector2( 10650, -550 )
+
+[node name="Canmera4" parent="Enemies" index="8" instance=ExtResource( 13 )]
+
+position = Vector2( 8877.56, -244.566 )
+activate_range_x = 2000
+
+[node name="Canmera5" parent="Enemies" index="9" instance=ExtResource( 13 )]
+
+position = Vector2( 9236.58, -243.943 )
+activate_range_x = 2000
+
+[node name="Canmera6" parent="Enemies" index="10" instance=ExtResource( 13 )]
+
+position = Vector2( 9608.69, -243.943 )
+activate_range_x = 2000
+
+[node name="Canmera7" parent="Enemies" index="11" instance=ExtResource( 13 )]
+
+position = Vector2( 10050.6, -243.943 )
+activate_range_x = 2000
+
+[node name="Calcasio7" parent="Enemies" index="12" instance=ExtResource( 12 )]
+
+position = Vector2( 13400, -550 )
+activate_range_x = 1500
+
+[node name="Calcasio8" parent="Enemies" index="13" instance=ExtResource( 12 )]
+
+position = Vector2( 14650, -550 )
+
+[node name="Calcasio9" parent="Enemies" index="14" instance=ExtResource( 12 )]
+
+position = Vector2( 15100, -550 )
+
+[node name="Canmera8" parent="Enemies" index="15" instance=ExtResource( 13 )]
+
+position = Vector2( 12934.2, -542.319 )
+activate_range_x = 900
+
+[node name="Canmera9" parent="Enemies" index="16" instance=ExtResource( 13 )]
+
+position = Vector2( 13457.6, -242.772 )
+activate_range_x = 1000
+
+[node name="Canmera10" parent="Enemies" index="17" instance=ExtResource( 13 )]
+
+position = Vector2( 13843.8, -545.611 )
+activate_range_x = 1500
+
+[node name="Canmera11" parent="Enemies" index="18" instance=ExtResource( 13 )]
+
+position = Vector2( 14210.8, -545.611 )
+activate_range_x = 1500
+
+[node name="Canmera13" parent="Enemies" index="19" instance=ExtResource( 13 )]
+
+position = Vector2( 14926.4, -244.549 )
+activate_range_x = 2000
+
+[node name="Canmera12" parent="Enemies" index="20" instance=ExtResource( 13 )]
+
+position = Vector2( 12579.9, -544.033 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 850
+
+[node name="Sonmera3" parent="Enemies" index="21" instance=ExtResource( 14 )]
+
+position = Vector2( 12900, -1276.09 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 1150
+
+[node name="Sonmera4" parent="Enemies" index="22" instance=ExtResource( 14 )]
+
+position = Vector2( 13600, -1277.19 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 1850
+
+[node name="Sonmera5" parent="Enemies" index="23" instance=ExtResource( 14 )]
+
+position = Vector2( 14300, -1276.61 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 1150
+
+[node name="Sonmera6" parent="Enemies" index="24" instance=ExtResource( 14 )]
+
+position = Vector2( 16801.7, -1350 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 1200
+
+[node name="Sonmera9" parent="Enemies" index="25" instance=ExtResource( 14 )]
+
+position = Vector2( 16801.7, -1062.74 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 1200
+
+[node name="Sonmera7" parent="Enemies" index="26" instance=ExtResource( 14 )]
+
+position = Vector2( 17300, -1252.02 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 1200
+
+[node name="Sonmera10" parent="Enemies" index="27" instance=ExtResource( 14 )]
+
+position = Vector2( 17300, -959.97 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 1200
+
+[node name="Sonmera8" parent="Enemies" index="28" instance=ExtResource( 14 )]
+
+position = Vector2( 17800, -1385.11 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 1300
+
+[node name="Sonmera11" parent="Enemies" index="29" instance=ExtResource( 14 )]
+
+position = Vector2( 17800, -1099.44 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 1300
+
+[node name="Batterio" parent="Enemies" index="30" instance=ExtResource( 15 )]
+
+position = Vector2( 16450, -50 )
+off_duration = 1.0
+
+[node name="Batterio2" parent="Enemies" index="31" instance=ExtResource( 15 )]
+
+position = Vector2( 17950, -550 )
+off_duration = 1.0
+
+[node name="Batterio3" parent="Enemies" index="32" instance=ExtResource( 15 )]
+
+position = Vector2( 18400, -550 )
+off_duration = 0.5
+
+[node name="PowerUps" type="Node2D" parent="." index="12"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="Dwarf Potion" parent="PowerUps" index="0" instance=ExtResource( 16 )]
+
+position = Vector2( 2950, -450 )
+
+[node name="SizeChangingLight" parent="PowerUps" index="1" instance=ExtResource( 17 )]
+
+position = Vector2( 9548.83, -1348.83 )
+
+[node name="Ult Stone" parent="PowerUps" index="2" instance=ExtResource( 18 )]
+
+position = Vector2( 11950, -400 )
+
+[node name="HealPotion" parent="PowerUps" index="3" instance=ExtResource( 19 )]
+
+position = Vector2( 8550, -1050 )
+
+[node name="ForegroundDecorations" type="Node2D" parent="." index="13"]
+
+z_index = 1
+_sections_unfolded = [ "Z Index" ]
+
+[node name="PauseButton" parent="." index="14" instance=ExtResource( 20 )]
+
+[node name="Position2D" type="Position2D" parent="." index="15"]
+
+position = Vector2( 18750, -600 )
+scale = Vector2( 10, 10 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 6450 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/FirstMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 11150 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/SecondMobTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/SecondMobTrigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.37 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/SecondMobTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 7950 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/SecondMobClear" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/SecondMobClear" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/SecondMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 15450 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/ThirdMobTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/ThirdMobTrigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.37 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/ThirdMobTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 11750 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/ThirdMobClear" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/ThirdMobClear" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/ThirdMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 18750 ]]
+
+[connection signal="defeated" from="Enemies/Calcasio2" to="Writings/CountdownTV" method="tick"]
+
+[connection signal="defeated" from="Enemies/Calcasio2" to="CameraChangingTriggers/FirstMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Calcasio" to="Writings/CountdownTV" method="tick"]
+
+[connection signal="defeated" from="Enemies/Calcasio" to="CameraChangingTriggers/FirstMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Canmera" to="Writings/CountdownTV" method="tick"]
+
+[connection signal="defeated" from="Enemies/Canmera" to="CameraChangingTriggers/FirstMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Canmera14" to="Writings/CountdownTV" method="tick"]
+
+[connection signal="defeated" from="Enemies/Canmera14" to="CameraChangingTriggers/FirstMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Calcasio5" to="Writings/CountdownTV2" method="tick"]
+
+[connection signal="defeated" from="Enemies/Calcasio5" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Calcasio6" to="Writings/CountdownTV2" method="tick"]
+
+[connection signal="defeated" from="Enemies/Calcasio6" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Canmera4" to="Writings/CountdownTV2" method="tick"]
+
+[connection signal="defeated" from="Enemies/Canmera4" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Canmera5" to="Writings/CountdownTV2" method="tick"]
+
+[connection signal="defeated" from="Enemies/Canmera5" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Canmera6" to="Writings/CountdownTV2" method="tick"]
+
+[connection signal="defeated" from="Enemies/Canmera6" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Canmera7" to="Writings/CountdownTV2" method="tick"]
+
+[connection signal="defeated" from="Enemies/Canmera7" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Calcasio7" to="CameraChangingTriggers/ThirdMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Calcasio7" to="Writings/CountdownTV3" method="tick"]
+
+[connection signal="defeated" from="Enemies/Calcasio8" to="CameraChangingTriggers/ThirdMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Calcasio8" to="Writings/CountdownTV3" method="tick"]
+
+[connection signal="defeated" from="Enemies/Calcasio9" to="CameraChangingTriggers/ThirdMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Calcasio9" to="Writings/CountdownTV3" method="tick"]
+
+[connection signal="defeated" from="Enemies/Canmera8" to="CameraChangingTriggers/ThirdMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Canmera8" to="Writings/CountdownTV3" method="tick"]
+
+[connection signal="defeated" from="Enemies/Canmera9" to="CameraChangingTriggers/ThirdMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Canmera9" to="Writings/CountdownTV3" method="tick"]
+
+[connection signal="defeated" from="Enemies/Canmera10" to="CameraChangingTriggers/ThirdMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Canmera10" to="Writings/CountdownTV3" method="tick"]
+
+[connection signal="defeated" from="Enemies/Canmera11" to="CameraChangingTriggers/ThirdMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Canmera11" to="Writings/CountdownTV3" method="tick"]
+
+[connection signal="defeated" from="Enemies/Canmera13" to="CameraChangingTriggers/ThirdMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Canmera13" to="Writings/CountdownTV3" method="tick"]
+
+[connection signal="defeated" from="Enemies/Canmera12" to="CameraChangingTriggers/ThirdMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Canmera12" to="Writings/CountdownTV3" method="tick"]
+
+

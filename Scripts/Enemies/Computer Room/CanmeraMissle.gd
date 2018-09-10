@@ -32,10 +32,10 @@ func initialize(dx, dy):
 func _process(delta):
 	# Movement.
 	gravity_movement.move(delta)
-	move_and_collide(hoirzontal_movement.movement(delta))
+	move_and_collide(horizontal_movement.movement(delta))
 
 	# Rotation.
-	rotation = atan2(-horizontal_movement.dx, -gravity_movement.dy) - PI * 0.5
+	rotation = atan2(-horizontal_movement.dx, gravity_movement.dy) - PI * 0.5
 
 	# Lifetime.
 	if gravity_movement.is_landed || OS.get_unix_time() - lifetime_timestamp > LIFETIME:

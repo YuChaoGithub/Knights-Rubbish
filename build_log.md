@@ -912,9 +912,30 @@ Comment: Lose motivation once again. Might start a new project and come back to 
 
 **Commit**
 
+[2018.07.22]
+* Completed the mobs and camera triggers of level 1-8. Not tested yet.
+Comment: Ahhh... kind of burnt out. Will be taking a break.
+
+[2018.07.29]
+* Tested and added count down tv to level 1-8. Fix bugs.
+Comment: Working on my graphic novel. Will come back to this project later.
+
+[2018.09.10]
+Comment: I'm back to save the universe. Hope that I can rush and complete the alpha version.
+* Layed out the platforms of level 1-9.
+* Added hover and click audio for buttons.
 
 To Do List:
-* Multiplayer bug testing.
+* Clean up cringy texts.
+* Finish laying out level 1.
+* New characters * 6. 
+* Sound Effects (Use human voice) & Background Music (Beat Box...perhaps?).
+* Level 2.
+* Introduction article.
+**Alpha Version [Ver 0.1] Publishing**
+
+Sound Effects:
+Lock Sound, Character Choose Sound, Jump, Mobs, Character Skills.
 
 Unfixed Bugs:
 * When a hero is hit while healing (by healing machine). Futher attacks will be disabled.

@@ -7,6 +7,7 @@ extends Node2D
 # 4. Repeat 1.
 # ===
 # When hurt or stunned, go to 1.
+signal defeated
 
 enum { NONE, AIM, COUNTDOWN, SHOOT }
 
@@ -122,4 +123,5 @@ func slowed(multiplier, duration):
 
 func die():
 	ec.die()
+	emit_signal("defeated")
 	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
