@@ -238,7 +238,7 @@ tracks/17/loop_wrap = true
 tracks/17/imported = false
 tracks/17/enabled = true
 tracks/17/keys = {
-"times": PoolRealArray( 0, 0.15, 0.45 ),
+"times": PoolRealArray( 0, 0.15, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 0 ]
@@ -1577,7 +1577,7 @@ tracks/17/keys = {
 "values": [ 0 ]
 }
 
-[node name="Dark Earspider" type="Node2D" index="0"]
+[node name="Dark Earspider" type="Node2D"]
 
 script = ExtResource( 1 )
 activate_range_x = 1500
@@ -1608,7 +1608,6 @@ shape = SubResource( 1 )
 
 [node name="Clap Attack Area" type="Area2D" parent="Animation" index="1"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -1628,7 +1627,6 @@ shape = SubResource( 2 )
 [node name="Body" type="Sprite" parent="Animation" index="2"]
 
 position = Vector2( 2.17136, -105.474 )
-rotation = 0.122603
 texture = ExtResource( 2 )
 offset = Vector2( -2.17136, 105.474 )
 
@@ -1638,18 +1636,18 @@ position = Vector2( -0.0494385, 0.0191803 )
 
 [node name="Left Eye" type="Sprite" parent="Animation/Body" index="1"]
 
-position = Vector2( -23.0864, 20.1981 )
+position = Vector2( -21.8123, 10.7808 )
 texture = ExtResource( 3 )
 
 [node name="Right Eye" type="Sprite" parent="Animation/Body" index="2"]
 
-position = Vector2( 22.2901, 16.9471 )
+position = Vector2( 22.9633, 8.92098 )
 rotation = 0.13333
 texture = ExtResource( 3 )
 
 [node name="Mouth" type="Sprite" parent="Animation/Body" index="3"]
 
-position = Vector2( -0.249197, 30.1441 )
+position = Vector2( -0.495605, 25.2761 )
 texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation" index="3"]

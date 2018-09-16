@@ -924,13 +924,32 @@ Comment: Working on my graphic novel. Will come back to this project later.
 Comment: I'm back to save the universe. Hope that I can rush and complete the alpha version.
 * Layed out the platforms of level 1-9.
 * Added hover and click audio for buttons.
+* Added audio for paper flipping in Hero Choosing Scene.
+
+[2018.09.11]
+* Decorated level 1-8.
+* Fixed bugs related to Laserphone and Red Earspider.
+
+[2018.09.14]
+* Completed laying out level 1-9. Triggers not set yet.
+
+**Commit**
+
+[2018.09.15]
+* Completed setting triggers and decorating level 1-9. Not completed yet.
+
+[2018.09.16]
+* Tested level 1-9. Fixed bugs.
+* Layed out level 1-10.
+
+**Commit**
 
 To Do List:
 * Clean up cringy texts.
-* Finish laying out level 1.
-* New characters * 6. 
+* Finish laying out level 1. (Est. Before November)
+* New characters * 6. (Est. Before January)
 * Sound Effects (Use human voice) & Background Music (Beat Box...perhaps?).
-* Level 2.
+* Screen capture (Sonmera).
 * Introduction article.
 **Alpha Version [Ver 0.1] Publishing**
 
@@ -939,10 +958,6 @@ Lock Sound, Character Choose Sound, Jump, Mobs, Character Skills.
 
 Unfixed Bugs:
 * When a hero is hit while healing (by healing machine). Futher attacks will be disabled.
-
-Planned Prototype Stages:
-[Ver 0.1] First level completed. (Est. June 2018) -> Play test & dev article.
-[Ver 0.2] Main UI completed.
 
 Polishing:
 * [Data] Make key settings persistent between game sessions (Single Player settings should be separated from Coop settings).

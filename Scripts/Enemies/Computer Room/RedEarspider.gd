@@ -8,12 +8,12 @@ extends KinematicBody2D
 # ===
 # Cannot be damaged.
 
-const TRIGGER_RANGE_X = 450
+export(int) var trigger_range_x = 450
 const GRAVITY = 800
 
 # Explosion Attack.
-const DAMAGE = 20
-const STUN_DURATION = 1.0
+const DAMAGE = 44
+const STUN_DURATION = 2.0
 const KNOCK_BACK_VEL_X = 2000
 const KNOCK_BACK_FADE_RATE_X = 5000
 const KNOCK_BACK_VEL_Y = 2000
@@ -32,7 +32,7 @@ var countdown_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var target_detection = preload("res://Scripts/Algorithms/TargetDetection.gd")
 
 onready var movement_type = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
-onready var hero_manager = $"../../../../HeroManager"
+onready var hero_manager = $"../../HeroManager"
 onready var animator = $"Animation/AnimationPlayer"
 onready var explosion_particles = $"Explosion Particles"
 
@@ -45,7 +45,7 @@ func _process(delta):
 		return
 
 	# Movement.
-	move_and_collide(movement_type.movement(delta))
+	movement_type.move(delta)
 
 	if status == COUNTDOWN && timer == null:
 		start_counting_down()
@@ -53,7 +53,7 @@ func _process(delta):
 func check_nearest_char():
 	var nearest_target = target_detection.get_nearest(self, hero_manager.heroes)
 
-	if abs(nearest_target.global_position.x - global_position.x) <= TRIGGER_RANGE_X:
+	if abs(nearest_target.global_position.x - global_position.x) <= trigger_range_x && nearest_target.global_position.y > global_position.y:
 		status = COUNTDOWN
 
 func start_counting_down():
@@ -70,7 +70,7 @@ func explosion_attack_hit(area):
 	if area.is_in_group("hero"):
 		var character = area.get_node("..")
 		character.stunned(STUN_DURATION)
-		character.damaged(DAMAGE)
+		character.damaged(DAMAGE, false)
 		knock_back(character)
 
 func knock_back(character):

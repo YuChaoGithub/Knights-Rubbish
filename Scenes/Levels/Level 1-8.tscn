@@ -1,25 +1,64 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/HeroManager.gd" type="Script" id=2]
 [ext_resource path="res://Tilesets/White Wall.tres" type="TileSet" id=3]
-[ext_resource path="res://Tilesets/Wooden Floor.tres" type="TileSet" id=4]
-[ext_resource path="res://Scenes/Structures/CountdownTV.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Structures/BlankDoor.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=7]
-[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=8]
-[ext_resource path="res://Scenes/Platforms/Enemy Blocking Platform.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Power Ups/Healing Machine.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Structures/Door.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Calcasio.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Canmera.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Sonmera.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Batterio.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Power Ups/Dwarf Potion.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/Power Ups/SizeChangingLight.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/Power Ups/Ult Stone.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/Power Ups/Healing Potion.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Graphics/background/Bags/Trash Bag 3.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/background/Bags/Trash Bag 4.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/background/White Wall Decoration/break 5.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/background/White Wall Decoration/paint 1.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Stain 5.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Top Erode.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Bulge.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/background/White Wall Decoration/break 4.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Paint 2.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/background/General Decoration/Plug 1.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 17.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/background/General Decoration/Switch 2.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/background/General Decoration/Plug3.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Stain 2.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Stain 4.png" type="Texture" id=18]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Stain 3.png" type="Texture" id=19]
+[ext_resource path="res://Tilesets/Wooden Floor.tres" type="TileSet" id=20]
+[ext_resource path="res://Scenes/Structures/CountdownTV.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Graphics/UI/Line.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/Structures/BlankDoor.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Graphics/background/Bags/Bag.png" type="Texture" id=24]
+[ext_resource path="res://Graphics/background/Bags/Trash Bag 2.png" type="Texture" id=25]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 3.png" type="Texture" id=26]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 5.png" type="Texture" id=27]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 1.png" type="Texture" id=28]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 9.png" type="Texture" id=29]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 7.png" type="Texture" id=30]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 3.png" type="Texture" id=31]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 12.png" type="Texture" id=32]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 4.png" type="Texture" id=33]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 9.png" type="Texture" id=34]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 6.png" type="Texture" id=35]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 7.png" type="Texture" id=36]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 1.png" type="Texture" id=37]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 5.png" type="Texture" id=38]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 1.png" type="Texture" id=39]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 4.png" type="Texture" id=40]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 6.png" type="Texture" id=41]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 3.png" type="Texture" id=42]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 2.png" type="Texture" id=43]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 9.png" type="Texture" id=44]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 5.png" type="Texture" id=45]
+[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=46]
+[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=47]
+[ext_resource path="res://Scenes/Platforms/Enemy Blocking Platform.tscn" type="PackedScene" id=48]
+[ext_resource path="res://Scenes/Power Ups/Healing Machine.tscn" type="PackedScene" id=49]
+[ext_resource path="res://Scenes/Structures/Door.tscn" type="PackedScene" id=50]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Calcasio.tscn" type="PackedScene" id=51]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Canmera.tscn" type="PackedScene" id=52]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Sonmera.tscn" type="PackedScene" id=53]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Batterio.tscn" type="PackedScene" id=54]
+[ext_resource path="res://Scenes/Power Ups/Dwarf Potion.tscn" type="PackedScene" id=55]
+[ext_resource path="res://Scenes/Power Ups/SizeChangingLight.tscn" type="PackedScene" id=56]
+[ext_resource path="res://Scenes/Power Ups/Ult Stone.tscn" type="PackedScene" id=57]
+[ext_resource path="res://Scenes/Power Ups/Healing Potion.tscn" type="PackedScene" id=58]
+[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=59]
 
 [node name="Game Level" type="Node2D" index="0"]
 
@@ -66,10 +105,107 @@ _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="BackgroundDecorations" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
+
+[node name="Trash Bag 3" type="Sprite" parent="BackgroundDecorations" index="0"]
+
+position = Vector2( 375.083, -232.233 )
+texture = ExtResource( 4 )
+
+[node name="Trash Bag 4" type="Sprite" parent="BackgroundDecorations" index="1"]
+
+position = Vector2( 1204.32, -232.978 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="break 5" type="Sprite" parent="BackgroundDecorations" index="2"]
+
+position = Vector2( 1878.19, -674.789 )
+texture = ExtResource( 6 )
+
+[node name="paint 1" type="Sprite" parent="BackgroundDecorations" index="3"]
+
+position = Vector2( 3574.2, -1212.29 )
+rotation = -3.07062
+texture = ExtResource( 7 )
+
+[node name="Stain 5" type="Sprite" parent="BackgroundDecorations" index="4"]
+
+position = Vector2( 4862.38, -394.366 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Top Erode" type="Sprite" parent="BackgroundDecorations" index="5"]
+
+position = Vector2( 5216.8, -917.11 )
+rotation = -0.0131346
+texture = ExtResource( 9 )
+
+[node name="Bulge" type="Sprite" parent="BackgroundDecorations" index="6"]
+
+position = Vector2( 7257.69, -303.608 )
+texture = ExtResource( 10 )
+
+[node name="break 4" type="Sprite" parent="BackgroundDecorations" index="7"]
+
+position = Vector2( 8508.22, -634.131 )
+texture = ExtResource( 11 )
+
+[node name="Top Erode2" type="Sprite" parent="BackgroundDecorations" index="8"]
+
+position = Vector2( 11451.2, -578.449 )
+rotation = 3.13192
+texture = ExtResource( 9 )
+
+[node name="Paint 2" type="Sprite" parent="BackgroundDecorations" index="9"]
+
+position = Vector2( 10333.7, -580.055 )
+texture = ExtResource( 12 )
+
+[node name="Plug 1" type="Sprite" parent="BackgroundDecorations" index="10"]
+
+position = Vector2( 12160.1, -1203.82 )
+texture = ExtResource( 13 )
+
+[node name="Stain 17" type="Sprite" parent="BackgroundDecorations" index="11"]
+
+modulate = Color( 0.878906, 0.656817, 0.656817, 1 )
+position = Vector2( 15633.4, -657.371 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Switch 2" type="Sprite" parent="BackgroundDecorations" index="12"]
+
+position = Vector2( 15954.8, -1048.7 )
+texture = ExtResource( 15 )
+
+[node name="Plug3" type="Sprite" parent="BackgroundDecorations" index="13"]
+
+position = Vector2( 6831.5, -767.871 )
+texture = ExtResource( 16 )
+
+[node name="Stain 2" type="Sprite" parent="BackgroundDecorations" index="14"]
+
+position = Vector2( 18110.5, -786.908 )
+texture = ExtResource( 17 )
+
+[node name="Stain 4" type="Sprite" parent="BackgroundDecorations" index="15"]
+
+position = Vector2( 17270.6, -439.356 )
+texture = ExtResource( 18 )
+
+[node name="Stain 3" type="Sprite" parent="BackgroundDecorations" index="16"]
+
+position = Vector2( 16303.3, -879.589 )
+texture = ExtResource( 19 )
+
 [node name="Platform" type="TileMap" parent="." index="4"]
 
 mode = 0
-tile_set = ExtResource( 4 )
+tile_set = ExtResource( 20 )
 cell_size = Vector2( 100, 100 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -89,30 +225,239 @@ _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="Writings" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Z Index" ]
 
-[node name="CountdownTV" parent="Writings" index="0" instance=ExtResource( 5 )]
+[node name="CountdownTV" parent="Writings" index="0" instance=ExtResource( 21 )]
 
 position = Vector2( 5200, -700 )
 total_count = 4
 
-[node name="CountdownTV2" parent="Writings" index="1" instance=ExtResource( 5 )]
+[node name="Line" type="Sprite" parent="Writings/CountdownTV" index="4"]
+
+position = Vector2( -2.13428, -178.962 )
+rotation = 1.58869
+scale = Vector2( 0.45, 0.2 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CountdownTV2" parent="Writings" index="1" instance=ExtResource( 21 )]
 
 position = Vector2( 10653, -1100 )
 total_count = 6
 
-[node name="CountdownTV3" parent="Writings" index="2" instance=ExtResource( 5 )]
+[node name="Line2" type="Sprite" parent="Writings/CountdownTV2" index="4"]
+
+position = Vector2( 1.4248, -345.97 )
+rotation = 1.58869
+scale = Vector2( 1.5, 0.2 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CountdownTV3" parent="Writings" index="2" instance=ExtResource( 21 )]
 
 position = Vector2( 14950, -1250 )
 total_count = 9
+
+[node name="Line3" type="Sprite" parent="Writings/CountdownTV3" index="4"]
+
+position = Vector2( 3.18262, -348.098 )
+rotation = 1.58869
+scale = Vector2( 1.5, 0.2 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="PlatformDecorations" type="Node2D" parent="." index="6"]
 
 editor/display_folded = true
 
-[node name="BlankDoor" parent="PlatformDecorations" index="0" instance=ExtResource( 6 )]
+[node name="BlankDoor" parent="PlatformDecorations" index="0" instance=ExtResource( 23 )]
 
 position = Vector2( 807.795, -641.889 )
+
+[node name="Bag" type="Sprite" parent="PlatformDecorations" index="1"]
+
+position = Vector2( 2605.28, -317.233 )
+texture = ExtResource( 24 )
+
+[node name="Trash Bag 2" type="Sprite" parent="PlatformDecorations" index="2"]
+
+position = Vector2( 3319.99, -242.824 )
+texture = ExtResource( 25 )
+
+[node name="Crack 3" type="Sprite" parent="PlatformDecorations" index="3"]
+
+position = Vector2( 2236.94, -183.643 )
+texture = ExtResource( 26 )
+
+[node name="Crack 5" type="Sprite" parent="PlatformDecorations" index="4"]
+
+position = Vector2( 3649.27, -346.027 )
+texture = ExtResource( 27 )
+
+[node name="Crack 1" type="Sprite" parent="PlatformDecorations" index="5"]
+
+position = Vector2( 5272.45, -983.37 )
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 28 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Hole 9" type="Sprite" parent="PlatformDecorations" index="6"]
+
+position = Vector2( 7869.91, -157.248 )
+texture = ExtResource( 29 )
+
+[node name="Hole 7" type="Sprite" parent="PlatformDecorations" index="7"]
+
+position = Vector2( 11256.3, -370.547 )
+texture = ExtResource( 30 )
+
+[node name="Hole 3" type="Sprite" parent="PlatformDecorations" index="8"]
+
+position = Vector2( 7798.01, -670.123 )
+texture = ExtResource( 31 )
+
+[node name="Hole 12" type="Sprite" parent="PlatformDecorations" index="9"]
+
+position = Vector2( 12251.5, -374.063 )
+texture = ExtResource( 32 )
+
+[node name="Crack 4" type="Sprite" parent="PlatformDecorations" index="10"]
+
+position = Vector2( 12928.2, -474.361 )
+texture = ExtResource( 33 )
+
+[node name="Crack 9" type="Sprite" parent="PlatformDecorations" index="11"]
+
+position = Vector2( 14214.1, -448.912 )
+texture = ExtResource( 34 )
+
+[node name="Crack 6" type="Sprite" parent="PlatformDecorations" index="12"]
+
+position = Vector2( 14721.1, -135.212 )
+texture = ExtResource( 35 )
+
+[node name="Crack 7" type="Sprite" parent="PlatformDecorations" index="13"]
+
+position = Vector2( 16832.5, -650.291 )
+rotation = -0.372051
+texture = ExtResource( 36 )
+
+[node name="Line2" type="Sprite" parent="PlatformDecorations" index="14"]
+
+position = Vector2( 16692, -1436.82 )
+rotation = 1.5646
+scale = Vector2( 2.5, 0.2 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Line3" type="Sprite" parent="PlatformDecorations" index="15"]
+
+position = Vector2( 16904.4, -1459.57 )
+rotation = 1.52662
+scale = Vector2( 2.5, 0.2 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Line4" type="Sprite" parent="PlatformDecorations" index="16"]
+
+position = Vector2( 17177.4, -1474.74 )
+rotation = 1.52662
+scale = Vector2( 2.5, 0.2 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Line5" type="Sprite" parent="PlatformDecorations" index="17"]
+
+position = Vector2( 17391.6, -1463.36 )
+rotation = 1.67439
+scale = Vector2( 2.5, 0.2 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Line6" type="Sprite" parent="PlatformDecorations" index="18"]
+
+position = Vector2( 17710.1, -1501.28 )
+rotation = 1.67439
+scale = Vector2( 2.5, 0.2 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Line7" type="Sprite" parent="PlatformDecorations" index="19"]
+
+position = Vector2( 17894, -1518.34 )
+rotation = 1.46472
+scale = Vector2( 2.5, 0.2 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 1" type="Sprite" parent="PlatformDecorations" index="20"]
+
+position = Vector2( 14453.3, -287.23 )
+rotation = -1.90638
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 37 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 2" type="Sprite" parent="PlatformDecorations" index="21"]
+
+position = Vector2( 16464.6, -470.762 )
+rotation = -1.90638
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 38 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 3" type="Sprite" parent="PlatformDecorations" index="22"]
+
+position = Vector2( 16762.2, -765.707 )
+rotation = -1.25412
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 39 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 4" type="Sprite" parent="PlatformDecorations" index="23"]
+
+position = Vector2( 16873.3, -785.11 )
+rotation = -1.66793
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 40 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 5" type="Sprite" parent="PlatformDecorations" index="24"]
+
+position = Vector2( 17527.3, -765.983 )
+rotation = -1.01572
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 41 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Stain 3" type="Sprite" parent="PlatformDecorations" index="25"]
+
+position = Vector2( 2911.74, -363.495 )
+texture = ExtResource( 42 )
+
+[node name="Stain 4" type="Sprite" parent="PlatformDecorations" index="26"]
+
+position = Vector2( 2960.45, -387.541 )
+texture = ExtResource( 43 )
+
+[node name="Stain 5" type="Sprite" parent="PlatformDecorations" index="27"]
+
+position = Vector2( 9394.94, -143.934 )
+rotation = 0.525936
+texture = ExtResource( 44 )
+
+[node name="Stain 6" type="Sprite" parent="PlatformDecorations" index="28"]
+
+position = Vector2( 9743.27, -151.465 )
+rotation = 0.731695
+texture = ExtResource( 45 )
+
+[node name="Stain 7" type="Sprite" parent="PlatformDecorations" index="29"]
+
+position = Vector2( 11738.3, -135.473 )
+rotation = 0.731695
+texture = ExtResource( 44 )
 
 [node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
 
@@ -121,7 +466,7 @@ editor/display_folded = true
 [node name="FirstTrigger" type="Position2D" parent="CameraChangingTriggers" index="0"]
 
 position = Vector2( 750, -150 )
-script = ExtResource( 7 )
+script = ExtResource( 46 )
 range_x = 500
 range_y = 1000
 x_check = 2
@@ -129,13 +474,13 @@ y_check = 0
 
 [node name="FirstMobClear" type="Node2D" parent="CameraChangingTriggers" index="1"]
 
-script = ExtResource( 8 )
+script = ExtResource( 47 )
 count_to_emit = 4
 
 [node name="SecondMobTrigger" type="Position2D" parent="CameraChangingTriggers" index="2"]
 
 position = Vector2( 8650, -1050 )
-script = ExtResource( 7 )
+script = ExtResource( 46 )
 range_x = 500
 range_y = 1000
 x_check = 2
@@ -143,13 +488,13 @@ y_check = 0
 
 [node name="SecondMobClear" type="Node2D" parent="CameraChangingTriggers" index="3"]
 
-script = ExtResource( 8 )
+script = ExtResource( 47 )
 count_to_emit = 6
 
 [node name="ThirdMobTrigger" type="Position2D" parent="CameraChangingTriggers" index="4"]
 
 position = Vector2( 12150, -550 )
-script = ExtResource( 7 )
+script = ExtResource( 46 )
 range_x = 500
 range_y = 1000
 x_check = 2
@@ -157,34 +502,34 @@ y_check = 0
 
 [node name="ThirdMobClear" type="Node2D" parent="CameraChangingTriggers" index="5"]
 
-script = ExtResource( 8 )
+script = ExtResource( 47 )
 count_to_emit = 9
 
 [node name="OtherPlatforms" type="Node2D" parent="." index="8"]
 
 editor/display_folded = true
 
-[node name="Enemy Blocking Platform" parent="OtherPlatforms" index="0" instance=ExtResource( 9 )]
+[node name="Enemy Blocking Platform" parent="OtherPlatforms" index="0" instance=ExtResource( 48 )]
 
 position = Vector2( 4500, -150 )
 
-[node name="Enemy Blocking Platform2" parent="OtherPlatforms" index="1" instance=ExtResource( 9 )]
+[node name="Enemy Blocking Platform2" parent="OtherPlatforms" index="1" instance=ExtResource( 48 )]
 
 position = Vector2( 4500, -250 )
 
-[node name="Enemy Blocking Platform3" parent="OtherPlatforms" index="2" instance=ExtResource( 9 )]
+[node name="Enemy Blocking Platform3" parent="OtherPlatforms" index="2" instance=ExtResource( 48 )]
 
 position = Vector2( 5800, -150 )
 
-[node name="Enemy Blocking Platform4" parent="OtherPlatforms" index="3" instance=ExtResource( 9 )]
+[node name="Enemy Blocking Platform4" parent="OtherPlatforms" index="3" instance=ExtResource( 48 )]
 
 position = Vector2( 5800, -250 )
 
-[node name="Enemy Blocking Platform7" parent="OtherPlatforms" index="4" instance=ExtResource( 9 )]
+[node name="Enemy Blocking Platform7" parent="OtherPlatforms" index="4" instance=ExtResource( 48 )]
 
 position = Vector2( 15500, -250 )
 
-[node name="Enemy Blocking Platform8" parent="OtherPlatforms" index="5" instance=ExtResource( 9 )]
+[node name="Enemy Blocking Platform8" parent="OtherPlatforms" index="5" instance=ExtResource( 48 )]
 
 position = Vector2( 15500, -350 )
 
@@ -192,195 +537,197 @@ position = Vector2( 15500, -350 )
 
 editor/display_folded = true
 
-[node name="Healing Machine" parent="HealingMachines" index="0" instance=ExtResource( 10 )]
+[node name="Healing Machine" parent="HealingMachines" index="0" instance=ExtResource( 49 )]
 
 position = Vector2( 11600, -800 )
 
-[node name="Healing Machine2" parent="HealingMachines" index="1" instance=ExtResource( 10 )]
+[node name="Healing Machine2" parent="HealingMachines" index="1" instance=ExtResource( 49 )]
 
 position = Vector2( 15950, -450 )
 
 [node name="Structures" type="Node2D" parent="." index="10"]
 
-[node name="Door1-1" parent="Structures" index="0" instance=ExtResource( 11 )]
+[node name="Door1-1" parent="Structures" index="0" instance=ExtResource( 50 )]
 
 position = Vector2( 18600, -1026.78 )
 scale = Vector2( 0.8, 0.8 )
 _sections_unfolded = [ "Transform" ]
-enter_scene_path = "res://Scenes/Levels/Level 1-1.tscn"
+enter_scene_path = "res://Scenes/Levels/Level 1-9.tscn"
 
 [node name="Enemies" type="Node2D" parent="." index="11"]
 
-[node name="Calcasio2" parent="Enemies" index="0" instance=ExtResource( 12 )]
+editor/display_folded = true
+
+[node name="Calcasio2" parent="Enemies" index="0" instance=ExtResource( 51 )]
 
 position = Vector2( 4111.99, -450 )
 
-[node name="Calcasio" parent="Enemies" index="1" instance=ExtResource( 12 )]
+[node name="Calcasio" parent="Enemies" index="1" instance=ExtResource( 51 )]
 
 position = Vector2( 6100, -450 )
 
-[node name="Canmera" parent="Enemies" index="2" instance=ExtResource( 13 )]
+[node name="Canmera" parent="Enemies" index="2" instance=ExtResource( 52 )]
 
 position = Vector2( 5199.53, -142.922 )
 activate_range_x = 2000
 
-[node name="Canmera14" parent="Enemies" index="3" instance=ExtResource( 13 )]
+[node name="Canmera14" parent="Enemies" index="3" instance=ExtResource( 52 )]
 
 position = Vector2( 4263.87, -142.922 )
 activate_range_x = 2000
 activate_range_y = 2000
 
-[node name="Sonmera" parent="Enemies" index="4" instance=ExtResource( 14 )]
+[node name="Sonmera" parent="Enemies" index="4" instance=ExtResource( 53 )]
 
 position = Vector2( 5200, -1175.55 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1250
 
-[node name="Sonmera2" parent="Enemies" index="5" instance=ExtResource( 14 )]
+[node name="Sonmera2" parent="Enemies" index="5" instance=ExtResource( 53 )]
 
 position = Vector2( 9550, -850 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1600
 
-[node name="Calcasio5" parent="Enemies" index="6" instance=ExtResource( 12 )]
+[node name="Calcasio5" parent="Enemies" index="6" instance=ExtResource( 51 )]
 
 position = Vector2( 8353.03, -550 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 1850
 
-[node name="Calcasio6" parent="Enemies" index="7" instance=ExtResource( 12 )]
+[node name="Calcasio6" parent="Enemies" index="7" instance=ExtResource( 51 )]
 
 position = Vector2( 10650, -550 )
 
-[node name="Canmera4" parent="Enemies" index="8" instance=ExtResource( 13 )]
+[node name="Canmera4" parent="Enemies" index="8" instance=ExtResource( 52 )]
 
 position = Vector2( 8877.56, -244.566 )
 activate_range_x = 2000
 
-[node name="Canmera5" parent="Enemies" index="9" instance=ExtResource( 13 )]
+[node name="Canmera5" parent="Enemies" index="9" instance=ExtResource( 52 )]
 
 position = Vector2( 9236.58, -243.943 )
 activate_range_x = 2000
 
-[node name="Canmera6" parent="Enemies" index="10" instance=ExtResource( 13 )]
+[node name="Canmera6" parent="Enemies" index="10" instance=ExtResource( 52 )]
 
 position = Vector2( 9608.69, -243.943 )
 activate_range_x = 2000
 
-[node name="Canmera7" parent="Enemies" index="11" instance=ExtResource( 13 )]
+[node name="Canmera7" parent="Enemies" index="11" instance=ExtResource( 52 )]
 
 position = Vector2( 10050.6, -243.943 )
 activate_range_x = 2000
 
-[node name="Calcasio7" parent="Enemies" index="12" instance=ExtResource( 12 )]
+[node name="Calcasio7" parent="Enemies" index="12" instance=ExtResource( 51 )]
 
 position = Vector2( 13400, -550 )
 activate_range_x = 1500
 
-[node name="Calcasio8" parent="Enemies" index="13" instance=ExtResource( 12 )]
+[node name="Calcasio8" parent="Enemies" index="13" instance=ExtResource( 51 )]
 
 position = Vector2( 14650, -550 )
 
-[node name="Calcasio9" parent="Enemies" index="14" instance=ExtResource( 12 )]
+[node name="Calcasio9" parent="Enemies" index="14" instance=ExtResource( 51 )]
 
 position = Vector2( 15100, -550 )
 
-[node name="Canmera8" parent="Enemies" index="15" instance=ExtResource( 13 )]
+[node name="Canmera8" parent="Enemies" index="15" instance=ExtResource( 52 )]
 
 position = Vector2( 12934.2, -542.319 )
 activate_range_x = 900
 
-[node name="Canmera9" parent="Enemies" index="16" instance=ExtResource( 13 )]
+[node name="Canmera9" parent="Enemies" index="16" instance=ExtResource( 52 )]
 
 position = Vector2( 13457.6, -242.772 )
 activate_range_x = 1000
 
-[node name="Canmera10" parent="Enemies" index="17" instance=ExtResource( 13 )]
+[node name="Canmera10" parent="Enemies" index="17" instance=ExtResource( 52 )]
 
 position = Vector2( 13843.8, -545.611 )
 activate_range_x = 1500
 
-[node name="Canmera11" parent="Enemies" index="18" instance=ExtResource( 13 )]
+[node name="Canmera11" parent="Enemies" index="18" instance=ExtResource( 52 )]
 
 position = Vector2( 14210.8, -545.611 )
 activate_range_x = 1500
 
-[node name="Canmera13" parent="Enemies" index="19" instance=ExtResource( 13 )]
+[node name="Canmera13" parent="Enemies" index="19" instance=ExtResource( 52 )]
 
 position = Vector2( 14926.4, -244.549 )
 activate_range_x = 2000
 
-[node name="Canmera12" parent="Enemies" index="20" instance=ExtResource( 13 )]
+[node name="Canmera12" parent="Enemies" index="20" instance=ExtResource( 52 )]
 
 position = Vector2( 12579.9, -544.033 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 850
 
-[node name="Sonmera3" parent="Enemies" index="21" instance=ExtResource( 14 )]
+[node name="Sonmera3" parent="Enemies" index="21" instance=ExtResource( 53 )]
 
 position = Vector2( 12900, -1276.09 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1150
 
-[node name="Sonmera4" parent="Enemies" index="22" instance=ExtResource( 14 )]
+[node name="Sonmera4" parent="Enemies" index="22" instance=ExtResource( 53 )]
 
 position = Vector2( 13600, -1277.19 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1850
 
-[node name="Sonmera5" parent="Enemies" index="23" instance=ExtResource( 14 )]
+[node name="Sonmera5" parent="Enemies" index="23" instance=ExtResource( 53 )]
 
 position = Vector2( 14300, -1276.61 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1150
 
-[node name="Sonmera6" parent="Enemies" index="24" instance=ExtResource( 14 )]
+[node name="Sonmera6" parent="Enemies" index="24" instance=ExtResource( 53 )]
 
 position = Vector2( 16801.7, -1350 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1200
 
-[node name="Sonmera9" parent="Enemies" index="25" instance=ExtResource( 14 )]
+[node name="Sonmera9" parent="Enemies" index="25" instance=ExtResource( 53 )]
 
 position = Vector2( 16801.7, -1062.74 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1200
 
-[node name="Sonmera7" parent="Enemies" index="26" instance=ExtResource( 14 )]
+[node name="Sonmera7" parent="Enemies" index="26" instance=ExtResource( 53 )]
 
 position = Vector2( 17300, -1252.02 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1200
 
-[node name="Sonmera10" parent="Enemies" index="27" instance=ExtResource( 14 )]
+[node name="Sonmera10" parent="Enemies" index="27" instance=ExtResource( 53 )]
 
 position = Vector2( 17300, -959.97 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1200
 
-[node name="Sonmera8" parent="Enemies" index="28" instance=ExtResource( 14 )]
+[node name="Sonmera8" parent="Enemies" index="28" instance=ExtResource( 53 )]
 
 position = Vector2( 17800, -1385.11 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1300
 
-[node name="Sonmera11" parent="Enemies" index="29" instance=ExtResource( 14 )]
+[node name="Sonmera11" parent="Enemies" index="29" instance=ExtResource( 53 )]
 
 position = Vector2( 17800, -1099.44 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1300
 
-[node name="Batterio" parent="Enemies" index="30" instance=ExtResource( 15 )]
+[node name="Batterio" parent="Enemies" index="30" instance=ExtResource( 54 )]
 
 position = Vector2( 16450, -50 )
 off_duration = 1.0
 
-[node name="Batterio2" parent="Enemies" index="31" instance=ExtResource( 15 )]
+[node name="Batterio2" parent="Enemies" index="31" instance=ExtResource( 54 )]
 
 position = Vector2( 17950, -550 )
 off_duration = 1.0
 
-[node name="Batterio3" parent="Enemies" index="32" instance=ExtResource( 15 )]
+[node name="Batterio3" parent="Enemies" index="32" instance=ExtResource( 54 )]
 
 position = Vector2( 18400, -550 )
 off_duration = 0.5
@@ -389,19 +736,27 @@ off_duration = 0.5
 
 _sections_unfolded = [ "Transform" ]
 
-[node name="Dwarf Potion" parent="PowerUps" index="0" instance=ExtResource( 16 )]
+[node name="Dwarf Potion" parent="PowerUps" index="0" instance=ExtResource( 55 )]
 
 position = Vector2( 2950, -450 )
 
-[node name="SizeChangingLight" parent="PowerUps" index="1" instance=ExtResource( 17 )]
+[node name="SizeChangingLight" parent="PowerUps" index="1" instance=ExtResource( 56 )]
 
 position = Vector2( 9548.83, -1348.83 )
 
-[node name="Ult Stone" parent="PowerUps" index="2" instance=ExtResource( 18 )]
+[node name="Line" type="Sprite" parent="PowerUps/SizeChangingLight" index="5"]
+
+position = Vector2( -11.1592, -319.672 )
+rotation = 1.54074
+scale = Vector2( 1, 0.2 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Ult Stone" parent="PowerUps" index="2" instance=ExtResource( 57 )]
 
 position = Vector2( 11950, -400 )
 
-[node name="HealPotion" parent="PowerUps" index="3" instance=ExtResource( 19 )]
+[node name="HealPotion" parent="PowerUps" index="3" instance=ExtResource( 58 )]
 
 position = Vector2( 8550, -1050 )
 
@@ -410,7 +765,7 @@ position = Vector2( 8550, -1050 )
 z_index = 1
 _sections_unfolded = [ "Z Index" ]
 
-[node name="PauseButton" parent="." index="14" instance=ExtResource( 20 )]
+[node name="PauseButton" parent="." index="14" instance=ExtResource( 59 )]
 
 [node name="Position2D" type="Position2D" parent="." index="15"]
 
@@ -462,29 +817,29 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Enemies/Canmera14" to="CameraChangingTriggers/FirstMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Calcasio5" to="Writings/CountdownTV2" method="tick"]
-
 [connection signal="defeated" from="Enemies/Calcasio5" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Calcasio6" to="Writings/CountdownTV2" method="tick"]
+[connection signal="defeated" from="Enemies/Calcasio5" to="Writings/CountdownTV2" method="tick"]
 
 [connection signal="defeated" from="Enemies/Calcasio6" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Canmera4" to="Writings/CountdownTV2" method="tick"]
+[connection signal="defeated" from="Enemies/Calcasio6" to="Writings/CountdownTV2" method="tick"]
 
 [connection signal="defeated" from="Enemies/Canmera4" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Canmera5" to="Writings/CountdownTV2" method="tick"]
+[connection signal="defeated" from="Enemies/Canmera4" to="Writings/CountdownTV2" method="tick"]
 
 [connection signal="defeated" from="Enemies/Canmera5" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Canmera6" to="Writings/CountdownTV2" method="tick"]
+[connection signal="defeated" from="Enemies/Canmera5" to="Writings/CountdownTV2" method="tick"]
 
 [connection signal="defeated" from="Enemies/Canmera6" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Canmera7" to="Writings/CountdownTV2" method="tick"]
+[connection signal="defeated" from="Enemies/Canmera6" to="Writings/CountdownTV2" method="tick"]
 
 [connection signal="defeated" from="Enemies/Canmera7" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Canmera7" to="Writings/CountdownTV2" method="tick"]
 
 [connection signal="defeated" from="Enemies/Calcasio7" to="CameraChangingTriggers/ThirdMobClear" method="increment_count"]
 

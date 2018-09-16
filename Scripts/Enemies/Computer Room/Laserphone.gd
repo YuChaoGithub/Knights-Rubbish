@@ -1,29 +1,33 @@
 extends Node2D
 
-# 1. Wait for a character is near.
+# 1. Wait for some seconds.
 # 2. Drops down from the ceiling.
-# 3. Shoots laser.
+# 3. Shoots laser to the nearest character.
 # 4. Climbs Up.
 # 5. Repeat 1.
 # ===
-# If damaged, perform 4.
 # Cannot be stunned.
+
+signal defeated
 
 enum { NONE, WAITING, DROP, TURN_ON, LASER, TURN_OFF, CLIMB }
 
 export(int) var activate_range_x = 1500
 export(int) var activate_range_y = 1500
+export(int) var drop_destination_y
 
-const MAX_HEALTH = 50
+const MAX_HEALTH = 150
 
 # Attack.
 const ATTACK_COUNT = 4
-const DAMAGE = 5
-const LASER_SHOW_DURATION = 0.3
+const DAMAGE = 2
+const LASER_SHOW_DURATION = 0.1
 const LASER_HIDE_DURATION = 0.2
 
 # Movement.
-const DROP_SPEED = 75
+const WAIT_MIN_TIME = 1.0
+const WAIT_MAX_TIME = 3.0
+const DROP_SPEED = 200
 const CLIMB_SPEED = -300
 const ATTACK_RANGE_X = 400
 const DROPPING_TO_CHAR_OFFSET_Y = 150
@@ -44,7 +48,7 @@ var attack_timer = null
 var status_timer = null
 var die_timer = null
 
-onready var original_pos_y = position.y
+onready var original_pos_y = self.position.y
 onready var silk_attach_spot = $"Silk Attach Pos"
 onready var silk_attach_spot_original_pos = silk_attach_spot.global_position
 onready var laser_pos = $"Laser Pos"
@@ -64,7 +68,7 @@ func _process(delta):
 	if ec.not_hurt_dying_stunned():
 		match ec.status:
 			WAITING:
-				wait_till_character_is_near()
+				wait_for_some_time()
 			DROP:
 				drop_down(delta)
 			TURN_ON:
@@ -87,24 +91,19 @@ func _draw():
 func change_status(to_status):
 	ec.change_status(to_status)
 
-func wait_till_character_is_near():
+func wait_for_some_time():
 	ec.play_animation("Still")
-	attack_target = ec.target_detect.get_nearest(self, ec.hero_manager.heroes)
-	if abs(attack_target.global_position.x - global_position.x) <= ATTACK_RANGE_X:
-		ec.change_status(DROP)
+	ec.change_status(NONE)
+	var wait_time = ec.rng.randf_range(WAIT_MIN_TIME, WAIT_MAX_TIME)
+	status_timer = ec.cd_timer.new(wait_time, self, "change_status", DROP)
 
 func drop_down(delta):
 	ec.play_animation("Swing")
 	ec.straight_line_movement.set_velocity(0, DROP_SPEED)
 	ec.perform_straight_line_movement(delta)
 
-	if close_enough_for_attack():
+	if global_position.y > drop_destination_y:
 		ec.change_status(TURN_ON)
-
-func close_enough_for_attack():
-	var target_y = attack_target.global_position.y
-	var curr_y = global_position.y
-	return curr_y > target_y || abs(curr_y - target_y) < DROPPING_TO_CHAR_OFFSET_Y
 
 func play_turn_on_animation():
 	ec.play_animation("Turn On")
@@ -117,6 +116,8 @@ func shoot_laser():
 	status_timer = ec.cd_timer.new((LASER_SHOW_DURATION + LASER_HIDE_DURATION) * ATTACK_COUNT, self, "change_status", TURN_OFF)
 
 func laser_sequence_on():
+	attack_target = ec.target_detect.get_nearest(self, ec.hero_manager.heroes)
+
 	var from = laser_pos.global_position - global_position
 	var to = from + attack_target.global_position - laser_pos.global_position
 	var laser_line = {
@@ -126,7 +127,7 @@ func laser_sequence_on():
 		width = LASER_THICKNESS
 	}
 	drawing_node.add_line(laser_line)
-	attack_target.damaged(DAMAGE)
+	attack_target.damaged(DAMAGE, false)
 	attack_timer = ec.cd_timer.new(LASER_SHOW_DURATION, self, "laser_sequence_off")
 
 func laser_sequence_off():
@@ -145,7 +146,7 @@ func cancel_attack_sequence():
 		attack_timer = null
 
 func climb_up(delta):
-	ec.play_animation("Climb")
+	ec.play_animation("Swing")
 	ec.straight_line_movement.set_velocity(0, CLIMB_SPEED)
 	ec.perform_straight_line_movement(delta)
 
@@ -153,7 +154,6 @@ func climb_up(delta):
 		ec.change_status(WAITING)
 
 func damaged(val):
-	ec.change_status(CLIMB)
 	ec.damaged(val)
 
 func resume_from_damaged():
@@ -170,6 +170,7 @@ func knocked_back(vel_x, vel_y, fade_rate):
 
 func die():
 	ec.die()
+	emit_signal("defeated")
 	cancel_attack_sequence()
 	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
 

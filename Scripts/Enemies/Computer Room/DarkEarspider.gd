@@ -10,10 +10,16 @@ extends Node2D
 # ===
 # If damaged or stunned, perform 4.
 
+signal defeated
+
 enum { NONE, MOVE, DROP, CLAP, CLIMB, RANDOM_MOVEMENT }
 
 export(int) var activate_range_x = 1500
 export(int) var activate_range_y = 1500
+
+# It can only move between the bounds.
+export(int) var left_bound
+export(int) var right_bound
 
 const MAX_HEALTH = 200
 
@@ -29,6 +35,7 @@ const DROPPING_TO_CHAR_OFFSET_X = 200
 const DROPPING_TO_CHAR_OFFSET_Y = 125
 
 const CLAP_STUN_DURATION = 1.5
+const CLAP_DAMAGE = 25
 
 const ATTACHED_SILK_THICKNESS = 5
 
@@ -36,16 +43,12 @@ const ATTACHED_SILK_THICKNESS = 5
 const CLAP_ANIMATION_DURATION = 0.7
 const DIE_ANIMATION_DURATION = 0.5
 
-# It can only move between the bounds.
-export(int) var left_bound
-export(int) var right_bound
-
 var attack_target = null
 var status_timer = null
 var die_timer = null
 var curr_rand_movement = null
 
-onready var original_pos = position
+onready var original_pos = self.global_position
 onready var silk_attach_spot = $"Animation/Body/Silk Pos"
 onready var silk_attach_spot_original_pos = silk_attach_spot.global_position
 
@@ -97,9 +100,9 @@ func move_horizontally_to_target(delta):
 
 	# Apply horizontal movement.
 	movement_type.set_velocity(sign(difference_x) * SPEED_X, 0)
-	var final_pos = position + movement_type.movement(delta)
-	final_pos.x = clamp(final_pos.x, original_pos.x - left_bound, original_pos.x + left_bound)
-	position = final_pos
+	var final_pos = global_position + movement_type.movement(delta)
+	final_pos.x = clamp(final_pos.x, left_bound, right_bound)
+	global_position = final_pos
 
 	# Close enough, land after a delay.
 	if abs(difference_x) <= DROPPING_TO_CHAR_OFFSET_X:
@@ -108,7 +111,7 @@ func move_horizontally_to_target(delta):
 func drop_down(delta):
 	ec.play_animation("Drop")
 	movement_type.set_velocity(0, SPEED_Y)
-	position += movement_type.movement(delta)
+	global_position += movement_type.movement(delta)
 
 	# Close enough or the target is above, perform clap attack.
 	var target_y = attack_target.global_position.y
@@ -124,15 +127,16 @@ func clap_attack():
 # Will be signalled if a character is clapped.
 func clap_attack_hit(area):
 	if area.is_in_group("hero"):
+		area.get_node("..").damaged(CLAP_DAMAGE)
 		area.get_node("..").stunned(CLAP_STUN_DURATION)
 
 func climb_up(delta):
 	ec.play_animation("Still")
 	movement_type.set_velocity(0, -SPEED_Y)
-	position += movement_type.movement(delta)
+	global_position += movement_type.movement(delta)
 
 	# Back to the original y position. Start random horizontal movement.
-	if position.y <= original_pos.y:
+	if global_position.y <= original_pos.y:
 		search_for_target()
 		ec.change_status(RANDOM_MOVEMENT)
 
@@ -144,9 +148,9 @@ func perform_random_movement(delta):
 	
 	if !curr_rand_movement.movement_ended():
 		# Perform random movement sequence.
-		var final_pos = position + curr_rand_movement.movement(delta)
+		var final_pos = global_position + curr_rand_movement.movement(delta)
 		final_pos.x = clamp(final_pos.x, original_pos.x - left_bound, original_pos.x + left_bound)
-		position = final_pos
+		global_position = final_pos
 	else:
 		# Search for a new target and perform MOVE.
 		curr_rand_movement = null
@@ -169,6 +173,7 @@ func resume_from_stunned():
 
 func die():
 	ec.die()
+	emit_signal("defeated")
 	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
 
 func healed(val):
