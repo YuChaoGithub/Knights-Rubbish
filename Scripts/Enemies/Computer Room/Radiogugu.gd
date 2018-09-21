@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 # Radiogugu AI:
-# 1. Walk randomly. If HP > 50%, go to 2. If HP < 50%, (30% go to 6. 30% go to 2. 40% go to 7).
+# 1. Walk randomly. If HP > 50%, go to 2. If HP < 50%, (20% go to 6. 20% go to 2. 60% go to 7).
 # 2. Throws casio bombs to slow down a character.
 # 3. Walk back until the casio bomb is freed.
 # 4. Walk to the character hit by the casio bomb. If none, walk to the farthest.
@@ -12,6 +12,8 @@ extends KinematicBody2D
 # Play Hurt animation only when walking. Cannot be stunned.
 # Drops 2 stereo bombs when dead.
 
+signal defeated
+
 enum { NONE, RANDOM_ROAM, SLOW_BOMB_ANIM, THROW_SLOW_BOMB, WAIT_SLOW_BOMB_FREED,
 	   WALK_TO_CHARACTER, SCRATCH_ANIM, SCRATCH, DROP_FLOOPY_ANIM, DROP_FLOOPY,
 	   LASER_EYES_ANIM, LASER_EYES_SHOOT, LASER_EYES_RECOVER }
@@ -19,17 +21,17 @@ enum { NONE, RANDOM_ROAM, SLOW_BOMB_ANIM, THROW_SLOW_BOMB, WAIT_SLOW_BOMB_FREED,
 export(int) var activate_range_x = 1000
 export(int) var activate_range_y = 1000
 
-const MAX_HEALTH = 1200
+const MAX_HEALTH = 4444
 
 # Attack.
-const SINGLE_SCRATCH_DAMAGE = 15
-const SCRATCH_RANGE = 750
+const SINGLE_SCRATCH_DAMAGE = 20
+const SCRATCH_RANGE = 900
 const SCRATCH_INTERVAL = 0.3
 const SCRATCH_PERFORM_RANGE = 500
 const LASER_COUNT = 5
 const LASER_SHOW_DURATION = 0.16
 const LASER_HIDE_DURATION = 0.04
-const LASER_DAMAGE = 7
+const LASER_DAMAGE = 5
 const KNOCK_BACK_VEL_X = 150
 const KNOCK_BACK_VEL_Y = 100
 const KNOCK_BACK_FADE_RATE = 300
@@ -40,8 +42,8 @@ const RUSH_SPEED_X = 400
 const GRAVITY = 600
 const RANDOM_MOVEMENT_MIN_STEPS = 2
 const RANDOM_MOVEMENT_MAX_STEPS = 4
-const RANDOM_MOVEMENT_MIN_TIME_PER_STEP = 1.5
-const RANDOM_MOVEMENT_MAX_TIME_PER_STEP = 2.5
+const RANDOM_MOVEMENT_MIN_TIME_PER_STEP = 1.25
+const RANDOM_MOVEMENT_MAX_TIME_PER_STEP = 1.75
 
 # Animation.
 const DIE_ANIMATION_DURATION = 1.0
@@ -87,10 +89,14 @@ onready var watch_spawn_pos = $"Animation/Body/Watch Spawn Pos"
 onready var left_laser_spawn_pos = $"Animation/Body/Left Laser Spawn Pos"
 onready var right_laser_spawn_pos = $"Animation/Body/Right Laser Spawn Pos"
 onready var drawing_node = $"Drawing Node"
-onready var raycast_space = get_world_2d().get_direct_space_state()
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 onready var display_screen = $"Animation/Body/Head/Display"
+
+# Stereo Bomb.
+var stereo_bomb = preload("res://Scenes/Enemies/Computer Room/Radiogugu Stereo Bomb.tscn")
+onready var stereo_bomb_pos_left = $"Animation/Body/LeftStereoBombSpawnPos"
+onready var stereo_bomb_pos_right = $"Animation/Body/RightStereoBombSpawnPos"
 
 func activate():
 	ec.health_bar.show_health_bar()
@@ -135,7 +141,7 @@ func change_status(to_status):
 
 func turn_sprites_x(facing):
 	ec.turn_sprites_x(facing)
-	display_screen.scale.x = abs(display_scale.x) * facing
+	display_screen.scale.x = abs(display_screen.scale.x) * facing
 
 func random_roam(delta):
 	ec.play_animation("Walk")
@@ -154,9 +160,9 @@ func movement_ended():
 		to_status = SLOW_BOMB_ANIM
 	else:
 		var rand_num = ec.rng.randi_range(0, 100)
-		if rand_num < 30:
+		if rand_num < 20:
 			to_status = DROP_FLOOPY_ANIM
-		elif rand_num < 60:
+		elif rand_num < 40:
 			to_status = SLOW_BOMB_ANIM
 		else:
 			to_status = LASER_EYES_ANIM
@@ -297,25 +303,20 @@ func find_laser_targets():
 	laser_target_right = ec.target_detect.get_nearest(right_laser_spawn_pos, ec.hero_manager.heroes)
 
 func laser_sequence_on():
-	var left_laser_from = left_laser_spawn_pos.global_position
-	var right_laser_from = right_laser_spawn_pos.global_position
-
-	var left_laser_to = laser_target_left.global_position
-	var right_laser_to = laser_target_right.global_position
-
-	var left_ray_hit = raycast_space.intersect_ray(left_laser_from, left_laser_to, [self], platform_layer)
-	var right_ray_hit = raycast_space.intersect_ray(right_laser_from, right_laser_to, [self], platform_layer)
-
+	var from_left = left_laser_spawn_pos.global_position - global_position
+	var to_left = from_left + laser_target_left.global_position - left_laser_spawn_pos.global_position
 	var laser_line_left = {
-		from_pos = left_laser_from - global_position,
-		to_pos = (left_ray_hit.position if left_ray_hit.size() != 0 else left_laser_to) - global_position,
+		from_pos = from_left,
+		to_pos = to_left,
 		color = LASER_COLOR,
 		width = LASER_THICKNESS
 	}
 	
+	var from_right = right_laser_spawn_pos.global_position - global_position
+	var to_right = from_right + laser_target_right.global_position - right_laser_spawn_pos.global_position
 	var laser_line_right = {
-		from_pos = right_laser_from - global_position,
-		to_pos = (right_ray_hit.position if right_ray_hit.size() != 0 else right_laser_to) - global_position,
+		from_pos = from_right,
+		to_pos = to_right,
 		color = LASER_COLOR,
 		width = LASER_THICKNESS
 	}
@@ -323,11 +324,8 @@ func laser_sequence_on():
 	drawing_node.add_line(laser_line_left)
 	drawing_node.add_line(laser_line_right)
 
-	if left_ray_hit.size() == 0:
-		laser_target_left.damaged(LASER_DAMAGE)
-
-	if right_ray_hit.size() == 0:
-		laser_target_right.damaged(LASER_DAMAGE)
+	laser_target_left.damaged(LASER_DAMAGE, false)
+	laser_target_right.damaged(LASER_DAMAGE, false)
 
 	laser_timer = ec.cd_timer.new(LASER_SHOW_DURATION, self, "laser_sequence_off")
 
@@ -346,6 +344,14 @@ func cancel_laser_sequence():
 	if laser_timer != null:
 		laser_timer.destroy_timer()
 		laser_timer = null
+
+func spawn_stereo_bombs():
+	var left_bomb = stereo_bomb.instance()
+	var right_bomb = stereo_bomb.instance()
+	spawn_node.add_child(left_bomb)
+	spawn_node.add_child(right_bomb)
+	left_bomb.global_position = stereo_bomb_pos_left.global_position
+	right_bomb.global_position = stereo_bomb_pos_right.global_position
 
 func damaged(val):
 	var play_hurt_anim = ec.animator.current_animation == "Walk"
@@ -367,7 +373,9 @@ func knocked_back(vel_x, vel_y, fade_rate):
 	return
 
 func die():
+	spawn_stereo_bombs()
 	ec.die()
+	emit_signal("defeated")
 	ec.health_bar.drop_health_bar()
 	cancel_laser_sequence()
 	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

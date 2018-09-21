@@ -1033,7 +1033,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 [node name="Door1-1" parent="Structures" index="19" instance=ExtResource( 67 )]
 
 position = Vector2( 2350, 400 )
-enter_scene_path = "res://Scenes/Levels/Level 1-1.tscn"
+enter_scene_path = "res://Scenes/Levels/Level 1-10.tscn"
 
 [node name="SizeChangingLight" parent="Structures" index="20" instance=ExtResource( 68 )]
 
@@ -1352,21 +1352,21 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/FirstMobClearTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -6900 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/BluePortalPassTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -6300 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/BluePortalPassTrigger" to="Activator" method="activate"]
+
+[connection signal="passed" from="CameraChangingTriggers/BluePortalPassTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -6300 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger2" to="FollowingCamera" method="update_top_limit" binds= [ -5650 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/PortalPassTrigger2" to="FollowingCamera" method="update_top_limit" binds= [ -4900 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/PortalPassTrigger2" to="Activator2" method="activate"]
+
+[connection signal="passed" from="CameraChangingTriggers/PortalPassTrigger2" to="FollowingCamera" method="update_top_limit" binds= [ -4900 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="FollowingCamera" method="update_top_limit" binds= [ -4300 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/PortalPassTrigger3" to="FollowingCamera" method="update_top_limit" binds= [ -3500 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/PortalPassTrigger3" to="Activator3" method="activate"]
+
+[connection signal="passed" from="CameraChangingTriggers/PortalPassTrigger3" to="FollowingCamera" method="update_top_limit" binds= [ -3500 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="FollowingCamera" method="update_top_limit" binds= [ -2900 ]]
 

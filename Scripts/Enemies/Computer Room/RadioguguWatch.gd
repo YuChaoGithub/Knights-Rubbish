@@ -3,8 +3,8 @@ extends Node2D
 const SPEED = 2000
 const LIFETIME = 2
 
-const DAMAGE = 5
-const SLOW_DURATION = 3
+const DAMAGE = 30
+const SLOW_DURATION = 5
 const SLOW_RATE = 0.5
 const KNOCK_BACK_VEL_X = 150
 const KNOCK_BACK_VEL_Y = 150
@@ -28,9 +28,14 @@ func _process(delta):
 func on_attack_hit(area):
 	if area.is_in_group("hero"):
 		var character = area.get_node("..")
+		var args = {
+			multiplier = SLOW_RATE,
+			duration = SLOW_DURATION
+		}
+
 		character.damaged(DAMAGE)
 		character.knocked_back(KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
-		character.speed_changed(SLOW_RATE, SLOW_DURATION)
+		character.speed_changed(args)
 
 		parent_node.attack_target = character
 		free_watch()

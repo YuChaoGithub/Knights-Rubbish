@@ -1,0 +1,1495 @@
+[gd_scene load_steps=88 format=2]
+
+[ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/HeroManager.gd" type="Script" id=2]
+[ext_resource path="res://Tilesets/White Wall.tres" type="TileSet" id=3]
+[ext_resource path="res://Graphics/Structure/Main Menu Door.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/UI/White Circular Frame.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/UI/White Line.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/background/White Wall Decoration/break 1.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/background/White Wall Decoration/break 2.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Stain 3.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Paint 2.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Stain 1.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Top Erode.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/background/White Wall Decoration/paint 1.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Top Erode 2.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Stain 5.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 2.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 3.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 5.png" type="Texture" id=18]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 2.png" type="Texture" id=19]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 4.png" type="Texture" id=20]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 6.png" type="Texture" id=21]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 5.png" type="Texture" id=22]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 1.png" type="Texture" id=23]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 4.png" type="Texture" id=24]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 1.png" type="Texture" id=25]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 3.png" type="Texture" id=26]
+[ext_resource path="res://Graphics/background/White Wall Decoration/break 5.png" type="Texture" id=27]
+[ext_resource path="res://Graphics/background/White Wall Decoration/break 4.png" type="Texture" id=28]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Stain 4.png" type="Texture" id=29]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Stain 6.png" type="Texture" id=30]
+[ext_resource path="res://Graphics/background/White Wall Decoration/break 6.png" type="Texture" id=31]
+[ext_resource path="res://Graphics/background/White Wall Decoration/Bulge.png" type="Texture" id=32]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 3.png" type="Texture" id=33]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 2.png" type="Texture" id=34]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 6.png" type="Texture" id=35]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 7.png" type="Texture" id=36]
+[ext_resource path="res://Tilesets/Wooden Floor.tres" type="TileSet" id=37]
+[ext_resource path="res://Fonts/scratchl.tres" type="DynamicFont" id=38]
+[ext_resource path="res://Graphics/UI/White Arrow.png" type="Texture" id=39]
+[ext_resource path="res://Graphics/UI/White Curved Arrow.png" type="Texture" id=40]
+[ext_resource path="res://Graphics/background/General Decoration/Wires 1.png" type="Texture" id=41]
+[ext_resource path="res://Graphics/background/General Decoration/Wire 2.png" type="Texture" id=42]
+[ext_resource path="res://Graphics/background/Level 1/Dead Mouse.png" type="Texture" id=43]
+[ext_resource path="res://Graphics/background/Level 1/DeadPhone.png" type="Texture" id=44]
+[ext_resource path="res://Graphics/background/Level 1/DeadTablet.png" type="Texture" id=45]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 1.png" type="Texture" id=46]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 9.png" type="Texture" id=47]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 1.png" type="Texture" id=48]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 4.png" type="Texture" id=49]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 3.png" type="Texture" id=50]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 4.png" type="Texture" id=51]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 7.png" type="Texture" id=52]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 8.png" type="Texture" id=53]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 9.png" type="Texture" id=54]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 5.png" type="Texture" id=55]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 5.png" type="Texture" id=56]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 7.png" type="Texture" id=57]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 11.png" type="Texture" id=58]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 8.png" type="Texture" id=59]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 10.png" type="Texture" id=60]
+[ext_resource path="res://Graphics/background/General Decoration/Plank with Screws.png" type="Texture" id=61]
+[ext_resource path="res://Graphics/background/General Decoration/Plank with Tapes.png" type="Texture" id=62]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 5.png" type="Texture" id=63]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 4.png" type="Texture" id=64]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 1.png" type="Texture" id=65]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 10.png" type="Texture" id=66]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 9.png" type="Texture" id=67]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 12.png" type="Texture" id=68]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 19.png" type="Texture" id=69]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 25.png" type="Texture" id=70]
+[ext_resource path="res://Graphics/background/Tapes/Tape 1.png" type="Texture" id=71]
+[ext_resource path="res://Graphics/background/Tapes/Tape 3.png" type="Texture" id=72]
+[ext_resource path="res://Graphics/background/Tapes/Tape 2.png" type="Texture" id=73]
+[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=74]
+[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=75]
+[ext_resource path="res://Scenes/Platforms/Enemy Blocking Platform.tscn" type="PackedScene" id=76]
+[ext_resource path="res://Scenes/Structures/Portal.tscn" type="PackedScene" id=77]
+[ext_resource path="res://Fonts/edosz.tres" type="DynamicFont" id=78]
+[ext_resource path="res://Graphics/Structure/Portal Outline.png" type="Texture" id=79]
+[ext_resource path="res://Scenes/Structures/Light.tscn" type="PackedScene" id=80]
+[ext_resource path="res://Scenes/Structures/Computer Screen.tscn" type="PackedScene" id=81]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Radiogugu Stereo Bomb.tscn" type="PackedScene" id=82]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Radiogugu.tscn" type="PackedScene" id=83]
+[ext_resource path="res://Scenes/Power Ups/Defense Potion.tscn" type="PackedScene" id=84]
+[ext_resource path="res://Scenes/Power Ups/Healing Potion.tscn" type="PackedScene" id=85]
+[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=86]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "Animate"
+length = 1.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.523438, 0.493607, 0.448862, 1 ), Color( 0, 1, 0.179688, 1 ) ]
+}
+
+[node name="Game Level" type="Node2D" index="0"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="FollowingCamera" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 1500, -2606.33 )
+z_index = 1
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", "Z Index" ]
+drag_margin_right = 1.1
+drag_margin_left = -0.1
+drag_margin_top = -0.1
+drag_margin_bottom = 1.1
+bottom_limit = 1000000000
+
+[node name="HeroManager" type="Position2D" parent="." index="1"]
+
+position = Vector2( 1508.78, -2161.05 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WhiteWall" type="TileMap" parent="." index="2"]
+
+modulate = Color( 0.611765, 0.611765, 0.611765, 1 )
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 500, 500 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 0
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -458753, 0, 0, -524288, 0, 0, -524287, 0, 0, -524286, 0, 0, -524285, 0, 0, -524284, 0, 0, -524283, 0, 0, -524282, 0, 0, -393217, 0, 0, -458752, 0, 65537, -458751, 0, 0, -458750, 0, 65540, -458749, 0, 2, -458748, 0, 65538, -458747, 0, 65538, -458746, 0, 0, -327681, 0, 0, -393216, 0, 4, -393215, 0, 65537, -393214, 0, 65537, -393213, 0, 2, -393212, 0, 0, -393211, 0, 3, -393210, 0, 0, -262145, 0, 0, -327680, 0, 65537, -327679, 0, 65538, -327678, 0, 0, -327677, 0, 2, -327676, 0, 65538, -327675, 0, 65536, -327674, 0, 0, -327673, 0, 0, -327672, 0, 0, -327671, 0, 0, -327670, 0, 0, -327669, 0, 0, -327668, 0, 0, -327667, 0, 0, -327666, 0, 0, -327665, 0, 0, -327664, 0, 0, -327663, 0, 0, -327662, 0, 0, -196609, 0, 0, -262144, 0, 65540, -262143, 0, 65536, -262142, 0, 1, -262141, 0, 65536, -262140, 0, 3, -262139, 0, 2, -262138, 0, 65540, -262137, 0, 65538, -262136, 0, 1, -262135, 0, 65540, -262134, 0, 65536, -262133, 0, 3, -262132, 0, 65539, -262131, 0, 65537, -262130, 0, 65539, -262129, 0, 65540, -262128, 0, 65539, -262127, 0, 65539, -262126, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 65539, -196606, 0, 65537, -196605, 0, 65540, -196604, 0, 65538, -196603, 0, 3, -196602, 0, 65540, -196601, 0, 65537, -196600, 0, 65540, -196599, 0, 0, -196598, 0, 65538, -196597, 0, 4, -196596, 0, 0, -196595, 0, 3, -196594, 0, 65538, -196593, 0, 1, -196592, 0, 65539, -196591, 0, 1, -196590, 0, 0, -65537, 0, 0, -131072, 0, 2, -131071, 0, 65538, -131070, 0, 65540, -131069, 0, 65537, -131068, 0, 4, -131067, 0, 1, -131066, 0, 65536, -131065, 0, 3, -131064, 0, 3, -131063, 0, 0, -131062, 0, 65539, -131061, 0, 65537, -131060, 0, 3, -131059, 0, 65536, -131058, 0, 3, -131057, 0, 4, -131056, 0, 65536, -131055, 0, 65537, -131054, 0, 0, -1, 0, 0, -65536, 0, 65540, -65535, 0, 3, -65534, 0, 65537, -65533, 0, 65540, -65532, 0, 65540, -65531, 0, 65537, -65530, 0, 65537, -65529, 0, 3, -65528, 0, 65537, -65527, 0, 65538, -65526, 0, 65538, -65525, 0, 1, -65524, 0, 65537, -65523, 0, 65537, -65522, 0, 2, -65521, 0, 65539, -65520, 0, 4, -65519, 0, 0, -65518, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 5 )
+_sections_unfolded = [ "Cell", "Collision", "Visibility" ]
+
+[node name="BackgroundDecorations" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
+modulate = Color( 0.611765, 0.611765, 0.611765, 1 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Main Menu Door" type="Sprite" parent="BackgroundDecorations" index="0"]
+
+editor/display_folded = true
+self_modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1498.82, -2140 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="White Circular Frame" type="Sprite" parent="BackgroundDecorations/Main Menu Door" index="0"]
+
+editor/display_folded = true
+modulate = Color( 0.515625, 0, 0, 1 )
+position = Vector2( 82.7062, -544.991 )
+rotation = -0.332682
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="White Line" type="Sprite" parent="BackgroundDecorations/Main Menu Door/White Circular Frame" index="0"]
+
+position = Vector2( 10.1679, 12.7098 )
+texture = ExtResource( 6 )
+
+[node name="break 1" type="Sprite" parent="BackgroundDecorations" index="1"]
+
+position = Vector2( 550, -2450 )
+texture = ExtResource( 7 )
+
+[node name="break 2" type="Sprite" parent="BackgroundDecorations" index="2"]
+
+position = Vector2( 739.211, -1078.9 )
+texture = ExtResource( 8 )
+
+[node name="Stain 3" type="Sprite" parent="BackgroundDecorations" index="3"]
+
+position = Vector2( 2269.33, -601.096 )
+texture = ExtResource( 9 )
+
+[node name="Paint 2" type="Sprite" parent="BackgroundDecorations" index="4"]
+
+position = Vector2( 2219.04, -1548.96 )
+texture = ExtResource( 10 )
+
+[node name="Stain 1" type="Sprite" parent="BackgroundDecorations" index="5"]
+
+position = Vector2( 1215.08, -1038.27 )
+texture = ExtResource( 11 )
+
+[node name="Top Erode" type="Sprite" parent="BackgroundDecorations" index="6"]
+
+position = Vector2( 2050.74, -1810.11 )
+texture = ExtResource( 12 )
+
+[node name="paint 1" type="Sprite" parent="BackgroundDecorations" index="7"]
+
+position = Vector2( 1963.7, -1307.16 )
+texture = ExtResource( 13 )
+
+[node name="Top Erode 2" type="Sprite" parent="BackgroundDecorations" index="8"]
+
+position = Vector2( 1920.56, -385.403 )
+rotation = 3.12316
+texture = ExtResource( 14 )
+
+[node name="Stain 5" type="Sprite" parent="BackgroundDecorations" index="9"]
+
+position = Vector2( 735.719, -529.869 )
+texture = ExtResource( 15 )
+
+[node name="Paper 2" type="Sprite" parent="BackgroundDecorations" index="10"]
+
+position = Vector2( 1083.93, -367.282 )
+rotation = -1.54101
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 3" type="Sprite" parent="BackgroundDecorations" index="11"]
+
+position = Vector2( 1242.72, -367.838 )
+rotation = -3.25891
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 17 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 4" type="Sprite" parent="BackgroundDecorations" index="12"]
+
+position = Vector2( 2200.66, -359.483 )
+rotation = -1.93458
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 18 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 5" type="Sprite" parent="BackgroundDecorations" index="13"]
+
+position = Vector2( 2360.19, -387.922 )
+rotation = -1.55952
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 19 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 6" type="Sprite" parent="BackgroundDecorations" index="14"]
+
+position = Vector2( 2078.98, -371.047 )
+rotation = -1.5966
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 20 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 7" type="Sprite" parent="BackgroundDecorations" index="15"]
+
+position = Vector2( 1139.98, -364.738 )
+rotation = -1.49647
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 21 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 8" type="Sprite" parent="BackgroundDecorations" index="16"]
+
+position = Vector2( 558.297, -377.09 )
+rotation = -4.12866
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 9" type="Sprite" parent="BackgroundDecorations" index="17"]
+
+position = Vector2( 851.907, -356.267 )
+rotation = -1.29039
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 23 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 10" type="Sprite" parent="BackgroundDecorations" index="18"]
+
+position = Vector2( 1483.07, -374.246 )
+rotation = -0.607351
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 24 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 11" type="Sprite" parent="BackgroundDecorations" index="19"]
+
+position = Vector2( 1552.46, -368.195 )
+rotation = -1.93907
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 25 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 1" type="Sprite" parent="BackgroundDecorations" index="20"]
+
+position = Vector2( 3767.2, -389.269 )
+rotation = 0.80413
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 25 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 12" type="Sprite" parent="BackgroundDecorations" index="21"]
+
+position = Vector2( 4448.52, -398.916 )
+rotation = 0.234019
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 17 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 13" type="Sprite" parent="BackgroundDecorations" index="22"]
+
+position = Vector2( 5225.09, -400.122 )
+rotation = 0.234019
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 18 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 14" type="Sprite" parent="BackgroundDecorations" index="23"]
+
+position = Vector2( 4920.01, -466.444 )
+rotation = -0.0287776
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 19 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 15" type="Sprite" parent="BackgroundDecorations" index="24"]
+
+position = Vector2( 3851.61, -369.975 )
+rotation = -1.54069
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 23 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 16" type="Sprite" parent="BackgroundDecorations" index="25"]
+
+position = Vector2( 3212.11, -388.411 )
+rotation = -1.73348
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 20 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 17" type="Sprite" parent="BackgroundDecorations" index="26"]
+
+position = Vector2( 5696.58, -402.251 )
+rotation = -0.0213584
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 18" type="Sprite" parent="BackgroundDecorations" index="27"]
+
+position = Vector2( 6824.78, -369.21 )
+rotation = -1.6344
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 16 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 19" type="Sprite" parent="BackgroundDecorations" index="28"]
+
+position = Vector2( 7562.25, -367.587 )
+rotation = -1.16068
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 23 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 20" type="Sprite" parent="BackgroundDecorations" index="29"]
+
+position = Vector2( 5918.5, -375.607 )
+rotation = -1.14832
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 26 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="break 5" type="Sprite" parent="BackgroundDecorations" index="30"]
+
+position = Vector2( 3445.92, -579.99 )
+texture = ExtResource( 27 )
+
+[node name="break 4" type="Sprite" parent="BackgroundDecorations" index="31"]
+
+position = Vector2( 6103.16, -520.352 )
+texture = ExtResource( 28 )
+
+[node name="Top Erode 3" type="Sprite" parent="BackgroundDecorations" index="32"]
+
+position = Vector2( 5042.91, -714.73 )
+texture = ExtResource( 14 )
+
+[node name="Top Erode2" type="Sprite" parent="BackgroundDecorations" index="33"]
+
+position = Vector2( 6272.42, -376.698 )
+rotation = 3.1079
+texture = ExtResource( 12 )
+
+[node name="Stain 6" type="Sprite" parent="BackgroundDecorations" index="34"]
+
+position = Vector2( 3972.65, -561.648 )
+texture = ExtResource( 15 )
+
+[node name="Stain 4" type="Sprite" parent="BackgroundDecorations" index="35"]
+
+position = Vector2( 5578.69, -538.856 )
+texture = ExtResource( 29 )
+
+[node name="Stain 7" type="Sprite" parent="BackgroundDecorations" index="36"]
+
+position = Vector2( 4674.7, -552.039 )
+texture = ExtResource( 30 )
+
+[node name="break 6" type="Sprite" parent="BackgroundDecorations" index="37"]
+
+position = Vector2( 4254.93, -682.109 )
+texture = ExtResource( 31 )
+
+[node name="Bulge" type="Sprite" parent="BackgroundDecorations" index="38"]
+
+position = Vector2( 7267.19, -868.498 )
+texture = ExtResource( 32 )
+
+[node name="break 3" type="Sprite" parent="BackgroundDecorations" index="39"]
+
+position = Vector2( 7503.81, -491.59 )
+texture = ExtResource( 8 )
+
+[node name="Stain 8" type="Sprite" parent="BackgroundDecorations" index="40"]
+
+position = Vector2( 6648.31, -685.287 )
+texture = ExtResource( 33 )
+
+[node name="Stain 2" type="Sprite" parent="BackgroundDecorations" index="41"]
+
+position = Vector2( 4547.21, -710.789 )
+texture = ExtResource( 34 )
+
+[node name="Stain 9" type="Sprite" parent="BackgroundDecorations" index="42"]
+
+position = Vector2( 5976.82, -693.072 )
+texture = ExtResource( 35 )
+
+[node name="Stain 10" type="Sprite" parent="BackgroundDecorations" index="43"]
+
+position = Vector2( 3664.05, -690.495 )
+texture = ExtResource( 36 )
+
+[node name="Platform" type="TileMap" parent="." index="4"]
+
+modulate = Color( 0.664062, 0.664062, 0.664078, 1 )
+mode = 0
+tile_set = ExtResource( 37 )
+cell_size = Vector2( 100, 100 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 4
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -2228223, 0, 196609, -2228222, 0, 3, -2228221, 0, 196612, -2228220, 0, 131076, -2228219, 0, 131077, -2228218, 0, 196613, -2228217, 0, 131076, -2228216, 0, 196613, -2228215, 0, 196612, -2228214, 0, 196613, -2228213, 0, 3, -2228212, 0, 131077, -2228211, 0, 131077, -2228210, 0, 196613, -2228209, 0, 131076, -2228208, 0, 196612, -2228207, 0, 131077, -2228206, 0, 196613, -2228205, 0, 131077, -2228204, 0, 196613, -2228203, 0, 196612, -2228202, 0, 196612, -2228201, 0, 196613, -2228200, 0, 131077, -2228199, 0, 131076, -2228198, 0, 131077, -2228197, 0, 131076, -2228196, 0, 0, -2162687, 0, 1, -2162686, 0, 4, -2162685, 0, 65539, -2162684, 0, 196614, -2162683, 0, 196614, -2162682, 0, 131073, -2162681, 0, 131078, -2162680, 0, 196614, -2162679, 0, 131078, -2162678, 0, 131074, -2162677, 0, 65539, -2162676, 0, 131073, -2162675, 0, 131073, -2162674, 0, 131078, -2162673, 0, 131073, -2162672, 0, 131078, -2162671, 0, 131073, -2162670, 0, 131074, -2162669, 0, 65539, -2162668, 0, 131073, -2162667, 0, 131078, -2162666, 0, 196614, -2162665, 0, 196614, -2162664, 0, 196614, -2162663, 0, 131073, -2162662, 0, 131074, -2162661, 0, 65541, -2162660, 0, 131075, -2097151, 0, 65542, -2097150, 0, 65538, -2097149, 0, 6, -2097142, 0, 65542, -2097141, 0, 131075, -2097134, 0, 65542, -2097133, 0, 131075, -2097126, 0, 1, -2097125, 0, 4, -2097124, 0, 6, -2031615, 0, 65542, -2031614, 0, 65538, -2031613, 0, 131075, -2031606, 0, 1, -2031605, 0, 131075, -2031598, 0, 65542, -2031597, 0, 6, -2031590, 0, 65542, -2031589, 0, 65540, -2031588, 0, 131075, -1966079, 0, 65542, -1966078, 0, 65540, -1966077, 0, 6, -1966070, 0, 65542, -1966069, 0, 6, -1966062, 0, 65542, -1966061, 0, 6, -1966054, 0, 65542, -1966053, 0, 65538, -1966052, 0, 6, -1900543, 0, 1, -1900542, 0, 65540, -1900541, 0, 6, -1900534, 0, 65542, -1900533, 0, 6, -1900526, 0, 1, -1900525, 0, 131075, -1900518, 0, 1, -1900517, 0, 4, -1900516, 0, 6, -1835007, 0, 65542, -1835006, 0, 65538, -1835005, 0, 131075, -1834998, 0, 65542, -1834997, 0, 6, -1834990, 0, 65542, -1834989, 0, 131075, -1834982, 0, 65542, -1834981, 0, 65540, -1834980, 0, 6, -1769471, 0, 1, -1769470, 0, 65541, -1769469, 0, 2, -1769468, 0, 3, -1769467, 0, 131077, -1769466, 0, 196612, -1769465, 0, 3, -1769464, 0, 196613, -1769463, 0, 196613, -1769462, 0, 65537, -1769461, 0, 2, -1769460, 0, 131076, -1769459, 0, 196613, -1769458, 0, 196612, -1769457, 0, 131077, -1769456, 0, 196612, -1769455, 0, 196613, -1769454, 0, 65537, -1769453, 0, 2, -1769452, 0, 196612, -1769451, 0, 131077, -1769450, 0, 196613, -1769449, 0, 131077, -1769448, 0, 131077, -1769447, 0, 196612, -1769446, 0, 65537, -1769445, 0, 5, -1769444, 0, 131075, -1703935, 0, 65542, -1703934, 0, 5, -1703933, 0, 65539, -1703932, 0, 131073, -1703931, 0, 131078, -1703930, 0, 131078, -1703929, 0, 131078, -1703928, 0, 131073, -1703927, 0, 131074, -1703926, 0, 65539, -1703925, 0, 131073, -1703924, 0, 131073, -1703923, 0, 196614, -1703922, 0, 131073, -1703921, 0, 131073, -1703920, 0, 196614, -1703919, 0, 131073, -1703918, 0, 131078, -1703917, 0, 131074, -1703916, 0, 65539, -1703915, 0, 131078, -1703914, 0, 131078, -1703913, 0, 196614, -1703912, 0, 131078, -1703911, 0, 131078, -1703910, 0, 131074, -1703909, 0, 65538, -1703908, 0, 131075, -1638399, 0, 65542, -1638398, 0, 4, -1638397, 0, 131075, -1638391, 0, 65542, -1638390, 0, 131075, -1638381, 0, 65542, -1638380, 0, 6, -1638374, 0, 1, -1638373, 0, 65538, -1638372, 0, 131075, -1572863, 0, 1, -1572862, 0, 5, -1572861, 0, 131075, -1572855, 0, 65542, -1572854, 0, 6, -1572845, 0, 65542, -1572844, 0, 131075, -1572838, 0, 65542, -1572837, 0, 4, -1572836, 0, 6, -1507327, 0, 1, -1507326, 0, 65538, -1507325, 0, 131075, -1507319, 0, 65542, -1507318, 0, 6, -1507309, 0, 65542, -1507308, 0, 131075, -1507302, 0, 65542, -1507301, 0, 65538, -1507300, 0, 6, -1441791, 0, 65542, -1441790, 0, 65541, -1441789, 0, 131075, -1441783, 0, 1, -1441782, 0, 131075, -1441773, 0, 1, -1441772, 0, 6, -1441766, 0, 65542, -1441765, 0, 5, -1441764, 0, 131075, -1376255, 0, 65542, -1376254, 0, 4, -1376253, 0, 131075, -1376247, 0, 65542, -1376246, 0, 6, -1376237, 0, 65542, -1376236, 0, 6, -1376230, 0, 65542, -1376229, 0, 65540, -1376228, 0, 131075, -1310719, 0, 65542, -1310718, 0, 65541, -1310717, 0, 2, -1310716, 0, 196613, -1310715, 0, 196613, -1310714, 0, 196613, -1310713, 0, 131077, -1310712, 0, 196613, -1310711, 0, 65537, -1310710, 0, 2, -1310709, 0, 196612, -1310708, 0, 131076, -1310707, 0, 196612, -1310706, 0, 3, -1310705, 0, 196613, -1310704, 0, 131077, -1310703, 0, 3, -1310702, 0, 131076, -1310701, 0, 65537, -1310700, 0, 2, -1310699, 0, 131077, -1310698, 0, 131076, -1310697, 0, 131076, -1310696, 0, 196612, -1310695, 0, 3, -1310694, 0, 65537, -1310693, 0, 5, -1310692, 0, 131075, -1245183, 0, 1, -1245182, 0, 5, -1245181, 0, 65539, -1245180, 0, 131073, -1245179, 0, 196614, -1245178, 0, 131078, -1245177, 0, 131073, -1245176, 0, 196614, -1245175, 0, 131073, -1245174, 0, 196614, -1245173, 0, 196614, -1245172, 0, 131073, -1245171, 0, 131078, -1245170, 0, 131073, -1245169, 0, 131073, -1245168, 0, 196614, -1245167, 0, 131078, -1245166, 0, 131073, -1245165, 0, 196614, -1245164, 0, 131078, -1245163, 0, 131078, -1245162, 0, 131078, -1245161, 0, 196614, -1245160, 0, 131078, -1245159, 0, 131078, -1245158, 0, 131074, -1245157, 0, 65541, -1245156, 0, 6, -1179647, 0, 65542, -1179646, 0, 5, -1179645, 0, 6, -1179622, 0, 65542, -1179621, 0, 65538, -1179620, 0, 2, -1179619, 0, 131077, -1179618, 0, 3, -1179617, 0, 3, -1179616, 0, 131077, -1179615, 0, 131076, -1179614, 0, 196612, -1179613, 0, 131076, -1179612, 0, 131077, -1179611, 0, 3, -1179610, 0, 131077, -1179609, 0, 196613, -1179608, 0, 3, -1179607, 0, 131076, -1179606, 0, 131077, -1179605, 0, 131077, -1179604, 0, 196612, -1179603, 0, 131077, -1179602, 0, 3, -1179601, 0, 196612, -1179600, 0, 131077, -1179599, 0, 196613, -1179598, 0, 196613, -1179597, 0, 3, -1179596, 0, 3, -1179595, 0, 196612, -1179594, 0, 131076, -1179593, 0, 196613, -1179592, 0, 196613, -1179591, 0, 131077, -1179590, 0, 196613, -1179589, 0, 3, -1179588, 0, 131077, -1179587, 0, 131077, -1179586, 0, 131076, -1179585, 0, 3, -1179584, 0, 196613, -1179583, 0, 196613, -1179582, 0, 196612, -1179581, 0, 196612, -1179580, 0, 196612, -1179579, 0, 131077, -1179578, 0, 131077, -1179577, 0, 3, -1179576, 0, 196612, -1179575, 0, 196612, -1179574, 0, 131076, -1179573, 0, 196613, -1179572, 0, 131077, -1179571, 0, 196613, -1179570, 0, 196613, -1179569, 0, 196613, -1179568, 0, 131076, -1179567, 0, 131076, -1179566, 0, 3, -1179565, 0, 196613, -1179564, 0, 196613, -1179563, 0, 0, -1114111, 0, 65542, -1114110, 0, 65540, -1114109, 0, 6, -1114086, 0, 65542, -1114085, 0, 4, -1114084, 0, 65541, -1114083, 0, 65540, -1114082, 0, 65538, -1114081, 0, 4, -1114080, 0, 65541, -1114079, 0, 65541, -1114078, 0, 4, -1114077, 0, 65541, -1114076, 0, 5, -1114075, 0, 65538, -1114074, 0, 65538, -1114073, 0, 65540, -1114072, 0, 4, -1114071, 0, 65540, -1114070, 0, 65538, -1114069, 0, 65541, -1114068, 0, 65540, -1114067, 0, 65538, -1114066, 0, 4, -1114065, 0, 65540, -1114064, 0, 5, -1114063, 0, 65538, -1114062, 0, 65538, -1114061, 0, 4, -1114060, 0, 5, -1114059, 0, 4, -1114058, 0, 65538, -1114057, 0, 5, -1114056, 0, 5, -1114055, 0, 4, -1114054, 0, 4, -1114053, 0, 65541, -1114052, 0, 65540, -1114051, 0, 65540, -1114050, 0, 65538, -1114049, 0, 5, -1114048, 0, 65541, -1114047, 0, 65538, -1114046, 0, 65540, -1114045, 0, 65540, -1114044, 0, 65540, -1114043, 0, 65540, -1114042, 0, 65541, -1114041, 0, 65541, -1114040, 0, 65540, -1114039, 0, 65541, -1114038, 0, 65540, -1114037, 0, 5, -1114036, 0, 65538, -1114035, 0, 5, -1114034, 0, 5, -1114033, 0, 65540, -1114032, 0, 5, -1114031, 0, 5, -1114030, 0, 65541, -1114029, 0, 65540, -1114028, 0, 65541, -1114027, 0, 6, -1048575, 0, 65542, -1048574, 0, 4, -1048573, 0, 131075, -1048550, 0, 1, -1048549, 0, 65538, -1048548, 0, 5, -1048547, 0, 65541, -1048546, 0, 5, -1048545, 0, 5, -1048544, 0, 5, -1048543, 0, 4, -1048542, 0, 5, -1048541, 0, 65538, -1048540, 0, 5, -1048539, 0, 4, -1048538, 0, 65538, -1048537, 0, 65540, -1048536, 0, 65538, -1048535, 0, 4, -1048534, 0, 65538, -1048533, 0, 4, -1048532, 0, 65538, -1048531, 0, 65538, -1048530, 0, 4, -1048529, 0, 65538, -1048528, 0, 4, -1048527, 0, 4, -1048526, 0, 65541, -1048525, 0, 4, -1048524, 0, 65541, -1048523, 0, 65538, -1048522, 0, 65541, -1048521, 0, 4, -1048520, 0, 65541, -1048519, 0, 4, -1048518, 0, 65538, -1048517, 0, 4, -1048516, 0, 5, -1048515, 0, 5, -1048514, 0, 65540, -1048513, 0, 5, -1048512, 0, 65538, -1048511, 0, 65538, -1048510, 0, 65540, -1048509, 0, 65540, -1048508, 0, 5, -1048507, 0, 4, -1048506, 0, 65540, -1048505, 0, 4, -1048504, 0, 65541, -1048503, 0, 4, -1048502, 0, 65540, -1048501, 0, 65538, -1048500, 0, 65541, -1048499, 0, 65540, -1048498, 0, 4, -1048497, 0, 4, -1048496, 0, 65540, -1048495, 0, 4, -1048494, 0, 5, -1048493, 0, 65541, -1048492, 0, 65540, -1048491, 0, 131075, -983039, 0, 1, -983038, 0, 65538, -983037, 0, 131075, -983014, 0, 1, -983013, 0, 65540, -983012, 0, 65538, -983011, 0, 65540, -983010, 0, 65541, -983009, 0, 4, -983008, 0, 5, -983007, 0, 65541, -983006, 0, 65541, -983005, 0, 5, -983004, 0, 65541, -983003, 0, 5, -983002, 0, 65541, -983001, 0, 65538, -983000, 0, 65541, -982999, 0, 65538, -982998, 0, 4, -982997, 0, 5, -982996, 0, 65538, -982995, 0, 4, -982994, 0, 65538, -982993, 0, 5, -982992, 0, 65538, -982991, 0, 65540, -982990, 0, 65541, -982989, 0, 65540, -982988, 0, 65541, -982987, 0, 65541, -982986, 0, 65538, -982985, 0, 65541, -982984, 0, 65541, -982983, 0, 65540, -982982, 0, 65538, -982981, 0, 4, -982980, 0, 65540, -982979, 0, 5, -982978, 0, 65538, -982977, 0, 65538, -982976, 0, 65540, -982975, 0, 65541, -982974, 0, 65540, -982973, 0, 65540, -982972, 0, 5, -982971, 0, 65538, -982970, 0, 65538, -982969, 0, 65538, -982968, 0, 5, -982967, 0, 5, -982966, 0, 65540, -982965, 0, 4, -982964, 0, 65538, -982963, 0, 5, -982962, 0, 4, -982961, 0, 5, -982960, 0, 65541, -982959, 0, 4, -982958, 0, 65540, -982957, 0, 65541, -982956, 0, 4, -982955, 0, 6, -917503, 0, 1, -917502, 0, 5, -917501, 0, 131075, -917490, 0, 196609, -917489, 0, 0, -917478, 0, 65542, -917477, 0, 65540, -917476, 0, 65538, -917475, 0, 65540, -917474, 0, 65541, -917473, 0, 65540, -917472, 0, 4, -917471, 0, 65538, -917470, 0, 65540, -917469, 0, 5, -917468, 0, 5, -917467, 0, 4, -917466, 0, 65541, -917465, 0, 65541, -917464, 0, 5, -917463, 0, 65540, -917462, 0, 5, -917461, 0, 5, -917460, 0, 65540, -917459, 0, 4, -917458, 0, 5, -917457, 0, 65540, -917456, 0, 5, -917455, 0, 5, -917454, 0, 65540, -917453, 0, 5, -917452, 0, 65540, -917451, 0, 65541, -917450, 0, 65540, -917449, 0, 65540, -917448, 0, 65538, -917447, 0, 65541, -917446, 0, 4, -917445, 0, 65540, -917444, 0, 65541, -917443, 0, 65541, -917442, 0, 65540, -917441, 0, 65538, -917440, 0, 65541, -917439, 0, 5, -917438, 0, 65541, -917437, 0, 65540, -917436, 0, 65538, -917435, 0, 65541, -917434, 0, 65538, -917433, 0, 65541, -917432, 0, 65538, -917431, 0, 65541, -917430, 0, 65540, -917429, 0, 65538, -917428, 0, 65540, -917427, 0, 5, -917426, 0, 65540, -917425, 0, 4, -917424, 0, 4, -917423, 0, 65540, -917422, 0, 65540, -917421, 0, 65538, -917420, 0, 65541, -917419, 0, 131075, -851967, 0, 1, -851966, 0, 65541, -851965, 0, 131075, -851954, 0, 131072, -851953, 0, 196611, -851942, 0, 1, -851941, 0, 65541, -851940, 0, 5, -851939, 0, 4, -851938, 0, 65540, -851937, 0, 4, -851936, 0, 65541, -851935, 0, 65538, -851934, 0, 65541, -851933, 0, 65538, -851932, 0, 4, -851931, 0, 4, -851930, 0, 4, -851929, 0, 4, -851928, 0, 4, -851927, 0, 4, -851926, 0, 65538, -851925, 0, 65540, -851924, 0, 65541, -851923, 0, 65540, -851922, 0, 65540, -851921, 0, 5, -851920, 0, 65540, -851919, 0, 4, -851918, 0, 4, -851917, 0, 65541, -851916, 0, 5, -851915, 0, 65538, -851914, 0, 65540, -851913, 0, 4, -851912, 0, 65541, -851911, 0, 4, -851910, 0, 65540, -851909, 0, 4, -851908, 0, 5, -851907, 0, 65540, -851906, 0, 65541, -851905, 0, 65538, -851904, 0, 5, -851903, 0, 65541, -851902, 0, 65540, -851901, 0, 65540, -851900, 0, 65539, -851899, 0, 131073, -851898, 0, 196614, -851897, 0, 131073, -851896, 0, 196614, -851895, 0, 196614, -851894, 0, 131073, -851893, 0, 196614, -851892, 0, 131078, -851891, 0, 196614, -851890, 0, 131078, -851889, 0, 131078, -851888, 0, 131078, -851887, 0, 131073, -851886, 0, 131073, -851885, 0, 131074, -851884, 0, 5, -851883, 0, 6, -786431, 0, 1, -786430, 0, 65538, -786429, 0, 131075, -786406, 0, 1, -786405, 0, 5, -786404, 0, 5, -786403, 0, 65540, -786402, 0, 65541, -786401, 0, 65538, -786400, 0, 65538, -786399, 0, 65538, -786398, 0, 5, -786397, 0, 65540, -786396, 0, 65538, -786395, 0, 65540, -786394, 0, 5, -786393, 0, 65540, -786392, 0, 65540, -786391, 0, 4, -786390, 0, 5, -786389, 0, 65541, -786388, 0, 4, -786387, 0, 5, -786386, 0, 65541, -786385, 0, 65538, -786384, 0, 65540, -786383, 0, 65540, -786382, 0, 5, -786381, 0, 65540, -786380, 0, 4, -786379, 0, 5, -786378, 0, 65538, -786377, 0, 65540, -786376, 0, 65538, -786375, 0, 65538, -786374, 0, 5, -786373, 0, 65541, -786372, 0, 5, -786371, 0, 4, -786370, 0, 5, -786369, 0, 65541, -786368, 0, 5, -786367, 0, 4, -786366, 0, 4, -786365, 0, 65540, -786364, 0, 131075, -786349, 0, 65542, -786348, 0, 65538, -786347, 0, 131075, -720895, 0, 65542, -720894, 0, 5, -720893, 0, 131075, -720870, 0, 1, -720869, 0, 4, -720868, 0, 65538, -720867, 0, 65540, -720866, 0, 4, -720865, 0, 5, -720864, 0, 5, -720863, 0, 65538, -720862, 0, 65540, -720861, 0, 5, -720860, 0, 4, -720859, 0, 65538, -720858, 0, 5, -720857, 0, 65540, -720856, 0, 5, -720855, 0, 65540, -720854, 0, 5, -720853, 0, 5, -720852, 0, 4, -720851, 0, 4, -720850, 0, 65540, -720849, 0, 65538, -720848, 0, 65540, -720847, 0, 65538, -720846, 0, 65541, -720845, 0, 4, -720844, 0, 4, -720843, 0, 65538, -720842, 0, 5, -720841, 0, 5, -720840, 0, 65541, -720839, 0, 5, -720838, 0, 65541, -720837, 0, 4, -720836, 0, 65540, -720835, 0, 65540, -720834, 0, 65538, -720833, 0, 5, -720832, 0, 4, -720831, 0, 4, -720830, 0, 5, -720829, 0, 4, -720828, 0, 6, -720813, 0, 1, -720812, 0, 65541, -720811, 0, 131075, -655359, 0, 65542, -655358, 0, 4, -655357, 0, 131075, -655334, 0, 1, -655333, 0, 65540, -655332, 0, 5, -655331, 0, 65540, -655330, 0, 65540, -655329, 0, 5, -655328, 0, 4, -655327, 0, 4, -655326, 0, 65541, -655325, 0, 65538, -655324, 0, 65540, -655323, 0, 65540, -655322, 0, 5, -655321, 0, 65540, -655320, 0, 65538, -655319, 0, 65538, -655318, 0, 4, -655317, 0, 65541, -655316, 0, 65541, -655315, 0, 5, -655314, 0, 65538, -655313, 0, 65541, -655312, 0, 65540, -655311, 0, 65538, -655310, 0, 65541, -655309, 0, 4, -655308, 0, 65541, -655307, 0, 65541, -655306, 0, 65540, -655305, 0, 4, -655304, 0, 4, -655303, 0, 65541, -655302, 0, 65541, -655301, 0, 65540, -655300, 0, 5, -655299, 0, 5, -655298, 0, 65538, -655297, 0, 65540, -655296, 0, 65538, -655295, 0, 4, -655294, 0, 4, -655293, 0, 5, -655292, 0, 6, -655277, 0, 1, -655276, 0, 65540, -655275, 0, 131075, -589823, 0, 1, -589822, 0, 4, -589821, 0, 131075, -589798, 0, 1, -589797, 0, 5, -589796, 0, 4, -589795, 0, 65538, -589794, 0, 5, -589793, 0, 5, -589792, 0, 4, -589791, 0, 4, -589790, 0, 65538, -589789, 0, 65540, -589788, 0, 5, -589787, 0, 4, -589786, 0, 4, -589785, 0, 65540, -589784, 0, 4, -589783, 0, 5, -589782, 0, 65538, -589781, 0, 5, -589780, 0, 65541, -589779, 0, 65538, -589778, 0, 65541, -589777, 0, 5, -589776, 0, 65538, -589775, 0, 65540, -589774, 0, 4, -589773, 0, 65540, -589772, 0, 5, -589771, 0, 65541, -589770, 0, 65541, -589769, 0, 65540, -589768, 0, 65540, -589767, 0, 5, -589766, 0, 65540, -589765, 0, 65540, -589764, 0, 65538, -589763, 0, 65540, -589762, 0, 65541, -589761, 0, 65538, -589760, 0, 65538, -589759, 0, 5, -589758, 0, 65538, -589757, 0, 65541, -589756, 0, 6, -589741, 0, 65542, -589740, 0, 65541, -589739, 0, 131075, -524287, 0, 1, -524286, 0, 5, -524285, 0, 6, -524262, 0, 131072, -524261, 0, 131073, -524260, 0, 131073, -524259, 0, 131078, -524258, 0, 131078, -524257, 0, 131078, -524256, 0, 196614, -524255, 0, 131073, -524254, 0, 196614, -524253, 0, 131078, -524252, 0, 131078, -524251, 0, 131073, -524250, 0, 131078, -524249, 0, 196614, -524248, 0, 196614, -524247, 0, 131078, -524246, 0, 131073, -524245, 0, 196614, -524244, 0, 131073, -524243, 0, 196614, -524242, 0, 131073, -524241, 0, 131078, -524240, 0, 196614, -524239, 0, 131078, -524238, 0, 131078, -524237, 0, 131073, -524236, 0, 196614, -524235, 0, 131073, -524234, 0, 196614, -524233, 0, 131073, -524232, 0, 131078, -524231, 0, 131073, -524230, 0, 131073, -524229, 0, 131073, -524228, 0, 196614, -524227, 0, 196614, -524226, 0, 131073, -524225, 0, 131078, -524224, 0, 196614, -524223, 0, 131078, -524222, 0, 131073, -524221, 0, 196614, -524220, 0, 196611, -524205, 0, 1, -524204, 0, 65540, -524203, 0, 6, -458751, 0, 1, -458750, 0, 4, -458749, 0, 131075, -458669, 0, 1, -458668, 0, 5, -458667, 0, 131075, -393215, 0, 1, -393214, 0, 65538, -393213, 0, 131075, -393133, 0, 65542, -393132, 0, 65540, -393131, 0, 131075, -327679, 0, 1, -327678, 0, 65538, -327677, 0, 131075, -327597, 0, 1, -327596, 0, 65540, -327595, 0, 6, -262143, 0, 65542, -262142, 0, 65538, -262141, 0, 2, -262140, 0, 131076, -262139, 0, 131076, -262138, 0, 196612, -262137, 0, 131076, -262136, 0, 131076, -262135, 0, 3, -262134, 0, 196612, -262133, 0, 131076, -262132, 0, 196613, -262131, 0, 196612, -262130, 0, 196613, -262129, 0, 131076, -262128, 0, 196613, -262127, 0, 196613, -262126, 0, 131077, -262125, 0, 131077, -262124, 0, 196613, -262123, 0, 196613, -262122, 0, 196613, -262121, 0, 196613, -262120, 0, 3, -262119, 0, 131077, -262118, 0, 196613, -262117, 0, 3, -262116, 0, 131076, -262115, 0, 196612, -262114, 0, 131077, -262113, 0, 196612, -262112, 0, 131077, -262111, 0, 196612, -262110, 0, 131077, -262109, 0, 196612, -262108, 0, 196612, -262107, 0, 131076, -262106, 0, 131077, -262105, 0, 131076, -262104, 0, 196612, -262103, 0, 131076, -262102, 0, 196612, -262101, 0, 3, -262100, 0, 196612, -262099, 0, 196612, -262098, 0, 131076, -262097, 0, 131077, -262096, 0, 3, -262095, 0, 3, -262094, 0, 131077, -262093, 0, 131077, -262092, 0, 131077, -262091, 0, 131076, -262090, 0, 196612, -262089, 0, 3, -262088, 0, 196612, -262087, 0, 196613, -262086, 0, 196612, -262085, 0, 196613, -262084, 0, 131077, -262083, 0, 3, -262082, 0, 131077, -262081, 0, 3, -262080, 0, 3, -262079, 0, 196612, -262078, 0, 131076, -262077, 0, 131076, -262076, 0, 131077, -262075, 0, 131077, -262074, 0, 196613, -262073, 0, 196613, -262072, 0, 196612, -262071, 0, 3, -262070, 0, 131077, -262069, 0, 131076, -262068, 0, 131076, -262067, 0, 131077, -262066, 0, 131077, -262065, 0, 196613, -262064, 0, 131076, -262063, 0, 131077, -262062, 0, 131076, -262061, 0, 65537, -262060, 0, 65538, -262059, 0, 6, -196607, 0, 1, -196606, 0, 65538, -196605, 0, 65541, -196604, 0, 65538, -196603, 0, 5, -196602, 0, 65541, -196601, 0, 65538, -196600, 0, 65540, -196599, 0, 65541, -196598, 0, 65541, -196597, 0, 65540, -196596, 0, 5, -196595, 0, 65541, -196594, 0, 65538, -196593, 0, 4, -196592, 0, 65538, -196591, 0, 65538, -196590, 0, 65538, -196589, 0, 65541, -196588, 0, 65538, -196587, 0, 5, -196586, 0, 5, -196585, 0, 5, -196584, 0, 4, -196583, 0, 5, -196582, 0, 5, -196581, 0, 65538, -196580, 0, 4, -196579, 0, 4, -196578, 0, 65538, -196577, 0, 65541, -196576, 0, 5, -196575, 0, 65541, -196574, 0, 5, -196573, 0, 4, -196572, 0, 65540, -196571, 0, 65538, -196570, 0, 65540, -196569, 0, 65541, -196568, 0, 5, -196567, 0, 4, -196566, 0, 5, -196565, 0, 65541, -196564, 0, 4, -196563, 0, 65540, -196562, 0, 5, -196561, 0, 4, -196560, 0, 5, -196559, 0, 65541, -196558, 0, 65538, -196557, 0, 5, -196556, 0, 5, -196555, 0, 65540, -196554, 0, 65540, -196553, 0, 65540, -196552, 0, 4, -196551, 0, 65541, -196550, 0, 65540, -196549, 0, 4, -196548, 0, 65541, -196547, 0, 65541, -196546, 0, 65541, -196545, 0, 65540, -196544, 0, 65538, -196543, 0, 5, -196542, 0, 4, -196541, 0, 65538, -196540, 0, 4, -196539, 0, 5, -196538, 0, 65540, -196537, 0, 65538, -196536, 0, 65540, -196535, 0, 65538, -196534, 0, 4, -196533, 0, 4, -196532, 0, 5, -196531, 0, 65538, -196530, 0, 65541, -196529, 0, 65540, -196528, 0, 65538, -196527, 0, 4, -196526, 0, 5, -196525, 0, 4, -196524, 0, 65538, -196523, 0, 6, -131071, 0, 131072, -131070, 0, 196614, -131069, 0, 131078, -131068, 0, 131078, -131067, 0, 131078, -131066, 0, 131078, -131065, 0, 196614, -131064, 0, 131078, -131063, 0, 196614, -131062, 0, 131073, -131061, 0, 131073, -131060, 0, 131073, -131059, 0, 196614, -131058, 0, 131073, -131057, 0, 131073, -131056, 0, 131073, -131055, 0, 131078, -131054, 0, 196614, -131053, 0, 196614, -131052, 0, 131073, -131051, 0, 196614, -131050, 0, 196614, -131049, 0, 196614, -131048, 0, 131078, -131047, 0, 131073, -131046, 0, 196614, -131045, 0, 131078, -131044, 0, 131073, -131043, 0, 196614, -131042, 0, 131078, -131041, 0, 131078, -131040, 0, 196614, -131039, 0, 131078, -131038, 0, 131073, -131037, 0, 131078, -131036, 0, 131073, -131035, 0, 131073, -131034, 0, 131078, -131033, 0, 131073, -131032, 0, 131078, -131031, 0, 196614, -131030, 0, 131073, -131029, 0, 131078, -131028, 0, 131073, -131027, 0, 131073, -131026, 0, 131078, -131025, 0, 131073, -131024, 0, 196614, -131023, 0, 131078, -131022, 0, 131073, -131021, 0, 131078, -131020, 0, 131078, -131019, 0, 131073, -131018, 0, 131078, -131017, 0, 131078, -131016, 0, 196614, -131015, 0, 131078, -131014, 0, 131073, -131013, 0, 196614, -131012, 0, 131078, -131011, 0, 131078, -131010, 0, 196614, -131009, 0, 131073, -131008, 0, 131073, -131007, 0, 131078, -131006, 0, 196614, -131005, 0, 131078, -131004, 0, 196614, -131003, 0, 131078, -131002, 0, 131073, -131001, 0, 131073, -131000, 0, 131073, -130999, 0, 131078, -130998, 0, 196614, -130997, 0, 196614, -130996, 0, 131078, -130995, 0, 131078, -130994, 0, 131078, -130993, 0, 131078, -130992, 0, 196614, -130991, 0, 131078, -130990, 0, 131078, -130989, 0, 196614, -130988, 0, 131078, -130987, 0, 196611 )
+_sections_unfolded = [ "Cell", "Collision", "Visibility" ]
+
+[node name="Writings" type="Node2D" parent="." index="5"]
+
+_sections_unfolded = [ "Z Index" ]
+
+[node name="You do it to yourself" type="Label" parent="Writings" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 950.0
+margin_top = -800.0
+margin_right = 1310.0
+margin_bottom = -760.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 38 )
+custom_colors/font_color = Color( 0.511719, 0.511719, 0.511719, 1 )
+text = "YOU  DO  IT  TO  YOURSELF"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="You do it to yourself2" type="Label" parent="Writings" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 7458.0
+margin_top = -1210.0
+margin_right = 7818.0
+margin_bottom = -1170.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 38 )
+custom_colors/font_color = Color( 0.609375, 0.0753528, 0.0753528, 1 )
+text = "SMASH   N'   ENTER"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Hint", "Rect", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="White Arrow" type="Sprite" parent="Writings" index="2"]
+
+modulate = Color( 0.523438, 0.493607, 0.448862, 1 )
+position = Vector2( 2400, -600 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 39 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Writings/White Arrow" index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Animate = SubResource( 1 )
+blend_times = [  ]
+
+[node name="White Arrow2" type="Sprite" parent="Writings" index="3"]
+
+modulate = Color( 0.667969, 0.611946, 0.527911, 1 )
+position = Vector2( 3142.49, -537.712 )
+rotation = -0.0621753
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 39 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="White Arrow3" type="Sprite" parent="Writings" index="4"]
+
+modulate = Color( 0.609375, 0.50899, 0.435736, 1 )
+position = Vector2( 3739.53, -529.485 )
+rotation = 0.111647
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 39 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="White Arrow4" type="Sprite" parent="Writings" index="5"]
+
+modulate = Color( 0.394237, 0.504904, 0.59375, 1 )
+position = Vector2( 4336.58, -542.413 )
+rotation = -0.113144
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 39 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="White Arrow5" type="Sprite" parent="Writings" index="6"]
+
+modulate = Color( 0.59375, 0.525168, 0.394237, 1 )
+position = Vector2( 5192.18, -561.217 )
+rotation = -0.394911
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 39 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="White Arrow6" type="Sprite" parent="Writings" index="7"]
+
+modulate = Color( 0.558308, 0.420027, 0.78125, 1 )
+position = Vector2( 6355.42, -559.641 )
+rotation = 0.229399
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 39 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="White Arrow7" type="Sprite" parent="Writings" index="8"]
+
+modulate = Color( 0.607843, 0.0745098, 0.0745098, 1 )
+position = Vector2( 8242.96, -1071.74 )
+rotation = 1.95773
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 40 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="White Arrow8" type="Sprite" parent="Writings" index="9"]
+
+modulate = Color( 0.607843, 0.0745098, 0.0745098, 1 )
+position = Vector2( 7390.37, -1071.74 )
+rotation = 4.23717
+scale = Vector2( -0.5, 0.5 )
+texture = ExtResource( 40 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="PlatformDecorations" type="Node2D" parent="." index="6"]
+
+editor/display_folded = true
+modulate = Color( 0.707031, 0.707031, 0.707031, 1 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Wires 1" type="Sprite" parent="PlatformDecorations" index="0"]
+
+position = Vector2( 650, -1600 )
+texture = ExtResource( 41 )
+
+[node name="Wire 2" type="Sprite" parent="PlatformDecorations" index="1"]
+
+position = Vector2( 1731.82, -1500.37 )
+rotation = -0.320872
+texture = ExtResource( 42 )
+
+[node name="Dead Mouse" type="Sprite" parent="PlatformDecorations" index="2"]
+
+position = Vector2( 1100, -1600 )
+texture = ExtResource( 43 )
+
+[node name="Dead Mouse2" type="Sprite" parent="PlatformDecorations" index="3"]
+
+position = Vector2( 1979.4, -1619.6 )
+rotation = -0.381388
+scale = Vector2( -1, 1 )
+texture = ExtResource( 43 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DeadPhone" type="Sprite" parent="PlatformDecorations" index="4"]
+
+position = Vector2( 886.539, -1601.89 )
+rotation = -0.201239
+scale = Vector2( 2, 2 )
+texture = ExtResource( 44 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DeadPhone2" type="Sprite" parent="PlatformDecorations" index="5"]
+
+position = Vector2( 1953.26, -1604.48 )
+rotation = 0.331848
+scale = Vector2( 2, 2 )
+texture = ExtResource( 44 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="DeadTablet" type="Sprite" parent="PlatformDecorations" index="6"]
+
+position = Vector2( 1317.31, -1714.05 )
+rotation = -3.1375
+texture = ExtResource( 45 )
+
+[node name="DeadTablet2" type="Sprite" parent="PlatformDecorations" index="7"]
+
+position = Vector2( 458.148, -1726.2 )
+rotation = -3.43795
+texture = ExtResource( 45 )
+
+[node name="Hole 1" type="Sprite" parent="PlatformDecorations" index="8"]
+
+position = Vector2( 2729.89, -1231.92 )
+rotation = -0.830586
+texture = ExtResource( 46 )
+
+[node name="Crack 9" type="Sprite" parent="PlatformDecorations" index="9"]
+
+position = Vector2( 1905.9, -3251.86 )
+texture = ExtResource( 47 )
+
+[node name="Crack 1" type="Sprite" parent="PlatformDecorations" index="10"]
+
+position = Vector2( 3527.18, -1414.8 )
+rotation = 0.725058
+texture = ExtResource( 48 )
+
+[node name="Crack 2" type="Sprite" parent="PlatformDecorations" index="11"]
+
+position = Vector2( 5973.12, -237.271 )
+rotation = 2.00364
+texture = ExtResource( 48 )
+
+[node name="Crack 4" type="Sprite" parent="PlatformDecorations" index="12"]
+
+position = Vector2( 3254.89, -1674.96 )
+texture = ExtResource( 49 )
+
+[node name="Hole 2" type="Sprite" parent="PlatformDecorations" index="13"]
+
+position = Vector2( 5623.7, -1529.33 )
+texture = ExtResource( 46 )
+
+[node name="Hole 6" type="Sprite" parent="PlatformDecorations" index="14"]
+
+position = Vector2( 8368.24, -1524.47 )
+rotation = -1.6999
+texture = ExtResource( 46 )
+
+[node name="Hole 3" type="Sprite" parent="PlatformDecorations" index="15"]
+
+position = Vector2( 4729.96, -973.456 )
+rotation = -0.109698
+scale = Vector2( 2, 2 )
+texture = ExtResource( 50 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Hole 4" type="Sprite" parent="PlatformDecorations" index="16"]
+
+position = Vector2( 6523.73, -1323.71 )
+rotation = -2.09364
+scale = Vector2( 2, 2 )
+texture = ExtResource( 51 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Hole 7" type="Sprite" parent="PlatformDecorations" index="17"]
+
+position = Vector2( 5123.28, -1261.76 )
+rotation = 0.521348
+scale = Vector2( 2, 2 )
+texture = ExtResource( 52 )
+
+[node name="Hole 10" type="Sprite" parent="PlatformDecorations" index="18"]
+
+position = Vector2( 7419.21, -1517.25 )
+rotation = -1.21607
+scale = Vector2( 2, 2 )
+texture = ExtResource( 52 )
+
+[node name="Hole 8" type="Sprite" parent="PlatformDecorations" index="19"]
+
+position = Vector2( 4309.72, -1506.74 )
+rotation = 0.521348
+scale = Vector2( 2, 2 )
+texture = ExtResource( 53 )
+
+[node name="Hole 9" type="Sprite" parent="PlatformDecorations" index="20"]
+
+position = Vector2( 3804.17, -1042.52 )
+rotation = 0.521348
+scale = Vector2( 2, 2 )
+texture = ExtResource( 54 )
+
+[node name="Hole 11" type="Sprite" parent="PlatformDecorations" index="21"]
+
+position = Vector2( 7740.77, -1386.11 )
+rotation = 0.986897
+scale = Vector2( 2, 2 )
+texture = ExtResource( 54 )
+
+[node name="Hole 5" type="Sprite" parent="PlatformDecorations" index="22"]
+
+position = Vector2( 3160.9, -971.464 )
+rotation = 0.521348
+scale = Vector2( 2, 2 )
+texture = ExtResource( 51 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Hole 12" type="Sprite" parent="PlatformDecorations" index="23"]
+
+position = Vector2( 5819.58, -975.02 )
+texture = ExtResource( 55 )
+
+[node name="Hole 13" type="Sprite" parent="PlatformDecorations" index="24"]
+
+position = Vector2( 3123.94, -255.139 )
+texture = ExtResource( 55 )
+
+[node name="Crack 5" type="Sprite" parent="PlatformDecorations" index="25"]
+
+position = Vector2( 256.825, -2770.85 )
+texture = ExtResource( 56 )
+
+[node name="Crack 7" type="Sprite" parent="PlatformDecorations" index="26"]
+
+position = Vector2( 2724.64, -2422.8 )
+texture = ExtResource( 57 )
+
+[node name="Crack 11" type="Sprite" parent="PlatformDecorations" index="27"]
+
+position = Vector2( 1900.28, -2605.83 )
+texture = ExtResource( 58 )
+
+[node name="Crack 8" type="Sprite" parent="PlatformDecorations" index="28"]
+
+position = Vector2( 1106.12, -2867.86 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 59 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Crack 10" type="Sprite" parent="PlatformDecorations" index="29"]
+
+position = Vector2( 1263.92, -2595.78 )
+rotation = -1.0539
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 60 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Plank with Screws" type="Sprite" parent="PlatformDecorations" index="30"]
+
+position = Vector2( 5764.16, -1228.03 )
+rotation = -0.626192
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 61 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Plank with Screws2" type="Sprite" parent="PlatformDecorations" index="31"]
+
+position = Vector2( 4165.63, -982.597 )
+rotation = -3.7058
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 62 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Plank with Screws3" type="Sprite" parent="PlatformDecorations" index="32"]
+
+position = Vector2( 7064.78, -1415.73 )
+rotation = -2.21903
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 62 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Stain 5" type="Sprite" parent="PlatformDecorations" index="33"]
+
+position = Vector2( 4015.67, -1323.8 )
+texture = ExtResource( 63 )
+
+[node name="Stain 4" type="Sprite" parent="PlatformDecorations" index="34"]
+
+position = Vector2( 5905.61, -1124.65 )
+rotation = -0.0776825
+texture = ExtResource( 64 )
+
+[node name="Stain 6" type="Sprite" parent="PlatformDecorations" index="35"]
+
+position = Vector2( 5919.89, -1144.71 )
+rotation = -0.511177
+texture = ExtResource( 33 )
+
+[node name="Stain 7" type="Sprite" parent="PlatformDecorations" index="36"]
+
+position = Vector2( 6495.3, -1518.32 )
+rotation = -0.0263334
+texture = ExtResource( 65 )
+
+[node name="Stain 8" type="Sprite" parent="PlatformDecorations" index="37"]
+
+position = Vector2( 4562.87, -1282.99 )
+rotation = -0.0263334
+scale = Vector2( 2, 2 )
+texture = ExtResource( 66 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Stain 9" type="Sprite" parent="PlatformDecorations" index="38"]
+
+position = Vector2( 5314.8, -1018.95 )
+rotation = 0.530431
+scale = Vector2( 2, 2 )
+texture = ExtResource( 67 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Stain 16" type="Sprite" parent="PlatformDecorations" index="39"]
+
+position = Vector2( 7389.62, -284.274 )
+rotation = 2.05294
+scale = Vector2( 2, 2 )
+texture = ExtResource( 67 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Stain 10" type="Sprite" parent="PlatformDecorations" index="40"]
+
+modulate = Color( 0.789062, 0.345745, 0.345745, 1 )
+position = Vector2( 3885.85, -1479.58 )
+rotation = 0.530431
+scale = Vector2( 2, 2 )
+texture = ExtResource( 68 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Stain 11" type="Sprite" parent="PlatformDecorations" index="41"]
+
+modulate = Color( 0.789062, 0.345745, 0.345745, 1 )
+position = Vector2( 6527.16, -1209.36 )
+rotation = -0.083087
+scale = Vector2( 2, 2 )
+texture = ExtResource( 69 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Stain 17" type="Sprite" parent="PlatformDecorations" index="42"]
+
+modulate = Color( 0.789062, 0.345745, 0.345745, 1 )
+position = Vector2( 8167.7, -264.431 )
+rotation = -0.0496349
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 69 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Stain 12" type="Sprite" parent="PlatformDecorations" index="43"]
+
+modulate = Color( 0.636719, 0.328308, 0, 1 )
+position = Vector2( 8040.02, -1447 )
+rotation = -0.68384
+scale = Vector2( 2, 2 )
+texture = ExtResource( 70 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Stain 13" type="Sprite" parent="PlatformDecorations" index="44"]
+
+position = Vector2( 4592.29, -1661.39 )
+rotation = -0.68384
+scale = Vector2( 1, 1.5 )
+texture = ExtResource( 71 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Stain 14" type="Sprite" parent="PlatformDecorations" index="45"]
+
+position = Vector2( 4471.9, -253.094 )
+rotation = 1.53735
+scale = Vector2( 1, 1.5 )
+texture = ExtResource( 72 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Stain 15" type="Sprite" parent="PlatformDecorations" index="46"]
+
+position = Vector2( 6597.66, -960.236 )
+rotation = 0.913186
+scale = Vector2( 1, 1.5 )
+texture = ExtResource( 73 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
+
+editor/display_folded = true
+
+[node name="BlackFrameTrigger" type="Position2D" parent="CameraChangingTriggers" index="0"]
+
+position = Vector2( 800, -2250 )
+script = ExtResource( 74 )
+range_x = 500
+range_y = 500
+x_check = 1
+y_check = 2
+
+[node name="BlueFrameTrigger" type="Position2D" parent="CameraChangingTriggers" index="1"]
+
+position = Vector2( 1500, -1600 )
+script = ExtResource( 74 )
+range_x = 500
+range_y = 500
+x_check = 0
+y_check = 2
+
+[node name="RadioguguClearTrigger" type="Node2D" parent="CameraChangingTriggers" index="2"]
+
+script = ExtResource( 75 )
+count_to_emit = 1
+
+[node name="OtherPlatforms" type="Node2D" parent="." index="8"]
+
+editor/display_folded = true
+
+[node name="Enemy Blocking Platform" parent="OtherPlatforms" index="0" instance=ExtResource( 76 )]
+
+position = Vector2( 2700, -700 )
+
+[node name="Enemy Blocking Platform2" parent="OtherPlatforms" index="1" instance=ExtResource( 76 )]
+
+position = Vector2( 2700, -600 )
+
+[node name="Enemy Blocking Platform3" parent="OtherPlatforms" index="2" instance=ExtResource( 76 )]
+
+position = Vector2( 2700, -500 )
+
+[node name="Enemy Blocking Platform4" parent="OtherPlatforms" index="3" instance=ExtResource( 76 )]
+
+position = Vector2( 2700, -400 )
+
+[node name="HealingMachines" type="Node2D" parent="." index="9"]
+
+[node name="Structures" type="Node2D" parent="." index="10"]
+
+[node name="BlackPortal1" parent="Structures" index="0" instance=ExtResource( 77 )]
+
+editor/display_folded = true
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1200, -2150 )
+scale = Vector2( 0.7, 0.7 )
+destination_node_path = NodePath("../BlackPortal3")
+
+[node name="Label" type="Label" parent="Structures/BlackPortal1" index="8"]
+
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -17.0
+margin_top = -358.0
+margin_right = 23.0
+margin_bottom = -323.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 78 )
+text = "1"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="BlackPortal2" parent="Structures" index="1" instance=ExtResource( 77 )]
+
+editor/display_folded = true
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1800, -2150 )
+scale = Vector2( 0.7, 0.7 )
+destination_node_path = NodePath("../BlackPortal4")
+
+[node name="Label2" type="Label" parent="Structures/BlackPortal2" index="8"]
+
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -25.0
+margin_top = -373.0
+margin_right = 15.0
+margin_bottom = -338.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 78 )
+text = "2"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="BlackPortal3" parent="Structures" index="2" instance=ExtResource( 77 )]
+
+editor/display_folded = true
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 2200, -2150 )
+scale = Vector2( 0.7, 0.7 )
+destination_node_path = NodePath("../BlackPortal6")
+
+[node name="Label2" type="Label" parent="Structures/BlackPortal3" index="8"]
+
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -22.0
+margin_top = -358.0
+margin_right = 18.0
+margin_bottom = -323.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 78 )
+text = "1"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="BlackPortal4" parent="Structures" index="3" instance=ExtResource( 77 )]
+
+editor/display_folded = true
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 2500, -2150 )
+scale = Vector2( 0.7, 0.7 )
+destination_node_path = NodePath("../BlackPortal2")
+
+[node name="Label3" type="Label" parent="Structures/BlackPortal4" index="8"]
+
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -29.0
+margin_top = -373.0
+margin_right = 11.0
+margin_bottom = -338.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 78 )
+text = "2"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="BlackPortal5" parent="Structures" index="4" instance=ExtResource( 77 )]
+
+editor/display_folded = true
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 2500, -2850 )
+scale = Vector2( 0.7, 0.7 )
+destination_node_path = NodePath("../BlackPortal4")
+
+[node name="Label4" type="Label" parent="Structures/BlackPortal5" index="8"]
+
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -20.0
+margin_top = -353.0
+margin_right = 20.0
+margin_bottom = -318.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 78 )
+text = "2"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="BlackPortal6" parent="Structures" index="5" instance=ExtResource( 77 )]
+
+editor/display_folded = true
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 2300, -2850 )
+scale = Vector2( 0.7, 0.7 )
+destination_node_path = NodePath("../BlackPortal3")
+
+[node name="Label3" type="Label" parent="Structures/BlackPortal6" index="8"]
+
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -16.0
+margin_top = -353.0
+margin_right = 24.0
+margin_bottom = -318.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 78 )
+text = "1"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="BlackPortal7" parent="Structures" index="6" instance=ExtResource( 77 )]
+
+editor/display_folded = true
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 2098.21, -2851.79 )
+scale = Vector2( 0.7, 0.7 )
+destination_node_path = NodePath("../BlackPortal8")
+
+[node name="Label5" type="Label" parent="Structures/BlackPortal7" index="8"]
+
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -32.0
+margin_top = -353.0
+margin_right = 8.0
+margin_bottom = -318.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 78 )
+text = "3"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="BlackPortal8" parent="Structures" index="7" instance=ExtResource( 77 )]
+
+editor/display_folded = true
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1700, -2850 )
+scale = Vector2( 0.7, 0.7 )
+destination_node_path = NodePath("../BlackPortal7")
+
+[node name="Label6" type="Label" parent="Structures/BlackPortal8" index="8"]
+
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -35.5715
+margin_top = -353.0
+margin_right = 4.42847
+margin_bottom = -318.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 78 )
+text = "3"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="BlackPortal9" parent="Structures" index="8" instance=ExtResource( 77 )]
+
+editor/display_folded = true
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1500, -2851.79 )
+scale = Vector2( 0.7, 0.7 )
+destination_node_path = NodePath("../BlackPortal1")
+
+[node name="Label7" type="Label" parent="Structures/BlackPortal9" index="8"]
+
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -27.0
+margin_top = -353.0
+margin_right = 13.0
+margin_bottom = -318.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 78 )
+text = "1"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="BlackPortal10" parent="Structures" index="9" instance=ExtResource( 77 )]
+
+editor/display_folded = true
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 1300, -2851.79 )
+scale = Vector2( 0.7, 0.7 )
+destination_node_path = NodePath("../BlackPortal11")
+
+[node name="Label8" type="Label" parent="Structures/BlackPortal10" index="8"]
+
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -34.0
+margin_top = -353.0
+margin_right = 6.0
+margin_bottom = -318.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 78 )
+text = "2"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="BlackPortal11" parent="Structures" index="10" instance=ExtResource( 77 )]
+
+editor/display_folded = true
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 550, -2850 )
+scale = Vector2( 0.7, 0.7 )
+destination_node_path = NodePath("../BlackPortalFrame")
+
+[node name="Label9" type="Label" parent="Structures/BlackPortal11" index="8"]
+
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -31.0
+margin_top = -347.0
+margin_right = 9.0
+margin_bottom = -312.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 78 )
+text = "0"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="BlackPortal12" parent="Structures" index="11" instance=ExtResource( 77 )]
+
+editor/display_folded = true
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 850, -2850 )
+scale = Vector2( 0.7, 0.7 )
+destination_node_path = NodePath("../../BackgroundDecorations/Main Menu Door")
+
+[node name="Label10" type="Label" parent="Structures/BlackPortal12" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -38.0
+margin_top = -356.0
+margin_right = 2.0
+margin_bottom = -321.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 78 )
+text = "X"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="BlackPortalFrame" type="Sprite" parent="Structures" index="12"]
+
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 750, -2150 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 79 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="BluePortal" parent="Structures" index="13" instance=ExtResource( 77 )]
+
+modulate = Color( 0, 0.0859375, 1, 1 )
+position = Vector2( 550, -2150 )
+scale = Vector2( 0.7, 0.7 )
+destination_node_path = NodePath("../BluePortalFrame")
+
+[node name="BluePortalFrame" type="Sprite" parent="Structures" index="14"]
+
+modulate = Color( 0.125, 0, 1, 1 )
+position = Vector2( 1500, -1500 )
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 79 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="LightRight2" parent="Structures" index="15" instance=ExtResource( 80 )]
+
+position = Vector2( 2517.9, -1392.27 )
+rotation = -0.366681
+scale = Vector2( -1.5, 1.5 )
+
+[node name="Computer Screen" parent="Structures" index="16" instance=ExtResource( 81 )]
+
+position = Vector2( 7818.71, -670.686 )
+enter_scene_path = "res://Scenes/Levels/Level Template.tscn"
+
+[node name="Enemies" type="Node2D" parent="." index="11"]
+
+editor/display_folded = true
+
+[node name="Radiogugu Stereo Bomb" parent="Enemies" index="0" instance=ExtResource( 82 )]
+
+position = Vector2( 2355.48, -2501.37 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Radiogugu Stereo Bomb2" parent="Enemies" index="1" instance=ExtResource( 82 )]
+
+position = Vector2( 2346.03, -3192.95 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Radiogugu Stereo Bomb3" parent="Enemies" index="2" instance=ExtResource( 82 )]
+
+position = Vector2( 1488.18, -3179.72 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Radiogugu Stereo Bomb4" parent="Enemies" index="3" instance=ExtResource( 82 )]
+
+position = Vector2( 683.103, -3175.1 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Radiogugu Stereo Bomb5" parent="Enemies" index="4" instance=ExtResource( 82 )]
+
+position = Vector2( 674.704, -2480.61 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Radiogugu" parent="Enemies" index="5" instance=ExtResource( 83 )]
+
+position = Vector2( 1550, -700 )
+activate_range_x = 0
+activate_range_y = 0
+
+[node name="PowerUps" type="Node2D" parent="." index="12"]
+
+[node name="DefensivePotion" parent="PowerUps" index="0" instance=ExtResource( 84 )]
+
+position = Vector2( 450, -350 )
+
+[node name="HealPotion" parent="PowerUps" index="1" instance=ExtResource( 85 )]
+
+position = Vector2( 2550, -350 )
+
+[node name="ForegroundDecorations" type="Node2D" parent="." index="13"]
+
+z_index = 1
+_sections_unfolded = [ "Z Index" ]
+
+[node name="PauseButton" parent="." index="14" instance=ExtResource( 86 )]
+
+[node name="Position2D" type="Position2D" parent="." index="15"]
+
+position = Vector2( 8450, -350 )
+scale = Vector2( 10, 10 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[connection signal="passed" from="CameraChangingTriggers/BlackFrameTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -2500 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/BlueFrameTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -1700 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/BlueFrameTrigger" to="Enemies/Radiogugu" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/RadioguguClearTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/RadioguguClearTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 8500 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/RadioguguClearTrigger" to="Writings/White Arrow/AnimationPlayer" method="play" binds= [ "Animate" ]]
+
+[connection signal="defeated" from="Enemies/Radiogugu" to="CameraChangingTriggers/RadioguguClearTrigger" method="increment_count"]
+
+

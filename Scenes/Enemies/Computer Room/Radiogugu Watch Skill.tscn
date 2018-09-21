@@ -65,11 +65,12 @@ shape = SubResource( 1 )
 
 [node name="Watch" type="Sprite" parent="." index="1"]
 
+self_modulate = Color( 1, 0, 0, 1 )
 texture = ExtResource( 2 )
 
 [node name="Screen" type="Sprite" parent="." index="2"]
 
-self_modulate = Color( 0, 0.835938, 1, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
 position = Vector2( -11.6244, 2.37771 )
 texture = ExtResource( 3 )
 

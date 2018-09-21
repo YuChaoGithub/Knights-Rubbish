@@ -398,7 +398,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Color", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Linear Accel", "Scale", "Spread", "Trail" ]
 
-[node name="Red Earspider" type="KinematicBody2D" index="0"]
+[node name="Red Earspider" type="KinematicBody2D"]
 
 z_index = 1
 input_pickable = false
@@ -407,6 +407,7 @@ collision_mask = 20
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "collision" ]
+trigger_range_x = 450
 
 [node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -417,6 +418,7 @@ shape = SubResource( 1 )
 
 [node name="Explosion Area" type="Area2D" parent="Animation" index="0"]
 
+editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0

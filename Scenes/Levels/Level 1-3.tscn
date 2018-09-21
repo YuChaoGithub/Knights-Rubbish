@@ -98,25 +98,26 @@
 [ext_resource path="res://Graphics/background/Level 1/Box and Bag.png" type="Texture" id=96]
 [ext_resource path="res://Graphics/background/Tissue and Papers/Paper 3.png" type="Texture" id=97]
 [ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 2.png" type="Texture" id=98]
-[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=99]
-[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=100]
-[ext_resource path="res://Scenes/Platforms/Enemy Blocking Platform.tscn" type="PackedScene" id=101]
-[ext_resource path="res://Scenes/Power Ups/Healing Machine.tscn" type="PackedScene" id=102]
-[ext_resource path="res://Scenes/Structures/Door.tscn" type="PackedScene" id=103]
-[ext_resource path="res://Scenes/Structures/BlankDoor.tscn" type="PackedScene" id=104]
-[ext_resource path="res://Scenes/Structures/Portal.tscn" type="PackedScene" id=105]
-[ext_resource path="res://Graphics/Structure/Portal Outline.png" type="Texture" id=106]
-[ext_resource path="res://Scenes/Power Ups/SizeChangingLight.tscn" type="PackedScene" id=107]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Sockute.tscn" type="PackedScene" id=108]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Mouse.tscn" type="PackedScene" id=109]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Floopy.tscn" type="PackedScene" id=110]
-[ext_resource path="res://Scripts/Utils/RepeatingSpawner.gd" type="Script" id=111]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Batterio.tscn" type="PackedScene" id=112]
-[ext_resource path="res://Scenes/Enemies/Computer Room/CD Punch.tscn" type="PackedScene" id=113]
-[ext_resource path="res://Scenes/Power Ups/Defense Potion.tscn" type="PackedScene" id=114]
-[ext_resource path="res://Scenes/Power Ups/Ult Stone.tscn" type="PackedScene" id=115]
-[ext_resource path="res://Scenes/Particles/TissueFall.tscn" type="PackedScene" id=116]
-[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=117]
+[ext_resource path="res://Scenes/Structures/Light.tscn" type="PackedScene" id=99]
+[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=100]
+[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=101]
+[ext_resource path="res://Scenes/Platforms/Enemy Blocking Platform.tscn" type="PackedScene" id=102]
+[ext_resource path="res://Scenes/Power Ups/Healing Machine.tscn" type="PackedScene" id=103]
+[ext_resource path="res://Scenes/Structures/Door.tscn" type="PackedScene" id=104]
+[ext_resource path="res://Scenes/Structures/BlankDoor.tscn" type="PackedScene" id=105]
+[ext_resource path="res://Scenes/Structures/Portal.tscn" type="PackedScene" id=106]
+[ext_resource path="res://Graphics/Structure/Portal Outline.png" type="Texture" id=107]
+[ext_resource path="res://Scenes/Power Ups/SizeChangingLight.tscn" type="PackedScene" id=108]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Sockute.tscn" type="PackedScene" id=109]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Mouse.tscn" type="PackedScene" id=110]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Floopy.tscn" type="PackedScene" id=111]
+[ext_resource path="res://Scripts/Utils/RepeatingSpawner.gd" type="Script" id=112]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Batterio.tscn" type="PackedScene" id=113]
+[ext_resource path="res://Scenes/Enemies/Computer Room/CD Punch.tscn" type="PackedScene" id=114]
+[ext_resource path="res://Scenes/Power Ups/Defense Potion.tscn" type="PackedScene" id=115]
+[ext_resource path="res://Scenes/Power Ups/Ult Stone.tscn" type="PackedScene" id=116]
+[ext_resource path="res://Scenes/Particles/TissueFall.tscn" type="PackedScene" id=117]
+[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=118]
 
 [sub_resource type="Animation" id=1]
 
@@ -168,38 +169,7 @@ tracks/0/keys = {
 "values": [ true, false, true ]
 }
 
-[sub_resource type="Animation" id=3]
-
-resource_name = "Blink"
-length = 4.0
-loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.7, 0.8, 1, 1.1, 2.6, 2.7, 2.8, 2.9, 3.1, 3.2, 3.3, 3.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 33 ), ExtResource( 35 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 33 ), ExtResource( 35 ), ExtResource( 33 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Light2D:enabled")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.7, 0.8, 1, 1.1, 2.6, 2.7, 2.8, 2.9, 3.1, 3.2, 3.3, 3.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ true, false, true, false, true, false, true, false, true, false, true, false, true ]
-}
-
-[node name="Game Level" type="Node2D"]
+[node name="Game Level" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -3101,8 +3071,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="PlatformDecorations" type="Node2D" parent="." index="6"]
 
-editor/display_folded = true
-
 [node name="StartShrinkLight" type="Node2D" parent="PlatformDecorations" index="0"]
 
 editor/display_folded = true
@@ -3305,7 +3273,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Top" type="Node2D" parent="PlatformDecorations" index="4"]
 
-editor/display_folded = true
 position = Vector2( 1401.06, -9126.19 )
 
 [node name="Trash Bag 1" type="Sprite" parent="PlatformDecorations/Top" index="0"]
@@ -3922,51 +3889,7 @@ scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 98 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="LightRight2" type="Sprite" parent="PlatformDecorations/Top" index="79"]
-
-position = Vector2( -1138.69, -1200.04 )
-rotation = 0.833422
-scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 33 )
-_sections_unfolded = [ "Transform" ]
-
-[node name="Light2D" type="Light2D" parent="PlatformDecorations/Top/LightRight2" index="0"]
-
-position = Vector2( 647.541, 309.396 )
-rotation = -0.937162
-scale = Vector2( 6, 6 )
-enabled = true
-editor_only = false
-texture = ExtResource( 34 )
-offset = Vector2( 0, 0 )
-texture_scale = 1.0
-color = Color( 0.957748, 0.984375, 0.49748, 1 )
-energy = 0.7
-mode = 0
-range_height = 0.0
-range_z_min = -1024
-range_z_max = 1024
-range_layer_min = 0
-range_layer_max = 0
-range_item_cull_mask = 1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 0 )
-shadow_buffer_size = 2048
-shadow_gradient_length = 0.0
-shadow_filter = 0
-shadow_filter_smooth = 0.0
-shadow_item_cull_mask = 1
-_sections_unfolded = [ "Transform" ]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PlatformDecorations/Top/LightRight2" index="1"]
-
-root_node = NodePath("..")
-autoplay = "Blink"
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/Blink = SubResource( 3 )
-blend_times = [  ]
+[node name="LightRight2" parent="PlatformDecorations/Top" index="79" instance=ExtResource( 99 )]
 
 [node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
 
@@ -3975,7 +3898,7 @@ editor/display_folded = true
 [node name="FirstTrigger" type="Position2D" parent="CameraChangingTriggers" index="0"]
 
 position = Vector2( 450, -250 )
-script = ExtResource( 99 )
+script = ExtResource( 100 )
 range_x = 1000
 range_y = 1000
 x_check = 2
@@ -3984,7 +3907,7 @@ y_check = 0
 [node name="OrangePortal" type="Position2D" parent="CameraChangingTriggers" index="1"]
 
 position = Vector2( 1600, -1050 )
-script = ExtResource( 99 )
+script = ExtResource( 100 )
 range_x = 1000
 range_y = 1000
 x_check = 2
@@ -3993,7 +3916,7 @@ y_check = 1
 [node name="GreenPortal" type="Position2D" parent="CameraChangingTriggers" index="2"]
 
 position = Vector2( 2250, -1650 )
-script = ExtResource( 99 )
+script = ExtResource( 100 )
 range_x = 1000
 range_y = 1000
 x_check = 2
@@ -4002,7 +3925,7 @@ y_check = 1
 [node name="RedPortal" type="Position2D" parent="CameraChangingTriggers" index="3"]
 
 position = Vector2( 450, -2400 )
-script = ExtResource( 99 )
+script = ExtResource( 100 )
 range_x = 1000
 range_y = 1000
 x_check = 1
@@ -4011,7 +3934,7 @@ y_check = 1
 [node name="HealingMachine" type="Position2D" parent="CameraChangingTriggers" index="4"]
 
 position = Vector2( 400, -2950 )
-script = ExtResource( 99 )
+script = ExtResource( 100 )
 range_x = 1000
 range_y = 1000
 x_check = 1
@@ -4019,13 +3942,13 @@ y_check = 1
 
 [node name="FirstEnemyClearTrigger" type="Node2D" parent="CameraChangingTriggers" index="5"]
 
-script = ExtResource( 100 )
+script = ExtResource( 101 )
 count_to_emit = 4
 
 [node name="PreDiveragePath" type="Position2D" parent="CameraChangingTriggers" index="6"]
 
 position = Vector2( 1350, -4450 )
-script = ExtResource( 99 )
+script = ExtResource( 100 )
 range_x = 3000
 range_y = 500
 x_check = 0
@@ -4034,7 +3957,7 @@ y_check = 1
 [node name="DivergePathTrigger" type="Position2D" parent="CameraChangingTriggers" index="7"]
 
 position = Vector2( 2400, -5450 )
-script = ExtResource( 99 )
+script = ExtResource( 100 )
 _sections_unfolded = [ "Transform" ]
 range_x = 3000
 range_y = 500
@@ -4044,7 +3967,7 @@ y_check = 1
 [node name="FlatEnemyPlatformTrigger" type="Position2D" parent="CameraChangingTriggers" index="8"]
 
 position = Vector2( 1350, -6500 )
-script = ExtResource( 99 )
+script = ExtResource( 100 )
 range_x = 1000
 range_y = 500
 x_check = 0
@@ -4052,13 +3975,13 @@ y_check = 1
 
 [node name="FlatEnemyPlatformClear" type="Node2D" parent="CameraChangingTriggers" index="9"]
 
-script = ExtResource( 100 )
+script = ExtResource( 101 )
 count_to_emit = 6
 
 [node name="ResumeSizePlatformTrigger" type="Position2D" parent="CameraChangingTriggers" index="10"]
 
 position = Vector2( 2400, -7400 )
-script = ExtResource( 99 )
+script = ExtResource( 100 )
 range_x = 1000
 range_y = 500
 x_check = 0
@@ -4067,7 +3990,7 @@ y_check = 1
 [node name="LastTrigger" type="Position2D" parent="CameraChangingTriggers" index="11"]
 
 position = Vector2( 1350, -8300 )
-script = ExtResource( 99 )
+script = ExtResource( 100 )
 range_x = 1000
 range_y = 500
 x_check = 0
@@ -4077,43 +4000,43 @@ y_check = 1
 
 editor/display_folded = true
 
-[node name="Enemy Blocking Platform" parent="OtherPlatforms" index="0" instance=ExtResource( 101 )]
+[node name="Enemy Blocking Platform" parent="OtherPlatforms" index="0" instance=ExtResource( 102 )]
 
 position = Vector2( 2400, -3550 )
 
-[node name="Enemy Blocking Platform2" parent="OtherPlatforms" index="1" instance=ExtResource( 101 )]
+[node name="Enemy Blocking Platform2" parent="OtherPlatforms" index="1" instance=ExtResource( 102 )]
 
 position = Vector2( 2400, -3650 )
 
-[node name="Enemy Blocking Platform3" parent="OtherPlatforms" index="2" instance=ExtResource( 101 )]
+[node name="Enemy Blocking Platform3" parent="OtherPlatforms" index="2" instance=ExtResource( 102 )]
 
 position = Vector2( 500, -3250 )
 
-[node name="Enemy Blocking Platform4" parent="OtherPlatforms" index="3" instance=ExtResource( 101 )]
+[node name="Enemy Blocking Platform4" parent="OtherPlatforms" index="3" instance=ExtResource( 102 )]
 
 position = Vector2( 500, -3350 )
 
-[node name="Enemy Blocking Platform9" parent="OtherPlatforms" index="4" instance=ExtResource( 101 )]
+[node name="Enemy Blocking Platform9" parent="OtherPlatforms" index="4" instance=ExtResource( 102 )]
 
 position = Vector2( -400, -6450 )
 
-[node name="Enemy Blocking Platform10" parent="OtherPlatforms" index="5" instance=ExtResource( 101 )]
+[node name="Enemy Blocking Platform10" parent="OtherPlatforms" index="5" instance=ExtResource( 102 )]
 
 position = Vector2( -400, -6550 )
 
-[node name="Enemy Blocking Platform11" parent="OtherPlatforms" index="6" instance=ExtResource( 101 )]
+[node name="Enemy Blocking Platform11" parent="OtherPlatforms" index="6" instance=ExtResource( 102 )]
 
 position = Vector2( 3100, -6450 )
 
-[node name="Enemy Blocking Platform12" parent="OtherPlatforms" index="7" instance=ExtResource( 101 )]
+[node name="Enemy Blocking Platform12" parent="OtherPlatforms" index="7" instance=ExtResource( 102 )]
 
 position = Vector2( 3100, -6550 )
 
-[node name="Enemy Blocking Platform13" parent="OtherPlatforms" index="8" instance=ExtResource( 101 )]
+[node name="Enemy Blocking Platform13" parent="OtherPlatforms" index="8" instance=ExtResource( 102 )]
 
 position = Vector2( 1592.53, -6923.23 )
 
-[node name="Enemy Blocking Platform14" parent="OtherPlatforms" index="9" instance=ExtResource( 101 )]
+[node name="Enemy Blocking Platform14" parent="OtherPlatforms" index="9" instance=ExtResource( 102 )]
 
 position = Vector2( 1119.08, -6926.55 )
 
@@ -4121,46 +4044,46 @@ position = Vector2( 1119.08, -6926.55 )
 
 editor/display_folded = true
 
-[node name="Healing Machine" parent="HealingMachines" index="0" instance=ExtResource( 102 )]
+[node name="Healing Machine" parent="HealingMachines" index="0" instance=ExtResource( 103 )]
 
 position = Vector2( 300, -3150 )
 scale = Vector2( 0.8, 0.8 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Healing Machine2" parent="HealingMachines" index="1" instance=ExtResource( 102 )]
+[node name="Healing Machine2" parent="HealingMachines" index="1" instance=ExtResource( 103 )]
 
 position = Vector2( 900, -4600 )
 
-[node name="Healing Machine3" parent="HealingMachines" index="2" instance=ExtResource( 102 )]
+[node name="Healing Machine3" parent="HealingMachines" index="2" instance=ExtResource( 103 )]
 
 position = Vector2( 1316.98, -7552.43 )
 
 [node name="Structures" type="Node2D" parent="." index="10"]
 
-[node name="Door1-1" parent="Structures" index="0" instance=ExtResource( 103 )]
+[node name="Door1-1" parent="Structures" index="0" instance=ExtResource( 104 )]
 
 position = Vector2( 1350, -10200 )
 enter_scene_path = "res://Scenes/Levels/Level 1-4.tscn"
 
-[node name="BlankDoor" parent="Structures" index="1" instance=ExtResource( 104 )]
+[node name="BlankDoor" parent="Structures" index="1" instance=ExtResource( 105 )]
 
 position = Vector2( 573.744, -666.763 )
 scale = Vector2( 0.85, 0.85 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="BluePortal1-1" parent="Structures" index="2" instance=ExtResource( 105 )]
+[node name="BluePortal1-1" parent="Structures" index="2" instance=ExtResource( 106 )]
 
 modulate = Color( 0, 0.367188, 1, 1 )
 position = Vector2( 1150, -500 )
 destination_node_path = NodePath("../BluePortal1-2")
 
-[node name="BluePortal1-2" parent="Structures" index="3" instance=ExtResource( 105 )]
+[node name="BluePortal1-2" parent="Structures" index="3" instance=ExtResource( 106 )]
 
 modulate = Color( 0, 0.367188, 1, 1 )
 position = Vector2( 1650, -500 )
 destination_node_path = NodePath("../BluePortal1-1")
 
-[node name="OrangePortal3-1" parent="Structures" index="4" instance=ExtResource( 105 )]
+[node name="OrangePortal3-1" parent="Structures" index="4" instance=ExtResource( 106 )]
 
 modulate = Color( 1, 0.473034, 0.00806451, 1 )
 position = Vector2( 2200, -650 )
@@ -4172,10 +4095,10 @@ destination_node_path = NodePath("../OrangeFrame")
 modulate = Color( 1, 0.426537, 0.00806451, 1 )
 position = Vector2( 1650, -1150 )
 scale = Vector2( 0.47, 0.47 )
-texture = ExtResource( 106 )
+texture = ExtResource( 107 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="GreenPortal2-1" parent="Structures" index="6" instance=ExtResource( 105 )]
+[node name="GreenPortal2-1" parent="Structures" index="6" instance=ExtResource( 106 )]
 
 modulate = Color( 0, 0.527344, 0.403748, 1 )
 position = Vector2( 2350, -1150 )
@@ -4187,10 +4110,10 @@ destination_node_path = NodePath("../GreenFrame")
 modulate = Color( 0.027451, 0.533333, 0.411765, 1 )
 position = Vector2( 2350, -1750 )
 scale = Vector2( 0.47, 0.47 )
-texture = ExtResource( 106 )
+texture = ExtResource( 107 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="RedPortal3-1" parent="Structures" index="8" instance=ExtResource( 105 )]
+[node name="RedPortal3-1" parent="Structures" index="8" instance=ExtResource( 106 )]
 
 modulate = Color( 1, 0.00268817, 0.00268817, 1 )
 position = Vector2( 450, -1800 )
@@ -4202,10 +4125,10 @@ destination_node_path = NodePath("../RedFrame")
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 300, -2550 )
 scale = Vector2( 0.47, 0.47 )
-texture = ExtResource( 106 )
+texture = ExtResource( 107 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="SizeChangingLight" parent="Structures" index="10" instance=ExtResource( 107 )]
+[node name="SizeChangingLight" parent="Structures" index="10" instance=ExtResource( 108 )]
 
 position = Vector2( 1150, -2600 )
 scale = Vector2( 0.8, 0.8 )
@@ -4214,28 +4137,28 @@ activate_range_x = 3000
 activate_range_y = 3000
 change_to = 0
 
-[node name="OrangePortal1-1" parent="Structures" index="11" instance=ExtResource( 105 )]
+[node name="OrangePortal1-1" parent="Structures" index="11" instance=ExtResource( 106 )]
 
 modulate = Color( 1, 0.492188, 0, 1 )
 position = Vector2( 300, -3700 )
 scale = Vector2( 0.7, 0.7 )
 destination_node_path = NodePath("../OrangePortal1-2")
 
-[node name="OrangePortal1-2" parent="Structures" index="12" instance=ExtResource( 105 )]
+[node name="OrangePortal1-2" parent="Structures" index="12" instance=ExtResource( 106 )]
 
 modulate = Color( 1, 0.492188, 0, 1 )
 position = Vector2( 1350, -4500 )
 scale = Vector2( 0.7, 0.7 )
 destination_node_path = NodePath("../OrangePortal1-1")
 
-[node name="BluePortal2-1" parent="Structures" index="13" instance=ExtResource( 105 )]
+[node name="BluePortal2-1" parent="Structures" index="13" instance=ExtResource( 106 )]
 
 modulate = Color( 0, 0.273438, 1, 1 )
 position = Vector2( 2250, -4600 )
 scale = Vector2( 0.7, 0.7 )
 destination_node_path = NodePath("../BluePortalFrame")
 
-[node name="RedPortal1-1" parent="Structures" index="14" instance=ExtResource( 105 )]
+[node name="RedPortal1-1" parent="Structures" index="14" instance=ExtResource( 106 )]
 
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 450, -4600 )
@@ -4247,7 +4170,7 @@ destination_node_path = NodePath("../RedPortalFrame")
 modulate = Color( 0, 0.319855, 0.871094, 1 )
 position = Vector2( 300, -5500 )
 scale = Vector2( 0.42, 0.42 )
-texture = ExtResource( 106 )
+texture = ExtResource( 107 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="RedPortalFrame" type="Sprite" parent="Structures" index="16"]
@@ -4255,17 +4178,17 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 modulate = Color( 0.871094, 0, 0, 1 )
 position = Vector2( 2400, -5500 )
 scale = Vector2( 0.42, 0.42 )
-texture = ExtResource( 106 )
+texture = ExtResource( 107 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="GreenPortal1-1" parent="Structures" index="17" instance=ExtResource( 105 )]
+[node name="GreenPortal1-1" parent="Structures" index="17" instance=ExtResource( 106 )]
 
 modulate = Color( 0.0248131, 0.542969, 0.154352, 1 )
 position = Vector2( 1600, -5800 )
 scale = Vector2( 0.7, 0.7 )
 destination_node_path = NodePath("../GreenPortalFrame")
 
-[node name="OrangePortal2-1" parent="Structures" index="18" instance=ExtResource( 105 )]
+[node name="OrangePortal2-1" parent="Structures" index="18" instance=ExtResource( 106 )]
 
 modulate = Color( 0.847656, 0.476807, 0, 1 )
 position = Vector2( 1100, -5850 )
@@ -4276,7 +4199,7 @@ destination_node_path = NodePath("../OrangePortalFrame")
 modulate = Color( 0.027451, 0.545098, 0.156863, 1 )
 position = Vector2( 1200, -6550 )
 scale = Vector2( 0.28, 0.28 )
-texture = ExtResource( 106 )
+texture = ExtResource( 107 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="OrangePortalFrame" type="Sprite" parent="Structures" index="20"]
@@ -4284,38 +4207,38 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 modulate = Color( 0.820312, 0.53833, 0, 1 )
 position = Vector2( 1500, -6550 )
 scale = Vector2( 0.28, 0.28 )
-texture = ExtResource( 106 )
+texture = ExtResource( 107 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="RedPortal2-1" parent="Structures" index="21" instance=ExtResource( 105 )]
+[node name="RedPortal2-1" parent="Structures" index="21" instance=ExtResource( 106 )]
 
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 2150, -6650 )
 scale = Vector2( 0.7, 0.7 )
 destination_node_path = NodePath("../RedPortal2-2")
 
-[node name="RedPortal2-2" parent="Structures" index="22" instance=ExtResource( 105 )]
+[node name="RedPortal2-2" parent="Structures" index="22" instance=ExtResource( 106 )]
 
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 850, -6650 )
 scale = Vector2( 0.7, 0.7 )
 destination_node_path = NodePath("../RedPortal2-1")
 
-[node name="Purple1-1" parent="Structures" index="23" instance=ExtResource( 105 )]
+[node name="Purple1-1" parent="Structures" index="23" instance=ExtResource( 106 )]
 
 modulate = Color( 0.710938, 0, 1, 1 )
 position = Vector2( 350, -6650 )
 scale = Vector2( 0.7, 0.7 )
 destination_node_path = NodePath("../Purple1-2")
 
-[node name="Purple1-2" parent="Structures" index="24" instance=ExtResource( 105 )]
+[node name="Purple1-2" parent="Structures" index="24" instance=ExtResource( 106 )]
 
 modulate = Color( 0.710938, 0, 1, 1 )
 position = Vector2( 1450, -7100 )
 scale = Vector2( 0.7, 0.7 )
 destination_node_path = NodePath("../Purple1-1")
 
-[node name="LightBluePortal1-1" parent="Structures" index="25" instance=ExtResource( 105 )]
+[node name="LightBluePortal1-1" parent="Structures" index="25" instance=ExtResource( 106 )]
 
 modulate = Color( 0, 0.775909, 0.878906, 1 )
 position = Vector2( 1250, -7100 )
@@ -4327,10 +4250,10 @@ destination_node_path = NodePath("../LightBlueFrame")
 modulate = Color( 0, 0.801086, 0.820312, 1 )
 position = Vector2( 1900, -6650 )
 scale = Vector2( 0.42, 0.42 )
-texture = ExtResource( 106 )
+texture = ExtResource( 107 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="BluePortal3-1" parent="Structures" index="27" instance=ExtResource( 105 )]
+[node name="BluePortal3-1" parent="Structures" index="27" instance=ExtResource( 106 )]
 
 modulate = Color( 0, 0.367188, 1, 1 )
 position = Vector2( 2400, -6650 )
@@ -4342,10 +4265,10 @@ destination_node_path = NodePath("../BluePortalFrame2")
 modulate = Color( 0.00392157, 0.368627, 1, 1 )
 position = Vector2( 2400, -7500 )
 scale = Vector2( 0.42, 0.42 )
-texture = ExtResource( 106 )
+texture = ExtResource( 107 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="YellowPortal1-1" parent="Structures" index="29" instance=ExtResource( 105 )]
+[node name="YellowPortal1-1" parent="Structures" index="29" instance=ExtResource( 106 )]
 
 modulate = Color( 0.945312, 1, 0, 1 )
 position = Vector2( 350, -7550 )
@@ -4357,41 +4280,41 @@ destination_node_path = NodePath("../YellowPortalFrame")
 modulate = Color( 1, 0.9375, 0, 1 )
 position = Vector2( 1350, -8400 )
 scale = Vector2( 0.42, 0.42 )
-texture = ExtResource( 106 )
+texture = ExtResource( 107 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Enemies" type="Node2D" parent="." index="11"]
 
 editor/display_folded = true
 
-[node name="Sockute" parent="Enemies" index="0" instance=ExtResource( 108 )]
+[node name="Sockute" parent="Enemies" index="0" instance=ExtResource( 109 )]
 
 position = Vector2( 1250, -3700 )
 activate_range_y = 100
 
-[node name="Sockute3" parent="Enemies" index="1" instance=ExtResource( 108 )]
+[node name="Sockute3" parent="Enemies" index="1" instance=ExtResource( 109 )]
 
 position = Vector2( 600, -6650 )
 activate_range_x = 400
 activate_range_y = 100
 activate_interval = 8.0
 
-[node name="Mouse" parent="Enemies" index="2" instance=ExtResource( 109 )]
+[node name="Mouse" parent="Enemies" index="2" instance=ExtResource( 110 )]
 
 position = Vector2( 1450, -3300 )
 activate_range_y = 650
 
-[node name="Mouse2" parent="Enemies" index="3" instance=ExtResource( 109 )]
+[node name="Mouse2" parent="Enemies" index="3" instance=ExtResource( 110 )]
 
 position = Vector2( 2100, -3300 )
 activate_range_y = 650
 
-[node name="Floopy" parent="Enemies" index="4" instance=ExtResource( 110 )]
+[node name="Floopy" parent="Enemies" index="4" instance=ExtResource( 111 )]
 
 position = Vector2( 800, -3650 )
 activate_range_y = 700
 
-[node name="Floopy2" parent="Enemies" index="5" instance=ExtResource( 110 )]
+[node name="Floopy2" parent="Enemies" index="5" instance=ExtResource( 111 )]
 
 position = Vector2( 1850, -3650 )
 activate_range_y = 700
@@ -4399,7 +4322,7 @@ activate_range_y = 700
 [node name="FloopySpawner" type="Position2D" parent="Enemies" index="6"]
 
 position = Vector2( 750, -3900 )
-script = ExtResource( 111 )
+script = ExtResource( 112 )
 mob_path = "res://Scenes/Enemies/Computer Room/Floopy.tscn"
 activate_range_x = 3000
 activate_range_y = 3000
@@ -4407,14 +4330,14 @@ spawn_delay = 0.75
 total_count = 1
 countdownTVHooked = null
 
-[node name="Batterio3" parent="Enemies" index="7" instance=ExtResource( 112 )]
+[node name="Batterio3" parent="Enemies" index="7" instance=ExtResource( 113 )]
 
 position = Vector2( 1999.52, -5647.21 )
 scale = Vector2( 0.5, 0.5 )
 _sections_unfolded = [ "Transform" ]
 off_duration = 1.0
 
-[node name="Batterio4" parent="Enemies" index="8" instance=ExtResource( 112 )]
+[node name="Batterio4" parent="Enemies" index="8" instance=ExtResource( 113 )]
 
 position = Vector2( 2052.69, -5647.21 )
 scale = Vector2( 0.5, 0.5 )
@@ -4424,7 +4347,7 @@ off_duration = 1.0
 [node name="CDPunchSpawner" type="Position2D" parent="Enemies" index="9"]
 
 position = Vector2( 2850, -6600 )
-script = ExtResource( 111 )
+script = ExtResource( 112 )
 mob_path = "res://Scenes/Enemies/Computer Room/CD Punch.tscn"
 activate_range_x = 3000
 activate_range_y = 3000
@@ -4435,7 +4358,7 @@ countdownTVHooked = null
 [node name="FloopySpawner3" type="Position2D" parent="Enemies" index="10"]
 
 position = Vector2( -200, -6600 )
-script = ExtResource( 111 )
+script = ExtResource( 112 )
 mob_path = "res://Scenes/Enemies/Computer Room/Floopy.tscn"
 activate_range_x = 3000
 activate_range_y = 3000
@@ -4446,7 +4369,7 @@ countdownTVHooked = null
 [node name="FloopySpawner5" type="Position2D" parent="Enemies" index="11"]
 
 position = Vector2( -200, -6600 )
-script = ExtResource( 111 )
+script = ExtResource( 112 )
 mob_path = "res://Scenes/Enemies/Computer Room/Floopy.tscn"
 activate_range_x = 3000
 activate_range_y = 3000
@@ -4457,7 +4380,7 @@ countdownTVHooked = null
 [node name="FloopySpawner4" type="Position2D" parent="Enemies" index="12"]
 
 position = Vector2( 2900, -6600 )
-script = ExtResource( 111 )
+script = ExtResource( 112 )
 mob_path = "res://Scenes/Enemies/Computer Room/Floopy.tscn"
 activate_range_x = 3000
 activate_range_y = 3000
@@ -4468,7 +4391,7 @@ countdownTVHooked = null
 [node name="CDPunchSpawner2" type="Position2D" parent="Enemies" index="13"]
 
 position = Vector2( -200, -6600 )
-script = ExtResource( 111 )
+script = ExtResource( 112 )
 mob_path = "res://Scenes/Enemies/Computer Room/CD Punch.tscn"
 activate_range_x = 3000
 activate_range_y = 3000
@@ -4476,31 +4399,31 @@ spawn_delay = 1.25
 total_count = 2
 countdownTVHooked = null
 
-[node name="Mouse3" parent="Enemies" index="14" instance=ExtResource( 109 )]
+[node name="Mouse3" parent="Enemies" index="14" instance=ExtResource( 110 )]
 
 position = Vector2( 1364.96, -6962.88 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_y = 500
 
-[node name="CD Punch" parent="Enemies" index="15" instance=ExtResource( 113 )]
+[node name="CD Punch" parent="Enemies" index="15" instance=ExtResource( 114 )]
 
 position = Vector2( -200, -6600 )
 activate_range_x = 3000
 activate_range_y = 100
 
-[node name="CD Punch2" parent="Enemies" index="16" instance=ExtResource( 113 )]
+[node name="CD Punch2" parent="Enemies" index="16" instance=ExtResource( 114 )]
 
 position = Vector2( 2850, -6600 )
 activate_range_x = 3000
 activate_range_y = 100
 
-[node name="Floopy3" parent="Enemies" index="17" instance=ExtResource( 110 )]
+[node name="Floopy3" parent="Enemies" index="17" instance=ExtResource( 111 )]
 
 position = Vector2( 2900, -6550 )
 activate_range_x = 3000
 activate_range_y = 100
 
-[node name="Floopy4" parent="Enemies" index="18" instance=ExtResource( 110 )]
+[node name="Floopy4" parent="Enemies" index="18" instance=ExtResource( 111 )]
 
 position = Vector2( -150, -6550 )
 activate_range_x = 3000
@@ -4509,7 +4432,7 @@ activate_range_y = 100
 [node name="MouseSpawner" type="Position2D" parent="Enemies" index="19"]
 
 position = Vector2( 1350, -6950 )
-script = ExtResource( 111 )
+script = ExtResource( 112 )
 mob_path = "res://Scenes/Enemies/Computer Room/Mouse.tscn"
 activate_range_x = 3000
 activate_range_y = 3000
@@ -4517,7 +4440,7 @@ spawn_delay = 1.0
 total_count = 1
 countdownTVHooked = null
 
-[node name="Batterio" parent="Enemies" index="20" instance=ExtResource( 112 )]
+[node name="Batterio" parent="Enemies" index="20" instance=ExtResource( 113 )]
 
 position = Vector2( 71.572, -6869.47 )
 rotation = 1.5708
@@ -4526,7 +4449,7 @@ _sections_unfolded = [ "Transform" ]
 on_duration = 1.0
 off_duration = 4.0
 
-[node name="Batterio2" parent="Enemies" index="21" instance=ExtResource( 112 )]
+[node name="Batterio2" parent="Enemies" index="21" instance=ExtResource( 113 )]
 
 position = Vector2( 1350.09, -6865.6 )
 rotation = 1.5708
@@ -4538,34 +4461,34 @@ off_duration = 5.0
 
 editor/display_folded = true
 
-[node name="DefensivePotion" parent="PowerUps" index="0" instance=ExtResource( 114 )]
+[node name="DefensivePotion" parent="PowerUps" index="0" instance=ExtResource( 115 )]
 
 position = Vector2( 2450, -3250 )
 
-[node name="Ult Stone" parent="PowerUps" index="1" instance=ExtResource( 115 )]
+[node name="Ult Stone" parent="PowerUps" index="1" instance=ExtResource( 116 )]
 
 position = Vector2( 1800, -4550 )
 
-[node name="SizeChangingLight" parent="PowerUps" index="2" instance=ExtResource( 107 )]
+[node name="SizeChangingLight" parent="PowerUps" index="2" instance=ExtResource( 108 )]
 
 position = Vector2( 800, -6250 )
 scale = Vector2( 0.46, 0.46 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="SizeChangingLight2" parent="PowerUps" index="3" instance=ExtResource( 107 )]
+[node name="SizeChangingLight2" parent="PowerUps" index="3" instance=ExtResource( 108 )]
 
 position = Vector2( 1700, -8000 )
 scale = Vector2( 0.5, 0.5 )
 _sections_unfolded = [ "Transform" ]
 change_to = 0
 
-[node name="SizeChangingLight3" parent="PowerUps" index="4" instance=ExtResource( 107 )]
+[node name="SizeChangingLight3" parent="PowerUps" index="4" instance=ExtResource( 108 )]
 
 position = Vector2( 949.029, -8000 )
 scale = Vector2( 0.5, 0.5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="DefensivePotion2" parent="PowerUps" index="5" instance=ExtResource( 114 )]
+[node name="DefensivePotion2" parent="PowerUps" index="5" instance=ExtResource( 115 )]
 
 position = Vector2( 1350, -6450 )
 
@@ -4964,15 +4887,15 @@ scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="TissueFall" parent="ForegroundDecorations/Top" index="40" instance=ExtResource( 116 )]
+[node name="TissueFall" parent="ForegroundDecorations/Top" index="40" instance=ExtResource( 117 )]
 
 position = Vector2( -601.986, -1105.42 )
 
-[node name="TissueFall2" parent="ForegroundDecorations/Top" index="41" instance=ExtResource( 116 )]
+[node name="TissueFall2" parent="ForegroundDecorations/Top" index="41" instance=ExtResource( 117 )]
 
 position = Vector2( 400.61, -1105.42 )
 
-[node name="PauseButton" parent="." index="14" instance=ExtResource( 117 )]
+[node name="PauseButton" parent="." index="14" instance=ExtResource( 118 )]
 
 [node name="Position2D" type="Position2D" parent="." index="15"]
 
@@ -5066,9 +4989,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Enemies/CD Punch" to="Enemies/CDPunchSpawner2" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/CD Punch2" to="Enemies/CDPunchSpawner" method="spawn_mob"]
-
 [connection signal="defeated" from="Enemies/CD Punch2" to="Enemies/FloopySpawner5" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/CD Punch2" to="Enemies/CDPunchSpawner" method="spawn_mob"]
 
 [connection signal="defeated" from="Enemies/Floopy3" to="Enemies/FloopySpawner4" method="spawn_mob"]
 

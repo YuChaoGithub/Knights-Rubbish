@@ -1,0 +1,560 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Graphics/Structure/Computer Screen.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Structures/Door.gd" type="Script" id=2]
+[ext_resource path="res://Graphics/Structure/Computer.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Structure/Computer Screen Crack.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Structure/Computer Screen Shards/Shard1.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Structure/Computer Screen Shards/Shard2.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Structure/Computer Screen Shards/Shard3.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Structure/Computer Screen Shards/Shard4.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Structure/Computer Screen Shards/Shard5.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Structure/Computer Screen Shards/Shard6.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Structure/Computer Screen Shards/Shard7.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Structure/Computer Screen Shards/Loading Bar.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Structure/Computer Screen Shards/Loading Fill.png" type="Texture" id=13]
+[ext_resource path="res://Fonts/SourceHanSerifTC.tres" type="DynamicFont" id=14]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 120.345, 77.1042 )
+
+[sub_resource type="Animation" id=4]
+
+resource_name = "Explode"
+length = 0.3
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Crack:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Debris:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.145098, 0.607843, 1, 1 ), Color( 0.145098, 0.607843, 1, 0.117647 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("LoadingBar:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Debris/1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 4 ),
+"update": 0,
+"values": [ Vector2( -43.4411, -43.4574 ), Vector2( -58.8751, -322.548 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Debris/2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 4 ),
+"update": 0,
+"values": [ Vector2( -67.759, -39.441 ), Vector2( -450.038, -279.858 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Debris/3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 4 ),
+"update": 0,
+"values": [ Vector2( -55.0443, -1.20604 ), Vector2( -401.484, 195.906 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Debris/4:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 4 ),
+"update": 0,
+"values": [ Vector2( 5.85602, -45.047 ), Vector2( 317.951, -289.944 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Debris/5:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 4 ),
+"update": 0,
+"values": [ Vector2( 43.379, -23.0638 ), Vector2( 463.736, -123.113 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Debris/6:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 4 ),
+"update": 0,
+"values": [ Vector2( 59.4873, 10.2899 ), Vector2( 455.205, 22.9828 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Debris/7:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 4 ),
+"update": 0,
+"values": [ Vector2( 15.9, 30.1885 ), Vector2( 398.179, 212.368 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("../Collision/CollisionArea:collision_layer")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 32 ]
+}
+
+[sub_resource type="Animation" id=5]
+
+resource_name = "Still"
+length = 0.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Crack:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Debris:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.145098, 0.607843, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("LoadingBar:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("../Collision/CollisionArea:collision_layer")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 2 ]
+}
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "Animate"
+length = 3.5
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprite3:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Sprite4:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5, 2, 3, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Sprite5:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.5, 2, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Sprite6:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 2.5, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Sprite7:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 3, 3.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "Animate"
+length = 2.5
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Updating", "Updating.", "Updating..", "Updating..." ]
+}
+
+[node name="Computer Screen" type="Sprite"]
+
+position = Vector2( 0, -324.768 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+enter_scene_path = null
+
+[node name="Collision" type="Node2D" parent="." index="0"]
+
+scale = Vector2( 1, 1 )
+
+[node name="CollisionArea" type="Area2D" parent="Collision" index="0"]
+
+scale = Vector2( 1, 1 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+collision_mask = 0
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision/CollisionArea" index="0"]
+
+position = Vector2( 0.342187, -13.6879 )
+shape = SubResource( 3 )
+
+[node name="Machine" type="Sprite" parent="." index="1"]
+
+show_behind_parent = true
+position = Vector2( -256.084, 9.0323 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Door" type="Node2D" parent="." index="2"]
+
+[node name="Crack" type="Sprite" parent="Door" index="0"]
+
+visible = false
+modulate = Color( 0.19086, 0.355217, 1, 1 )
+position = Vector2( -0.751794, -16.0095 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Debris" type="Node2D" parent="Door" index="1"]
+
+modulate = Color( 0.145098, 0.607843, 1, 0 )
+scale = Vector2( 1, 1 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="1" type="Sprite" parent="Door/Debris" index="0"]
+
+position = Vector2( -43.4411, -43.4574 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="2" type="Sprite" parent="Door/Debris" index="1"]
+
+position = Vector2( -67.759, -39.441 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="3" type="Sprite" parent="Door/Debris" index="2"]
+
+position = Vector2( -55.0443, -1.20604 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="4" type="Sprite" parent="Door/Debris" index="3"]
+
+position = Vector2( 5.85602, -45.047 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="5" type="Sprite" parent="Door/Debris" index="4"]
+
+position = Vector2( 43.379, -23.0638 )
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="6" type="Sprite" parent="Door/Debris" index="5"]
+
+position = Vector2( 59.4873, 10.2899 )
+texture = ExtResource( 10 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="7" type="Sprite" parent="Door/Debris" index="6"]
+
+position = Vector2( 15.9, 30.1885 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door" index="2"]
+
+root_node = NodePath("..")
+autoplay = "Still"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Explode = SubResource( 4 )
+anims/Still = SubResource( 5 )
+blend_times = [  ]
+
+[node name="LoadingBar" type="Sprite" parent="Door" index="3"]
+
+editor/display_folded = true
+position = Vector2( 0, 14.3741 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 12 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Sprite" type="Sprite" parent="Door/LoadingBar" index="0"]
+
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -50.3875, -0.103638 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Sprite2" type="Sprite" parent="Door/LoadingBar" index="1"]
+
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -33.5931, -0.103638 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Sprite3" type="Sprite" parent="Door/LoadingBar" index="2"]
+
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -16.2366, -0.103638 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Sprite4" type="Sprite" parent="Door/LoadingBar" index="3"]
+
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0.293411, -0.103638 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Sprite5" type="Sprite" parent="Door/LoadingBar" index="4"]
+
+position = Vector2( 16.9267, -0.103638 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Sprite6" type="Sprite" parent="Door/LoadingBar" index="5"]
+
+position = Vector2( 33.8699, -0.103638 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Sprite7" type="Sprite" parent="Door/LoadingBar" index="6"]
+
+position = Vector2( 50.3999, -0.103638 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door/LoadingBar" index="7"]
+
+root_node = NodePath("..")
+autoplay = "Animate"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Animate = SubResource( 1 )
+blend_times = [  ]
+
+[node name="Label" type="Label" parent="Door" index="4"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -51.0
+margin_top = -65.0
+margin_right = 121.0
+margin_bottom = -21.0
+rect_scale = Vector2( 0.6, 0.6 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 14 )
+text = "Updating..."
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Door/Label" index="0"]
+
+root_node = NodePath("..")
+autoplay = "Animate"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Animate = SubResource( 2 )
+blend_times = [  ]
+
+

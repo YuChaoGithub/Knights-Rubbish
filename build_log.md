@@ -936,11 +936,24 @@ Comment: I'm back to save the universe. Hope that I can rush and complete the al
 **Commit**
 
 [2018.09.15]
-* Completed setting triggers and decorating level 1-9. Not completed yet.
+* Completed setting triggers and decorating level 1-9. Not tested yet.
 
 [2018.09.16]
 * Tested level 1-9. Fixed bugs.
 * Layed out level 1-10.
+
+**Commit**
+
+[2018.09.18]
+* Set triggers and decorated level 1-10. Not tested yet.
+
+[2018.09.21]
+* Tested level 1-10. Perfect.
+* Finished coding `RadioguguStereoBomb.gd`. Integrated it to `Radiogugu.gd`.
+* Fixed bugs of Radiogugu.
+* Completed `Computer Screen.tscn`.
+* Completed level 1-11. Tested.
+Comment: What a sprint!
 
 **Commit**
 
