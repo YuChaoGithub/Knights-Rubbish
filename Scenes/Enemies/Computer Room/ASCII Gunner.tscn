@@ -1827,7 +1827,7 @@ tracks/23/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[node name="ASCII Gunner" type="KinematicBody2D" index="0"]
+[node name="ASCII Gunner" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
@@ -1897,6 +1897,9 @@ offset = Vector2( -9.34959, -3.39502 )
 [node name="ASCII Gunner Bullet" type="Node2D" parent="Animation" index="2"]
 
 position = Vector2( -45.0774, -7.61173 )
+scale = Vector2( 1.5, 1.5 )
+z_index = 3
+_sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Attack Area" type="Area2D" parent="Animation/ASCII Gunner Bullet" index="0"]
 
@@ -1919,7 +1922,8 @@ shape = SubResource( 3 )
 
 [node name="Segments" type="Node2D" parent="Animation/ASCII Gunner Bullet" index="1"]
 
-position = Vector2( -48, 0 )
+position = Vector2( -54.4093, 0.256375 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="Part1" type="Sprite" parent="Animation/ASCII Gunner Bullet/Segments" index="0"]
 

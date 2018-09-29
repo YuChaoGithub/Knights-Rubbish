@@ -3,8 +3,8 @@ extends KinematicBody2D
 const SPEED_X = 1000
 const GRAVITY = 400
 
-const DAMAGE = 35
-const KNOCK_BACK_VEL_X = 500
+const DAMAGE = 30
+const KNOCK_BACK_VEL_X = 600
 const KNOCK_BACK_VEL_Y = 400
 const KNOCK_BACK_FADE_RATE = 1250
 

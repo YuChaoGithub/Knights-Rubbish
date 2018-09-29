@@ -957,6 +957,15 @@ Comment: What a sprint!
 
 **Commit**
 
+[2018.09.26]
+* Completed making tilesets: Terminal Wall, Binary Floor.
+
+[2018.09.29]
+* Completed level 1-12.
+* Completed `Terminal Upgrade.tscn`.
+
+**Commit**
+
 To Do List:
 * Clean up cringy texts.
 * Finish laying out level 1. (Est. Before November)

@@ -8,17 +8,19 @@ extends KinematicBody2D
 # Play hurt animation only when roaming.
 # When stunned, go to 1.
 
+signal defeated
+
 export(int) var activate_range_x = 1500
-export(int) var activate_range_y = 10000
+export(int) var activate_range_y = 1000
 
 enum { NONE, ROAM, ATTACK }
 
-const MAX_HEALTH = 100
+const MAX_HEALTH = 350
 
 # Attack.
-const ATTACK_RANGE_X = 750
+const ATTACK_RANGE_X = 1150
 const ATTACK_RANGE_Y = 150
-const DAMAGE = 3
+const DAMAGE = 5
 const KNOCK_BACK_VEL_X = 50
 const KNOCK_BACK_VEL_Y = 50
 const KNOCK_BACK_FADE_RATE = 150
@@ -26,9 +28,9 @@ const KNOCK_BACK_FADE_RATE = 150
 # Movement.
 const SPEED_X = 300
 const GRAVITY = 600
-const RANDOM_MOVEMENT_STEPS = 5
-const RANDOM_MOVEMENT_MIN_TIME_PER_STEP = 1.0
-const RANDOM_MOVEMENT_MAX_TIME_PER_STEP = 2.0
+const RANDOM_MOVEMENT_STEPS = 4
+const RANDOM_MOVEMENT_MIN_TIME_PER_STEP = 0.75
+const RANDOM_MOVEMENT_MAX_TIME_PER_STEP = 1.5
 
 # Animation.
 const DIE_ANIMATION_DURATION = 0.5
@@ -98,7 +100,7 @@ func attack():
 func on_attack_hit(area):
 	if area.is_in_group("hero"):
 		var character = area.get_node("..")
-		character.damaged(DAMAGE)
+		character.damaged(DAMAGE, false)
 		character.knocked_back(facing * KNOCK_BACK_VEL_X, -KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 
 func damaged(val):
@@ -128,4 +130,5 @@ func healed(val):
 
 func die():
 	ec.die()
+	emit_signal("defeated")
 	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

@@ -1802,7 +1802,6 @@ shape = SubResource( 2 )
 [node name="Body" type="Sprite" parent="Animation" index="2"]
 
 editor/display_folded = true
-position = Vector2( -0.427933, -3.05232 )
 texture = ExtResource( 2 )
 
 [node name="Head" type="Sprite" parent="Animation/Body" index="0"]
@@ -1813,36 +1812,32 @@ offset = Vector2( 2.02373, -8.72547 )
 
 [node name="Cap" type="Sprite" parent="Animation/Body/Head" index="0"]
 
-position = Vector2( 7.58968, -30.6397 )
-rotation = -0.0338451
+position = Vector2( 7.88028, -30.2533 )
 texture = ExtResource( 4 )
 offset = Vector2( 7.98216, -1.94503 )
 
 [node name="Left Foot" type="Sprite" parent="Animation/Body" index="1"]
 
 position = Vector2( -4.65568, 14.6958 )
-rotation = -0.421124
 texture = ExtResource( 5 )
 offset = Vector2( -6.47171, 15.6085 )
 
 [node name="Right Foot" type="Sprite" parent="Animation/Body" index="2"]
 
 position = Vector2( 8.72086, 14.3407 )
-rotation = 0.547412
 texture = ExtResource( 6 )
 offset = Vector2( 6.66808, 15.8453 )
 
 [node name="Left Hand" type="Sprite" parent="Animation/Body" index="3"]
 
 position = Vector2( -18.6241, -15.5472 )
-rotation = 0.757734
 texture = ExtResource( 7 )
 offset = Vector2( -8.72085, 15.784 )
 
 [node name="Right Hand" type="Sprite" parent="Animation/Body" index="4"]
 
 position = Vector2( 20.7952, -7.61599 )
-rotation = -4.17157
+rotation = 0.462671
 texture = ExtResource( 8 )
 offset = Vector2( 4.41892, -7.18106 )
 
@@ -1865,7 +1860,7 @@ anims/Die = SubResource( 3 )
 anims/Hurt = SubResource( 4 )
 anims/Still = SubResource( 5 )
 anims/Stunned = SubResource( 6 )
-anims/ThrowBomb = SubResource( 7 )
+"anims/Throw Bomb" = SubResource( 7 )
 anims/Walk = SubResource( 8 )
 blend_times = [  ]
 

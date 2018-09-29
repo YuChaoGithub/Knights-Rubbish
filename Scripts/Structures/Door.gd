@@ -34,7 +34,7 @@ func damaged(val):
 func stunned(duration):
 	pass
 
-func slowed(multplier, duration):
+func slowed(multiplier, duration):
 	pass
 
 func knocked_back(vel_x, vel_y, fade_rate):

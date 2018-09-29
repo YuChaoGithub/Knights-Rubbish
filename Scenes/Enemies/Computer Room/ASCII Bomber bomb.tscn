@@ -358,7 +358,7 @@ tracks/8/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 24.8153, 33.7439 )
 
-[node name="ASCII Bomber bomb" type="KinematicBody2D" index="0"]
+[node name="ASCII Bomber bomb" type="KinematicBody2D"]
 
 z_index = 1
 input_pickable = false
@@ -375,7 +375,6 @@ shape = SubResource( 1 )
 
 [node name="Animation" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
 scale = Vector2( 1.5, 1.5 )
 
 [node name="Bomb" type="Sprite" parent="Animation" index="0"]
@@ -385,7 +384,8 @@ texture = ExtResource( 2 )
 [node name="BOOM" type="Node2D" parent="Animation" index="1"]
 
 editor/display_folded = true
-scale = Vector2( 1.5, 1.5 )
+scale = Vector2( 2, 2 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="B" type="Sprite" parent="Animation/BOOM" index="0"]
 

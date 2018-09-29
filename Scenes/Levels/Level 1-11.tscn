@@ -1418,7 +1418,7 @@ scale = Vector2( -1.5, 1.5 )
 [node name="Computer Screen" parent="Structures" index="16" instance=ExtResource( 81 )]
 
 position = Vector2( 7818.71, -670.686 )
-enter_scene_path = "res://Scenes/Levels/Level Template.tscn"
+enter_scene_path = "res://Scenes/Levels/Level 1-12.tscn"
 
 [node name="Enemies" type="Node2D" parent="." index="11"]
 
@@ -1427,27 +1427,22 @@ editor/display_folded = true
 [node name="Radiogugu Stereo Bomb" parent="Enemies" index="0" instance=ExtResource( 82 )]
 
 position = Vector2( 2355.48, -2501.37 )
-scale = Vector2( 1.5, 1.5 )
 
 [node name="Radiogugu Stereo Bomb2" parent="Enemies" index="1" instance=ExtResource( 82 )]
 
 position = Vector2( 2346.03, -3192.95 )
-scale = Vector2( 1.5, 1.5 )
 
 [node name="Radiogugu Stereo Bomb3" parent="Enemies" index="2" instance=ExtResource( 82 )]
 
 position = Vector2( 1488.18, -3179.72 )
-scale = Vector2( 1.5, 1.5 )
 
 [node name="Radiogugu Stereo Bomb4" parent="Enemies" index="3" instance=ExtResource( 82 )]
 
 position = Vector2( 683.103, -3175.1 )
-scale = Vector2( 1.5, 1.5 )
 
 [node name="Radiogugu Stereo Bomb5" parent="Enemies" index="4" instance=ExtResource( 82 )]
 
 position = Vector2( 674.704, -2480.61 )
-scale = Vector2( 1.5, 1.5 )
 
 [node name="Radiogugu" parent="Enemies" index="5" instance=ExtResource( 83 )]
 
@@ -1484,11 +1479,11 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/BlueFrameTrigger" to="Enemies/Radiogugu" method="activate"]
 
+[connection signal="count_reached" from="CameraChangingTriggers/RadioguguClearTrigger" to="Writings/White Arrow/AnimationPlayer" method="play" binds= [ "Animate" ]]
+
 [connection signal="count_reached" from="CameraChangingTriggers/RadioguguClearTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/RadioguguClearTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 8500 ]]
-
-[connection signal="count_reached" from="CameraChangingTriggers/RadioguguClearTrigger" to="Writings/White Arrow/AnimationPlayer" method="play" binds= [ "Animate" ]]
 
 [connection signal="defeated" from="Enemies/Radiogugu" to="CameraChangingTriggers/RadioguguClearTrigger" method="increment_count"]
 

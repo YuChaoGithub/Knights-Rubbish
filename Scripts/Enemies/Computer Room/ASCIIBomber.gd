@@ -5,19 +5,21 @@ extends KinematicBody2D
 # 2. Face the nearest character, throws Bomb.
 # 3. Repeat 1.
 
+signal defeated
+
 export(int) var activate_range_x = 1500
-export(int) var activate_range_y = 10000
+export(int) var activate_range_y = 1000
 
 enum { NONE, MOVE, THROW_ANIM, THROW }
 
-const MAX_HEALTH = 100
+const MAX_HEALTH = 300
 
 # Movement.
 const SPEED_X = 200
 const GRAVITY = 600
 const RANDOM_MOVEMENT_STEPS = 1
-const RANDOM_MOVEMENT_MIN_TIME_PER_STEP = 2.0
-const RANDOM_MOVEMENT_MAX_TIME_PER_STEP = 4.0
+const RANDOM_MOVEMENT_MIN_TIME_PER_STEP = 1.75
+const RANDOM_MOVEMENT_MAX_TIME_PER_STEP = 3.5
 
 # Animation.
 const DIE_ANIMATION_DURATION = 0.5
@@ -119,4 +121,5 @@ func slowed_recover(label):
 
 func die():
 	ec.die()
+	emit_signal("defeated")
 	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
