@@ -688,7 +688,7 @@ __meta__ = {
 
 [node name="FollowingCamera" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 22950, -750 )
+position = Vector2( 1350, -700 )
 z_index = 1
 _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", "Z Index" ]
 drag_margin_left = -0.1
@@ -699,7 +699,7 @@ bottom_limit = -50
 
 [node name="HeroManager" type="Position2D" parent="." index="1"]
 
-position = Vector2( 21800, -750 )
+position = Vector2( 750, -1100 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
@@ -2319,7 +2319,7 @@ position = Vector2( 22050, -800 )
 [node name="Terminal Upgrade" parent="Structures" index="0" instance=ExtResource( 12 )]
 
 position = Vector2( 26050, -550 )
-enter_scene_path = "res://Scenes/Levels/Level 1-12.tscn"
+enter_scene_path = "res://Scenes/Levels/Level 1-13.tscn"
 
 [node name="Enemies" type="Node2D" parent="." index="11"]
 
@@ -2520,45 +2520,45 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 3150 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 6950 ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger1" to="Writings/Go1" method="activate"]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger2" to="FollowingCamera" method="update_right_limit" binds= [ 10750 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 6950 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger2" to="Writings/Go2" method="activate"]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="FollowingCamera" method="update_right_limit" binds= [ 13650 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger2" to="FollowingCamera" method="update_right_limit" binds= [ 10750 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="Writings/Go3" method="activate"]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="FollowingCamera" method="update_right_limit" binds= [ 16450 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="FollowingCamera" method="update_right_limit" binds= [ 13650 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="Writings/Go4" method="activate"]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger5" to="FollowingCamera" method="update_right_limit" binds= [ 21250 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="FollowingCamera" method="update_right_limit" binds= [ 16450 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger5" to="Writings/Go5" method="activate"]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger6" to="FollowingCamera" method="update_right_limit" binds= [ 24950 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger5" to="FollowingCamera" method="update_right_limit" binds= [ 21250 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger6" to="Writings/Go6" method="activate"]
 
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger6" to="FollowingCamera" method="update_right_limit" binds= [ 24950 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="Writings/Go7" method="activate"]
+
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="Writings/Go8" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="Writings/Go9" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="Writings/Go11" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="Writings/Go12" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="Writings/Go10" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="FollowingCamera" method="update_right_margin" binds= [ 0.1 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="FollowingCamera" method="update_right_limit" binds= [ 28200 ]]
-
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="Writings/Go12" method="activate"]
-
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="Writings/Go7" method="activate"]
-
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="Writings/Go11" method="activate"]
-
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="Writings/Go10" method="activate"]
-
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="Writings/Go9" method="activate"]
 
 [connection signal="defeated" from="Enemies/ASCII Gunner" to="CameraChangingTriggers/MobClearTrigger1" method="increment_count"]
 

@@ -8,12 +8,17 @@ extends Node2D
 # Play hurt animation only when moving.
 # Go to 1 when stunned.
 
+signal defeated
+
 enum { NONE, MOVE, BUBBLE_ANIM, SHOOT_BUBBLE, DART_ANIM, SHOOT_DART }
 
 export(int) var activate_range_x = 1500
 export(int) var activate_range_y = 1500
 
-const MAX_HEALTH = 125
+export(int) var min_pos_x
+export(int) var max_pos_x
+
+const MAX_HEALTH = 300
 
 # Movement.
 const SPEED_X = 250
@@ -81,6 +86,8 @@ func apply_movement(delta):
 		ec.init_random_movement("movement_not_ended", "movement_ended", SPEED_X, 0, true, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
 
 	ec.perform_random_movement(delta)
+
+	self.global_position.x = clamp(self.global_position.x, min_pos_x, max_pos_x)
 		
 
 func movement_not_ended(movement_dir):
@@ -182,4 +189,5 @@ func slowed_recover(label):
 func die():
 	cancel_dart_spawn_and_dart_instaces()
 	ec.die()
+	emit_signal("defeated")
 	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

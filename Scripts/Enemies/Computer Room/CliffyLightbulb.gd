@@ -6,7 +6,7 @@ const GRAVITY = 800
 const BOUNCINESS = 0.7
 
 # Attack.
-const DAMAGE = 40
+const DAMAGE = 20
 const KNOCK_BACK_VEL_X = 300
 const KNOCK_BACK_VEL_Y = 300
 const KNOCK_BACK_FADE_RATE = 600
@@ -26,7 +26,7 @@ func initialize(dir_x):
 	movement_pattern = preload("res://Scripts/Movements/BouncyMovement.gd").new(self, Vector2(dir_x * SPEED.x, SPEED.y), GRAVITY, BOUNCINESS)
 
 func _process(delta):
-	move_and_collide(movement_pattern.move(delta))
+	movement_pattern.move(delta)
 
 	timestamp += delta
 	if timestamp > LIFETIME:

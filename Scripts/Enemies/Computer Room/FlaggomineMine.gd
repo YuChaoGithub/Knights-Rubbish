@@ -31,7 +31,7 @@ func on_triggered(area):
 func on_attack_hit(area):
 	if area.is_in_group("hero"):
 		var character = area.get_node("..")
-		character.damaged(DAMAGE)
+		character.damaged(DAMAGE, false)
 		character.knocked_back(sign(character.global_position.x - global_position.x) * KNOCK_BACK_VEL_X, -KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 
 func explode():

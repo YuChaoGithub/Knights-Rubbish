@@ -142,10 +142,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 1, 0 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -280,9 +280,12 @@ tracks/4/keys = {
 "values": [ 0 ]
 }
 
-[node name="Flaggomine Mine" type="Node2D" index="0"]
+[node name="Flaggomine Mine" type="Node2D"]
 
+scale = Vector2( 1.5, 1.5 )
+z_index = 2
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Trigger Area" type="Area2D" parent="." index="0"]
 
@@ -308,6 +311,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 collision_layer = 0
+collision_mask = 0
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
@@ -322,11 +326,12 @@ scale = Vector2( 5, 5 )
 
 [node name="Mine" type="Sprite" parent="Animation" index="0"]
 
-self_modulate = Color( 0.21875, 0.21875, 0.21875, 0 )
+self_modulate = Color( 0.351562, 0.339203, 0.339203, 1 )
 texture = ExtResource( 2 )
 
 [node name="Explosion 1" type="Sprite" parent="Animation" index="1"]
 
+visible = false
 texture = ExtResource( 3 )
 
 [node name="Explosion 2" type="Sprite" parent="Animation" index="2"]

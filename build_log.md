@@ -966,8 +966,17 @@ Comment: What a sprint!
 
 **Commit**
 
+[2018.09.30]
+* Dark blue wall tileset, gray platform tileset.
+* Completed designing the platforms and enemies of level 1-13.
+Comment: I do daily commits further on.
+
+[Next]
+* Set the triggers of level 1-13.
+
 To Do List:
 * Clean up cringy texts.
+* Opensource on GitHub. (Add README.md)
 * Finish laying out level 1. (Est. Before November)
 * New characters * 6. (Est. Before January)
 * Sound Effects (Use human voice) & Background Music (Beat Box...perhaps?).

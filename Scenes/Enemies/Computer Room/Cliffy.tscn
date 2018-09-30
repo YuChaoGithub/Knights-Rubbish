@@ -1335,6 +1335,7 @@ tracks/35/keys = {
 
 [sub_resource type="Animation" id=5]
 
+resource_name = "Light bulb"
 length = 2.8
 loop = false
 step = 0.1
@@ -3109,11 +3110,13 @@ tracks/35/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[node name="Cliffy" type="Node2D" index="0"]
+[node name="Cliffy" type="Node2D"]
 
 script = ExtResource( 1 )
 activate_range_x = 1500
 activate_range_y = 1500
+min_pos_x = null
+max_pos_x = null
 
 [node name="Animation" type="Node2D" parent="." index="0"]
 
@@ -3259,7 +3262,7 @@ playback_speed = 1.0
 anims/Die = SubResource( 2 )
 anims/Exclaim = SubResource( 3 )
 anims/Hurt = SubResource( 4 )
-anims/Lightbulb = SubResource( 5 )
+"anims/Light bulb" = SubResource( 5 )
 anims/Still = SubResource( 6 )
 anims/Stunned = SubResource( 7 )
 anims/Walk = SubResource( 8 )
