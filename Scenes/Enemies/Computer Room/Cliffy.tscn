@@ -1538,10 +1538,10 @@ tracks/16/loop_wrap = true
 tracks/16/imported = false
 tracks/16/enabled = true
 tracks/16/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -24.5919, -70.9496 ) ]
+"values": [ Vector2( -24.5919, -70.9496 ), Vector2( -33.9627, -72.199 ) ]
 }
 tracks/17/type = "value"
 tracks/17/path = NodePath("Note/Talk Bubble:rotation_degrees")
@@ -1550,10 +1550,10 @@ tracks/17/loop_wrap = true
 tracks/17/imported = false
 tracks/17/enabled = true
 tracks/17/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 0.0 ]
+"values": [ 0.0, 0.0 ]
 }
 tracks/18/type = "value"
 tracks/18/path = NodePath("Note/Talk Bubble/Light bulb stand:position")
@@ -1772,28 +1772,28 @@ tracks/35/keys = {
 "values": [ 0.0 ]
 }
 tracks/36/type = "value"
-tracks/36/path = NodePath("Note/Talk Bubble/Light bulb:scale")
+tracks/36/path = NodePath("Note/Talk Bubble/Light bulb:self_modulate")
 tracks/36/interp = 1
 tracks/36/loop_wrap = true
 tracks/36/imported = false
 tracks/36/enabled = true
 tracks/36/keys = {
-"times": PoolRealArray( 0, 1.5, 1.8 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 3, 3 ) ]
+"values": [ Color( 1, 0.983826, 0.585938, 1 ), Color( 1, 0.983826, 0.585938, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0.983826, 0.585938, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0.983826, 0.585938, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0.983826, 0.585938, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 tracks/37/type = "value"
-tracks/37/path = NodePath("Note/Talk Bubble/Light bulb:self_modulate")
+tracks/37/path = NodePath("Note/Talk Bubble:scale")
 tracks/37/interp = 1
 tracks/37/loop_wrap = true
 tracks/37/imported = false
 tracks/37/enabled = true
 tracks/37/keys = {
-"times": PoolRealArray( 0, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 0.983826, 0.585938, 1 ), Color( 1, 0.983826, 0.585938, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0.983826, 0.585938, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0.983826, 0.585938, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0.983826, 0.585938, 1 ), Color( 1, 0, 0, 1 ) ]
+"values": [ Vector2( 1, 1 ), Vector2( 2, 2 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -3159,16 +3159,15 @@ shape = SubResource( 1 )
 
 [node name="Note" type="Sprite" parent="Animation" index="5"]
 
-position = Vector2( 0, -5.15084 )
 texture = ExtResource( 2 )
 
 [node name="Talk Bubble" type="Sprite" parent="Animation/Note" index="0"]
 
-editor/display_folded = true
 visible = false
 position = Vector2( -24.5919, -70.9496 )
 texture = ExtResource( 3 )
 offset = Vector2( -12.353, -19.7333 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Light bulb stand" type="Sprite" parent="Animation/Note/Talk Bubble" index="0"]
 
@@ -3177,10 +3176,10 @@ texture = ExtResource( 4 )
 
 [node name="Light bulb" type="Sprite" parent="Animation/Note/Talk Bubble" index="1"]
 
-self_modulate = Color( 1, 0, 0, 1 )
+self_modulate = Color( 1, 0.983826, 0.585938, 1 )
 position = Vector2( -13.1653, -30.283 )
-scale = Vector2( 3, 3 )
 texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Exclaimation mark" type="Sprite" parent="Animation/Note" index="1"]
 
@@ -3192,8 +3191,7 @@ texture = ExtResource( 6 )
 [node name="Paper clip" type="Sprite" parent="Animation/Note" index="2"]
 
 editor/display_folded = true
-position = Vector2( 7.57544, -52.6166 )
-rotation = -0.0270523
+position = Vector2( 6.19582, -48.9318 )
 texture = ExtResource( 7 )
 
 [node name="Left Eye" type="Sprite" parent="Animation/Note/Paper clip" index="0"]
@@ -3203,7 +3201,7 @@ texture = ExtResource( 8 )
 
 [node name="Eyeball" type="Sprite" parent="Animation/Note/Paper clip/Left Eye" index="0"]
 
-position = Vector2( 2.3321, -0.0497775 )
+position = Vector2( 2.67384, -0.106735 )
 texture = ExtResource( 9 )
 
 [node name="Eyelid" type="Sprite" parent="Animation/Note/Paper clip/Left Eye" index="1"]
@@ -3221,7 +3219,7 @@ texture = ExtResource( 8 )
 
 [node name="Eyeball" type="Sprite" parent="Animation/Note/Paper clip/Right Eye" index="0"]
 
-position = Vector2( -1.39611, 0.798133 )
+position = Vector2( -1.70938, 0.932388 )
 texture = ExtResource( 9 )
 
 [node name="Eyelid" type="Sprite" parent="Animation/Note/Paper clip/Right Eye" index="1"]
@@ -3232,14 +3230,14 @@ texture = ExtResource( 10 )
 
 [node name="Left Eyebrow" type="Sprite" parent="Animation/Note/Paper clip" index="2"]
 
-position = Vector2( -14.9702, -30.5107 )
+position = Vector2( -14.9183, -30.1473 )
 rotation = 0.0600056
 texture = ExtResource( 11 )
 
 [node name="Right Eyebrow" type="Sprite" parent="Animation/Note/Paper clip" index="3"]
 
 position = Vector2( 16.3168, -29.3703 )
-rotation = -0.0234516
+rotation = -0.0718053
 texture = ExtResource( 11 )
 
 [node name="Number Spawn Pos" type="RemoteTransform2D" parent="Animation/Note" index="3"]
@@ -3270,7 +3268,7 @@ blend_times = [  ]
 
 [node name="Number Spawn Pos" type="Position2D" parent="." index="1"]
 
-position = Vector2( 7.04126, -8.73695 )
+position = Vector2( 7.04126, 1.56473 )
 
 [node name="Health Bar" parent="." index="2" instance=ExtResource( 13 )]
 

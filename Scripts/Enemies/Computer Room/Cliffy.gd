@@ -75,6 +75,8 @@ func _process(delta):
 				shoot_dart()
 
 	ec.perform_knock_back_movement(delta)
+	
+	self.global_position.x = clamp(self.global_position.x, min_pos_x, max_pos_x)
 		
 func change_status(to_status):
 	ec.change_status(to_status)
@@ -86,8 +88,6 @@ func apply_movement(delta):
 		ec.init_random_movement("movement_not_ended", "movement_ended", SPEED_X, 0, true, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
 
 	ec.perform_random_movement(delta)
-
-	self.global_position.x = clamp(self.global_position.x, min_pos_x, max_pos_x)
 		
 
 func movement_not_ended(movement_dir):

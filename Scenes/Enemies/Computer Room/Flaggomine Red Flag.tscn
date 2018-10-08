@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Enemies/Computer Room/Flag.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Flaggomine/Red Flag.png" type="Texture" id=2]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 
 resource_name = "Captured"
 length = 0.5
@@ -60,9 +60,8 @@ tracks/3/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 
-resource_name = "Still"
 length = 0.1
 loop = false
 step = 0.1
@@ -117,9 +116,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-modulate = Color( 1, 1, 1, 0.06 )
-position = Vector2( 18.0015, -306.456 )
-rotation = 0.337373
+position = Vector2( 0, -61.9685 )
 scale = Vector2( 2.5, 2.5 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -131,8 +128,8 @@ autoplay = "Still"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Captured = SubResource( 2 )
-anims/Still = SubResource( 1 )
+anims/Captured = SubResource( 1 )
+anims/Still = SubResource( 2 )
 blend_times = [  ]
 
 [node name="Area2D" type="Area2D" parent="." index="2"]

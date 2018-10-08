@@ -971,8 +971,9 @@ Comment: What a sprint!
 * Completed designing the platforms and enemies of level 1-13.
 Comment: I do daily commits further on.
 
-[Next]
-* Set the triggers of level 1-13.
+[2018.10.09]
+* Set the triggers of level 1-13. Tested.
+* Fixed bugs of `BouncyMovement.gd`. Adjust the scale of Cliffy's attacks.
 
 To Do List:
 * Clean up cringy texts.

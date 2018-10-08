@@ -11,6 +11,8 @@ const KNOCK_BACK_VEL_X = 300
 const KNOCK_BACK_VEL_Y = 300
 const KNOCK_BACK_FADE_RATE = 600
 
+const SPARK_SCALE = 2.0
+
 const LIFETIME = 8.0
 
 var timestamp = 0.0
@@ -43,6 +45,7 @@ func on_attack_hit(area):
 func explode():
 	var new_spark = spark.instance()
 	$"..".add_child(new_spark)
+	new_spark.scale = Vector2(SPARK_SCALE, SPARK_SCALE)
 	new_spark.global_position = global_position
 
 	queue_free()
