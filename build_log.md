@@ -975,6 +975,17 @@ Comment: I do daily commits further on.
 * Set the triggers of level 1-13. Tested.
 * Fixed bugs of `BouncyMovement.gd`. Adjust the scale of Cliffy's attacks.
 
+[2018.10.12]
+* Added Go Arrows for level 1-13.
+* Fixed the bug that random movement will provide direction of 0.
+* Added light to Canmera Missle.
+* Redesigned Godotbos.
+* Completed level 1-14. Not tested yet.
+
+[Next]
+* Test level 1-14.
+* Make level 1-15.
+
 To Do List:
 * Clean up cringy texts.
 * Opensource on GitHub. (Add README.md)
@@ -992,6 +1003,7 @@ Unfixed Bugs:
 * When a hero is hit while healing (by healing machine). Futher attacks will be disabled.
 
 Polishing:
+* [Effect] Add Light2D to explosions/particles.
 * [Data] Make key settings persistent between game sessions (Single Player settings should be separated from Coop settings).
 * [UI] A "GO" sign when the right camera margin is changing.
 * [Effect] Attack effects (particles).

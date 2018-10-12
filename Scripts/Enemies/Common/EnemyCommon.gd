@@ -121,7 +121,7 @@ func perform_random_movement(delta):
         else:
             node.global_position += random_movement.movement(delta)
         
-        node.call(random_movement_not_ended_func, sign(int(node.global_position.x) - int(original_pos.x)))
+        node.call(random_movement_not_ended_func, sign(node.global_position.x - original_pos.x))
 
 func discard_random_movement():
     random_movement = null

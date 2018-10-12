@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/CanmeraMissle.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Canmera/Missle.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Flaggomine/Explosion 1.png" type="Texture" id=3]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Flaggomine/Explosion 2.png" type="Texture" id=4]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Flaggomine/Explosion 3.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Particles/Super Blurred Dot.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -178,7 +179,7 @@ tracks/3/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 36.249, 14.9912 )
 
-[node name="Canmera Missle" type="KinematicBody2D" index="0"]
+[node name="Canmera Missle" type="KinematicBody2D"]
 
 scale = Vector2( 1.5, 1.5 )
 z_index = 1
@@ -191,11 +192,14 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="." index="0"]
 
+visible = false
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
+light_mask = 0
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="Explosion" type="Node2D" parent="." index="2"]
 
@@ -232,7 +236,6 @@ blend_times = [  ]
 
 [node name="Attack Area" type="Area2D" parent="." index="4"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -245,8 +248,35 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack Area" index="0"]
 
+visible = false
 position = Vector2( -10.9998, 0 )
 shape = SubResource( 5 )
+
+[node name="Light2D" type="Light2D" parent="." index="5"]
+
+scale = Vector2( 1.5, 1.5 )
+enabled = true
+editor_only = false
+texture = ExtResource( 6 )
+offset = Vector2( 0, 0 )
+texture_scale = 1.0
+color = Color( 1, 1, 1, 1 )
+energy = 1.2
+mode = 0
+range_height = 0.0
+range_z_min = -1024
+range_z_max = 1024
+range_layer_min = 0
+range_layer_max = 0
+range_item_cull_mask = 1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 0 )
+shadow_buffer_size = 2048
+shadow_gradient_length = 0.0
+shadow_filter = 0
+shadow_filter_smooth = 0.0
+shadow_item_cull_mask = 1
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="area_entered" from="Attack Area" to="." method="attack_hit"]
 

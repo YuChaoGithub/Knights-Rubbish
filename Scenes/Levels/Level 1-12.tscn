@@ -5,18 +5,19 @@
 [ext_resource path="res://Tilesets/Terminal Wall.tres" type="TileSet" id=3]
 [ext_resource path="res://Graphics/background/Terminal Decoration/Crack.png" type="Texture" id=4]
 [ext_resource path="res://Tilesets/Binary Floor.tres" type="TileSet" id=5]
-[ext_resource path="res://Scripts/Utils/ActivateAndShow.gd" type="Script" id=6]
-[ext_resource path="res://Fonts/SourceHanSerifTC.tres" type="DynamicFont" id=7]
-[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=8]
-[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=9]
-[ext_resource path="res://Scenes/Platforms/Enemy Blocking Platform.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Power Ups/Healing Machine.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Structures/Terminal Upgrade.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Enemies/Computer Room/ASCII Gunner.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Enemies/Computer Room/ASCII Bomber.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Power Ups/Attack Potion.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Power Ups/Defense Potion.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Structures/GoArrows.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/Utils/ActivateAndShow.gd" type="Script" id=7]
+[ext_resource path="res://Fonts/SourceHanSerifTC.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=10]
+[ext_resource path="res://Scenes/Platforms/Enemy Blocking Platform.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Power Ups/Healing Machine.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Structures/Terminal Upgrade.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Enemies/Computer Room/ASCII Gunner.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Enemies/Computer Room/ASCII Bomber.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Power Ups/Attack Potion.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Power Ups/Defense Potion.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=18]
 
 [sub_resource type="Animation" id=1]
 
@@ -623,61 +624,6 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=12]
-
-resource_name = "Animate"
-length = 0.8
-loop = true
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("1:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("2:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("3:modulate")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("4:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.4, 0.6, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-
 [node name="Game Level" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
@@ -760,122 +706,15 @@ _sections_unfolded = [ "Cell", "Collision" ]
 
 _sections_unfolded = [ "Z Index" ]
 
-[node name="Go1" type="Node2D" parent="Writings" index="0"]
+[node name="Go1" parent="Writings" index="0" instance=ExtResource( 6 )]
 
-editor/display_folded = true
-position = Vector2( 2836.7, -1088.17 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Visibility" ]
-
-[node name="1" type="Label" parent="Writings/Go1" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 72.0
-margin_bottom = 44.0
-rect_scale = Vector2( 3, 3 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
-text = ">"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
-
-[node name="2" type="Label" parent="Writings/Go1" index="1"]
-
-modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 50.0
-margin_right = 122.0
-margin_bottom = 44.0
-rect_scale = Vector2( 3, 3 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
-text = ">"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
-
-[node name="3" type="Label" parent="Writings/Go1" index="2"]
-
-modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 100.0
-margin_right = 172.0
-margin_bottom = 44.0
-rect_scale = Vector2( 3, 3 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
-text = ">"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
-
-[node name="4" type="Label" parent="Writings/Go1" index="3"]
-
-modulate = Color( 1, 1, 1, 0 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 150.0
-margin_right = 222.0
-margin_bottom = 44.0
-rect_scale = Vector2( 3, 3 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
-text = ">"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Writings/Go1" index="4"]
-
-root_node = NodePath("..")
-autoplay = "Animate"
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/Animate = SubResource( 1 )
-blend_times = [  ]
+position = Vector2( 2800, -900 )
 
 [node name="Go2" type="Node2D" parent="Writings" index="1"]
 
 editor/display_folded = true
 position = Vector2( 6519.42, -1087.24 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="1" type="Label" parent="Writings/Go2" index="0"]
@@ -893,7 +732,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -917,7 +756,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -941,7 +780,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -965,7 +804,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -979,14 +818,14 @@ autoplay = "Animate"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Animate = SubResource( 2 )
+anims/Animate = SubResource( 1 )
 blend_times = [  ]
 
 [node name="Go3" type="Node2D" parent="Writings" index="2"]
 
 editor/display_folded = true
 position = Vector2( 10395.4, -1044.05 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="1" type="Label" parent="Writings/Go3" index="0"]
@@ -1004,7 +843,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1028,7 +867,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1052,7 +891,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1076,7 +915,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1090,14 +929,14 @@ autoplay = "Animate"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Animate = SubResource( 3 )
+anims/Animate = SubResource( 2 )
 blend_times = [  ]
 
 [node name="Go4" type="Node2D" parent="Writings" index="3"]
 
 editor/display_folded = true
 position = Vector2( 13194.8, -659.324 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="1" type="Label" parent="Writings/Go4" index="0"]
@@ -1115,7 +954,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1139,7 +978,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1163,7 +1002,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1187,7 +1026,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1201,14 +1040,14 @@ autoplay = "Animate"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Animate = SubResource( 4 )
+anims/Animate = SubResource( 3 )
 blend_times = [  ]
 
 [node name="Go5" type="Node2D" parent="Writings" index="4"]
 
 editor/display_folded = true
 position = Vector2( 16059.9, -684.285 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="1" type="Label" parent="Writings/Go5" index="0"]
@@ -1226,7 +1065,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1250,7 +1089,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1274,7 +1113,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1298,7 +1137,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1312,14 +1151,14 @@ autoplay = "Animate"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Animate = SubResource( 5 )
+anims/Animate = SubResource( 4 )
 blend_times = [  ]
 
 [node name="Go6" type="Node2D" parent="Writings" index="5"]
 
 editor/display_folded = true
 position = Vector2( 20868.2, -990.734 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="1" type="Label" parent="Writings/Go6" index="0"]
@@ -1337,7 +1176,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1361,7 +1200,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1385,7 +1224,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1409,7 +1248,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1423,14 +1262,14 @@ autoplay = "Animate"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Animate = SubResource( 6 )
+anims/Animate = SubResource( 5 )
 blend_times = [  ]
 
 [node name="Go7" type="Node2D" parent="Writings" index="6"]
 
 editor/display_folded = true
 position = Vector2( 24421.3, -860.397 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="1" type="Label" parent="Writings/Go7" index="0"]
@@ -1448,7 +1287,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1472,7 +1311,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1496,7 +1335,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1520,7 +1359,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1534,14 +1373,14 @@ autoplay = "Animate"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Animate = SubResource( 7 )
+anims/Animate = SubResource( 6 )
 blend_times = [  ]
 
 [node name="Go8" type="Node2D" parent="Writings" index="7"]
 
 editor/display_folded = true
 position = Vector2( 23800, -900 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="1" type="Label" parent="Writings/Go8" index="0"]
@@ -1559,7 +1398,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1583,7 +1422,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1607,7 +1446,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1631,7 +1470,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1645,14 +1484,14 @@ autoplay = "Animate"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Animate = SubResource( 8 )
+anims/Animate = SubResource( 7 )
 blend_times = [  ]
 
 [node name="Go9" type="Node2D" parent="Writings" index="8"]
 
 editor/display_folded = true
 position = Vector2( 23350, -700 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="1" type="Label" parent="Writings/Go9" index="0"]
@@ -1670,7 +1509,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1694,7 +1533,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1718,7 +1557,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1742,7 +1581,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1756,14 +1595,14 @@ autoplay = "Animate"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Animate = SubResource( 9 )
+anims/Animate = SubResource( 8 )
 blend_times = [  ]
 
 [node name="Go10" type="Node2D" parent="Writings" index="9"]
 
 editor/display_folded = true
 position = Vector2( 22900, -400 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="1" type="Label" parent="Writings/Go10" index="0"]
@@ -1781,7 +1620,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1805,7 +1644,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1829,7 +1668,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1853,7 +1692,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1867,14 +1706,14 @@ autoplay = "Animate"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Animate = SubResource( 10 )
+anims/Animate = SubResource( 9 )
 blend_times = [  ]
 
 [node name="Go11" type="Node2D" parent="Writings" index="10"]
 
 editor/display_folded = true
 position = Vector2( 23750, -300 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="1" type="Label" parent="Writings/Go11" index="0"]
@@ -1892,7 +1731,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1916,7 +1755,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1940,7 +1779,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1964,7 +1803,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1978,14 +1817,14 @@ autoplay = "Animate"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Animate = SubResource( 11 )
+anims/Animate = SubResource( 10 )
 blend_times = [  ]
 
 [node name="Go12" type="Node2D" parent="Writings" index="11"]
 
 editor/display_folded = true
 position = Vector2( 24200, -600 )
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="1" type="Label" parent="Writings/Go12" index="0"]
@@ -2003,7 +1842,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -2027,7 +1866,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -2051,7 +1890,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -2075,7 +1914,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 8 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
@@ -2089,7 +1928,7 @@ autoplay = "Animate"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Animate = SubResource( 12 )
+anims/Animate = SubResource( 11 )
 blend_times = [  ]
 
 [node name="PlatformDecorations" type="Node2D" parent="." index="6"]
@@ -2099,7 +1938,7 @@ blend_times = [  ]
 [node name="FirstTrigger" type="Position2D" parent="CameraChangingTriggers" index="0"]
 
 position = Vector2( 650, -950 )
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 range_x = 1000
 range_y = 1000
 x_check = 2
@@ -2107,194 +1946,194 @@ y_check = 0
 
 [node name="MobClearTrigger1" type="Node2D" parent="CameraChangingTriggers" index="1"]
 
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 count_to_emit = 2
 
 [node name="MobClearTrigger2" type="Node2D" parent="CameraChangingTriggers" index="2"]
 
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 count_to_emit = 4
 
 [node name="MobClearTrigger3" type="Node2D" parent="CameraChangingTriggers" index="3"]
 
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 count_to_emit = 3
 
 [node name="MobClearTrigger4" type="Node2D" parent="CameraChangingTriggers" index="4"]
 
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 count_to_emit = 3
 
 [node name="MobClearTrigger5" type="Node2D" parent="CameraChangingTriggers" index="5"]
 
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 count_to_emit = 2
 
 [node name="MobClearTrigger6" type="Node2D" parent="CameraChangingTriggers" index="6"]
 
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 count_to_emit = 4
 
 [node name="MobClearTrigger7" type="Node2D" parent="CameraChangingTriggers" index="7"]
 
-script = ExtResource( 9 )
+script = ExtResource( 10 )
 count_to_emit = 7
 
 [node name="OtherPlatforms" type="Node2D" parent="." index="8"]
 
-[node name="Enemy Blocking Platform" parent="OtherPlatforms" index="0" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform" parent="OtherPlatforms" index="0" instance=ExtResource( 11 )]
 
 position = Vector2( 1600, -250 )
 
-[node name="Enemy Blocking Platform2" parent="OtherPlatforms" index="1" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform2" parent="OtherPlatforms" index="1" instance=ExtResource( 11 )]
 
 position = Vector2( 2800, -550 )
 
-[node name="Enemy Blocking Platform3" parent="OtherPlatforms" index="2" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform3" parent="OtherPlatforms" index="2" instance=ExtResource( 11 )]
 
 position = Vector2( 3150, -600 )
 
-[node name="Enemy Blocking Platform4" parent="OtherPlatforms" index="3" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform4" parent="OtherPlatforms" index="3" instance=ExtResource( 11 )]
 
 position = Vector2( 5500, -150 )
 
-[node name="Enemy Blocking Platform5" parent="OtherPlatforms" index="4" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform5" parent="OtherPlatforms" index="4" instance=ExtResource( 11 )]
 
 position = Vector2( 6300, -150 )
 
-[node name="Enemy Blocking Platform10" parent="OtherPlatforms" index="5" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform10" parent="OtherPlatforms" index="5" instance=ExtResource( 11 )]
 
 position = Vector2( 6400, -450 )
 
-[node name="Enemy Blocking Platform11" parent="OtherPlatforms" index="6" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform11" parent="OtherPlatforms" index="6" instance=ExtResource( 11 )]
 
 position = Vector2( 7000, -450 )
 
-[node name="Enemy Blocking Platform6" parent="OtherPlatforms" index="7" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform6" parent="OtherPlatforms" index="7" instance=ExtResource( 11 )]
 
 position = Vector2( 5200, -1050 )
 
-[node name="Enemy Blocking Platform7" parent="OtherPlatforms" index="8" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform7" parent="OtherPlatforms" index="8" instance=ExtResource( 11 )]
 
 position = Vector2( 5800, -1050 )
 
-[node name="Enemy Blocking Platform8" parent="OtherPlatforms" index="9" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform8" parent="OtherPlatforms" index="9" instance=ExtResource( 11 )]
 
 position = Vector2( 4400, -150 )
 
-[node name="Enemy Blocking Platform9" parent="OtherPlatforms" index="10" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform9" parent="OtherPlatforms" index="10" instance=ExtResource( 11 )]
 
 position = Vector2( 5100, -150 )
 
-[node name="Enemy Blocking Platform12" parent="OtherPlatforms" index="11" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform12" parent="OtherPlatforms" index="11" instance=ExtResource( 11 )]
 
 position = Vector2( 8800, -450 )
 
-[node name="Enemy Blocking Platform13" parent="OtherPlatforms" index="12" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform13" parent="OtherPlatforms" index="12" instance=ExtResource( 11 )]
 
 position = Vector2( 9300, -450 )
 
-[node name="Enemy Blocking Platform14" parent="OtherPlatforms" index="13" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform14" parent="OtherPlatforms" index="13" instance=ExtResource( 11 )]
 
 position = Vector2( 9500, -450 )
 
-[node name="Enemy Blocking Platform15" parent="OtherPlatforms" index="14" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform15" parent="OtherPlatforms" index="14" instance=ExtResource( 11 )]
 
 position = Vector2( 10000, -450 )
 
-[node name="Enemy Blocking Platform16" parent="OtherPlatforms" index="15" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform16" parent="OtherPlatforms" index="15" instance=ExtResource( 11 )]
 
 position = Vector2( 10300, -450 )
 
-[node name="Enemy Blocking Platform17" parent="OtherPlatforms" index="16" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform17" parent="OtherPlatforms" index="16" instance=ExtResource( 11 )]
 
 position = Vector2( 10800, -450 )
 
-[node name="Enemy Blocking Platform18" parent="OtherPlatforms" index="17" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform18" parent="OtherPlatforms" index="17" instance=ExtResource( 11 )]
 
 position = Vector2( 12000, -950 )
 
-[node name="Enemy Blocking Platform19" parent="OtherPlatforms" index="18" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform19" parent="OtherPlatforms" index="18" instance=ExtResource( 11 )]
 
 position = Vector2( 13100, -950 )
 
-[node name="Enemy Blocking Platform20" parent="OtherPlatforms" index="19" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform20" parent="OtherPlatforms" index="19" instance=ExtResource( 11 )]
 
 position = Vector2( 13000, -150 )
 
-[node name="Enemy Blocking Platform21" parent="OtherPlatforms" index="20" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform21" parent="OtherPlatforms" index="20" instance=ExtResource( 11 )]
 
 position = Vector2( 13700, -150 )
 
-[node name="Enemy Blocking Platform22" parent="OtherPlatforms" index="21" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform22" parent="OtherPlatforms" index="21" instance=ExtResource( 11 )]
 
 position = Vector2( 15700, -150 )
 
-[node name="Enemy Blocking Platform23" parent="OtherPlatforms" index="22" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform23" parent="OtherPlatforms" index="22" instance=ExtResource( 11 )]
 
 position = Vector2( 16500, -150 )
 
-[node name="Enemy Blocking Platform24" parent="OtherPlatforms" index="23" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform24" parent="OtherPlatforms" index="23" instance=ExtResource( 11 )]
 
 position = Vector2( 19700, -1050 )
 
-[node name="Enemy Blocking Platform25" parent="OtherPlatforms" index="24" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform25" parent="OtherPlatforms" index="24" instance=ExtResource( 11 )]
 
 position = Vector2( 20200, -1050 )
 
-[node name="Enemy Blocking Platform26" parent="OtherPlatforms" index="25" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform26" parent="OtherPlatforms" index="25" instance=ExtResource( 11 )]
 
 position = Vector2( 19700, -550 )
 
-[node name="Enemy Blocking Platform27" parent="OtherPlatforms" index="26" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform27" parent="OtherPlatforms" index="26" instance=ExtResource( 11 )]
 
 position = Vector2( 20200, -550 )
 
-[node name="Enemy Blocking Platform38" parent="OtherPlatforms" index="27" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform38" parent="OtherPlatforms" index="27" instance=ExtResource( 11 )]
 
 position = Vector2( 20500, -550 )
 
-[node name="Enemy Blocking Platform39" parent="OtherPlatforms" index="28" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform39" parent="OtherPlatforms" index="28" instance=ExtResource( 11 )]
 
 position = Vector2( 21300, -550 )
 
-[node name="Enemy Blocking Platform28" parent="OtherPlatforms" index="29" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform28" parent="OtherPlatforms" index="29" instance=ExtResource( 11 )]
 
 position = Vector2( 19700, -150 )
 
-[node name="Enemy Blocking Platform29" parent="OtherPlatforms" index="30" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform29" parent="OtherPlatforms" index="30" instance=ExtResource( 11 )]
 
 position = Vector2( 20400, -150 )
 
-[node name="Enemy Blocking Platform30" parent="OtherPlatforms" index="31" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform30" parent="OtherPlatforms" index="31" instance=ExtResource( 11 )]
 
 position = Vector2( 23800, -600 )
 
-[node name="Enemy Blocking Platform31" parent="OtherPlatforms" index="32" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform31" parent="OtherPlatforms" index="32" instance=ExtResource( 11 )]
 
 position = Vector2( 24100, -600 )
 
-[node name="Enemy Blocking Platform34" parent="OtherPlatforms" index="33" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform34" parent="OtherPlatforms" index="33" instance=ExtResource( 11 )]
 
 position = Vector2( 24300, -475.489 )
 
-[node name="Enemy Blocking Platform35" parent="OtherPlatforms" index="34" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform35" parent="OtherPlatforms" index="34" instance=ExtResource( 11 )]
 
 position = Vector2( 24600, -450 )
 
-[node name="Enemy Blocking Platform32" parent="OtherPlatforms" index="35" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform32" parent="OtherPlatforms" index="35" instance=ExtResource( 11 )]
 
 position = Vector2( 23000, -600 )
 
-[node name="Enemy Blocking Platform33" parent="OtherPlatforms" index="36" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform33" parent="OtherPlatforms" index="36" instance=ExtResource( 11 )]
 
 position = Vector2( 23300, -600 )
 
-[node name="Enemy Blocking Platform36" parent="OtherPlatforms" index="37" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform36" parent="OtherPlatforms" index="37" instance=ExtResource( 11 )]
 
 position = Vector2( 23350, -450 )
 
-[node name="Enemy Blocking Platform37" parent="OtherPlatforms" index="38" instance=ExtResource( 10 )]
+[node name="Enemy Blocking Platform37" parent="OtherPlatforms" index="38" instance=ExtResource( 11 )]
 
 position = Vector2( 23650, -474.796 )
 
@@ -2302,21 +2141,21 @@ position = Vector2( 23650, -474.796 )
 
 editor/display_folded = true
 
-[node name="Healing Machine" parent="HealingMachines" index="0" instance=ExtResource( 11 )]
+[node name="Healing Machine" parent="HealingMachines" index="0" instance=ExtResource( 12 )]
 
 position = Vector2( 7550, -700 )
 
-[node name="Healing Machine2" parent="HealingMachines" index="1" instance=ExtResource( 11 )]
+[node name="Healing Machine2" parent="HealingMachines" index="1" instance=ExtResource( 12 )]
 
 position = Vector2( 14150, -500 )
 
-[node name="Healing Machine3" parent="HealingMachines" index="2" instance=ExtResource( 11 )]
+[node name="Healing Machine3" parent="HealingMachines" index="2" instance=ExtResource( 12 )]
 
 position = Vector2( 22050, -800 )
 
 [node name="Structures" type="Node2D" parent="." index="10"]
 
-[node name="Terminal Upgrade" parent="Structures" index="0" instance=ExtResource( 12 )]
+[node name="Terminal Upgrade" parent="Structures" index="0" instance=ExtResource( 13 )]
 
 position = Vector2( 26050, -550 )
 enter_scene_path = "res://Scenes/Levels/Level 1-13.tscn"
@@ -2325,170 +2164,170 @@ enter_scene_path = "res://Scenes/Levels/Level 1-13.tscn"
 
 editor/display_folded = true
 
-[node name="ASCII Gunner" parent="Enemies" index="0" instance=ExtResource( 13 )]
+[node name="ASCII Gunner" parent="Enemies" index="0" instance=ExtResource( 14 )]
 
 position = Vector2( 2350, -350 )
 activate_range_x = 2000
 activate_range_y = 1000
 
-[node name="ASCII Bomber" parent="Enemies" index="1" instance=ExtResource( 14 )]
+[node name="ASCII Bomber" parent="Enemies" index="1" instance=ExtResource( 15 )]
 
 position = Vector2( 3000, -650 )
 activate_range_x = 2000
 activate_range_y = 1000
 
-[node name="ASCII Gunner2" parent="Enemies" index="2" instance=ExtResource( 13 )]
+[node name="ASCII Gunner2" parent="Enemies" index="2" instance=ExtResource( 14 )]
 
 position = Vector2( 4850, -250 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 850
 activate_range_y = 1000
 
-[node name="ASCII Gunner3" parent="Enemies" index="3" instance=ExtResource( 13 )]
+[node name="ASCII Gunner3" parent="Enemies" index="3" instance=ExtResource( 14 )]
 
 position = Vector2( 6650, -550 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 2000
 activate_range_y = 1000
 
-[node name="ASCII Bomber2" parent="Enemies" index="4" instance=ExtResource( 14 )]
+[node name="ASCII Bomber2" parent="Enemies" index="4" instance=ExtResource( 15 )]
 
 position = Vector2( 5450, -1150 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 1450
 activate_range_y = 1000
 
-[node name="ASCII Bomber3" parent="Enemies" index="5" instance=ExtResource( 14 )]
+[node name="ASCII Bomber3" parent="Enemies" index="5" instance=ExtResource( 15 )]
 
 position = Vector2( 5900, -250 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 1900
 activate_range_y = 1000
 
-[node name="ASCII Gunner4" parent="Enemies" index="6" instance=ExtResource( 13 )]
+[node name="ASCII Gunner4" parent="Enemies" index="6" instance=ExtResource( 14 )]
 
 position = Vector2( 9750, -550 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 1550
 activate_range_y = 1000
 
-[node name="ASCII Gunner5" parent="Enemies" index="7" instance=ExtResource( 13 )]
+[node name="ASCII Gunner5" parent="Enemies" index="7" instance=ExtResource( 14 )]
 
 position = Vector2( 9050, -550 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 850
 activate_range_y = 1000
 
-[node name="ASCII Bomber4" parent="Enemies" index="8" instance=ExtResource( 14 )]
+[node name="ASCII Bomber4" parent="Enemies" index="8" instance=ExtResource( 15 )]
 
 position = Vector2( 10550, -550 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 2000
 activate_range_y = 1000
 
-[node name="ASCII Gunner6" parent="Enemies" index="9" instance=ExtResource( 13 )]
+[node name="ASCII Gunner6" parent="Enemies" index="9" instance=ExtResource( 14 )]
 
 position = Vector2( 12550, -1050 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 1200
 activate_range_y = 1000
 
-[node name="ASCII Bomber5" parent="Enemies" index="10" instance=ExtResource( 14 )]
+[node name="ASCII Bomber5" parent="Enemies" index="10" instance=ExtResource( 15 )]
 
 position = Vector2( 13350, -250 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 2000
 activate_range_y = 1000
 
-[node name="ASCII Bomber6" parent="Enemies" index="11" instance=ExtResource( 14 )]
+[node name="ASCII Bomber6" parent="Enemies" index="11" instance=ExtResource( 15 )]
 
 position = Vector2( 12900, -1050 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 1550
 activate_range_y = 1000
 
-[node name="ASCII Gunner7" parent="Enemies" index="12" instance=ExtResource( 13 )]
+[node name="ASCII Gunner7" parent="Enemies" index="12" instance=ExtResource( 14 )]
 
 position = Vector2( 16000, -250 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 1850
 activate_range_y = 1000
 
-[node name="ASCII Bomber7" parent="Enemies" index="13" instance=ExtResource( 14 )]
+[node name="ASCII Bomber7" parent="Enemies" index="13" instance=ExtResource( 15 )]
 
 position = Vector2( 16250, -250 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 2100
 activate_range_y = 1000
 
-[node name="ASCII Bomber8" parent="Enemies" index="14" instance=ExtResource( 14 )]
+[node name="ASCII Bomber8" parent="Enemies" index="14" instance=ExtResource( 15 )]
 
 position = Vector2( 20900, -650 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 3550
 activate_range_y = 1000
 
-[node name="ASCII Bomber9" parent="Enemies" index="15" instance=ExtResource( 14 )]
+[node name="ASCII Bomber9" parent="Enemies" index="15" instance=ExtResource( 15 )]
 
 position = Vector2( 19950, -1150 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 2600
 activate_range_y = 1000
 
-[node name="ASCII Bomber10" parent="Enemies" index="16" instance=ExtResource( 14 )]
+[node name="ASCII Bomber10" parent="Enemies" index="16" instance=ExtResource( 15 )]
 
 position = Vector2( 19950, -250 )
 activate_range_x = 2600
 activate_range_y = 1000
 
-[node name="ASCII Gunner8" parent="Enemies" index="17" instance=ExtResource( 13 )]
+[node name="ASCII Gunner8" parent="Enemies" index="17" instance=ExtResource( 14 )]
 
 position = Vector2( 19950, -650 )
 activate_range_x = 2600
 activate_range_y = 1000
 
-[node name="ASCII Gunner9" parent="Enemies" index="18" instance=ExtResource( 13 )]
+[node name="ASCII Gunner9" parent="Enemies" index="18" instance=ExtResource( 14 )]
 
 position = Vector2( 23150, -700 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 1150
 activate_range_y = 1000
 
-[node name="ASCII Gunner10" parent="Enemies" index="19" instance=ExtResource( 13 )]
+[node name="ASCII Gunner10" parent="Enemies" index="19" instance=ExtResource( 14 )]
 
 position = Vector2( 23100, -250 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 1100
 activate_range_y = 1000
 
-[node name="ASCII Gunner12" parent="Enemies" index="20" instance=ExtResource( 13 )]
+[node name="ASCII Gunner12" parent="Enemies" index="20" instance=ExtResource( 14 )]
 
 position = Vector2( 23500, -350 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_y = 1000
 
-[node name="ASCII Gunner11" parent="Enemies" index="21" instance=ExtResource( 13 )]
+[node name="ASCII Gunner11" parent="Enemies" index="21" instance=ExtResource( 14 )]
 
 position = Vector2( 24700, -250 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 2700
 activate_range_y = 1000
 
-[node name="ASCII Bomber11" parent="Enemies" index="22" instance=ExtResource( 14 )]
+[node name="ASCII Bomber11" parent="Enemies" index="22" instance=ExtResource( 15 )]
 
 position = Vector2( 23950, -700 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 1950
 activate_range_y = 1000
 
-[node name="ASCII Bomber12" parent="Enemies" index="23" instance=ExtResource( 14 )]
+[node name="ASCII Bomber12" parent="Enemies" index="23" instance=ExtResource( 15 )]
 
 position = Vector2( 23950, -250 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 1950
 activate_range_y = 1000
 
-[node name="ASCII Bomber13" parent="Enemies" index="24" instance=ExtResource( 14 )]
+[node name="ASCII Bomber13" parent="Enemies" index="24" instance=ExtResource( 15 )]
 
 position = Vector2( 24450, -500 )
 _sections_unfolded = [ "Collision", "Transform" ]
@@ -2497,11 +2336,11 @@ activate_range_y = 1000
 
 [node name="PowerUps" type="Node2D" parent="." index="12"]
 
-[node name="Hyper Potion" parent="PowerUps" index="0" instance=ExtResource( 15 )]
+[node name="Hyper Potion" parent="PowerUps" index="0" instance=ExtResource( 16 )]
 
 position = Vector2( 22227.7, -561.034 )
 
-[node name="DefensivePotion" parent="PowerUps" index="1" instance=ExtResource( 16 )]
+[node name="DefensivePotion" parent="PowerUps" index="1" instance=ExtResource( 17 )]
 
 position = Vector2( 22321.2, -555.762 )
 
@@ -2510,7 +2349,7 @@ position = Vector2( 22321.2, -555.762 )
 z_index = 1
 _sections_unfolded = [ "Z Index" ]
 
-[node name="PauseButton" parent="." index="14" instance=ExtResource( 17 )]
+[node name="PauseButton" parent="." index="14" instance=ExtResource( 18 )]
 
 [node name="Position2D" type="Position2D" parent="." index="15"]
 
@@ -2520,29 +2359,33 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 3150 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger1" to="Writings/Go1" method="activate"]
-
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 6950 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger2" to="Writings/Go2" method="activate"]
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger1" to="Writings/Go1" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger2" to="FollowingCamera" method="update_right_limit" binds= [ 10750 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="Writings/Go3" method="activate"]
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger2" to="Writings/Go2" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="FollowingCamera" method="update_right_limit" binds= [ 13650 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="Writings/Go4" method="activate"]
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="Writings/Go3" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="FollowingCamera" method="update_right_limit" binds= [ 16450 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger5" to="Writings/Go5" method="activate"]
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="Writings/Go4" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger5" to="FollowingCamera" method="update_right_limit" binds= [ 21250 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger6" to="Writings/Go6" method="activate"]
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger5" to="Writings/Go5" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger6" to="FollowingCamera" method="update_right_limit" binds= [ 24950 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger6" to="Writings/Go6" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="FollowingCamera" method="update_right_margin" binds= [ 0.1 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="FollowingCamera" method="update_right_limit" binds= [ 28200 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="Writings/Go7" method="activate"]
 
@@ -2550,15 +2393,11 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="Writings/Go9" method="activate"]
 
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="Writings/Go10" method="activate"]
+
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="Writings/Go11" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="Writings/Go12" method="activate"]
-
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="Writings/Go10" method="activate"]
-
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="FollowingCamera" method="update_right_margin" binds= [ 0.1 ]]
-
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger7" to="FollowingCamera" method="update_right_limit" binds= [ 28200 ]]
 
 [connection signal="defeated" from="Enemies/ASCII Gunner" to="CameraChangingTriggers/MobClearTrigger1" method="increment_count"]
 

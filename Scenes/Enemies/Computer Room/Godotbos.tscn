@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=45 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Godotbos.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Body.png" type="Texture" id=2]
@@ -25,8 +25,9 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Flaggomine/Mine.png" type="Texture" id=23]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Godotbos/Sad Eye.png" type="Texture" id=24]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Canmera/Missle.png" type="Texture" id=25]
-[ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Graphics/UI/Avatar/Godotbos.png" type="Texture" id=27]
+[ext_resource path="res://Graphics/Particles/Plus.png" type="Texture" id=26]
+[ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Graphics/UI/Avatar/Godotbos.png" type="Texture" id=28]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -989,11 +990,35 @@ tracks/77/keys = {
 "update": 1,
 "values": [ 0 ]
 }
+tracks/78/type = "value"
+tracks/78/path = NodePath("HealParticles:emitting")
+tracks/78/interp = 1
+tracks/78/loop_wrap = true
+tracks/78/imported = false
+tracks/78/enabled = true
+tracks/78/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/79/type = "value"
+tracks/79/path = NodePath("HealParticles:visible")
+tracks/79/interp = 1
+tracks/79/loop_wrap = true
+tracks/79/imported = false
+tracks/79/enabled = true
+tracks/79/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=6]
 
 length = 0.1
-loop = false
+loop = true
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Body/Pelvis/Right Thigh:position")
@@ -1954,6 +1979,30 @@ tracks/79/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
+}
+tracks/80/type = "value"
+tracks/80/path = NodePath("HealParticles:emitting")
+tracks/80/interp = 1
+tracks/80/loop_wrap = true
+tracks/80/imported = false
+tracks/80/enabled = true
+tracks/80/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/81/type = "value"
+tracks/81/path = NodePath("HealParticles:visible")
+tracks/81/interp = 1
+tracks/81/loop_wrap = true
+tracks/81/imported = false
+tracks/81/enabled = true
+tracks/81/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -2921,6 +2970,30 @@ tracks/79/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/80/type = "value"
+tracks/80/path = NodePath("HealParticles:emitting")
+tracks/80/interp = 1
+tracks/80/loop_wrap = true
+tracks/80/imported = false
+tracks/80/enabled = true
+tracks/80/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/81/type = "value"
+tracks/81/path = NodePath("HealParticles:visible")
+tracks/81/interp = 1
+tracks/81/loop_wrap = true
+tracks/81/imported = false
+tracks/81/enabled = true
+tracks/81/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=8]
 
@@ -3887,9 +3960,34 @@ tracks/79/keys = {
 "update": 0,
 "values": [ Vector2( 51.4309, 2.47857 ) ]
 }
+tracks/80/type = "value"
+tracks/80/path = NodePath("HealParticles:emitting")
+tracks/80/interp = 1
+tracks/80/loop_wrap = true
+tracks/80/imported = false
+tracks/80/enabled = true
+tracks/80/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/81/type = "value"
+tracks/81/path = NodePath("HealParticles:visible")
+tracks/81/interp = 1
+tracks/81/loop_wrap = true
+tracks/81/imported = false
+tracks/81/enabled = true
+tracks/81/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=9]
 
+resource_name = "Prepare Shoot"
 length = 1.0
 loop = false
 step = 0.1
@@ -4852,6 +4950,18 @@ tracks/79/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1.5, 1 ) ]
+}
+tracks/80/type = "value"
+tracks/80/path = NodePath("HealParticles:visible")
+tracks/80/interp = 1
+tracks/80/loop_wrap = true
+tracks/80/imported = false
+tracks/80/enabled = true
+tracks/80/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -5867,6 +5977,18 @@ tracks/83/keys = {
 "update": 0,
 "values": [ Vector2( 1.5, 1 ) ]
 }
+tracks/84/type = "value"
+tracks/84/path = NodePath("HealParticles:visible")
+tracks/84/interp = 1
+tracks/84/loop_wrap = true
+tracks/84/imported = false
+tracks/84/enabled = true
+tracks/84/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=11]
 
@@ -6832,6 +6954,18 @@ tracks/79/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1.5, 1 ) ]
+}
+tracks/80/type = "value"
+tracks/80/path = NodePath("HealParticles:visible")
+tracks/80/interp = 1
+tracks/80/loop_wrap = true
+tracks/80/imported = false
+tracks/80/enabled = true
+tracks/80/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -7799,6 +7933,18 @@ tracks/79/keys = {
 "update": 0,
 "values": [ Vector2( 1.5, 1 ) ]
 }
+tracks/80/type = "value"
+tracks/80/path = NodePath("HealParticles:visible")
+tracks/80/interp = 1
+tracks/80/loop_wrap = true
+tracks/80/imported = false
+tracks/80/enabled = true
+tracks/80/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=13]
 
@@ -8765,8 +8911,71 @@ tracks/79/keys = {
 "update": 0,
 "values": [ Vector2( -6.81613, 1.85891 ) ]
 }
+tracks/80/type = "value"
+tracks/80/path = NodePath("HealParticles:visible")
+tracks/80/interp = 1
+tracks/80/loop_wrap = true
+tracks/80/imported = false
+tracks/80/enabled = true
+tracks/80/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[node name="Godotbos" type="KinematicBody2D" index="0"]
+[sub_resource type="Gradient" id=14]
+
+offsets = PoolRealArray( 0, 1 )
+colors = PoolColorArray( 0, 1, 0.0390625, 0.989914, 1, 0.84375, 0, 0.18502 )
+
+[sub_resource type="GradientTexture" id=15]
+
+flags = 4
+gradient = SubResource( 14 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=16]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 1, 200, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 50.0
+initial_velocity_random = 0.0
+angular_velocity = 55.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 0.1
+scale_random = 0.1
+color_ramp = SubResource( 15 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale" ]
+
+[node name="Godotbos" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
@@ -8774,8 +8983,8 @@ collision_mask = 20
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
-activate_range_x = 1500
-activate_range_y = 1500
+activate_range_x = 0
+activate_range_y = 0
 kick_right_pos_path = null
 kick_left_pos_path = null
 shoot_center_pos_path = null
@@ -8788,7 +8997,6 @@ shape = SubResource( 1 )
 
 [node name="Animation" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
 position = Vector2( 0, 26 )
 scale = Vector2( 2.25, 2.25 )
 
@@ -8796,7 +9004,7 @@ scale = Vector2( 2.25, 2.25 )
 
 editor/display_folded = true
 position = Vector2( -6.81613, 1.85891 )
-scale = Vector2( 2, 1 )
+scale = Vector2( 1.5, 1 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -8839,8 +9047,7 @@ shape = SubResource( 4 )
 
 [node name="Body" type="Sprite" parent="Animation" index="2"]
 
-editor/display_folded = true
-position = Vector2( -1.51196, 10.2271 )
+position = Vector2( -1.51196, -0.792202 )
 texture = ExtResource( 2 )
 offset = Vector2( 1.51196, 0.792202 )
 
@@ -8851,7 +9058,7 @@ texture = ExtResource( 3 )
 
 [node name="Jaw" type="Sprite" parent="Animation/Body/Head" index="0"]
 
-position = Vector2( 1.53224, 37.9596 )
+position = Vector2( 1.37984, 32.2337 )
 texture = ExtResource( 4 )
 
 [node name="Left Eye" type="Sprite" parent="Animation/Body/Head" index="1"]
@@ -8862,7 +9069,7 @@ texture = ExtResource( 5 )
 
 [node name="Eyeball" type="Sprite" parent="Animation/Body/Head/Left Eye" index="0"]
 
-position = Vector2( -1.22227, 0.225756 )
+position = Vector2( -1.22227, 0.366089 )
 texture = ExtResource( 6 )
 
 [node name="Right Eye" type="Sprite" parent="Animation/Body/Head" index="2"]
@@ -8873,7 +9080,7 @@ texture = ExtResource( 5 )
 
 [node name="Eyeball" type="Sprite" parent="Animation/Body/Head/Right Eye" index="0"]
 
-position = Vector2( -1.16932, -0.0177685 )
+position = Vector2( -1.18101, 0.140106 )
 texture = ExtResource( 6 )
 
 [node name="Nose" type="Sprite" parent="Animation/Body/Head" index="3"]
@@ -8888,25 +9095,25 @@ position = Vector2( 1.51196, 0.792202 )
 
 [node name="1" type="Sprite" parent="Animation/Body/Chest Lights" index="0"]
 
-self_modulate = Color( 0, 0.765796, 0.267845, 1 )
+self_modulate = Color( 0, 1, 0.0625, 1 )
 position = Vector2( -14.5074, -23.2349 )
 texture = ExtResource( 8 )
 
 [node name="2" type="Sprite" parent="Animation/Body/Chest Lights" index="1"]
 
-self_modulate = Color( 0.78181, 0.256224, 0, 1 )
+self_modulate = Color( 1, 0, 0, 1 )
 position = Vector2( -5.70345, -23.3114 )
 texture = ExtResource( 8 )
 
 [node name="3" type="Sprite" parent="Animation/Body/Chest Lights" index="2"]
 
-self_modulate = Color( 0.256224, 0.0987824, 0.743776, 1 )
+self_modulate = Color( 0.242188, 1, 0, 1 )
 position = Vector2( 5.43551, -23.1583 )
 texture = ExtResource( 8 )
 
 [node name="4" type="Sprite" parent="Animation/Body/Chest Lights" index="3"]
 
-self_modulate = Color( 0.127837, 0.765796, 0.256224, 1 )
+self_modulate = Color( 0.96875, 1, 0, 1 )
 position = Vector2( 14.3161, -23.2349 )
 texture = ExtResource( 8 )
 
@@ -8920,21 +9127,18 @@ offset = Vector2( -0.134942, 15.0158 )
 
 editor/display_folded = true
 position = Vector2( -15.5005, 24.8824 )
-rotation = 0.312644
 texture = ExtResource( 10 )
 offset = Vector2( -12.5802, 16.7753 )
 
 [node name="Left Leg" type="Sprite" parent="Animation/Body/Pelvis/Left Thigh" index="0"]
 
 position = Vector2( -17.8206, 42.0492 )
-rotation = -0.0606391
 texture = ExtResource( 11 )
 offset = Vector2( -2.39715, 26.8496 )
 
 [node name="Left Foot" type="Sprite" parent="Animation/Body/Pelvis/Left Thigh/Left Leg" index="0"]
 
 position = Vector2( -4.56112, 57.3675 )
-rotation = 0.115447
 texture = ExtResource( 12 )
 offset = Vector2( -12.3328, 7.89297 )
 
@@ -8942,78 +9146,67 @@ offset = Vector2( -12.3328, 7.89297 )
 
 editor/display_folded = true
 position = Vector2( 15.1549, 25.2677 )
-rotation = -0.380582
 texture = ExtResource( 13 )
 offset = Vector2( 8.18058, 14.9776 )
 
 [node name="Right Leg" type="Sprite" parent="Animation/Body/Pelvis/Right Thigh" index="0"]
 
 position = Vector2( 8.00397, 45.7691 )
-rotation = -0.484531
 texture = ExtResource( 14 )
 offset = Vector2( -0.225477, 24.4628 )
 
 [node name="Right Foot" type="Sprite" parent="Animation/Body/Pelvis/Right Thigh/Right Leg" index="0"]
 
-position = Vector2( -0.143614, 53.4404 )
-rotation = -0.0572659
+position = Vector2( -0.789131, 53.6603 )
 texture = ExtResource( 12 )
 offset = Vector2( -11.9496, 7.7785 )
 
 [node name="Left Shoulder" type="Sprite" parent="Animation/Body" index="3"]
 
 editor/display_folded = true
-position = Vector2( -28.5089, -13.6106 )
-rotation = 0.165235
+position = Vector2( -30.4222, -14.6568 )
 texture = ExtResource( 15 )
 offset = Vector2( -16.4223, -2.83238 )
 
 [node name="Left Arm" type="Sprite" parent="Animation/Body/Left Shoulder" index="0"]
 
 position = Vector2( -27.3055, 6.89463 )
-rotation = 0.0244615
 texture = ExtResource( 16 )
 offset = Vector2( 10.4983, 20.7795 )
 
 [node name="Left Forearm" type="Sprite" parent="Animation/Body/Left Shoulder/Left Arm" index="0"]
 
 position = Vector2( -18.2587, 45.2787 )
-rotation = 0.0315063
 texture = ExtResource( 17 )
 offset = Vector2( -6.35187, 22.3457 )
 
 [node name="Left Hand" type="Sprite" parent="Animation/Body/Left Shoulder/Left Arm/Left Forearm" index="0"]
 
 position = Vector2( -17.1308, 49.501 )
-rotation = 0.0351513
 texture = ExtResource( 18 )
 offset = Vector2( -3.49029, 7.53899 )
 
 [node name="Right Shoulder" type="Sprite" parent="Animation/Body" index="4"]
 
-position = Vector2( 30.6141, -13.8601 )
-rotation = -0.353794
+position = Vector2( 28.8128, -15.8337 )
 texture = ExtResource( 19 )
 offset = Vector2( 15.1757, -6.46402 )
 
 [node name="Right Arm" type="Sprite" parent="Animation/Body/Right Shoulder" index="0"]
 
 position = Vector2( 19.2282, 3.15383 )
-rotation = -0.0390031
 texture = ExtResource( 20 )
 offset = Vector2( 10.2923, 19.6822 )
 
 [node name="Right Forearm" type="Sprite" parent="Animation/Body/Right Shoulder/Right Arm" index="0"]
 
 position = Vector2( 17.9056, 42.0171 )
-rotation = -0.0533297
 texture = ExtResource( 21 )
 offset = Vector2( 7.8337, 22.382 )
 
 [node name="Sprite" type="Sprite" parent="Animation/Body/Right Shoulder/Right Arm/Right Forearm" index="0"]
 
 position = Vector2( 19.3235, 49.5612 )
-rotation = -0.0360397
 texture = ExtResource( 22 )
 offset = Vector2( 2.87928, 8.3002 )
 
@@ -9023,6 +9216,7 @@ visible = false
 position = Vector2( 8.03513, 17.9216 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 23 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Animation" index="3"]
 
@@ -9035,7 +9229,7 @@ anims/Die = SubResource( 5 )
 anims/Heal = SubResource( 6 )
 anims/Hurt = SubResource( 7 )
 anims/Kick = SubResource( 8 )
-anims/PrepareShoot = SubResource( 9 )
+"anims/Prepare Shoot" = SubResource( 9 )
 anims/Shooting = SubResource( 10 )
 anims/Still = SubResource( 11 )
 anims/Throw = SubResource( 12 )
@@ -9065,6 +9259,30 @@ texture = ExtResource( 25 )
 [node name="Mine Throw Pos" type="Position2D" parent="Animation" index="5"]
 
 position = Vector2( -88.7303, -179.598 )
+
+[node name="HealParticles" type="Particles2D" parent="Animation" index="6"]
+
+visible = false
+rotation = -1.58209
+emitting = true
+amount = 50
+lifetime = 3.0
+one_shot = false
+preprocess = 1.4
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 16 )
+texture = ExtResource( 26 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Visibility" ]
 
 [node name="Number Spawn Pos" type="Position2D" parent="." index="2"]
 
@@ -9102,9 +9320,9 @@ position = Vector2( -81.3569, -696.75 )
 
 position = Vector2( 648.77, -694.664 )
 
-[node name="Health Bar" parent="." index="11" instance=ExtResource( 26 )]
+[node name="Health Bar" parent="." index="11" instance=ExtResource( 27 )]
 
-avatar_texture = ExtResource( 27 )
+avatar_texture = ExtResource( 28 )
 
 [connection signal="area_entered" from="Animation/Kick Attack Area" to="." method="on_kick_hit"]
 

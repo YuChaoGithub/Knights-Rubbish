@@ -2,59 +2,61 @@ extends KinematicBody2D
 
 # Godotbos AI:
 # 1. Speed walk randomly. Stand still for some time.
-# 2. [1 - (health / full health)] * 100% go to 5. Remaining: 60% go to 3. 40% go to 4.
-# 3. Move to the right (50%) / left (50%) edge, stand still for some time and sweep side kicks through. Go to 1.
-# 4. Move to the center, fire missles. Go to 1.
+# 2. [1 - (health / full health)] * 100% go to 5. Remaining: 50% go to 3. 50% go to 4.
+# 3. Move to the right (50%) / left (50%) edge, stand still for some time and sweep side kicks through. Go to 6.
+# 4. Move to the center, fire missles. Go to 6.
 # 5. Heal. When stunned or damaged, go to 6.
 # 6. Throw Flaggomine. Go to 1.
+signal defeated
 
 enum { NONE, PRE_SPEED_WALK_STAND, SPEED_WALK, RNG_STEP, KICK_MOVE, KICK_STAND, KICK, MOVE_TO_CENTER, PREPARE_FIRE, FIRE, FIRE_LANDING_PAUSE, FIRE_LAND, HEAL, THROW_MINE_ANIM, THROW_MINE }
 
-export(int) var activate_range_x = 1500
-export(int) var activate_range_y = 1500
+export(int) var activate_range_x = 0
+export(int) var activate_range_y = 0
 export(NodePath) var kick_right_pos_path
 export(NodePath) var kick_left_pos_path
 export(NodePath) var shoot_center_pos_path
 
-const MAX_HEALTH = 1500
+const MAX_HEALTH = 7777
 
 # Attack.
-const KICK_DAMAGE = 50
+const KICK_DAMAGE = 35
 const KICK_KNOCK_BACK_VEL_X = 2500
 const KICK_KNOCK_BACK_VEL_Y = 0
 const KICK_KNOCK_BACK_FADE_RATE = 2000
 const HEAL_INTERVAL = 0.25
 const HEAL_AMOUNT = 50
-const KICK_DURATION = 1.0
+const KICK_DURATION = 1.5
 const KICK_SPEED_X = 2000
 
 # Movment.
 const SPEED_WALK_SPEED_X = 700
 const GRAVITY = 1000
-const ATTACK_WALK_SPEED = 400
+const ATTACK_WALK_SPEED = 500
 const RANDOM_MOVEMENT_MIN_STEPS = 3
-const RANDOM_MOVEMENT_MAX_STEPS = 5
-const RANDOM_MOVEMENT_MIN_TIME_PER_STEP = 0.8
-const RANDOM_MOVEMENT_MAX_TIME_PER_STEP = 1.5
+const RANDOM_MOVEMENT_MAX_STEPS = 4
+const RANDOM_MOVEMENT_MIN_TIME_PER_STEP = 0.6
+const RANDOM_MOVEMENT_MAX_TIME_PER_STEP = 1
 
 # Animation.
 const PREPARE_SHOOT_DURATION = 1.0
 const PREPARE_THROW_DURATION = 1.2
 const COMPLETE_THROW_DURATION = 1.3
 const RNG_STANDING_DURATION = 2.0
-const KICK_STAND_DURATION = 1.0
+const KICK_STAND_DURATION = 1.5
 const PRE_SPEED_WALK_STAND_DURATION = 2.5
 const SHOOT_DURATION = 3.2
 const SHOOT_LANDING_DURATION = 2.0
 
-const KICK_MOVE_PERCENTAGE = 0.6
+const KICK_MOVE_PERCENTAGE = 0.5
 
-const CENTER_POS_RADIUS = 50
+const CENTER_POS_RADIUS = 77
 
 var status_timer = null
 var heal_timer = null
 var kick_timestamp = null
 var kicked_targets = []
+var mine_thrown = false
 var facing = -1
 
 # Roaming pos.
@@ -137,7 +139,7 @@ func speed_walk(delta):
 	ec.play_animation("Walk")
 
 	if ec.random_movement == null:
-		ec.init_random_movement("movement_not_ended", "movement_ended", SPEED_WALK_SPEED_X, 0, false, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
+		ec.init_random_movement("movement_not_ended", "movement_ended", SPEED_WALK_SPEED_X, 0, true, RANDOM_MOVEMENT_MIN_STEPS, RANDOM_MOVEMENT_MAX_STEPS, RANDOM_MOVEMENT_MIN_TIME_PER_STEP, RANDOM_MOVEMENT_MAX_TIME_PER_STEP)
 
 	ec.perform_random_movement(delta)
 
@@ -155,7 +157,7 @@ func rng_step_while_standing():
 	# 1 - health percentage, HEAL.
 	var to_status = HEAL if randf() > get_health_percentage() else null
 	
-	# Remaining: 60% KICK. 40% SHOOT.
+	# Remaining: 50% KICK. 50% SHOOT.
 	if to_status == null:
 		to_status = KICK_MOVE if randf() < KICK_MOVE_PERCENTAGE else MOVE_TO_CENTER
 
@@ -196,7 +198,7 @@ func kick(delta):
 	kick_timestamp += delta
 	if kick_timestamp > KICK_DURATION:
 		kick_timestamp = null
-		ec.change_status(PRE_SPEED_WALK_STAND)
+		ec.change_status(THROW_MINE_ANIM)
 
 func on_kick_hit(area):
 	if area.is_in_group("hero"):
@@ -240,7 +242,7 @@ func land_fire():
 		spawn_node.add_child(new_missle)
 		new_missle.global_position = spawn_pos.global_position
 
-	ec.change_status(PRE_SPEED_WALK_STAND)
+	ec.change_status(THROW_MINE_ANIM)
 
 func heal_up():
 	ec.play_animation("Heal")
@@ -262,6 +264,10 @@ func interrupt_heal():
 func play_throw_mine_anim():
 	ec.play_animation("Throw")
 	ec.change_status(NONE)
+
+	facing = -1 if global_position.x > shoot_center_pos.global_position.x else 1
+	ec.turn_sprites_x(facing)
+
 	status_timer = ec.cd_timer.new(PREPARE_THROW_DURATION, self, "change_status", THROW_MINE)
 
 func throw_mine():
@@ -299,4 +305,5 @@ func slowed(multiplier, duration):
 
 func die():
 	ec.die()
+	emit_signal("defeated")
 	ec.health_bar.drop_health_bar()

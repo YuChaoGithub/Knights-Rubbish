@@ -1,20 +1,21 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/HeroManager.gd" type="Script" id=2]
 [ext_resource path="res://Tilesets/Dark Blue Wall.tres" type="TileSet" id=3]
 [ext_resource path="res://Tilesets/Gray Floor.tres" type="TileSet" id=4]
 [ext_resource path="res://Graphics/Structure/Terminal Upgrade/Arrow.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine 1.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine 3.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine 2.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine Red Flag.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=10]
-[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=11]
-[ext_resource path="res://Scenes/Structures/Terminal Upgrade.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine Mine.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Cliffy.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Structures/GoArrows.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine 1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine 3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine 2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine Red Flag.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/Structures/Terminal Upgrade.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Flaggomine Mine.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Cliffy.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=16]
 
 [node name="Game Level" type="Node2D" index="0"]
 
@@ -84,7 +85,6 @@ _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="Writings" type="Node2D" parent="." index="5"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Z Index" ]
 
 [node name="Arrow" type="Sprite" parent="Writings" index="0"]
@@ -95,335 +95,363 @@ scale = Vector2( 2, 2 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
+[node name="Go1" parent="Writings" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( 7350, -2650 )
+
+[node name="Go2" parent="Writings" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 15550, -4650 )
+
+[node name="Go3" parent="Writings" index="3" instance=ExtResource( 6 )]
+
+position = Vector2( 18500, -5550 )
+
+[node name="Go4" parent="Writings" index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 18500, -5100 )
+
+[node name="Go5" parent="Writings" index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 21050, -5950 )
+
+[node name="Go6" parent="Writings" index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 21050, -5300 )
+
+[node name="Go7" parent="Writings" index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 23800, -5800 )
+
 [node name="PlatformDecorations" type="Node2D" parent="." index="6"]
 
-[node name="Flaggomine 1-1" parent="PlatformDecorations" index="0" instance=ExtResource( 6 )]
+editor/display_folded = true
+
+[node name="Flaggomine 1-1" parent="PlatformDecorations" index="0" instance=ExtResource( 7 )]
 
 position = Vector2( 1450, -1750 )
 
-[node name="Flaggomine 3-1" parent="PlatformDecorations" index="1" instance=ExtResource( 7 )]
+[node name="Flaggomine 3-1" parent="PlatformDecorations" index="1" instance=ExtResource( 8 )]
 
 position = Vector2( 2150, -1750 )
 
-[node name="Flaggomine 2-1" parent="PlatformDecorations" index="2" instance=ExtResource( 8 )]
+[node name="Flaggomine 2-1" parent="PlatformDecorations" index="2" instance=ExtResource( 9 )]
 
 position = Vector2( 4150, -1750 )
 
-[node name="Flaggomine Red Flag" parent="PlatformDecorations" index="3" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag" parent="PlatformDecorations" index="3" instance=ExtResource( 10 )]
 
 position = Vector2( 3050, -1750 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag2" parent="PlatformDecorations" index="4" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag2" parent="PlatformDecorations" index="4" instance=ExtResource( 10 )]
 
 position = Vector2( 3300, -1750 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine 2-2" parent="PlatformDecorations" index="5" instance=ExtResource( 8 )]
+[node name="Flaggomine 2-2" parent="PlatformDecorations" index="5" instance=ExtResource( 9 )]
 
 position = Vector2( 6050, -1750 )
 
-[node name="Flaggomine 1-2" parent="PlatformDecorations" index="6" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-2" parent="PlatformDecorations" index="6" instance=ExtResource( 7 )]
 
 position = Vector2( 6750, -1750 )
 
-[node name="Flaggomine 1-3" parent="PlatformDecorations" index="7" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-3" parent="PlatformDecorations" index="7" instance=ExtResource( 7 )]
 
 position = Vector2( 7900, -2150 )
 
-[node name="Flaggomine 3-2" parent="PlatformDecorations" index="8" instance=ExtResource( 7 )]
+[node name="Flaggomine 3-2" parent="PlatformDecorations" index="8" instance=ExtResource( 8 )]
 
 position = Vector2( 10500, -2950 )
 
-[node name="Flaggomine 2-3" parent="PlatformDecorations" index="9" instance=ExtResource( 8 )]
+[node name="Flaggomine 2-3" parent="PlatformDecorations" index="9" instance=ExtResource( 9 )]
 
 position = Vector2( 11400, -3150 )
 
-[node name="Flaggomine 1-4" parent="PlatformDecorations" index="10" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-4" parent="PlatformDecorations" index="10" instance=ExtResource( 7 )]
 
 position = Vector2( 9000, -2550 )
 
-[node name="Flaggomine Red Flag3" parent="PlatformDecorations" index="11" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag3" parent="PlatformDecorations" index="11" instance=ExtResource( 10 )]
 
 position = Vector2( 8700, -2150 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag4" parent="PlatformDecorations" index="12" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag4" parent="PlatformDecorations" index="12" instance=ExtResource( 10 )]
 
 position = Vector2( 9500, -2550 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag5" parent="PlatformDecorations" index="13" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag5" parent="PlatformDecorations" index="13" instance=ExtResource( 10 )]
 
 position = Vector2( 9800, -2950 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag6" parent="PlatformDecorations" index="14" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag6" parent="PlatformDecorations" index="14" instance=ExtResource( 10 )]
 
 position = Vector2( 12100, -3250 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine 2-4" parent="PlatformDecorations" index="15" instance=ExtResource( 8 )]
+[node name="Flaggomine 2-4" parent="PlatformDecorations" index="15" instance=ExtResource( 9 )]
 
 position = Vector2( 12600, -3650 )
 
-[node name="Flaggomine 1-5" parent="PlatformDecorations" index="16" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-5" parent="PlatformDecorations" index="16" instance=ExtResource( 7 )]
 
 position = Vector2( 12900, -3250 )
 
-[node name="Flaggomine Red Flag7" parent="PlatformDecorations" index="17" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag7" parent="PlatformDecorations" index="17" instance=ExtResource( 10 )]
 
 position = Vector2( 13550, -3450 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine 1-6" parent="PlatformDecorations" index="18" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-6" parent="PlatformDecorations" index="18" instance=ExtResource( 7 )]
 
 position = Vector2( 14050, -3750 )
 
-[node name="Flaggomine Red Flag8" parent="PlatformDecorations" index="19" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag8" parent="PlatformDecorations" index="19" instance=ExtResource( 10 )]
 
 position = Vector2( 14800, -3950 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine 1-7" parent="PlatformDecorations" index="20" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-7" parent="PlatformDecorations" index="20" instance=ExtResource( 7 )]
 
 position = Vector2( 16400, -4750 )
 
-[node name="Flaggomine 1-8" parent="PlatformDecorations" index="21" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-8" parent="PlatformDecorations" index="21" instance=ExtResource( 7 )]
 
 position = Vector2( 15400, -4350 )
 
-[node name="Flaggomine 1-9" parent="PlatformDecorations" index="22" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-9" parent="PlatformDecorations" index="22" instance=ExtResource( 7 )]
 
 position = Vector2( 16000, -4350 )
 
-[node name="Flaggomine 2-5" parent="PlatformDecorations" index="23" instance=ExtResource( 8 )]
+[node name="Flaggomine 2-5" parent="PlatformDecorations" index="23" instance=ExtResource( 9 )]
 
 position = Vector2( 17050, -4750 )
 
-[node name="Flaggomine 2-6" parent="PlatformDecorations" index="24" instance=ExtResource( 8 )]
+[node name="Flaggomine 2-6" parent="PlatformDecorations" index="24" instance=ExtResource( 9 )]
 
 position = Vector2( 17450, -5650 )
 
-[node name="Flaggomine 3-3" parent="PlatformDecorations" index="25" instance=ExtResource( 7 )]
+[node name="Flaggomine 3-3" parent="PlatformDecorations" index="25" instance=ExtResource( 8 )]
 
 position = Vector2( 16550, -5350 )
 
-[node name="Flaggomine 3-4" parent="PlatformDecorations" index="26" instance=ExtResource( 7 )]
+[node name="Flaggomine 3-4" parent="PlatformDecorations" index="26" instance=ExtResource( 8 )]
 
 position = Vector2( 18450, -4750 )
 
-[node name="Flaggomine Red Flag9" parent="PlatformDecorations" index="27" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag9" parent="PlatformDecorations" index="27" instance=ExtResource( 10 )]
 
 position = Vector2( 17700, -5050 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag10" parent="PlatformDecorations" index="28" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag10" parent="PlatformDecorations" index="28" instance=ExtResource( 10 )]
 
 position = Vector2( 18450, -5350 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag11" parent="PlatformDecorations" index="29" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag11" parent="PlatformDecorations" index="29" instance=ExtResource( 10 )]
 
 position = Vector2( 19500, -5250 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag12" parent="PlatformDecorations" index="30" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag12" parent="PlatformDecorations" index="30" instance=ExtResource( 10 )]
 
 position = Vector2( 20200, -5650 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag13" parent="PlatformDecorations" index="31" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag13" parent="PlatformDecorations" index="31" instance=ExtResource( 10 )]
 
 position = Vector2( 20900, -5750 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag14" parent="PlatformDecorations" index="32" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag14" parent="PlatformDecorations" index="32" instance=ExtResource( 10 )]
 
 position = Vector2( 21002.5, -4947.45 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag26" parent="PlatformDecorations" index="33" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag26" parent="PlatformDecorations" index="33" instance=ExtResource( 10 )]
 
 position = Vector2( 21600, -5750 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag27" parent="PlatformDecorations" index="34" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag27" parent="PlatformDecorations" index="34" instance=ExtResource( 10 )]
 
 position = Vector2( 22300, -5750 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag15" parent="PlatformDecorations" index="35" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag15" parent="PlatformDecorations" index="35" instance=ExtResource( 10 )]
 
 position = Vector2( 22000, -4850 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine 3-5" parent="PlatformDecorations" index="36" instance=ExtResource( 7 )]
+[node name="Flaggomine 3-5" parent="PlatformDecorations" index="36" instance=ExtResource( 8 )]
 
 position = Vector2( 19700, -4850 )
 
-[node name="Flaggomine 2-7" parent="PlatformDecorations" index="37" instance=ExtResource( 8 )]
+[node name="Flaggomine 2-7" parent="PlatformDecorations" index="37" instance=ExtResource( 9 )]
 
 position = Vector2( 20350, -4850 )
 
-[node name="Flaggomine 1-10" parent="PlatformDecorations" index="38" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-10" parent="PlatformDecorations" index="38" instance=ExtResource( 7 )]
 
 position = Vector2( 21250, -4850 )
 
-[node name="Flaggomine 1-11" parent="PlatformDecorations" index="39" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-11" parent="PlatformDecorations" index="39" instance=ExtResource( 7 )]
 
 position = Vector2( 20700, -5350 )
 
-[node name="Flaggomine 1-12" parent="PlatformDecorations" index="40" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-12" parent="PlatformDecorations" index="40" instance=ExtResource( 7 )]
 
 position = Vector2( 19700, -5650 )
 
-[node name="Flaggomine 3-6" parent="PlatformDecorations" index="41" instance=ExtResource( 7 )]
+[node name="Flaggomine 3-6" parent="PlatformDecorations" index="41" instance=ExtResource( 8 )]
 
 position = Vector2( 22700, -5050 )
 
-[node name="Flaggomine 3-7" parent="PlatformDecorations" index="42" instance=ExtResource( 7 )]
+[node name="Flaggomine 3-7" parent="PlatformDecorations" index="42" instance=ExtResource( 8 )]
 
 position = Vector2( 23250, -5050 )
 
-[node name="Flaggomine 3-9" parent="PlatformDecorations" index="43" instance=ExtResource( 7 )]
+[node name="Flaggomine 3-9" parent="PlatformDecorations" index="43" instance=ExtResource( 8 )]
 
 position = Vector2( 25350, -9050 )
 
-[node name="Flaggomine 3-10" parent="PlatformDecorations" index="44" instance=ExtResource( 7 )]
+[node name="Flaggomine 3-10" parent="PlatformDecorations" index="44" instance=ExtResource( 8 )]
 
 position = Vector2( 25150, -9050 )
 
-[node name="Flaggomine 3-11" parent="PlatformDecorations" index="45" instance=ExtResource( 7 )]
+[node name="Flaggomine 3-11" parent="PlatformDecorations" index="45" instance=ExtResource( 8 )]
 
 position = Vector2( 24950, -9050 )
 
-[node name="Flaggomine 3-8" parent="PlatformDecorations" index="46" instance=ExtResource( 7 )]
+[node name="Flaggomine 3-8" parent="PlatformDecorations" index="46" instance=ExtResource( 8 )]
 
 position = Vector2( 23800, -5050 )
 
-[node name="Flaggomine Red Flag16" parent="PlatformDecorations" index="47" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag16" parent="PlatformDecorations" index="47" instance=ExtResource( 10 )]
 
 position = Vector2( 24400, -5450 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine 2-8" parent="PlatformDecorations" index="48" instance=ExtResource( 8 )]
+[node name="Flaggomine 2-8" parent="PlatformDecorations" index="48" instance=ExtResource( 9 )]
 
 position = Vector2( 25250, -5450 )
 
-[node name="Flaggomine 2-9" parent="PlatformDecorations" index="49" instance=ExtResource( 8 )]
+[node name="Flaggomine 2-9" parent="PlatformDecorations" index="49" instance=ExtResource( 9 )]
 
 position = Vector2( 24900, -6750 )
 
-[node name="Flaggomine 1-13" parent="PlatformDecorations" index="50" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-13" parent="PlatformDecorations" index="50" instance=ExtResource( 7 )]
 
 position = Vector2( 26500, -5850 )
 
-[node name="Flaggomine 1-14" parent="PlatformDecorations" index="51" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-14" parent="PlatformDecorations" index="51" instance=ExtResource( 7 )]
 
 position = Vector2( 26050, -5450 )
 
-[node name="Flaggomine 1-16" parent="PlatformDecorations" index="52" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-16" parent="PlatformDecorations" index="52" instance=ExtResource( 7 )]
 
 position = Vector2( 24650, -6850 )
 
-[node name="Flaggomine 1-17" parent="PlatformDecorations" index="53" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-17" parent="PlatformDecorations" index="53" instance=ExtResource( 7 )]
 
 position = Vector2( 24900, -7750 )
 
-[node name="Flaggomine 1-18" parent="PlatformDecorations" index="54" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-18" parent="PlatformDecorations" index="54" instance=ExtResource( 7 )]
 
 position = Vector2( 25750, -7950 )
 
-[node name="Flaggomine 1-19" parent="PlatformDecorations" index="55" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-19" parent="PlatformDecorations" index="55" instance=ExtResource( 7 )]
 
 position = Vector2( 25850, -7950 )
 
-[node name="Flaggomine 1-20" parent="PlatformDecorations" index="56" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-20" parent="PlatformDecorations" index="56" instance=ExtResource( 7 )]
 
 position = Vector2( 25950, -7950 )
 
-[node name="Flaggomine 1-21" parent="PlatformDecorations" index="57" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-21" parent="PlatformDecorations" index="57" instance=ExtResource( 7 )]
 
 position = Vector2( 26050, -7950 )
 
-[node name="Flaggomine 1-22" parent="PlatformDecorations" index="58" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-22" parent="PlatformDecorations" index="58" instance=ExtResource( 7 )]
 
 position = Vector2( 26150, -7950 )
 
-[node name="Flaggomine 1-23" parent="PlatformDecorations" index="59" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-23" parent="PlatformDecorations" index="59" instance=ExtResource( 7 )]
 
 position = Vector2( 26250, -7950 )
 
-[node name="Flaggomine 1-24" parent="PlatformDecorations" index="60" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-24" parent="PlatformDecorations" index="60" instance=ExtResource( 7 )]
 
 position = Vector2( 26350, -7950 )
 
-[node name="Flaggomine 1-25" parent="PlatformDecorations" index="61" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-25" parent="PlatformDecorations" index="61" instance=ExtResource( 7 )]
 
 position = Vector2( 26450, -7950 )
 
-[node name="Flaggomine 1-26" parent="PlatformDecorations" index="62" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-26" parent="PlatformDecorations" index="62" instance=ExtResource( 7 )]
 
 position = Vector2( 26500, -8450 )
 
-[node name="Flaggomine 1-15" parent="PlatformDecorations" index="63" instance=ExtResource( 6 )]
+[node name="Flaggomine 1-15" parent="PlatformDecorations" index="63" instance=ExtResource( 7 )]
 
 position = Vector2( 25800, -6250 )
 
-[node name="Flaggomine Red Flag17" parent="PlatformDecorations" index="64" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag17" parent="PlatformDecorations" index="64" instance=ExtResource( 10 )]
 
 position = Vector2( 26200, -6150 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag18" parent="PlatformDecorations" index="65" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag18" parent="PlatformDecorations" index="65" instance=ExtResource( 10 )]
 
 position = Vector2( 25150, -6650 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag19" parent="PlatformDecorations" index="66" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag19" parent="PlatformDecorations" index="66" instance=ExtResource( 10 )]
 
 position = Vector2( 24500, -7050 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag20" parent="PlatformDecorations" index="67" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag20" parent="PlatformDecorations" index="67" instance=ExtResource( 10 )]
 
 position = Vector2( 24400, -7350 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag21" parent="PlatformDecorations" index="68" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag21" parent="PlatformDecorations" index="68" instance=ExtResource( 10 )]
 
 position = Vector2( 24200, -7750 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag22" parent="PlatformDecorations" index="69" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag22" parent="PlatformDecorations" index="69" instance=ExtResource( 10 )]
 
 position = Vector2( 26100, -8650 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag24" parent="PlatformDecorations" index="70" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag24" parent="PlatformDecorations" index="70" instance=ExtResource( 10 )]
 
 position = Vector2( 25600, -8650 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag25" parent="PlatformDecorations" index="71" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag25" parent="PlatformDecorations" index="71" instance=ExtResource( 10 )]
 
 position = Vector2( 24450, -9350 )
 scale = Vector2( 1, 1 )
 
-[node name="Flaggomine Red Flag23" parent="PlatformDecorations" index="72" instance=ExtResource( 9 )]
+[node name="Flaggomine Red Flag23" parent="PlatformDecorations" index="72" instance=ExtResource( 10 )]
 
 position = Vector2( 25500, -7950 )
 scale = Vector2( 1, 1 )
 
 [node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
 
-editor/display_folded = true
-
 [node name="FirstTrigger" type="Position2D" parent="CameraChangingTriggers" index="0"]
 
 position = Vector2( 250, -150 )
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 _sections_unfolded = [ "Transform" ]
 range_x = 500
 range_y = 500
@@ -432,27 +460,27 @@ y_check = 1
 
 [node name="MobClearTrigger" type="Node2D" parent="CameraChangingTriggers" index="1"]
 
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 count_to_emit = 1
 
 [node name="MobClearTrigger2" type="Node2D" parent="CameraChangingTriggers" index="2"]
 
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 count_to_emit = 2
 
 [node name="MobClearTrigger3" type="Node2D" parent="CameraChangingTriggers" index="3"]
 
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 count_to_emit = 4
 
 [node name="MobClearTrigger4" type="Node2D" parent="CameraChangingTriggers" index="4"]
 
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 count_to_emit = 4
 
 [node name="MobClearTrigger5" type="Node2D" parent="CameraChangingTriggers" index="5"]
 
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 count_to_emit = 2
 
 [node name="OtherPlatforms" type="Node2D" parent="." index="8"]
@@ -461,11 +489,10 @@ count_to_emit = 2
 
 [node name="Structures" type="Node2D" parent="." index="10"]
 
-editor/display_folded = true
-
-[node name="Terminal Upgrade" parent="Structures" index="0" instance=ExtResource( 12 )]
+[node name="Terminal Upgrade" parent="Structures" index="0" instance=ExtResource( 13 )]
 
 position = Vector2( 24781.9, -9750 )
+enter_scene_path = "res://Scenes/Levels/Level 1-14.tscn"
 
 [node name="Enemies" type="Node2D" parent="." index="11"]
 
@@ -473,315 +500,315 @@ editor/display_folded = true
 
 [node name="Flaggomine" type="Node2D" parent="Enemies" index="0"]
 
-[node name="Flaggomine Mine" parent="Enemies/Flaggomine" index="0" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine" parent="Enemies/Flaggomine" index="0" instance=ExtResource( 14 )]
 
 position = Vector2( 1400, -1800 )
 
-[node name="Flaggomine Mine2" parent="Enemies/Flaggomine" index="1" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine2" parent="Enemies/Flaggomine" index="1" instance=ExtResource( 14 )]
 
 position = Vector2( 1900, -1800 )
 
-[node name="Flaggomine Mine3" parent="Enemies/Flaggomine" index="2" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine3" parent="Enemies/Flaggomine" index="2" instance=ExtResource( 14 )]
 
 position = Vector2( 2100, -1800 )
 
-[node name="Flaggomine Mine4" parent="Enemies/Flaggomine" index="3" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine4" parent="Enemies/Flaggomine" index="3" instance=ExtResource( 14 )]
 
 position = Vector2( 2300, -1800 )
 
-[node name="Flaggomine Mine5" parent="Enemies/Flaggomine" index="4" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine5" parent="Enemies/Flaggomine" index="4" instance=ExtResource( 14 )]
 
 position = Vector2( 4000, -1800 )
 
-[node name="Flaggomine Mine6" parent="Enemies/Flaggomine" index="5" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine6" parent="Enemies/Flaggomine" index="5" instance=ExtResource( 14 )]
 
 position = Vector2( 4250, -1800 )
 
-[node name="Flaggomine Mine7" parent="Enemies/Flaggomine" index="6" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine7" parent="Enemies/Flaggomine" index="6" instance=ExtResource( 14 )]
 
 position = Vector2( 5900, -1800 )
 
-[node name="Flaggomine Mine8" parent="Enemies/Flaggomine" index="7" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine8" parent="Enemies/Flaggomine" index="7" instance=ExtResource( 14 )]
 
 position = Vector2( 6200, -1800 )
 
-[node name="Flaggomine Mine9" parent="Enemies/Flaggomine" index="8" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine9" parent="Enemies/Flaggomine" index="8" instance=ExtResource( 14 )]
 
 position = Vector2( 6600, -1800 )
 
-[node name="Flaggomine Mine10" parent="Enemies/Flaggomine" index="9" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine10" parent="Enemies/Flaggomine" index="9" instance=ExtResource( 14 )]
 
 position = Vector2( 7900, -2200 )
 
-[node name="Flaggomine Mine11" parent="Enemies/Flaggomine" index="10" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine11" parent="Enemies/Flaggomine" index="10" instance=ExtResource( 14 )]
 
 position = Vector2( 9000, -2600 )
 
-[node name="Flaggomine Mine12" parent="Enemies/Flaggomine" index="11" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine12" parent="Enemies/Flaggomine" index="11" instance=ExtResource( 14 )]
 
 position = Vector2( 10300, -3000 )
 
-[node name="Flaggomine Mine13" parent="Enemies/Flaggomine" index="12" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine13" parent="Enemies/Flaggomine" index="12" instance=ExtResource( 14 )]
 
 position = Vector2( 10500, -3000 )
 
-[node name="Flaggomine Mine14" parent="Enemies/Flaggomine" index="13" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine14" parent="Enemies/Flaggomine" index="13" instance=ExtResource( 14 )]
 
 position = Vector2( 10700, -3000 )
 
-[node name="Flaggomine Mine15" parent="Enemies/Flaggomine" index="14" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine15" parent="Enemies/Flaggomine" index="14" instance=ExtResource( 14 )]
 
 position = Vector2( 11300, -3200 )
 
-[node name="Flaggomine Mine16" parent="Enemies/Flaggomine" index="15" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine16" parent="Enemies/Flaggomine" index="15" instance=ExtResource( 14 )]
 
 position = Vector2( 11500, -3200 )
 
-[node name="Flaggomine Mine17" parent="Enemies/Flaggomine" index="16" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine17" parent="Enemies/Flaggomine" index="16" instance=ExtResource( 14 )]
 
 position = Vector2( 12500, -3700 )
 
-[node name="Flaggomine Mine18" parent="Enemies/Flaggomine" index="17" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine18" parent="Enemies/Flaggomine" index="17" instance=ExtResource( 14 )]
 
 position = Vector2( 12700, -3700 )
 
-[node name="Flaggomine Mine19" parent="Enemies/Flaggomine" index="18" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine19" parent="Enemies/Flaggomine" index="18" instance=ExtResource( 14 )]
 
 position = Vector2( 12900, -3300 )
 
-[node name="Flaggomine Mine20" parent="Enemies/Flaggomine" index="19" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine20" parent="Enemies/Flaggomine" index="19" instance=ExtResource( 14 )]
 
 position = Vector2( 14050, -3800 )
 
-[node name="Flaggomine Mine21" parent="Enemies/Flaggomine" index="20" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine21" parent="Enemies/Flaggomine" index="20" instance=ExtResource( 14 )]
 
 position = Vector2( 15400, -4400 )
 
-[node name="Flaggomine Mine22" parent="Enemies/Flaggomine" index="21" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine22" parent="Enemies/Flaggomine" index="21" instance=ExtResource( 14 )]
 
 position = Vector2( 16000, -4400 )
 
-[node name="Flaggomine Mine23" parent="Enemies/Flaggomine" index="22" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine23" parent="Enemies/Flaggomine" index="22" instance=ExtResource( 14 )]
 
 position = Vector2( 16400, -4800 )
 
-[node name="Flaggomine Mine24" parent="Enemies/Flaggomine" index="23" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine24" parent="Enemies/Flaggomine" index="23" instance=ExtResource( 14 )]
 
 position = Vector2( 16950, -4800 )
 
-[node name="Flaggomine Mine25" parent="Enemies/Flaggomine" index="24" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine25" parent="Enemies/Flaggomine" index="24" instance=ExtResource( 14 )]
 
 position = Vector2( 17150, -4800 )
 
-[node name="Flaggomine Mine26" parent="Enemies/Flaggomine" index="25" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine26" parent="Enemies/Flaggomine" index="25" instance=ExtResource( 14 )]
 
 position = Vector2( 16350, -5400 )
 
-[node name="Flaggomine Mine27" parent="Enemies/Flaggomine" index="26" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine27" parent="Enemies/Flaggomine" index="26" instance=ExtResource( 14 )]
 
 position = Vector2( 16550, -5400 )
 
-[node name="Flaggomine Mine28" parent="Enemies/Flaggomine" index="27" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine28" parent="Enemies/Flaggomine" index="27" instance=ExtResource( 14 )]
 
 position = Vector2( 16750, -5400 )
 
-[node name="Flaggomine Mine29" parent="Enemies/Flaggomine" index="28" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine29" parent="Enemies/Flaggomine" index="28" instance=ExtResource( 14 )]
 
 position = Vector2( 17300, -5700 )
 
-[node name="Flaggomine Mine30" parent="Enemies/Flaggomine" index="29" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine30" parent="Enemies/Flaggomine" index="29" instance=ExtResource( 14 )]
 
 position = Vector2( 17550, -5700 )
 
-[node name="Flaggomine Mine31" parent="Enemies/Flaggomine" index="30" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine31" parent="Enemies/Flaggomine" index="30" instance=ExtResource( 14 )]
 
 position = Vector2( 18200, -4800 )
 
-[node name="Flaggomine Mine32" parent="Enemies/Flaggomine" index="31" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine32" parent="Enemies/Flaggomine" index="31" instance=ExtResource( 14 )]
 
 position = Vector2( 18400, -4800 )
 
-[node name="Flaggomine Mine33" parent="Enemies/Flaggomine" index="32" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine33" parent="Enemies/Flaggomine" index="32" instance=ExtResource( 14 )]
 
 position = Vector2( 18600, -4800 )
 
-[node name="Flaggomine Mine34" parent="Enemies/Flaggomine" index="33" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine34" parent="Enemies/Flaggomine" index="33" instance=ExtResource( 14 )]
 
 position = Vector2( 19450, -4900 )
 
-[node name="Flaggomine Mine35" parent="Enemies/Flaggomine" index="34" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine35" parent="Enemies/Flaggomine" index="34" instance=ExtResource( 14 )]
 
 position = Vector2( 19650, -4900 )
 
-[node name="Flaggomine Mine36" parent="Enemies/Flaggomine" index="35" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine36" parent="Enemies/Flaggomine" index="35" instance=ExtResource( 14 )]
 
 position = Vector2( 19850, -4900 )
 
-[node name="Flaggomine Mine37" parent="Enemies/Flaggomine" index="36" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine37" parent="Enemies/Flaggomine" index="36" instance=ExtResource( 14 )]
 
 position = Vector2( 20250, -4900 )
 
-[node name="Flaggomine Mine38" parent="Enemies/Flaggomine" index="37" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine38" parent="Enemies/Flaggomine" index="37" instance=ExtResource( 14 )]
 
 position = Vector2( 20450, -4900 )
 
-[node name="Flaggomine Mine39" parent="Enemies/Flaggomine" index="38" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine39" parent="Enemies/Flaggomine" index="38" instance=ExtResource( 14 )]
 
 position = Vector2( 20700, -5400 )
 
-[node name="Flaggomine Mine40" parent="Enemies/Flaggomine" index="39" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine40" parent="Enemies/Flaggomine" index="39" instance=ExtResource( 14 )]
 
 position = Vector2( 19700, -5700 )
 
-[node name="Flaggomine Mine41" parent="Enemies/Flaggomine" index="40" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine41" parent="Enemies/Flaggomine" index="40" instance=ExtResource( 14 )]
 
 position = Vector2( 21250, -4900 )
 
-[node name="Flaggomine Mine42" parent="Enemies/Flaggomine" index="41" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine42" parent="Enemies/Flaggomine" index="41" instance=ExtResource( 14 )]
 
 position = Vector2( 22500, -5100 )
 
-[node name="Flaggomine Mine43" parent="Enemies/Flaggomine" index="42" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine43" parent="Enemies/Flaggomine" index="42" instance=ExtResource( 14 )]
 
 position = Vector2( 22700, -5250 )
 
-[node name="Flaggomine Mine44" parent="Enemies/Flaggomine" index="43" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine44" parent="Enemies/Flaggomine" index="43" instance=ExtResource( 14 )]
 
 position = Vector2( 22850, -5100 )
 
-[node name="Flaggomine Mine45" parent="Enemies/Flaggomine" index="44" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine45" parent="Enemies/Flaggomine" index="44" instance=ExtResource( 14 )]
 
 position = Vector2( 23100, -5100 )
 
-[node name="Flaggomine Mine46" parent="Enemies/Flaggomine" index="45" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine46" parent="Enemies/Flaggomine" index="45" instance=ExtResource( 14 )]
 
 position = Vector2( 23250, -5300 )
 
-[node name="Flaggomine Mine47" parent="Enemies/Flaggomine" index="46" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine47" parent="Enemies/Flaggomine" index="46" instance=ExtResource( 14 )]
 
 position = Vector2( 23400, -5100 )
 
-[node name="Flaggomine Mine48" parent="Enemies/Flaggomine" index="47" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine48" parent="Enemies/Flaggomine" index="47" instance=ExtResource( 14 )]
 
 position = Vector2( 23650, -5100 )
 
-[node name="Flaggomine Mine49" parent="Enemies/Flaggomine" index="48" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine49" parent="Enemies/Flaggomine" index="48" instance=ExtResource( 14 )]
 
 position = Vector2( 23800, -5300 )
 
-[node name="Flaggomine Mine50" parent="Enemies/Flaggomine" index="49" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine50" parent="Enemies/Flaggomine" index="49" instance=ExtResource( 14 )]
 
 position = Vector2( 23950, -5100 )
 
-[node name="Flaggomine Mine51" parent="Enemies/Flaggomine" index="50" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine51" parent="Enemies/Flaggomine" index="50" instance=ExtResource( 14 )]
 
 position = Vector2( 25100, -5500 )
 
-[node name="Flaggomine Mine52" parent="Enemies/Flaggomine" index="51" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine52" parent="Enemies/Flaggomine" index="51" instance=ExtResource( 14 )]
 
 position = Vector2( 25400, -5500 )
 
-[node name="Flaggomine Mine53" parent="Enemies/Flaggomine" index="52" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine53" parent="Enemies/Flaggomine" index="52" instance=ExtResource( 14 )]
 
 position = Vector2( 26050, -5500 )
 
-[node name="Flaggomine Mine54" parent="Enemies/Flaggomine" index="53" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine54" parent="Enemies/Flaggomine" index="53" instance=ExtResource( 14 )]
 
 position = Vector2( 26500, -5900 )
 
-[node name="Flaggomine Mine55" parent="Enemies/Flaggomine" index="54" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine55" parent="Enemies/Flaggomine" index="54" instance=ExtResource( 14 )]
 
 position = Vector2( 25800, -6300 )
 
-[node name="Flaggomine Mine56" parent="Enemies/Flaggomine" index="55" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine56" parent="Enemies/Flaggomine" index="55" instance=ExtResource( 14 )]
 
 position = Vector2( 24900, -6800 )
 
-[node name="Flaggomine Mine57" parent="Enemies/Flaggomine" index="56" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine57" parent="Enemies/Flaggomine" index="56" instance=ExtResource( 14 )]
 
 position = Vector2( 24900, -6950 )
 
-[node name="Flaggomine Mine58" parent="Enemies/Flaggomine" index="57" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine58" parent="Enemies/Flaggomine" index="57" instance=ExtResource( 14 )]
 
 position = Vector2( 24650, -6900 )
 
-[node name="Flaggomine Mine59" parent="Enemies/Flaggomine" index="58" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine59" parent="Enemies/Flaggomine" index="58" instance=ExtResource( 14 )]
 
 position = Vector2( 24900, -7800 )
 
-[node name="Flaggomine Mine60" parent="Enemies/Flaggomine" index="59" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine60" parent="Enemies/Flaggomine" index="59" instance=ExtResource( 14 )]
 
 position = Vector2( 25750, -8000 )
 
-[node name="Flaggomine Mine61" parent="Enemies/Flaggomine" index="60" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine61" parent="Enemies/Flaggomine" index="60" instance=ExtResource( 14 )]
 
 position = Vector2( 25850, -8000 )
 
-[node name="Flaggomine Mine62" parent="Enemies/Flaggomine" index="61" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine62" parent="Enemies/Flaggomine" index="61" instance=ExtResource( 14 )]
 
 position = Vector2( 25950, -8000 )
 
-[node name="Flaggomine Mine63" parent="Enemies/Flaggomine" index="62" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine63" parent="Enemies/Flaggomine" index="62" instance=ExtResource( 14 )]
 
 position = Vector2( 26050, -8000 )
 
-[node name="Flaggomine Mine64" parent="Enemies/Flaggomine" index="63" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine64" parent="Enemies/Flaggomine" index="63" instance=ExtResource( 14 )]
 
 position = Vector2( 26150, -8000 )
 
-[node name="Flaggomine Mine65" parent="Enemies/Flaggomine" index="64" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine65" parent="Enemies/Flaggomine" index="64" instance=ExtResource( 14 )]
 
 position = Vector2( 26250, -8000 )
 
-[node name="Flaggomine Mine66" parent="Enemies/Flaggomine" index="65" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine66" parent="Enemies/Flaggomine" index="65" instance=ExtResource( 14 )]
 
 position = Vector2( 26350, -8000 )
 
-[node name="Flaggomine Mine67" parent="Enemies/Flaggomine" index="66" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine67" parent="Enemies/Flaggomine" index="66" instance=ExtResource( 14 )]
 
 position = Vector2( 26450, -8000 )
 
-[node name="Flaggomine Mine68" parent="Enemies/Flaggomine" index="67" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine68" parent="Enemies/Flaggomine" index="67" instance=ExtResource( 14 )]
 
 position = Vector2( 26500, -8500 )
 
-[node name="Flaggomine Mine69" parent="Enemies/Flaggomine" index="68" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine69" parent="Enemies/Flaggomine" index="68" instance=ExtResource( 14 )]
 
 position = Vector2( 25350, -9100 )
 
-[node name="Flaggomine Mine70" parent="Enemies/Flaggomine" index="69" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine70" parent="Enemies/Flaggomine" index="69" instance=ExtResource( 14 )]
 
 position = Vector2( 25350, -9200 )
 
-[node name="Flaggomine Mine71" parent="Enemies/Flaggomine" index="70" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine71" parent="Enemies/Flaggomine" index="70" instance=ExtResource( 14 )]
 
 position = Vector2( 25350, -9300 )
 
-[node name="Flaggomine Mine72" parent="Enemies/Flaggomine" index="71" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine72" parent="Enemies/Flaggomine" index="71" instance=ExtResource( 14 )]
 
 position = Vector2( 25150, -9300 )
 
-[node name="Flaggomine Mine73" parent="Enemies/Flaggomine" index="72" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine73" parent="Enemies/Flaggomine" index="72" instance=ExtResource( 14 )]
 
 position = Vector2( 25150, -9200 )
 
-[node name="Flaggomine Mine74" parent="Enemies/Flaggomine" index="73" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine74" parent="Enemies/Flaggomine" index="73" instance=ExtResource( 14 )]
 
 position = Vector2( 25150, -9100 )
 
-[node name="Flaggomine Mine75" parent="Enemies/Flaggomine" index="74" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine75" parent="Enemies/Flaggomine" index="74" instance=ExtResource( 14 )]
 
 position = Vector2( 24950, -9100 )
 
-[node name="Flaggomine Mine76" parent="Enemies/Flaggomine" index="75" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine76" parent="Enemies/Flaggomine" index="75" instance=ExtResource( 14 )]
 
 position = Vector2( 24950, -9200 )
 
-[node name="Flaggomine Mine77" parent="Enemies/Flaggomine" index="76" instance=ExtResource( 13 )]
+[node name="Flaggomine Mine77" parent="Enemies/Flaggomine" index="76" instance=ExtResource( 14 )]
 
 position = Vector2( 24950, -9300 )
 
-[node name="Cliffy" parent="Enemies" index="1" instance=ExtResource( 14 )]
+[node name="Cliffy" parent="Enemies" index="1" instance=ExtResource( 15 )]
 
 position = Vector2( 7250, -2250 )
 _sections_unfolded = [ "Transform" ]
@@ -790,7 +817,7 @@ activate_range_y = 500
 min_pos_x = 5800
 max_pos_x = 7950
 
-[node name="Cliffy2" parent="Enemies" index="2" instance=ExtResource( 14 )]
+[node name="Cliffy2" parent="Enemies" index="2" instance=ExtResource( 15 )]
 
 position = Vector2( 14750, -4050 )
 _sections_unfolded = [ "Transform" ]
@@ -799,7 +826,7 @@ activate_range_y = 600
 min_pos_x = 13800
 max_pos_x = 15000
 
-[node name="Cliffy3" parent="Enemies" index="3" instance=ExtResource( 14 )]
+[node name="Cliffy3" parent="Enemies" index="3" instance=ExtResource( 15 )]
 
 position = Vector2( 15350, -4450 )
 _sections_unfolded = [ "Transform" ]
@@ -808,7 +835,7 @@ activate_range_y = 1000
 min_pos_x = 14500
 max_pos_x = 16000
 
-[node name="Cliffy4" parent="Enemies" index="4" instance=ExtResource( 14 )]
+[node name="Cliffy4" parent="Enemies" index="4" instance=ExtResource( 15 )]
 
 position = Vector2( 17450, -5750 )
 _sections_unfolded = [ "Transform" ]
@@ -817,7 +844,7 @@ activate_range_y = 1000
 min_pos_x = 16550
 max_pos_x = 18300
 
-[node name="Cliffy5" parent="Enemies" index="5" instance=ExtResource( 14 )]
+[node name="Cliffy5" parent="Enemies" index="5" instance=ExtResource( 15 )]
 
 position = Vector2( 18350, -5450 )
 _sections_unfolded = [ "Transform" ]
@@ -826,7 +853,7 @@ activate_range_y = 700
 min_pos_x = 17900
 max_pos_x = 18650
 
-[node name="Cliffy6" parent="Enemies" index="6" instance=ExtResource( 14 )]
+[node name="Cliffy6" parent="Enemies" index="6" instance=ExtResource( 15 )]
 
 position = Vector2( 18400, -4850 )
 _sections_unfolded = [ "Transform" ]
@@ -835,7 +862,7 @@ activate_range_y = 100
 min_pos_x = 17950
 max_pos_x = 18650
 
-[node name="Cliffy7" parent="Enemies" index="7" instance=ExtResource( 14 )]
+[node name="Cliffy7" parent="Enemies" index="7" instance=ExtResource( 15 )]
 
 position = Vector2( 16900, -4850 )
 _sections_unfolded = [ "Transform" ]
@@ -844,7 +871,7 @@ activate_range_y = 100
 min_pos_x = 16400
 max_pos_x = 17400
 
-[node name="Cliffy8" parent="Enemies" index="8" instance=ExtResource( 14 )]
+[node name="Cliffy8" parent="Enemies" index="8" instance=ExtResource( 15 )]
 
 position = Vector2( 20150, -4950 )
 _sections_unfolded = [ "Transform" ]
@@ -853,7 +880,7 @@ activate_range_y = 100
 min_pos_x = 19700
 max_pos_x = 20850
 
-[node name="Cliffy9" parent="Enemies" index="9" instance=ExtResource( 14 )]
+[node name="Cliffy9" parent="Enemies" index="9" instance=ExtResource( 15 )]
 
 position = Vector2( 20200, -5800 )
 _sections_unfolded = [ "Transform" ]
@@ -862,7 +889,7 @@ activate_range_y = 950
 min_pos_x = 19400
 max_pos_x = 20650
 
-[node name="Cliffy10" parent="Enemies" index="10" instance=ExtResource( 14 )]
+[node name="Cliffy10" parent="Enemies" index="10" instance=ExtResource( 15 )]
 
 position = Vector2( 20900, -5900 )
 _sections_unfolded = [ "Transform" ]
@@ -871,7 +898,7 @@ activate_range_y = 1050
 min_pos_x = 20500
 max_pos_x = 21500
 
-[node name="Cliffy11" parent="Enemies" index="11" instance=ExtResource( 14 )]
+[node name="Cliffy11" parent="Enemies" index="11" instance=ExtResource( 15 )]
 
 position = Vector2( 21400, -4950 )
 _sections_unfolded = [ "Transform" ]
@@ -880,7 +907,7 @@ activate_range_y = 100
 min_pos_x = 21200
 max_pos_x = 21500
 
-[node name="Cliffy12" parent="Enemies" index="12" instance=ExtResource( 14 )]
+[node name="Cliffy12" parent="Enemies" index="12" instance=ExtResource( 15 )]
 
 position = Vector2( 24150, -5900 )
 _sections_unfolded = [ "Transform" ]
@@ -889,7 +916,7 @@ activate_range_y = 900
 min_pos_x = 22500
 max_pos_x = 24700
 
-[node name="Cliffy13" parent="Enemies" index="13" instance=ExtResource( 14 )]
+[node name="Cliffy13" parent="Enemies" index="13" instance=ExtResource( 15 )]
 
 position = Vector2( 23200, -5550 )
 _sections_unfolded = [ "Transform" ]
@@ -905,7 +932,7 @@ max_pos_x = 24700
 z_index = 1
 _sections_unfolded = [ "Z Index" ]
 
-[node name="PauseButton" parent="." index="14" instance=ExtResource( 15 )]
+[node name="PauseButton" parent="." index="14" instance=ExtResource( 16 )]
 
 [node name="Position2D" type="Position2D" parent="." index="15"]
 
@@ -913,29 +940,43 @@ position = Vector2( 25650, -10350 )
 scale = Vector2( 10, 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 8150 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -3000 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 16150 ]]
+[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 8150 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -4800 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger2" to="FollowingCamera" method="update_right_limit" binds= [ 18850 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 16150 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger" to="Writings/Go1" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger2" to="FollowingCamera" method="update_top_limit" binds= [ -6100 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="FollowingCamera" method="update_right_limit" binds= [ 21700 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger2" to="FollowingCamera" method="update_right_limit" binds= [ 18850 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger2" to="Writings/Go2" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="Writings/Go4" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="FollowingCamera" method="update_top_limit" binds= [ -6150 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="FollowingCamera" method="update_right_limit" binds= [ 24750 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="FollowingCamera" method="update_right_limit" binds= [ 21700 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="Writings/Go3" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="Writings/Go5" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="FollowingCamera" method="update_top_limit" binds= [ -6350 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger5" to="FollowingCamera" method="update_right_limit" binds= [ 26650 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="FollowingCamera" method="update_right_limit" binds= [ 24750 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="Writings/Go6" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger5" to="FollowingCamera" method="update_top_limit" binds= [ -10350 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger5" to="FollowingCamera" method="update_right_limit" binds= [ 26650 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger5" to="Writings/Go7" method="activate"]
 
 [connection signal="defeated" from="Enemies/Cliffy" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
 
