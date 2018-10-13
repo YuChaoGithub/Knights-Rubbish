@@ -2,9 +2,9 @@ extends Node2D
 
 const SPEED_X = 200
 
-const DAMAGE = 50
-const SLOW_RATE = 0.25
-const SLOW_DURATION = 1.5
+const DAMAGE = 30
+const SLOW_RATE = 0.2
+const SLOW_DURATION = 2.0
 
 const LIFETIME = 15.0
 
@@ -30,8 +30,12 @@ func _process(delta):
 func on_attack_hit(area):
 	if area.is_in_group("hero"):
 		var character = area.get_node("..")
+		var args = {
+			multiplier = SLOW_RATE,
+			duration = SLOW_DURATION
+		}
 		character.damaged(DAMAGE)
-		character.speed_changed(SLOW_RATE, SLOW_DURATION)
+		character.speed_changed(args)
 
 		var new_spark = spark.instance()
 		$"..".add_child(new_spark)

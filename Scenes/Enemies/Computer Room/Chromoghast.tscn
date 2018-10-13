@@ -272,7 +272,7 @@ tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 16 ]
+"values": [ 2 ]
 }
 tracks/21/type = "value"
 tracks/21/path = NodePath("Damage Area:position")
@@ -542,7 +542,7 @@ tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 16 ]
+"values": [ 2 ]
 }
 tracks/21/type = "value"
 tracks/21/path = NodePath("Damage Area:position")
@@ -812,7 +812,7 @@ tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 16 ]
+"values": [ 2 ]
 }
 tracks/21/type = "value"
 tracks/21/path = NodePath("Damage Area:position")
@@ -1082,7 +1082,7 @@ tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 16 ]
+"values": [ 2 ]
 }
 tracks/21/type = "value"
 tracks/21/path = NodePath("Damage Area:position")
@@ -1099,6 +1099,7 @@ tracks/21/keys = {
 
 [sub_resource type="Animation" id=6]
 
+resource_name = "Throw Shuriken"
 length = 1.5
 loop = false
 step = 0.1
@@ -1352,7 +1353,7 @@ tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 16 ]
+"values": [ 2 ]
 }
 tracks/21/type = "value"
 tracks/21/path = NodePath("Damage Area:position")
@@ -1369,6 +1370,7 @@ tracks/21/keys = {
 
 [sub_resource type="Animation" id=7]
 
+resource_name = "Turn Invisible"
 length = 0.5
 loop = false
 step = 0.1
@@ -1639,6 +1641,7 @@ tracks/21/keys = {
 
 [sub_resource type="Animation" id=8]
 
+resource_name = "Turn Opaque"
 length = 0.5
 loop = false
 step = 0.1
@@ -1889,10 +1892,10 @@ tracks/20/loop_wrap = true
 tracks/20/imported = false
 tracks/20/enabled = true
 tracks/20/keys = {
-"times": PoolRealArray( 0, 0.2 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 16 ]
+"values": [ 0, 2, 2 ]
 }
 tracks/21/type = "value"
 tracks/21/path = NodePath("Damage Area:position")
@@ -2162,7 +2165,7 @@ tracks/20/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 16 ]
+"values": [ 2 ]
 }
 tracks/21/type = "value"
 tracks/21/path = NodePath("Damage Area:position")
@@ -2190,7 +2193,6 @@ scale = Vector2( 1.2, 1.2 )
 [node name="Damage Area" type="Area2D" parent="Animation" index="0"]
 
 editor/display_folded = true
-position = Vector2( -0.608183, 13.1678 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -2214,7 +2216,6 @@ position = Vector2( 57.5, 70.0202 )
 [node name="Body" type="Sprite" parent="Animation" index="2"]
 
 editor/display_folded = true
-position = Vector2( -0.0941992, 8.10125 )
 texture = ExtResource( 2 )
 
 [node name="Left Eye" type="Sprite" parent="Animation/Body" index="0"]
@@ -2225,7 +2226,7 @@ texture = ExtResource( 3 )
 
 [node name="Eyeball" type="Sprite" parent="Animation/Body/Left Eye" index="0"]
 
-position = Vector2( 1.566, 1.45298 )
+position = Vector2( 2.03697, 0.678991 )
 texture = ExtResource( 4 )
 
 [node name="Right Eye" type="Sprite" parent="Animation/Body" index="1"]
@@ -2236,27 +2237,25 @@ texture = ExtResource( 5 )
 
 [node name="Eyeball" type="Sprite" parent="Animation/Body/Right Eye" index="0"]
 
-position = Vector2( -0.819321, -1.10899 )
+position = Vector2( -0.905327, -0.678991 )
 texture = ExtResource( 6 )
 
 [node name="Left Hand" type="Sprite" parent="Animation/Body" index="2"]
 
-position = Vector2( -40.8249, 67.9164 )
-rotation = 0.103848
+position = Vector2( -39.9022, 69.5448 )
 texture = ExtResource( 7 )
 offset = Vector2( 11.9962, 8.89974 )
 
 [node name="Shuriken" type="Sprite" parent="Animation/Body" index="3"]
 
-position = Vector2( 43.716, 70.1383 )
-rotation = -1.72372
+position = Vector2( 41.0731, 70.4644 )
+rotation = -1.5708
 texture = ExtResource( 8 )
 
 [node name="Right Hand" type="Sprite" parent="Animation/Body" index="4"]
 
 editor/display_folded = true
-position = Vector2( 58.5323, 47.2883 )
-rotation = -0.152922
+position = Vector2( 59.1972, 50.138 )
 texture = ExtResource( 9 )
 offset = Vector2( -9.75728, 9.18977 )
 
@@ -2281,9 +2280,9 @@ anims/Die = SubResource( 2 )
 anims/Hurt = SubResource( 3 )
 anims/Still = SubResource( 4 )
 anims/Stunned = SubResource( 5 )
-anims/ThrowShuriken = SubResource( 6 )
-anims/TurnInvisible = SubResource( 7 )
-anims/TurnOpaque = SubResource( 8 )
+"anims/Throw Shuriken" = SubResource( 6 )
+"anims/Turn Invisible" = SubResource( 7 )
+"anims/Turn Opaque" = SubResource( 8 )
 anims/Walk = SubResource( 9 )
 blend_times = [  ]
 

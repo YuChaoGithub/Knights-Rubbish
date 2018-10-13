@@ -22,7 +22,7 @@ var activated = false
 
 var target_detect = preload("res://Scripts/Algorithms/TargetDetection.gd")
 
-onready var hero_manager = $"../../../../HeroManager"
+onready var hero_manager = $"../../HeroManager"
 onready var movement_pattern = preload("res://Scripts/Movements/StraightLineMovement.gd").new(0, SPEED_Y)
 onready var animator = $"Animation/AnimationPlayer"
 

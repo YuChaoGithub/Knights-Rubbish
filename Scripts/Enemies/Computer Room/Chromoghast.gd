@@ -7,12 +7,14 @@ extends Node2D
 # 4. Face the nearest character. Throws shuriken.
 # 5. Repeat 1.
 
+signal defeated
+
 enum { NONE, FIRST_MOVE, TURN_INVISIBLE, INVISIBLE_MOVE, TURN_OPAQUE, SECOND_MOVE, THROW_ANIM, THROW }
 
 export(int) var activate_range_x = 1500
 export(int) var activate_range_y = 1000
 
-const MAX_HEALTH = 300
+const MAX_HEALTH = 350
 
 # Movement.
 const SPEED_X = 250
@@ -155,4 +157,5 @@ func knocked_back(vel_x, vel_y, fade_rate):
 
 func die():
 	ec.die()
+	emit_signal("defeated")
 	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

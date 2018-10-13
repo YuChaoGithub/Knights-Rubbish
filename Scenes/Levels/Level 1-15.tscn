@@ -1,0 +1,126 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/HeroManager.gd" type="Script" id=2]
+[ext_resource path="res://Tilesets/Light Blue Wall.tres" type="TileSet" id=3]
+[ext_resource path="res://Tilesets/Dark Blue Floor.tres" type="TileSet" id=4]
+[ext_resource path="res://Scenes/Enemies/Computer Room/iSnail.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Clockwork Fox.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Chromoghast.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Windy Meteory.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=9]
+
+[node name="Game Level" type="Node2D" index="0"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="FollowingCamera" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 1300, -750 )
+z_index = 1
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", "Z Index" ]
+drag_margin_right = 0.4
+drag_margin_left = -0.1
+drag_margin_top = -0.1
+drag_margin_bottom = 1.1
+left_limit = 50
+bottom_limit = -50
+
+[node name="HeroManager" type="Position2D" parent="." index="1"]
+
+position = Vector2( 300, -350 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WhiteWall" type="TileMap" parent="." index="2"]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 500, 500 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 0
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -131073, 0, 0, -196608, 0, 0, -196607, 0, 3, -196606, 0, 65537, -196605, 0, 65538, -196604, 0, 65538, -196603, 0, 65536, -196602, 0, 0, -65537, 0, 0, -131072, 0, 65536, -131071, 0, 4, -131070, 0, 65537, -131069, 0, 3, -131068, 0, 3, -131067, 0, 3, -131066, 0, 0, -1, 0, 0, -65536, 0, 2, -65535, 0, 65539, -65534, 0, 65540, -65533, 0, 65537, -65532, 0, 65537, -65531, 0, 3, -65530, 0, 0, 65535, 0, 0, 0, 0, 65541, 1, 0, 65541, 2, 0, 65541, 3, 0, 65541, 4, 0, 65541, 5, 0, 65541, 6, 0, 0 )
+_sections_unfolded = [ "Cell", "Collision", "Transform", "Visibility" ]
+
+[node name="BackgroundDecorations" type="Node2D" parent="." index="3"]
+
+[node name="Platform" type="TileMap" parent="." index="4"]
+
+mode = 0
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 100, 100 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 4
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -196592, 0, 196609, -196591, 0, 196612, -196590, 0, 131076, -196589, 0, 131076, -196588, 0, 131076, -196587, 0, 3, -196586, 0, 3, -196585, 0, 131077, -196584, 0, 0, -131072, 0, 196609, -131071, 0, 131077, -131070, 0, 131077, -131069, 0, 131076, -131068, 0, 131077, -131067, 0, 131076, -131066, 0, 131077, -131065, 0, 3, -131064, 0, 131076, -131063, 0, 131076, -131062, 0, 3, -131061, 0, 131076, -131060, 0, 196613, -131059, 0, 196613, -131058, 0, 131076, -131057, 0, 131077, -131056, 0, 65537, -131055, 0, 4, -131054, 0, 5, -131053, 0, 4, -131052, 0, 65538, -131051, 0, 5, -131050, 0, 5, -131049, 0, 65538, -131048, 0, 131075, -65536, 0, 131072, -65535, 0, 196614, -65534, 0, 131073, -65533, 0, 131078, -65532, 0, 131078, -65531, 0, 196614, -65530, 0, 131073, -65529, 0, 196614, -65528, 0, 131073, -65527, 0, 131073, -65526, 0, 131078, -65525, 0, 131078, -65524, 0, 131073, -65523, 0, 131073, -65522, 0, 196614, -65521, 0, 196614, -65520, 0, 196614, -65519, 0, 131078, -65518, 0, 196614, -65517, 0, 131078, -65516, 0, 196614, -65515, 0, 131073, -65514, 0, 131078, -65513, 0, 131073, -65512, 0, 196611 )
+_sections_unfolded = [ "Cell", "Collision" ]
+
+[node name="Writings" type="Node2D" parent="." index="5"]
+
+_sections_unfolded = [ "Z Index" ]
+
+[node name="PlatformDecorations" type="Node2D" parent="." index="6"]
+
+[node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
+
+[node name="OtherPlatforms" type="Node2D" parent="." index="8"]
+
+[node name="HealingMachines" type="Node2D" parent="." index="9"]
+
+[node name="Structures" type="Node2D" parent="." index="10"]
+
+[node name="Enemies" type="Node2D" parent="." index="11"]
+
+[node name="iSnail" parent="Enemies" index="0" instance=ExtResource( 5 )]
+
+position = Vector2( 1000, -300 )
+activate_range_y = 1600
+
+[node name="Clockwork Fox" parent="Enemies" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( 1300, -300 )
+
+[node name="Chromoghast" parent="Enemies" index="2" instance=ExtResource( 7 )]
+
+position = Vector2( 1100, -350 )
+
+[node name="Windy Meteory" parent="Enemies" index="3" instance=ExtResource( 8 )]
+
+position = Vector2( 1600, -1150 )
+
+[node name="PowerUps" type="Node2D" parent="." index="12"]
+
+[node name="ForegroundDecorations" type="Node2D" parent="." index="13"]
+
+z_index = 1
+_sections_unfolded = [ "Z Index" ]
+
+[node name="PauseButton" parent="." index="14" instance=ExtResource( 9 )]
+
+[node name="Position2D" type="Position2D" parent="." index="15"]
+
+scale = Vector2( 10, 10 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+

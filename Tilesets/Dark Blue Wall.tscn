@@ -4,9 +4,11 @@
 
 [node name="Node2D" type="Node2D" index="0"]
 
+modulate = Color( 0.745098, 0.745098, 0.745098, 1 )
+_sections_unfolded = [ "Visibility" ]
+
 [node name="Wall" type="Sprite" parent="." index="0"]
 
-modulate = Color( 0.53125, 0.53125, 0.53125, 1 )
 position = Vector2( 1250, -500 )
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Offset", "Region", "Transform", "Visibility" ]

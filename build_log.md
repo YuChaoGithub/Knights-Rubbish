@@ -982,9 +982,13 @@ Comment: I do daily commits further on.
 * Redesigned Godotbos.
 * Completed level 1-14. Not tested yet.
 
+[2018.10.13]
+* Tested level 1-14.
+* Added Light Blue Wall, Dark Blue Floor.
+* Set up iSnail, Chromoghast and Clockworkfox.
+
 [Next]
-* Test level 1-14.
-* Make level 1-15.
+* Complete designing level 1-15.
 
 To Do List:
 * Clean up cringy texts.

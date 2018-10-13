@@ -6,12 +6,14 @@ extends KinematicBody2D
 # 3. Spit 3 Hour glasses.
 # 4. Repeat 1.
 
+signal defeated
+
 enum { NONE, MOVE, SPIT, SPIT_INTERVAL }
 
 export(int) var activate_range_x = 1600
-export(int) var activate_range_x = 1600
+export(int) var activate_range_y = 1600
 
-const MAX_HEALTH = 250
+const MAX_HEALTH = 400
 
 # Movement.
 const SPEED_X = 50
@@ -126,4 +128,5 @@ func knocked_back(vel_x, vel_y, fade_rate):
 
 func die():
     ec.die()
+    emit_signal("defeated")
     die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

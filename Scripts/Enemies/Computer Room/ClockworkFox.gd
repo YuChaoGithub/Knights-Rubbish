@@ -4,13 +4,15 @@ extends Node2D
 # 1. When player goes near activate.
 # 2. Shoot fire for certain intervals.
 
+signal defeated
+
 enum { NONE, ACTIVATE_ANIM, STILL, FIRE }
 
 export(int) var activate_range_x = 800
 export(int) var activate_range_y = 1000
 export(float) var still_interval = 2.5
 
-const MAX_HEALTH = 300
+const MAX_HEALTH = 800
 
 # Attack.
 const DAMAGE = 10
@@ -101,4 +103,5 @@ func slowed(multiplier, duration):
 func die():
 	cancel_activate_timer()
 	ec.die()
+	emit_signal("defeated")
 	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
