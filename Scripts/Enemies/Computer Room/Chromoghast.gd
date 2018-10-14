@@ -14,6 +14,9 @@ enum { NONE, FIRST_MOVE, TURN_INVISIBLE, INVISIBLE_MOVE, TURN_OPAQUE, SECOND_MOV
 export(int) var activate_range_x = 1500
 export(int) var activate_range_y = 1000
 
+export(int) var left_limit
+export(int) var right_limit
+
 const MAX_HEALTH = 350
 
 # Movement.
@@ -65,6 +68,7 @@ func _process(delta):
 				throw_shuriken()
 
 	ec.perform_knock_back_movement(delta)
+	global_position.x = clamp(global_position.x, left_limit, right_limit)
 
 func change_status(to_status):
 	ec.change_status(to_status)

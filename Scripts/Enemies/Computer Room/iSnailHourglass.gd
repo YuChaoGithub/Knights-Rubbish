@@ -2,9 +2,9 @@ extends Node2D
 
 const SPEED_X = 200
 
-const DAMAGE = 30
+const DAMAGE = 20
 const SLOW_RATE = 0.2
-const SLOW_DURATION = 2.0
+const SLOW_DURATION = 1.2
 
 const LIFETIME = 15.0
 

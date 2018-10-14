@@ -987,8 +987,12 @@ Comment: I do daily commits further on.
 * Added Light Blue Wall, Dark Blue Floor.
 * Set up iSnail, Chromoghast and Clockworkfox.
 
+[2018.10.14]
+* Completed level 1-15. Tested.
+* Designed plenty of blue wall decoration tiles.
+
 [Next]
-* Complete designing level 1-15.
+* Design level 1-16.
 
 To Do List:
 * Clean up cringy texts.
