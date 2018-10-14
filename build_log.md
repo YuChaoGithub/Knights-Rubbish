@@ -513,7 +513,7 @@ Milestone: Completed scripting all enemies in Computer Room.
 * Reset project settings for Godot 3.0.
 * Redesigned physics layers and reassign the layers/masks of existing physic bodies.
 * Redesigned render layers and reassign the layers/masks.
-Comment: Seems that it's not that hard to migrate to Godot 3.0. Worth it!
+Comment: Seems like it's not that hard to migrate to Godot 3.0. Worth it!
 
 **Commit**
 
@@ -572,7 +572,7 @@ Comment: Spent a lot of time doing nothing for the past couple of weeks.
 * Finally completed laying out the Triggers for (1-1).
 * Passing Triggers' "Lesser Y" condition now will only be triggered when the character with the greatest Y becoming lower than its y value.
 * Fixed some animation bugs.
-Comment: Aside for weekly commits, now all big milestones should be committed upon achieving.
+Comment: Aside from weekly commits, now all big milestones should be committed upon achieving.
 
 **Commit**
 
@@ -1018,6 +1018,3 @@ Polishing:
 * [Animation] Radiogugu watch out skill blinks blue.
 * [Script] Slow down walking animation while slowed.
 * [Effect] Jumping dust for characters.
-* [Graphics] Dark level: wears mining hat (or simply a light on a stick).
-* [Easter Egg] Phone screen showing "Tall as the Sky" and "kQq".
-* [Easter Egg] The real fake door. (www.fakedoors.com)
