@@ -1,10 +1,72 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=68 format=2]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/HeroManager.gd" type="Script" id=2]
 [ext_resource path="res://Tilesets/Light Blue Wall.tres" type="TileSet" id=3]
-[ext_resource path="res://Tilesets/Dark Blue Floor.tres" type="TileSet" id=4]
-[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/Square8.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon1.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/Square7.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon2.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/Square4.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon3.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/7.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/9.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/6.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon4.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/Square2.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon5.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon6.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/3.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/5.png" type="Texture" id=18]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/8.png" type="Texture" id=19]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon7.png" type="Texture" id=20]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/Square6.png" type="Texture" id=21]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon8.png" type="Texture" id=22]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon9.png" type="Texture" id=23]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/1.png" type="Texture" id=24]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/2.png" type="Texture" id=25]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/13.png" type="Texture" id=26]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/11.png" type="Texture" id=27]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/15.png" type="Texture" id=28]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/12.png" type="Texture" id=29]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/14.png" type="Texture" id=30]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/16.png" type="Texture" id=31]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/4.png" type="Texture" id=32]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon11.png" type="Texture" id=33]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/Square1.png" type="Texture" id=34]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon10.png" type="Texture" id=35]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon12.png" type="Texture" id=36]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/Square3.png" type="Texture" id=37]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon13.png" type="Texture" id=38]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/Square5.png" type="Texture" id=39]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon14.png" type="Texture" id=40]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon15.png" type="Texture" id=41]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon16.png" type="Texture" id=42]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon17.png" type="Texture" id=43]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon18.png" type="Texture" id=44]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon19.png" type="Texture" id=45]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon20.png" type="Texture" id=46]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon21.png" type="Texture" id=47]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon22.png" type="Texture" id=48]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/10.png" type="Texture" id=49]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon23.png" type="Texture" id=50]
+[ext_resource path="res://Graphics/background/Light Blue Decorations/icon24.png" type="Texture" id=51]
+[ext_resource path="res://Tilesets/Dark Blue Floor.tres" type="TileSet" id=52]
+[ext_resource path="res://Graphics/Structure/Terminal Upgrade/Arrow.png" type="Texture" id=53]
+[ext_resource path="res://Scenes/Structures/GoArrows.tscn" type="PackedScene" id=54]
+[ext_resource path="res://Graphics/UI/White Straight Arrow.png" type="Texture" id=55]
+[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=56]
+[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=57]
+[ext_resource path="res://Scenes/Platforms/Enemy Blocking Platform.tscn" type="PackedScene" id=58]
+[ext_resource path="res://Scenes/Structures/ScreenCrackOut.tscn" type="PackedScene" id=59]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Windy Meteory.tscn" type="PackedScene" id=60]
+[ext_resource path="res://Scenes/Power Ups/Mystery Box.tscn" type="PackedScene" id=61]
+[ext_resource path="res://Scenes/Power Ups/Healing Potion.tscn" type="PackedScene" id=62]
+[ext_resource path="res://Scripts/Utils/MobActivator.gd" type="Script" id=63]
+[ext_resource path="res://Scenes/Enemies/Computer Room/iSnail.tscn" type="PackedScene" id=64]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Clockwork Fox.tscn" type="PackedScene" id=65]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Chromoghast.tscn" type="PackedScene" id=66]
+[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=67]
 
 [node name="Game Level" type="Node2D" index="0"]
 
@@ -12,9 +74,11 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="FollowingCamera" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 1350, -800 )
+position = Vector2( 1300, -750 )
 z_index = 1
 _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", "Z Index" ]
+drag_margin_right = 0.4
+drag_margin_left = -0.1
 drag_margin_top = -0.1
 drag_margin_bottom = 1.1
 left_limit = 50
@@ -22,7 +86,7 @@ bottom_limit = -50
 
 [node name="HeroManager" type="Position2D" parent="." index="1"]
 
-position = Vector2( 2070, -580 )
+position = Vector2( 450, -500 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
@@ -44,15 +108,615 @@ collision_layer = 0
 collision_mask = 0
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -196608, 0, 0, -196607, 0, 65539, -196606, 0, 65537, -196605, 0, 65540, -196604, 0, 65538, -196603, 0, 0, -131072, 0, 0, -131071, 0, 65538, -131070, 0, 65540, -131069, 0, 65537, -131068, 0, 4, -131067, 0, 0, -65536, 0, 0, -65535, 0, 3, -65534, 0, 65537, -65533, 0, 65540, -65532, 0, 65540, -65531, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 5 )
+tile_data = PoolIntArray( -524263, 0, 0, -524262, 0, 0, -524261, 0, 0, -524260, 0, 0, -524259, 0, 0, -524258, 0, 0, -524257, 0, 0, -524256, 0, 0, -524255, 0, 0, -524254, 0, 0, -524253, 0, 0, -524252, 0, 0, -524251, 0, 0, -524250, 0, 0, -524249, 0, 0, -524248, 0, 0, -524247, 0, 0, -524246, 0, 0, -458727, 0, 0, -458726, 0, 65538, -458725, 0, 3, -458724, 0, 1, -458723, 0, 65538, -458722, 0, 1, -458721, 0, 65536, -458720, 0, 65536, -458719, 0, 1, -458718, 0, 65536, -458717, 0, 65537, -458716, 0, 65539, -458715, 0, 0, -458714, 0, 65537, -458713, 0, 0, -458712, 0, 65539, -458711, 0, 2, -458710, 0, 0, -393191, 0, 0, -393190, 0, 65538, -393189, 0, 65536, -393188, 0, 65536, -393187, 0, 3, -393186, 0, 0, -393185, 0, 1, -393184, 0, 65537, -393183, 0, 0, -393182, 0, 0, -393181, 0, 3, -393180, 0, 1, -393179, 0, 0, -393178, 0, 2, -393177, 0, 65538, -393176, 0, 3, -393175, 0, 65537, -393174, 0, 0, -327655, 0, 0, -327654, 0, 2, -327653, 0, 65539, -327652, 0, 65539, -327651, 0, 65539, -327650, 0, 3, -327649, 0, 65539, -327648, 0, 1, -327647, 0, 65539, -327646, 0, 65536, -327645, 0, 2, -327644, 0, 65538, -327643, 0, 3, -327642, 0, 2, -327641, 0, 1, -327640, 0, 65536, -327639, 0, 65539, -327638, 0, 0, -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -262138, 0, 0, -262137, 0, 0, -262136, 0, 0, -262135, 0, 0, -262134, 0, 0, -262133, 0, 0, -262132, 0, 0, -262131, 0, 0, -262130, 0, 0, -262129, 0, 0, -262128, 0, 0, -262127, 0, 0, -262126, 0, 0, -262125, 0, 0, -262124, 0, 0, -262123, 0, 0, -262122, 0, 0, -262121, 0, 0, -262120, 0, 0, -262119, 0, 0, -262118, 0, 1, -262117, 0, 65537, -262116, 0, 65538, -262115, 0, 65538, -262114, 0, 65537, -262113, 0, 3, -262112, 0, 0, -262111, 0, 3, -262110, 0, 0, -262109, 0, 65536, -262108, 0, 65539, -262107, 0, 0, -262106, 0, 65539, -262105, 0, 65539, -262104, 0, 65538, -262103, 0, 2, -262102, 0, 0, -131073, 0, 0, -196608, 0, 65537, -196607, 0, 65539, -196606, 0, 65537, -196605, 0, 65540, -196604, 0, 65538, -196603, 0, 65539, -196602, 0, 65538, -196601, 0, 65537, -196600, 0, 3, -196599, 0, 1, -196598, 0, 3, -196597, 0, 65537, -196596, 0, 0, -196595, 0, 2, -196594, 0, 1, -196593, 0, 3, -196592, 0, 1, -196591, 0, 65539, -196590, 0, 0, -196589, 0, 0, -196588, 0, 1, -196587, 0, 3, -196586, 0, 0, -196585, 0, 0, -196584, 0, 1, -196583, 0, 2, -196582, 0, 65537, -196581, 0, 65537, -196580, 0, 2, -196579, 0, 65539, -196578, 0, 2, -196577, 0, 65537, -196576, 0, 1, -196575, 0, 65537, -196574, 0, 65537, -196573, 0, 65538, -196572, 0, 65537, -196571, 0, 65539, -196570, 0, 65536, -196569, 0, 65539, -196568, 0, 3, -196567, 0, 0, -196566, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 65538, -131070, 0, 65540, -131069, 0, 65537, -131068, 0, 4, -131067, 0, 65536, -131066, 0, 2, -131065, 0, 2, -131064, 0, 65537, -131063, 0, 65539, -131062, 0, 2, -131061, 0, 65539, -131060, 0, 65539, -131059, 0, 65539, -131058, 0, 65537, -131057, 0, 0, -131056, 0, 65539, -131055, 0, 65538, -131054, 0, 65536, -131053, 0, 3, -131052, 0, 1, -131051, 0, 65536, -131050, 0, 65537, -131049, 0, 65539, -131048, 0, 65539, -131047, 0, 65536, -131046, 0, 65536, -131045, 0, 2, -131044, 0, 3, -131043, 0, 0, -131042, 0, 2, -131041, 0, 65539, -131040, 0, 65536, -131039, 0, 1, -131038, 0, 3, -131037, 0, 2, -131036, 0, 65537, -131035, 0, 65536, -131034, 0, 65536, -131033, 0, 65539, -131032, 0, 1, -131031, 0, 3, -131030, 0, 0, -1, 0, 0, -65536, 0, 65538, -65535, 0, 3, -65534, 0, 65537, -65533, 0, 65540, -65532, 0, 65540, -65531, 0, 65537, -65530, 0, 65536, -65529, 0, 3, -65528, 0, 1, -65527, 0, 65537, -65526, 0, 0, -65525, 0, 3, -65524, 0, 2, -65523, 0, 1, -65522, 0, 65537, -65521, 0, 65536, -65520, 0, 65536, -65519, 0, 65536, -65518, 0, 0, -65517, 0, 3, -65516, 0, 65538, -65515, 0, 2, -65514, 0, 65536, -65513, 0, 0, -65512, 0, 65537, -65511, 0, 65537, -65510, 0, 3, -65509, 0, 65539, -65508, 0, 65537, -65507, 0, 65537, -65506, 0, 65538, -65505, 0, 65536, -65504, 0, 2, -65503, 0, 65537, -65502, 0, 65537, -65501, 0, 65537, -65500, 0, 1, -65499, 0, 65537, -65498, 0, 65538, -65497, 0, 65536, -65496, 0, 1, -65495, 0, 65539, -65494, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 0, 10, 0, 0, 11, 0, 0, 12, 0, 0, 13, 0, 0, 14, 0, 0, 15, 0, 0, 16, 0, 0, 17, 0, 0, 18, 0, 0, 19, 0, 0, 20, 0, 0, 21, 0, 0, 22, 0, 0, 23, 0, 0, 24, 0, 0, 25, 0, 0, 26, 0, 0, 27, 0, 0, 28, 0, 0, 29, 0, 0, 30, 0, 0, 31, 0, 0, 32, 0, 0, 33, 0, 0, 34, 0, 0, 35, 0, 0, 36, 0, 0, 37, 0, 0, 38, 0, 0, 39, 0, 0, 40, 0, 0, 41, 0, 0, 42, 0, 0 )
 _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="BackgroundDecorations" type="Node2D" parent="." index="3"]
 
-[node name="Platform" type="TileMap" parent="." index="4"]
+editor/display_folded = true
+
+[node name="Square8" type="Sprite" parent="BackgroundDecorations" index="0"]
+
+editor/display_folded = true
+position = Vector2( 1750, -950 )
+texture = ExtResource( 4 )
+
+[node name="icon1" type="Sprite" parent="BackgroundDecorations/Square8" index="0"]
+
+modulate = Color( 0.894531, 0.894531, 0.894531, 1 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Square7" type="Sprite" parent="BackgroundDecorations" index="1"]
+
+editor/display_folded = true
+position = Vector2( 1900, -950 )
+texture = ExtResource( 6 )
+
+[node name="icon2" type="Sprite" parent="BackgroundDecorations/Square7" index="0"]
+
+texture = ExtResource( 7 )
+
+[node name="Square4" type="Sprite" parent="BackgroundDecorations" index="2"]
+
+editor/display_folded = true
+position = Vector2( 1750, -800 )
+texture = ExtResource( 8 )
+
+[node name="icon3" type="Sprite" parent="BackgroundDecorations/Square4" index="0"]
+
+texture = ExtResource( 9 )
+
+[node name="7" type="Sprite" parent="BackgroundDecorations" index="3"]
+
+position = Vector2( 1900, -800 )
+texture = ExtResource( 10 )
+
+[node name="9" type="Sprite" parent="BackgroundDecorations" index="4"]
+
+position = Vector2( 2050, -950 )
+texture = ExtResource( 11 )
+
+[node name="6" type="Sprite" parent="BackgroundDecorations" index="5"]
+
+position = Vector2( 2050, -800 )
+texture = ExtResource( 12 )
+
+[node name="Square9" type="Sprite" parent="BackgroundDecorations" index="6"]
+
+position = Vector2( 2950, -1050 )
+texture = ExtResource( 6 )
+
+[node name="icon4" type="Sprite" parent="BackgroundDecorations/Square9" index="0"]
+
+texture = ExtResource( 13 )
+
+[node name="Square2" type="Sprite" parent="BackgroundDecorations" index="7"]
+
+position = Vector2( 3100, -900 )
+texture = ExtResource( 14 )
+
+[node name="icon5" type="Sprite" parent="BackgroundDecorations/Square2" index="0"]
+
+texture = ExtResource( 15 )
+
+[node name="Square5" type="Sprite" parent="BackgroundDecorations" index="8"]
+
+position = Vector2( 3250, -1050 )
+texture = ExtResource( 8 )
+
+[node name="icon6" type="Sprite" parent="BackgroundDecorations/Square5" index="0"]
+
+texture = ExtResource( 16 )
+
+[node name="3" type="Sprite" parent="BackgroundDecorations" index="9"]
+
+position = Vector2( 3250, -900 )
+texture = ExtResource( 17 )
+
+[node name="5" type="Sprite" parent="BackgroundDecorations" index="10"]
+
+position = Vector2( 3100, -1050 )
+texture = ExtResource( 18 )
+
+[node name="8" type="Sprite" parent="BackgroundDecorations" index="11"]
+
+position = Vector2( 2950, -900 )
+texture = ExtResource( 19 )
+
+[node name="Square3" type="Sprite" parent="BackgroundDecorations" index="12"]
+
+position = Vector2( 4700, -550 )
+texture = ExtResource( 14 )
+
+[node name="icon7" type="Sprite" parent="BackgroundDecorations/Square3" index="0"]
+
+texture = ExtResource( 20 )
+
+[node name="Square6" type="Sprite" parent="BackgroundDecorations" index="13"]
+
+position = Vector2( 4850, -400 )
+texture = ExtResource( 21 )
+
+[node name="icon8" type="Sprite" parent="BackgroundDecorations/Square6" index="0"]
+
+texture = ExtResource( 22 )
+
+[node name="Square10" type="Sprite" parent="BackgroundDecorations" index="14"]
+
+position = Vector2( 5000, -400 )
+texture = ExtResource( 6 )
+
+[node name="icon9" type="Sprite" parent="BackgroundDecorations/Square10" index="0"]
+
+texture = ExtResource( 23 )
+
+[node name="1" type="Sprite" parent="BackgroundDecorations" index="15"]
+
+position = Vector2( 4700, -400 )
+texture = ExtResource( 24 )
+
+[node name="2" type="Sprite" parent="BackgroundDecorations" index="16"]
+
+position = Vector2( 4850, -550 )
+texture = ExtResource( 25 )
+
+[node name="4" type="Sprite" parent="BackgroundDecorations" index="17"]
+
+position = Vector2( 5150, -550 )
+texture = ExtResource( 17 )
+
+[node name="10" type="Sprite" parent="BackgroundDecorations" index="18"]
+
+position = Vector2( 5000, -550 )
+texture = ExtResource( 11 )
+
+[node name="13" type="Sprite" parent="BackgroundDecorations" index="19"]
+
+position = Vector2( 5150, -400 )
+texture = ExtResource( 26 )
+
+[node name="11" type="Sprite" parent="BackgroundDecorations" index="20"]
+
+position = Vector2( 5300, -400 )
+texture = ExtResource( 27 )
+
+[node name="15" type="Sprite" parent="BackgroundDecorations" index="21"]
+
+position = Vector2( 5300, -550 )
+texture = ExtResource( 28 )
+
+[node name="12" type="Sprite" parent="BackgroundDecorations" index="22"]
+
+position = Vector2( 6400, -1000 )
+texture = ExtResource( 29 )
+
+[node name="14" type="Sprite" parent="BackgroundDecorations" index="23"]
+
+position = Vector2( 6550, -850 )
+texture = ExtResource( 30 )
+
+[node name="16" type="Sprite" parent="BackgroundDecorations" index="24"]
+
+position = Vector2( 6400, -850 )
+texture = ExtResource( 31 )
+
+[node name="17" type="Sprite" parent="BackgroundDecorations" index="25"]
+
+position = Vector2( 6550, -1000 )
+texture = ExtResource( 32 )
+
+[node name="18" type="Sprite" parent="BackgroundDecorations" index="26"]
+
+position = Vector2( 6700, -850 )
+texture = ExtResource( 24 )
+
+[node name="19" type="Sprite" parent="BackgroundDecorations" index="27"]
+
+position = Vector2( 6700, -1000 )
+texture = ExtResource( 10 )
+
+[node name="Square11" type="Sprite" parent="BackgroundDecorations" index="28"]
+
+position = Vector2( 6850, -850 )
+texture = ExtResource( 6 )
+
+[node name="icon11" type="Sprite" parent="BackgroundDecorations" index="29"]
+
+position = Vector2( 6850, -850 )
+texture = ExtResource( 33 )
+
+[node name="20" type="Sprite" parent="BackgroundDecorations" index="30"]
+
+position = Vector2( 6850, -1000 )
+texture = ExtResource( 12 )
+
+[node name="21" type="Sprite" parent="BackgroundDecorations" index="31"]
+
+position = Vector2( 8100, -950 )
+texture = ExtResource( 11 )
+
+[node name="22" type="Sprite" parent="BackgroundDecorations" index="32"]
+
+position = Vector2( 8250, -800 )
+texture = ExtResource( 26 )
+
+[node name="23" type="Sprite" parent="BackgroundDecorations" index="33"]
+
+position = Vector2( 8400, -950 )
+texture = ExtResource( 28 )
+
+[node name="24" type="Sprite" parent="BackgroundDecorations" index="34"]
+
+position = Vector2( 8550, -950 )
+texture = ExtResource( 30 )
+
+[node name="25" type="Sprite" parent="BackgroundDecorations" index="35"]
+
+position = Vector2( 8550, -800 )
+texture = ExtResource( 17 )
+
+[node name="Square1" type="Sprite" parent="BackgroundDecorations" index="36"]
+
+position = Vector2( 8100, -800 )
+texture = ExtResource( 34 )
+
+[node name="icon10" type="Sprite" parent="BackgroundDecorations/Square1" index="0"]
+
+texture = ExtResource( 35 )
+
+[node name="Square13" type="Sprite" parent="BackgroundDecorations" index="37"]
+
+position = Vector2( 8250, -950 )
+texture = ExtResource( 21 )
+
+[node name="icon12" type="Sprite" parent="BackgroundDecorations/Square13" index="0"]
+
+texture = ExtResource( 36 )
+
+[node name="Square12" type="Sprite" parent="BackgroundDecorations" index="38"]
+
+position = Vector2( 8400, -800 )
+texture = ExtResource( 37 )
+
+[node name="icon13" type="Sprite" parent="BackgroundDecorations/Square12" index="0"]
+
+texture = ExtResource( 38 )
+
+[node name="BackgroundDecorations2" type="Node2D" parent="." index="4"]
+
+editor/display_folded = true
+
+[node name="Square5" type="Sprite" parent="BackgroundDecorations2" index="0"]
+
+position = Vector2( 10300, -650 )
+texture = ExtResource( 39 )
+
+[node name="icon14" type="Sprite" parent="BackgroundDecorations2/Square5" index="0"]
+
+texture = ExtResource( 40 )
+
+[node name="Square6" type="Sprite" parent="BackgroundDecorations2" index="1"]
+
+position = Vector2( 10450, -500 )
+texture = ExtResource( 21 )
+
+[node name="icon15" type="Sprite" parent="BackgroundDecorations2/Square6" index="0"]
+
+texture = ExtResource( 41 )
+
+[node name="11" type="Sprite" parent="BackgroundDecorations2" index="2"]
+
+position = Vector2( 10300, -500 )
+texture = ExtResource( 27 )
+
+[node name="13" type="Sprite" parent="BackgroundDecorations2" index="3"]
+
+position = Vector2( 10450, -650 )
+texture = ExtResource( 26 )
+
+[node name="Square7" type="Sprite" parent="BackgroundDecorations2" index="4"]
+
+position = Vector2( 11700, -300 )
+texture = ExtResource( 6 )
+
+[node name="icon16" type="Sprite" parent="BackgroundDecorations2/Square7" index="0"]
+
+texture = ExtResource( 42 )
+
+[node name="Square4" type="Sprite" parent="BackgroundDecorations2" index="5"]
+
+position = Vector2( 11850, -300 )
+texture = ExtResource( 8 )
+
+[node name="icon17" type="Sprite" parent="BackgroundDecorations2/Square4" index="0"]
+
+texture = ExtResource( 43 )
+
+[node name="15" type="Sprite" parent="BackgroundDecorations2" index="6"]
+
+position = Vector2( 12000, -300 )
+texture = ExtResource( 28 )
+
+[node name="14" type="Sprite" parent="BackgroundDecorations2" index="7"]
+
+position = Vector2( 12150, -300 )
+texture = ExtResource( 26 )
+
+[node name="5" type="Sprite" parent="BackgroundDecorations2" index="8"]
+
+position = Vector2( 12300, -300 )
+texture = ExtResource( 18 )
+
+[node name="4" type="Sprite" parent="BackgroundDecorations2" index="9"]
+
+position = Vector2( 12450, -300 )
+texture = ExtResource( 32 )
+
+[node name="1" type="Sprite" parent="BackgroundDecorations2" index="10"]
+
+position = Vector2( 12600, -300 )
+texture = ExtResource( 24 )
+
+[node name="6" type="Sprite" parent="BackgroundDecorations2" index="11"]
+
+position = Vector2( 12750, -300 )
+texture = ExtResource( 12 )
+
+[node name="Square8" type="Sprite" parent="BackgroundDecorations2" index="12"]
+
+editor/display_folded = true
+position = Vector2( 12900, -300 )
+texture = ExtResource( 6 )
+
+[node name="icon18" type="Sprite" parent="BackgroundDecorations2/Square8" index="0"]
+
+texture = ExtResource( 44 )
+
+[node name="Square9" type="Sprite" parent="BackgroundDecorations2" index="13"]
+
+position = Vector2( 13400, -600 )
+texture = ExtResource( 21 )
+
+[node name="icon19" type="Sprite" parent="BackgroundDecorations2/Square9" index="0"]
+
+texture = ExtResource( 45 )
+
+[node name="Square2" type="Sprite" parent="BackgroundDecorations2" index="14"]
+
+position = Vector2( 13550, -600 )
+texture = ExtResource( 14 )
+
+[node name="icon20" type="Sprite" parent="BackgroundDecorations2/Square2" index="0"]
+
+texture = ExtResource( 46 )
+
+[node name="16" type="Sprite" parent="BackgroundDecorations2" index="15"]
+
+position = Vector2( 13400, -450 )
+texture = ExtResource( 31 )
+
+[node name="12" type="Sprite" parent="BackgroundDecorations2" index="16"]
+
+position = Vector2( 13550, -450 )
+texture = ExtResource( 29 )
+
+[node name="Square3" type="Sprite" parent="BackgroundDecorations2" index="17"]
+
+position = Vector2( 14900, -1150 )
+texture = ExtResource( 14 )
+
+[node name="icon21" type="Sprite" parent="BackgroundDecorations2/Square3" index="0"]
+
+texture = ExtResource( 47 )
+
+[node name="Square10" type="Sprite" parent="BackgroundDecorations2" index="18"]
+
+editor/display_folded = true
+position = Vector2( 15200, -1150 )
+texture = ExtResource( 6 )
+
+[node name="icon22" type="Sprite" parent="BackgroundDecorations2/Square10" index="0"]
+
+texture = ExtResource( 48 )
+
+[node name="3" type="Sprite" parent="BackgroundDecorations2" index="19"]
+
+position = Vector2( 14900, -1000 )
+texture = ExtResource( 17 )
+
+[node name="2" type="Sprite" parent="BackgroundDecorations2" index="20"]
+
+position = Vector2( 15050, -1000 )
+texture = ExtResource( 25 )
+
+[node name="7" type="Sprite" parent="BackgroundDecorations2" index="21"]
+
+position = Vector2( 15200, -1000 )
+texture = ExtResource( 10 )
+
+[node name="8" type="Sprite" parent="BackgroundDecorations2" index="22"]
+
+position = Vector2( 15050, -1150 )
+texture = ExtResource( 19 )
+
+[node name="9" type="Sprite" parent="BackgroundDecorations2" index="23"]
+
+position = Vector2( 17100, -1100 )
+texture = ExtResource( 12 )
+
+[node name="10" type="Sprite" parent="BackgroundDecorations2" index="24"]
+
+position = Vector2( 17350, -1300 )
+texture = ExtResource( 19 )
+
+[node name="17" type="Sprite" parent="BackgroundDecorations2" index="25"]
+
+position = Vector2( 17500, -1100 )
+texture = ExtResource( 11 )
+
+[node name="18" type="Sprite" parent="BackgroundDecorations2" index="26"]
+
+position = Vector2( 17650, -1300 )
+texture = ExtResource( 49 )
+
+[node name="19" type="Sprite" parent="BackgroundDecorations2" index="27"]
+
+position = Vector2( 18300, -1450 )
+texture = ExtResource( 27 )
+
+[node name="20" type="Sprite" parent="BackgroundDecorations2" index="28"]
+
+position = Vector2( 18800, -1700 )
+texture = ExtResource( 26 )
+
+[node name="21" type="Sprite" parent="BackgroundDecorations2" index="29"]
+
+position = Vector2( 18000, -1300 )
+texture = ExtResource( 26 )
+
+[node name="22" type="Sprite" parent="BackgroundDecorations2" index="30"]
+
+position = Vector2( 18500, -1750 )
+texture = ExtResource( 26 )
+
+[node name="23" type="Sprite" parent="BackgroundDecorations2" index="31"]
+
+position = Vector2( 18750, -1500 )
+texture = ExtResource( 29 )
+
+[node name="24" type="Sprite" parent="BackgroundDecorations2" index="32"]
+
+position = Vector2( 18800, -2000 )
+texture = ExtResource( 29 )
+
+[node name="25" type="Sprite" parent="BackgroundDecorations2" index="33"]
+
+position = Vector2( 19050, -1850 )
+texture = ExtResource( 29 )
+
+[node name="26" type="Sprite" parent="BackgroundDecorations2" index="34"]
+
+position = Vector2( 18500, -1250 )
+texture = ExtResource( 27 )
+
+[node name="27" type="Sprite" parent="BackgroundDecorations2" index="35"]
+
+position = Vector2( 18000, -1550 )
+texture = ExtResource( 27 )
+
+[node name="28" type="Sprite" parent="BackgroundDecorations2" index="36"]
+
+position = Vector2( 17900, -1100 )
+texture = ExtResource( 19 )
+
+[node name="29" type="Sprite" parent="BackgroundDecorations2" index="37"]
+
+position = Vector2( 18200, -1150 )
+texture = ExtResource( 30 )
+
+[node name="30" type="Sprite" parent="BackgroundDecorations2" index="38"]
+
+position = Vector2( 18550, -1500 )
+texture = ExtResource( 24 )
+
+[node name="31" type="Sprite" parent="BackgroundDecorations2" index="39"]
+
+position = Vector2( 19150, -2050 )
+texture = ExtResource( 25 )
+
+[node name="32" type="Sprite" parent="BackgroundDecorations2" index="40"]
+
+position = Vector2( 19800, -2300 )
+texture = ExtResource( 24 )
+
+[node name="33" type="Sprite" parent="BackgroundDecorations2" index="41"]
+
+position = Vector2( 19300, -1850 )
+texture = ExtResource( 18 )
+
+[node name="34" type="Sprite" parent="BackgroundDecorations2" index="42"]
+
+position = Vector2( 19600, -2150 )
+texture = ExtResource( 18 )
+
+[node name="35" type="Sprite" parent="BackgroundDecorations2" index="43"]
+
+position = Vector2( 20000, -2550 )
+texture = ExtResource( 18 )
+
+[node name="36" type="Sprite" parent="BackgroundDecorations2" index="44"]
+
+position = Vector2( 19050, -1650 )
+texture = ExtResource( 10 )
+
+[node name="37" type="Sprite" parent="BackgroundDecorations2" index="45"]
+
+position = Vector2( 19450, -2100 )
+texture = ExtResource( 10 )
+
+[node name="38" type="Sprite" parent="BackgroundDecorations2" index="46"]
+
+position = Vector2( 20150, -2450 )
+texture = ExtResource( 10 )
+
+[node name="39" type="Sprite" parent="BackgroundDecorations2" index="47"]
+
+position = Vector2( 19600, -1900 )
+texture = ExtResource( 32 )
+
+[node name="40" type="Sprite" parent="BackgroundDecorations2" index="48"]
+
+position = Vector2( 19550, -2400 )
+texture = ExtResource( 32 )
+
+[node name="41" type="Sprite" parent="BackgroundDecorations2" index="49"]
+
+position = Vector2( 20200, -2650 )
+texture = ExtResource( 32 )
+
+[node name="42" type="Sprite" parent="BackgroundDecorations2" index="50"]
+
+position = Vector2( 19300, -1650 )
+texture = ExtResource( 26 )
+
+[node name="43" type="Sprite" parent="BackgroundDecorations2" index="51"]
+
+position = Vector2( 19850, -2550 )
+texture = ExtResource( 26 )
+
+[node name="44" type="Sprite" parent="BackgroundDecorations2" index="52"]
+
+position = Vector2( 20000, -2250 )
+texture = ExtResource( 49 )
+
+[node name="45" type="Sprite" parent="BackgroundDecorations2" index="53"]
+
+position = Vector2( 19400, -2300 )
+texture = ExtResource( 49 )
+
+[node name="46" type="Sprite" parent="BackgroundDecorations2" index="54"]
+
+position = Vector2( 19850, -2100 )
+texture = ExtResource( 11 )
+
+[node name="47" type="Sprite" parent="BackgroundDecorations2" index="55"]
+
+position = Vector2( 18650, -1800 )
+texture = ExtResource( 12 )
+
+[node name="48" type="Sprite" parent="BackgroundDecorations2" index="56"]
+
+position = Vector2( 18150, -1500 )
+texture = ExtResource( 28 )
+
+[node name="49" type="Sprite" parent="BackgroundDecorations2" index="57"]
+
+position = Vector2( 18350, -1300 )
+texture = ExtResource( 31 )
+
+[node name="Square11" type="Sprite" parent="BackgroundDecorations2" index="58"]
+
+position = Vector2( 20050, -2850 )
+texture = ExtResource( 6 )
+
+[node name="icon23" type="Sprite" parent="BackgroundDecorations2/Square11" index="0"]
+
+texture = ExtResource( 50 )
+
+[node name="Square12" type="Sprite" parent="BackgroundDecorations2" index="59"]
+
+position = Vector2( 20250, -2850 )
+texture = ExtResource( 8 )
+
+[node name="icon24" type="Sprite" parent="BackgroundDecorations2/Square12" index="0"]
+
+texture = ExtResource( 51 )
+
+[node name="Platform" type="TileMap" parent="." index="5"]
 
 mode = 0
-tile_set = ExtResource( 4 )
+tile_set = ExtResource( 52 )
 cell_size = Vector2( 100, 100 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -67,37 +731,626 @@ collision_layer = 4
 collision_mask = 0
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -196592, 0, 196609, -196591, 0, 196612, -196590, 0, 131076, -196589, 0, 131076, -196588, 0, 131076, -196587, 0, 3, -196586, 0, 3, -196585, 0, 131077, -196584, 0, 0, -131072, 0, 196609, -131071, 0, 131077, -131070, 0, 131077, -131069, 0, 131076, -131068, 0, 131077, -131067, 0, 131076, -131066, 0, 131077, -131065, 0, 3, -131064, 0, 131076, -131063, 0, 131076, -131062, 0, 3, -131061, 0, 131076, -131060, 0, 196613, -131059, 0, 196613, -131058, 0, 131076, -131057, 0, 131077, -131056, 0, 65537, -131055, 0, 4, -131054, 0, 5, -131053, 0, 4, -131052, 0, 65538, -131051, 0, 5, -131050, 0, 5, -131049, 0, 65538, -131048, 0, 131075, -65536, 0, 131072, -65535, 0, 196614, -65534, 0, 131073, -65533, 0, 131078, -65532, 0, 131078, -65531, 0, 196614, -65530, 0, 131073, -65529, 0, 196614, -65528, 0, 131073, -65527, 0, 131073, -65526, 0, 131078, -65525, 0, 131078, -65524, 0, 131073, -65523, 0, 131073, -65522, 0, 196614, -65521, 0, 196614, -65520, 0, 196614, -65519, 0, 131078, -65518, 0, 196614, -65517, 0, 131078, -65516, 0, 196614, -65515, 0, 131073, -65514, 0, 131078, -65513, 0, 131073, -65512, 0, 196611 )
-_sections_unfolded = [ "Cell", "Collision" ]
+tile_data = PoolIntArray( -2031417, 0, 196609, -2031416, 0, 196613, -2031415, 0, 196612, -2031414, 0, 131076, -2031413, 0, 0, -1965881, 0, 131072, -1965880, 0, 196614, -1965879, 0, 196614, -1965878, 0, 131078, -1965877, 0, 196611, -1834815, 0, 196609, -1834814, 0, 3, -1834813, 0, 131076, -1834812, 0, 196612, -1834811, 0, 0, -1769279, 0, 131072, -1769278, 0, 131078, -1769277, 0, 131078, -1769276, 0, 196614, -1769275, 0, 196611, -1572676, 0, 196609, -1572675, 0, 196612, -1572674, 0, 196613, -1572673, 0, 131077, -1572672, 0, 0, -1507140, 0, 131072, -1507139, 0, 131073, -1507138, 0, 131073, -1507137, 0, 196614, -1507136, 0, 196611, -1376072, 0, 196609, -1376071, 0, 0, -1310536, 0, 131072, -1310535, 0, 196611, -1245005, 0, 196609, -1245004, 0, 0, -1179469, 0, 131072, -1179468, 0, 196611, -1113938, 0, 196609, -1113937, 0, 0, -1048402, 0, 131072, -1048401, 0, 196611, -982870, 0, 196609, -982869, 0, 0, -917334, 0, 131072, -917333, 0, 196611, -786275, 0, 196609, -786274, 0, 3, -786273, 0, 131076, -786272, 0, 196612, -786271, 0, 196612, -786270, 0, 0, -786266, 0, 196609, -786265, 0, 0, -720799, 0, 196609, -720798, 0, 0, -720740, 0, 196609, -720739, 0, 65537, -720738, 0, 4, -720737, 0, 4, -720736, 0, 65540, -720735, 0, 4, -720734, 0, 131075, -720730, 0, 131072, -720729, 0, 196611, -655263, 0, 131072, -655262, 0, 196611, -655228, 0, 196609, -655227, 0, 196613, -655226, 0, 196613, -655225, 0, 0, -655222, 0, 196609, -655221, 0, 196613, -655220, 0, 3, -655219, 0, 0, -655205, 0, 196609, -655204, 0, 65537, -655203, 0, 65541, -655202, 0, 65538, -655201, 0, 4, -655200, 0, 5, -655199, 0, 4, -655198, 0, 6, -589790, 0, 196609, -589789, 0, 196612, -589788, 0, 0, -589784, 0, 196609, -589783, 0, 131077, -589782, 0, 0, -589778, 0, 196609, -589777, 0, 131077, -589776, 0, 131077, -589775, 0, 131077, -589774, 0, 131076, -589773, 0, 131077, -589772, 0, 0, -589767, 0, 196609, -589766, 0, 0, -589692, 0, 131072, -589691, 0, 196614, -589690, 0, 131073, -589689, 0, 196611, -589686, 0, 131072, -589685, 0, 131073, -589684, 0, 131073, -589683, 0, 196611, -589669, 0, 65542, -589668, 0, 4, -589667, 0, 4, -589666, 0, 4, -589665, 0, 65541, -589664, 0, 4, -589663, 0, 4, -589662, 0, 131075, -524254, 0, 131072, -524253, 0, 131074, -524252, 0, 6, -524248, 0, 65542, -524247, 0, 65539, -524246, 0, 196611, -524242, 0, 131072, -524241, 0, 196614, -524240, 0, 196614, -524239, 0, 196614, -524238, 0, 131078, -524237, 0, 131073, -524236, 0, 196611, -524231, 0, 131072, -524230, 0, 196611, -524138, 0, 196609, -524137, 0, 3, -524136, 0, 196612, -524135, 0, 196612, -524134, 0, 131076, -524133, 0, 65537, -524132, 0, 65538, -524131, 0, 4, -524130, 0, 65538, -524129, 0, 65538, -524128, 0, 65541, -524127, 0, 65541, -524126, 0, 131075, -458717, 0, 131072, -458716, 0, 196611, -458712, 0, 131072, -458711, 0, 196611, -458666, 0, 196609, -458665, 0, 196612, -458664, 0, 196613, -458663, 0, 196612, -458662, 0, 196613, -458661, 0, 196613, -458660, 0, 3, -458659, 0, 131076, -458658, 0, 0, -458636, 0, 196609, -458635, 0, 131076, -458634, 0, 196612, -458633, 0, 3, -458632, 0, 196612, -458631, 0, 196613, -458630, 0, 196612, -458629, 0, 131076, -458628, 0, 3, -458627, 0, 196613, -458626, 0, 3, -458625, 0, 131077, -458624, 0, 196612, -458623, 0, 196612, -458622, 0, 196613, -458621, 0, 131076, -458620, 0, 0, -458603, 0, 196609, -458602, 0, 65537, -458601, 0, 65541, -458600, 0, 65540, -458599, 0, 4, -458598, 0, 65541, -458597, 0, 4, -458596, 0, 5, -458595, 0, 4, -458594, 0, 65541, -458593, 0, 5, -458592, 0, 4, -458591, 0, 5, -458590, 0, 6, -393130, 0, 131072, -393129, 0, 131073, -393128, 0, 131073, -393127, 0, 131078, -393126, 0, 196614, -393125, 0, 131078, -393124, 0, 196614, -393123, 0, 196614, -393122, 0, 196611, -393100, 0, 65542, -393099, 0, 65539, -393098, 0, 196614, -393097, 0, 131074, -393096, 0, 65539, -393095, 0, 131073, -393094, 0, 131074, -393093, 0, 65539, -393092, 0, 196614, -393091, 0, 131074, -393090, 0, 65539, -393089, 0, 131078, -393088, 0, 131074, -393087, 0, 65539, -393086, 0, 131078, -393085, 0, 131074, -393084, 0, 131075, -393073, 0, 196609, -393072, 0, 131077, -393071, 0, 196613, -393070, 0, 196612, -393069, 0, 196612, -393068, 0, 196613, -393067, 0, 65537, -393066, 0, 65540, -393065, 0, 5, -393064, 0, 65541, -393063, 0, 65538, -393062, 0, 65540, -393061, 0, 5, -393060, 0, 5, -393059, 0, 65538, -393058, 0, 5, -393057, 0, 4, -393056, 0, 65538, -393055, 0, 65541, -393054, 0, 6, -327651, 0, 196609, -327650, 0, 196613, -327649, 0, 0, -327569, 0, 196609, -327568, 0, 3, -327567, 0, 0, -327564, 0, 131072, -327563, 0, 196611, -327561, 0, 131072, -327560, 0, 196611, -327558, 0, 131072, -327557, 0, 196611, -327555, 0, 131072, -327554, 0, 196611, -327552, 0, 131072, -327551, 0, 196611, -327549, 0, 131072, -327548, 0, 196611, -327537, 0, 131072, -327536, 0, 196614, -327535, 0, 131073, -327534, 0, 131073, -327533, 0, 131078, -327532, 0, 131073, -327531, 0, 196614, -327530, 0, 196614, -327529, 0, 196614, -327528, 0, 196614, -327527, 0, 196614, -327526, 0, 131078, -327525, 0, 131078, -327524, 0, 196614, -327523, 0, 196614, -327522, 0, 131073, -327521, 0, 131073, -327520, 0, 131078, -327519, 0, 131073, -327518, 0, 196611, -262115, 0, 65542, -262114, 0, 65540, -262113, 0, 6, -262081, 0, 196609, -262080, 0, 0, -262076, 0, 196609, -262075, 0, 3, -262074, 0, 196613, -262073, 0, 0, -262069, 0, 196609, -262068, 0, 3, -262067, 0, 196613, -262066, 0, 3, -262065, 0, 131077, -262064, 0, 196612, -262063, 0, 196613, -262062, 0, 131077, -262061, 0, 131076, -262060, 0, 0, -262033, 0, 65542, -262032, 0, 65538, -262031, 0, 6, -131073, 0, 196609, -196608, 0, 3, -196607, 0, 3, -196606, 0, 196612, -196605, 0, 3, -196604, 0, 196612, -196603, 0, 196612, -196602, 0, 131076, -196601, 0, 196612, -196600, 0, 131077, -196599, 0, 3, -196598, 0, 131076, -196597, 0, 131077, -196596, 0, 196612, -196595, 0, 196612, -196594, 0, 131077, -196593, 0, 131077, -196592, 0, 131077, -196591, 0, 131077, -196590, 0, 131076, -196589, 0, 196612, -196588, 0, 3, -196587, 0, 131077, -196586, 0, 196613, -196585, 0, 131076, -196584, 0, 196612, -196583, 0, 131076, -196582, 0, 0, -196579, 0, 131072, -196578, 0, 196614, -196577, 0, 196611, -196545, 0, 131072, -196544, 0, 196611, -196540, 0, 131072, -196539, 0, 131073, -196538, 0, 196614, -196537, 0, 196611, -196533, 0, 131072, -196532, 0, 131078, -196531, 0, 131078, -196530, 0, 196614, -196529, 0, 131073, -196528, 0, 131078, -196527, 0, 131073, -196526, 0, 131078, -196525, 0, 131078, -196524, 0, 196611, -196497, 0, 131072, -196496, 0, 131078, -196495, 0, 196611, -65537, 0, 65542, -131072, 0, 65538, -131071, 0, 65541, -131070, 0, 65541, -131069, 0, 4, -131068, 0, 65538, -131067, 0, 65540, -131066, 0, 65538, -131065, 0, 65538, -131064, 0, 65538, -131063, 0, 65541, -131062, 0, 4, -131061, 0, 4, -131060, 0, 65538, -131059, 0, 65541, -131058, 0, 65540, -131057, 0, 65540, -131056, 0, 65538, -131055, 0, 4, -131054, 0, 5, -131053, 0, 5, -131052, 0, 65538, -131051, 0, 4, -131050, 0, 65541, -131049, 0, 65540, -131048, 0, 65541, -131047, 0, 4, -131046, 0, 131075, -130971, 0, 196609, -130970, 0, 3, -130969, 0, 131077, -130968, 0, 3, -130967, 0, 131076, -130966, 0, 131077, -130965, 0, 196612, -130964, 0, 196612, -130963, 0, 0, -130940, 0, 196609, -130939, 0, 196612, -130938, 0, 196613, -130937, 0, 131076, -130936, 0, 131076, -130935, 0, 196613, -130934, 0, 196612, -130933, 0, 131077, -130932, 0, 196613, -130931, 0, 0, -1, 0, 131072, -65536, 0, 196614, -65535, 0, 131073, -65534, 0, 131078, -65533, 0, 131078, -65532, 0, 131078, -65531, 0, 196614, -65530, 0, 131073, -65529, 0, 196614, -65528, 0, 131073, -65527, 0, 131073, -65526, 0, 131078, -65525, 0, 131078, -65524, 0, 131073, -65523, 0, 131073, -65522, 0, 196614, -65521, 0, 196614, -65520, 0, 196614, -65519, 0, 131078, -65518, 0, 196614, -65517, 0, 131078, -65516, 0, 196614, -65515, 0, 131073, -65514, 0, 131078, -65513, 0, 131073, -65512, 0, 196614, -65511, 0, 196614, -65510, 0, 196611, -65435, 0, 131072, -65434, 0, 131078, -65433, 0, 131078, -65432, 0, 131073, -65431, 0, 131073, -65430, 0, 196614, -65429, 0, 196614, -65428, 0, 131078, -65427, 0, 196611, -65404, 0, 131072, -65403, 0, 131073, -65402, 0, 131073, -65401, 0, 196614, -65400, 0, 196614, -65399, 0, 131073, -65398, 0, 131078, -65397, 0, 131073, -65396, 0, 131073, -65395, 0, 196611 )
+_sections_unfolded = [ "Cell", "Collision", "Transform" ]
 
-[node name="Writings" type="Node2D" parent="." index="5"]
+[node name="Writings" type="Node2D" parent="." index="6"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Z Index" ]
 
-[node name="PlatformDecorations" type="Node2D" parent="." index="6"]
+[node name="Arrow" type="Sprite" parent="Writings" index="0"]
 
-[node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
+modulate = Color( 0.996094, 0.463237, 0.463237, 1 )
+position = Vector2( 450, -500 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 53 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="OtherPlatforms" type="Node2D" parent="." index="8"]
+[node name="Go1" parent="Writings" index="1" instance=ExtResource( 54 )]
 
-[node name="HealingMachines" type="Node2D" parent="." index="9"]
+position = Vector2( 2300, -650 )
 
-[node name="Structures" type="Node2D" parent="." index="10"]
+[node name="Go2" parent="Writings" index="2" instance=ExtResource( 54 )]
 
-[node name="Enemies" type="Node2D" parent="." index="11"]
+position = Vector2( 4900, -1100 )
 
-[node name="PowerUps" type="Node2D" parent="." index="12"]
+[node name="Go3" parent="Writings" index="3" instance=ExtResource( 54 )]
 
-[node name="ForegroundDecorations" type="Node2D" parent="." index="13"]
+position = Vector2( 9150, -950 )
+
+[node name="Go4" parent="Writings" index="4" instance=ExtResource( 54 )]
+
+position = Vector2( 12350, -1050 )
+
+[node name="Go5" parent="Writings" index="5" instance=ExtResource( 54 )]
+
+position = Vector2( 15250, -1350 )
+
+[node name="Square6" type="Sprite" parent="Writings" index="6"]
+
+position = Vector2( 20150, -3400 )
+texture = ExtResource( 21 )
+
+[node name="White Straight Arrow" type="Sprite" parent="Writings/Square6" index="0"]
+
+rotation = -1.59604
+scale = Vector2( 2, 2 )
+texture = ExtResource( 55 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="PlatformDecorations" type="Node2D" parent="." index="7"]
+
+[node name="CameraChangingTriggers" type="Node2D" parent="." index="8"]
+
+[node name="FirstTrigger" type="Position2D" parent="CameraChangingTriggers" index="0"]
+
+position = Vector2( 350, -400 )
+script = ExtResource( 56 )
+range_x = 500
+range_y = 500
+x_check = 2
+y_check = 0
+
+[node name="MobClear1" type="Node2D" parent="CameraChangingTriggers" index="1"]
+
+script = ExtResource( 57 )
+count_to_emit = 3
+
+[node name="MobClear2" type="Node2D" parent="CameraChangingTriggers" index="2"]
+
+script = ExtResource( 57 )
+count_to_emit = 3
+
+[node name="MobClear3" type="Node2D" parent="CameraChangingTriggers" index="3"]
+
+script = ExtResource( 57 )
+count_to_emit = 5
+
+[node name="MobClear4" type="Node2D" parent="CameraChangingTriggers" index="4"]
+
+script = ExtResource( 57 )
+count_to_emit = 5
+
+[node name="MobClear5" type="Node2D" parent="CameraChangingTriggers" index="5"]
+
+script = ExtResource( 57 )
+count_to_emit = 7
+
+[node name="OtherPlatforms" type="Node2D" parent="." index="9"]
+
+editor/display_folded = true
+
+[node name="Enemy Blocking Platform" parent="OtherPlatforms" index="0" instance=ExtResource( 58 )]
+
+position = Vector2( 2700, -250 )
+
+[node name="Enemy Blocking Platform2" parent="OtherPlatforms" index="1" instance=ExtResource( 58 )]
+
+position = Vector2( 2700, -350 )
+
+[node name="Enemy Blocking Platform3" parent="OtherPlatforms" index="2" instance=ExtResource( 58 )]
+
+position = Vector2( 4600, -850 )
+
+[node name="Enemy Blocking Platform4" parent="OtherPlatforms" index="3" instance=ExtResource( 58 )]
+
+position = Vector2( 4600, -950 )
+
+[node name="Enemy Blocking Platform5" parent="OtherPlatforms" index="4" instance=ExtResource( 58 )]
+
+position = Vector2( 5300, -850 )
+
+[node name="Enemy Blocking Platform6" parent="OtherPlatforms" index="5" instance=ExtResource( 58 )]
+
+position = Vector2( 5300, -950 )
+
+[node name="Enemy Blocking Platform7" parent="OtherPlatforms" index="6" instance=ExtResource( 58 )]
+
+position = Vector2( 8600, -650 )
+
+[node name="Enemy Blocking Platform8" parent="OtherPlatforms" index="7" instance=ExtResource( 58 )]
+
+position = Vector2( 8600, -750 )
+
+[node name="Enemy Blocking Platform9" parent="OtherPlatforms" index="8" instance=ExtResource( 58 )]
+
+position = Vector2( 9500, -650 )
+
+[node name="Enemy Blocking Platform10" parent="OtherPlatforms" index="9" instance=ExtResource( 58 )]
+
+position = Vector2( 9500, -750 )
+
+[node name="Enemy Blocking Platform11" parent="OtherPlatforms" index="10" instance=ExtResource( 58 )]
+
+position = Vector2( 10100, -150 )
+
+[node name="Enemy Blocking Platform12" parent="OtherPlatforms" index="11" instance=ExtResource( 58 )]
+
+position = Vector2( 10100, -250 )
+
+[node name="Enemy Blocking Platform13" parent="OtherPlatforms" index="12" instance=ExtResource( 58 )]
+
+position = Vector2( 11000, -150 )
+
+[node name="Enemy Blocking Platform14" parent="OtherPlatforms" index="13" instance=ExtResource( 58 )]
+
+position = Vector2( 11000, -250 )
+
+[node name="Enemy Blocking Platform15" parent="OtherPlatforms" index="14" instance=ExtResource( 58 )]
+
+position = Vector2( 13800, -950 )
+
+[node name="Enemy Blocking Platform16" parent="OtherPlatforms" index="15" instance=ExtResource( 58 )]
+
+position = Vector2( 13800, -1050 )
+
+[node name="Enemy Blocking Platform17" parent="OtherPlatforms" index="16" instance=ExtResource( 58 )]
+
+position = Vector2( 14200, -950 )
+
+[node name="Enemy Blocking Platform18" parent="OtherPlatforms" index="17" instance=ExtResource( 58 )]
+
+position = Vector2( 14200, -1050 )
+
+[node name="Enemy Blocking Platform19" parent="OtherPlatforms" index="18" instance=ExtResource( 58 )]
+
+position = Vector2( 13200, -150 )
+
+[node name="Enemy Blocking Platform20" parent="OtherPlatforms" index="19" instance=ExtResource( 58 )]
+
+position = Vector2( 13200, -250 )
+
+[node name="Enemy Blocking Platform21" parent="OtherPlatforms" index="20" instance=ExtResource( 58 )]
+
+position = Vector2( 14200, -150 )
+
+[node name="Enemy Blocking Platform22" parent="OtherPlatforms" index="21" instance=ExtResource( 58 )]
+
+position = Vector2( 14200, -250 )
+
+[node name="Enemy Blocking Platform23" parent="OtherPlatforms" index="22" instance=ExtResource( 58 )]
+
+position = Vector2( 14300, -550 )
+
+[node name="Enemy Blocking Platform24" parent="OtherPlatforms" index="23" instance=ExtResource( 58 )]
+
+position = Vector2( 14300, -650 )
+
+[node name="Enemy Blocking Platform27" parent="OtherPlatforms" index="24" instance=ExtResource( 58 )]
+
+position = Vector2( 15000, -750 )
+
+[node name="Enemy Blocking Platform28" parent="OtherPlatforms" index="25" instance=ExtResource( 58 )]
+
+position = Vector2( 15000, -850 )
+
+[node name="HealingMachines" type="Node2D" parent="." index="10"]
+
+[node name="Structures" type="Node2D" parent="." index="11"]
+
+[node name="Computer Screen Crack" parent="Structures" index="0" instance=ExtResource( 59 )]
+
+position = Vector2( 20150, -3200 )
+to_scene_path = "res://Scenes/Levels/Level 1-16.tscn"
+
+[node name="Windy Meteorys" type="Node2D" parent="." index="12"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="Windy Meteory" parent="Windy Meteorys" index="0" instance=ExtResource( 60 )]
+
+position = Vector2( 450, -1250 )
+
+[node name="Windy Meteory2" parent="Windy Meteorys" index="1" instance=ExtResource( 60 )]
+
+position = Vector2( 1500, -1250 )
+
+[node name="Windy Meteory3" parent="Windy Meteorys" index="2" instance=ExtResource( 60 )]
+
+position = Vector2( 2200, -1250 )
+
+[node name="Windy Meteory4" parent="Windy Meteorys" index="3" instance=ExtResource( 60 )]
+
+position = Vector2( 3850, -1250 )
+
+[node name="Windy Meteory5" parent="Windy Meteorys" index="4" instance=ExtResource( 60 )]
+
+position = Vector2( 4450, -1250 )
+
+[node name="Windy Meteory6" parent="Windy Meteorys" index="5" instance=ExtResource( 60 )]
+
+position = Vector2( 5550, -1250 )
+
+[node name="Windy Meteory7" parent="Windy Meteorys" index="6" instance=ExtResource( 60 )]
+
+position = Vector2( 6100, -1250 )
+
+[node name="Windy Meteory8" parent="Windy Meteorys" index="7" instance=ExtResource( 60 )]
+
+position = Vector2( 6650, -1250 )
+
+[node name="Windy Meteory9" parent="Windy Meteorys" index="8" instance=ExtResource( 60 )]
+
+position = Vector2( 7350, -1250 )
+
+[node name="Windy Meteory10" parent="Windy Meteorys" index="9" instance=ExtResource( 60 )]
+
+position = Vector2( 8550, -1250 )
+
+[node name="Windy Meteory11" parent="Windy Meteorys" index="10" instance=ExtResource( 60 )]
+
+position = Vector2( 10450, -1300 )
+
+[node name="Windy Meteory12" parent="Windy Meteorys" index="11" instance=ExtResource( 60 )]
+
+position = Vector2( 11500, -1250 )
+
+[node name="Windy Meteory13" parent="Windy Meteorys" index="12" instance=ExtResource( 60 )]
+
+position = Vector2( 12150, -1250 )
+
+[node name="Windy Meteory14" parent="Windy Meteorys" index="13" instance=ExtResource( 60 )]
+
+position = Vector2( 12650, -1250 )
+
+[node name="Windy Meteory15" parent="Windy Meteorys" index="14" instance=ExtResource( 60 )]
+
+position = Vector2( 14750, -1250 )
+
+[node name="PowerUps" type="Node2D" parent="." index="13"]
+
+[node name="Mystery Box" parent="PowerUps" index="0" instance=ExtResource( 61 )]
+
+position = Vector2( 2200, -300 )
+
+[node name="Mystery Box2" parent="PowerUps" index="1" instance=ExtResource( 61 )]
+
+position = Vector2( 3050, -500 )
+
+[node name="HealPotion" parent="PowerUps" index="2" instance=ExtResource( 62 )]
+
+position = Vector2( 3550, -850 )
+
+[node name="HealPotion2" parent="PowerUps" index="3" instance=ExtResource( 62 )]
+
+position = Vector2( 7800, -350 )
+
+[node name="HealPotion6" parent="PowerUps" index="4" instance=ExtResource( 62 )]
+
+position = Vector2( 10350, -150 )
+
+[node name="HealPotion3" parent="PowerUps" index="5" instance=ExtResource( 62 )]
+
+position = Vector2( 12150, -650 )
+
+[node name="HealPotion4" parent="PowerUps" index="6" instance=ExtResource( 62 )]
+
+position = Vector2( 12750, -650 )
+
+[node name="HealPotion5" parent="PowerUps" index="7" instance=ExtResource( 62 )]
+
+position = Vector2( 14000, -950 )
+
+[node name="HealPotion7" parent="PowerUps" index="8" instance=ExtResource( 62 )]
+
+position = Vector2( 15650, -1050 )
+
+[node name="Mystery Box3" parent="PowerUps" index="9" instance=ExtResource( 61 )]
+
+position = Vector2( 11850, -700 )
+
+[node name="Mystery Box4" parent="PowerUps" index="10" instance=ExtResource( 61 )]
+
+position = Vector2( 12450, -700 )
+
+[node name="Mystery Box8" parent="PowerUps" index="11" instance=ExtResource( 61 )]
+
+position = Vector2( 13050, -700 )
+
+[node name="Mystery Box5" parent="PowerUps" index="12" instance=ExtResource( 61 )]
+
+position = Vector2( 16000, -1200 )
+
+[node name="Mystery Box6" parent="PowerUps" index="13" instance=ExtResource( 61 )]
+
+position = Vector2( 8850, -700 )
+
+[node name="Mystery Box7" parent="PowerUps" index="14" instance=ExtResource( 61 )]
+
+position = Vector2( 8250, -400 )
+
+[node name="Enemies1" type="Node2D" parent="." index="14"]
+
+editor/display_folded = true
+script = ExtResource( 63 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="iSnail" parent="Enemies1" index="0" instance=ExtResource( 64 )]
+
+position = Vector2( 1550, -350 )
+activate_range_x = 2000
+activate_range_y = 2000
+
+[node name="Clockwork Fox" parent="Enemies1" index="1" instance=ExtResource( 65 )]
+
+position = Vector2( 750, -350 )
+still_interval = 1.0
+
+[node name="Chromoghast" parent="Enemies1" index="2" instance=ExtResource( 66 )]
+
+position = Vector2( 450, -650 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 2000
+activate_range_y = 2000
+left_limit = 150
+right_limit = 2450
+
+[node name="Enemies2" type="Node2D" parent="." index="15"]
+
+editor/display_folded = true
+script = ExtResource( 63 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="iSnail" parent="Enemies2" index="0" instance=ExtResource( 64 )]
+
+position = Vector2( 5000, -950 )
+activate_range_x = 0
+activate_range_y = 0
+
+[node name="Clockwork Fox" parent="Enemies2" index="1" instance=ExtResource( 65 )]
+
+position = Vector2( 4150, -950 )
+activate_range_x = 0
+activate_range_y = 0
+still_interval = 1.0
+
+[node name="Chromoghast" parent="Enemies2" index="2" instance=ExtResource( 66 )]
+
+position = Vector2( 4550, -1000 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 0
+activate_range_y = 0
+left_limit = 3850
+right_limit = 5100
+
+[node name="Enemies3" type="Node2D" parent="." index="16"]
+
+editor/display_folded = true
+script = ExtResource( 63 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="iSnail" parent="Enemies3" index="0" instance=ExtResource( 64 )]
+
+position = Vector2( 9050, -750 )
+activate_range_x = 0
+activate_range_y = 0
+
+[node name="Clockwork Fox" parent="Enemies3" index="1" instance=ExtResource( 65 )]
+
+position = Vector2( 7000, -450 )
+activate_range_x = 0
+activate_range_y = 0
+still_interval = 1.2
+
+[node name="Clockwork Fox2" parent="Enemies3" index="2" instance=ExtResource( 65 )]
+
+position = Vector2( 8050, -450 )
+activate_range_x = 0
+activate_range_y = 0
+still_interval = 2.0
+
+[node name="Chromoghast" parent="Enemies3" index="3" instance=ExtResource( 66 )]
+
+position = Vector2( 7750, -600 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 0
+activate_range_y = 0
+left_limit = 7050
+right_limit = 8450
+
+[node name="Chromoghast2" parent="Enemies3" index="4" instance=ExtResource( 66 )]
+
+position = Vector2( 7750, -850 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 0
+activate_range_y = 0
+left_limit = 7050
+right_limit = 9250
+
+[node name="Enemies4" type="Node2D" parent="." index="17"]
+
+editor/display_folded = true
+script = ExtResource( 63 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="iSnail" parent="Enemies4" index="0" instance=ExtResource( 64 )]
+
+position = Vector2( 10650, -250 )
+activate_range_x = 0
+activate_range_y = 0
+
+[node name="Clockwork Fox" parent="Enemies4" index="1" instance=ExtResource( 65 )]
+
+position = Vector2( 10800, -250 )
+activate_range_x = 0
+activate_range_y = 0
+still_interval = 1.2
+
+[node name="Clockwork Fox2" parent="Enemies4" index="2" instance=ExtResource( 65 )]
+
+position = Vector2( 11250, -550 )
+activate_range_x = 0
+activate_range_y = 0
+still_interval = 2.0
+
+[node name="Chromoghast" parent="Enemies4" index="3" instance=ExtResource( 66 )]
+
+position = Vector2( 11600, -1000 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 0
+activate_range_y = 0
+left_limit = 11250
+right_limit = 12000
+
+[node name="Chromoghast2" parent="Enemies4" index="4" instance=ExtResource( 66 )]
+
+position = Vector2( 10800, -850 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 0
+activate_range_y = 0
+left_limit = 10400
+right_limit = 11500
+
+[node name="Enemies5" type="Node2D" parent="." index="18"]
+
+script = ExtResource( 63 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="iSnail" parent="Enemies5" index="0" instance=ExtResource( 64 )]
+
+position = Vector2( 13700, -250 )
+activate_range_x = 0
+activate_range_y = 0
+
+[node name="iSnail4" parent="Enemies5" index="1" instance=ExtResource( 64 )]
+
+position = Vector2( 15400, -850 )
+activate_range_x = 0
+activate_range_y = 0
+
+[node name="Clockwork Fox" parent="Enemies5" index="2" instance=ExtResource( 65 )]
+
+position = Vector2( 13400, -1050 )
+activate_range_x = 0
+activate_range_y = 0
+still_interval = 1.2
+
+[node name="Clockwork Fox2" parent="Enemies5" index="3" instance=ExtResource( 65 )]
+
+position = Vector2( 14500, -650 )
+activate_range_x = 0
+activate_range_y = 0
+still_interval = 3.5
+
+[node name="Chromoghast" parent="Enemies5" index="4" instance=ExtResource( 66 )]
+
+position = Vector2( 14450, -1250 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 0
+activate_range_y = 0
+left_limit = 13400
+right_limit = 15400
+
+[node name="Chromoghast2" parent="Enemies5" index="5" instance=ExtResource( 66 )]
+
+position = Vector2( 14000, -700 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 0
+activate_range_y = 0
+left_limit = 13400
+right_limit = 14750
+
+[node name="Chromoghast3" parent="Enemies5" index="6" instance=ExtResource( 66 )]
+
+position = Vector2( 13800, -450 )
+_sections_unfolded = [ "Transform" ]
+activate_range_x = 0
+activate_range_y = 0
+left_limit = 13400
+right_limit = 14000
+
+[node name="ForegroundDecorations" type="Node2D" parent="." index="19"]
 
 z_index = 1
 _sections_unfolded = [ "Z Index" ]
 
-[node name="PauseButton" parent="." index="14" instance=ExtResource( 5 )]
+[node name="PauseButton" parent="." index="20" instance=ExtResource( 67 )]
 
-[node name="Position2D" type="Position2D" parent="." index="15"]
+[node name="Position2D" type="Position2D" parent="." index="21"]
 
+position = Vector2( 20350, -3600 )
 scale = Vector2( 10, 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
+
+[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 2650 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClear1" to="Enemies2" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClear1" to="Writings/Go1" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClear1" to="FollowingCamera" method="update_right_limit" binds= [ 5250 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClear2" to="Enemies3" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClear2" to="Writings/Go2" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClear2" to="FollowingCamera" method="update_right_limit" binds= [ 9450 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClear3" to="Enemies4" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClear3" to="Writings/Go3" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClear3" to="FollowingCamera" method="update_right_limit" binds= [ 12650 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClear4" to="Enemies5" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClear4" to="Writings/Go4" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClear4" to="FollowingCamera" method="update_right_limit" binds= [ 15750 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClear5" to="Writings/Go5" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClear5" to="FollowingCamera" method="update_top_margin" binds= [ 0.4 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClear5" to="FollowingCamera" method="update_right_limit" binds= [ 20350 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClear5" to="FollowingCamera" method="update_top_limit" binds= [ -3600 ]]
+
+[connection signal="defeated" from="Enemies1/iSnail" to="CameraChangingTriggers/MobClear1" method="increment_count"]
+
+[connection signal="defeated" from="Enemies1/Clockwork Fox" to="CameraChangingTriggers/MobClear1" method="increment_count"]
+
+[connection signal="defeated" from="Enemies1/Chromoghast" to="CameraChangingTriggers/MobClear1" method="increment_count"]
+
+[connection signal="defeated" from="Enemies2/iSnail" to="CameraChangingTriggers/MobClear2" method="increment_count"]
+
+[connection signal="defeated" from="Enemies2/Clockwork Fox" to="CameraChangingTriggers/MobClear2" method="increment_count"]
+
+[connection signal="defeated" from="Enemies2/Chromoghast" to="CameraChangingTriggers/MobClear2" method="increment_count"]
+
+[connection signal="defeated" from="Enemies3/iSnail" to="CameraChangingTriggers/MobClear3" method="increment_count"]
+
+[connection signal="defeated" from="Enemies3/Clockwork Fox" to="CameraChangingTriggers/MobClear3" method="increment_count"]
+
+[connection signal="defeated" from="Enemies3/Clockwork Fox2" to="CameraChangingTriggers/MobClear3" method="increment_count"]
+
+[connection signal="defeated" from="Enemies3/Chromoghast" to="CameraChangingTriggers/MobClear3" method="increment_count"]
+
+[connection signal="defeated" from="Enemies3/Chromoghast2" to="CameraChangingTriggers/MobClear3" method="increment_count"]
+
+[connection signal="defeated" from="Enemies4/iSnail" to="CameraChangingTriggers/MobClear4" method="increment_count"]
+
+[connection signal="defeated" from="Enemies4/Clockwork Fox" to="CameraChangingTriggers/MobClear4" method="increment_count"]
+
+[connection signal="defeated" from="Enemies4/Clockwork Fox2" to="CameraChangingTriggers/MobClear4" method="increment_count"]
+
+[connection signal="defeated" from="Enemies4/Chromoghast" to="CameraChangingTriggers/MobClear4" method="increment_count"]
+
+[connection signal="defeated" from="Enemies4/Chromoghast2" to="CameraChangingTriggers/MobClear4" method="increment_count"]
+
+[connection signal="defeated" from="Enemies5/iSnail" to="CameraChangingTriggers/MobClear5" method="increment_count"]
+
+[connection signal="defeated" from="Enemies5/iSnail4" to="CameraChangingTriggers/MobClear5" method="increment_count"]
+
+[connection signal="defeated" from="Enemies5/Clockwork Fox" to="CameraChangingTriggers/MobClear5" method="increment_count"]
+
+[connection signal="defeated" from="Enemies5/Clockwork Fox2" to="CameraChangingTriggers/MobClear5" method="increment_count"]
+
+[connection signal="defeated" from="Enemies5/Chromoghast" to="CameraChangingTriggers/MobClear5" method="increment_count"]
+
+[connection signal="defeated" from="Enemies5/Chromoghast2" to="CameraChangingTriggers/MobClear5" method="increment_count"]
+
+[connection signal="defeated" from="Enemies5/Chromoghast3" to="CameraChangingTriggers/MobClear5" method="increment_count"]
 
 

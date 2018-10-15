@@ -991,8 +991,8 @@ Comment: I do daily commits further on.
 * Completed level 1-15. Tested.
 * Designed plenty of blue wall decoration tiles.
 
-[Next]
-* Design level 1-16.
+[2018.10.15]
+* Completed level 1-16. Tested.
 
 To Do List:
 * Clean up cringy texts.
