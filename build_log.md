@@ -994,6 +994,9 @@ Comment: I do daily commits further on.
 [2018.10.15]
 * Completed level 1-16. Tested.
 
+[2018.10.16]
+* Completed level 1-17. Tested.
+
 To Do List:
 * Clean up cringy texts.
 * Opensource on GitHub. (Add README.md)

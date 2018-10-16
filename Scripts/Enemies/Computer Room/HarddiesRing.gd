@@ -6,7 +6,8 @@ extends Node2D
 const SPEED = 2000
 const LIFETIME = 5
 
-const DAMAGE = 60
+const DAMAGE = 30
+const STUN_DURATION = 1.0
 const KNOCK_BACK_VEL_X = 500
 const KNOCK_BACK_VEL_Y = 300
 const KNOCK_BACK_FADE_RATE = 1200
@@ -35,6 +36,7 @@ func _process(delta):
 func on_attack_hit(area):
 	if area.is_in_group("hero"):
 		var character = area.get_node("..")
+		character.stunned(STUN_DURATION)
 		character.damaged(DAMAGE)
 		character.knocked_back(KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 

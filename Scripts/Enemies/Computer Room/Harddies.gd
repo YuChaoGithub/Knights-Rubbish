@@ -11,17 +11,22 @@ extends KinematicBody2D
 # Don't play hurt animation when tossing ring or stoned.
 # Can't be stunned when FALLING, LANDED. Otherwise, go to FLY after stunned.
 
+signal defeated
+
 enum { NONE, FLY, TOSS_ANIM, TOSS, FALLING, LANDED }
 
 export(int) var activate_range_x = 2000
 export(int) var activate_range_y = 2000
 
+export(int) var left_limit
+export(int) var right_limit
+
 const MAX_HEALTH = 200
-const STONED_MAX_HEALTH = 800
+const STONED_MAX_HEALTH = 700
 
 # Attack.
 const RING_SPAWN_OFFSET = 150
-const DAMAGE = 50
+const DAMAGE = 99
 const KNOCK_BACK_VEL_X = 1000
 const KNOCK_BACK_FADE_RATE = 1500
 const KNOCK_BACK_VEL_Y= 0
@@ -46,7 +51,7 @@ var die_timer = null
 var knockable = true
 var facing = -1
 
-onready var platform_layer = ProjectSettings.get_setting("layer_names/2d_physics/platform")
+onready var platform_layer = ProjectSettings.get_setting("layer_names/2d_physics/hero_only_platform")
 
 # Ring spawning.
 var ring = preload("res://Scenes/Enemies/Computer Room/Harddies Ring.tscn")
@@ -80,6 +85,8 @@ func _process(delta):
 
 	if knockable:
 		ec.perform_knock_back_movement(delta)
+
+	global_position.x = clamp(global_position.x, left_limit, right_limit)
 
 func change_status(to_status):
 	ec.change_status(to_status)
@@ -126,8 +133,8 @@ func spawn_two_rings():
 	spawn_node.add_child(left_ring)
 	spawn_node.add_child(right_ring)
 
-	left_ring.set_global_pos = ring_spawn_pos.global_position
-	right_ring.set_global_pos = ring_spawn_pos.global_position
+	left_ring.global_position = ring_spawn_pos.global_position
+	right_ring.global_position = ring_spawn_pos.global_position
 
 func fall_and_detect_landing(delta):
 	ec.play_animation("Stiff")
@@ -143,7 +150,7 @@ func fall_and_detect_landing(delta):
 func on_attack_hit(area):
 	if ec.status == FALLING && area.is_in_group("hero"):
 		var character = area.get_node("..")
-		character.damaged(DAMAGE)
+		character.damaged(DAMAGE, false)
 		
 		var dir = -1 if character.global_position.x < global_position.x else 1
 		character.knocked_back(dir * KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
@@ -197,4 +204,5 @@ func die():
 
 	change_status(NONE)
 	ec.play_animation_and_disble_others(animation_key)
+	emit_signal("defeated")
 	die_timer = ec.cd_timer.new(animation_duration, self, "queue_free")

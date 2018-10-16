@@ -19,7 +19,7 @@ extents = Vector2( 72.7447, 123.681 )
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 76.2103, 130.848 )
+extents = Vector2( 97.1866, 153.104 )
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -1592,6 +1592,7 @@ tracks/31/keys = {
 
 [sub_resource type="Animation" id=9]
 
+resource_name = "Stiff Die"
 length = 0.5
 loop = false
 step = 0.1
@@ -1982,6 +1983,7 @@ tracks/31/keys = {
 
 [sub_resource type="Animation" id=10]
 
+resource_name = "Stiff Hurt"
 length = 0.1
 loop = false
 step = 0.1
@@ -3152,6 +3154,7 @@ tracks/31/keys = {
 
 [sub_resource type="Animation" id=13]
 
+resource_name = "Toss Ring"
 length = 3.0
 loop = false
 step = 0.1
@@ -3543,17 +3546,20 @@ tracks/31/keys = {
 [sub_resource type="RectangleShape2D" id=14]
 
 custom_solver_bias = 0.0
-extents = Vector2( 66.6453, 120.995 )
+extents = Vector2( 60.6559, 110.563 )
 
-[node name="Harddies" type="KinematicBody2D" index="0"]
+[node name="Harddies" type="KinematicBody2D"]
 
 input_pickable = false
-collision_layer = 16
-collision_mask = 2
+collision_layer = 0
+collision_mask = 12
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "collision" ]
 activate_range_x = 2000
 activate_range_y = 2000
+left_limit = null
+right_limit = null
 
 [node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -3561,24 +3567,22 @@ shape = SubResource( 1 )
 
 [node name="Animation" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="Ring Spawn Pos" type="Position2D" parent="Animation" index="0"]
 
 position = Vector2( -57, -146.5 )
 
 [node name="Damage Area" type="Area2D" parent="Animation" index="1"]
 
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 16
+collision_layer = 2
 collision_mask = 0
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area" index="0"]
 
@@ -3592,9 +3596,10 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 64
+collision_layer = 0
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Attack Area" index="0"]
 
@@ -3603,6 +3608,7 @@ shape = SubResource( 3 )
 
 [node name="Body" type="Sprite" parent="Animation" index="3"]
 
+editor/display_folded = true
 material = SubResource( 4 )
 texture = ExtResource( 2 )
 
@@ -3666,11 +3672,11 @@ anims/Die = SubResource( 5 )
 anims/Fly = SubResource( 6 )
 anims/Hurt = SubResource( 7 )
 anims/Stiff = SubResource( 8 )
-anims/StiffDie = SubResource( 9 )
-anims/StiffHurt = SubResource( 10 )
+"anims/Stiff Die" = SubResource( 9 )
+"anims/Stiff Hurt" = SubResource( 10 )
 anims/Still = SubResource( 11 )
 anims/Stunned = SubResource( 12 )
-anims/TossRing = SubResource( 13 )
+"anims/Toss Ring" = SubResource( 13 )
 blend_times = [  ]
 
 [node name="Number Spawn Pos" type="Position2D" parent="." index="2"]
@@ -3683,7 +3689,6 @@ position = Vector2( 1.14911, -191.331 )
 
 [node name="Platform" type="StaticBody2D" parent="." index="4"]
 
-editor/display_folded = true
 input_pickable = false
 collision_layer = 0
 collision_mask = 0
@@ -3691,6 +3696,7 @@ constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" index="0"]
 

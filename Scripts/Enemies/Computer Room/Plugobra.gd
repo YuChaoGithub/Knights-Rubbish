@@ -8,17 +8,19 @@ extends Node2D
 # ===
 # Cannot be stunned.
 
+signal defeated
+
 enum { NONE, RISE, STILL, LASER }
 
 export(int) var activate_range_x = 2000
 export(int) var activate_range_y = 2000
 
-const MAX_HEALTH = 100
+const MAX_HEALTH = 200
 
 # Attack.
-const DAMAGE = 10
+const DAMAGE = 7
 const LASER_SHOW_DURATION = 0.2
-const LASER_INTERVAL = 2.0
+const LASER_INTERVAL = 2.5
 
 # Movement.
 const RISE_LENGTH = 300
@@ -38,7 +40,7 @@ onready var laser_pos_left = $"Laser Pos Left"
 onready var laser_pos_right = $"Laser Pos Right"
 onready var drawing_node = $"Drawing"
 
-onready var rise_to_pos_y = global_position.y - RISE_LENGTH
+onready var rise_to_pos_y = self.global_position.y - RISE_LENGTH
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
@@ -98,7 +100,7 @@ func shoot_laser():
 	}
 	drawing_node.add_line(left_laser_line)
 	drawing_node.add_line(right_laser_line)
-	attack_target.damaged(DAMAGE)
+	attack_target.damaged(DAMAGE, false)
 
 	status_timer = ec.cd_timer.new(LASER_SHOW_DURATION, self, "change_status", STILL)
 
@@ -122,4 +124,5 @@ func knocked_back(vel_x, vel_y, fade_rate):
 
 func die():
 	ec.die()
+	emit_signal("defeated")
 	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
