@@ -12,8 +12,8 @@ signal defeated
 
 enum { NONE, MOVE, PUNCH, INIT_FLEE, FLEE }
 
-export(int) var activate_range_x = 1500
-export(int) var activate_range_y = 1500
+export(int) var activate_range_x = 25000
+export(int) var activate_range_y = 25000
 
 const MAX_HEALTH = 150
 

@@ -2,7 +2,7 @@ extends Node2D
 
 const SPEED = 800
 
-const DAMAGE = 30
+const DAMAGE = 44
 const KNOCK_BACK_VEL_X = 300
 const KNOCK_BACK_VEL_Y = 300
 const KNOCK_BACK_FADE_RATE = 600
@@ -33,7 +33,7 @@ func _ready():
 
 func initialize(direction):
 	movement_pattern = preload("res://Scripts/Movements/StraightLineMovement.gd").new(direction.x * SPEED, direction.y * SPEED)
-	rotation = atan2(-direction.y, direction.x)
+	rotation = atan2(direction.y, direction.x)
 
 func _process(delta):
 	global_position += movement_pattern.movement(delta)
@@ -49,7 +49,7 @@ func transform_triggered(area):
 func on_attack_hit(area):
 	if area.is_in_group("hero"):
 		var character = area.get_node("..")
-		character.damaged(DAMAGE)
+		character.damaged(DAMAGE, false)
 		character.knocked_back(sign(movement_pattern.dx) * KNOCK_BACK_VEL_X, -KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 
 		var new_spark = spark.instance()

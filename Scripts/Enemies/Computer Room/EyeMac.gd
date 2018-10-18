@@ -8,6 +8,7 @@ extends Node2D
 # b. Plays music and spawn Plugobra.
 # c. Drop usb bombs (2 times).
 # d. Shoot mouse bullets.
+signal defeated
 
 enum { NONE, RNG_IDLE,
 	   HEART_APPEAR, HEART, HEART_DISAPPEAR,
@@ -18,13 +19,16 @@ enum { NONE, RNG_IDLE,
 
 export(int) var activate_range_x = 1000
 export(int) var activate_range_y = 1500
+export(int) var harddies_left_pos = 350
+export(int) var harddies_right_pos = 2400
 
-const MAX_HEALTH = 2000
+const MAX_HEALTH = 6666
 
 # Attack.
 const CONSECUTIVE_ATTACK_COUNT = 2
 const ATTACK_MOVES = [PUMP_UP_APPEAR, MUSIC_APPEAR, DROP_APPEAR, SHOOT_APPEAR]
 const USB_DROP_COUNT = 2
+const PLUGOBRA_SPAWN_COUNT = 2
 const SHOOT_ROTATE_SPEED = 52
 const MOUSE_BULLET_COUNT = 12
 
@@ -58,6 +62,8 @@ var eyed_character = null
 
 onready var spawn_node = $".."
 
+var lightnings = preload("res://Scenes/Enemies/Computer Room/eyeMacLightnings.tscn")
+
 # Heart.
 onready var hurt_heart = $"Animation/Screen/Hurt Me Screen/Heart"
 onready var heart_left_pos_x = $"Animation/Screen/Hurt Me Screen/Left Pos".position.x
@@ -75,11 +81,28 @@ onready var harddies_spawn_pos = $"Animation/Harddies Spawn Pos"
 
 # Music.
 var plugobra = preload("res://Scenes/Enemies/Computer Room/Plugobra.tscn")
+var healing_potion = preload("res://Scenes/Power Ups/Healing Potion.tscn")
+var other_mobs = [
+	preload("res://Scenes/Enemies/Computer Room/CD Punch.tscn"),
+	preload("res://Scenes/Enemies/Computer Room/Eelo Kicker.tscn"),
+	preload("res://Scenes/Enemies/Computer Room/Eelo Puncher.tscn"),
+	preload("res://Scenes/Enemies/Computer Room/Floopy.tscn"),
+	preload("res://Scenes/Enemies/Computer Room/iSnail.tscn"),
+	preload("res://Scenes/Enemies/Computer Room/Mouse.tscn")
+]
+onready var random_mob_poses = [
+	$"Animation/Random Mob Spawn Poses/1",
+	$"Animation/Random Mob Spawn Poses/2"
+]
+onready var healing_potion_spawn_poses = [
+	$"Animation/Healing Potion Spawn Poses/1",
+	$"Animation/Healing Potion Spawn Poses/2",
+	$"Animation/Healing Potion Spawn Poses/3"
+]
 onready var plugobra_spawn_poses = [
 	$"Animation/Plugobra Spawn Poses/1",
 	$"Animation/Plugobra Spawn Poses/2",
-	$"Animation/Plugobra Spawn Poses/3",
-	$"Animation/Plugobra Spawn Poses/4"
+	$"Animation/Plugobra Spawn Poses/3"
 ]
 
 # USB Drop.
@@ -111,6 +134,11 @@ func activate():
 	ec.health_bar.show_health_bar()
 	set_process(true)
 	ec.change_status(RNG_IDLE)
+
+	# Lightning effects.
+	var l = lightnings.instance()
+	spawn_node.add_child(l)
+	l.global_position = self.global_position
 
 	eyed_character = ec.target_detect.get_nearest(self, ec.hero_manager.heroes)
 
@@ -152,7 +180,7 @@ func _process(delta):
 
 func eyeball_follow_character(delta):
 	var direction = (eyed_character.global_position - eyeball.global_position).normalized()
-	eyeball.move(direction * EYEBALL_SPEED * delta)
+	eyeball.move_and_collide(direction * EYEBALL_SPEED * delta)
 
 func change_status(to_status):
 	ec.change_status(to_status)
@@ -179,7 +207,7 @@ func rng_idle():
 func heart_appear():
 	# Determine the position of the heart.
 	var pos_x = ec.rng.randf_range(heart_left_pos_x, heart_right_pos_x)
-	hurt_heart.set_pos(Vector2(pos_x, hurt_heart.position.y))
+	hurt_heart.position = Vector2(pos_x, hurt_heart.position.y)
 
 	damage_area.add_to_group("enemy")
 
@@ -215,6 +243,8 @@ func pump():
 	ec.change_status(NONE)
 
 	var new_harddies = harddies.instance()
+	new_harddies.left_limit = harddies_left_pos
+	new_harddies.right_limit = harddies_right_pos
 	spawn_node.add_child(new_harddies)
 	new_harddies.global_position = harddies_spawn_pos.global_position
 
@@ -229,6 +259,7 @@ func play_music():
 	ec.play_animation("Music Note Screen")
 	ec.change_status(NONE)
 
+	# Plugobra
 	var spawn_poses_x = []
 	for index in range(0, plugobra_spawn_poses.size() - 1):
 		spawn_poses_x.push_back(ec.rng.randf_range(plugobra_spawn_poses[index].global_position.x, plugobra_spawn_poses[index+1].global_position.x))
@@ -237,7 +268,24 @@ func play_music():
 		var new_plugobra = plugobra.instance()
 		spawn_node.add_child(new_plugobra)
 		new_plugobra.global_position = Vector2(spawn_pos_x, plugobra_spawn_poses[0].global_position.y)
+
+	# Healing Potion
+	spawn_poses_x = []
+	for index in range(0, healing_potion_spawn_poses.size() - 1):
+		spawn_poses_x.push_back(ec.rng.randf_range(healing_potion_spawn_poses[index].global_position.x, healing_potion_spawn_poses[index+1].global_position.x))
+
+	for spawn_pos_x in spawn_poses_x:
+		var new_healing_potion = healing_potion.instance()
+		spawn_node.add_child(new_healing_potion)
+		new_healing_potion.global_position = Vector2(spawn_pos_x, healing_potion_spawn_poses[0].global_position.y)
 	
+	# Random Mob
+	for spawn_pos in random_mob_poses:
+		var new_mob = other_mobs[ec.rng.randi_range(0, other_mobs.size())].instance()
+		spawn_node.add_child(new_mob)
+		new_mob.global_position = spawn_pos.global_position
+		new_mob.activate()
+
 	status_timer = ec.cd_timer.new(MUSIC_DURATION, self, "change_status", MUSIC_DISAPPEAR)
 
 func music_disappear():
@@ -251,6 +299,7 @@ func drop_appear():
 	var pos_y = ec.rng.randf_range(usb_frame_top_right_pos.global_position.y, usb_frame_bottom_left_pos.global_position.y)
 	usb_bomb_frame.global_position = Vector2(pos_x, pos_y)
 
+	ec.play_animation("Still")  # Avoid the error that the previous animation is also "USB Drop".
 	ec.play_animation("USB Drop")
 	ec.change_status(NONE)
 
@@ -286,7 +335,7 @@ func shoot(delta):
 
 func shoot_mouse_bullet(count):
 	if count < MOUSE_BULLET_COUNT:
-		spawn_mouse_bullet(Vector2(cos(mouse_cannon.rotation), -sin(mouse_cannon.rotation)))
+		spawn_mouse_bullet(Vector2(cos(mouse_cannon.rotation), sin(mouse_cannon.rotation)))
 		mouse_bullet_timer = ec.cd_timer.new(SHOOT_INTERVAL, self, "shoot_mouse_bullet", count + 1)
 	else:
 		mouse_bullet_timer = null
@@ -310,7 +359,7 @@ func damaged(val):
 
 func crack_screen_according_to_health():
 	var index = floor(float(ec.health_system.health) / float(MAX_HEALTH + 1) * screen_crack_textures.size())
-	screen_crack.set_texture(screen_crack_textures[index])
+	screen_crack.texture = screen_crack_textures[index]
 
 func resume_from_damaged():
 	ec.resume_from_damaged()
@@ -321,6 +370,13 @@ func stunned(duration):
 func healed(val):
 	ec.healed(val)
 
+func knocked_back(vel_x, vel_y, fade_rate):
+	pass
+
+func slowed(mulitplier, duration):
+	pass
+
 func die():
 	ec.die()
+	emit_signal("defeated")
 	ec.health_bar.drop_health_bar()

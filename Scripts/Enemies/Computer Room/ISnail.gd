@@ -10,8 +10,8 @@ signal defeated
 
 enum { NONE, MOVE, SPIT, SPIT_INTERVAL }
 
-export(int) var activate_range_x = 1600
-export(int) var activate_range_y = 1600
+export(int) var activate_range_x = 25000
+export(int) var activate_range_y = 25000
 
 const MAX_HEALTH = 400
 

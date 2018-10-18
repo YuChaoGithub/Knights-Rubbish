@@ -12,8 +12,8 @@ extends KinematicBody2D
 
 enum { NONE, MOVE, OPEN, FIRE, CLOSE }
 
-export(int) var activate_range_x = 1600
-export(int) var activate_range_y = 1600
+export(int) var activate_range_x = 25000
+export(int) var activate_range_y = 25000
 
 signal defeated
 

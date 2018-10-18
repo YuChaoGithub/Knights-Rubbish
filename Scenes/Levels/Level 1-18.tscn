@@ -1,0 +1,530 @@
+[gd_scene load_steps=30 format=2]
+
+[ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/HeroManager.gd" type="Script" id=2]
+[ext_resource path="res://Tilesets/White Wall.tres" type="TileSet" id=3]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 3.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 5.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 2.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 3.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 6.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 4.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 4.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 5.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 1.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 1.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 2.png" type="Texture" id=14]
+[ext_resource path="res://Tilesets/Wooden Floor.tres" type="TileSet" id=15]
+[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/Platforms/Enemy Blocking Platform.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Eye Mac.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Power Ups/Mystery Box.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Graphics/Particles/Double Star.png" type="Texture" id=20]
+[ext_resource path="res://Fonts/SourceHanSerifTC.tres" type="DynamicFont" id=21]
+[ext_resource path="res://Graphics/Structure/PortalWhite.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=23]
+
+[sub_resource type="Gradient" id=3]
+
+offsets = PoolRealArray( 0, 1 )
+colors = PoolColorArray( 1, 0.960938, 0, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=4]
+
+flags = 4
+gradient = SubResource( 3 )
+width = 2048
+
+[sub_resource type="Curve" id=5]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 0.641043 ), 0.0, 0.0, 0, 0, Vector2( 0.999576, 0.110825 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+
+flags = 4
+width = 2048
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 500, 500, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 0.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.0
+initial_velocity_random = 0.0
+angular_velocity = 1.44742e-40
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.1
+scale_curve = SubResource( 6 )
+color_ramp = SubResource( 4 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Color", "Scale" ]
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "Animate"
+length = 6.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 270.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1, 2, 3, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "", "5", "4", "3", "2", "1" ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath("../CameraChangingTriggers/CountdownFinished")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 6 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "increment_count"
+} ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[node name="Game Level" type="Node2D" index="0"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="FollowingCamera" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 1350, -800 )
+z_index = 1
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", "Z Index" ]
+drag_margin_right = 1.1
+drag_margin_left = -0.1
+drag_margin_top = -0.1
+drag_margin_bottom = 1.1
+left_limit = 50
+bottom_limit = -50
+
+[node name="HeroManager" type="Position2D" parent="." index="1"]
+
+position = Vector2( 1350, -850 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WhiteWall" type="TileMap" parent="." index="2"]
+
+modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 500, 500 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 0
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -196609, 0, 0, -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -131073, 0, 0, -196608, 0, 3, -196607, 0, 65539, -196606, 0, 65537, -196605, 0, 65540, -196604, 0, 65538, -196603, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 65538, -131070, 0, 65540, -131069, 0, 65537, -131068, 0, 4, -131067, 0, 0, -1, 0, 0, -65536, 0, 1, -65535, 0, 3, -65534, 0, 65537, -65533, 0, 65540, -65532, 0, 65540, -65531, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 5 )
+_sections_unfolded = [ "Cell", "Collision", "Transform", "Visibility" ]
+
+[node name="BackgroundDecorations" type="Node2D" parent="." index="3"]
+
+editor/display_folded = true
+visible = false
+
+[node name="Paper 3" type="Sprite" parent="BackgroundDecorations" index="0"]
+
+position = Vector2( 566.158, -173.731 )
+rotation = -0.156083
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Paper 4" type="Sprite" parent="BackgroundDecorations" index="1"]
+
+position = Vector2( 1096.9, -166.359 )
+rotation = 2.65638
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Paper 5" type="Sprite" parent="BackgroundDecorations" index="2"]
+
+position = Vector2( 1574.84, -203.798 )
+rotation = 4.73485
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Paper 6" type="Sprite" parent="BackgroundDecorations" index="3"]
+
+position = Vector2( 2137.37, -166.377 )
+rotation = 5.12448
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Paper 7" type="Sprite" parent="BackgroundDecorations" index="4"]
+
+position = Vector2( 2569.56, -163.907 )
+rotation = 5.12448
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Paper 8" type="Sprite" parent="BackgroundDecorations" index="5"]
+
+position = Vector2( 2501.23, -168.847 )
+rotation = 7.58966
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Paper 9" type="Sprite" parent="BackgroundDecorations" index="6"]
+
+position = Vector2( 2059.98, -183.665 )
+rotation = 7.58966
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 10 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Paper 10" type="Sprite" parent="BackgroundDecorations" index="7"]
+
+position = Vector2( 439.656, -188.415 )
+rotation = 9.3077
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Paper 11" type="Sprite" parent="BackgroundDecorations" index="8"]
+
+position = Vector2( 99.9707, -181.059 )
+rotation = 9.3077
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Paper 12" type="Sprite" parent="BackgroundDecorations" index="9"]
+
+position = Vector2( 284.31, -169.808 )
+rotation = 7.69686
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 12 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Paper 13" type="Sprite" parent="BackgroundDecorations" index="10"]
+
+position = Vector2( 690.634, -179.328 )
+rotation = 7.69686
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 10 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Paper 14" type="Sprite" parent="BackgroundDecorations" index="11"]
+
+position = Vector2( 720.059, -175.434 )
+rotation = 7.69686
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Paper 15" type="Sprite" parent="BackgroundDecorations" index="12"]
+
+position = Vector2( 1930.81, -179.767 )
+rotation = 9.02894
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Paper 16" type="Sprite" parent="BackgroundDecorations" index="13"]
+
+position = Vector2( 2239.43, -178.433 )
+rotation = 8.01656
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 10 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Paper 17" type="Sprite" parent="BackgroundDecorations" index="14"]
+
+position = Vector2( 1683.27, -165.198 )
+rotation = 8.10883
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Paper 18" type="Sprite" parent="BackgroundDecorations" index="15"]
+
+position = Vector2( 960.692, -161.813 )
+rotation = 7.88423
+scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Platform" type="TileMap" parent="." index="4"]
+
+modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+mode = 0
+tile_set = ExtResource( 15 )
+cell_size = Vector2( 100, 100 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 4
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -65537, 0, 196609, -131072, 0, 196612, -131071, 0, 131077, -131070, 0, 131077, -131069, 0, 131076, -131068, 0, 131077, -131067, 0, 131076, -131066, 0, 131077, -131065, 0, 3, -131064, 0, 131076, -131063, 0, 131076, -131062, 0, 3, -131061, 0, 131076, -131060, 0, 196613, -131059, 0, 196613, -131058, 0, 131076, -131057, 0, 3, -131056, 0, 131077, -131055, 0, 3, -131054, 0, 196613, -131053, 0, 196613, -131052, 0, 131077, -131051, 0, 131076, -131050, 0, 196612, -131049, 0, 131076, -131048, 0, 131076, -131047, 0, 131077, -131046, 0, 3, -131045, 0, 131077, -131044, 0, 0, -1, 0, 131072, -65536, 0, 131073, -65535, 0, 196614, -65534, 0, 131073, -65533, 0, 131078, -65532, 0, 131078, -65531, 0, 196614, -65530, 0, 131073, -65529, 0, 196614, -65528, 0, 131073, -65527, 0, 131073, -65526, 0, 131078, -65525, 0, 131078, -65524, 0, 131073, -65523, 0, 131073, -65522, 0, 196614, -65521, 0, 196614, -65520, 0, 196614, -65519, 0, 131078, -65518, 0, 196614, -65517, 0, 131078, -65516, 0, 196614, -65515, 0, 131073, -65514, 0, 131078, -65513, 0, 131073, -65512, 0, 196614, -65511, 0, 131073, -65510, 0, 196614, -65509, 0, 131078, -65508, 0, 196611 )
+_sections_unfolded = [ "Cell", "Collision", "Visibility" ]
+
+[node name="Writings" type="Node2D" parent="." index="5"]
+
+_sections_unfolded = [ "Z Index" ]
+
+[node name="PlatformDecorations" type="Node2D" parent="." index="6"]
+
+[node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
+
+[node name="CountdownFinished" type="Node2D" parent="CameraChangingTriggers" index="0"]
+
+script = ExtResource( 16 )
+count_to_emit = 1
+
+[node name="OtherPlatforms" type="Node2D" parent="." index="8"]
+
+[node name="Enemy Blocking Platform" parent="OtherPlatforms" index="0" instance=ExtResource( 17 )]
+
+position = Vector2( 0, -200 )
+
+[node name="Enemy Blocking Platform2" parent="OtherPlatforms" index="1" instance=ExtResource( 17 )]
+
+position = Vector2( 0, -300 )
+
+[node name="Enemy Blocking Platform3" parent="OtherPlatforms" index="2" instance=ExtResource( 17 )]
+
+position = Vector2( 2700, -200 )
+
+[node name="Enemy Blocking Platform4" parent="OtherPlatforms" index="3" instance=ExtResource( 17 )]
+
+position = Vector2( 2700, -300 )
+
+[node name="HealingMachines" type="Node2D" parent="." index="9"]
+
+[node name="Structures" type="Node2D" parent="." index="10"]
+
+[node name="Enemies" type="Node2D" parent="." index="11"]
+
+editor/display_folded = true
+
+[node name="Eye Mac" parent="Enemies" index="0" instance=ExtResource( 18 )]
+
+position = Vector2( 1350, -750 )
+activate_range_x = 0
+activate_range_y = 0
+
+[node name="HealingFountains" type="Node2D" parent="Enemies" index="1"]
+
+[node name="Fake" type="Position2D" parent="Enemies/HealingFountains" index="0"]
+
+position = Vector2( 1550, -150 )
+
+[node name="PowerUps" type="Node2D" parent="." index="12"]
+
+[node name="Mystery Box" parent="PowerUps" index="0" instance=ExtResource( 19 )]
+
+position = Vector2( 450, -200 )
+
+[node name="Mystery Box4" parent="PowerUps" index="1" instance=ExtResource( 19 )]
+
+position = Vector2( 2250, -200 )
+
+[node name="ForegroundDecorations" type="Node2D" parent="." index="13"]
+
+editor/display_folded = true
+z_index = 1
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Particles2D" type="Particles2D" parent="ForegroundDecorations" index="0"]
+
+visible = false
+position = Vector2( 1388.2, -838.364 )
+emitting = true
+amount = 50
+lifetime = 3.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 2 )
+texture = ExtResource( 20 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Z Index" ]
+
+[node name="Countdown" type="Node2D" parent="." index="14"]
+
+visible = false
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Label" type="Label" parent="Countdown" index="0"]
+
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1295.0
+margin_top = -909.0
+margin_right = 1335.0
+margin_bottom = -865.0
+rect_scale = Vector2( 2.5, 2.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 21 )
+text = "1"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Sprite" type="Sprite" parent="Countdown" index="1"]
+
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 1350, -850 )
+rotation = 4.71239
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 22 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Countdown" index="2"]
+
+root_node = NodePath("..")
+autoplay = "Animate"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Animate = SubResource( 1 )
+blend_times = [  ]
+
+[node name="PauseButton" parent="." index="15" instance=ExtResource( 23 )]
+
+[node name="Position2D" type="Position2D" parent="." index="16"]
+
+position = Vector2( 2350, -1300 )
+scale = Vector2( 10, 10 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[connection signal="count_reached" from="CameraChangingTriggers/CountdownFinished" to="Enemies/Eye Mac" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/CountdownFinished" to="WhiteWall" method="set_modulate" binds= [ Color( 1, 1, 1, 1 ) ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/CountdownFinished" to="Platform" method="set_modulate" binds= [ Color( 1, 1, 1, 1 ) ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/CountdownFinished" to="FollowingCamera" method="start_shake_effect"]
+
+

@@ -12,8 +12,8 @@ enum { NONE, SEARCH, MOVE, ATTACK }
 
 signal defeated
 
-export(int) var activate_range_x = 1000
-export(int) var activate_range_y = 1000
+export(int) var activate_range_x = 25000
+export(int) var activate_range_y = 25000
 
 const MAX_HEALTH = 200
 

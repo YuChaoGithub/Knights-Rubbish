@@ -997,6 +997,12 @@ Comment: I do daily commits further on.
 [2018.10.16]
 * Completed level 1-17. Tested.
 
+[2018.10.18]
+* Fixed bugs of eyeMac.
+* Designed effects for level 1-18.
+* Fixed the bug that Keshia Erasia couldn't jump & attack after drinking potion while performing basic skill.
+* Completed level 1-18 except the ending. Tested.
+
 To Do List:
 * Clean up cringy texts.
 * Opensource on GitHub. (Add README.md)
@@ -1011,7 +1017,6 @@ Sound Effects:
 Lock Sound, Character Choose Sound, Jump, Mobs, Character Skills.
 
 Unfixed Bugs:
-* When a hero is hit while healing (by healing machine). Futher attacks will be disabled.
 
 Polishing:
 * [Effect] Add Light2D to explosions/particles.

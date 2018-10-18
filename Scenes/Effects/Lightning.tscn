@@ -139,7 +139,7 @@ tracks/9/keys = {
 } ]
 }
 
-[node name="Lightning" type="Node2D" index="0"]
+[node name="Lightning" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -152,7 +152,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Background" type="Sprite" parent="Pivot" index="0"]
 
 texture = ExtResource( 1 )
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Main" type="Sprite" parent="Pivot" index="1"]
 

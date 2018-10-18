@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=75 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/EyeMac.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Shocked.png" type="Texture" id=2]
@@ -10,30 +10,34 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Eye.png" type="Texture" id=8]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Eyeball.png" type="Texture" id=9]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Note.png" type="Texture" id=10]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/HURT ME.png" type="Texture" id=11]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/HURT ME Frame.png" type="Texture" id=12]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Heart.png" type="Texture" id=13]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Heart Frame.png" type="Texture" id=14]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Crosshair.png" type="Texture" id=15]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Hurt Me Arrow.png" type="Texture" id=16]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Mouse Shooter.png" type="Texture" id=17]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen Mask.png" type="Texture" id=18]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Walls.png" type="Texture" id=19]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Pump Head.png" type="Texture" id=20]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Pump Stand.png" type="Texture" id=21]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Harddies Siluette.png" type="Texture" id=22]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/USB Bomb White Screen.png" type="Texture" id=23]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/USB Bomb Screen Frame.png" type="Texture" id=24]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/USB Bomb Siluette.png" type="Texture" id=25]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Stand.png" type="Texture" id=26]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Broken Stand Top.png" type="Texture" id=27]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Broken Stand Bottom.png" type="Texture" id=28]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 0.png" type="Texture" id=29]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 1.png" type="Texture" id=30]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 2.png" type="Texture" id=31]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 3.png" type="Texture" id=32]
-[ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=33]
-[ext_resource path="res://Graphics/UI/Avatar/Eyemac.png" type="Texture" id=34]
+[ext_resource path="res://Graphics/Particles/Music.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Particles/Music2.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Particles/music3.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/Particles/music4.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/HURT ME.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/HURT ME Frame.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Heart.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Heart Frame.png" type="Texture" id=18]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Crosshair.png" type="Texture" id=19]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Hurt Me Arrow.png" type="Texture" id=20]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Mouse Shooter.png" type="Texture" id=21]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen Mask.png" type="Texture" id=22]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Walls.png" type="Texture" id=23]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Pump Head.png" type="Texture" id=24]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Pump Stand.png" type="Texture" id=25]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Harddies Siluette.png" type="Texture" id=26]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/USB Bomb White Screen.png" type="Texture" id=27]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/USB Bomb Screen Frame.png" type="Texture" id=28]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/USB Bomb Siluette.png" type="Texture" id=29]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Stand.png" type="Texture" id=30]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Broken Stand Top.png" type="Texture" id=31]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Broken Stand Bottom.png" type="Texture" id=32]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 0.png" type="Texture" id=33]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 1.png" type="Texture" id=34]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 2.png" type="Texture" id=35]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 3.png" type="Texture" id=36]
+[ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=37]
+[ext_resource path="res://Graphics/UI/Avatar/Eyemac.png" type="Texture" id=38]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -44,6 +48,224 @@ radius = 13.8973
 
 custom_solver_bias = 0.0
 extents = Vector2( 24.1585, 7.55383 )
+
+[sub_resource type="Gradient" id=23]
+
+offsets = PoolRealArray( 0, 1 )
+colors = PoolColorArray( 0.476562, 0, 1, 1, 0.853873, 0.61828, 1, 0.56 )
+
+[sub_resource type="GradientTexture" id=24]
+
+flags = 4
+gradient = SubResource( 23 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=25]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 800, 350, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 0.0
+flatness = 0.0
+gravity = Vector3( 0, -50, 0 )
+initial_velocity = 0.0
+initial_velocity_random = 0.0
+angular_velocity = 1.44742e-40
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 7.0
+angle_random = 0.5
+scale = 1.2
+scale_random = 1.0
+color_ramp = SubResource( 24 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread" ]
+
+[sub_resource type="Gradient" id=26]
+
+offsets = PoolRealArray( 0, 1 )
+colors = PoolColorArray( 0, 0.8125, 1, 1, 0.947707, 0.330645, 1, 0.82502 )
+
+[sub_resource type="GradientTexture" id=27]
+
+flags = 4
+gradient = SubResource( 26 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=28]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 800, 300, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( -50, -50, 0 )
+initial_velocity = 0.0
+initial_velocity_random = 0.0
+angular_velocity = 4.59065e-41
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = -30.0
+angle_random = 0.5
+scale = 1.0
+scale_random = 0.5
+color_ramp = SubResource( 27 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread" ]
+
+[sub_resource type="Gradient" id=29]
+
+offsets = PoolRealArray( 0, 1 )
+colors = PoolColorArray( 0, 1, 0.71875, 1, 0.501008, 0.274194, 1, 0.74502 )
+
+[sub_resource type="GradientTexture" id=30]
+
+flags = 4
+gradient = SubResource( 29 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=31]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 800, 300, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 50, -50, 0 )
+initial_velocity = 0.0
+initial_velocity_random = 0.0
+angular_velocity = 2.52435e-29
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = -20.0
+angle_random = 0.5
+scale = 1.25
+scale_random = 0.5
+color_ramp = SubResource( 30 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale" ]
+
+[sub_resource type="Gradient" id=32]
+
+offsets = PoolRealArray( 0, 1 )
+colors = PoolColorArray( 0.721857, 0.800781, 0.023679, 1, 0.15799, 0.652344, 0, 0.59 )
+
+[sub_resource type="GradientTexture" id=33]
+
+flags = 4
+gradient = SubResource( 32 )
+width = 2048
+
+[sub_resource type="Curve" id=34]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 0.761191 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.249256 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=35]
+
+flags = 4
+width = 2048
+curve = SubResource( 34 )
+
+[sub_resource type="ParticlesMaterial" id=36]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 800, 350, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.0
+initial_velocity_random = 0.0
+angular_velocity = 4.59065e-41
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 15.0
+angle_random = 0.5
+scale = 0.5
+scale_random = 0.5
+scale_curve = SubResource( 35 )
+color_ramp = SubResource( 33 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread" ]
 
 [sub_resource type="RectangleShape2D" id=3]
 
@@ -687,6 +909,18 @@ tracks/50/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/51/type = "value"
+tracks/51/path = NodePath("Screen/Music Note Screen/Note Particles:modulate")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=9]
 
@@ -1305,9 +1539,22 @@ tracks/50/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/51/type = "value"
+tracks/51/path = NodePath("Screen/Music Note Screen/Note Particles:modulate")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=10]
 
+resource_name = "Hurt Me Appear"
 length = 1.0
 loop = false
 step = 0.1
@@ -1923,9 +2170,22 @@ tracks/50/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/51/type = "value"
+tracks/51/path = NodePath("Screen/Music Note Screen/Note Particles:modulate")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=11]
 
+resource_name = "Hurt Me Disappear"
 length = 0.8
 loop = false
 step = 0.1
@@ -2541,9 +2801,22 @@ tracks/50/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/51/type = "value"
+tracks/51/path = NodePath("Screen/Music Note Screen/Note Particles:modulate")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=12]
 
+resource_name = "Hurt Me Screen"
 length = 2.0
 loop = true
 step = 0.1
@@ -3159,9 +3432,22 @@ tracks/50/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/51/type = "value"
+tracks/51/path = NodePath("Screen/Music Note Screen/Note Particles:modulate")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=13]
 
+resource_name = "Music Note Appear"
 length = 0.5
 loop = false
 step = 0.1
@@ -3777,9 +4063,22 @@ tracks/50/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/51/type = "value"
+tracks/51/path = NodePath("Screen/Music Note Screen/Note Particles:modulate")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=14]
 
+resource_name = "Music Note Disappear"
 length = 0.5
 loop = false
 step = 0.1
@@ -4395,9 +4694,22 @@ tracks/50/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/51/type = "value"
+tracks/51/path = NodePath("Screen/Music Note Screen/Note Particles:modulate")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=15]
 
+resource_name = "Music Note Screen"
 length = 2.0
 loop = true
 step = 0.1
@@ -5013,9 +5325,22 @@ tracks/50/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/51/type = "value"
+tracks/51/path = NodePath("Screen/Music Note Screen/Note Particles:modulate")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
 
 [sub_resource type="Animation" id=16]
 
+resource_name = "Pump Harddies Appear"
 length = 1.5
 loop = false
 step = 0.1
@@ -5643,9 +5968,22 @@ tracks/51/keys = {
 "update": 1,
 "values": [ false, true ]
 }
+tracks/52/type = "value"
+tracks/52/path = NodePath("Screen/Music Note Screen/Note Particles:modulate")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=17]
 
+resource_name = "Pump Harddies Screen"
 length = 2.0
 loop = false
 step = 0.05
@@ -6151,7 +6489,7 @@ tracks/41/keys = {
 "times": PoolRealArray( 0, 0.3, 0.35, 0.4, 0.45, 0.5, 1.8, 1.85, 1.9, 1.95, 2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 30 ), ExtResource( 29 ), ExtResource( 3 ) ]
+"values": [ ExtResource( 3 ), ExtResource( 3 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 36 ), ExtResource( 35 ), ExtResource( 34 ), ExtResource( 33 ), ExtResource( 3 ) ]
 }
 tracks/42/type = "value"
 tracks/42/path = NodePath("Screen:position")
@@ -6285,9 +6623,22 @@ tracks/52/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/53/type = "value"
+tracks/53/path = NodePath("Screen/Music Note Screen/Note Particles:modulate")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=18]
 
+resource_name = "Shoot Mouse Appear"
 length = 0.5
 loop = false
 step = 0.1
@@ -6891,9 +7242,22 @@ tracks/49/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/50/type = "value"
+tracks/50/path = NodePath("Screen/Music Note Screen/Note Particles:modulate")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=19]
 
+resource_name = "Shoot Mouse Disappear"
 length = 0.5
 loop = false
 step = 0.1
@@ -7497,9 +7861,22 @@ tracks/49/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/50/type = "value"
+tracks/50/path = NodePath("Screen/Music Note Screen/Note Particles:modulate")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=20]
 
+resource_name = "Shoot Mouse Screen"
 length = 2.0
 loop = true
 step = 0.1
@@ -8102,6 +8479,18 @@ tracks/49/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/50/type = "value"
+tracks/50/path = NodePath("Screen/Music Note Screen/Note Particles:modulate")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=21]
@@ -8709,9 +9098,22 @@ tracks/49/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/50/type = "value"
+tracks/50/path = NodePath("Screen/Music Note Screen/Note Particles:modulate")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
 [sub_resource type="Animation" id=22]
 
+resource_name = "USB Drop"
 length = 3.5
 loop = false
 step = 0.1
@@ -9315,16 +9717,29 @@ tracks/49/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/50/type = "value"
+tracks/50/path = NodePath("Screen/Music Note Screen/Note Particles:modulate")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
-[node name="Eye Mac" type="Node2D" index="0"]
+[node name="Eye Mac" type="Node2D"]
 
 script = ExtResource( 1 )
 activate_range_x = 1000
 activate_range_y = 1500
+harddies_left_pos = 350
+harddies_right_pos = 2400
 
 [node name="Animation" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
 scale = Vector2( 1.75, 1.75 )
 
 [node name="Harddies" type="Sprite" parent="Animation" index="0"]
@@ -9500,13 +9915,112 @@ shape = SubResource( 2 )
 
 [node name="Music Note Screen" type="Node2D" parent="Animation/Screen" index="4"]
 
-editor/display_folded = true
-
 [node name="Lines" type="Sprite" parent="Animation/Screen/Music Note Screen" index="0"]
 
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 1.44385, -40.4276 )
 texture = ExtResource( 10 )
+
+[node name="Note Particles" type="Node2D" parent="Animation/Screen/Music Note Screen" index="1"]
+
+modulate = Color( 1, 1, 1, 0 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Particles2D" type="Particles2D" parent="Animation/Screen/Music Note Screen/Note Particles" index="0"]
+
+position = Vector2( 1.44385, -40.4276 )
+scale = Vector2( 1, 1 )
+emitting = true
+amount = 5
+lifetime = 2.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 25 )
+texture = ExtResource( 11 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Visibility" ]
+
+[node name="Particles2D2" type="Particles2D" parent="Animation/Screen/Music Note Screen/Note Particles" index="1"]
+
+position = Vector2( 1.44385, -40.4276 )
+scale = Vector2( 1, 1 )
+emitting = true
+amount = 5
+lifetime = 2.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 28 )
+texture = ExtResource( 12 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
+
+[node name="Particles2D3" type="Particles2D" parent="Animation/Screen/Music Note Screen/Note Particles" index="2"]
+
+position = Vector2( 1.44385, -40.4276 )
+scale = Vector2( 1, 1 )
+emitting = true
+amount = 5
+lifetime = 2.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 31 )
+texture = ExtResource( 13 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
+
+[node name="Particles2D4" type="Particles2D" parent="Animation/Screen/Music Note Screen/Note Particles" index="3"]
+
+position = Vector2( 1.44385, -40.4276 )
+scale = Vector2( 1, 1 )
+emitting = true
+amount = 5
+lifetime = 2.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 36 )
+texture = ExtResource( 14 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Transform" ]
 
 [node name="Hurt Me Screen" type="Node2D" parent="Animation/Screen" index="5"]
 
@@ -9516,13 +10030,13 @@ editor/display_folded = true
 
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 6.59912, -117.88 )
-texture = ExtResource( 11 )
+texture = ExtResource( 15 )
 
 [node name="Frame" type="Sprite" parent="Animation/Screen/Hurt Me Screen" index="1"]
 
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 5.60605, -118.91 )
-texture = ExtResource( 12 )
+texture = ExtResource( 16 )
 
 [node name="Heart" type="Node2D" parent="Animation/Screen/Hurt Me Screen" index="2"]
 
@@ -9541,24 +10055,24 @@ update_scale = true
 [node name="Heart" type="Sprite" parent="Animation/Screen/Hurt Me Screen/Heart" index="1"]
 
 self_modulate = Color( 1, 1, 1, 0 )
-texture = ExtResource( 13 )
+texture = ExtResource( 17 )
 
 [node name="Frame" type="Sprite" parent="Animation/Screen/Hurt Me Screen/Heart" index="2"]
 
 self_modulate = Color( 1, 1, 1, 0 )
-texture = ExtResource( 14 )
+texture = ExtResource( 18 )
 
 [node name="Crosshair" type="Sprite" parent="Animation/Screen/Hurt Me Screen/Heart" index="3"]
 
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 23.4032, -9.98077 )
-texture = ExtResource( 15 )
+texture = ExtResource( 19 )
 
 [node name="Arrow" type="Sprite" parent="Animation/Screen/Hurt Me Screen/Heart" index="4"]
 
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 95.9798, -66.7197 )
-texture = ExtResource( 16 )
+texture = ExtResource( 20 )
 
 [node name="Left Pos" type="Position2D" parent="Animation/Screen/Hurt Me Screen" index="3"]
 
@@ -9579,7 +10093,8 @@ rotation = 3.13431
 editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -5.27863, -41.6425 )
-texture = ExtResource( 17 )
+texture = ExtResource( 21 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Spawn Pos" type="Position2D" parent="Animation/Screen/Shoot Mouse Screen/Cannon" index="0"]
 
@@ -9623,12 +10138,14 @@ shape = SubResource( 6 )
 
 [node name="Pump Harddies Screen" type="Node2D" parent="Animation/Screen" index="7"]
 
+editor/display_folded = true
+
 [node name="Light2D" type="Light2D" parent="Animation/Screen/Pump Harddies Screen" index="0"]
 
 position = Vector2( 11.0494, -201.987 )
-enabled = true
+enabled = false
 editor_only = false
-texture = ExtResource( 18 )
+texture = ExtResource( 22 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
@@ -9653,19 +10170,19 @@ _sections_unfolded = [ "Range" ]
 
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 3.59766, 44.7301 )
-texture = ExtResource( 19 )
+texture = ExtResource( 23 )
 
 [node name="Pump Head" type="Sprite" parent="Animation/Screen/Pump Harddies Screen" index="2"]
 
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 104.432 )
-texture = ExtResource( 20 )
+texture = ExtResource( 24 )
 
 [node name="Pump Stand" type="Sprite" parent="Animation/Screen/Pump Harddies Screen" index="3"]
 
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -0.00330067, 122.323 )
-texture = ExtResource( 21 )
+texture = ExtResource( 25 )
 offset = Vector2( 0.00330067, -8.01206 )
 
 [node name="Harddies Siluette" type="Sprite" parent="Animation/Screen/Pump Harddies Screen" index="4"]
@@ -9673,7 +10190,7 @@ offset = Vector2( 0.00330067, -8.01206 )
 self_modulate = Color( 1, 1, 1, 0 )
 light_mask = 262144
 position = Vector2( -0.264175, 19.548 )
-texture = ExtResource( 22 )
+texture = ExtResource( 26 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Drop USB Scene" type="Node2D" parent="Animation/Screen" index="8"]
@@ -9688,18 +10205,18 @@ position = Vector2( -1.07924, -56.1142 )
 [node name="Inner" type="Sprite" parent="Animation/Screen/Drop USB Scene/Frame" index="0"]
 
 self_modulate = Color( 1, 1, 1, 0 )
-texture = ExtResource( 23 )
+texture = ExtResource( 27 )
 
 [node name="Outer" type="Sprite" parent="Animation/Screen/Drop USB Scene/Frame" index="1"]
 
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, 0.679619 )
-texture = ExtResource( 24 )
+texture = ExtResource( 28 )
 
 [node name="USB" type="Sprite" parent="Animation/Screen/Drop USB Scene/Frame" index="2"]
 
 self_modulate = Color( 1, 1, 1, 0 )
-texture = ExtResource( 25 )
+texture = ExtResource( 29 )
 
 [node name="Spawn Pos" type="Position2D" parent="Animation/Screen/Drop USB Scene/Frame" index="3"]
 
@@ -9714,7 +10231,7 @@ position = Vector2( 171, -125 )
 [node name="Stand" type="Sprite" parent="Animation" index="3"]
 
 position = Vector2( 0, 285.145 )
-texture = ExtResource( 26 )
+texture = ExtResource( 30 )
 
 [node name="Broken stand" type="Node2D" parent="Animation" index="4"]
 
@@ -9724,13 +10241,13 @@ editor/display_folded = true
 
 visible = false
 position = Vector2( -8.71497, 282.768 )
-texture = ExtResource( 27 )
+texture = ExtResource( 31 )
 
 [node name="Bottom" type="Sprite" parent="Animation/Broken stand" index="1"]
 
 visible = false
 position = Vector2( -0.144676, 288.267 )
-texture = ExtResource( 28 )
+texture = ExtResource( 32 )
 
 [node name="Plugobra Spawn Poses" type="Node2D" parent="Animation" index="5"]
 
@@ -9742,17 +10259,41 @@ position = Vector2( -485.284, 344.046 )
 
 [node name="2" type="Position2D" parent="Animation/Plugobra Spawn Poses" index="1"]
 
-position = Vector2( -172.342, 342.279 )
+position = Vector2( 0, 342.857 )
 
 [node name="3" type="Position2D" parent="Animation/Plugobra Spawn Poses" index="2"]
 
-position = Vector2( 172.981, 342.664 )
+position = Vector2( 485.714, 342.857 )
 
-[node name="4" type="Position2D" parent="Animation/Plugobra Spawn Poses" index="3"]
+[node name="Healing Potion Spawn Poses" type="Node2D" parent="Animation" index="6"]
 
-position = Vector2( 457.504, 342.835 )
+editor/display_folded = true
 
-[node name="Damage Area" type="Area2D" parent="Animation" index="6"]
+[node name="1" type="Position2D" parent="Animation/Healing Potion Spawn Poses" index="0"]
+
+position = Vector2( -400, -485.714 )
+
+[node name="2" type="Position2D" parent="Animation/Healing Potion Spawn Poses" index="1"]
+
+position = Vector2( 0, -485.714 )
+
+[node name="3" type="Position2D" parent="Animation/Healing Potion Spawn Poses" index="2"]
+
+position = Vector2( 400, -485.714 )
+
+[node name="Random Mob Spawn Poses" type="Node2D" parent="Animation" index="7"]
+
+editor/display_folded = true
+
+[node name="1" type="Position2D" parent="Animation/Random Mob Spawn Poses" index="0"]
+
+position = Vector2( -600, -485.714 )
+
+[node name="2" type="Position2D" parent="Animation/Random Mob Spawn Poses" index="1"]
+
+position = Vector2( 600, -485.714 )
+
+[node name="Damage Area" type="Area2D" parent="Animation" index="8"]
 
 position = Vector2( -12.0303, 47.4713 )
 scale = Vector2( 1, 1 )
@@ -9772,7 +10313,7 @@ _sections_unfolded = [ "Collision" ]
 position = Vector2( 0.690988, 4.14603 )
 shape = SubResource( 7 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation" index="7"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Animation" index="9"]
 
 root_node = NodePath("..")
 autoplay = "Still"
@@ -9781,27 +10322,27 @@ playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/Die = SubResource( 8 )
 anims/Hurt = SubResource( 9 )
-anims/HurtMeAppear = SubResource( 10 )
-anims/HurtMeDisappear = SubResource( 11 )
-anims/HurtMeScreen = SubResource( 12 )
-anims/MusicNoteAppear = SubResource( 13 )
-anims/MusicNoteDisappear = SubResource( 14 )
-anims/MusicNoteScreen = SubResource( 15 )
-anims/PumpHarddiesAppear = SubResource( 16 )
-anims/PumpHarddiesScreen = SubResource( 17 )
-anims/ShootMouseAppear = SubResource( 18 )
-anims/ShootMouseDisappear = SubResource( 19 )
-anims/ShootMouseScreen = SubResource( 20 )
+"anims/Hurt Me Appear" = SubResource( 10 )
+"anims/Hurt Me Disappear" = SubResource( 11 )
+"anims/Hurt Me Screen" = SubResource( 12 )
+"anims/Music Note Appear" = SubResource( 13 )
+"anims/Music Note Disappear" = SubResource( 14 )
+"anims/Music Note Screen" = SubResource( 15 )
+"anims/Pump Harddies Appear" = SubResource( 16 )
+"anims/Pump Harddies Screen" = SubResource( 17 )
+"anims/Shoot Mouse Appear" = SubResource( 18 )
+"anims/Shoot Mouse Disappear" = SubResource( 19 )
+"anims/Shoot Mouse Screen" = SubResource( 20 )
 anims/Still = SubResource( 21 )
-anims/USBDrop = SubResource( 22 )
+"anims/USB Drop" = SubResource( 22 )
 blend_times = [  ]
 
 [node name="Number Spawn Pos" type="Position2D" parent="." index="1"]
 
 position = Vector2( 4.15442, -454.899 )
 
-[node name="Health Bar" parent="." index="2" instance=ExtResource( 33 )]
+[node name="Health Bar" parent="." index="2" instance=ExtResource( 37 )]
 
-avatar_texture = ExtResource( 34 )
+avatar_texture = ExtResource( 38 )
 
 

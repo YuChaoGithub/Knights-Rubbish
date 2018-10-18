@@ -332,6 +332,8 @@ func cancel_all_skills():
 	if detecting_landing:
 		detecting_landing = false
 		hero.status.animate_movement = true
+		hero.status.can_cast_skill = true
+		hero.status.can_jump = true
 
 	# Down Skill.
 	if down_skill_timer != null:
