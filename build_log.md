@@ -1003,13 +1003,20 @@ Comment: I do daily commits further on.
 * Fixed the bug that Keshia Erasia couldn't jump & attack after drinking potion while performing basic skill.
 * Completed level 1-18 except the ending. Tested.
 
-To Do List:
+[2018.10.19]
+* Designed the ending of level 1-18.
+* Completed the "To be continued..." level.
+* Added screen capture for Sonmera and Eyemac (show in the next level part). So cool!
+Comment: Finally finished designing level 1.
+
+[Next]
 * Clean up cringy texts.
-* Opensource on GitHub. (Add README.md)
-* Finish laying out level 1. (Est. Before November)
+* Add Light2D to explosions/particles.
+* Start designing the new characters.
+
+To Do List:
 * New characters * 6. (Est. Before January)
 * Sound Effects (Use human voice) & Background Music (Beat Box...perhaps?).
-* Screen capture (Sonmera).
 * Introduction article.
 **Alpha Version [Ver 0.1] Publishing**
 
@@ -1019,10 +1026,7 @@ Lock Sound, Character Choose Sound, Jump, Mobs, Character Skills.
 Unfixed Bugs:
 
 Polishing:
-* [Effect] Add Light2D to explosions/particles.
 * [Data] Make key settings persistent between game sessions (Single Player settings should be separated from Coop settings).
-* [UI] A "GO" sign when the right camera margin is changing.
 * [Effect] Attack effects (particles).
 * [Animation] Radiogugu watch out skill blinks blue.
-* [Script] Slow down walking animation while slowed.
 * [Effect] Jumping dust for characters.

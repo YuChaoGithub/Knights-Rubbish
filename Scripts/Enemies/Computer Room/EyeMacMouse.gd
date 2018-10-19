@@ -6,6 +6,7 @@ const DAMAGE = 44
 const KNOCK_BACK_VEL_X = 300
 const KNOCK_BACK_VEL_Y = 300
 const KNOCK_BACK_FADE_RATE = 600
+const CONFUSION_DURATION = 2.5
 
 const LIFETIME = 10.0
 
@@ -49,6 +50,7 @@ func transform_triggered(area):
 func on_attack_hit(area):
 	if area.is_in_group("hero"):
 		var character = area.get_node("..")
+		character.confused(CONFUSION_DURATION)
 		character.damaged(DAMAGE, false)
 		character.knocked_back(sign(movement_pattern.dx) * KNOCK_BACK_VEL_X, -KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 

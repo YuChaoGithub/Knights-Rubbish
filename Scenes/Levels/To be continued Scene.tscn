@@ -1,0 +1,555 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/HeroManager.gd" type="Script" id=2]
+[ext_resource path="res://Tilesets/White Wall.tres" type="TileSet" id=3]
+[ext_resource path="res://Tilesets/Wooden Floor.tres" type="TileSet" id=4]
+[ext_resource path="res://Fonts/edosz.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Fonts/Grafipaint.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Graphics/background/Portraits/Golden Frame.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/background/Portraits/my portrait.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/UI/Curved Arrow.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/background/Portraits/Long Frame Pic 2.png" type="Texture" id=10]
+[ext_resource path="res://Scripts/Utils/ScreenCaptureTexture.gd" type="Script" id=11]
+[ext_resource path="res://Graphics/background/Portraits/Long Frame.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Structures/Hall.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=14]
+
+[node name="Game Level" type="Node2D" index="0"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="FollowingCamera" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 1350, -800 )
+z_index = 1
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", "Z Index" ]
+drag_margin_right = 1.1
+drag_margin_left = -0.1
+drag_margin_top = -0.1
+drag_margin_bottom = 1.1
+left_limit = 50
+bottom_limit = -50
+
+[node name="HeroManager" type="Position2D" parent="." index="1"]
+
+position = Vector2( 530.426, -1345.64 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WhiteWall" type="TileMap" parent="." index="2"]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 500, 500 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 0
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -262144, 0, 0, -262143, 0, 0, -262142, 0, 0, -262141, 0, 0, -262140, 0, 0, -262139, 0, 0, -196608, 0, 0, -196607, 0, 65539, -196606, 0, 65537, -196605, 0, 65540, -196604, 0, 65538, -196603, 0, 0, -131072, 0, 0, -131071, 0, 65538, -131070, 0, 65540, -131069, 0, 65537, -131068, 0, 4, -131067, 0, 0, -65536, 0, 0, -65535, 0, 3, -65534, 0, 65537, -65533, 0, 65540, -65532, 0, 65540, -65531, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 5 )
+_sections_unfolded = [ "Cell", "Collision" ]
+
+[node name="BackgroundDecorations" type="Node2D" parent="." index="3"]
+
+[node name="Platform" type="TileMap" parent="." index="4"]
+
+mode = 0
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 100, 100 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 4
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -131072, 0, 196609, -131071, 0, 131077, -131070, 0, 131077, -131069, 0, 131076, -131068, 0, 131077, -131067, 0, 131076, -131066, 0, 131077, -131065, 0, 3, -131064, 0, 131076, -131063, 0, 131076, -131062, 0, 3, -131061, 0, 131076, -131060, 0, 196613, -131059, 0, 196613, -131058, 0, 131076, -131057, 0, 196613, -131056, 0, 3, -131055, 0, 3, -131054, 0, 196612, -131053, 0, 131077, -131052, 0, 196613, -131051, 0, 196613, -131050, 0, 131077, -131049, 0, 131076, -131048, 0, 196612, -131047, 0, 196613, -131046, 0, 0, -65536, 0, 131072, -65535, 0, 196614, -65534, 0, 131073, -65533, 0, 131078, -65532, 0, 131078, -65531, 0, 196614, -65530, 0, 131073, -65529, 0, 196614, -65528, 0, 131073, -65527, 0, 131073, -65526, 0, 131078, -65525, 0, 131078, -65524, 0, 131073, -65523, 0, 131073, -65522, 0, 196614, -65521, 0, 196614, -65520, 0, 196614, -65519, 0, 131078, -65518, 0, 196614, -65517, 0, 131078, -65516, 0, 196614, -65515, 0, 131073, -65514, 0, 131078, -65513, 0, 131073, -65512, 0, 131078, -65511, 0, 131078, -65510, 0, 196611 )
+_sections_unfolded = [ "Cell", "Collision" ]
+
+[node name="Writings" type="Node2D" parent="." index="5"]
+
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Label" type="Label" parent="Writings" index="0"]
+
+modulate = Color( 1, 0.293011, 0.293011, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 115.0
+margin_top = -1495.0
+margin_right = 393.0
+margin_bottom = -1451.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "To be continued..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Label13" type="Label" parent="Writings" index="1"]
+
+modulate = Color( 1, 0.293011, 0.293011, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 737.0
+margin_top = -854.0
+margin_right = 1015.0
+margin_bottom = -810.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "To be continued..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Label4" type="Label" parent="Writings" index="2"]
+
+modulate = Color( 0.878906, 0.457764, 0.0094506, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 205.0
+margin_top = -1408.0
+margin_right = 483.0
+margin_bottom = -1364.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "To be continued..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Label16" type="Label" parent="Writings" index="3"]
+
+modulate = Color( 0.878906, 0.457764, 0.0094506, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 818.0
+margin_top = -759.0
+margin_right = 1096.0
+margin_bottom = -715.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "To be continued..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Label5" type="Label" parent="Writings" index="4"]
+
+modulate = Color( 0.941406, 0.833517, 0.129064, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 287.0
+margin_top = -1316.0
+margin_right = 565.0
+margin_bottom = -1272.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "To be continued..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Label10" type="Label" parent="Writings" index="5"]
+
+modulate = Color( 0.941406, 0.833517, 0.129064, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 910.0
+margin_top = -656.0
+margin_right = 1188.0
+margin_bottom = -612.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "To be continued..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Label6" type="Label" parent="Writings" index="6"]
+
+modulate = Color( 0.111908, 0.753906, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 380.0
+margin_top = -1222.0
+margin_right = 658.0
+margin_bottom = -1178.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "To be continued..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Label12" type="Label" parent="Writings" index="7"]
+
+modulate = Color( 0.111908, 0.753906, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1019.0
+margin_top = -556.0
+margin_right = 1297.0
+margin_bottom = -512.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "To be continued..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Label7" type="Label" parent="Writings" index="8"]
+
+modulate = Color( 0, 0.380859, 0.75, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 474.0
+margin_top = -1134.0
+margin_right = 752.0
+margin_bottom = -1090.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "To be continued..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Label14" type="Label" parent="Writings" index="9"]
+
+modulate = Color( 0, 0.380859, 0.75, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1109.0
+margin_top = -456.0
+margin_right = 1387.0
+margin_bottom = -412.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "To be continued..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Label8" type="Label" parent="Writings" index="10"]
+
+modulate = Color( 0.152956, 0.0373089, 0.816406, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 554.0
+margin_top = -1044.0
+margin_right = 832.0
+margin_bottom = -1000.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "To be continued..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Label11" type="Label" parent="Writings" index="11"]
+
+modulate = Color( 0.152956, 0.0373089, 0.816406, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1209.0
+margin_top = -352.0
+margin_right = 1487.0
+margin_bottom = -308.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "To be continued..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Label9" type="Label" parent="Writings" index="12"]
+
+modulate = Color( 0.546875, 0, 1, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 637.0
+margin_top = -948.0
+margin_right = 915.0
+margin_bottom = -904.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "To be continued..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Label15" type="Label" parent="Writings" index="13"]
+
+modulate = Color( 0.546875, 0, 1, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1302.0
+margin_top = -259.0
+margin_right = 1580.0
+margin_bottom = -215.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "To be continued..."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Label2" type="Label" parent="Writings" index="14"]
+
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2278.0
+margin_top = -781.0
+margin_right = 2532.0
+margin_bottom = -746.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 5 )
+text = "MENU"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Label3" type="Label" parent="Writings" index="15"]
+
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 115.0
+margin_top = -270.0
+margin_right = 719.0
+margin_bottom = -85.0
+rect_scale = Vector2( 1.75, 1.75 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+text = "(Sadly, the developer is going back to university,
+so he has no time to add more contents.)"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
+
+[node name="Portrait" type="Sprite" parent="Writings" index="16"]
+
+editor/display_folded = true
+position = Vector2( 584.008, -463.057 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="Writings/Portrait" index="0"]
+
+show_behind_parent = true
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Sprite2" type="Sprite" parent="Writings" index="17"]
+
+position = Vector2( 460.746, -313.953 )
+rotation = -0.794803
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Screenshot" type="Sprite" parent="Writings" index="18"]
+
+position = Vector2( 2044.87, -1132.7 )
+texture = ExtResource( 10 )
+script = ExtResource( 11 )
+slot = 1
+
+[node name="Frame" type="Sprite" parent="Writings" index="19"]
+
+position = Vector2( 2044.87, -1132.7 )
+texture = ExtResource( 12 )
+
+[node name="PlatformDecorations" type="Node2D" parent="." index="6"]
+
+[node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
+
+[node name="OtherPlatforms" type="Node2D" parent="." index="8"]
+
+[node name="HealingMachines" type="Node2D" parent="." index="9"]
+
+[node name="Structures" type="Node2D" parent="." index="10"]
+
+[node name="Main Menu Door" parent="Structures" index="0" instance=ExtResource( 13 )]
+
+position = Vector2( 2346.39, -174.693 )
+scale = Vector2( 0.8, 0.8 )
+to_scene_path = "res://Scenes/Levels/Level Picker.tscn"
+
+[node name="Enemies" type="Node2D" parent="." index="11"]
+
+[node name="PowerUps" type="Node2D" parent="." index="12"]
+
+[node name="ForegroundDecorations" type="Node2D" parent="." index="13"]
+
+z_index = 1
+_sections_unfolded = [ "Z Index" ]
+
+[node name="PauseButton" parent="." index="14" instance=ExtResource( 14 )]
+
+[node name="Position2D" type="Position2D" parent="." index="15"]
+
+scale = Vector2( 10, 10 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+

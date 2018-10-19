@@ -22,7 +22,9 @@ export(int) var activate_range_y = 1500
 export(int) var harddies_left_pos = 350
 export(int) var harddies_right_pos = 2400
 
-const MAX_HEALTH = 6666
+const MAX_HEALTH = 8888
+
+const SCREEN_CAPTURE_SLOT = 1
 
 # Attack.
 const CONSECUTIVE_ATTACK_COUNT = 2
@@ -31,6 +33,7 @@ const USB_DROP_COUNT = 2
 const PLUGOBRA_SPAWN_COUNT = 2
 const SHOOT_ROTATE_SPEED = 52
 const MOUSE_BULLET_COUNT = 12
+const HARDDIES_COUNT = 2
 
 # Animation.
 const RNG_IDLE_DURATION = 1.0
@@ -114,14 +117,14 @@ onready var usb_frame_top_right_pos = $"Animation/Screen/Drop USB Scene/Top Righ
 
 # Screen Crack.
 var screen_crack_textures = [
-	null,
 	preload("res://Graphics/Enemies/Computer Room/Eyemac/Broken Screen 7.png"),
 	preload("res://Graphics/Enemies/Computer Room/Eyemac/Broken Screen 6.png"),
 	preload("res://Graphics/Enemies/Computer Room/Eyemac/Broken Screen 5.png"),
 	preload("res://Graphics/Enemies/Computer Room/Eyemac/Broken Screen 4.png"),
 	preload("res://Graphics/Enemies/Computer Room/Eyemac/Broken Screen 3.png"),
 	preload("res://Graphics/Enemies/Computer Room/Eyemac/Broken Screen 2.png"),
-	preload("res://Graphics/Enemies/Computer Room/Eyemac/Broken Screen 1.png")
+	preload("res://Graphics/Enemies/Computer Room/Eyemac/Broken Screen 1.png"),
+	null
 ]
 onready var screen_crack = $"Animation/Screen/Broken Screen"
 
@@ -242,11 +245,12 @@ func pump_up_anim():
 func pump():
 	ec.change_status(NONE)
 
-	var new_harddies = harddies.instance()
-	new_harddies.left_limit = harddies_left_pos
-	new_harddies.right_limit = harddies_right_pos
-	spawn_node.add_child(new_harddies)
-	new_harddies.global_position = harddies_spawn_pos.global_position
+	for i in range(HARDDIES_COUNT):
+		var new_harddies = harddies.instance()
+		new_harddies.left_limit = harddies_left_pos
+		new_harddies.right_limit = harddies_right_pos
+		spawn_node.add_child(new_harddies)
+		new_harddies.global_position = harddies_spawn_pos.global_position
 
 	status_timer = ec.cd_timer.new(PUMP_UP_DURATION, self, "change_status", RNG_IDLE)
 
@@ -375,6 +379,10 @@ func knocked_back(vel_x, vel_y, fade_rate):
 
 func slowed(mulitplier, duration):
 	pass
+
+# Being called by AnimationPlayer.
+func screenshot():
+	get_node("/root/UserDataSingleton").screen_capture(SCREEN_CAPTURE_SLOT)
 
 func die():
 	ec.die()

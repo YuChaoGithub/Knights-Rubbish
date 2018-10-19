@@ -66,6 +66,8 @@ _sections_unfolded = [ "Cell", "Collision", "Visibility" ]
 
 [node name="BackgroundDecorations" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
+
 [node name="Computer Screen" type="Sprite" parent="BackgroundDecorations" index="0"]
 
 editor/display_folded = true
@@ -128,6 +130,8 @@ _sections_unfolded = [ "Z Index" ]
 [node name="PlatformDecorations" type="Node2D" parent="." index="6"]
 
 [node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
+
+editor/display_folded = true
 
 [node name="FirstTrigger" type="Position2D" parent="CameraChangingTriggers" index="0"]
 
@@ -200,7 +204,7 @@ position = Vector2( 9000, -700 )
 [node name="Door1-1" parent="Structures" index="0" instance=ExtResource( 11 )]
 
 position = Vector2( 17200, -495.223 )
-enter_scene_path = "res://Scenes/Levels/Level 1-1.tscn"
+enter_scene_path = "res://Scenes/Levels/Level 1-18.tscn"
 
 [node name="Batterios" type="Node2D" parent="." index="11"]
 
@@ -479,9 +483,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/PassTrigger3" to="Enemies4" method="activate"]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="Enemies5" method="activate"]
-
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="FollowingCamera" method="update_right_limit" binds= [ 14750 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="Enemies5" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger5" to="FollowingCamera" method="update_right_limit" binds= [ 17450 ]]
 

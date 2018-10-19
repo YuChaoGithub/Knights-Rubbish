@@ -13,6 +13,7 @@ enum { NONE, INACTIVE, WAIT, COUNTDOWN, CAPTURE, FLASHLIGHT }
 
 export(int) var activate_range_x = 3000
 export(int) var activate_range_y = 2000
+export(int) var screen_capture_slot = -1
 
 const IDLE_INTERVAL_MIN = 2.0
 const IDLE_INTERVAL_MAX = 5.0
@@ -76,16 +77,21 @@ func start_countdown():
 	status_timer = cd_timer.new(COUNTDOWN_DURATION, self, "change_status", CAPTURE)
 
 func capture_screenshot():
-	# TODO: Capture Screenshot.
-	if !screen_captured:
-		print("Capture a screenshot")
-		emit_signal("photo_taken")
-		screen_captured = true
-
 	change_status(NONE)
 	status_timer = cd_timer.new(CAPTURE_SCREENSHOT_DURATION, self, "change_status", FLASHLIGHT)
 
 func activate_flashlight():
-	flashlight_animator.play("Flash")
+	if screen_capture_slot >= 0 && !screen_captured:
+		get_node("/root/UserDataSingleton").screen_capture(screen_capture_slot)
+		screen_captured = true
+		
+		yield(get_tree().create_timer(0.2), "timeout")
+		flashlight_animator.play("Flash")
+		
+		yield(get_tree().create_timer(0.5), "timeout")
+		emit_signal("photo_taken")
+	else:
+		flashlight_animator.play("Flash")
+		
 	change_status(NONE)
 	status_timer = cd_timer.new(FLASHLIGHT_DURATION, self, "change_status", WAIT)
