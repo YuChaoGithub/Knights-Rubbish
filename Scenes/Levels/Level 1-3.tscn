@@ -2009,7 +2009,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 74 )
-text = "toads"
+text = "roads"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -2137,7 +2137,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 74 )
-text = "mood"
+text = "wood"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -2189,7 +2189,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 74 )
-text = "book"
+text = "took"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -2293,7 +2293,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 74 )
-text = "graveled"
+text = "traveled"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -2546,7 +2546,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 74 )
-text = "conference"
+text = "difference"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -2554,7 +2554,6 @@ _sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
 
 [node name="Shine" type="Node2D" parent="Writings" index="3"]
 
-editor/display_folded = true
 position = Vector2( 1340.57, -7822 )
 
 [node name="Shine" type="Label" parent="Writings/Shine" index="0"]
@@ -2676,11 +2675,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -244.0
-margin_top = 25.0
-margin_right = -160.0
-margin_bottom = 65.0
-rect_rotation = -14.0858
+margin_left = -252.0
+margin_top = 93.0
+margin_right = -168.0
+margin_bottom = 133.0
+rect_rotation = -22.1103
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -2704,11 +2703,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 77.0
-margin_top = -10.0
-margin_right = 188.0
-margin_bottom = 30.0
-rect_rotation = 28.7962
+margin_left = 29.0
+margin_top = 31.0
+margin_right = 140.0
+margin_bottom = 71.0
+rect_rotation = 56.7141
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -4903,9 +4902,11 @@ position = Vector2( 800, -2600 )
 scale = Vector2( 10, 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 1.1 ]]
+[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -1550 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
+[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -50 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 2650 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_top_margin" binds= [ 0.6 ]]
 
@@ -4913,11 +4914,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 50 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 2650 ]]
+[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 1.1 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -1550 ]]
-
-[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -50 ]]
+[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/OrangePortal" to="FollowingCamera" method="update_top_limit" binds= [ -2300 ]]
 
@@ -4935,11 +4934,11 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/HealingMachine" to="FollowingCamera" method="update_bottom_limit" binds= [ -2850 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/FirstEnemyClearTrigger" to="FollowingCamera" method="update_top_margin" binds= [ 0.8 ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/FirstEnemyClearTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -4700 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/FirstEnemyClearTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -4250 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/FirstEnemyClearTrigger" to="FollowingCamera" method="update_top_margin" binds= [ 0.8 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/PreDiveragePath" to="FollowingCamera" method="update_top_limit" binds= [ -5650 ]]
 
@@ -4951,19 +4950,19 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/FlatEnemyPlatformTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -5950 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/FlatEnemyPlatformClear" to="FollowingCamera" method="update_bottom_margin" binds= [ 0.9 ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/FlatEnemyPlatformClear" to="FollowingCamera" method="update_top_limit" binds= [ -7700 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/FlatEnemyPlatformClear" to="FollowingCamera" method="update_bottom_margin" binds= [ 0.9 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/ResumeSizePlatformTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -8650 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/ResumeSizePlatformTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -7250 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/LastTrigger" to="FollowingCamera" method="update_top_margin" binds= [ 0.5 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/LastTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -10650 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/LastTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -8150 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/LastTrigger" to="FollowingCamera" method="update_top_margin" binds= [ 0.5 ]]
 
 [connection signal="defeated" from="Enemies/Mouse" to="CameraChangingTriggers/FirstEnemyClearTrigger" method="increment_count"]
 
@@ -4989,9 +4988,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Enemies/CD Punch" to="Enemies/CDPunchSpawner2" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/CD Punch2" to="Enemies/FloopySpawner5" method="spawn_mob"]
-
 [connection signal="defeated" from="Enemies/CD Punch2" to="Enemies/CDPunchSpawner" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/CD Punch2" to="Enemies/FloopySpawner5" method="spawn_mob"]
 
 [connection signal="defeated" from="Enemies/Floopy3" to="Enemies/FloopySpawner4" method="spawn_mob"]
 

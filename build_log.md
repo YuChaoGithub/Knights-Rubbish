@@ -1009,8 +1009,12 @@ Comment: I do daily commits further on.
 * Added screen capture for Sonmera and Eyemac (show in the next level part). So cool!
 Comment: Finally finished designing level 1.
 
+[2018.10.21]
+* Cleaned up cringy text labels.
+* Fixed the wrongly connected doors.
+* Completed level 1-0 (level 1 picker).
+
 [Next]
-* Clean up cringy texts.
 * Add Light2D to explosions/particles.
 * Start designing the new characters.
 
