@@ -417,11 +417,11 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 3450 ]]
 
-[connection signal="defeated" from="Enemies/Amazlet" to="FollowingCamera" method="update_right_limit" binds= [ 4450 ]]
-
 [connection signal="defeated" from="Enemies/Amazlet" to="Enemies/MouseSpawner" method="stop_further_spawning"]
 
 [connection signal="defeated" from="Enemies/Amazlet" to="Enemies/MouseSpawner2" method="stop_further_spawning"]
+
+[connection signal="defeated" from="Enemies/Amazlet" to="FollowingCamera" method="update_right_limit" binds= [ 4450 ]]
 
 [connection signal="defeated" from="Enemies/Mouse" to="Enemies/MouseSpawner" method="spawn_mob"]
 

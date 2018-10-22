@@ -1732,11 +1732,11 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 9150 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 11950 ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 0.2 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 11950 ]]
 
 [connection signal="defeated" from="Enemies/Calcasio" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
 

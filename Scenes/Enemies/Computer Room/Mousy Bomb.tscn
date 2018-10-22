@@ -1,10 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/MousyBomb.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Mouse/Mousy Bomb.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Flaggomine/Explosion 1.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Flaggomine/Explosion 2.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Flaggomine/Explosion 3.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Particles/Dot.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -34,7 +32,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Explosion/1:visible")
+tracks/1/path = NodePath("Attack Area:collision_mask")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -43,10 +41,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ 1 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Explosion/2:visible")
+tracks/2/path = NodePath("Particles2D:emitting")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -57,34 +55,10 @@ tracks/2/keys = {
 "update": 1,
 "values": [ false ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("Explosion/3:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Attack Area:collision_mask")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 1 ]
-}
 
 [sub_resource type="Animation" id=4]
 
-length = 0.2
+length = 0.5
 loop = false
 step = 0.05
 tracks/0/type = "value"
@@ -97,56 +71,99 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 0.196078 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Explosion/1:visible")
+tracks/1/path = NodePath("Attack Area:collision_mask")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.05 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("Explosion/2:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ false, true, false ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Explosion/3:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("Attack Area:collision_mask")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 0 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("Particles2D:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+
+[sub_resource type="Curve" id=5]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 0.503734 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0258263 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+
+flags = 4
+width = 2048
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 75.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 350.0
+initial_velocity_random = 0.0
+angular_velocity = 2.75506e-39
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+scale_curve = SubResource( 6 )
+color = Color( 0, 0, 0, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Color", "Gravity", "Initial Velocity", "Scale", "Spread" ]
 
 [node name="Mousy Bomb" type="KinematicBody2D"]
 
@@ -186,28 +203,7 @@ _sections_unfolded = [ "Collision" ]
 position = Vector2( -22.63, -17.4941 )
 shape = SubResource( 2 )
 
-[node name="Explosion" type="Node2D" parent="." index="3"]
-
-editor/display_folded = true
-position = Vector2( -23.2676, -19.5146 )
-scale = Vector2( 1.5, 1.5 )
-
-[node name="1" type="Sprite" parent="Explosion" index="0"]
-
-visible = false
-texture = ExtResource( 3 )
-
-[node name="2" type="Sprite" parent="Explosion" index="1"]
-
-visible = false
-texture = ExtResource( 4 )
-
-[node name="3" type="Sprite" parent="Explosion" index="2"]
-
-visible = false
-texture = ExtResource( 5 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 
 root_node = NodePath("..")
 autoplay = "Blink"
@@ -217,6 +213,30 @@ playback_speed = 1.0
 anims/Blink = SubResource( 3 )
 anims/Explode = SubResource( 4 )
 blend_times = [  ]
+
+[node name="Particles2D" type="Particles2D" parent="." index="4"]
+
+position = Vector2( -24.0355, -20.0295 )
+rotation = -1.57733
+emitting = false
+amount = 25
+lifetime = 0.5
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.9
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 7 )
+texture = ExtResource( 3 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform" ]
 
 [connection signal="area_entered" from="Attack Area" to="." method="attack_hit"]
 

@@ -42,4 +42,5 @@ func on_attack_hit(area):
 
 func free_watch():
 	parent_node.curr_watch = null
-	queue_free()
+	set_process(false)
+	$AnimationPlayer.play("Explode")

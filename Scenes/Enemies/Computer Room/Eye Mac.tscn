@@ -10456,6 +10456,7 @@ tracks/54/keys = {
 [node name="Eye Mac" type="Node2D"]
 
 script = ExtResource( 1 )
+_sections_unfolded = [ "Z Index" ]
 activate_range_x = 1000
 activate_range_y = 1500
 harddies_left_pos = 350
@@ -10769,7 +10770,6 @@ texture = ExtResource( 17 )
 
 [node name="Heart" type="Node2D" parent="Animation/Screen/Hurt Me Screen" index="2"]
 
-editor/display_folded = true
 position = Vector2( -8.57541, 51.6173 )
 
 [node name="Damage Area" type="RemoteTransform2D" parent="Animation/Screen/Hurt Me Screen/Heart" index="0"]

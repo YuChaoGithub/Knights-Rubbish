@@ -49,7 +49,9 @@ func attack_hit(area):
 		var character = area.get_node("..")
 		character.damaged(DAMAGE)
 		character.knocked_back(-KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
-		queue_free()
+	
+		set_process(false)
+		$AnimationPlayer.play("Explode")
 
 func start_travel():
 	traveling = true

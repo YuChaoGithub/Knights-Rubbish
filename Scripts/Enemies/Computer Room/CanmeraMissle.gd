@@ -10,12 +10,10 @@ const KNOCK_BACK_VEL_X = 400
 const KNOCK_BACK_FADE_RATE = 900
 const KNOCK_BACK_VEL_Y = 300
 
-const EXPLODE_DURATION = 0.2
 const LIFETIME = 8
 
 var lifetime_timestamp
 var exploding = false
-var explode_timer = null
 
 var horizontal_movement
 var gravity_movement
@@ -32,25 +30,22 @@ func initialize(dx, dy):
 func _process(delta):
 	# Movement.
 	gravity_movement.move(delta)
-	move_and_collide(horizontal_movement.movement(delta))
+	var collision = move_and_collide(horizontal_movement.movement(delta))
 
 	# Rotation.
 	rotation = atan2(-horizontal_movement.dx, gravity_movement.dy) - PI * 0.5
 
 	# Lifetime.
-	if gravity_movement.is_landed || OS.get_unix_time() - lifetime_timestamp > LIFETIME:
+	if collision != null || OS.get_unix_time() - lifetime_timestamp > LIFETIME:
 		explode()
 
-func explode():
-	exploding = true
-	
+func explode():	
+	# Will be freed by the animation.
 	animator.play("Explode")
-	explode_timer = preload("res://Scripts/Utils/CountdownTimer.gd").new(EXPLODE_DURATION, self, "queue_free")
-
 	set_process(false)
 
 func attack_hit(area):
-	if !exploding && area.is_in_group("hero"):
+	if area.is_in_group("hero"):
 		explode()
 
 		var character = area.get_node("..")

@@ -24,8 +24,6 @@ var transformed_textures = [
 	preload("res://Graphics/Enemies/Computer Room/Eyemac/Thin Mouse.png")
 ]
 
-var spark = preload("res://Scenes/Utils/Spark.tscn")
-
 onready var sprite = $Sprite
 
 func _ready():
@@ -54,8 +52,6 @@ func on_attack_hit(area):
 		character.damaged(DAMAGE, false)
 		character.knocked_back(sign(movement_pattern.dx) * KNOCK_BACK_VEL_X, -KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 
-		var new_spark = spark.instance()
-		$"..".add_child(new_spark)
-		new_spark.global_position = global_position
-
-		queue_free()
+		# Will be freed in the animation.
+		set_process(false)
+		$AnimationPlayer.play("Explode")

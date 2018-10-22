@@ -31,4 +31,6 @@ func on_attack_hit(area):
 		character.damaged(DAMAGE)
 		character.knocked_back(-KNOCK_BACK_VEL_X, -KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 
-		queue_free()
+		set_process(false)
+		# Will be freed by the animation.
+		$"Animation/AnimationPlayer".play("Explode")

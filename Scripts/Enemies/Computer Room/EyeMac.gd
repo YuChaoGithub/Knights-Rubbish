@@ -22,7 +22,7 @@ export(int) var activate_range_y = 1500
 export(int) var harddies_left_pos = 350
 export(int) var harddies_right_pos = 2400
 
-const MAX_HEALTH = 8888
+const MAX_HEALTH = 1000
 
 const SCREEN_CAPTURE_SLOT = 1
 
@@ -68,6 +68,7 @@ onready var spawn_node = $".."
 var lightnings = preload("res://Scenes/Enemies/Computer Room/eyeMacLightnings.tscn")
 
 # Heart.
+var hurt_particle = preload("res://Scenes/Particles/eyeMacHeartParticles.tscn")
 onready var hurt_heart = $"Animation/Screen/Hurt Me Screen/Heart"
 onready var heart_left_pos_x = $"Animation/Screen/Hurt Me Screen/Left Pos".position.x
 onready var heart_right_pos_x = $"Animation/Screen/Hurt Me Screen/Right Pos".position.x
@@ -117,13 +118,13 @@ onready var usb_frame_top_right_pos = $"Animation/Screen/Drop USB Scene/Top Righ
 
 # Screen Crack.
 var screen_crack_textures = [
-	preload("res://Graphics/Enemies/Computer Room/Eyemac/Broken Screen 7.png"),
-	preload("res://Graphics/Enemies/Computer Room/Eyemac/Broken Screen 6.png"),
-	preload("res://Graphics/Enemies/Computer Room/Eyemac/Broken Screen 5.png"),
-	preload("res://Graphics/Enemies/Computer Room/Eyemac/Broken Screen 4.png"),
-	preload("res://Graphics/Enemies/Computer Room/Eyemac/Broken Screen 3.png"),
-	preload("res://Graphics/Enemies/Computer Room/Eyemac/Broken Screen 2.png"),
-	preload("res://Graphics/Enemies/Computer Room/Eyemac/Broken Screen 1.png"),
+	preload("res://Graphics/Enemies/Computer Room/Eyemac/BrokenScreen7.png"),
+	preload("res://Graphics/Enemies/Computer Room/Eyemac/BrokenScreen6.png"),
+	preload("res://Graphics/Enemies/Computer Room/Eyemac/BrokenScreen5.png"),
+	preload("res://Graphics/Enemies/Computer Room/Eyemac/BrokenScreen4.png"),
+	preload("res://Graphics/Enemies/Computer Room/Eyemac/BrokenScreen3.png"),
+	preload("res://Graphics/Enemies/Computer Room/Eyemac/BrokenScreen2.png"),
+	preload("res://Graphics/Enemies/Computer Room/Eyemac/BrokenScreen1.png"),
 	null
 ]
 onready var screen_crack = $"Animation/Screen/Broken Screen"
@@ -358,6 +359,10 @@ func shoot_disappear():
 
 func damaged(val):
 	ec.damaged(val, ec.status == HEART)
+
+	var particles = hurt_particle.instance()
+	spawn_node.add_child(particles)
+	particles.global_position = hurt_heart.global_position
 
 	crack_screen_according_to_health()
 

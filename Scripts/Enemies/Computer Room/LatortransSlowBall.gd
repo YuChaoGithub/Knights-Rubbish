@@ -34,4 +34,6 @@ func on_attack_hit(area):
 		hero.speed_changed(args)
 		hero.damaged(DAMAGE)
 
-		queue_free()
+		set_process(false)
+		# Will be freed by the animation.
+		$"Animation/AnimationPlayer".play("Explode")

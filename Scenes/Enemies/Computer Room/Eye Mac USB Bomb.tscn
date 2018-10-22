@@ -1,11 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/EyeMacUSBBomb.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/USB Bomb.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/USB Bomb Light.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Flaggomine/Explosion 1.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Flaggomine/Explosion 2.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Flaggomine/Explosion 3.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Particles/Fire.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -15,7 +13,7 @@ extents = Vector2( 52.1302, 19.3051 )
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
-extents = Vector2( 98.9154, 98.5647 )
+extents = Vector2( 98.9154, 69.8434 )
 
 [sub_resource type="Animation" id=3]
 
@@ -35,7 +33,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 0, 0, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Explosion:visible")
+tracks/1/path = NodePath("Attack Area:collision_mask")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -44,10 +42,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ 0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Attack Area:collision_mask")
+tracks/2/path = NodePath("Body:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -55,13 +53,25 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Particles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0 ]
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=4]
 
-length = 0.3
+length = 0.5
 loop = false
 step = 0.05
 tracks/0/type = "value"
@@ -77,40 +87,54 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Explosion:visible")
+tracks/1/path = NodePath("Attack Area:collision_mask")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ 1, 0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Explosion:texture")
+tracks/2/path = NodePath("Body:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.05, 0.1 ),
+"times": PoolRealArray( 0, 0.2, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
-"update": 1,
-"values": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ]
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("Attack Area:collision_mask")
+tracks/3/path = NodePath("Particles2D:emitting")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.15 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 1, 0 ]
+"values": [ true ]
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -131,7 +155,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Explosion:visible")
+tracks/1/path = NodePath("Attack Area:collision_mask")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -140,10 +164,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ 0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Attack Area:collision_mask")
+tracks/2/path = NodePath("Body:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -151,19 +175,96 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Particles2D:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0 ]
+"values": [ false ]
 }
 
-[node name="Eye Mac USB Bomb" type="KinematicBody2D" index="0"]
+[sub_resource type="Gradient" id=6]
+
+offsets = PoolRealArray( 0, 0.475758, 1 )
+colors = PoolColorArray( 0, 0, 0, 0.63502, 0, 0, 0, 0.56, 1, 0, 0, 0.62502 )
+
+[sub_resource type="GradientTexture" id=7]
+
+flags = 4
+gradient = SubResource( 6 )
+width = 2048
+
+[sub_resource type="Curve" id=8]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 0.815493 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=9]
+
+flags = 4
+width = 2048
+curve = SubResource( 8 )
+
+[sub_resource type="ParticlesMaterial" id=10]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 90.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 250.0
+initial_velocity_random = 0.3
+angular_velocity = 1.44334e-43
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = -90.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+scale_curve = SubResource( 9 )
+color_ramp = SubResource( 7 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Color", "Gravity", "Initial Velocity", "Linear Accel", "Scale", "Spread" ]
+
+[node name="Eye Mac USB Bomb" type="KinematicBody2D"]
 
 scale = Vector2( 2, 2 )
+z_index = 1
 input_pickable = false
 collision_layer = 0
 collision_mask = 4
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision", "collision" ]
+_sections_unfolded = [ "Collision", "Transform", "Z Index", "collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -171,24 +272,17 @@ shape = SubResource( 1 )
 
 [node name="Body" type="Sprite" parent="." index="1"]
 
-editor/display_folded = true
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="Light" type="Sprite" parent="Body" index="0"]
 
-self_modulate = Color( 1, 0.19487, 0.19487, 0.80513 )
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 3.78799, -11.2669 )
 texture = ExtResource( 3 )
 
-[node name="Explosion" type="Sprite" parent="." index="2"]
+[node name="Attack Area" type="Area2D" parent="." index="2"]
 
-visible = false
-scale = Vector2( 4, 4 )
-texture = ExtResource( 4 )
-
-[node name="Attack Area" type="Area2D" parent="." index="3"]
-
-editor/display_folded = true
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -202,9 +296,10 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack Area" index="0"]
 
+position = Vector2( 0, -72.3784 )
 shape = SubResource( 2 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -215,6 +310,30 @@ anims/Blinking = SubResource( 3 )
 anims/Explode = SubResource( 4 )
 anims/Still = SubResource( 5 )
 blend_times = [  ]
+
+[node name="Particles2D" type="Particles2D" parent="." index="4"]
+
+position = Vector2( -5.13324, -26.6927 )
+rotation = -1.54352
+emitting = false
+amount = 60
+lifetime = 0.5
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.6
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 10 )
+texture = ExtResource( 4 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
 [connection signal="area_entered" from="Attack Area" to="." method="on_attack_hit"]
 

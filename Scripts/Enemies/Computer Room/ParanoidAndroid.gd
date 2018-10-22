@@ -16,11 +16,8 @@ const KNOCK_BACK_FADE_RATE = 600
 const KNOCK_BACK_VEL_Y = 300
 
 const LIFETIME = 10
-const DIE_ANIMATION_DURATION = 0.2
 
 var lifetime_timestamp
-var die_timer = null
-var exploding = false
 
 onready var movement_pattern = preload("res://Scripts/Movements/StraightLineMovement.gd").new(-SPEED_X, 0)
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
@@ -48,12 +45,11 @@ func _process(delta):
 func attack_hit(area):
 	if area.is_in_group("hero"):
 		explode()
+		
 		var character = area.get_node("..")
 		character.damaged(DAMAGE)
 		character.knocked_back(-KNOCK_BACK_VEL_X, -KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 
 func explode():
-	exploding = true
-	animator.play("Explode")
-	die_timer = preload("res://Scripts/Utils/CountdownTimer.gd").new(DIE_ANIMATION_DURATION, self, "queue_free")
 	set_process(false)
+	animator.play("Explode")	

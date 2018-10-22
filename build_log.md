@@ -1014,14 +1014,22 @@ Comment: Finally finished designing level 1.
 * Fixed the wrongly connected doors.
 * Completed level 1-0 (level 1 picker).
 
+[2018.10.22]
+* Redesigned the visual effects of Battorio, Calcasio Bullet, Canmera Missle, Chromoghast Shuriken, Cliffy Shuriken, Cliffy Light Bulb, eyeMac Mouse Bomb, eyeMac USB Bomb, eyeMac, Harddies Ring, iSnail Hourglass, Latortrans Balls, Mousy Bomb, Radiogugu Watch, Paranoid Android, Amazlet Frizbee, Sockute Lightning Ball.
+Comment: What a day. Tired.
+
 [Next]
-* Add Light2D to explosions/particles.
-* Start designing the new characters.
+* Enemy melee attack effects.
+* Laser effects. (A circular Light 2D on the target.)
+* Start designing the new characters * 3. (Plato, Codox, SS.)
 
 To Do List:
-* New characters * 6. (Est. Before January)
-* Sound Effects (Use human voice) & Background Music (Beat Box...perhaps?).
-* Introduction article.
+* New characters * 3.
+* Introduction article. Preview Video.
+(Est. Before November)
+* New characters * 5.
+* Character attack effects.
+* Sound Effects & Background Music.
 **Alpha Version [Ver 0.1] Publishing**
 
 Sound Effects:

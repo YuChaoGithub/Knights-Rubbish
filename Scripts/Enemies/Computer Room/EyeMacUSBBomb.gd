@@ -30,8 +30,8 @@ func _process(delta):
 		timer = cd_timer.new(BLINKING_DURATION, self, "explode")
 
 func explode():
+	# Will be freed by the animation.
 	animator.play("Explode")
-	timer = cd_timer.new(EXPLODE_DURATION, self, "queue_free")
 
 func on_attack_hit(area):
 	if area.is_in_group("hero"):

@@ -7047,8 +7047,8 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="Node2D" parent="." index="3"]
 
-editor/display_folded = true
-_sections_unfolded = [ "Transform" ]
+light_mask = 5
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Animation" type="Node2D" parent="Sprite" index="0"]
 
@@ -7140,17 +7140,20 @@ blend_times = [  ]
 [node name="Body" type="Sprite" parent="Sprite/Animation" index="2"]
 
 editor/display_folded = true
+light_mask = 5
 position = Vector2( 0, -16 )
 texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Eye Lashes" type="Sprite" parent="Sprite/Animation/Body" index="0"]
 
+light_mask = 5
 position = Vector2( -0.530586, -14.8565 )
 texture = ExtResource( 7 )
 
 [node name="Eye" type="Sprite" parent="Sprite/Animation/Body" index="1"]
 
+light_mask = 5
 position = Vector2( 7.1907, -3.38811 )
 scale = Vector2( 1.05714, 1.05714 )
 texture = ExtResource( 14 )
@@ -7158,11 +7161,13 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Pink" type="Sprite" parent="Sprite/Animation/Body" index="2"]
 
+light_mask = 5
 position = Vector2( -32.3064, 14.4822 )
 texture = ExtResource( 9 )
 
 [node name="Left Foot" type="Sprite" parent="Sprite/Animation/Body" index="3"]
 
+light_mask = 5
 position = Vector2( -19.6812, 77.6028 )
 rotation = 0.572194
 texture = ExtResource( 15 )
@@ -7170,6 +7175,7 @@ offset = Vector2( -0.500076, 12.4878 )
 
 [node name="Right Foot" type="Sprite" parent="Sprite/Animation/Body" index="4"]
 
+light_mask = 5
 position = Vector2( 19.522, 78.1469 )
 rotation = 0.146333
 texture = ExtResource( 15 )
@@ -7178,6 +7184,7 @@ offset = Vector2( -0.156494, 12.0443 )
 [node name="Hat" type="Sprite" parent="Sprite/Animation/Body" index="5"]
 
 editor/display_folded = true
+light_mask = 5
 position = Vector2( -4.26978, -78.6892 )
 rotation = 0.0748602
 texture = ExtResource( 8 )
@@ -7205,6 +7212,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Mouth" type="Sprite" parent="Sprite/Animation/Body" index="6"]
 
 editor/display_folded = true
+light_mask = 5
 position = Vector2( 39.9342, 18.4681 )
 texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform" ]
@@ -7217,6 +7225,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Skirt" type="Sprite" parent="Sprite/Animation/Body" index="7"]
 
+light_mask = 5
 position = Vector2( -2.07814, 64.6541 )
 texture = ExtResource( 18 )
 

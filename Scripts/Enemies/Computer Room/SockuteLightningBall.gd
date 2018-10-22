@@ -13,14 +13,9 @@ const KNOCK_BACK_FADE_RATE = 1000
 const ENLARGE_RATE = 0.5
 const LIFETIME = 11
 
-const FADEOUT_DURATION = 0.3
-
 var traveling = false
 var lifetime_timestamp
-var fade_out_timer = null
-var fading = false
 
-var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var dot = preload("res://Scenes/Utils/Change Health OT.tscn")
 
 onready var animator = $"AnimationPlayer"
@@ -38,7 +33,8 @@ func _process(delta):
 		global_position += movement_pattern.movement(delta)
 
 	if OS.get_unix_time() - lifetime_timestamp >= LIFETIME:
-		fade_out_and_queue_free()
+		set_process(false)
+		animator.play("Fade")
 
 func enlarge(delta):
 	scale += Vector2(1.0, 1.0) * ENLARGE_RATE * delta
@@ -62,13 +58,8 @@ func on_attack_hit(area):
 		
 		character.knocked_back(sign(movement_pattern.dx) * KNOCK_BACK_VEL_X, sign(movement_pattern.dy) * KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 
-		fade_out_and_queue_free()
+		explode()
 
-func fade_out_and_queue_free():
-	if fading:
-		return
-
-	fading = true
-	animator.play("Fade")
-
-	fade_out_timer = cd_timer.new(FADEOUT_DURATION, self, "queue_free")
+func explode():
+	set_process(false)
+	animator.play("Explode")

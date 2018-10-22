@@ -11,7 +11,6 @@ const LIFETIME = 8.0
 
 var timestamp = 0.0
 
-var spark = preload("res://Scenes/Utils/Spark.tscn")
 var traveling = false
 var dir_x
 
@@ -48,8 +47,6 @@ func on_attack_hit(area):
 		explode()
 
 func explode():
-	var new_spark = spark.instance()
-	$"..".add_child(new_spark)
-	new_spark.global_position = global_position
-
-	queue_free()
+	set_process(false)
+	# Will be freed by the animation.
+	$AnimationPlayer.play("Explode")
