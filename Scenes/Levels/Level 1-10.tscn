@@ -1616,7 +1616,6 @@ activate_range_y = 2000
 [node name="Red Earspider" parent="Enemies" index="5" instance=ExtResource( 84 )]
 
 position = Vector2( 4650, -850 )
-trigger_range_x = 450
 
 [node name="Sockute" parent="Enemies" index="6" instance=ExtResource( 85 )]
 
@@ -1627,112 +1626,90 @@ activate_interval = 7.0
 [node name="Red Earspider2" parent="Enemies" index="7" instance=ExtResource( 84 )]
 
 position = Vector2( 4050, 500 )
-trigger_range_x = 450
 
 [node name="Red Earspider3" parent="Enemies" index="8" instance=ExtResource( 84 )]
 
 position = Vector2( 8000, 1350 )
-trigger_range_x = 450
 
 [node name="Red Earspider4" parent="Enemies" index="9" instance=ExtResource( 84 )]
 
 position = Vector2( 12150, 950 )
-trigger_range_x = 450
 
 [node name="Red Earspider5" parent="Enemies" index="10" instance=ExtResource( 84 )]
 
 position = Vector2( 13050, 950 )
-trigger_range_x = 450
 
 [node name="Red Earspider6" parent="Enemies" index="11" instance=ExtResource( 84 )]
 
 position = Vector2( 13700, 1050 )
-trigger_range_x = 450
 
 [node name="Red Earspider7" parent="Enemies" index="12" instance=ExtResource( 84 )]
 
 position = Vector2( 14100, 1050 )
-trigger_range_x = 450
 
 [node name="Red Earspider8" parent="Enemies" index="13" instance=ExtResource( 84 )]
 
 position = Vector2( 14650, 750 )
-trigger_range_x = 450
 
 [node name="Red Earspider9" parent="Enemies" index="14" instance=ExtResource( 84 )]
 
 position = Vector2( 14950, 750 )
-trigger_range_x = 450
 
 [node name="Red Earspider10" parent="Enemies" index="15" instance=ExtResource( 84 )]
 
 position = Vector2( 15550, 750 )
-trigger_range_x = 450
 
 [node name="Red Earspider11" parent="Enemies" index="16" instance=ExtResource( 84 )]
 
 position = Vector2( 16400, 1450 )
-trigger_range_x = 450
 
 [node name="Red Earspider12" parent="Enemies" index="17" instance=ExtResource( 84 )]
 
 position = Vector2( 16450, 750 )
-trigger_range_x = 450
 
 [node name="Red Earspider13" parent="Enemies" index="18" instance=ExtResource( 84 )]
 
 position = Vector2( 16900, 750 )
-trigger_range_x = 450
 
 [node name="Red Earspider14" parent="Enemies" index="19" instance=ExtResource( 84 )]
 
 position = Vector2( 17450, 750 )
-trigger_range_x = 450
 
 [node name="Red Earspider15" parent="Enemies" index="20" instance=ExtResource( 84 )]
 
 position = Vector2( 17100, 1450 )
-trigger_range_x = 450
 
 [node name="Red Earspider16" parent="Enemies" index="21" instance=ExtResource( 84 )]
 
 position = Vector2( 18900, 1450 )
-trigger_range_x = 450
 
 [node name="Red Earspider17" parent="Enemies" index="22" instance=ExtResource( 84 )]
 
 position = Vector2( 19150, 750 )
-trigger_range_x = 450
 
 [node name="Red Earspider18" parent="Enemies" index="23" instance=ExtResource( 84 )]
 
 position = Vector2( 19800, 750 )
-trigger_range_x = 450
 
 [node name="Red Earspider19" parent="Enemies" index="24" instance=ExtResource( 84 )]
 
 position = Vector2( 20600, 750 )
-trigger_range_x = 450
 
 [node name="Red Earspider20" parent="Enemies" index="25" instance=ExtResource( 84 )]
 
 position = Vector2( 19350, 1450 )
-trigger_range_x = 450
 
 [node name="Red Earspider21" parent="Enemies" index="26" instance=ExtResource( 84 )]
 
 position = Vector2( 20150, 1450 )
-trigger_range_x = 450
 
 [node name="Red Earspider22" parent="Enemies" index="27" instance=ExtResource( 84 )]
 
 position = Vector2( 20950, 1450 )
-trigger_range_x = 450
 
 [node name="Red Earspider23" parent="Enemies" index="28" instance=ExtResource( 84 )]
 
 position = Vector2( 21850, 1450 )
-trigger_range_x = 450
 
 [node name="PowerUps" type="Node2D" parent="." index="15"]
 
@@ -2163,9 +2140,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="FollowingCamera" method="update_top_limit" binds= [ 600 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/RedPortalTrigger1" to="Activate3" method="activate"]
-
 [connection signal="passed" from="CameraChangingTriggers/RedPortalTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 10950 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/RedPortalTrigger1" to="Activate3" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="FollowingCamera" method="update_right_limit" binds= [ 21250 ]]
 
@@ -2175,120 +2152,120 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/BlackPortalTrigger2" to="FollowingCamera" method="update_top_limit" binds= [ 1900 ]]
 
-[connection signal="defeated" from="Activate1/CD Punch" to="Writings/Countdown Label2" method="tick"]
-
 [connection signal="defeated" from="Activate1/CD Punch" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
 
-[connection signal="defeated" from="Activate1/Dark Earspider4" to="Writings/Countdown Label2" method="tick"]
+[connection signal="defeated" from="Activate1/CD Punch" to="Writings/Countdown Label2" method="tick"]
 
 [connection signal="defeated" from="Activate1/Dark Earspider4" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
 
-[connection signal="defeated" from="Activate1/Dark Earspider5" to="Writings/Countdown Label2" method="tick"]
+[connection signal="defeated" from="Activate1/Dark Earspider4" to="Writings/Countdown Label2" method="tick"]
 
 [connection signal="defeated" from="Activate1/Dark Earspider5" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
 
-[connection signal="defeated" from="Activate1/Laserphone" to="Writings/Countdown Label2" method="tick"]
+[connection signal="defeated" from="Activate1/Dark Earspider5" to="Writings/Countdown Label2" method="tick"]
 
 [connection signal="defeated" from="Activate1/Laserphone" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
 
-[connection signal="defeated" from="Activate1/Laserphone2" to="Writings/Countdown Label2" method="tick"]
+[connection signal="defeated" from="Activate1/Laserphone" to="Writings/Countdown Label2" method="tick"]
 
 [connection signal="defeated" from="Activate1/Laserphone2" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
 
-[connection signal="defeated" from="Activate2/Laserphone3" to="Writings/Countdown Label3" method="tick"]
+[connection signal="defeated" from="Activate1/Laserphone2" to="Writings/Countdown Label2" method="tick"]
 
 [connection signal="defeated" from="Activate2/Laserphone3" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
-[connection signal="defeated" from="Activate2/Laserphone4" to="Writings/Countdown Label3" method="tick"]
+[connection signal="defeated" from="Activate2/Laserphone3" to="Writings/Countdown Label3" method="tick"]
 
 [connection signal="defeated" from="Activate2/Laserphone4" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
-[connection signal="defeated" from="Activate2/Laserphone5" to="Writings/Countdown Label3" method="tick"]
+[connection signal="defeated" from="Activate2/Laserphone4" to="Writings/Countdown Label3" method="tick"]
 
 [connection signal="defeated" from="Activate2/Laserphone5" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
-[connection signal="defeated" from="Activate2/Laserphone6" to="Writings/Countdown Label3" method="tick"]
+[connection signal="defeated" from="Activate2/Laserphone5" to="Writings/Countdown Label3" method="tick"]
 
 [connection signal="defeated" from="Activate2/Laserphone6" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
-[connection signal="defeated" from="Activate2/Laserphone7" to="Writings/Countdown Label3" method="tick"]
+[connection signal="defeated" from="Activate2/Laserphone6" to="Writings/Countdown Label3" method="tick"]
 
 [connection signal="defeated" from="Activate2/Laserphone7" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
-[connection signal="defeated" from="Activate2/Laserphone8" to="Writings/Countdown Label3" method="tick"]
+[connection signal="defeated" from="Activate2/Laserphone7" to="Writings/Countdown Label3" method="tick"]
 
 [connection signal="defeated" from="Activate2/Laserphone8" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
-[connection signal="defeated" from="Activate2/Laserphone9" to="Writings/Countdown Label3" method="tick"]
+[connection signal="defeated" from="Activate2/Laserphone8" to="Writings/Countdown Label3" method="tick"]
 
 [connection signal="defeated" from="Activate2/Laserphone9" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
-[connection signal="defeated" from="Activate2/Laserphone10" to="Writings/Countdown Label3" method="tick"]
+[connection signal="defeated" from="Activate2/Laserphone9" to="Writings/Countdown Label3" method="tick"]
 
 [connection signal="defeated" from="Activate2/Laserphone10" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
-[connection signal="defeated" from="Activate2/Laserphone11" to="Writings/Countdown Label3" method="tick"]
+[connection signal="defeated" from="Activate2/Laserphone10" to="Writings/Countdown Label3" method="tick"]
 
 [connection signal="defeated" from="Activate2/Laserphone11" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
-[connection signal="defeated" from="Activate2/CD Punch2" to="Writings/Countdown Label3" method="tick"]
+[connection signal="defeated" from="Activate2/Laserphone11" to="Writings/Countdown Label3" method="tick"]
 
 [connection signal="defeated" from="Activate2/CD Punch2" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
-[connection signal="defeated" from="Activate2/CD Punch3" to="Writings/Countdown Label3" method="tick"]
+[connection signal="defeated" from="Activate2/CD Punch2" to="Writings/Countdown Label3" method="tick"]
 
 [connection signal="defeated" from="Activate2/CD Punch3" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
-[connection signal="defeated" from="Activate2/CD Punch4" to="Writings/Countdown Label3" method="tick"]
+[connection signal="defeated" from="Activate2/CD Punch3" to="Writings/Countdown Label3" method="tick"]
 
 [connection signal="defeated" from="Activate2/CD Punch4" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
-[connection signal="defeated" from="Activate3/Laserphone12" to="Writings/Countdown Label4" method="tick"]
+[connection signal="defeated" from="Activate2/CD Punch4" to="Writings/Countdown Label3" method="tick"]
 
 [connection signal="defeated" from="Activate3/Laserphone12" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
-[connection signal="defeated" from="Activate3/Laserphone13" to="Writings/Countdown Label4" method="tick"]
+[connection signal="defeated" from="Activate3/Laserphone12" to="Writings/Countdown Label4" method="tick"]
 
 [connection signal="defeated" from="Activate3/Laserphone13" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
-[connection signal="defeated" from="Activate3/Dark Earspider6" to="Writings/Countdown Label4" method="tick"]
+[connection signal="defeated" from="Activate3/Laserphone13" to="Writings/Countdown Label4" method="tick"]
 
 [connection signal="defeated" from="Activate3/Dark Earspider6" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
-[connection signal="defeated" from="Activate3/Dark Earspider7" to="Writings/Countdown Label4" method="tick"]
+[connection signal="defeated" from="Activate3/Dark Earspider6" to="Writings/Countdown Label4" method="tick"]
 
 [connection signal="defeated" from="Activate3/Dark Earspider7" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
-[connection signal="defeated" from="Activate3/Dark Earspider8" to="Writings/Countdown Label4" method="tick"]
+[connection signal="defeated" from="Activate3/Dark Earspider7" to="Writings/Countdown Label4" method="tick"]
 
 [connection signal="defeated" from="Activate3/Dark Earspider8" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
-[connection signal="defeated" from="Activate3/CD Punch5" to="Writings/Countdown Label4" method="tick"]
+[connection signal="defeated" from="Activate3/Dark Earspider8" to="Writings/Countdown Label4" method="tick"]
 
 [connection signal="defeated" from="Activate3/CD Punch5" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
-[connection signal="defeated" from="Activate3/CD Punch6" to="Writings/Countdown Label4" method="tick"]
+[connection signal="defeated" from="Activate3/CD Punch5" to="Writings/Countdown Label4" method="tick"]
 
 [connection signal="defeated" from="Activate3/CD Punch6" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Dark Earspider" to="Writings/Countdown Label1" method="tick"]
+[connection signal="defeated" from="Activate3/CD Punch6" to="Writings/Countdown Label4" method="tick"]
 
 [connection signal="defeated" from="Enemies/Dark Earspider" to="CameraChangingTriggers/MobClearTrigger1" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Dark Earspider2" to="Writings/Countdown Label1" method="tick"]
+[connection signal="defeated" from="Enemies/Dark Earspider" to="Writings/Countdown Label1" method="tick"]
 
 [connection signal="defeated" from="Enemies/Dark Earspider2" to="CameraChangingTriggers/MobClearTrigger1" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Dark Earspider3" to="Writings/Countdown Label1" method="tick"]
+[connection signal="defeated" from="Enemies/Dark Earspider2" to="Writings/Countdown Label1" method="tick"]
 
 [connection signal="defeated" from="Enemies/Dark Earspider3" to="CameraChangingTriggers/MobClearTrigger1" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Canmera" to="Writings/Countdown Label1" method="tick"]
+[connection signal="defeated" from="Enemies/Dark Earspider3" to="Writings/Countdown Label1" method="tick"]
 
 [connection signal="defeated" from="Enemies/Canmera" to="CameraChangingTriggers/MobClearTrigger1" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Canmera2" to="Writings/Countdown Label1" method="tick"]
+[connection signal="defeated" from="Enemies/Canmera" to="Writings/Countdown Label1" method="tick"]
 
 [connection signal="defeated" from="Enemies/Canmera2" to="CameraChangingTriggers/MobClearTrigger1" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Canmera2" to="Writings/Countdown Label1" method="tick"]
 
 

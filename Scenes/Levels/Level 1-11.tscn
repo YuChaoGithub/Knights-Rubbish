@@ -1475,9 +1475,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/BlackFrameTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -2500 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/BlueFrameTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -1700 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/BlueFrameTrigger" to="Enemies/Radiogugu" method="activate"]
+
+[connection signal="passed" from="CameraChangingTriggers/BlueFrameTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -1700 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/RadioguguClearTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
 

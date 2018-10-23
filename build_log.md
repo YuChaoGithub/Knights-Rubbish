@@ -1018,17 +1018,19 @@ Comment: Finally finished designing level 1.
 * Redesigned the visual effects of Battorio, Calcasio Bullet, Canmera Missle, Chromoghast Shuriken, Cliffy Shuriken, Cliffy Light Bulb, eyeMac Mouse Bomb, eyeMac USB Bomb, eyeMac, Harddies Ring, iSnail Hourglass, Latortrans Balls, Mousy Bomb, Radiogugu Watch, Paranoid Android, Amazlet Frizbee, Sockute Lightning Ball.
 Comment: What a day. Tired.
 
+[2018.10.23]
+* Added laserlight effect for all laser shooting enemies.
+* Added particle systems for Radiogugu's skills, Darkearspider's clap, Godotbos Skill's Godotbos Missles, Eelo Kicker, Eelo Puncher, Harddies Drop (I really like the puff effects), Floopy, CD Punch, Keshia's Pencil Dart, Bottom Grab, Top Fist.
+
 [Next]
-* Enemy melee attack effects.
-* Laser effects. (A circular Light 2D on the target.)
-* Start designing the new characters * 3. (Plato, Codox, SS.)
+* Keshia and Wendy's attack effects.
+* Implement characters: Plato, Codox, Bro SS.
 
 To Do List:
 * New characters * 3.
 * Introduction article. Preview Video.
-(Est. Before November)
+(Est. Before late November)
 * New characters * 5.
-* Character attack effects.
 * Sound Effects & Background Music.
 **Alpha Version [Ver 0.1] Publishing**
 

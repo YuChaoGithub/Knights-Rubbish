@@ -34,6 +34,7 @@ var cam_lock_semaphore = 0
 
 # For grabbing and dropping the character from the screen edges.
 var bottom_grab = preload("res://Scenes/UI/Bottom Grab.tscn")
+var bottom_grab_particles = preload("res://Scenes/Particles/BottomGrabParticles.tscn")
 var top_fist = preload("res://Scenes/UI/Top Fist.tscn")
 
 var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
@@ -134,9 +135,15 @@ func clamp_pos_within_cam_bounds(pos):
 func instance_bottom_grab(pos_x):
 	start_shake_effect()
 
+	var pos = Vector2(pos_x, global_position.y + cam_height * 0.5)
+
+	var p = bottom_grab_particles.instance()
+	$"..".add_child(p)
+	p.global_position = pos
+
 	var fist = bottom_grab.instance()
 	$"..".add_child(fist)
-	fist.global_position = Vector2(pos_x, global_position.y + cam_height * 0.5)
+	fist.global_position = pos
 
 func instance_top_fist(icon_texture):
 	var fist = top_fist.instance()

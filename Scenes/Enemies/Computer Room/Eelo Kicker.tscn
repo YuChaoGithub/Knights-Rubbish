@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/EeloKicker.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Left Leg.png" type="Texture" id=2]
@@ -11,7 +11,8 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Dead Face.png" type="Texture" id=9]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Sad Face.png" type="Texture" id=10]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Stunned Face.png" type="Texture" id=11]
-[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Graphics/Particles/Dot.png" type="Texture" id=12]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -2975,6 +2976,70 @@ tracks/23/keys = {
 "values": [ 0 ]
 }
 
+[sub_resource type="Gradient" id=18]
+
+offsets = PoolRealArray( 0, 0.572727, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0, 0.953125, 1, 1, 0, 0.953125, 1, 1 )
+
+[sub_resource type="GradientTexture" id=19]
+
+flags = 4
+gradient = SubResource( 18 )
+width = 2048
+
+[sub_resource type="Curve" id=15]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 0.0825195 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.00830078 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=16]
+
+flags = 4
+width = 2048
+curve = SubResource( 15 )
+
+[sub_resource type="ParticlesMaterial" id=17]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 300.0
+initial_velocity_random = 0.0
+angular_velocity = 1.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+scale_curve = SubResource( 16 )
+color_ramp = SubResource( 19 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Color", "Gravity", "Initial Velocity", "Scale", "Spread" ]
+
 [node name="Eelo Kicker" type="KinematicBody2D" index="0"]
 
 input_pickable = false
@@ -3017,54 +3082,57 @@ shape = SubResource( 2 )
 
 [node name="Left Leg" type="Sprite" parent="Animation" index="1"]
 
-position = Vector2( -13.1887, 87.7833 )
-rotation = -0.211605
+position = Vector2( -22.5723, 84.8986 )
+rotation = -0.249304
 scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 offset = Vector2( -1.37547, 10.5142 )
 
 [node name="Left Thigh" type="Sprite" parent="Animation" index="2"]
 
-position = Vector2( -10.0851, 56.355 )
-rotation = 0.00810474
+position = Vector2( -11.1885, 55.4405 )
+rotation = 0.278436
+scale = Vector2( 1, 1 )
 texture = ExtResource( 3 )
 offset = Vector2( 0.0526185, 13.5829 )
 
 [node name="Left Foot" type="Sprite" parent="Animation" index="3"]
 
-position = Vector2( -11.5956, 111.869 )
-rotation = -0.0433343
+position = Vector2( -20.0726, 108.907 )
+rotation = -0.200184
 scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 offset = Vector2( -6.74521, 1.1897 )
 
 [node name="Right Leg" type="Sprite" parent="Animation" index="4"]
 
-position = Vector2( 15.8927, 88.2669 )
-rotation = -0.0500751
+position = Vector2( 20.545, 87.2295 )
+rotation = -0.602037
 scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 offset = Vector2( -0.481429, 9.83557 )
 
 [node name="Right Thigh" type="Sprite" parent="Animation" index="5"]
 
-position = Vector2( 11.1942, 54.9149 )
-rotation = -0.0500751
+position = Vector2( 8.94778, 55.6077 )
+rotation = -0.261637
 scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 offset = Vector2( 1.55377, 14.6066 )
 
 [node name="Right Foot" type="Sprite" parent="Animation" index="6"]
 
-position = Vector2( 16.9257, 111.377 )
-rotation = -0.0500751
+position = Vector2( 32.8193, 106.185 )
+rotation = -0.458583
 scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 offset = Vector2( -6.56178, 1.61104 )
 
 [node name="Body" type="Sprite" parent="Animation" index="7"]
 
-position = Vector2( 0, 0.797709 )
+editor/display_folded = true
+position = Vector2( -0.0918579, 0.0763984 )
+rotation = 0.0182387
 texture = ExtResource( 7 )
 
 [node name="Face" type="Sprite" parent="Animation/Body" index="0"]
@@ -3075,7 +3143,7 @@ texture = ExtResource( 8 )
 [node name="Left Thigh Remote Transform" type="RemoteTransform2D" parent="Animation/Body" index="1"]
 
 position = Vector2( -10.0851, 55.5573 )
-rotation = 0.00810474
+rotation = 0.260197
 remote_path = NodePath("../../Left Thigh")
 use_global_coordinates = true
 update_position = true
@@ -3104,7 +3172,7 @@ shape = SubResource( 3 )
 [node name="Left Leg Remote Transform" type="RemoteTransform2D" parent="Animation/Body/Left Thigh Remote Transform" index="1"]
 
 position = Vector2( -2.84875, 31.4524 )
-rotation = -0.21971
+rotation = -0.52774
 remote_path = NodePath("../../../Left Leg")
 use_global_coordinates = true
 update_position = true
@@ -3114,7 +3182,7 @@ update_scale = true
 [node name="Left Foot Remote Transform" type="RemoteTransform2D" parent="Animation/Body/Left Thigh Remote Transform/Left Leg Remote Transform" index="0"]
 
 position = Vector2( -3.50114, 23.8827 )
-rotation = 0.168271
+rotation = 0.0491202
 remote_path = NodePath("../../../../Left Foot")
 use_global_coordinates = true
 update_position = true
@@ -3123,8 +3191,8 @@ update_scale = true
 
 [node name="Right Thigh Remote Transform" type="RemoteTransform2D" parent="Animation/Body" index="2"]
 
-position = Vector2( 11.1942, 54.1172 )
-rotation = -0.0500751
+position = Vector2( 10.0509, 55.3572 )
+rotation = -0.279876
 remote_path = NodePath("../../Right Thigh")
 use_global_coordinates = true
 update_position = true
@@ -3139,7 +3207,6 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 collision_layer = 0
-collision_mask = 0
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
@@ -3153,6 +3220,7 @@ shape = SubResource( 4 )
 [node name="Right Leg Remote Transform" type="RemoteTransform2D" parent="Animation/Body/Right Thigh Remote Transform" index="1"]
 
 position = Vector2( 3.02316, 33.5454 )
+rotation = -0.3404
 remote_path = NodePath("../../../Right Leg")
 use_global_coordinates = true
 update_position = true
@@ -3161,7 +3229,8 @@ update_scale = true
 
 [node name="Right Foot Remote Transform" type="RemoteTransform2D" parent="Animation/Body/Right Thigh Remote Transform/Right Leg Remote Transform" index="0"]
 
-position = Vector2( -0.125038, 23.1325 )
+position = Vector2( -0.618641, 22.574 )
+rotation = 0.143454
 remote_path = NodePath("../../../../Right Foot")
 use_global_coordinates = true
 update_position = true
@@ -3197,13 +3266,63 @@ anims/Stunned = SubResource( 13 )
 anims/Walk = SubResource( 14 )
 blend_times = [  ]
 
-[node name="Health Bar" parent="." index="2" instance=ExtResource( 12 )]
+[node name="LeftKickParticles" type="Particles2D" parent="Animation" index="9"]
+
+position = Vector2( -87.4713, 53.2913 )
+z_index = 1
+emitting = false
+amount = 7
+lifetime = 0.4
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.9
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 17 )
+texture = ExtResource( 12 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Z Index" ]
+
+[node name="RightKickParticles" type="Particles2D" parent="Animation" index="10"]
+
+position = Vector2( 86.7362, 59.1717 )
+rotation = -2.69195
+z_index = 1
+emitting = false
+amount = 7
+lifetime = 0.4
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.9
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 17 )
+texture = ExtResource( 12 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Z Index" ]
+
+[node name="Health Bar" parent="." index="2" instance=ExtResource( 13 )]
 
 position = Vector2( -0.430573, -201.523 )
 
 [node name="Number Spawn Pos" type="Position2D" parent="." index="3"]
 
-position = Vector2( 0.530396, -120.743 )
+position = Vector2( 2.39817, -122.302 )
+rotation = 0.0182387
 scale = Vector2( 0.88, 0.88 )
 
 [connection signal="area_entered" from="Animation/Body/Left Thigh Remote Transform/Left Kick Area" to="." method="on_left_kick_hit"]

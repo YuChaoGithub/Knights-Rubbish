@@ -47,6 +47,8 @@ var turn_stagger_timer = null
 var attack_target = null
 var facing = -1
 
+onready var punch_particles = $"Animation/PunchParticles"
+
 # 50% it will be a green floopy.
 var green_body_texture = preload("res://Graphics/Enemies/Computer Room/Floopy/green floppy.png")
 
@@ -128,6 +130,8 @@ func punch():
 
 func on_attack_hit(area):
 	if !attack_hit && area.is_in_group("hero"):
+		punch_particles.emitting = true
+
 		var character = area.get_node("..")
 		character.damaged(DAMAGE)
 		character.stunned(STUN_DURATION)

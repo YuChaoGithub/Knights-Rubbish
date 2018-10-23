@@ -54,6 +54,9 @@ var facing = -1
 
 var heal_pos
 
+onready var leftpunch_particles = $"Animation/LeftPunchParticles"
+onready var rightpunch_particles = $"Animation/RightPunchParticles"
+
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
 func activate():
@@ -148,10 +151,12 @@ func punch():
 
 func on_left_attack_hit(area):
 	if area.is_in_group("hero"):
+		leftpunch_particles.emitting = true
 		apply_attack(area.get_node(".."), facing)
 
 func on_right_attack_hit(area):
 	if area.is_in_group("hero"):
+		rightpunch_particles.emitting = true
 		apply_attack(area.get_node(".."), -facing)
 
 func apply_attack(character, dir):

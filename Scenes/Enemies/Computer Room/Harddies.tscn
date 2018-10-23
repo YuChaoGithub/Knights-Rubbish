@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Harddies.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Body.png" type="Texture" id=2]
@@ -9,7 +9,8 @@
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Hand Foot.png" type="Texture" id=7]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Shocked.png" type="Texture" id=8]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=9]
-[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Graphics/Particles/Puff.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -3543,6 +3544,70 @@ tracks/31/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
+[sub_resource type="Gradient" id=18]
+
+offsets = PoolRealArray( 0, 0.243939, 1 )
+colors = PoolColorArray( 0.703125, 0.703125, 0.703125, 0, 0.746307, 0.746307, 0.746307, 0.588235, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=19]
+
+flags = 4
+gradient = SubResource( 18 )
+width = 2048
+
+[sub_resource type="Curve" id=16]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 0.36084 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.787598 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=17]
+
+flags = 4
+width = 2048
+curve = SubResource( 16 )
+
+[sub_resource type="ParticlesMaterial" id=15]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 10.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 250.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.05
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 80.0
+angle_random = 0.5
+scale = 1.0
+scale_random = 0.0
+scale_curve = SubResource( 17 )
+color_ramp = SubResource( 19 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Color", "Gravity", "Initial Velocity", "Orbit Velocity", "Scale", "Spread" ]
+
 [sub_resource type="RectangleShape2D" id=14]
 
 custom_solver_bias = 0.0
@@ -3679,11 +3744,62 @@ anims/Stunned = SubResource( 12 )
 "anims/Toss Ring" = SubResource( 13 )
 blend_times = [  ]
 
+[node name="DropPuffRight" type="Particles2D" parent="Animation" index="5"]
+
+position = Vector2( 63.6849, 119.444 )
+rotation = -0.245754
+z_index = 1
+emitting = false
+amount = 50
+lifetime = 1.0
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.75
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 15 )
+texture = ExtResource( 10 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Z Index" ]
+
+[node name="DropPuffLeft" type="Particles2D" parent="Animation" index="6"]
+
+position = Vector2( -57.3113, 117.914 )
+rotation = 0.231313
+scale = Vector2( -1, 1 )
+z_index = 1
+emitting = false
+amount = 50
+lifetime = 1.0
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.75
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 15 )
+texture = ExtResource( 10 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Z Index" ]
+
 [node name="Number Spawn Pos" type="Position2D" parent="." index="2"]
 
 position = Vector2( -3.47943, 58.4548 )
 
-[node name="Health Bar" parent="." index="3" instance=ExtResource( 10 )]
+[node name="Health Bar" parent="." index="3" instance=ExtResource( 11 )]
 
 position = Vector2( 1.14911, -191.331 )
 

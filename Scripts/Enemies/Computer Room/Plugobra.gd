@@ -36,6 +36,9 @@ const LASER_COLOR = Color(1, 0, 0)
 var status_timer = null
 var die_timer = null
 
+onready var laserlight1 = $"LaserLight1"
+onready var laserlight2 = $"LaserLight2"
+
 onready var laser_pos_left = $"Laser Pos Left"
 onready var laser_pos_right = $"Laser Pos Right"
 onready var drawing_node = $"Drawing"
@@ -75,6 +78,8 @@ func still():
 	ec.play_animation("Wiggle")
 
 	if status_timer == null:
+		laserlight1.enabled = false
+		laserlight2.enabled = false
 		drawing_node.clear_all()
 		status_timer = ec.cd_timer.new(LASER_INTERVAL, self, "change_status", LASER)
 
@@ -92,12 +97,18 @@ func shoot_laser():
 		color = LASER_COLOR,
 		width = LASER_THICKNESS
 	}
+	laserlight1.global_position = attack_target.global_position
+	laserlight1.enabled = true
+
 	var right_laser_line = {
 		from_pos = right_from,
 		to_pos = to,
 		color = LASER_COLOR,
 		width = LASER_THICKNESS
 	}
+	laserlight2.global_position = attack_target.global_position
+	laserlight2.enabled = true
+
 	drawing_node.add_line(left_laser_line)
 	drawing_node.add_line(right_laser_line)
 	attack_target.damaged(DAMAGE, false)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Floopy.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/blue floppy.png" type="Texture" id=2]
@@ -16,7 +16,8 @@
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Left Brow.png" type="Texture" id=14]
 [ext_resource path="res://Graphics/Characters/Bro SS/Big Bro Eyebrow.png" type="Texture" id=15]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=16]
-[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Graphics/Particles/Double Star.png" type="Texture" id=17]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -2733,6 +2734,70 @@ tracks/36/keys = {
 "values": [ 0 ]
 }
 
+[sub_resource type="Gradient" id=13]
+
+offsets = PoolRealArray( 0, 0.319697, 1 )
+colors = PoolColorArray( 0.945312, 1, 0, 0.784314, 0.921875, 1, 0, 0.872222, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=14]
+
+flags = 4
+gradient = SubResource( 13 )
+width = 2048
+
+[sub_resource type="Curve" id=10]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 0.555664 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0778809 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=11]
+
+flags = 4
+width = 2048
+curve = SubResource( 10 )
+
+[sub_resource type="ParticlesMaterial" id=12]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 30.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 700.0
+initial_velocity_random = 0.0
+angular_velocity = 372.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 80.0
+angle_random = 0.5
+scale = 1.0
+scale_random = 0.0
+scale_curve = SubResource( 11 )
+color_ramp = SubResource( 14 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Color", "Gravity", "Initial Velocity", "Scale", "Spread" ]
+
 [node name="Floopy" type="KinematicBody2D" index="0"]
 
 input_pickable = false
@@ -2751,7 +2816,6 @@ shape = SubResource( 1 )
 
 [node name="Animation" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
 position = Vector2( 0, -38.3367 )
 scale = Vector2( 1.2, 1.2 )
 _sections_unfolded = [ "Transform" ]
@@ -2777,6 +2841,7 @@ shape = SubResource( 2 )
 
 [node name="Body" type="Sprite" parent="Animation" index="1"]
 
+editor/display_folded = true
 texture = ExtResource( 2 )
 
 [node name="Hair" type="Sprite" parent="Animation/Body" index="0"]
@@ -2818,7 +2883,6 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 collision_layer = 0
-collision_mask = 0
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
@@ -2906,7 +2970,31 @@ update_position = true
 update_rotation = true
 update_scale = true
 
-[node name="Health Bar" parent="." index="2" instance=ExtResource( 17 )]
+[node name="PunchParticles" type="Particles2D" parent="Animation" index="4"]
+
+position = Vector2( -141.669, 12.6967 )
+z_index = 1
+emitting = false
+amount = 6
+lifetime = 0.3
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.9
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 12 )
+texture = ExtResource( 17 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Z Index" ]
+
+[node name="Health Bar" parent="." index="2" instance=ExtResource( 18 )]
 
 position = Vector2( 2.7919, -149.134 )
 

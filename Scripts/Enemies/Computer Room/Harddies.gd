@@ -53,6 +53,11 @@ var facing = -1
 
 onready var platform_layer = ProjectSettings.get_setting("layer_names/2d_physics/hero_only_platform")
 
+onready var droppuffs = [
+	$"Animation/DropPuffLeft",
+	$"Animation/DropPuffRight"
+]
+
 # Ring spawning.
 var ring = preload("res://Scenes/Enemies/Computer Room/Harddies Ring.tscn")
 onready var ring_spawn_pos = $"Animation/Ring Spawn Pos"
@@ -145,6 +150,8 @@ func fall_and_detect_landing(delta):
 	ec.perform_gravity_movement(delta)
 
 	if ec.gravity_movement.is_landed:
+		for puff in droppuffs:
+			puff.emitting = true
 		change_status(LANDED)
 
 func on_attack_hit(area):

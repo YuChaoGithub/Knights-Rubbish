@@ -51,6 +51,9 @@ var attack_target = null
 var facing = -1
 var heal_pos
 
+onready var leftkick_particles = $"Animation/LeftKickParticles"
+onready var rightkick_particles = $"Animation/RightKickParticles"
+
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
 func activate():
@@ -156,10 +159,12 @@ func perform_kick_sequence(index):
 
 func on_right_kick_hit(area):
 	if area.is_in_group("hero"):
+		rightkick_particles.emitting = true
 		apply_kick_damage(area.get_node(".."), -facing)
 
 func on_left_kick_hit(area):
 	if area.is_in_group("hero"):
+		leftkick_particles.emitting = true
 		apply_kick_damage(area.get_node(".."), facing)
 
 func apply_kick_damage(character, dir):

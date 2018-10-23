@@ -13,7 +13,6 @@ const KNOCK_BACK_VEL_Y = 300
 const LIFETIME = 8
 
 var lifetime_timestamp
-var exploding = false
 
 var horizontal_movement
 var gravity_movement

@@ -22,7 +22,7 @@ export(int) var activate_range_y = 1500
 export(int) var harddies_left_pos = 350
 export(int) var harddies_right_pos = 2400
 
-const MAX_HEALTH = 1000
+const MAX_HEALTH = 8888
 
 const SCREEN_CAPTURE_SLOT = 1
 

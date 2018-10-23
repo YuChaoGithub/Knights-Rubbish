@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Radiogugu.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Radiogugu/Body.png" type="Texture" id=2]
@@ -24,6 +24,7 @@
 [ext_resource path="res://Scripts/Utils/DrawingNode.gd" type="Script" id=22]
 [ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Graphics/UI/Avatar/Radiogugu.png" type="Texture" id=24]
+[ext_resource path="res://Scenes/Effects/LaserLight.tscn" type="PackedScene" id=25]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -6685,7 +6686,7 @@ tracks/60/keys = {
 "values": [ Vector2( 1, 1 ) ]
 }
 
-[node name="Radiogugu" type="KinematicBody2D" index="0"]
+[node name="Radiogugu" type="KinematicBody2D"]
 
 position = Vector2( 2.49451, 1.24731 )
 input_pickable = false
@@ -6932,10 +6933,22 @@ position = Vector2( -1.25482, -442.962 )
 
 [node name="Drawing Node" type="Node2D" parent="." index="3"]
 
+z_index = 1
 script = ExtResource( 22 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="Health Bar" parent="." index="4" instance=ExtResource( 23 )]
 
 avatar_texture = ExtResource( 24 )
+
+[node name="LaserLight1" parent="." index="5" instance=ExtResource( 25 )]
+
+position = Vector2( -382.14, 356.623 )
+enabled = false
+
+[node name="LaserLight2" parent="." index="6" instance=ExtResource( 25 )]
+
+position = Vector2( -297.187, 383.592 )
+enabled = false
 
 

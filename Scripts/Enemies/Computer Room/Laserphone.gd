@@ -48,6 +48,8 @@ var attack_timer = null
 var status_timer = null
 var die_timer = null
 
+onready var laserlight = $"LaserLight"
+
 onready var original_pos_y = self.position.y
 onready var silk_attach_spot = $"Silk Attach Pos"
 onready var silk_attach_spot_original_pos = silk_attach_spot.global_position
@@ -126,12 +128,15 @@ func laser_sequence_on():
 		color = LASER_COLOR,
 		width = LASER_THICKNESS
 	}
+	laserlight.global_position = attack_target.global_position
+	laserlight.enabled = true
 	drawing_node.add_line(laser_line)
 	attack_target.damaged(DAMAGE, false)
 	attack_timer = ec.cd_timer.new(LASER_SHOW_DURATION, self, "laser_sequence_off")
 
 func laser_sequence_off():
 	drawing_node.clear_all()
+	laserlight.enabled = false
 	attack_timer = ec.cd_timer.new(LASER_HIDE_DURATION, self, "laser_sequence_on")
 
 func play_turn_off_animation():

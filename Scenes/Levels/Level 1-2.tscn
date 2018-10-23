@@ -184,7 +184,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="FollowingCamera" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 15768.3, -778.853 )
+position = Vector2( 1300, -800 )
 z_index = 1
 _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", "Transform", "Z Index" ]
 drag_margin_left = -0.1
@@ -195,7 +195,7 @@ bottom_limit = -50
 
 [node name="HeroManager" type="Position2D" parent="." index="1"]
 
-position = Vector2( 15310.9, -1252.48 )
+position = Vector2( 900, -550 )
 script = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
 
@@ -4744,35 +4744,29 @@ enter_scene_path = "res://Scenes/Levels/Level 1-3.tscn"
 
 [node name="Enemies" type="Node2D" parent="." index="11"]
 
-editor/display_folded = true
-
 [node name="Batterio" parent="Enemies" index="0" instance=ExtResource( 117 )]
 
 position = Vector2( 5348.55, -875.911 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="Batterio2" parent="Enemies" index="1" instance=ExtResource( 117 )]
 
 position = Vector2( 5348.55, -927.884 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="Batterio3" parent="Enemies" index="2" instance=ExtResource( 117 )]
 
 position = Vector2( 5348.55, -978.739 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="Batterio4" parent="Enemies" index="3" instance=ExtResource( 117 )]
 
 position = Vector2( 5348.55, -1029.46 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="Floopy" parent="Enemies" index="4" instance=ExtResource( 118 )]
 
@@ -4789,7 +4783,8 @@ activate_range_y = 1000
 [node name="CD Punch" parent="Enemies" index="6" instance=ExtResource( 120 )]
 
 position = Vector2( 8250, -300 )
-activate_range_x = 500
+_sections_unfolded = [ "Collision", "Transform" ]
+activate_range_x = 2000
 
 [node name="FloopySpawnPoint" type="Position2D" parent="Enemies" index="7"]
 
@@ -4861,19 +4856,16 @@ countdownTVHooked = null
 
 position = Vector2( 15158.3, -148.479 )
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="Batterio6" parent="Enemies" index="16" instance=ExtResource( 117 )]
 
 position = Vector2( 15252.8, -148.479 )
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="Batterio7" parent="Enemies" index="17" instance=ExtResource( 117 )]
 
 position = Vector2( 15629.9, -148.479 )
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform" ]
 on_duration = 1.5
 off_duration = 1.5
 
@@ -4881,7 +4873,6 @@ off_duration = 1.5
 
 position = Vector2( 15837.5, -148.479 )
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform" ]
 on_duration = 1.25
 off_duration = 1.25
 
@@ -4889,7 +4880,6 @@ off_duration = 1.25
 
 position = Vector2( 16142.1, -148.479 )
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform" ]
 on_duration = 1.0
 off_duration = 0.8
 
@@ -4897,7 +4887,6 @@ off_duration = 0.8
 
 position = Vector2( 16250, -150 )
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform" ]
 on_duration = 1.0
 off_duration = 1.0
 
@@ -4905,7 +4894,6 @@ off_duration = 1.0
 
 position = Vector2( 17866.4, -250 )
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform" ]
 on_duration = 1.5
 off_duration = 1.0
 
@@ -4913,7 +4901,6 @@ off_duration = 1.0
 
 position = Vector2( 17917.5, -250 )
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform" ]
 on_duration = 1.5
 off_duration = 1.0
 
@@ -4921,35 +4908,30 @@ off_duration = 1.0
 
 position = Vector2( 18724.6, -52.1761 )
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform" ]
 on_duration = 1.0
 
 [node name="Batterio14" parent="Enemies" index="24" instance=ExtResource( 117 )]
 
 position = Vector2( 18673.8, -52.1761 )
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform" ]
 on_duration = 1.0
 
 [node name="Batterio15" parent="Enemies" index="25" instance=ExtResource( 117 )]
 
 position = Vector2( 18622.2, -53.1648 )
 scale = Vector2( 0.5, 0.5 )
-_sections_unfolded = [ "Transform" ]
 on_duration = 1.0
 
 [node name="Batterio16" parent="Enemies" index="26" instance=ExtResource( 117 )]
 
 position = Vector2( 23919.7, -147.806 )
 scale = Vector2( 0.575, 0.575 )
-_sections_unfolded = [ "Transform" ]
 on_duration = 1.0
 
 [node name="Batterio17" parent="Enemies" index="27" instance=ExtResource( 117 )]
 
 position = Vector2( 24479.8, -149.833 )
 scale = Vector2( 0.575, 0.575 )
-_sections_unfolded = [ "Transform" ]
 on_duration = 1.0
 
 [node name="Batterio18" parent="Enemies" index="28" instance=ExtResource( 117 )]
@@ -4957,7 +4939,6 @@ on_duration = 1.0
 position = Vector2( 23892, -973.602 )
 rotation = 1.5708
 scale = Vector2( 0.444, 0.444 )
-_sections_unfolded = [ "Transform" ]
 off_duration = 1.0
 
 [node name="CD Punch2" parent="Enemies" index="29" instance=ExtResource( 120 )]
@@ -5281,7 +5262,7 @@ position = Vector2( 23361, -787.753 )
 
 [node name="Position2D" type="Position2D" parent="." index="15"]
 
-position = Vector2( 21950, -150 )
+position = Vector2( 6150, -150 )
 scale = Vector2( 10, 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -5289,9 +5270,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 3450 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/PortalTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 5250 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/PortalTrigger1" to="FollowingCamera" method="update_left_limit" binds= [ 2650 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/PortalTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 5250 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/PortalTrigger2" to="FollowingCamera" method="update_right_limit" binds= [ 8650 ]]
 
@@ -5317,9 +5298,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/OpenGroundPortal" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/LatortransDoorStep" to="FollowingCamera" method="update_right_limit" binds= [ 24650 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/LatortransDoorStep" to="FollowingCamera" method="update_left_limit" binds= [ 21950 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/LatortransDoorStep" to="FollowingCamera" method="update_right_limit" binds= [ 24650 ]]
 
 [connection signal="defeated" from="Enemies/Floopy" to="Enemies/FloopySpawnPoint" method="spawn_mob"]
 
@@ -5349,10 +5330,10 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Enemies/Mouse3" to="Enemies/MouseSpawner" method="spawn_mob"]
 
+[connection signal="defeated" from="Enemies/Latortrans" to="FollowingCamera" method="update_left_margin" binds= [ 0.1 ]]
+
 [connection signal="defeated" from="Enemies/Latortrans" to="FollowingCamera" method="update_right_limit" binds= [ 25750 ]]
 
 [connection signal="defeated" from="Enemies/Latortrans" to="FollowingCamera" method="update_right_margin" binds= [ 0.25 ]]
-
-[connection signal="defeated" from="Enemies/Latortrans" to="FollowingCamera" method="update_left_margin" binds= [ 0.1 ]]
 
 

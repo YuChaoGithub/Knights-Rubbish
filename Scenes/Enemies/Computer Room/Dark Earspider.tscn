@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/DarkEarspider.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider01.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider O Mouth.png" type="Texture" id=9]
 [ext_resource path="res://Graphics/Characters/Bro SS/Sirurueruerue Stunned Eye.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Graphics/Particles/Dot.png" type="Texture" id=12]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -1577,9 +1578,61 @@ tracks/17/keys = {
 "values": [ 0 ]
 }
 
+[sub_resource type="Gradient" id=10]
+
+offsets = PoolRealArray( 0, 0.624242, 1 )
+colors = PoolColorArray( 0.875, 1, 0, 1, 0.875, 1, 0, 1, 0, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=11]
+
+flags = 4
+gradient = SubResource( 10 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=12]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 120.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 300.0
+initial_velocity_random = 0.0
+angular_velocity = 12.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 0.05
+scale_random = 0.1
+color_ramp = SubResource( 11 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Color", "Gravity", "Initial Velocity", "Scale", "Spread" ]
+
 [node name="Dark Earspider" type="Node2D"]
 
+z_index = 1
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Z Index" ]
 activate_range_x = 1500
 activate_range_y = 1500
 left_bound = null
@@ -1673,6 +1726,31 @@ position = Vector2( 0, -170 )
 [node name="Number Spawn Pos" type="Position2D" parent="." index="2"]
 
 position = Vector2( 0, -170 )
+
+[node name="Particles2D" type="Particles2D" parent="." index="3"]
+
+position = Vector2( 0.604889, 111.298 )
+rotation = -1.54822
+z_index = 1
+emitting = false
+amount = 12
+lifetime = 0.5
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.8
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 12 )
+texture = ExtResource( 12 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Z Index" ]
 
 [connection signal="area_entered" from="Animation/Clap Attack Area" to="." method="clap_attack_hit"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/EeloPuncher.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Puncher/Left Forearm.png" type="Texture" id=2]
@@ -8,12 +8,13 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Puncher/Right Arm.png" type="Texture" id=6]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Puncher/Tire.png" type="Texture" id=7]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Puncher/Body.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Puncher/Face.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Puncher/Angry Face.png" type="Texture" id=9]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Puncher/Dead Face.png" type="Texture" id=10]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Puncher/Hurt Face.png" type="Texture" id=11]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Puncher/Angry Face.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Puncher/Face.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Puncher/Hurt Face.png" type="Texture" id=12]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Puncher/Stunned Face.png" type="Texture" id=13]
-[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Graphics/Particles/Dot.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -458,7 +459,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:position")
@@ -860,7 +861,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 12 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:position")
@@ -1247,7 +1248,7 @@ tracks/32/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=9]
 
 resource_name = "Landing"
 length = 0.1
@@ -1263,7 +1264,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:position")
@@ -1650,7 +1651,7 @@ tracks/32/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 
 length = 2.4
 loop = false
@@ -1665,7 +1666,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 12 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:position")
@@ -2052,7 +2053,7 @@ tracks/32/keys = {
 "values": [ 0, 1, 0, 1, 0 ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 
 length = 0.1
 loop = false
@@ -2067,7 +2068,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:position")
@@ -2454,7 +2455,7 @@ tracks/32/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 
 length = 1.5
 loop = true
@@ -2856,7 +2857,7 @@ tracks/32/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=13]
 
 length = 2.0
 loop = true
@@ -2871,7 +2872,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ) ]
+"values": [ ExtResource( 11 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:position")
@@ -3258,7 +3259,71 @@ tracks/32/keys = {
 "values": [ 0 ]
 }
 
-[node name="Eelo Puncher" type="KinematicBody2D"]
+[sub_resource type="Gradient" id=17]
+
+offsets = PoolRealArray( 0, 0.522727, 1 )
+colors = PoolColorArray( 0, 0, 0, 1, 0, 1, 1, 1, 0, 0.507812, 1, 1 )
+
+[sub_resource type="GradientTexture" id=18]
+
+flags = 4
+gradient = SubResource( 17 )
+width = 2048
+
+[sub_resource type="Curve" id=14]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 0.175293 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0639648 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=15]
+
+flags = 4
+width = 2048
+curve = SubResource( 14 )
+
+[sub_resource type="ParticlesMaterial" id=16]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 30.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 300.0
+initial_velocity_random = 0.0
+angular_velocity = 1.10231e-38
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+scale_curve = SubResource( 15 )
+color_ramp = SubResource( 18 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angular Velocity", "Color", "Gravity", "Initial Velocity", "Scale", "Spread" ]
+
+[node name="Eelo Puncher" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 0
@@ -3363,7 +3428,6 @@ update_scale = true
 [node name="Left Arm Remote Transform" type="RemoteTransform2D" parent="Animation/Body Remote Transform" index="1"]
 
 position = Vector2( -34.931, -13.5606 )
-rotation = -0.0706005
 remote_path = NodePath("../Left Arm")
 use_global_coordinates = true
 update_position = true
@@ -3373,21 +3437,18 @@ update_scale = true
 [node name="Left Forearm" type="Sprite" parent="Animation/Body Remote Transform/Left Arm Remote Transform" index="0"]
 
 position = Vector2( -3.13862, 25.8349 )
-rotation = -0.0163233
 texture = ExtResource( 2 )
 offset = Vector2( 1.19654, 7.76813 )
 
 [node name="Fist" type="Sprite" parent="Animation/Body Remote Transform/Left Arm Remote Transform/Left Forearm" index="0"]
 
 position = Vector2( 0, 19.5603 )
-rotation = -0.112704
 texture = ExtResource( 3 )
 offset = Vector2( 0.399933, 6.53002 )
 
 [node name="Right Arm Remote Transform" type="RemoteTransform2D" parent="Animation/Body Remote Transform" index="2"]
 
 position = Vector2( 34.575, -9.16374 )
-rotation = -0.435273
 remote_path = NodePath("../Right Arm")
 use_global_coordinates = true
 update_position = true
@@ -3397,36 +3458,30 @@ update_scale = true
 [node name="Right Forearm" type="Sprite" parent="Animation/Body Remote Transform/Right Arm Remote Transform" index="0"]
 
 position = Vector2( -0.432465, 20.184 )
-rotation = 0.887886
 texture = ExtResource( 4 )
 offset = Vector2( 0.530978, 8.1318 )
 
 [node name="Fist" type="Sprite" parent="Animation/Body Remote Transform/Right Arm Remote Transform/Right Forearm" index="0"]
 
 position = Vector2( 0.187592, 19.9117 )
-rotation = -0.444935
 texture = ExtResource( 3 )
 offset = Vector2( 0.100763, 5.89921 )
 
 [node name="Left Arm" type="Sprite" parent="Animation/Body Remote Transform" index="3"]
 
 position = Vector2( -34.931, -13.5606 )
-rotation = -0.0706005
 texture = ExtResource( 5 )
 offset = Vector2( -0.356948, 10.6082 )
 
 [node name="Right Arm" type="Sprite" parent="Animation/Body Remote Transform" index="4"]
 
 position = Vector2( 34.575, -9.16374 )
-rotation = -0.435273
-scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 offset = Vector2( 0.312895, 7.17249 )
 
 [node name="Wheel" type="Sprite" parent="Animation/Body Remote Transform" index="5"]
 
 position = Vector2( -1.11425, 70.5867 )
-rotation = -1.55741
 texture = ExtResource( 7 )
 offset = Vector2( 0.589759, 0.25804 )
 
@@ -3459,14 +3514,63 @@ playback_speed = 1.0
 anims/Die = SubResource( 6 )
 anims/Healing = SubResource( 7 )
 anims/Hurt = SubResource( 8 )
-anims/Landing = SubResource( 13 )
-anims/Punch = SubResource( 9 )
-anims/Still = SubResource( 10 )
-anims/Stunned = SubResource( 11 )
-anims/Walk = SubResource( 12 )
+anims/Landing = SubResource( 9 )
+anims/Punch = SubResource( 10 )
+anims/Still = SubResource( 11 )
+anims/Stunned = SubResource( 12 )
+anims/Walk = SubResource( 13 )
 blend_times = [  ]
 
-[node name="Health Bar" parent="." index="2" instance=ExtResource( 14 )]
+[node name="LeftPunchParticles" type="Particles2D" parent="Animation" index="7"]
+
+position = Vector2( -87.1449, -3.64484 )
+z_index = 1
+emitting = false
+amount = 6
+lifetime = 0.3
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.9
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 16 )
+texture = ExtResource( 14 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Z Index" ]
+
+[node name="RightPunchParticles" type="Particles2D" parent="Animation" index="8"]
+
+position = Vector2( 82.8373, 6.62699 )
+rotation = -2.82717
+z_index = 1
+emitting = false
+amount = 6
+lifetime = 0.3
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.9
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 16 )
+texture = ExtResource( 14 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Z Index" ]
+
+[node name="Health Bar" parent="." index="2" instance=ExtResource( 15 )]
 
 position = Vector2( 3.23474, -200.555 )
 

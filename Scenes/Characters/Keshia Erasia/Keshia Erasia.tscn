@@ -12722,7 +12722,7 @@ extents = Vector2( 70, 80 )
 custom_solver_bias = 0.0
 extents = Vector2( 79.7137, 95.9264 )
 
-[node name="Keshia Erasia" type="KinematicBody2D"]
+[node name="Keshia Erasia" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 0
@@ -12776,7 +12776,7 @@ _sections_unfolded = [ "Material", "Transform", "Visibility" ]
 [node name="Right Arm" type="Sprite" parent="Sprite" index="0"]
 
 position = Vector2( 88.0745, -39.3245 )
-rotation = -0.881391
+rotation = -0.798146
 scale = Vector2( 0.9, 0.9 )
 texture = ExtResource( 3 )
 offset = Vector2( -1.23269, 16.6908 )
@@ -12784,6 +12784,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Animation" type="Node2D" parent="Sprite" index="1"]
 
+editor/display_folded = true
 position = Vector2( -1.12968, 100 )
 _sections_unfolded = [ "Transform" ]
 
@@ -12958,7 +12959,7 @@ offset = Vector2( -1.72225, 17.8055 )
 [node name="Right Foot" type="Sprite" parent="Sprite/Animation/Body/Right Leg" index="0"]
 
 position = Vector2( -2.25239, 35.3849 )
-rotation = -1.74882
+rotation = -1.74898
 scale = Vector2( 1, 0.8 )
 texture = ExtResource( 3 )
 offset = Vector2( -2.55776, 16.1404 )
@@ -12974,7 +12975,7 @@ offset = Vector2( -1.72225, 17.8055 )
 [node name="Left Foot" type="Sprite" parent="Sprite/Animation/Body/Left Leg" index="0"]
 
 position = Vector2( -4.91125, 36.1676 )
-rotation = 1.43815
+rotation = 1.4384
 scale = Vector2( 1, 0.7 )
 texture = ExtResource( 3 )
 offset = Vector2( 1.79243, -17.9243 )
@@ -12984,7 +12985,7 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 editor/display_folded = true
 position = Vector2( -66.2904, -77.3851 )
-rotation = 0.759218
+rotation = 0.759735
 texture = ExtResource( 3 )
 offset = Vector2( -1.99024, 18.262 )
 _sections_unfolded = [ "Transform" ]
@@ -12992,8 +12993,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Weapon" type="Sprite" parent="Sprite/Animation/Body/Left Arm" index="0"]
 
 editor/display_folded = true
-position = Vector2( 6.01708, -0.17823 )
-rotation = -0.84648
+position = Vector2( -2.74628, 1.13215 )
+rotation = -1.10538
 scale = Vector2( 1.44, 1.44 )
 texture = ExtResource( 20 )
 offset = Vector2( 3.92352, -79.9531 )
@@ -13041,7 +13042,7 @@ shape = SubResource( 5 )
 [node name="Left Forearm" type="Sprite" parent="Sprite/Animation/Body/Left Arm" index="1"]
 
 position = Vector2( -3.15459, 36.6928 )
-rotation = 1.028
+rotation = 1.02764
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 3 )
 offset = Vector2( 1.84393, -19.0845 )
@@ -13050,15 +13051,15 @@ _sections_unfolded = [ "Transform" ]
 [node name="Hand" type="Sprite" parent="Sprite/Animation/Body/Left Arm/Left Forearm" index="0"]
 
 position = Vector2( 3.23194, -39.9086 )
-rotation = -2.92343
+rotation = -2.92344
 texture = ExtResource( 21 )
 offset = Vector2( 6.49008, 6.4641 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Weapon Remote Transform" type="RemoteTransform2D" parent="Sprite/Animation/Body/Left Arm/Left Forearm" index="1"]
 
-position = Vector2( -33.5425, -33.6231 )
-rotation = -1.87448
+position = Vector2( -37.7898, -23.4108 )
+rotation = -2.13302
 scale = Vector2( 1.8, 1.8 )
 remote_path = NodePath("../../Weapon")
 use_global_coordinates = true
@@ -13071,7 +13072,7 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 89.5015, -86.9088 )
-rotation = -0.881391
+rotation = -0.798146
 scale = Vector2( 0.9, 0.9 )
 remote_path = NodePath("../../../Right Arm")
 use_global_coordinates = true
@@ -13086,7 +13087,7 @@ __meta__ = {
 [node name="Right Forearm" type="Sprite" parent="Sprite/Animation/Body/Remote Right Arm" index="0"]
 
 position = Vector2( -3.78853, 37.4229 )
-rotation = 1.51844
+rotation = 1.30314
 scale = Vector2( 0.888889, 0.777778 )
 texture = ExtResource( 3 )
 offset = Vector2( -2.25615, 16.4975 )
@@ -13095,7 +13096,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Hand" type="Sprite" parent="Sprite/Animation/Body/Remote Right Arm/Right Forearm" index="0"]
 
 position = Vector2( -3.54916, 37.1808 )
-rotation = 1.04371
+rotation = 1.04434
 texture = ExtResource( 21 )
 offset = Vector2( 6.3133, 5.42676 )
 _sections_unfolded = [ "Transform" ]

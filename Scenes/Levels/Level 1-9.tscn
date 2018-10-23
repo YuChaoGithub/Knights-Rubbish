@@ -1052,7 +1052,6 @@ script = ExtResource( 69 )
 [node name="Dark Earspider3" parent="Activator" index="0" instance=ExtResource( 70 )]
 
 position = Vector2( 1350, -6150 )
-_sections_unfolded = [ "Transform" ]
 activate_range_x = 0
 activate_range_y = 0
 left_bound = 900
@@ -1061,7 +1060,6 @@ right_bound = 1900
 [node name="Dark Earspider4" parent="Activator" index="1" instance=ExtResource( 70 )]
 
 position = Vector2( 550, -6150 )
-_sections_unfolded = [ "Transform" ]
 activate_range_x = 0
 activate_range_y = 0
 left_bound = 450
@@ -1128,7 +1126,6 @@ activate_range_y = 0
 [node name="Dark Earspider5" parent="Activator2" index="4" instance=ExtResource( 70 )]
 
 position = Vector2( 2100, -4750 )
-_sections_unfolded = [ "Transform" ]
 activate_range_x = 0
 activate_range_y = 0
 left_bound = 1950
@@ -1218,7 +1215,6 @@ drop_destination_y = -1343
 [node name="Dark Earspider6" parent="Activator4" index="3" instance=ExtResource( 70 )]
 
 position = Vector2( 700, -1950 )
-_sections_unfolded = [ "Transform" ]
 activate_range_x = 0
 activate_range_y = 0
 left_bound = 650
@@ -1227,7 +1223,6 @@ right_bound = 2350
 [node name="Dark Earspider7" parent="Activator4" index="4" instance=ExtResource( 70 )]
 
 position = Vector2( 2200, -1950 )
-_sections_unfolded = [ "Transform" ]
 activate_range_x = 0
 activate_range_y = 0
 left_bound = 650
@@ -1256,14 +1251,12 @@ activate_range_y = 0
 [node name="Dark Earspider" parent="Enemies" index="0" instance=ExtResource( 70 )]
 
 position = Vector2( 1550, -7450 )
-_sections_unfolded = [ "Transform" ]
 left_bound = 1000
 right_bound = 2250
 
 [node name="Dark Earspider2" parent="Enemies" index="1" instance=ExtResource( 70 )]
 
 position = Vector2( 1150, -7450 )
-_sections_unfolded = [ "Transform" ]
 left_bound = 1000
 right_bound = 2250
 
@@ -1352,15 +1345,15 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/FirstMobClearTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -6900 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/BluePortalPassTrigger" to="Activator" method="activate"]
-
 [connection signal="passed" from="CameraChangingTriggers/BluePortalPassTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -6300 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/BluePortalPassTrigger" to="Activator" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger2" to="FollowingCamera" method="update_top_limit" binds= [ -5650 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/PortalPassTrigger2" to="Activator2" method="activate"]
-
 [connection signal="passed" from="CameraChangingTriggers/PortalPassTrigger2" to="FollowingCamera" method="update_top_limit" binds= [ -4900 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/PortalPassTrigger2" to="Activator2" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="FollowingCamera" method="update_top_limit" binds= [ -4300 ]]
 

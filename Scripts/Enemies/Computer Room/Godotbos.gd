@@ -65,7 +65,7 @@ onready var kick_pos_left = get_node(kick_left_pos_path)
 onready var shoot_center_pos = get_node(shoot_center_pos_path)
 
 # Missles.
-var missle = preload("res://Scenes/Enemies/Computer Room/Canmera Missle.tscn")
+var missle = preload("res://Scenes/Enemies/Computer Room/Godotbos Missle.tscn")
 onready var missle_land_poses = [
 	$"Missle Pos 1",
 	$"Missle Pos 2",
@@ -238,7 +238,6 @@ func fire_landing_pause():
 func land_fire():
 	for spawn_pos in missle_land_poses:
 		var new_missle = missle.instance()
-		new_missle.initialize(0, 1)
 		spawn_node.add_child(new_missle)
 		new_missle.global_position = spawn_pos.global_position
 

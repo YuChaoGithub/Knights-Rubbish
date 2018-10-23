@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/CDPunch.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/Die Eye.png" type="Texture" id=11]
 [ext_resource path="res://Graphics/Characters/Bro SS/Big Bro Eyebrow.png" type="Texture" id=12]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/Particles/Dot.png" type="Texture" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -1163,7 +1164,61 @@ tracks/12/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 
-[node name="CD Punch" type="KinematicBody2D" index="0"]
+[sub_resource type="Curve" id=14]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0.000747813, 0.0469339 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.168843 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=15]
+
+flags = 4
+width = 2048
+curve = SubResource( 14 )
+
+[sub_resource type="ParticlesMaterial" id=13]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 10, 80, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1000.0
+initial_velocity_random = 0.0
+angular_velocity = 168.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+scale_curve = SubResource( 15 )
+color = Color( 0, 0, 0, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity", "Orbit Velocity", "Scale", "Spread" ]
+
+[node name="CD Punch" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
@@ -1214,7 +1269,8 @@ offset = Vector2( -99.7217, -0.654175 )
 
 [node name="Eye" type="Sprite" parent="Animation/Body" index="0"]
 
-position = Vector2( -77.254, -27.0201 )
+position = Vector2( -69.1391, -25.4349 )
+rotation = 1.00317
 texture = ExtResource( 4 )
 
 [node name="Tear" type="Sprite" parent="Animation/Body" index="1"]
@@ -1236,7 +1292,7 @@ update_scale = true
 [node name="Attack Area" type="Area2D" parent="Animation" index="2"]
 
 editor/display_folded = true
-position = Vector2( -101, 0 )
+position = Vector2( -99, 0 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -1268,6 +1324,29 @@ anims/Still = SubResource( 8 )
 anims/Stunned = SubResource( 9 )
 anims/Walk = SubResource( 10 )
 blend_times = [  ]
+
+[node name="PunchParticles" type="Particles2D" parent="Animation" index="4"]
+
+position = Vector2( -280.388, 13.3173 )
+emitting = false
+amount = 20
+lifetime = 0.3
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.9
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 13 )
+texture = ExtResource( 14 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
 [node name="Number Spawn Pos" type="Position2D" parent="." index="3"]
 

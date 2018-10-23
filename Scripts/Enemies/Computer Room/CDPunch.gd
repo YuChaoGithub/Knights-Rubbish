@@ -42,6 +42,8 @@ var turn_stagger_timer = null
 var attack_target = null
 var facing = -1
 
+onready var punch_particles = $"Animation/PunchParticles"
+
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
 func activate():
@@ -147,6 +149,8 @@ func healed(val):
 
 func on_attack_hit(area):
     if area.is_in_group("hero"):
+        punch_particles.emitting = true
+        
         var character = area.get_node("..")
         character.damaged(ATTACK_DAMAGE)
         character.knocked_back(facing * KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)

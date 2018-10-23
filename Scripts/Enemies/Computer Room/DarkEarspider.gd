@@ -48,6 +48,7 @@ var status_timer = null
 var die_timer = null
 var curr_rand_movement = null
 
+onready var particles = $"Particles2D"
 onready var original_pos = self.global_position
 onready var silk_attach_spot = $"Animation/Body/Silk Pos"
 onready var silk_attach_spot_original_pos = silk_attach_spot.global_position
@@ -127,6 +128,7 @@ func clap_attack():
 # Will be signalled if a character is clapped.
 func clap_attack_hit(area):
 	if area.is_in_group("hero"):
+		particles.emitting = true
 		area.get_node("..").damaged(CLAP_DAMAGE)
 		area.get_node("..").stunned(CLAP_STUN_DURATION)
 

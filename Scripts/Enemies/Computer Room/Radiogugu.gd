@@ -86,6 +86,8 @@ var curr_watch = null
 onready var watch_spawn_pos = $"Animation/Body/Watch Spawn Pos"
 
 # Laser Eyes.
+onready var laserlight1 = $"LaserLight1"
+onready var laserlight2 = $"LaserLight2"
 onready var left_laser_spawn_pos = $"Animation/Body/Left Laser Spawn Pos"
 onready var right_laser_spawn_pos = $"Animation/Body/Right Laser Spawn Pos"
 onready var drawing_node = $"Drawing Node"
@@ -311,6 +313,8 @@ func laser_sequence_on():
 		color = LASER_COLOR,
 		width = LASER_THICKNESS
 	}
+	laserlight1.global_position = laser_target_left.global_position
+	laserlight1.enabled = true
 	
 	var from_right = right_laser_spawn_pos.global_position - global_position
 	var to_right = from_right + laser_target_right.global_position - right_laser_spawn_pos.global_position
@@ -320,6 +324,8 @@ func laser_sequence_on():
 		color = LASER_COLOR,
 		width = LASER_THICKNESS
 	}
+	laserlight2.global_position = laser_target_right.global_position
+	laserlight2.enabled = true
 	
 	drawing_node.add_line(laser_line_left)
 	drawing_node.add_line(laser_line_right)
@@ -331,6 +337,8 @@ func laser_sequence_on():
 
 func laser_sequence_off():
 	drawing_node.clear_all()
+	laserlight1.enabled = false
+	laserlight2.enabled = false
 	laser_timer = ec.cd_timer.new(LASER_HIDE_DURATION, self, "laser_sequence_on")
 
 func recover_laser_eyes():
