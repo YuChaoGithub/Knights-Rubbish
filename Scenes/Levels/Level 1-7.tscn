@@ -1738,49 +1738,49 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 11950 ]]
 
-[connection signal="defeated" from="Enemies/Calcasio" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
-
 [connection signal="defeated" from="Enemies/Calcasio" to="Writings/CountdownTV" method="tick"]
 
-[connection signal="defeated" from="Enemies/Calcasio2" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
+[connection signal="defeated" from="Enemies/Calcasio" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Calcasio2" to="Writings/CountdownTV" method="tick"]
 
-[connection signal="defeated" from="Enemies/Calcasio3" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
+[connection signal="defeated" from="Enemies/Calcasio2" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Calcasio3" to="Writings/CountdownTV" method="tick"]
 
-[connection signal="defeated" from="Enemies/Calcasio4" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
+[connection signal="defeated" from="Enemies/Calcasio3" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Calcasio4" to="Writings/CountdownTV" method="tick"]
 
-[connection signal="defeated" from="Enemies/Calcasio5" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
+[connection signal="defeated" from="Enemies/Calcasio4" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Calcasio5" to="Writings/CountdownTV" method="tick"]
 
-[connection signal="defeated" from="Enemies/Calcasio6" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
+[connection signal="defeated" from="Enemies/Calcasio5" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Calcasio6" to="Writings/CountdownTV" method="tick"]
 
-[connection signal="defeated" from="Enemies/Calcasio7" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
+[connection signal="defeated" from="Enemies/Calcasio6" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Calcasio7" to="Writings/CountdownTV" method="tick"]
 
-[connection signal="defeated" from="Enemies/Calcasio8" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
+[connection signal="defeated" from="Enemies/Calcasio7" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Calcasio8" to="Writings/CountdownTV" method="tick"]
 
-[connection signal="defeated" from="Enemies/Calcasio9" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
+[connection signal="defeated" from="Enemies/Calcasio8" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Calcasio9" to="Writings/CountdownTV" method="tick"]
 
-[connection signal="defeated" from="Enemies/Calcasio10" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
+[connection signal="defeated" from="Enemies/Calcasio9" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Calcasio10" to="Writings/CountdownTV" method="tick"]
 
-[connection signal="defeated" from="Enemies/Calcasio11" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
+[connection signal="defeated" from="Enemies/Calcasio10" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Calcasio11" to="Writings/CountdownTV" method="tick"]
+
+[connection signal="defeated" from="Enemies/Calcasio11" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
 
 [connection signal="photo_taken" from="Enemies/Sonmera" to="FollowingCamera" method="update_right_limit" binds= [ 12450 ]]
 

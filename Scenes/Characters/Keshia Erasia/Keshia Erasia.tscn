@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=70 format=2]
 
 [ext_resource path="res://Scripts/HeroCommon.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Character Skills/KeshiaErasiaSkills.gd" type="Script" id=2]
@@ -24,12 +24,22 @@
 [ext_resource path="res://Scenes/Power Ups/Confused Icon.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Graphics/Characters/Common/Power Up/Attack Potion.png" type="Texture" id=23]
 [ext_resource path="res://Scenes/Power Ups/Speeded Icon.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=25]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Petrified.png" type="Texture" id=26]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned mouth.png" type="Texture" id=27]
-[ext_resource path="res://Scenes/UI/Hero Health Bar.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Graphics/Powerups/Ult Ball/Ball.png" type="Texture" id=29]
-[ext_resource path="res://Scripts/HeroGhost.gd" type="Script" id=30]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/1.png" type="Texture" id=25]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/2-1.png" type="Texture" id=26]
+[ext_resource path="res://Scenes/Particles/Puff.tscn" type="PackedScene" id=27]
+[ext_resource path="res://Graphics/Particles/Square.png" type="Texture" id=28]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/2.png" type="Texture" id=29]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/3.png" type="Texture" id=30]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/4.png" type="Texture" id=31]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/2-2.png" type="Texture" id=32]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/2-3.png" type="Texture" id=33]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/2-4.png" type="Texture" id=34]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=35]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Petrified.png" type="Texture" id=36]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned mouth.png" type="Texture" id=37]
+[ext_resource path="res://Scenes/UI/Hero Health Bar.tscn" type="PackedScene" id=38]
+[ext_resource path="res://Graphics/Powerups/Ult Ball/Ball.png" type="Texture" id=39]
+[ext_resource path="res://Scripts/HeroGhost.gd" type="Script" id=40]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -238,7 +248,61 @@ extents = Vector2( 13.7106, 105.965 )
 custom_solver_bias = 0.0
 extents = Vector2( 14.2277, 130.226 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Curve" id=29]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 0.236407 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0773147 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=30]
+
+flags = 4
+width = 2048
+curve = SubResource( 29 )
+
+[sub_resource type="ParticlesMaterial" id=28]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 1, 250, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 90.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1000.0
+initial_velocity_random = 0.0
+angular_velocity = 8.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 90.0
+angle_random = 0.5
+scale = 1.0
+scale_random = 0.0
+scale_curve = SubResource( 30 )
+color = Color( 0.613281, 0.4206, 0.0527554, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale" ]
+
+[sub_resource type="Animation" id=7]
 
 length = 0.6
 loop = false
@@ -999,8 +1063,56 @@ tracks/62/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/63/type = "value"
+tracks/63/path = NodePath("Animation/BasicAttackTrace1:modulate")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("Animation/BasicAttackTrace1:texture")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0, 0.1, 0.15, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 25 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ]
+}
+tracks/65/type = "value"
+tracks/65/path = NodePath("Animation/BasicAttackTrace2:texture")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0, 0.4, 0.45, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 26 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ) ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("Animation/BasicAttackTrace2:modulate")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=8]
 
 length = 0.6
 loop = false
@@ -1761,8 +1873,32 @@ tracks/62/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/63/type = "value"
+tracks/63/path = NodePath("Animation/BasicAttackTrace1:modulate")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("Animation/BasicAttackTrace2:modulate")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=9]
 
 length = 0.1
 loop = false
@@ -2410,10 +2546,10 @@ tracks/53/loop_wrap = true
 tracks/53/imported = false
 tracks/53/enabled = true
 tracks/53/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/54/type = "value"
 tracks/54/path = NodePath("Basic Skill Hit Box:collision_mask")
@@ -2523,8 +2659,44 @@ tracks/62/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/63/type = "value"
+tracks/63/path = NodePath("Animation/BasicAttackTrace2:modulate")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("Animation/BasicAttackTrace1:modulate")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/65/type = "value"
+tracks/65/path = NodePath("Animation/BasicSkillParticles:emitting")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0, 0.05 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=10]
 
 length = 1.5
 loop = false
@@ -3067,7 +3239,7 @@ tracks/44/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 25 ) ]
+"values": [ ExtResource( 35 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -3079,7 +3251,7 @@ tracks/45/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 25 ) ]
+"values": [ ExtResource( 35 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:scale")
@@ -3321,8 +3493,32 @@ tracks/65/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/66/type = "value"
+tracks/66/path = NodePath("Animation/BasicAttackTrace1:modulate")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("Animation/BasicAttackTrace2:modulate")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 
 length = 0.6
 loop = false
@@ -3961,7 +4157,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0, 0.25 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 13 ), ExtResource( 26 ) ]
+"values": [ ExtResource( 13 ), ExtResource( 36 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Body/Left Arm/Weapon:self_modulate")
@@ -4083,8 +4279,56 @@ tracks/62/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/63/type = "value"
+tracks/63/path = NodePath("Animation/BasicAttackTrace2:modulate")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("Animation/BasicAttackTrace1:modulate")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/65/type = "value"
+tracks/65/path = NodePath("Animation/DownSkillPuffRight:emitting")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("Animation/DownSkillPuffLeft:emitting")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=12]
 
 length = 1.0
 loop = false
@@ -4723,7 +4967,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 26 ), ExtResource( 13 ) ]
+"values": [ ExtResource( 36 ), ExtResource( 13 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Body/Left Arm/Weapon:self_modulate")
@@ -4845,10 +5089,33 @@ tracks/62/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/63/type = "value"
+tracks/63/path = NodePath("Animation/BasicAttackTrace1:modulate")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("Animation/BasicAttackTrace2:modulate")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=13]
 
-resource_name = "Drink"
 length = 1.5
 loop = false
 step = 0.05
@@ -5644,8 +5911,32 @@ tracks/65/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/66/type = "value"
+tracks/66/path = NodePath("Animation/BasicAttackTrace2:modulate")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("Animation/BasicAttackTrace1:modulate")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=14]
 
 length = 0.7
 loop = false
@@ -6406,8 +6697,32 @@ tracks/62/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/63/type = "value"
+tracks/63/path = NodePath("Animation/BasicAttackTrace1:modulate")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("Animation/BasicAttackTrace2:modulate")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=15]
 
 length = 3.0
 loop = true
@@ -7168,8 +7483,32 @@ tracks/62/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/63/type = "value"
+tracks/63/path = NodePath("Animation/BasicAttackTrace2:modulate")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("Animation/BasicAttackTrace1:modulate")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=16]
 
 length = 0.5
 loop = false
@@ -7930,10 +8269,33 @@ tracks/62/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/63/type = "value"
+tracks/63/path = NodePath("Animation/BasicAttackTrace1:modulate")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("Animation/BasicAttackTrace2:modulate")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=17]
 
-resource_name = "Size Change"
 length = 0.1
 loop = false
 step = 0.1
@@ -8693,8 +9055,32 @@ tracks/62/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/63/type = "value"
+tracks/63/path = NodePath("Animation/BasicAttackTrace2:modulate")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("Animation/BasicAttackTrace1:modulate")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=18]
 
 length = 0.1
 loop = false
@@ -9455,8 +9841,32 @@ tracks/62/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/63/type = "value"
+tracks/63/path = NodePath("Animation/BasicAttackTrace1:modulate")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("Animation/BasicAttackTrace2:modulate")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=19]
 
 length = 1.0
 loop = true
@@ -9999,7 +10409,7 @@ tracks/44/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 25 ) ]
+"values": [ ExtResource( 35 ) ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/Body/Face/Right Eye:texture")
@@ -10011,7 +10421,7 @@ tracks/45/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 25 ) ]
+"values": [ ExtResource( 35 ) ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/Body/Face/Mouth:scale")
@@ -10035,7 +10445,7 @@ tracks/47/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 27 ) ]
+"values": [ ExtResource( 37 ) ]
 }
 tracks/48/type = "value"
 tracks/48/path = NodePath("Animation/Body/Left Arm/Weapon:visible")
@@ -10217,8 +10627,32 @@ tracks/62/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/63/type = "value"
+tracks/63/path = NodePath("Animation/BasicAttackTrace2:modulate")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("Animation/BasicAttackTrace1:modulate")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=20]
 
 length = 4.5
 loop = false
@@ -10979,8 +11413,32 @@ tracks/62/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/63/type = "value"
+tracks/63/path = NodePath("Animation/BasicAttackTrace1:modulate")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("Animation/BasicAttackTrace2:modulate")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=21]
 
 length = 0.2
 loop = false
@@ -11741,8 +12199,32 @@ tracks/62/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/63/type = "value"
+tracks/63/path = NodePath("Animation/BasicAttackTrace2:modulate")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("Animation/BasicAttackTrace1:modulate")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=22]
 
 length = 1.0
 loop = true
@@ -12503,13 +12985,37 @@ tracks/62/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/63/type = "value"
+tracks/63/path = NodePath("Animation/BasicAttackTrace1:modulate")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("Animation/BasicAttackTrace2:modulate")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
 
-[sub_resource type="RectangleShape2D" id=22]
+[sub_resource type="RectangleShape2D" id=23]
 
 custom_solver_bias = 0.0
 extents = Vector2( 298.67, 78.0224 )
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=24]
 
 length = 4.0
 loop = false
@@ -12707,22 +13213,22 @@ tracks/15/keys = {
 "values": [ Vector2( 76.0461, 24.2744 ), Vector2( 76.0461, 24.2744 ), Vector2( 76.0461, 24.2744 ), Vector2( 70.8125, 10.8999 ), Vector2( 70.8125, 10.8999 ), Vector2( 116.461, 129.587 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=24]
+[sub_resource type="RectangleShape2D" id=25]
 
 custom_solver_bias = 0.0
 extents = Vector2( 1300, 750 )
 
-[sub_resource type="RectangleShape2D" id=25]
+[sub_resource type="RectangleShape2D" id=26]
 
 custom_solver_bias = 0.0
 extents = Vector2( 70, 80 )
 
-[sub_resource type="RectangleShape2D" id=26]
+[sub_resource type="RectangleShape2D" id=27]
 
 custom_solver_bias = 0.0
 extents = Vector2( 79.7137, 95.9264 )
 
-[node name="Keshia Erasia" type="KinematicBody2D" index="0"]
+[node name="Keshia Erasia" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
@@ -12784,12 +13290,12 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Animation" type="Node2D" parent="Sprite" index="1"]
 
-editor/display_folded = true
 position = Vector2( -1.12968, 100 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Ghost" type="Node2D" parent="Sprite/Animation" index="0"]
 
+editor/display_folded = true
 visible = false
 position = Vector2( 0.888839, -92.2636 )
 scale = Vector2( 0.3, 0.3 )
@@ -12866,6 +13372,7 @@ blend_times = [  ]
 
 [node name="Body" type="Sprite" parent="Sprite/Animation" index="1"]
 
+editor/display_folded = true
 position = Vector2( -0.297318, -52.4157 )
 texture = ExtResource( 13 )
 offset = Vector2( 0, -75 )
@@ -12983,7 +13490,6 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="Left Arm" type="Sprite" parent="Sprite/Animation/Body" index="7"]
 
-editor/display_folded = true
 position = Vector2( -66.2904, -77.3851 )
 rotation = 0.759735
 texture = ExtResource( 3 )
@@ -12998,6 +13504,7 @@ rotation = -1.10538
 scale = Vector2( 1.44, 1.44 )
 texture = ExtResource( 20 )
 offset = Vector2( 3.92352, -79.9531 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="Basic Attack Hit Box" type="Area2D" parent="Sprite/Animation/Body/Left Arm/Weapon" index="0"]
 
@@ -13041,6 +13548,7 @@ shape = SubResource( 5 )
 
 [node name="Left Forearm" type="Sprite" parent="Sprite/Animation/Body/Left Arm" index="1"]
 
+editor/display_folded = true
 position = Vector2( -3.15459, 36.6928 )
 rotation = 1.02764
 scale = Vector2( 0.8, 0.8 )
@@ -13058,6 +13566,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Weapon Remote Transform" type="RemoteTransform2D" parent="Sprite/Animation/Body/Left Arm/Left Forearm" index="1"]
 
+editor/display_folded = true
 position = Vector2( -37.7898, -23.4108 )
 rotation = -2.13302
 scale = Vector2( 1.8, 1.8 )
@@ -13066,6 +13575,11 @@ use_global_coordinates = true
 update_position = true
 update_rotation = true
 update_scale = true
+_sections_unfolded = [ "Transform" ]
+
+[node name="UpSkillParticlesSpawnPos" type="Position2D" parent="Sprite/Animation/Body/Left Arm/Left Forearm/Weapon Remote Transform" index="0"]
+
+position = Vector2( 4.96408, -236.931 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Remote Right Arm" type="RemoteTransform2D" parent="Sprite/Animation/Body" index="8"]
@@ -13119,6 +13633,62 @@ _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 position = Vector2( -6.10352e-05, -23.6296 )
 scale = Vector2( 0.5, 0.5 )
 
+[node name="BasicAttackTrace1" type="Sprite" parent="Sprite/Animation" index="4"]
+
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 71.6242, -208.193 )
+scale = Vector2( 2.1, 2.1 )
+texture = ExtResource( 25 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="BasicAttackTrace2" type="Sprite" parent="Sprite/Animation" index="5"]
+
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 328.543, -39.7249 )
+scale = Vector2( 2.1, 2.1 )
+texture = ExtResource( 26 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="DownSkillPuffRight" parent="Sprite/Animation" index="6" instance=ExtResource( 27 )]
+
+position = Vector2( 224.268, 1.42298 )
+
+[node name="DownSkillPuffLeft" parent="Sprite/Animation" index="7" instance=ExtResource( 27 )]
+
+position = Vector2( -208.56, 13.2006 )
+rotation = 0.239921
+scale = Vector2( -1, 1 )
+
+[node name="BasicSkillParticles" type="Particles2D" parent="Sprite/Animation" index="8"]
+
+position = Vector2( -0.650715, -17.7392 )
+rotation = -1.5708
+emitting = false
+amount = 50
+lifetime = 0.25
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.9
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = SubResource( 28 )
+texture = ExtResource( 28 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform" ]
+
+[node name="UpSkillPuffSpawnPos" type="Position2D" parent="Sprite/Animation" index="9"]
+
+position = Vector2( 1.12968, -18.75 )
+scale = Vector2( 1, 1 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="2"]
 
 root_node = NodePath("..")
@@ -13126,22 +13696,22 @@ autoplay = "Still"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Basic Attack" = SubResource( 6 )
-"anims/Basic Skill" = SubResource( 7 )
-"anims/Basic Skill Landing" = SubResource( 8 )
-anims/Die = SubResource( 9 )
-"anims/Down Skill" = SubResource( 10 )
-"anims/Down Skill Resume" = SubResource( 11 )
-anims/Drink = SubResource( 12 )
-"anims/Horizontal Skill" = SubResource( 13 )
-anims/Idle = SubResource( 14 )
-anims/Jump = SubResource( 15 )
-"anims/Size Change" = SubResource( 16 )
-anims/Still = SubResource( 17 )
-anims/Stunned = SubResource( 18 )
-anims/Ult = SubResource( 19 )
-"anims/Up Skill" = SubResource( 20 )
-anims/Walk = SubResource( 21 )
+"anims/Basic Attack" = SubResource( 7 )
+"anims/Basic Skill" = SubResource( 8 )
+"anims/Basic Skill Landing" = SubResource( 9 )
+anims/Die = SubResource( 10 )
+"anims/Down Skill" = SubResource( 11 )
+"anims/Down Skill Resume" = SubResource( 12 )
+anims/Drink = SubResource( 13 )
+"anims/Horizontal Skill" = SubResource( 14 )
+anims/Idle = SubResource( 15 )
+anims/Jump = SubResource( 16 )
+"anims/Size Change" = SubResource( 17 )
+anims/Still = SubResource( 18 )
+anims/Stunned = SubResource( 19 )
+anims/Ult = SubResource( 20 )
+"anims/Up Skill" = SubResource( 21 )
+anims/Walk = SubResource( 22 )
 blend_times = [  ]
 
 [node name="Basic Skill Hit Box" type="Area2D" parent="Sprite" index="3"]
@@ -13162,7 +13732,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Basic Skill Hit Box" index="0"]
 
-shape = SubResource( 22 )
+shape = SubResource( 23 )
 
 [node name="Pencil Toss Pos" type="Position2D" parent="Sprite" index="4"]
 
@@ -13173,7 +13743,7 @@ scale = Vector2( 1.25, 1.25 )
 
 position = Vector2( 0, -115.316 )
 
-[node name="Health Bar" parent="." index="5" instance=ExtResource( 28 )]
+[node name="Health Bar" parent="." index="5" instance=ExtResource( 38 )]
 
 [node name="Keshia Ult" type="Node2D" parent="." index="6"]
 
@@ -13266,7 +13836,7 @@ position = Vector2( 0.717346, -126.34 )
 scale = Vector2( 1.5, 1.5 )
 enabled = true
 editor_only = false
-texture = ExtResource( 29 )
+texture = ExtResource( 39 )
 offset = Vector2( 0, 0 )
 texture_scale = 1.0
 color = Color( 1, 1, 1, 1 )
@@ -13294,7 +13864,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Forming Circle" = SubResource( 23 )
+"anims/Forming Circle" = SubResource( 24 )
 blend_times = [  ]
 
 [node name="Ult Hit Box" type="Area2D" parent="." index="7"]
@@ -13314,7 +13884,7 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ult Hit Box" index="0"]
 
 visible = false
-shape = SubResource( 24 )
+shape = SubResource( 25 )
 
 [node name="DoorCheckArea" type="Area2D" parent="." index="8"]
 
@@ -13333,12 +13903,12 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorCheckArea" index="0"]
 
-shape = SubResource( 25 )
+shape = SubResource( 26 )
 
 [node name="GhostHitBox" type="Node2D" parent="." index="9"]
 
 editor/display_folded = true
-script = ExtResource( 30 )
+script = ExtResource( 40 )
 
 [node name="Node2D" type="Node2D" parent="GhostHitBox" index="0"]
 
@@ -13361,7 +13931,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GhostHitBox/Node2D/Area2D" index="0"]
 
-shape = SubResource( 26 )
+shape = SubResource( 27 )
 
 [connection signal="area_entered" from="Sprite/Animation/Body/Left Arm/Weapon/Basic Attack Hit Box" to="Combo Handler" method="on_basic_attack_hit"]
 

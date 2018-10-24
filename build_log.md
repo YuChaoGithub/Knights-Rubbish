@@ -1022,8 +1022,10 @@ Comment: What a day. Tired.
 * Added laserlight effect for all laser shooting enemies.
 * Added particle systems for Radiogugu's skills, Darkearspider's clap, Godotbos Skill's Godotbos Missles, Eelo Kicker, Eelo Puncher, Harddies Drop (I really like the puff effects), Floopy, CD Punch, Keshia's Pencil Dart, Bottom Grab, Top Fist.
 
+[2018.10.24]
+* Completed Keshia and Wendy's skills' visual effects.
+
 [Next]
-* Keshia and Wendy's attack effects.
 * Implement characters: Plato, Codox, Bro SS.
 
 To Do List:

@@ -33,7 +33,7 @@ const UP_SKILL_KNOCK_BACK_VEL_Y = 300
 const UP_SKILL_KNOCK_BACK_FADE_RATE = 500
 const UP_SKILL_LANDING_DETECTION_DELAY_IN_MSEC = 250
 
-const DOWN_SKILL_DURATION = 0.6
+const DOWN_SKILL_DURATION = 1.2
 const DOWN_SKILL_RESUME_COOLDOWN = 0.2
 const DOWN_SKILL_RESUME_DURATION = 0.4
 const DOWN_SKILL_COOLDOWN = 0.15
@@ -44,10 +44,15 @@ const ULT_FIRE_TIME = 3.9
 
 var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var pencil_dart = preload("res://Scenes/Characters/Keshia Erasia/Pencil Dart.tscn")
+var skill_particles = preload("res://Scenes/Particles/KeshiaSkillParticles.tscn")
+var up_skill_puff = preload("res://Scenes/Particles/UpSkillPuffParticles.tscn")
 
 onready var hero = $".."
 onready var pencil_toss_pos = $"../Sprite/Pencil Toss Pos"
 onready var dart_spawn_node = $"../.."
+
+onready var up_skill_particles_spawn_pos = $"../Sprite/Animation/Body/Left Arm/Left Forearm/Weapon Remote Transform/UpSkillParticlesSpawnPos"
+onready var up_skill_puff_spawn_pos = $"../Sprite/Animation/UpSkillPuffSpawnPos"
 
 # When this is true, _process() will perform basic skill landing when the player detects the ground.
 var detecting_landing = false
@@ -217,6 +222,12 @@ func up_skill():
 		# Play animation.
 		hero.play_animation("Up Skill")
 
+		# Show puff particles only if the hero is in air.
+		if !hero.is_on_floor():
+			var p = up_skill_puff.instance()
+			$"../..".add_child(p)
+			p.global_position = up_skill_puff_spawn_pos.global_position
+
 		# Put Up Skill on cooldown until Keshia lands on ground (this is set in _process(delta)).
 		up_skill_available = false
 		up_skill_timestamp = OS.get_ticks_msec()
@@ -246,6 +257,10 @@ func on_up_skill_hit(area):
 	if area.is_in_group("enemy"):
 		# Can't hit the same object twice.
 		if !(area in up_skill_targets):
+			var p = skill_particles.instance()
+			$"../..".add_child(p)
+			p.global_position = up_skill_particles_spawn_pos.global_position
+
 			var damage = rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX)
 			var enemy = area.get_node("../..")
 			enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * UP_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier,-UP_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, UP_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)

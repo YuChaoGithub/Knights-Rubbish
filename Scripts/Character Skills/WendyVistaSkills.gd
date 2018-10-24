@@ -34,6 +34,8 @@ const ULT_ENDING_DURATION = 0.5
 const DOWN_SKILL_DURATION = 2.0
 const DOWN_SKILL_COOLDOWN = 0.3
 
+var up_skill_puff = preload("res://Scenes/Particles/UpSkillPuffParticles.tscn")
+
 var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var multi_timer = preload("res://Scripts/Utils/MultiTickTimer.gd")
 
@@ -42,6 +44,7 @@ onready var basic_attack_shoot_pos = $"../Sprite/BasicAttackShootPos"
 onready var basic_skill_particles = $"../Sprite/Animation/BasicSkillParticles"
 onready var horizontal_skill_shoot_pos = $"../Sprite/HorizontalSkillShootPos"
 onready var ult_skill_shoot_pos = $"../Sprite/Animation/Body/UltFirePos"
+onready var up_skill_puff_spawn_pos = $"../Sprite/Animation/UpSkillPuffSpawnPos"
 onready var spawn_node = get_node("../..")
 
 var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
@@ -146,6 +149,11 @@ func horizontal_skill_shoots(side):
 func up_skill():
     if up_skill_available && hero.status.can_move && hero.status.can_cast_skill:
         hero.play_animation("Up Skill")
+
+        if !hero.is_on_floor():
+            var p = up_skill_puff.instance()
+            spawn_node.add_child(p)
+            p.global_position = up_skill_puff_spawn_pos.global_position
 
         up_skill_available = false
         up_skill_timestamp = OS.get_ticks_msec()
