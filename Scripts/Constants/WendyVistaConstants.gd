@@ -1,7 +1,7 @@
-const name = "Wendy Vista"
+const name = "Wendy Floopy"
 const id = 1
 const avatar = preload("res://Graphics/UI/Avatar/Wendy Vista.png")
-const points = ["Fragile", "Ranged DPS", "Cute"]
+const points = ["Long Ranged", "Fragile", "Cute"]
 const full_health = 175
 const ghost_health = 800
 const movement_speed = 350.0
@@ -13,3 +13,4 @@ const ult_eyes_node_path = "Sprite/Animation/Body/UltEyes"
 const eyes_node_path = ["Sprite/Animation/Body/Eye", "Sprite/Animation/Body/Eye Lashes"]
 const fire_particle_node_path = "Sprite/Animation/Body/Fire Particle"
 const default_animator_path = "Sprite/AnimationPlayer"
+const drink_sprite_path = "Sprite/Animation/Drink"

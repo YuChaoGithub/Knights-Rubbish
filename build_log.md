@@ -1025,8 +1025,15 @@ Comment: What a day. Tired.
 [2018.10.24]
 * Completed Keshia and Wendy's skills' visual effects.
 
+[2018.10.26]
+* Completed Ranawato's all basic animations.
+* Completed Ranawato's Basic Attack and Basic Skill.
+
 [Next]
 * Implement characters: Plato, Codox, Bro SS.
+* Add ? character figure in hero changing scene.
+* Redesign Menu Scene.
+* Add keyboard configuration scene if it's the first time entering the game.
 
 To Do List:
 * New characters * 3.

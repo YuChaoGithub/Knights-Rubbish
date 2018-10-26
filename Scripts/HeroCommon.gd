@@ -149,8 +149,6 @@ onready var ult_eyes = get_node(player_constants.ult_eyes_node_path)
 var number_indicator = preload("res://Scenes/Utils/Numbers/Number Indicator.tscn")
 onready var number_spawn_pos = $"Number Spawn Pos"
 
-onready var drink_sprite = $"Sprite/Animation/Drink"
-
 onready var door_check_area = $DoorCheckArea
 onready var health_bar = $"Health Bar"
 onready var ghost_hit_box = $GhostHitBox
@@ -454,7 +452,7 @@ func drink_potion(potion_sprite, end_func, args):
 	set_status("can_move", false, DRINK_ANIMATION_DURATION)
 	set_status("drinking", true, DRINK_ANIMATION_DURATION)
 	
-	drink_sprite.texture = potion_sprite
+	get_node(player_constants.drink_sprite_path).texture = potion_sprite
 	
 	play_animation("Drink")
 
@@ -674,6 +672,10 @@ func knocked_back(vel_x, vel_y, x_fade_rate):
 	velocity_replacement_y = vel_y * self_knock_back_modifier
 	additional_speed_x = vel_x * self_knock_back_modifier
 	additional_speed_x_fading_rate = x_fade_rate * self_knock_back_modifier
+
+func cancel_knock_back():
+	additional_speed_x = 0.0
+	additional_speed_x_fading_rate = 0.0
 
 func damaged(val, randomness = true):
 	if status.dead:

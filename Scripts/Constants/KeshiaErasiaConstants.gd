@@ -13,3 +13,4 @@ const ult_eyes_node_path = "Sprite/Animation/Body/Face/Ult Eyes"
 const eyes_node_path = ["Sprite/Animation/Body/Face/Left Eye", "Sprite/Animation/Body/Face/Right Eye"]
 const fire_particle_node_path = "Sprite/Animation/Body/Fire Particle"
 const default_animator_path = "Sprite/AnimationPlayer"
+const drink_sprite_path = "Sprite/Animation/Drink"

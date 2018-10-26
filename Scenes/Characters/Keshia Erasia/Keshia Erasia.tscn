@@ -248,20 +248,20 @@ extents = Vector2( 13.7106, 105.965 )
 custom_solver_bias = 0.0
 extents = Vector2( 14.2277, 130.226 )
 
-[sub_resource type="Curve" id=29]
+[sub_resource type="Curve" id=6]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0.236407 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0773147 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=30]
+[sub_resource type="CurveTexture" id=7]
 
 flags = 4
 width = 2048
-curve = SubResource( 29 )
+curve = SubResource( 6 )
 
-[sub_resource type="ParticlesMaterial" id=28]
+[sub_resource type="ParticlesMaterial" id=8]
 
 render_priority = 0
 trail_divisor = 1
@@ -291,7 +291,7 @@ angle = 90.0
 angle_random = 0.5
 scale = 1.0
 scale_random = 0.0
-scale_curve = SubResource( 30 )
+scale_curve = SubResource( 7 )
 color = Color( 0.613281, 0.4206, 0.0527554, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -302,7 +302,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale" ]
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=9]
 
 length = 0.6
 loop = false
@@ -1112,7 +1112,7 @@ tracks/66/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=10]
 
 length = 0.6
 loop = false
@@ -1898,7 +1898,7 @@ tracks/64/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=11]
 
 length = 0.1
 loop = false
@@ -2696,7 +2696,7 @@ tracks/65/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=12]
 
 length = 1.5
 loop = false
@@ -3518,7 +3518,7 @@ tracks/67/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=13]
 
 length = 0.6
 loop = false
@@ -4328,7 +4328,7 @@ tracks/66/keys = {
 "values": [ false, true ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=14]
 
 length = 1.0
 loop = false
@@ -5114,7 +5114,7 @@ tracks/64/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=15]
 
 length = 1.5
 loop = false
@@ -5936,7 +5936,7 @@ tracks/67/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=16]
 
 length = 0.7
 loop = false
@@ -6722,7 +6722,7 @@ tracks/64/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=17]
 
 length = 3.0
 loop = true
@@ -7508,7 +7508,7 @@ tracks/64/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=18]
 
 length = 0.5
 loop = false
@@ -8294,7 +8294,7 @@ tracks/64/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=19]
 
 length = 0.1
 loop = false
@@ -9080,7 +9080,7 @@ tracks/64/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=20]
 
 length = 0.1
 loop = false
@@ -9866,7 +9866,7 @@ tracks/64/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=21]
 
 length = 1.0
 loop = true
@@ -10652,7 +10652,7 @@ tracks/64/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=22]
 
 length = 4.5
 loop = false
@@ -11438,7 +11438,7 @@ tracks/64/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=23]
 
 length = 0.2
 loop = false
@@ -12224,7 +12224,7 @@ tracks/64/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=24]
 
 length = 1.0
 loop = true
@@ -13010,12 +13010,12 @@ tracks/64/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=23]
+[sub_resource type="RectangleShape2D" id=25]
 
 custom_solver_bias = 0.0
 extents = Vector2( 298.67, 78.0224 )
 
-[sub_resource type="Animation" id=24]
+[sub_resource type="Animation" id=26]
 
 length = 4.0
 loop = false
@@ -13213,17 +13213,17 @@ tracks/15/keys = {
 "values": [ Vector2( 76.0461, 24.2744 ), Vector2( 76.0461, 24.2744 ), Vector2( 76.0461, 24.2744 ), Vector2( 70.8125, 10.8999 ), Vector2( 70.8125, 10.8999 ), Vector2( 116.461, 129.587 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=25]
+[sub_resource type="RectangleShape2D" id=27]
 
 custom_solver_bias = 0.0
 extents = Vector2( 1300, 750 )
 
-[sub_resource type="RectangleShape2D" id=26]
+[sub_resource type="RectangleShape2D" id=28]
 
 custom_solver_bias = 0.0
 extents = Vector2( 70, 80 )
 
-[sub_resource type="RectangleShape2D" id=27]
+[sub_resource type="RectangleShape2D" id=29]
 
 custom_solver_bias = 0.0
 extents = Vector2( 79.7137, 95.9264 )
@@ -13277,16 +13277,16 @@ script = ExtResource( 2 )
 
 light_mask = 5
 scale = Vector2( 0.8, 0.8 )
-_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+_sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 
 [node name="Right Arm" type="Sprite" parent="Sprite" index="0"]
 
 position = Vector2( 88.0745, -39.3245 )
-rotation = -0.798146
+rotation = -0.88084
 scale = Vector2( 0.9, 0.9 )
 texture = ExtResource( 3 )
 offset = Vector2( -1.23269, 16.6908 )
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Visibility", "Z Index" ]
 
 [node name="Animation" type="Node2D" parent="Sprite" index="1"]
 
@@ -13499,8 +13499,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Weapon" type="Sprite" parent="Sprite/Animation/Body/Left Arm" index="0"]
 
 editor/display_folded = true
-position = Vector2( -2.74628, 1.13215 )
-rotation = -1.10538
+position = Vector2( 6.00391, -0.181496 )
+rotation = -0.846562
 scale = Vector2( 1.44, 1.44 )
 texture = ExtResource( 20 )
 offset = Vector2( 3.92352, -79.9531 )
@@ -13567,8 +13567,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Weapon Remote Transform" type="RemoteTransform2D" parent="Sprite/Animation/Body/Left Arm/Left Forearm" index="1"]
 
 editor/display_folded = true
-position = Vector2( -37.7898, -23.4108 )
-rotation = -2.13302
+position = Vector2( -33.5425, -33.6231 )
+rotation = -1.8742
 scale = Vector2( 1.8, 1.8 )
 remote_path = NodePath("../../Weapon")
 use_global_coordinates = true
@@ -13586,7 +13586,7 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 89.5015, -86.9088 )
-rotation = -0.798146
+rotation = -0.88084
 scale = Vector2( 0.9, 0.9 )
 remote_path = NodePath("../../../Right Arm")
 use_global_coordinates = true
@@ -13601,7 +13601,7 @@ __meta__ = {
 [node name="Right Forearm" type="Sprite" parent="Sprite/Animation/Body/Remote Right Arm" index="0"]
 
 position = Vector2( -3.78853, 37.4229 )
-rotation = 1.30314
+rotation = 1.51765
 scale = Vector2( 0.888889, 0.777778 )
 texture = ExtResource( 3 )
 offset = Vector2( -2.25615, 16.4975 )
@@ -13676,7 +13676,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = SubResource( 28 )
+process_material = SubResource( 8 )
 texture = ExtResource( 28 )
 normal_map = null
 h_frames = 1
@@ -13686,7 +13686,6 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Trans
 [node name="UpSkillPuffSpawnPos" type="Position2D" parent="Sprite/Animation" index="9"]
 
 position = Vector2( 1.12968, -18.75 )
-scale = Vector2( 1, 1 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="2"]
@@ -13696,22 +13695,22 @@ autoplay = "Still"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Basic Attack" = SubResource( 7 )
-"anims/Basic Skill" = SubResource( 8 )
-"anims/Basic Skill Landing" = SubResource( 9 )
-anims/Die = SubResource( 10 )
-"anims/Down Skill" = SubResource( 11 )
-"anims/Down Skill Resume" = SubResource( 12 )
-anims/Drink = SubResource( 13 )
-"anims/Horizontal Skill" = SubResource( 14 )
-anims/Idle = SubResource( 15 )
-anims/Jump = SubResource( 16 )
-"anims/Size Change" = SubResource( 17 )
-anims/Still = SubResource( 18 )
-anims/Stunned = SubResource( 19 )
-anims/Ult = SubResource( 20 )
-"anims/Up Skill" = SubResource( 21 )
-anims/Walk = SubResource( 22 )
+"anims/Basic Attack" = SubResource( 9 )
+"anims/Basic Skill" = SubResource( 10 )
+"anims/Basic Skill Landing" = SubResource( 11 )
+anims/Die = SubResource( 12 )
+"anims/Down Skill" = SubResource( 13 )
+"anims/Down Skill Resume" = SubResource( 14 )
+anims/Drink = SubResource( 15 )
+"anims/Horizontal Skill" = SubResource( 16 )
+anims/Idle = SubResource( 17 )
+anims/Jump = SubResource( 18 )
+"anims/Size Change" = SubResource( 19 )
+anims/Still = SubResource( 20 )
+anims/Stunned = SubResource( 21 )
+anims/Ult = SubResource( 22 )
+"anims/Up Skill" = SubResource( 23 )
+anims/Walk = SubResource( 24 )
 blend_times = [  ]
 
 [node name="Basic Skill Hit Box" type="Area2D" parent="Sprite" index="3"]
@@ -13732,7 +13731,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Basic Skill Hit Box" index="0"]
 
-shape = SubResource( 23 )
+shape = SubResource( 25 )
 
 [node name="Pencil Toss Pos" type="Position2D" parent="Sprite" index="4"]
 
@@ -13864,7 +13863,7 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Forming Circle" = SubResource( 24 )
+"anims/Forming Circle" = SubResource( 26 )
 blend_times = [  ]
 
 [node name="Ult Hit Box" type="Area2D" parent="." index="7"]
@@ -13884,7 +13883,7 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ult Hit Box" index="0"]
 
 visible = false
-shape = SubResource( 25 )
+shape = SubResource( 27 )
 
 [node name="DoorCheckArea" type="Area2D" parent="." index="8"]
 
@@ -13903,7 +13902,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorCheckArea" index="0"]
 
-shape = SubResource( 26 )
+shape = SubResource( 28 )
 
 [node name="GhostHitBox" type="Node2D" parent="." index="9"]
 
@@ -13931,7 +13930,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GhostHitBox/Node2D/Area2D" index="0"]
 
-shape = SubResource( 27 )
+shape = SubResource( 29 )
 
 [connection signal="area_entered" from="Sprite/Animation/Body/Left Arm/Weapon/Basic Attack Hit Box" to="Combo Handler" method="on_basic_attack_hit"]
 
