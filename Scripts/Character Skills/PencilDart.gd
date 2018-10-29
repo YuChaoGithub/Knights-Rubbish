@@ -18,7 +18,6 @@ var timestamp = 0.0
 
 onready var movement_pattern = preload("res://Scripts/Movements/StraightLineMovement.gd").new(side * SPEED_X, 0)
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
-onready var sprite = $Sprite
 
 func initialize(side, attack_modifier, size):
 	self.side = side

@@ -186,7 +186,6 @@ func down_skill():
         hero.set_status("can_move", false, DOWN_SKILL_DURATION)
         hero.set_status("animate_movement", false, DOWN_SKILL_DURATION)
         hero.set_status("can_cast_skill", false, DOWN_SKILL_DURATION + DOWN_SKILL_COOLDOWN) 
-        hero.set_status("invincible", true, DOWN_SKILL_DURATION)
 
 # ===
 # Ult: Shoot consecutive high damage CDs.

@@ -1029,8 +1029,11 @@ Comment: What a day. Tired.
 * Completed Ranawato's all basic animations.
 * Completed Ranawato's Basic Attack and Basic Skill.
 
+[2018.10.29]
+* Completed all of Ranawato's Skills.
+
 [Next]
-* Implement characters: Plato, Codox, Bro SS.
+* Implement characters: Codox, Bro SS. (Est. Before Nov. 5th)
 * Add ? character figure in hero changing scene.
 * Redesign Menu Scene.
 * Add keyboard configuration scene if it's the first time entering the game.

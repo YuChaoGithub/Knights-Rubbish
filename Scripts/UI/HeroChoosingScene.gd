@@ -9,7 +9,7 @@ const LEAVE_ANIMATION_DURATION = 1.0
 var hero_infos = [
     preload("res://Scripts/Constants/KeshiaErasiaConstants.gd"),
     preload("res://Scripts/Constants/WendyVistaConstants.gd"),
-    preload("res://Scripts/Constants/KeshiaErasiaConstants.gd"),
+    preload("res://Scripts/Constants/RanawatoPlatoConstants.gd"),
     preload("res://Scripts/Constants/KeshiaErasiaConstants.gd"),
     preload("res://Scripts/Constants/KeshiaErasiaConstants.gd"),
     preload("res://Scripts/Constants/KeshiaErasiaConstants.gd"),

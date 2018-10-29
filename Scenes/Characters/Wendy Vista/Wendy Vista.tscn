@@ -13,20 +13,20 @@
 [ext_resource path="res://Graphics/Characters/Common/Ghost Ripple 2.png" type="Texture" id=11]
 [ext_resource path="res://Graphics/Characters/Common/Ghost Ripple 3.png" type="Texture" id=12]
 [ext_resource path="res://Graphics/Characters/Wendy Vista/Body.png" type="Texture" id=13]
-[ext_resource path="res://Graphics/Characters/Wendy Vista/Eye Angry.png" type="Texture" id=14]
-[ext_resource path="res://Graphics/Characters/Wendy Vista/Foot.png" type="Texture" id=15]
-[ext_resource path="res://Graphics/Characters/Wendy Vista/Mouth Open.png" type="Texture" id=16]
-[ext_resource path="res://Graphics/Characters/Wendy Vista/Teeth.png" type="Texture" id=17]
-[ext_resource path="res://Graphics/Characters/Wendy Vista/Skirt.png" type="Texture" id=18]
-[ext_resource path="res://Scenes/Characters/Ult Eye.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Scenes/Particles/Fire Particle.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Scenes/Power Ups/Confused Icon.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Scenes/Power Ups/Attack Icon.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Scenes/Power Ups/Defense Icon.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Scenes/Power Ups/Slowed Icon.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Graphics/Characters/Common/Power Up/Attack Potion.png" type="Texture" id=25]
-[ext_resource path="res://Scenes/Power Ups/Speeded Icon.tscn" type="PackedScene" id=26]
-[ext_resource path="res://Graphics/Characters/Wendy Vista/Mouth.png" type="Texture" id=27]
+[ext_resource path="res://Graphics/Characters/Wendy Vista/Foot.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Characters/Wendy Vista/Mouth.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/Characters/Wendy Vista/Teeth.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/Characters/Wendy Vista/Skirt.png" type="Texture" id=17]
+[ext_resource path="res://Scenes/Characters/Ult Eye.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Particles/Fire Particle.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Power Ups/Confused Icon.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Power Ups/Attack Icon.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Power Ups/Defense Icon.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Power Ups/Slowed Icon.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Graphics/Characters/Common/Power Up/Attack Potion.png" type="Texture" id=24]
+[ext_resource path="res://Scenes/Power Ups/Speeded Icon.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Graphics/Characters/Wendy Vista/Eye Angry.png" type="Texture" id=26]
+[ext_resource path="res://Graphics/Characters/Wendy Vista/Mouth Open.png" type="Texture" id=27]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Left Brow.png" type="Texture" id=28]
 [ext_resource path="res://Graphics/Characters/Wendy Vista/Eye Wink.png" type="Texture" id=29]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=30]
@@ -634,7 +634,7 @@ tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 14 ) ]
+"values": [ ExtResource( 26 ) ]
 }
 tracks/31/type = "value"
 tracks/31/path = NodePath("Animation/DownSkillHat:visible")
@@ -658,7 +658,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 16 ) ]
+"values": [ ExtResource( 27 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -731,6 +731,18 @@ tracks/38/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("../Damage Area:collision_layer")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -1108,7 +1120,7 @@ tracks/30/keys = {
 "times": PoolRealArray( 0, 0.1, 0.8 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 6 ), ExtResource( 14 ), ExtResource( 6 ) ]
+"values": [ ExtResource( 6 ), ExtResource( 26 ), ExtResource( 6 ) ]
 }
 tracks/31/type = "value"
 tracks/31/path = NodePath("Animation/DownSkillHat:visible")
@@ -1132,7 +1144,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 27 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -1205,6 +1217,18 @@ tracks/38/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("../Damage Area:collision_layer")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -1606,7 +1630,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 27 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -1715,6 +1739,18 @@ tracks/41/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/42/type = "value"
+tracks/42/path = NodePath("../Damage Area:collision_layer")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -2116,7 +2152,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 27 ), ExtResource( 27 ) ]
+"values": [ ExtResource( 15 ), ExtResource( 15 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -2213,6 +2249,18 @@ tracks/40/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/41/type = "value"
+tracks/41/path = NodePath("../Damage Area:collision_layer")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -2614,7 +2662,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0, 0.5, 1.25 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 27 ), ExtResource( 16 ), ExtResource( 27 ) ]
+"values": [ ExtResource( 15 ), ExtResource( 27 ), ExtResource( 15 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -2723,6 +2771,18 @@ tracks/41/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/42/type = "value"
+tracks/42/path = NodePath("../Damage Area:collision_layer")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -3124,7 +3184,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0, 0.5, 1.2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 27 ), ExtResource( 16 ), ExtResource( 27 ) ]
+"values": [ ExtResource( 15 ), ExtResource( 27 ), ExtResource( 15 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -3197,6 +3257,18 @@ tracks/38/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("../Damage Area:collision_layer")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -3598,7 +3670,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 27 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -3671,6 +3743,18 @@ tracks/38/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("../Damage Area:collision_layer")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
 }
 
 [sub_resource type="Animation" id=16]
@@ -4072,7 +4156,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 27 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -4145,6 +4229,18 @@ tracks/38/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("../Damage Area:collision_layer")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
 }
 
 [sub_resource type="Animation" id=17]
@@ -4547,7 +4643,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 27 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -4620,6 +4716,18 @@ tracks/38/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("../Damage Area:collision_layer")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
 }
 
 [sub_resource type="Animation" id=18]
@@ -5021,7 +5129,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 27 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -5094,6 +5202,18 @@ tracks/38/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("../Damage Area:collision_layer")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
 }
 
 [sub_resource type="Animation" id=19]
@@ -5495,7 +5615,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 27 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -5568,6 +5688,18 @@ tracks/38/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("../Damage Area:collision_layer")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
 }
 
 [sub_resource type="Animation" id=20]
@@ -5946,7 +6078,7 @@ tracks/30/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 14 ) ]
+"values": [ ExtResource( 26 ) ]
 }
 tracks/31/type = "value"
 tracks/31/path = NodePath("Animation/DownSkillHat:visible")
@@ -5970,7 +6102,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 16 ) ]
+"values": [ ExtResource( 27 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -6043,6 +6175,18 @@ tracks/38/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("../Damage Area:collision_layer")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
 }
 
 [sub_resource type="Animation" id=21]
@@ -6444,7 +6588,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 27 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -6517,6 +6661,18 @@ tracks/38/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("../Damage Area:collision_layer")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
 }
 
 [sub_resource type="Animation" id=22]
@@ -6918,7 +7074,7 @@ tracks/32/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 27 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/33/type = "value"
 tracks/33/path = NodePath("Animation/Body/Hat:visible")
@@ -6991,6 +7147,18 @@ tracks/38/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("../Damage Area:collision_layer")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
 }
 
 [sub_resource type="RectangleShape2D" id=23]
@@ -7140,7 +7308,6 @@ blend_times = [  ]
 
 [node name="Body" type="Sprite" parent="Sprite/Animation" index="2"]
 
-editor/display_folded = true
 light_mask = 5
 texture = ExtResource( 13 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -7154,9 +7321,8 @@ texture = ExtResource( 7 )
 [node name="Eye" type="Sprite" parent="Sprite/Animation/Body" index="1"]
 
 light_mask = 5
-position = Vector2( 3.41472, -2.19978 )
-rotation = -0.27594
-texture = ExtResource( 14 )
+position = Vector2( 1.8554, -11.2233 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Pink" type="Sprite" parent="Sprite/Animation/Body" index="2"]
@@ -7169,14 +7335,16 @@ texture = ExtResource( 9 )
 
 light_mask = 5
 position = Vector2( -19.6812, 77.6028 )
-texture = ExtResource( 15 )
+rotation = 0.832098
+texture = ExtResource( 14 )
 offset = Vector2( -0.500076, 12.4878 )
 
 [node name="Right Foot" type="Sprite" parent="Sprite/Animation/Body" index="4"]
 
 light_mask = 5
 position = Vector2( 19.522, 78.1469 )
-texture = ExtResource( 15 )
+rotation = 0.387723
+texture = ExtResource( 14 )
 offset = Vector2( -0.156494, 12.0443 )
 
 [node name="Hat" type="Sprite" parent="Sprite/Animation/Body" index="5"]
@@ -7184,6 +7352,7 @@ offset = Vector2( -0.156494, 12.0443 )
 editor/display_folded = true
 light_mask = 5
 position = Vector2( -1.30359, -71.1389 )
+rotation = -6.30024
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -7210,22 +7379,22 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 light_mask = 5
-position = Vector2( 51.2596, 14.7843 )
-scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 16 )
+position = Vector2( 39.9342, 18.4681 )
+rotation = -0.144094
+texture = ExtResource( 15 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Teeth" type="Sprite" parent="Sprite/Animation/Body/Mouth" index="0"]
 
-position = Vector2( 6.14133, -7.09825 )
-texture = ExtResource( 17 )
+position = Vector2( 4.55707, 3.35783 )
+texture = ExtResource( 16 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Skirt" type="Sprite" parent="Sprite/Animation/Body" index="7"]
 
 light_mask = 5
 position = Vector2( -2.07814, 64.6541 )
-texture = ExtResource( 18 )
+texture = ExtResource( 17 )
 
 [node name="UltEyes" type="Node2D" parent="Sprite/Animation/Body" index="8"]
 
@@ -7233,37 +7402,37 @@ editor/display_folded = true
 visible = false
 position = Vector2( -5.01117, 0.850349 )
 
-[node name="Ult Eye" parent="Sprite/Animation/Body/UltEyes" index="0" instance=ExtResource( 19 )]
+[node name="Ult Eye" parent="Sprite/Animation/Body/UltEyes" index="0" instance=ExtResource( 18 )]
 
 position = Vector2( 5.59875, -5.16511 )
 scale = Vector2( 1.6, 1.6 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Fire Particle" parent="Sprite/Animation/Body" index="9" instance=ExtResource( 20 )]
+[node name="Fire Particle" parent="Sprite/Animation/Body" index="9" instance=ExtResource( 19 )]
 
 visible = false
 position = Vector2( -15.1939, -90.5042 )
 rotation = -0.241801
 
-[node name="Confused Icon" parent="Sprite/Animation/Body" index="10" instance=ExtResource( 21 )]
+[node name="Confused Icon" parent="Sprite/Animation/Body" index="10" instance=ExtResource( 20 )]
 
 position = Vector2( -0.264679, -131.216 )
 scale = Vector2( 0.8, 0.8 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Attack Icon" parent="Sprite/Animation/Body" index="11" instance=ExtResource( 22 )]
+[node name="Attack Icon" parent="Sprite/Animation/Body" index="11" instance=ExtResource( 21 )]
 
 position = Vector2( -31.7302, -32.5006 )
 scale = Vector2( 0.5, 0.5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Defense Icon" parent="Sprite/Animation/Body" index="12" instance=ExtResource( 23 )]
+[node name="Defense Icon" parent="Sprite/Animation/Body" index="12" instance=ExtResource( 22 )]
 
 position = Vector2( 30.4162, -33.7409 )
 scale = Vector2( 0.5, 0.5 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Slowed Icon" parent="Sprite/Animation/Body" index="13" instance=ExtResource( 24 )]
+[node name="Slowed Icon" parent="Sprite/Animation/Body" index="13" instance=ExtResource( 23 )]
 
 position = Vector2( -0.517883, 46.2257 )
 scale = Vector2( 0.55, 0.55 )
@@ -7278,7 +7447,7 @@ position = Vector2( 51.9573, 15.9869 )
 visible = false
 position = Vector2( 75.8853, 40.3395 )
 rotation = -0.0386191
-texture = ExtResource( 25 )
+texture = ExtResource( 24 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="DownSkillHat" type="Sprite" parent="Sprite/Animation" index="4"]
@@ -7288,7 +7457,7 @@ position = Vector2( -1.30359, -71.1389 )
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Speeded Icon" parent="Sprite/Animation" index="5" instance=ExtResource( 26 )]
+[node name="Speeded Icon" parent="Sprite/Animation" index="5" instance=ExtResource( 25 )]
 
 position = Vector2( 6.14301, 83.5229 )
 scale = Vector2( 0.5, 0.5 )
