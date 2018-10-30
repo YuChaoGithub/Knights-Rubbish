@@ -1032,27 +1032,28 @@ Comment: What a day. Tired.
 [2018.10.29]
 * Completed all of Ranawato's Skills.
 
+[2018.10.30]
+* Completed Othox's Basic Attack, Basic Skill, and Horizontal Skill.
+* Fixed the bug that some heroes won't turn currently when casting horizontal skills.
+
 [Next]
-* Implement characters: Codox, Bro SS. (Est. Before Nov. 5th)
+* Implement characters: Bro SS. (Est. Before Nov. 5th)
 * Add ? character figure in hero changing scene.
 * Redesign Menu Scene.
-* Add keyboard configuration scene if it's the first time entering the game.
+* Add keyboard configuration scene if it's the first time entering the game. (Data persistence)
+* Make Gifs of characters' attack, post it on the project site. (Including the unreleased characters).
+* Preview video.
+* Introduction article.
+(Est. Before Nov 23rd)
 
 To Do List:
-* New characters * 3.
-* Introduction article. Preview Video.
-(Est. Before late November)
-* New characters * 5.
 * Sound Effects & Background Music.
 **Alpha Version [Ver 0.1] Publishing**
+(Steam early access)
+* New characters * 5.
 
 Sound Effects:
 Lock Sound, Character Choose Sound, Jump, Mobs, Character Skills.
 
 Unfixed Bugs:
-
 Polishing:
-* [Data] Make key settings persistent between game sessions (Single Player settings should be separated from Coop settings).
-* [Effect] Attack effects (particles).
-* [Animation] Radiogugu watch out skill blinks blue.
-* [Effect] Jumping dust for characters.

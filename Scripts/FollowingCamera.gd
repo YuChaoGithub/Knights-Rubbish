@@ -132,6 +132,9 @@ func clamp_pos_within_cam_bounds(pos):
 	pos.y = clamp(pos.y, global_position.y - cam_height * 0.5, global_position.y + cam_height * 0.5)
 	return pos
 
+func get_top_pos_y():
+	return global_position.y - cam_height * 0.5
+
 func instance_bottom_grab(pos_x):
 	start_shake_effect()
 

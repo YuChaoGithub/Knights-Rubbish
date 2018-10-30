@@ -1,0 +1,16 @@
+const name = "Othox Codox"
+const id = 3
+const avatar = preload("res://Graphics/UI/Avatar/OthoxCodox.png")
+const points = ["Area Damage", "Slow", "Very Old"]
+const full_health = 300
+const ghost_health = 600
+const movement_speed = 200.0
+const jump_height = 300.0
+const time_to_jump_to_highest = 0.6
+const hurt_modulate_color = Color(1.0, 140.0 / 255.0, 140.0 / 255.0)
+const hurt_modulate_node_path = ["Sprite/Animation/Wheel Chair", "Sprite/Animation/Body", "Sprite/Animation/Small Wheel"]
+const ult_eyes_node_path = "Sprite/Animation/Wheel Chair/Body/UltEyes"
+const eyes_node_path = ["Sprite/Animation/Wheel Chair/Body/Left Eye", "Sprite/Animation/Wheel Chair/Body/Right Eye"]
+const fire_particle_node_path = "Sprite/Animation/Wheel Chair/Body/Fire Particle"
+const default_animator_path = "Sprite/AnimationPlayer"
+const drink_sprite_path = "Sprite/Animation/Drink"

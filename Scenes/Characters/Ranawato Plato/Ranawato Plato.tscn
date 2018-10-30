@@ -41,15 +41,15 @@ extents = Vector2( 63.6023, 116.139 )
 custom_solver_bias = 0.0
 extents = Vector2( 51.8523, 100.907 )
 
-[sub_resource type="Gradient" id=60]
+[sub_resource type="Gradient" id=3]
 
 offsets = PoolRealArray( 0, 0.234557, 0.433304, 0.72265, 1 )
 colors = PoolColorArray( 0, 1, 0.132812, 0.38498, 0.0546875, 1, 0, 0.668192, 0.96875, 1, 0, 0.705882, 1, 0.679688, 0, 0.784314, 1, 0, 0, 0.48 )
 
-[sub_resource type="GradientTexture" id=61]
+[sub_resource type="GradientTexture" id=4]
 
 flags = 4
-gradient = SubResource( 60 )
+gradient = SubResource( 3 )
 width = 2048
 
 [sub_resource type="Curve" id=5]
@@ -96,7 +96,7 @@ angle_random = 0.0
 scale = 1.0
 scale_random = 0.0
 scale_curve = SubResource( 6 )
-color_ramp = SubResource( 61 )
+color_ramp = SubResource( 4 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -106,18 +106,18 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Color", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Orbit Velocity", "Radial Accel", "Scale", "Spread" ]
 
-[sub_resource type="Gradient" id=62]
+[sub_resource type="Gradient" id=8]
 
 offsets = PoolRealArray( 0, 0.234557, 0.433304, 0.716204, 0.72265, 0.998459 )
 colors = PoolColorArray( 0, 0, 0, 0, 0, 0.53125, 1, 0.668192, 1, 1, 1, 0.34502, 0, 0.492188, 0.0884399, 0.35502, 0, 0.226562, 1, 0.357859, 0, 0, 0, 0.48 )
 
-[sub_resource type="GradientTexture" id=4]
+[sub_resource type="GradientTexture" id=9]
 
 flags = 4
-gradient = SubResource( 62 )
+gradient = SubResource( 8 )
 width = 2048
 
-[sub_resource type="ParticlesMaterial" id=45]
+[sub_resource type="ParticlesMaterial" id=10]
 
 render_priority = 0
 trail_divisor = 1
@@ -148,7 +148,7 @@ angle_random = 0.0
 scale = 0.5
 scale_random = 0.0
 scale_curve = SubResource( 6 )
-color_ramp = SubResource( 4 )
+color_ramp = SubResource( 9 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -158,25 +158,25 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Color", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Orbit Velocity", "Radial Accel", "Scale", "Spread" ]
 
-[sub_resource type="StreamTexture" id=46]
+[sub_resource type="StreamTexture" id=11]
 
 flags = 4
 load_path = "res://.import/Puff.png-f6fc409ad530b40c96441cdb0d5c63f1.stex"
 
-[sub_resource type="Curve" id=8]
+[sub_resource type="Curve" id=12]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0.322059 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0711162 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=9]
+[sub_resource type="CurveTexture" id=13]
 
 flags = 4
 width = 2048
-curve = SubResource( 8 )
+curve = SubResource( 12 )
 
-[sub_resource type="ParticlesMaterial" id=10]
+[sub_resource type="ParticlesMaterial" id=14]
 
 render_priority = 0
 trail_divisor = 1
@@ -205,7 +205,7 @@ angle = 90.0
 angle_random = 0.5
 scale = 1.0
 scale_random = 0.0
-scale_curve = SubResource( 9 )
+scale_curve = SubResource( 13 )
 color = Color( 0.0583191, 0.574219, 0, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -216,31 +216,31 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Color", "Gravity", "Initial Velocity", "Scale", "Spread" ]
 
-[sub_resource type="Gradient" id=11]
+[sub_resource type="Gradient" id=15]
 
 offsets = PoolRealArray( 0, 0.580894, 1 )
 colors = PoolColorArray( 0.586022, 0.728327, 1, 0.24502, 0, 0.739288, 0.996094, 0.31502, 0, 0.601562, 1, 0.21502 )
 
-[sub_resource type="GradientTexture" id=12]
+[sub_resource type="GradientTexture" id=16]
 
 flags = 4
-gradient = SubResource( 11 )
+gradient = SubResource( 15 )
 width = 2048
 
-[sub_resource type="Curve" id=13]
+[sub_resource type="Curve" id=17]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0.528365 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=14]
+[sub_resource type="CurveTexture" id=18]
 
 flags = 4
 width = 2048
-curve = SubResource( 13 )
+curve = SubResource( 17 )
 
-[sub_resource type="ParticlesMaterial" id=15]
+[sub_resource type="ParticlesMaterial" id=19]
 
 render_priority = 0
 trail_divisor = 1
@@ -269,8 +269,8 @@ angle = 0.0
 angle_random = 0.0
 scale = 1.0
 scale_random = 0.0
-scale_curve = SubResource( 14 )
-color_ramp = SubResource( 12 )
+scale_curve = SubResource( 18 )
+color_ramp = SubResource( 16 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -280,31 +280,31 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Orbit Velocity", "Radial Accel", "Scale", "Spread" ]
 
-[sub_resource type="Gradient" id=48]
+[sub_resource type="Gradient" id=20]
 
 offsets = PoolRealArray( 0, 0.212635, 1 )
 colors = PoolColorArray( 1, 1, 1, 0.588235, 1, 1, 1, 0.588235, 0, 0.90625, 1, 0.588235 )
 
-[sub_resource type="GradientTexture" id=49]
+[sub_resource type="GradientTexture" id=21]
 
 flags = 4
-gradient = SubResource( 48 )
+gradient = SubResource( 20 )
 width = 2048
 
-[sub_resource type="Curve" id=51]
+[sub_resource type="Curve" id=22]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0.445496 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=52]
+[sub_resource type="CurveTexture" id=23]
 
 flags = 4
 width = 2048
-curve = SubResource( 51 )
+curve = SubResource( 22 )
 
-[sub_resource type="ParticlesMaterial" id=53]
+[sub_resource type="ParticlesMaterial" id=24]
 
 render_priority = 0
 trail_divisor = 1
@@ -333,8 +333,8 @@ angle = 80.0
 angle_random = 0.5
 scale = 1.0
 scale_random = 0.2
-scale_curve = SubResource( 52 )
-color_ramp = SubResource( 49 )
+scale_curve = SubResource( 23 )
+color_ramp = SubResource( 21 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -344,31 +344,31 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Radial Accel", "Scale", "Spread" ]
 
-[sub_resource type="Gradient" id=55]
+[sub_resource type="Gradient" id=25]
 
 offsets = PoolRealArray( 0, 0.215716, 0.522342, 0.721109, 1 )
 colors = PoolColorArray( 0.634409, 0.948589, 1, 1, 0, 0.90625, 1, 1, 0.851562, 1, 0, 1, 1, 0.515625, 0, 1, 1, 0, 0, 0 )
 
-[sub_resource type="GradientTexture" id=56]
+[sub_resource type="GradientTexture" id=26]
 
 flags = 4
-gradient = SubResource( 55 )
+gradient = SubResource( 25 )
 width = 2048
 
-[sub_resource type="Curve" id=58]
+[sub_resource type="Curve" id=27]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0.509084 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=59]
+[sub_resource type="CurveTexture" id=28]
 
 flags = 4
 width = 2048
-curve = SubResource( 58 )
+curve = SubResource( 27 )
 
-[sub_resource type="ParticlesMaterial" id=57]
+[sub_resource type="ParticlesMaterial" id=29]
 
 render_priority = 0
 trail_divisor = 1
@@ -397,8 +397,8 @@ angle = 0.0
 angle_random = 0.0
 scale = 1.5
 scale_random = 0.0
-scale_curve = SubResource( 59 )
-color_ramp = SubResource( 56 )
+scale_curve = SubResource( 28 )
+color_ramp = SubResource( 26 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -408,7 +408,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread" ]
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=30]
 
 length = 2.0
 loop = true
@@ -450,41 +450,41 @@ tracks/2/keys = {
 "values": [ 0.0, 1.46747 ]
 }
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=31]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 121.419 )
 
-[sub_resource type="RectangleShape2D" id=18]
+[sub_resource type="RectangleShape2D" id=32]
 
 custom_solver_bias = 0.0
 extents = Vector2( 28.8316, 40.2729 )
 
-[sub_resource type="Gradient" id=19]
+[sub_resource type="Gradient" id=33]
 
 offsets = PoolRealArray( 0, 0.220626, 0.540997, 1 )
 colors = PoolColorArray( 0.266129, 1, 0.432397, 0, 0, 0, 0, 0.34502, 0, 0.433594, 0.0982361, 0.424312, 0, 0.835938, 0.189392, 0.784314 )
 
-[sub_resource type="GradientTexture" id=20]
+[sub_resource type="GradientTexture" id=34]
 
 flags = 4
-gradient = SubResource( 19 )
+gradient = SubResource( 33 )
 width = 2048
 
-[sub_resource type="Curve" id=21]
+[sub_resource type="Curve" id=35]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0.42928 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.867289 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=22]
+[sub_resource type="CurveTexture" id=36]
 
 flags = 4
 width = 2048
-curve = SubResource( 21 )
+curve = SubResource( 35 )
 
-[sub_resource type="ParticlesMaterial" id=23]
+[sub_resource type="ParticlesMaterial" id=37]
 
 render_priority = 0
 trail_divisor = 1
@@ -514,8 +514,8 @@ angle = 90.0
 angle_random = 0.0
 scale = 1.0
 scale_random = 0.0
-scale_curve = SubResource( 22 )
-color_ramp = SubResource( 20 )
+scale_curve = SubResource( 36 )
+color_ramp = SubResource( 34 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -525,32 +525,32 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Emission Shape", "Flags", "Initial Velocity", "Radial Accel", "Scale", "Spread" ]
 
-[sub_resource type="RectangleShape2D" id=24]
+[sub_resource type="RectangleShape2D" id=38]
 
 custom_solver_bias = 0.0
 extents = Vector2( 3.04562, 113.619 )
 
-[sub_resource type="RectangleShape2D" id=25]
+[sub_resource type="RectangleShape2D" id=39]
 
 custom_solver_bias = 0.0
 extents = Vector2( 24.5636, 37.964 )
 
-[sub_resource type="RectangleShape2D" id=26]
+[sub_resource type="RectangleShape2D" id=40]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 118.92 )
 
-[sub_resource type="RectangleShape2D" id=27]
+[sub_resource type="RectangleShape2D" id=41]
 
 custom_solver_bias = 0.0
 extents = Vector2( 26.8019, 39.1098 )
 
-[sub_resource type="RectangleShape2D" id=43]
+[sub_resource type="RectangleShape2D" id=42]
 
 custom_solver_bias = 0.0
 extents = Vector2( 24.2597, 36.7756 )
 
-[sub_resource type="Animation" id=28]
+[sub_resource type="Animation" id=43]
 
 length = 0.8
 loop = false
@@ -1204,7 +1204,7 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=29]
+[sub_resource type="Animation" id=44]
 
 length = 1.85
 loop = false
@@ -1930,7 +1930,7 @@ tracks/59/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=30]
+[sub_resource type="Animation" id=45]
 
 length = 1.5
 loop = false
@@ -2584,7 +2584,7 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=31]
+[sub_resource type="Animation" id=46]
 
 length = 2.7
 loop = false
@@ -3250,7 +3250,7 @@ tracks/54/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=32]
+[sub_resource type="Animation" id=47]
 
 length = 1.5
 loop = false
@@ -3928,9 +3928,8 @@ tracks/55/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=44]
+[sub_resource type="Animation" id=48]
 
-resource_name = "Horizontal Skill"
 length = 1.5
 loop = false
 step = 0.1
@@ -4595,9 +4594,8 @@ tracks/54/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=47]
+[sub_resource type="Animation" id=49]
 
-resource_name = "Horizontal Skill Hit"
 length = 0.3
 loop = false
 step = 0.1
@@ -5250,7 +5248,7 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=33]
+[sub_resource type="Animation" id=50]
 
 length = 0.1
 loop = false
@@ -5904,7 +5902,7 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=34]
+[sub_resource type="Animation" id=51]
 
 length = 0.1
 loop = false
@@ -6558,7 +6556,7 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=35]
+[sub_resource type="Animation" id=52]
 
 length = 0.1
 loop = false
@@ -7212,7 +7210,7 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=36]
+[sub_resource type="Animation" id=53]
 
 length = 2.0
 loop = true
@@ -7866,7 +7864,7 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=37]
+[sub_resource type="Animation" id=54]
 
 length = 0.1
 loop = false
@@ -8520,7 +8518,7 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=55]
 
 length = 1.0
 loop = true
@@ -9174,9 +9172,8 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=54]
+[sub_resource type="Animation" id=56]
 
-resource_name = "Ult"
 length = 3.5
 loop = false
 step = 0.1
@@ -9841,9 +9838,8 @@ tracks/54/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.784314 ), Color( 1, 1, 1, 0.784314 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=39]
+[sub_resource type="Animation" id=57]
 
-resource_name = "Up Skill"
 length = 1.0
 loop = false
 step = 0.1
@@ -10496,7 +10492,7 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=40]
+[sub_resource type="Animation" id=58]
 
 length = 2.0
 loop = true
@@ -11150,17 +11146,17 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="RectangleShape2D" id=41]
+[sub_resource type="RectangleShape2D" id=59]
 
 custom_solver_bias = 0.0
 extents = Vector2( 68.3893, 105.259 )
 
-[sub_resource type="RectangleShape2D" id=42]
+[sub_resource type="RectangleShape2D" id=60]
 
 custom_solver_bias = 0.0
 extents = Vector2( 56.8438, 67.5532 )
 
-[node name="Ranawato Plato Sprites" type="KinematicBody2D"]
+[node name="Ranawato Plato Sprites" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 0
@@ -11248,8 +11244,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 45 )
-texture = SubResource( 46 )
+process_material = SubResource( 10 )
+texture = SubResource( 11 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -11272,7 +11268,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 10 )
+process_material = SubResource( 14 )
 texture = ExtResource( 4 )
 normal_map = null
 h_frames = 1
@@ -11296,7 +11292,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 15 )
+process_material = SubResource( 19 )
 texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
@@ -11318,7 +11314,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 53 )
+process_material = SubResource( 24 )
 texture = ExtResource( 4 )
 normal_map = null
 h_frames = 1
@@ -11341,7 +11337,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 57 )
+process_material = SubResource( 29 )
 texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
@@ -11455,7 +11451,7 @@ autoplay = "Animate"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Animate = SubResource( 16 )
+anims/Animate = SubResource( 30 )
 blend_times = [  ]
 
 [node name="HorizontalSkillSpawnPos" type="Position2D" parent="Sprite/Animation" index="2"]
@@ -11610,12 +11606,12 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Animation/LeftSpoon/BasicSkillHitArea" index="0"]
 
-shape = SubResource( 17 )
+shape = SubResource( 31 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/Animation/LeftSpoon/BasicSkillHitArea" index="1"]
 
 position = Vector2( -1.3141, -80.8176 )
-shape = SubResource( 18 )
+shape = SubResource( 32 )
 
 [node name="BasicSkillParticles" type="Particles2D" parent="Sprite/Animation/LeftSpoon" index="3"]
 
@@ -11634,7 +11630,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 23 )
+process_material = SubResource( 37 )
 texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
@@ -11667,18 +11663,17 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Animation/Spoon/BasicAttackHitArea" index="0"]
 
-shape = SubResource( 24 )
+shape = SubResource( 38 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/Animation/Spoon/BasicAttackHitArea" index="1"]
 
 position = Vector2( 2.61967, -69.556 )
-shape = SubResource( 25 )
+shape = SubResource( 39 )
 
 [node name="BasicSkillHitArea" type="Area2D" parent="Sprite/Animation/Spoon" index="1"]
 
 editor/display_folded = true
 visible = false
-scale = Vector2( 1, 1 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -11692,16 +11687,15 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Animation/Spoon/BasicSkillHitArea" index="0"]
 
-shape = SubResource( 26 )
+shape = SubResource( 40 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/Animation/Spoon/BasicSkillHitArea" index="1"]
 
 position = Vector2( -0.683182, -81.0722 )
-shape = SubResource( 27 )
+shape = SubResource( 41 )
 
 [node name="UpSkillHitArea" type="Area2D" parent="Sprite/Animation/Spoon" index="2"]
 
-scale = Vector2( 1, 1 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -11716,7 +11710,7 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Animation/Spoon/UpSkillHitArea" index="0"]
 
 position = Vector2( -0.293396, -83.2904 )
-shape = SubResource( 43 )
+shape = SubResource( 42 )
 
 [node name="Face" type="Sprite" parent="Sprite/Animation/Spoon" index="3"]
 
@@ -11755,7 +11749,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 23 )
+process_material = SubResource( 37 )
 texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
@@ -11779,22 +11773,22 @@ autoplay = "Still"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Basic Attack" = SubResource( 28 )
-"anims/Basic Skill" = SubResource( 29 )
-anims/Die = SubResource( 30 )
-"anims/Down Skill" = SubResource( 31 )
-anims/Drink = SubResource( 32 )
-"anims/Horizontal Skill" = SubResource( 44 )
-"anims/Horizontal Skill Hit" = SubResource( 47 )
-anims/Idle = SubResource( 33 )
-anims/Jump = SubResource( 34 )
-"anims/Size Change" = SubResource( 35 )
-anims/Still = SubResource( 36 )
-anims/Still(copy) = SubResource( 37 )
-anims/Stunned = SubResource( 38 )
-anims/Ult = SubResource( 54 )
-"anims/Up Skill" = SubResource( 39 )
-anims/Walk = SubResource( 40 )
+"anims/Basic Attack" = SubResource( 43 )
+"anims/Basic Skill" = SubResource( 44 )
+anims/Die = SubResource( 45 )
+"anims/Down Skill" = SubResource( 46 )
+anims/Drink = SubResource( 47 )
+"anims/Horizontal Skill" = SubResource( 48 )
+"anims/Horizontal Skill Hit" = SubResource( 49 )
+anims/Idle = SubResource( 50 )
+anims/Jump = SubResource( 51 )
+"anims/Size Change" = SubResource( 52 )
+anims/Still = SubResource( 53 )
+anims/Still(copy) = SubResource( 54 )
+anims/Stunned = SubResource( 55 )
+anims/Ult = SubResource( 56 )
+"anims/Up Skill" = SubResource( 57 )
+anims/Walk = SubResource( 58 )
 blend_times = [  ]
 
 [node name="Number Spawn Pos" type="Position2D" parent="." index="4"]
@@ -11818,10 +11812,11 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorCheckArea" index="0"]
 
 visible = false
-shape = SubResource( 41 )
+shape = SubResource( 59 )
 
 [node name="GhostHitBox" type="Node2D" parent="." index="6"]
 
+editor/display_folded = true
 script = ExtResource( 29 )
 
 [node name="Node2D" type="Node2D" parent="GhostHitBox" index="0"]
@@ -11830,7 +11825,6 @@ script = ExtResource( 29 )
 "enemy",
 ]]
 
-editor/display_folded = true
 position = Vector2( 0, 44.9125 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -11846,7 +11840,7 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GhostHitBox/Node2D/Area2D" index="0"]
 
 visible = false
-shape = SubResource( 42 )
+shape = SubResource( 60 )
 
 [node name="Health Bar" parent="." index="7" instance=ExtResource( 30 )]
 

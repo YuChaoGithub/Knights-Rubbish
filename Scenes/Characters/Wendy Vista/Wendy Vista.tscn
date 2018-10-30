@@ -7249,6 +7249,8 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Visib
 
 editor/display_folded = true
 visible = false
+position = Vector2( -1.33395, 70.2544 )
+scale = Vector2( 0.3, 0.3 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Body" type="Sprite" parent="Sprite/Animation/Ghost" index="0"]
@@ -7321,7 +7323,7 @@ texture = ExtResource( 7 )
 [node name="Eye" type="Sprite" parent="Sprite/Animation/Body" index="1"]
 
 light_mask = 5
-position = Vector2( 1.8554, -11.2233 )
+position = Vector2( 8.72646, -3.52772 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Transform" ]
 
@@ -7335,7 +7337,6 @@ texture = ExtResource( 9 )
 
 light_mask = 5
 position = Vector2( -19.6812, 77.6028 )
-rotation = 0.832098
 texture = ExtResource( 14 )
 offset = Vector2( -0.500076, 12.4878 )
 
@@ -7343,7 +7344,6 @@ offset = Vector2( -0.500076, 12.4878 )
 
 light_mask = 5
 position = Vector2( 19.522, 78.1469 )
-rotation = 0.387723
 texture = ExtResource( 14 )
 offset = Vector2( -0.156494, 12.0443 )
 
@@ -7352,7 +7352,6 @@ offset = Vector2( -0.156494, 12.0443 )
 editor/display_folded = true
 light_mask = 5
 position = Vector2( -1.30359, -71.1389 )
-rotation = -6.30024
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -7380,7 +7379,6 @@ _sections_unfolded = [ "Transform" ]
 editor/display_folded = true
 light_mask = 5
 position = Vector2( 39.9342, 18.4681 )
-rotation = -0.144094
 texture = ExtResource( 15 )
 _sections_unfolded = [ "Transform" ]
 
@@ -7586,6 +7584,7 @@ shape = SubResource( 23 )
 
 [node name="GhostHitBox" type="Node2D" parent="." index="8"]
 
+editor/display_folded = true
 script = ExtResource( 34 )
 
 [node name="Node2D" type="Node2D" parent="GhostHitBox" index="0"]

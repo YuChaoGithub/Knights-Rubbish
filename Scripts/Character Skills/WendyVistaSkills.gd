@@ -126,6 +126,7 @@ func basic_skill_hit(area):
 func horizontal_skill(side):
     if hero.status.can_move && hero.status.can_cast_skill:
         hero.play_animation("Horizontal Skill")
+        hero.change_sprite_facing(side)
 
         hero.set_status("animate_movement", false, HORIZONTAL_SKILL_DURATION)
         hero.set_status("can_move", false, HORIZONTAL_SKILL_DURATION)
