@@ -1036,6 +1036,10 @@ Comment: What a day. Tired.
 * Completed Othox's Basic Attack, Basic Skill, and Horizontal Skill.
 * Fixed the bug that some heroes won't turn currently when casting horizontal skills.
 
+[2018.10.31]
+* Completed all of Othox's Skills.
+* Completed Drink, Die, Size Change animations of Bro SS.
+
 [Next]
 * Implement characters: Bro SS. (Est. Before Nov. 5th)
 * Add ? character figure in hero changing scene.

@@ -9,6 +9,8 @@ const GRAVITY = 2500
 const SLIP_RATIO = 0.2
 const TOTAL_LIFE_TIME = 0.8
 
+var hit = false
+
 var timestamp = 0.0
 
 onready var movement_pattern = preload("res://Scripts/Movements/StraightLineMovement.gd").new(side * SPEED_X, 0)
@@ -41,6 +43,7 @@ func _process(delta):
         queue_free()
 
 func on_enemy_hit(area):
-    if area.is_in_group("enemy"):
+    if !hit && area.is_in_group("enemy"):
+        hit = true
         combo_handler.horizontal_skill_hit(area.get_node("../.."))
         queue_free()

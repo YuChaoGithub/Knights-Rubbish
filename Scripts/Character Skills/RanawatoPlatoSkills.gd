@@ -3,7 +3,7 @@ extends Node2D
 # Basic Attack
 const BASIC_ATTACK_DURATION = 0.85
 const BASIC_ATTACK_COOLDOWN = 0.1
-const BASIC_ATTACK_DAMAGE = 50
+const BASIC_ATTACK_DAMAGE = 30
 const BASIC_ATTACK_KNOCK_BACK_VEL_X = 300
 const BASIC_ATTACK_KNOCK_BACK_VEL_Y = 50
 const BASIC_ATTACK_KNOCK_BACK_FADE_RATE = 600
@@ -26,7 +26,7 @@ const DOWN_SKILL_COOLDOWN = 0.1
 const UP_SKILL_DURATION = 1.3
 const UP_SKILL_COOLDOWN = 0.2
 const UP_SKILL_DISPLACEMENT = 150
-const UP_SKILL_DAMAGE = 30
+const UP_SKILL_DAMAGE = 20
 const UP_SKILL_KNOCK_BACK_VEL_X = 300
 const UP_SKILL_KNOCK_BACK_VEL_Y = 200
 const UP_SKILL_KNOCK_BACK_FADE_RATE = 300
@@ -201,10 +201,10 @@ func up_skill():
         hero.jump_to_height(UP_SKILL_DISPLACEMENT)
 
         var jump_timer = cd_timer.new(UP_SKILL_DURATION, self, "up_skill_ended")
-        hero.register_timer("movement_skill", jump_timer)
+        hero.register_timer("interruptable_skill", jump_timer)
 
 func up_skill_ended():
-    hero.unregister_timer("movement_skill")
+    hero.unregister_timer("interruptable_skill")
 
 func up_skill_hit(area):
     if area.is_in_group("enemy"):

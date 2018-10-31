@@ -135,6 +135,12 @@ func clamp_pos_within_cam_bounds(pos):
 func get_top_pos_y():
 	return global_position.y - cam_height * 0.5
 
+func get_camera_left_bound():
+	return global_position.x - cam_width * 0.5 + CLAMP_OFFSET_X
+
+func get_camera_right_bound():
+	return global_position.x + cam_width * 0.5 - CLAMP_OFFSET_X
+
 func instance_bottom_grab(pos_x):
 	start_shake_effect()
 

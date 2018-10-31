@@ -7,8 +7,8 @@ const DAMAGE_MAX = 6
 const LIFE_TIME = 1.0
 
 var attack_modifier
-var knock_back_modifier
 var size
+var hit = false
 
 var timestamp = 0.0
 
@@ -23,9 +23,8 @@ var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 
 onready var movement_pattern = preload("res://Scripts/Movements/StraightLineMovement.gd").new(0, SPEED_Y)
 
-func initialize(attack_modifier, knock_back_modifier, size):
+func initialize(attack_modifier, size):
     self.attack_modifier = attack_modifier
-    self.knock_back_modifier = knock_back_modifier
     self.size = size
 
 func _ready():
@@ -41,9 +40,11 @@ func _process(delta):
         queue_free()
 
 func on_enemy_hit(area):
-    if area.is_in_group("enemy"):
+    if !hit && area.is_in_group("enemy"):
         var enemy = area.get_node("../..")
         enemy.damaged(int(rng.randi_range(DAMAGE_MIN, DAMAGE_MAX) * attack_modifier))
+
+        hit = true
 
         set_process(false)
         $AnimationPlayer.play("Explode")

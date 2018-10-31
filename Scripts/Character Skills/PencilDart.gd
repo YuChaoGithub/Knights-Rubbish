@@ -13,6 +13,7 @@ const DAMAGE_FINAL = 20
 const DAMAGE_SCALE_TIME = 0.5
 
 var damage
+var hit = false
 
 var timestamp = 0.0
 
@@ -54,10 +55,11 @@ func _process(delta):
 
 # Will be signalled when it hits an enemy.
 func on_enemy_hit(area):
-	if area.is_in_group("enemy"):
+	if !hit && area.is_in_group("enemy"):
 		area.get_node("../..").damaged(int(damage * attack_modifier))
 
 		fade_out()
 
 func fade_out():
+	hit = true
 	$AnimationPlayer.play("Fade")

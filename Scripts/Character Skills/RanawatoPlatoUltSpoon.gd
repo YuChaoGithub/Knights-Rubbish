@@ -17,6 +17,8 @@ var attack_modifier
 var knock_back_modifier
 var size
 
+var hit = false
+
 var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 var straight_movement = preload("res://Scripts/Movements/StraightLineMovement.gd")
 var movement_pattern
@@ -44,7 +46,7 @@ func _process(delta):
         queue_free()
 
 func on_enemy_hit(area):
-    if area.is_in_group("enemy"):
+    if !hit && area.is_in_group("enemy"):
         var enemy = area.get_node("../..")
         enemy.knocked_back(sign(enemy.global_position.x - self.global_position.x) * KNOCK_BACK_VEL_X * knock_back_modifier, -KNOCK_BACK_VEL_Y * knock_back_modifier, KNOCK_BACK_FADE_RATE * knock_back_modifier)
         enemy.damaged(int(DAMAGE * attack_modifier))
@@ -52,5 +54,6 @@ func on_enemy_hit(area):
         explode()
 
 func explode():
+    hit = true
     $AnimationPlayer.play("Explode")
     set_process(false)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=102 format=2]
 
 [ext_resource path="res://Scripts/HeroCommon.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Character Skills/OthoxCodoxSkills.gd" type="Script" id=2]
@@ -6,71 +6,79 @@
 [ext_resource path="res://Graphics/Characters/Othox Codox/Letters/bigA.png" type="Texture" id=4]
 [ext_resource path="res://Graphics/Characters/Othox Codox/Letters/bigI.png" type="Texture" id=5]
 [ext_resource path="res://Graphics/Characters/Othox Codox/Letters/bigN.png" type="Texture" id=6]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Body.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Small Wheel.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/Characters/Common/Power Up/Attack Potion.png" type="Texture" id=9]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Wheel Chair.png" type="Texture" id=10]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Eye.png" type="Texture" id=11]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Left Wrinkle.png" type="Texture" id=12]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Right Wrinkle.png" type="Texture" id=13]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Left Brow.png" type="Texture" id=14]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Right Brow.png" type="Texture" id=15]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Nose.png" type="Texture" id=16]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Mouth.png" type="Texture" id=17]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Goatee.png" type="Texture" id=18]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Hat.png" type="Texture" id=19]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Left Arm.png" type="Texture" id=20]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Right Arm.png" type="Texture" id=21]
-[ext_resource path="res://Graphics/Particles/Puff.png" type="Texture" id=22]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Letters/s.png" type="Texture" id=23]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Letters/w.png" type="Texture" id=24]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Letters/o.png" type="Texture" id=25]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Letters/r.png" type="Texture" id=26]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Letters/d.png" type="Texture" id=27]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Wrinkles.png" type="Texture" id=28]
-[ext_resource path="res://Scenes/Characters/Ult Eye.tscn" type="PackedScene" id=29]
-[ext_resource path="res://Scenes/Particles/Fire Particle.tscn" type="PackedScene" id=30]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Big Wheel.png" type="Texture" id=31]
-[ext_resource path="res://Scenes/Power Ups/Attack Icon.tscn" type="PackedScene" id=32]
-[ext_resource path="res://Scenes/Power Ups/Defense Icon.tscn" type="PackedScene" id=33]
-[ext_resource path="res://Scenes/Power Ups/Confused Icon.tscn" type="PackedScene" id=34]
-[ext_resource path="res://Scenes/Power Ups/Slowed Icon.tscn" type="PackedScene" id=35]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Ghost.png" type="Texture" id=36]
-[ext_resource path="res://Graphics/Characters/Common/Ghost Eye.png" type="Texture" id=37]
-[ext_resource path="res://Graphics/Characters/Common/Ghost Paw.png" type="Texture" id=38]
-[ext_resource path="res://Graphics/Characters/Common/Ghost Ripple 1.png" type="Texture" id=39]
-[ext_resource path="res://Graphics/Characters/Common/Ghost Ripple 2.png" type="Texture" id=40]
-[ext_resource path="res://Graphics/Characters/Common/Ghost Ripple 3.png" type="Texture" id=41]
-[ext_resource path="res://Scenes/Power Ups/Speeded Icon.tscn" type="PackedScene" id=42]
-[ext_resource path="res://Graphics/UI/White Plus.png" type="Texture" id=43]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=44]
-[ext_resource path="res://Scripts/HeroGhost.gd" type="Script" id=45]
-[ext_resource path="res://Scenes/UI/Hero Health Bar.tscn" type="PackedScene" id=46]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Letters/killK.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Letters/killI.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Letters/killL.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Particles/Puff.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Body.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Small Wheel.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/Characters/Common/Power Up/Attack Potion.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Wheel Chair.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Eye.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Left Wrinkle.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Right Wrinkle.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Left Brow.png" type="Texture" id=18]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Right Brow.png" type="Texture" id=19]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Nose.png" type="Texture" id=20]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Mouth.png" type="Texture" id=21]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Goatee.png" type="Texture" id=22]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Hat.png" type="Texture" id=23]
+[ext_resource path="res://Graphics/Particles/Plus.png" type="Texture" id=24]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Left Arm.png" type="Texture" id=25]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Right Arm.png" type="Texture" id=26]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Letters/s.png" type="Texture" id=27]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Letters/w.png" type="Texture" id=28]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Letters/o.png" type="Texture" id=29]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Letters/r.png" type="Texture" id=30]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Letters/d.png" type="Texture" id=31]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Wrinkles.png" type="Texture" id=32]
+[ext_resource path="res://Scenes/Characters/Ult Eye.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Scenes/Particles/Fire Particle.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Letters/wingW.png" type="Texture" id=35]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Letters/wingI.png" type="Texture" id=36]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Letters/wingN.png" type="Texture" id=37]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Letters/wingG.png" type="Texture" id=38]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Big Wheel.png" type="Texture" id=39]
+[ext_resource path="res://Scenes/Power Ups/Attack Icon.tscn" type="PackedScene" id=40]
+[ext_resource path="res://Scenes/Power Ups/Defense Icon.tscn" type="PackedScene" id=41]
+[ext_resource path="res://Scenes/Power Ups/Confused Icon.tscn" type="PackedScene" id=42]
+[ext_resource path="res://Scenes/Power Ups/Slowed Icon.tscn" type="PackedScene" id=43]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Ghost.png" type="Texture" id=44]
+[ext_resource path="res://Graphics/Characters/Common/Ghost Eye.png" type="Texture" id=45]
+[ext_resource path="res://Graphics/Characters/Common/Ghost Paw.png" type="Texture" id=46]
+[ext_resource path="res://Graphics/Characters/Common/Ghost Ripple 1.png" type="Texture" id=47]
+[ext_resource path="res://Graphics/Characters/Common/Ghost Ripple 2.png" type="Texture" id=48]
+[ext_resource path="res://Graphics/Characters/Common/Ghost Ripple 3.png" type="Texture" id=49]
+[ext_resource path="res://Scenes/Power Ups/Speeded Icon.tscn" type="PackedScene" id=50]
+[ext_resource path="res://Graphics/UI/White Plus.png" type="Texture" id=51]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=52]
+[ext_resource path="res://Scripts/HeroGhost.gd" type="Script" id=53]
+[ext_resource path="res://Scenes/UI/Hero Health Bar.tscn" type="PackedScene" id=54]
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=46]
 
 custom_solver_bias = 0.0
-extents = Vector2( 90.8456, 170.462 )
+extents = Vector2( 90.8456, 121.344 )
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=47]
 
 custom_solver_bias = 0.0
 extents = Vector2( 56.1168, 161.995 )
 
-[sub_resource type="Curve" id=26]
+[sub_resource type="Curve" id=48]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0.734253 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.359102 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=27]
+[sub_resource type="CurveTexture" id=49]
 
 flags = 4
 width = 2048
-curve = SubResource( 26 )
+curve = SubResource( 48 )
 
-[sub_resource type="ParticlesMaterial" id=23]
+[sub_resource type="ParticlesMaterial" id=50]
 
 render_priority = 0
 trail_divisor = 1
@@ -100,7 +108,7 @@ angle = 90.0
 angle_random = 0.5
 scale = 2.0
 scale_random = 0.0
-scale_curve = SubResource( 27 )
+scale_curve = SubResource( 49 )
 color = Color( 1, 1, 1, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -111,31 +119,214 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Damping", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Scale", "Spread" ]
 
-[sub_resource type="Gradient" id=18]
+[sub_resource type="Curve" id=3]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 0.734253 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.359102 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+
+flags = 4
+width = 2048
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=44]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 50, 50, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 60.0
+flatness = 0.0
+gravity = Vector3( -25, 0, 0 )
+initial_velocity = 1000.0
+initial_velocity_random = 0.25
+angular_velocity = 1.56945e-43
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 90.0
+angle_random = 0.5
+scale = 2.0
+scale_random = 0.0
+scale_curve = SubResource( 4 )
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Damping", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Scale", "Spread" ]
+
+[sub_resource type="Gradient" id=40]
+
+offsets = PoolRealArray( 0, 1 )
+colors = PoolColorArray( 0.171875, 1, 0, 0.686275, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=41]
+
+flags = 4
+gradient = SubResource( 40 )
+width = 2048
+
+[sub_resource type="Curve" id=42]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.393813 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=43]
+
+flags = 4
+width = 2048
+curve = SubResource( 42 )
+
+[sub_resource type="ParticlesMaterial" id=39]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 50, 150, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 30.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 500.0
+initial_velocity_random = 0.2
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+scale_curve = SubResource( 43 )
+color_ramp = SubResource( 41 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread" ]
+
+[sub_resource type="Gradient" id=33]
+
+offsets = PoolRealArray( 0, 1 )
+colors = PoolColorArray( 0, 1, 0.25, 1, 0.692036, 1, 0.580645, 1 )
+
+[sub_resource type="GradientTexture" id=34]
+
+flags = 4
+gradient = SubResource( 33 )
+width = 2048
+
+[sub_resource type="Curve" id=35]
+
+min_value = 0.0
+max_value = 1.0
+bake_resolution = 100
+_data = [ Vector2( 0, 0.0886539 ), 0.0, 0.0, 0, 0, Vector2( 0.999256, 0.523712 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=36]
+
+flags = 4
+width = 2048
+curve = SubResource( 35 )
+
+[sub_resource type="ParticlesMaterial" id=37]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 0
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 30.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 400.0
+initial_velocity_random = 0.2
+angular_velocity = 1.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 90.0
+angle_random = 0.5
+scale = 0.75
+scale_random = 0.0
+scale_curve = SubResource( 36 )
+color_ramp = SubResource( 34 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread" ]
+
+[sub_resource type="Gradient" id=6]
 
 offsets = PoolRealArray( 0, 1 )
 colors = PoolColorArray( 0.921875, 1, 0, 0.0784314, 1, 0.703125, 0, 0.784314 )
 
-[sub_resource type="GradientTexture" id=19]
+[sub_resource type="GradientTexture" id=7]
 
 flags = 4
-gradient = SubResource( 18 )
+gradient = SubResource( 6 )
 width = 2048
 
-[sub_resource type="Curve" id=20]
+[sub_resource type="Curve" id=51]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0.201781 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.630525 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=21]
+[sub_resource type="CurveTexture" id=52]
 
 flags = 4
 width = 2048
-curve = SubResource( 20 )
+curve = SubResource( 51 )
 
-[sub_resource type="ParticlesMaterial" id=17]
+[sub_resource type="ParticlesMaterial" id=53]
 
 render_priority = 0
 trail_divisor = 1
@@ -165,8 +356,8 @@ angle = 90.0
 angle_random = 0.5
 scale = 1.0
 scale_random = 0.0
-scale_curve = SubResource( 21 )
-color_ramp = SubResource( 19 )
+scale_curve = SubResource( 52 )
+color_ramp = SubResource( 7 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -176,19 +367,18 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Orbit Velocity", "Radial Accel", "Scale", "Spread" ]
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=54]
 
 custom_solver_bias = 0.0
 extents = Vector2( 99.1014, 10 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=55]
 
 custom_solver_bias = 0.0
 extents = Vector2( 47.1285, 10 )
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=56]
 
-resource_name = "Animate"
 length = 2.0
 loop = true
 step = 0.1
@@ -202,7 +392,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 40 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 40 ) ]
+"values": [ ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 48 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 48 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:position")
@@ -301,31 +491,31 @@ tracks/8/keys = {
 "values": [ 0.0, 0.0 ]
 }
 
-[sub_resource type="Gradient" id=29]
+[sub_resource type="Gradient" id=14]
 
 offsets = PoolRealArray( 0, 0.283513, 0.51772, 0.779661, 1 )
 colors = PoolColorArray( 1, 0.679688, 0, 0.4, 1, 0.984375, 0, 0.4, 1, 0.679688, 0, 0.32498, 1, 0.421875, 0, 0.610289, 0.96875, 1, 0, 0.43502 )
 
-[sub_resource type="GradientTexture" id=30]
+[sub_resource type="GradientTexture" id=15]
 
 flags = 4
-gradient = SubResource( 29 )
+gradient = SubResource( 14 )
 width = 2048
 
-[sub_resource type="Curve" id=32]
+[sub_resource type="Curve" id=16]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0.0738492 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=33]
+[sub_resource type="CurveTexture" id=17]
 
 flags = 4
 width = 2048
-curve = SubResource( 32 )
+curve = SubResource( 16 )
 
-[sub_resource type="ParticlesMaterial" id=31]
+[sub_resource type="ParticlesMaterial" id=18]
 
 render_priority = 0
 trail_divisor = 1
@@ -354,8 +544,8 @@ angle = 90.0
 angle_random = 0.5
 scale = 0.8
 scale_random = 0.5
-scale_curve = SubResource( 33 )
-color_ramp = SubResource( 30 )
+scale_curve = SubResource( 17 )
+color_ramp = SubResource( 15 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -365,9 +555,8 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Gravity", "Initial Velocity", "Orbit Velocity", "Scale", "Spread" ]
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=19]
 
-resource_name = "Basic Attack"
 length = 3.0
 loop = false
 step = 0.1
@@ -993,7 +1182,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -1005,7 +1194,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Drink:visible")
@@ -1379,8 +1568,92 @@ tracks/83/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/84/type = "value"
+tracks/84/path = NodePath("Animation/Wheel Chair/Body/Hat/DownSkillParticles:emitting")
+tracks/84/interp = 1
+tracks/84/loop_wrap = true
+tracks/84/imported = false
+tracks/84/enabled = true
+tracks/84/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/85/type = "value"
+tracks/85/path = NodePath("Animation/Wheel Chair/Body/RightWing:modulate")
+tracks/85/interp = 1
+tracks/85/loop_wrap = true
+tracks/85/imported = false
+tracks/85/enabled = true
+tracks/85/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/86/type = "value"
+tracks/86/path = NodePath("Animation/Wheel Chair/Body/LeftWing:modulate")
+tracks/86/interp = 1
+tracks/86/loop_wrap = true
+tracks/86/imported = false
+tracks/86/enabled = true
+tracks/86/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/87/type = "value"
+tracks/87/path = NodePath("Animation/UpSkillParticles:emitting")
+tracks/87/interp = 1
+tracks/87/loop_wrap = true
+tracks/87/imported = false
+tracks/87/enabled = true
+tracks/87/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/88/type = "value"
+tracks/88/path = NodePath("Animation/UltParticles/L:emitting")
+tracks/88/interp = 1
+tracks/88/loop_wrap = true
+tracks/88/imported = false
+tracks/88/enabled = true
+tracks/88/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/89/type = "value"
+tracks/89/path = NodePath("Animation/UltParticles/I:emitting")
+tracks/89/interp = 1
+tracks/89/loop_wrap = true
+tracks/89/imported = false
+tracks/89/enabled = true
+tracks/89/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/90/type = "value"
+tracks/90/path = NodePath("Animation/UltParticles/K:emitting")
+tracks/90/interp = 1
+tracks/90/loop_wrap = true
+tracks/90/imported = false
+tracks/90/enabled = true
+tracks/90/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=20]
 
 resource_name = "Basic Skill"
 length = 3.0
@@ -2008,7 +2281,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -2020,7 +2293,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Drink:visible")
@@ -2166,10 +2439,93 @@ tracks/64/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/65/type = "value"
+tracks/65/path = NodePath("Animation/Wheel Chair/Body/Hat/DownSkillParticles:emitting")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("Animation/Wheel Chair/Body/LeftWing:modulate")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("Animation/Wheel Chair/Body/RightWing:modulate")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Animation/UpSkillParticles:emitting")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/69/type = "value"
+tracks/69/path = NodePath("Animation/UltParticles/L:emitting")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/70/type = "value"
+tracks/70/path = NodePath("Animation/UltParticles/I:emitting")
+tracks/70/interp = 1
+tracks/70/loop_wrap = true
+tracks/70/imported = false
+tracks/70/enabled = true
+tracks/70/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/71/type = "value"
+tracks/71/path = NodePath("Animation/UltParticles/K:emitting")
+tracks/71/interp = 1
+tracks/71/loop_wrap = true
+tracks/71/imported = false
+tracks/71/enabled = true
+tracks/71/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=21]
 
-resource_name = "Die"
 length = 1.5
 loop = false
 step = 0.05
@@ -2795,7 +3151,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 43 ) ]
+"values": [ ExtResource( 51 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -2807,7 +3163,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 43 ) ]
+"values": [ ExtResource( 51 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Drink:visible")
@@ -2989,10 +3345,964 @@ tracks/67/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/68/type = "value"
+tracks/68/path = NodePath("Animation/Wheel Chair/Body/Hat/DownSkillParticles:emitting")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/69/type = "value"
+tracks/69/path = NodePath("Animation/Wheel Chair/Body/RightWing:modulate")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/70/type = "value"
+tracks/70/path = NodePath("Animation/Wheel Chair/Body/LeftWing:modulate")
+tracks/70/interp = 1
+tracks/70/loop_wrap = true
+tracks/70/imported = false
+tracks/70/enabled = true
+tracks/70/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/71/type = "value"
+tracks/71/path = NodePath("Animation/UpSkillParticles:emitting")
+tracks/71/interp = 1
+tracks/71/loop_wrap = true
+tracks/71/imported = false
+tracks/71/enabled = true
+tracks/71/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/72/type = "value"
+tracks/72/path = NodePath("Animation/UltParticles/L:emitting")
+tracks/72/interp = 1
+tracks/72/loop_wrap = true
+tracks/72/imported = false
+tracks/72/enabled = true
+tracks/72/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/73/type = "value"
+tracks/73/path = NodePath("Animation/UltParticles/I:emitting")
+tracks/73/interp = 1
+tracks/73/loop_wrap = true
+tracks/73/imported = false
+tracks/73/enabled = true
+tracks/73/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/74/type = "value"
+tracks/74/path = NodePath("Animation/UltParticles/K:emitting")
+tracks/74/interp = 1
+tracks/74/loop_wrap = true
+tracks/74/imported = false
+tracks/74/enabled = true
+tracks/74/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=22]
 
-resource_name = "Drink"
+resource_name = "Down Skill"
+length = 3.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Animation/Wheel Chair/Body/Mouth:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 9.74373, -0.458313 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Animation/Wheel Chair/Body/Mouth:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Animation/Wheel Chair/Body/Mouth:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -82.237, 47.8675 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Animation/Wheel Chair:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Animation/Wheel Chair:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Animation/Wheel Chair:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Animation/Wheel Chair/Body/Beard:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 6.00408, 17.3764 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Animation/Wheel Chair/Body/Beard:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Animation/Wheel Chair/Body/Beard:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 25.2521, -68.9185 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:rotation_degrees")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Animation/Wheel Chair/Body/Left Arm:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -44.0386, 0.138672 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Animation/Wheel Chair/Body/Left Arm:rotation_degrees")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Animation/Wheel Chair/Body/Left Arm:scale")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1.62183, -53.2707 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:rotation_degrees")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:scale")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 38.9234, -42.2653 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:rotation_degrees")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:scale")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Animation/Wheel Chair/Body/Right Arm:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 49.4514, 15.1539 ), Vector2( 50.5608, 9.66668 ), Vector2( 50.5608, 9.66668 ), Vector2( 50.5608, 9.66668 ), Vector2( 49.4514, 15.1539 ) ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Animation/Wheel Chair/Body/Right Arm:rotation_degrees")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0, 1, 1.5, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -29.0685, -0.196884, -0.196884, 0.0 ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Animation/Wheel Chair/Body/Right Arm:scale")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Animation/Wheel Chair/Body/Nose:position")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 12.6003, -21.957 ) ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Animation/Wheel Chair/Body/Nose:rotation_degrees")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("Animation/Wheel Chair/Body/Nose:scale")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("Animation/Wheel Chair/Body/Right Eye:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 36.9669, -38.4186 ) ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("Animation/Wheel Chair/Body/Right Eye:rotation_degrees")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/32/type = "value"
+tracks/32/path = NodePath("Animation/Wheel Chair/Body/Right Eye:scale")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/33/type = "value"
+tracks/33/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:position")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -11.1154, -5.74422 ) ]
+}
+tracks/34/type = "value"
+tracks/34/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:rotation_degrees")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/35/type = "value"
+tracks/35/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:scale")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/36/type = "value"
+tracks/36/path = NodePath("Animation/Wheel Chair/Small Wheel:position")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 45.8219, 99.5746 ) ]
+}
+tracks/37/type = "value"
+tracks/37/path = NodePath("Animation/Wheel Chair/Small Wheel:rotation_degrees")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/38/type = "value"
+tracks/38/path = NodePath("Animation/Wheel Chair/Small Wheel:scale")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:position")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 30.4383, 5.0019 ) ]
+}
+tracks/40/type = "value"
+tracks/40/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:rotation_degrees")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/41/type = "value"
+tracks/41/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:scale")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/42/type = "value"
+tracks/42/path = NodePath("Animation/Wheel Chair/Body/Hat:position")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/keys = {
+"times": PoolRealArray( 0, 1, 1.1, 1.2, 1.3, 1.5, 1.7, 1.8, 1.9, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 31.9925, -94.2244 ), Vector2( 51.6576, -78.527 ), Vector2( 62.9903, -72.0408 ), Vector2( 74.323, -65.5546 ), Vector2( 85.6558, -59.0684 ), Vector2( 108.321, -46.0961 ), Vector2( 108.321, -46.0961 ), Vector2( 117.546, -42.1197 ), Vector2( 108.321, -46.0961 ), Vector2( 31.9925, -94.2244 ) ]
+}
+tracks/43/type = "value"
+tracks/43/path = NodePath("Animation/Wheel Chair/Body/Hat:rotation_degrees")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/keys = {
+"times": PoolRealArray( 0, 1, 1.1, 1.2, 1.3, 1.5, 1.7, 1.8, 1.9, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 17.2416, 22.6075, 29.2215, 39.1357, 80.6221, 80.6221, 88.4745, 80.6221, 0.0 ]
+}
+tracks/44/type = "value"
+tracks/44/path = NodePath("Animation/Wheel Chair/Body/Hat:scale")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/45/type = "value"
+tracks/45/path = NodePath("Animation/Wheel Chair/Body/Left Eye:position")
+tracks/45/interp = 1
+tracks/45/loop_wrap = true
+tracks/45/imported = false
+tracks/45/enabled = true
+tracks/45/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.00605, -49.2059 ) ]
+}
+tracks/46/type = "value"
+tracks/46/path = NodePath("Animation/Wheel Chair/Body/Left Eye:rotation_degrees")
+tracks/46/interp = 1
+tracks/46/loop_wrap = true
+tracks/46/imported = false
+tracks/46/enabled = true
+tracks/46/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Animation/Wheel Chair/Body/Left Eye:scale")
+tracks/47/interp = 1
+tracks/47/loop_wrap = true
+tracks/47/imported = false
+tracks/47/enabled = true
+tracks/47/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Animation/Wheel Chair/Body:position")
+tracks/48/interp = 1
+tracks/48/loop_wrap = true
+tracks/48/imported = false
+tracks/48/enabled = true
+tracks/48/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -6.88864, -99.4379 ), Vector2( -1.17105, -99.9577 ), Vector2( -1.17105, -99.9577 ), Vector2( -6.88864, -99.4379 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Animation/Wheel Chair/Body:rotation_degrees")
+tracks/49/interp = 1
+tracks/49/loop_wrap = true
+tracks/49/imported = false
+tracks/49/enabled = true
+tracks/49/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 10.3717, 10.3717, 0.0 ]
+}
+tracks/50/type = "value"
+tracks/50/path = NodePath("Animation/Wheel Chair/Body:scale")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/51/type = "value"
+tracks/51/path = NodePath("Animation/Wheel Chair/Body/Left Eye:texture")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 15 ) ]
+}
+tracks/52/type = "value"
+tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 15 ) ]
+}
+tracks/53/type = "value"
+tracks/53/path = NodePath("Animation/Drink:visible")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/54/type = "value"
+tracks/54/path = NodePath("Animation/Ghost:modulate")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/55/type = "value"
+tracks/55/path = NodePath("Animation/Wheel Chair:self_modulate")
+tracks/55/interp = 1
+tracks/55/loop_wrap = true
+tracks/55/imported = false
+tracks/55/enabled = true
+tracks/55/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/56/type = "value"
+tracks/56/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:modulate")
+tracks/56/interp = 1
+tracks/56/loop_wrap = true
+tracks/56/imported = false
+tracks/56/enabled = true
+tracks/56/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/57/type = "value"
+tracks/57/path = NodePath("Animation/Small Wheel:modulate")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/58/type = "value"
+tracks/58/path = NodePath("Animation/Wheel Chair:modulate")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/59/type = "value"
+tracks/59/path = NodePath("Animation/Body:modulate")
+tracks/59/interp = 1
+tracks/59/loop_wrap = true
+tracks/59/imported = false
+tracks/59/enabled = true
+tracks/59/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/60/type = "value"
+tracks/60/path = NodePath("Animation/Wheel Chair/Body/Right Arm/Sword:modulate")
+tracks/60/interp = 1
+tracks/60/loop_wrap = true
+tracks/60/imported = false
+tracks/60/enabled = true
+tracks/60/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/61/type = "value"
+tracks/61/path = NodePath("Animation/Wheel Chair/Body/Right Arm/Sword/AttackArea:collision_mask")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/62/type = "value"
+tracks/62/path = NodePath("Animation/Wheel Chair/Body/Right Arm/Sword/Particles2D:emitting")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/63/type = "value"
+tracks/63/path = NodePath("Animation/BasicSkillParticles:modulate")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("Animation/HorizontalSkillParticles:emitting")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/65/type = "value"
+tracks/65/path = NodePath("Animation/Wheel Chair/Body/Hat/DownSkillParticles:emitting")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0, 1.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("Animation/Wheel Chair/Body/LeftWing:modulate")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("Animation/Wheel Chair/Body/RightWing:modulate")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Animation/UpSkillParticles:emitting")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/69/type = "value"
+tracks/69/path = NodePath("Animation/UltParticles/L:emitting")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/70/type = "value"
+tracks/70/path = NodePath("Animation/UltParticles/I:emitting")
+tracks/70/interp = 1
+tracks/70/loop_wrap = true
+tracks/70/imported = false
+tracks/70/enabled = true
+tracks/70/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/71/type = "value"
+tracks/71/path = NodePath("Animation/UltParticles/K:emitting")
+tracks/71/interp = 1
+tracks/71/loop_wrap = true
+tracks/71/imported = false
+tracks/71/enabled = true
+tracks/71/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=23]
+
 length = 1.5
 loop = false
 step = 0.1
@@ -3618,7 +4928,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -3630,7 +4940,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Drink:visible")
@@ -3800,8 +5110,92 @@ tracks/66/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/67/type = "value"
+tracks/67/path = NodePath("Animation/Wheel Chair/Body/Hat/DownSkillParticles:emitting")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Animation/Wheel Chair/Body/RightWing:modulate")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/69/type = "value"
+tracks/69/path = NodePath("Animation/Wheel Chair/Body/LeftWing:modulate")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/70/type = "value"
+tracks/70/path = NodePath("Animation/UpSkillParticles:emitting")
+tracks/70/interp = 1
+tracks/70/loop_wrap = true
+tracks/70/imported = false
+tracks/70/enabled = true
+tracks/70/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/71/type = "value"
+tracks/71/path = NodePath("Animation/UltParticles/L:emitting")
+tracks/71/interp = 1
+tracks/71/loop_wrap = true
+tracks/71/imported = false
+tracks/71/enabled = true
+tracks/71/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/72/type = "value"
+tracks/72/path = NodePath("Animation/UltParticles/I:emitting")
+tracks/72/interp = 1
+tracks/72/loop_wrap = true
+tracks/72/imported = false
+tracks/72/enabled = true
+tracks/72/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/73/type = "value"
+tracks/73/path = NodePath("Animation/UltParticles/K:emitting")
+tracks/73/interp = 1
+tracks/73/loop_wrap = true
+tracks/73/imported = false
+tracks/73/enabled = true
+tracks/73/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=28]
+[sub_resource type="Animation" id=24]
 
 resource_name = "Horizontal Skill"
 length = 4.0
@@ -4429,7 +5823,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -4441,7 +5835,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Drink:visible")
@@ -4599,8 +5993,92 @@ tracks/65/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/66/type = "value"
+tracks/66/path = NodePath("Animation/Wheel Chair/Body/Hat/DownSkillParticles:emitting")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("Animation/Wheel Chair/Body/LeftWing:modulate")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Animation/Wheel Chair/Body/RightWing:modulate")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/69/type = "value"
+tracks/69/path = NodePath("Animation/UpSkillParticles:emitting")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/70/type = "value"
+tracks/70/path = NodePath("Animation/UltParticles/L:emitting")
+tracks/70/interp = 1
+tracks/70/loop_wrap = true
+tracks/70/imported = false
+tracks/70/enabled = true
+tracks/70/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/71/type = "value"
+tracks/71/path = NodePath("Animation/UltParticles/I:emitting")
+tracks/71/interp = 1
+tracks/71/loop_wrap = true
+tracks/71/imported = false
+tracks/71/enabled = true
+tracks/71/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/72/type = "value"
+tracks/72/path = NodePath("Animation/UltParticles/K:emitting")
+tracks/72/interp = 1
+tracks/72/loop_wrap = true
+tracks/72/imported = false
+tracks/72/enabled = true
+tracks/72/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=25]
 
 length = 4.0
 loop = true
@@ -5227,7 +6705,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -5239,7 +6717,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Drink:visible")
@@ -5385,10 +6863,93 @@ tracks/64/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/65/type = "value"
+tracks/65/path = NodePath("Animation/Wheel Chair/Body/Hat/DownSkillParticles:emitting")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("Animation/Wheel Chair/Body/RightWing:modulate")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("Animation/Wheel Chair/Body/LeftWing:modulate")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Animation/UpSkillParticles:emitting")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/69/type = "value"
+tracks/69/path = NodePath("Animation/UltParticles/L:emitting")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/70/type = "value"
+tracks/70/path = NodePath("Animation/UltParticles/I:emitting")
+tracks/70/interp = 1
+tracks/70/loop_wrap = true
+tracks/70/imported = false
+tracks/70/enabled = true
+tracks/70/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/71/type = "value"
+tracks/71/path = NodePath("Animation/UltParticles/K:emitting")
+tracks/71/interp = 1
+tracks/71/loop_wrap = true
+tracks/71/imported = false
+tracks/71/enabled = true
+tracks/71/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=26]
 
-resource_name = "Jump"
 length = 0.1
 loop = false
 step = 0.1
@@ -6014,7 +7575,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -6026,7 +7587,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Drink:visible")
@@ -6172,10 +7733,93 @@ tracks/64/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/65/type = "value"
+tracks/65/path = NodePath("Animation/Wheel Chair/Body/Hat/DownSkillParticles:emitting")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("Animation/Wheel Chair/Body/LeftWing:modulate")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("Animation/Wheel Chair/Body/RightWing:modulate")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Animation/UpSkillParticles:emitting")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/69/type = "value"
+tracks/69/path = NodePath("Animation/UltParticles/L:emitting")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/70/type = "value"
+tracks/70/path = NodePath("Animation/UltParticles/I:emitting")
+tracks/70/interp = 1
+tracks/70/loop_wrap = true
+tracks/70/imported = false
+tracks/70/enabled = true
+tracks/70/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/71/type = "value"
+tracks/71/path = NodePath("Animation/UltParticles/K:emitting")
+tracks/71/interp = 1
+tracks/71/loop_wrap = true
+tracks/71/imported = false
+tracks/71/enabled = true
+tracks/71/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=27]
 
-resource_name = "Size Change"
 length = 0.1
 loop = false
 step = 0.1
@@ -6801,7 +8445,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -6813,7 +8457,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Drink:visible")
@@ -6959,10 +8603,93 @@ tracks/64/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/65/type = "value"
+tracks/65/path = NodePath("Animation/Wheel Chair/Body/Hat/DownSkillParticles:emitting")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("Animation/Wheel Chair/Body/RightWing:modulate")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("Animation/Wheel Chair/Body/LeftWing:modulate")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Animation/UpSkillParticles:emitting")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/69/type = "value"
+tracks/69/path = NodePath("Animation/UltParticles/L:emitting")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/70/type = "value"
+tracks/70/path = NodePath("Animation/UltParticles/I:emitting")
+tracks/70/interp = 1
+tracks/70/loop_wrap = true
+tracks/70/imported = false
+tracks/70/enabled = true
+tracks/70/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/71/type = "value"
+tracks/71/path = NodePath("Animation/UltParticles/K:emitting")
+tracks/71/interp = 1
+tracks/71/loop_wrap = true
+tracks/71/imported = false
+tracks/71/enabled = true
+tracks/71/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=28]
 
-resource_name = "Still"
 length = 0.1
 loop = false
 step = 0.1
@@ -7588,7 +9315,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -7600,7 +9327,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Drink:visible")
@@ -7746,10 +9473,93 @@ tracks/64/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/65/type = "value"
+tracks/65/path = NodePath("Animation/Wheel Chair/Body/Hat/DownSkillParticles:emitting")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("Animation/Wheel Chair/Body/LeftWing:modulate")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("Animation/Wheel Chair/Body/RightWing:modulate")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Animation/UpSkillParticles:emitting")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/69/type = "value"
+tracks/69/path = NodePath("Animation/UltParticles/L:emitting")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/70/type = "value"
+tracks/70/path = NodePath("Animation/UltParticles/I:emitting")
+tracks/70/interp = 1
+tracks/70/loop_wrap = true
+tracks/70/imported = false
+tracks/70/enabled = true
+tracks/70/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/71/type = "value"
+tracks/71/path = NodePath("Animation/UltParticles/K:emitting")
+tracks/71/interp = 1
+tracks/71/loop_wrap = true
+tracks/71/imported = false
+tracks/71/enabled = true
+tracks/71/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=29]
 
-resource_name = "Stunned"
 length = 1.5
 loop = true
 step = 0.1
@@ -8375,7 +10185,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 44 ) ]
+"values": [ ExtResource( 52 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -8387,7 +10197,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 44 ) ]
+"values": [ ExtResource( 52 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Drink:visible")
@@ -8533,10 +10343,1895 @@ tracks/64/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/65/type = "value"
+tracks/65/path = NodePath("Animation/Wheel Chair/Body/Hat/DownSkillParticles:emitting")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("Animation/Wheel Chair/Body/RightWing:modulate")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("Animation/Wheel Chair/Body/LeftWing:modulate")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Animation/UpSkillParticles:emitting")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/69/type = "value"
+tracks/69/path = NodePath("Animation/UltParticles/L:emitting")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/70/type = "value"
+tracks/70/path = NodePath("Animation/UltParticles/I:emitting")
+tracks/70/interp = 1
+tracks/70/loop_wrap = true
+tracks/70/imported = false
+tracks/70/enabled = true
+tracks/70/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/71/type = "value"
+tracks/71/path = NodePath("Animation/UltParticles/K:emitting")
+tracks/71/interp = 1
+tracks/71/loop_wrap = true
+tracks/71/imported = false
+tracks/71/enabled = true
+tracks/71/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=45]
 
-resource_name = "Walk"
+resource_name = "Ult"
+length = 5.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Animation/Wheel Chair/Body/Mouth:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 9.74373, -0.458313 ), Vector2( 10.2961, -5.42961 ), Vector2( 10.2961, -5.42961 ), Vector2( 9.74373, -0.458313 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Animation/Wheel Chair/Body/Mouth:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 176.808, 176.808, 176.808, 176.808 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Animation/Wheel Chair/Body/Mouth:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -82.237, 47.8675 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Animation/Wheel Chair:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Animation/Wheel Chair:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Animation/Wheel Chair:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Animation/Wheel Chair/Body/Beard:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 6.00408, 17.3764 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Animation/Wheel Chair/Body/Beard:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Animation/Wheel Chair/Body/Beard:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 25.2521, -68.9185 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:rotation_degrees")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Animation/Wheel Chair/Body/Left Arm:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 1, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -44.0386, 0.138672 ), Vector2( -44.0386, 0.138672 ), Vector2( -44.0386, 0.138672 ), Vector2( -44.0386, 0.138672 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Animation/Wheel Chair/Body/Left Arm:rotation_degrees")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 1, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -120.506, -120.506, 0.0 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Animation/Wheel Chair/Body/Left Arm:scale")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 0.9, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.62183, -53.2707 ), Vector2( 6.01215, -59.7098 ), Vector2( 6.01215, -59.7098 ), Vector2( 1.62183, -53.2707 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:rotation_degrees")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 0.9, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 34.3899, 34.3899, 0.0 ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:scale")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 0.9, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 38.9234, -42.2653 ), Vector2( 38.4844, -48.2654 ), Vector2( 38.4844, -48.2654 ), Vector2( 38.9234, -42.2653 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:rotation_degrees")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0, 0.9, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -35.4413, -35.4413, 0.0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:scale")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Animation/Wheel Chair/Body/Right Arm:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0, 1, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 49.4514, 15.1539 ), Vector2( 49.4514, 15.1539 ), Vector2( 49.4514, 15.1539 ), Vector2( 49.4514, 15.1539 ) ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Animation/Wheel Chair/Body/Right Arm:rotation_degrees")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0, 1, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -32.1749, -32.1749, 0.0 ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Animation/Wheel Chair/Body/Right Arm:scale")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Animation/Wheel Chair/Body/Nose:position")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 12.6003, -21.957 ) ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Animation/Wheel Chair/Body/Nose:rotation_degrees")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("Animation/Wheel Chair/Body/Nose:scale")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("Animation/Wheel Chair/Body/Right Eye:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 36.9669, -38.4186 ) ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("Animation/Wheel Chair/Body/Right Eye:rotation_degrees")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/32/type = "value"
+tracks/32/path = NodePath("Animation/Wheel Chair/Body/Right Eye:scale")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/33/type = "value"
+tracks/33/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:position")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
+"times": PoolRealArray( 0, 0.9, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -11.1154, -5.74422 ), Vector2( -11.1154, -5.74422 ), Vector2( -11.1154, -5.74422 ), Vector2( -11.1154, -5.74422 ) ]
+}
+tracks/34/type = "value"
+tracks/34/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:rotation_degrees")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/keys = {
+"times": PoolRealArray( 0, 0.9, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 22.7237, 22.7237, 0.0 ]
+}
+tracks/35/type = "value"
+tracks/35/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:scale")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/36/type = "value"
+tracks/36/path = NodePath("Animation/Wheel Chair/Small Wheel:position")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 45.8219, 99.5746 ) ]
+}
+tracks/37/type = "value"
+tracks/37/path = NodePath("Animation/Wheel Chair/Small Wheel:rotation_degrees")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/38/type = "value"
+tracks/38/path = NodePath("Animation/Wheel Chair/Small Wheel:scale")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:position")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0, 0.9, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 30.4383, 5.0019 ), Vector2( 30.4383, 5.0019 ), Vector2( 30.4383, 5.0019 ), Vector2( 30.4383, 5.0019 ) ]
+}
+tracks/40/type = "value"
+tracks/40/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:rotation_degrees")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 0, 0.9, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, -26.7566, -26.7566, 0.0 ]
+}
+tracks/41/type = "value"
+tracks/41/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:scale")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/42/type = "value"
+tracks/42/path = NodePath("Animation/Wheel Chair/Body/Hat:position")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/keys = {
+"times": PoolRealArray( 0, 1, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 31.9925, -94.2244 ), Vector2( 43.1154, -83.4386 ), Vector2( 43.1154, -83.4386 ), Vector2( 31.9925, -94.2244 ) ]
+}
+tracks/43/type = "value"
+tracks/43/path = NodePath("Animation/Wheel Chair/Body/Hat:rotation_degrees")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/keys = {
+"times": PoolRealArray( 0, 1, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 4.50553, 4.50553, 0.0 ]
+}
+tracks/44/type = "value"
+tracks/44/path = NodePath("Animation/Wheel Chair/Body/Hat:scale")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/45/type = "value"
+tracks/45/path = NodePath("Animation/Wheel Chair/Body/Left Eye:position")
+tracks/45/interp = 1
+tracks/45/loop_wrap = true
+tracks/45/imported = false
+tracks/45/enabled = true
+tracks/45/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.00605, -49.2059 ) ]
+}
+tracks/46/type = "value"
+tracks/46/path = NodePath("Animation/Wheel Chair/Body/Left Eye:rotation_degrees")
+tracks/46/interp = 1
+tracks/46/loop_wrap = true
+tracks/46/imported = false
+tracks/46/enabled = true
+tracks/46/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Animation/Wheel Chair/Body/Left Eye:scale")
+tracks/47/interp = 1
+tracks/47/loop_wrap = true
+tracks/47/imported = false
+tracks/47/enabled = true
+tracks/47/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Animation/Wheel Chair/Body:position")
+tracks/48/interp = 1
+tracks/48/loop_wrap = true
+tracks/48/imported = false
+tracks/48/enabled = true
+tracks/48/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -6.88864, -99.4379 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Animation/Wheel Chair/Body:rotation_degrees")
+tracks/49/interp = 1
+tracks/49/loop_wrap = true
+tracks/49/imported = false
+tracks/49/enabled = true
+tracks/49/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/50/type = "value"
+tracks/50/path = NodePath("Animation/Wheel Chair/Body:scale")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/51/type = "value"
+tracks/51/path = NodePath("Animation/Wheel Chair/Body/Left Eye:texture")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 15 ) ]
+}
+tracks/52/type = "value"
+tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 15 ) ]
+}
+tracks/53/type = "value"
+tracks/53/path = NodePath("Animation/Drink:visible")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/54/type = "value"
+tracks/54/path = NodePath("Animation/Ghost:modulate")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/55/type = "value"
+tracks/55/path = NodePath("Animation/Wheel Chair:self_modulate")
+tracks/55/interp = 1
+tracks/55/loop_wrap = true
+tracks/55/imported = false
+tracks/55/enabled = true
+tracks/55/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/56/type = "value"
+tracks/56/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:modulate")
+tracks/56/interp = 1
+tracks/56/loop_wrap = true
+tracks/56/imported = false
+tracks/56/enabled = true
+tracks/56/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/57/type = "value"
+tracks/57/path = NodePath("Animation/Small Wheel:modulate")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/58/type = "value"
+tracks/58/path = NodePath("Animation/Wheel Chair:modulate")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/59/type = "value"
+tracks/59/path = NodePath("Animation/Body:modulate")
+tracks/59/interp = 1
+tracks/59/loop_wrap = true
+tracks/59/imported = false
+tracks/59/enabled = true
+tracks/59/keys = {
+"times": PoolRealArray( 0, 1, 2, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.462366, 0.949597, 1, 1 ), Color( 0.462366, 0.949597, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/60/type = "value"
+tracks/60/path = NodePath("Animation/Wheel Chair/Body/Right Arm/Sword:modulate")
+tracks/60/interp = 1
+tracks/60/loop_wrap = true
+tracks/60/imported = false
+tracks/60/enabled = true
+tracks/60/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/61/type = "value"
+tracks/61/path = NodePath("Animation/Wheel Chair/Body/Right Arm/Sword/AttackArea:collision_mask")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/62/type = "value"
+tracks/62/path = NodePath("Animation/Wheel Chair/Body/Right Arm/Sword/Particles2D:emitting")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/63/type = "value"
+tracks/63/path = NodePath("Animation/BasicSkillParticles:modulate")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("Animation/HorizontalSkillParticles:emitting")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/65/type = "value"
+tracks/65/path = NodePath("Animation/Wheel Chair/Body/Hat/DownSkillParticles:emitting")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("Animation/Wheel Chair/Body/LeftWing:modulate")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("Animation/Wheel Chair/Body/RightWing:modulate")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Animation/UpSkillParticles:emitting")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/69/type = "value"
+tracks/69/path = NodePath("Animation/UltParticles/L:emitting")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/70/type = "value"
+tracks/70/path = NodePath("Animation/UltParticles/I:emitting")
+tracks/70/interp = 1
+tracks/70/loop_wrap = true
+tracks/70/imported = false
+tracks/70/enabled = true
+tracks/70/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/71/type = "value"
+tracks/71/path = NodePath("Animation/UltParticles/K:emitting")
+tracks/71/interp = 1
+tracks/71/loop_wrap = true
+tracks/71/imported = false
+tracks/71/enabled = true
+tracks/71/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/72/type = "value"
+tracks/72/path = NodePath("Animation/UltParticles:modulate")
+tracks/72/interp = 1
+tracks/72/loop_wrap = true
+tracks/72/imported = false
+tracks/72/enabled = true
+tracks/72/keys = {
+"times": PoolRealArray( 0, 0.5, 2, 4, 5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=38]
+
+resource_name = "Up Skill"
+length = 0.84
+loop = false
+step = 0.03
+tracks/0/type = "value"
+tracks/0/path = NodePath("Animation/Wheel Chair/Body/Mouth:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.21 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 9.74373, -0.458313 ), Vector2( 10.0997, -5.44241 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Animation/Wheel Chair/Body/Mouth:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.21 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Animation/Wheel Chair/Body/Mouth:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -82.237, 47.8675 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Animation/Wheel Chair:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Animation/Wheel Chair:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Animation/Wheel Chair:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Animation/Wheel Chair/Body/Beard:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 6.00408, 17.3764 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Animation/Wheel Chair/Body/Beard:rotation_degrees")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Animation/Wheel Chair/Body/Beard:scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 25.2521, -68.9185 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:rotation_degrees")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("Animation/Wheel Chair/Body/Wrinkles:scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Animation/Wheel Chair/Body/Left Arm:position")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.24, 0.54 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -44.0386, 0.138672 ), Vector2( -44.0386, 0.138672 ), Vector2( -44.0386, 0.138672 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Animation/Wheel Chair/Body/Left Arm:rotation_degrees")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.24, 0.54 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -113.692, -113.692, -123.703 ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Animation/Wheel Chair/Body/Left Arm:scale")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 0.24 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.62183, -53.2707 ), Vector2( 0.0791383, -59.2041 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:rotation_degrees")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 0.24 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Animation/Wheel Chair/Body/Left Eyebrow:scale")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 0.24 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 38.9234, -42.2653 ), Vector2( 44.2635, -46.6561 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:rotation_degrees")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0, 0.24 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0 ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Animation/Wheel Chair/Body/Right Eyebrow:scale")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Animation/Wheel Chair/Body/Right Arm:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0, 0.24, 0.54 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 49.4514, 15.1539 ), Vector2( 49.4514, 15.1539 ), Vector2( 49.4514, 15.1539 ) ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Animation/Wheel Chair/Body/Right Arm:rotation_degrees")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0, 0.24, 0.54 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ -28.5376, -28.5376, -12.7794 ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Animation/Wheel Chair/Body/Right Arm:scale")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Animation/Wheel Chair/Body/Nose:position")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 12.6003, -21.957 ) ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Animation/Wheel Chair/Body/Nose:rotation_degrees")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("Animation/Wheel Chair/Body/Nose:scale")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/30/type = "value"
+tracks/30/path = NodePath("Animation/Wheel Chair/Body/Right Eye:position")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 36.9669, -38.4186 ) ]
+}
+tracks/31/type = "value"
+tracks/31/path = NodePath("Animation/Wheel Chair/Body/Right Eye:rotation_degrees")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/32/type = "value"
+tracks/32/path = NodePath("Animation/Wheel Chair/Body/Right Eye:scale")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/33/type = "value"
+tracks/33/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:position")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
+"times": PoolRealArray( 0, 0.36 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -11.1154, -5.74422 ), Vector2( -11.1154, -5.74422 ) ]
+}
+tracks/34/type = "value"
+tracks/34/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:rotation_degrees")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/keys = {
+"times": PoolRealArray( 0, 0.36 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 10.8117 ]
+}
+tracks/35/type = "value"
+tracks/35/path = NodePath("Animation/Wheel Chair/Body/Left Wrinkle:scale")
+tracks/35/interp = 1
+tracks/35/loop_wrap = true
+tracks/35/imported = false
+tracks/35/enabled = true
+tracks/35/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/36/type = "value"
+tracks/36/path = NodePath("Animation/Wheel Chair/Small Wheel:position")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 45.8219, 99.5746 ) ]
+}
+tracks/37/type = "value"
+tracks/37/path = NodePath("Animation/Wheel Chair/Small Wheel:rotation_degrees")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/38/type = "value"
+tracks/38/path = NodePath("Animation/Wheel Chair/Small Wheel:scale")
+tracks/38/interp = 1
+tracks/38/loop_wrap = true
+tracks/38/imported = false
+tracks/38/enabled = true
+tracks/38/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/39/type = "value"
+tracks/39/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:position")
+tracks/39/interp = 1
+tracks/39/loop_wrap = true
+tracks/39/imported = false
+tracks/39/enabled = true
+tracks/39/keys = {
+"times": PoolRealArray( 0, 0.36 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 30.4383, 5.0019 ), Vector2( 30.4383, 5.0019 ) ]
+}
+tracks/40/type = "value"
+tracks/40/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:rotation_degrees")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 0, 0.36 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -18.6239 ]
+}
+tracks/41/type = "value"
+tracks/41/path = NodePath("Animation/Wheel Chair/Body/Right Wrinkle:scale")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/42/type = "value"
+tracks/42/path = NodePath("Animation/Wheel Chair/Body/Hat:position")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/keys = {
+"times": PoolRealArray( 0, 0.24, 0.33, 0.81 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 31.9925, -94.2244 ), Vector2( 46.3217, -113.479 ), Vector2( 46.3217, -113.479 ), Vector2( 31.9925, -94.2244 ) ]
+}
+tracks/43/type = "value"
+tracks/43/path = NodePath("Animation/Wheel Chair/Body/Hat:rotation_degrees")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/keys = {
+"times": PoolRealArray( 0, 0.24, 0.33, 0.81 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, 0.0 ]
+}
+tracks/44/type = "value"
+tracks/44/path = NodePath("Animation/Wheel Chair/Body/Hat:scale")
+tracks/44/interp = 1
+tracks/44/loop_wrap = true
+tracks/44/imported = false
+tracks/44/enabled = true
+tracks/44/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/45/type = "value"
+tracks/45/path = NodePath("Animation/Wheel Chair/Body/Left Eye:position")
+tracks/45/interp = 1
+tracks/45/loop_wrap = true
+tracks/45/imported = false
+tracks/45/enabled = true
+tracks/45/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 3.00605, -49.2059 ) ]
+}
+tracks/46/type = "value"
+tracks/46/path = NodePath("Animation/Wheel Chair/Body/Left Eye:rotation_degrees")
+tracks/46/interp = 1
+tracks/46/loop_wrap = true
+tracks/46/imported = false
+tracks/46/enabled = true
+tracks/46/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/47/type = "value"
+tracks/47/path = NodePath("Animation/Wheel Chair/Body/Left Eye:scale")
+tracks/47/interp = 1
+tracks/47/loop_wrap = true
+tracks/47/imported = false
+tracks/47/enabled = true
+tracks/47/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/48/type = "value"
+tracks/48/path = NodePath("Animation/Wheel Chair/Body:position")
+tracks/48/interp = 1
+tracks/48/loop_wrap = true
+tracks/48/imported = false
+tracks/48/enabled = true
+tracks/48/keys = {
+"times": PoolRealArray( 0, 0.33, 0.84 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -6.88864, -99.4379 ), Vector2( -6.88864, -99.4379 ), Vector2( 5.20163, -133.47 ) ]
+}
+tracks/49/type = "value"
+tracks/49/path = NodePath("Animation/Wheel Chair/Body:rotation_degrees")
+tracks/49/interp = 1
+tracks/49/loop_wrap = true
+tracks/49/imported = false
+tracks/49/enabled = true
+tracks/49/keys = {
+"times": PoolRealArray( 0, 0.33, 0.84 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0 ]
+}
+tracks/50/type = "value"
+tracks/50/path = NodePath("Animation/Wheel Chair/Body:scale")
+tracks/50/interp = 1
+tracks/50/loop_wrap = true
+tracks/50/imported = false
+tracks/50/enabled = true
+tracks/50/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/51/type = "value"
+tracks/51/path = NodePath("Animation/Wheel Chair/Body/Left Eye:texture")
+tracks/51/interp = 1
+tracks/51/loop_wrap = true
+tracks/51/imported = false
+tracks/51/enabled = true
+tracks/51/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 15 ) ]
+}
+tracks/52/type = "value"
+tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 15 ) ]
+}
+tracks/53/type = "value"
+tracks/53/path = NodePath("Animation/Drink:visible")
+tracks/53/interp = 1
+tracks/53/loop_wrap = true
+tracks/53/imported = false
+tracks/53/enabled = true
+tracks/53/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/54/type = "value"
+tracks/54/path = NodePath("Animation/Ghost:modulate")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/55/type = "value"
+tracks/55/path = NodePath("Animation/Wheel Chair:self_modulate")
+tracks/55/interp = 1
+tracks/55/loop_wrap = true
+tracks/55/imported = false
+tracks/55/enabled = true
+tracks/55/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/56/type = "value"
+tracks/56/path = NodePath("Animation/Wheel Chair/Wheel Chair Big Wheel:modulate")
+tracks/56/interp = 1
+tracks/56/loop_wrap = true
+tracks/56/imported = false
+tracks/56/enabled = true
+tracks/56/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/57/type = "value"
+tracks/57/path = NodePath("Animation/Small Wheel:modulate")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/58/type = "value"
+tracks/58/path = NodePath("Animation/Wheel Chair:modulate")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/59/type = "value"
+tracks/59/path = NodePath("Animation/Body:modulate")
+tracks/59/interp = 1
+tracks/59/loop_wrap = true
+tracks/59/imported = false
+tracks/59/enabled = true
+tracks/59/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/60/type = "value"
+tracks/60/path = NodePath("Animation/Wheel Chair/Body/Right Arm/Sword:modulate")
+tracks/60/interp = 1
+tracks/60/loop_wrap = true
+tracks/60/imported = false
+tracks/60/enabled = true
+tracks/60/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/61/type = "value"
+tracks/61/path = NodePath("Animation/Wheel Chair/Body/Right Arm/Sword/AttackArea:collision_mask")
+tracks/61/interp = 1
+tracks/61/loop_wrap = true
+tracks/61/imported = false
+tracks/61/enabled = true
+tracks/61/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/62/type = "value"
+tracks/62/path = NodePath("Animation/Wheel Chair/Body/Right Arm/Sword/Particles2D:emitting")
+tracks/62/interp = 1
+tracks/62/loop_wrap = true
+tracks/62/imported = false
+tracks/62/enabled = true
+tracks/62/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/63/type = "value"
+tracks/63/path = NodePath("Animation/BasicSkillParticles:modulate")
+tracks/63/interp = 1
+tracks/63/loop_wrap = true
+tracks/63/imported = false
+tracks/63/enabled = true
+tracks/63/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/64/type = "value"
+tracks/64/path = NodePath("Animation/HorizontalSkillParticles:emitting")
+tracks/64/interp = 1
+tracks/64/loop_wrap = true
+tracks/64/imported = false
+tracks/64/enabled = true
+tracks/64/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/65/type = "value"
+tracks/65/path = NodePath("Animation/Wheel Chair/Body/Hat/DownSkillParticles:emitting")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("Animation/Wheel Chair/Body/LeftWing:modulate")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0, 0.24, 0.33 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("Animation/Wheel Chair/Body/RightWing:modulate")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0, 0.24, 0.33 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Animation/Wheel Chair/Body/RightWing:position")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0, 0.24, 0.33, 0.81 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 83.016, 23.9371 ), Vector2( 93.7629, -15.4682 ), Vector2( 93.7629, -15.4682 ), Vector2( 97.3452, -7.85582 ) ]
+}
+tracks/69/type = "value"
+tracks/69/path = NodePath("Animation/Wheel Chair/Body/RightWing:rotation_degrees")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/keys = {
+"times": PoolRealArray( 0, 0.24, 0.33, 0.81 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 11.2882, 11.2882, 11.2882, 49.8089 ]
+}
+tracks/70/type = "value"
+tracks/70/path = NodePath("Animation/Wheel Chair/Body/LeftWing:position")
+tracks/70/interp = 1
+tracks/70/loop_wrap = true
+tracks/70/imported = false
+tracks/70/enabled = true
+tracks/70/keys = {
+"times": PoolRealArray( 0, 0.24, 0.33, 0.81 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -76.9342, -34.847 ), Vector2( -60.8139, -74.7 ), Vector2( -60.8139, -74.7 ), Vector2( -68.4263, -63.5053 ) ]
+}
+tracks/71/type = "value"
+tracks/71/path = NodePath("Animation/Wheel Chair/Body/LeftWing:rotation_degrees")
+tracks/71/interp = 1
+tracks/71/loop_wrap = true
+tracks/71/imported = false
+tracks/71/enabled = true
+tracks/71/keys = {
+"times": PoolRealArray( 0, 0.24, 0.33, 0.81 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 0.0, -34.249 ]
+}
+tracks/72/type = "value"
+tracks/72/path = NodePath("Animation/UpSkillParticles:emitting")
+tracks/72/interp = 1
+tracks/72/loop_wrap = true
+tracks/72/imported = false
+tracks/72/enabled = true
+tracks/72/keys = {
+"times": PoolRealArray( 0, 0.33 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/73/type = "value"
+tracks/73/path = NodePath("Animation/UltParticles/L:emitting")
+tracks/73/interp = 1
+tracks/73/loop_wrap = true
+tracks/73/imported = false
+tracks/73/enabled = true
+tracks/73/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/74/type = "value"
+tracks/74/path = NodePath("Animation/UltParticles/I:emitting")
+tracks/74/interp = 1
+tracks/74/loop_wrap = true
+tracks/74/imported = false
+tracks/74/enabled = true
+tracks/74/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/75/type = "value"
+tracks/75/path = NodePath("Animation/UltParticles/K:emitting")
+tracks/75/interp = 1
+tracks/75/loop_wrap = true
+tracks/75/imported = false
+tracks/75/enabled = true
+tracks/75/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=30]
+
 length = 4.0
 loop = true
 step = 0.1
@@ -9162,7 +12857,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -9174,7 +12869,7 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 11 ) ]
+"values": [ ExtResource( 15 ) ]
 }
 tracks/53/type = "value"
 tracks/53/path = NodePath("Animation/Drink:visible")
@@ -9320,18 +13015,102 @@ tracks/64/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/65/type = "value"
+tracks/65/path = NodePath("Animation/Wheel Chair/Body/Hat/DownSkillParticles:emitting")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("Animation/Wheel Chair/Body/LeftWing:modulate")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("Animation/Wheel Chair/Body/RightWing:modulate")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("Animation/UpSkillParticles:emitting")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/69/type = "value"
+tracks/69/path = NodePath("Animation/UltParticles/L:emitting")
+tracks/69/interp = 1
+tracks/69/loop_wrap = true
+tracks/69/imported = false
+tracks/69/enabled = true
+tracks/69/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/70/type = "value"
+tracks/70/path = NodePath("Animation/UltParticles/I:emitting")
+tracks/70/interp = 1
+tracks/70/loop_wrap = true
+tracks/70/imported = false
+tracks/70/enabled = true
+tracks/70/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/71/type = "value"
+tracks/71/path = NodePath("Animation/UltParticles/K:emitting")
+tracks/71/interp = 1
+tracks/71/loop_wrap = true
+tracks/71/imported = false
+tracks/71/enabled = true
+tracks/71/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=31]
 
 custom_solver_bias = 0.0
 extents = Vector2( 59.2229, 156.89 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=32]
 
 custom_solver_bias = 0.0
 extents = Vector2( 56.6272, 108.611 )
 
-[node name="Othox Codox Sprites" type="KinematicBody2D"]
+[node name="Othox Codox Sprites" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 0
@@ -9352,10 +13131,10 @@ confused_icon_path = NodePath("Sprite/Animation/Wheel Chair/Confused Icon")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
 visible = false
-position = Vector2( 0, -14.0769 )
-shape = SubResource( 6 )
+position = Vector2( 0, 38.81 )
+shape = SubResource( 46 )
 
-[node name="DamageArea" type="Area2D" parent="." index="1" groups=[
+[node name="Damage Area" type="Area2D" parent="." index="1" groups=[
 "hero",
 ]]
 
@@ -9370,11 +13149,11 @@ audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Damage Area" index="0"]
 
 visible = false
 position = Vector2( 0, -11.2315 )
-shape = SubResource( 7 )
+shape = SubResource( 47 )
 
 [node name="Combo Handler" type="Node2D" parent="." index="2"]
 
@@ -9386,12 +13165,12 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Animation" type="Node2D" parent="Sprite" index="0"]
 
+editor/display_folded = true
 position = Vector2( 0, 39.4937 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="BasicSkillParticles" type="Node2D" parent="Sprite/Animation" index="0"]
 
-editor/display_folded = true
 modulate = Color( 1, 1, 1, 0 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -9412,7 +13191,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 23 )
+process_material = SubResource( 50 )
 texture = ExtResource( 3 )
 normal_map = null
 h_frames = 1
@@ -9436,7 +13215,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 23 )
+process_material = SubResource( 50 )
 texture = ExtResource( 4 )
 normal_map = null
 h_frames = 1
@@ -9460,7 +13239,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 23 )
+process_material = SubResource( 50 )
 texture = ExtResource( 5 )
 normal_map = null
 h_frames = 1
@@ -9484,42 +13263,140 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 23 )
+process_material = SubResource( 50 )
 texture = ExtResource( 6 )
 normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
-[node name="Body" type="Sprite" parent="Sprite/Animation" index="1"]
+[node name="UltParticles" type="Node2D" parent="Sprite/Animation" index="1"]
 
-position = Vector2( -6.88864, -99.4379 )
-texture = ExtResource( 7 )
+modulate = Color( 1, 1, 1, 0 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Small Wheel" type="Sprite" parent="Sprite/Animation" index="2"]
+[node name="K" type="Particles2D" parent="Sprite/Animation/UltParticles" index="0"]
+
+rotation = -1.5708
+emitting = false
+amount = 20
+lifetime = 2.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 44 )
+texture = ExtResource( 7 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
+
+[node name="I" type="Particles2D" parent="Sprite/Animation/UltParticles" index="1"]
+
+rotation = -1.5708
+emitting = false
+amount = 20
+lifetime = 2.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 44 )
+texture = ExtResource( 8 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
+
+[node name="L" type="Particles2D" parent="Sprite/Animation/UltParticles" index="2"]
+
+rotation = -1.5708
+emitting = false
+amount = 40
+lifetime = 2.0
+one_shot = false
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 44 )
+texture = ExtResource( 9 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
+
+[node name="UpSkillParticles" type="Particles2D" parent="Sprite/Animation" index="2"]
+
+position = Vector2( -19.1612, -43.432 )
+rotation = 1.73891
+emitting = false
+amount = 45
+lifetime = 0.8
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.0
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = false
+draw_order = 0
+process_material = SubResource( 39 )
+texture = ExtResource( 10 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Transform" ]
+
+[node name="Body" type="Sprite" parent="Sprite/Animation" index="3"]
+
+light_mask = 5
+position = Vector2( -6.88864, -99.4379 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Small Wheel" type="Sprite" parent="Sprite/Animation" index="4"]
 
 position = Vector2( 45.8219, 99.5746 )
-texture = ExtResource( 8 )
+texture = ExtResource( 12 )
 offset = Vector2( 0.602219, 0.471329 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Drink" type="Sprite" parent="Sprite/Animation" index="3"]
+[node name="Drink" type="Sprite" parent="Sprite/Animation" index="5"]
 
 visible = false
 position = Vector2( 52.5501, -43.8821 )
 rotation = 0.429621
-texture = ExtResource( 9 )
+texture = ExtResource( 13 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Wheel Chair" type="Sprite" parent="Sprite/Animation" index="4"]
+[node name="Wheel Chair" type="Sprite" parent="Sprite/Animation" index="6"]
 
-texture = ExtResource( 10 )
+texture = ExtResource( 14 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Body" type="RemoteTransform2D" parent="Sprite/Animation/Wheel Chair" index="0"]
 
-editor/display_folded = true
 position = Vector2( -6.88864, -99.4379 )
 remote_path = NodePath("../../Body")
 use_global_coordinates = true
@@ -9531,67 +13408,93 @@ update_scale = true
 
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 3.00605, -49.2059 )
-texture = ExtResource( 11 )
+texture = ExtResource( 15 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Right Eye" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="1"]
 
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 36.9669, -38.4186 )
-texture = ExtResource( 11 )
+texture = ExtResource( 15 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Left Wrinkle" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="2"]
 
 position = Vector2( -11.1154, -5.74422 )
-texture = ExtResource( 12 )
+texture = ExtResource( 16 )
 
 [node name="Right Wrinkle" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="3"]
 
 position = Vector2( 30.4383, 5.0019 )
-texture = ExtResource( 13 )
+texture = ExtResource( 17 )
 
 [node name="Left Eyebrow" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="4"]
 
 position = Vector2( 1.62183, -53.2707 )
-texture = ExtResource( 14 )
+texture = ExtResource( 18 )
 
 [node name="Right Eyebrow" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="5"]
 
 position = Vector2( 38.9234, -42.2653 )
-texture = ExtResource( 15 )
+texture = ExtResource( 19 )
 
 [node name="Nose" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="6"]
 
 position = Vector2( 12.6003, -21.957 )
-texture = ExtResource( 16 )
+texture = ExtResource( 20 )
 
 [node name="Mouth" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="7"]
 
 position = Vector2( 9.74373, -0.458313 )
-texture = ExtResource( 17 )
+texture = ExtResource( 21 )
 
 [node name="Beard" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="8"]
 
 position = Vector2( 6.00408, 17.3764 )
-texture = ExtResource( 18 )
+texture = ExtResource( 22 )
 
 [node name="Hat" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="9"]
 
+editor/display_folded = true
 position = Vector2( 31.9925, -94.2244 )
-texture = ExtResource( 19 )
+texture = ExtResource( 23 )
+
+[node name="DownSkillParticles" type="Particles2D" parent="Sprite/Animation/Wheel Chair/Body/Hat" index="0"]
+
+position = Vector2( -2.0801, 10.1922 )
+rotation = 1.8534
+emitting = false
+amount = 5
+lifetime = 0.5
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.5
+randomness = 0.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 37 )
+texture = ExtResource( 24 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+_sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
 [node name="Left Arm" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="10"]
 
 position = Vector2( -44.0386, 0.138672 )
-texture = ExtResource( 20 )
+texture = ExtResource( 25 )
 offset = Vector2( 28.238, 18.4983 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Right Arm" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="11"]
 
 editor/display_folded = true
 position = Vector2( 49.4514, 15.1539 )
-texture = ExtResource( 21 )
+texture = ExtResource( 26 )
 offset = Vector2( 20.6086, -17.7932 )
 
 [node name="Sword" type="Node2D" parent="Sprite/Animation/Wheel Chair/Body/Right Arm" index="0"]
@@ -9599,16 +13502,14 @@ offset = Vector2( 20.6086, -17.7932 )
 editor/display_folded = true
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 36.2264, -61.9381 )
-rotation = -2.15502
+rotation = -2.15503
 scale = Vector2( 1.5, 1.5 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Particles2D" type="Particles2D" parent="Sprite/Animation/Wheel Chair/Body/Right Arm/Sword" index="0"]
 
-modulate = Color( 1, 1, 1, 0.1 )
 position = Vector2( 173.608, 25.9625 )
 rotation = 0.230829
-scale = Vector2( 1, 1 )
 emitting = false
 amount = 75
 lifetime = 0.6
@@ -9622,8 +13523,8 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = false
 draw_order = 0
-process_material = SubResource( 17 )
-texture = ExtResource( 22 )
+process_material = SubResource( 53 )
+texture = ExtResource( 10 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -9631,35 +13532,31 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Trans
 
 [node name="s" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body/Right Arm/Sword" index="1"]
 
-texture = ExtResource( 23 )
+texture = ExtResource( 27 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="w" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body/Right Arm/Sword" index="2"]
 
-position = Vector2( 39.6408, 5.30537 )
-rotation = 0.0815601
-texture = ExtResource( 24 )
+position = Vector2( 34.2746, 0 )
+texture = ExtResource( 28 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="o" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body/Right Arm/Sword" index="3"]
 
-position = Vector2( 79.0269, 8.64174 )
-rotation = 0.0347266
-texture = ExtResource( 25 )
+position = Vector2( 71.3188, 0 )
+texture = ExtResource( 29 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="r" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body/Right Arm/Sword" index="4"]
 
-position = Vector2( 118.292, 12.7689 )
-rotation = 0.0772199
-texture = ExtResource( 26 )
+position = Vector2( 111.133, 0 )
+texture = ExtResource( 30 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="d" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body/Right Arm/Sword" index="5"]
 
-position = Vector2( 153.094, 10.0725 )
-rotation = 0.0516188
-texture = ExtResource( 27 )
+position = Vector2( 145.407, -5.19312 )
+texture = ExtResource( 31 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="AttackArea" type="Area2D" parent="Sprite/Animation/Wheel Chair/Body/Right Arm/Sword" index="6"]
@@ -9682,44 +13579,113 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Animation/Wheel Chair/Body/Right Arm/Sword/AttackArea" index="0"]
 
 position = Vector2( 6.24667, 5.39268 )
-shape = SubResource( 15 )
+shape = SubResource( 54 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/Animation/Wheel Chair/Body/Right Arm/Sword/AttackArea" index="1"]
 
 position = Vector2( 146.924, 6.96516 )
 rotation = 0.0328896
-shape = SubResource( 16 )
-disabled = true
+shape = SubResource( 55 )
 
 [node name="Wrinkles" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="12"]
 
 position = Vector2( 25.2521, -68.9185 )
-texture = ExtResource( 28 )
+texture = ExtResource( 32 )
 
 [node name="UltEyes" type="Node2D" parent="Sprite/Animation/Wheel Chair/Body" index="13"]
 
 editor/display_folded = true
 visible = false
 
-[node name="Ult Eye" parent="Sprite/Animation/Wheel Chair/Body/UltEyes" index="0" instance=ExtResource( 29 )]
+[node name="Ult Eye" parent="Sprite/Animation/Wheel Chair/Body/UltEyes" index="0" instance=ExtResource( 33 )]
 
 position = Vector2( 4.4073, -51.3847 )
 
-[node name="Ult Eye2" parent="Sprite/Animation/Wheel Chair/Body/UltEyes" index="1" instance=ExtResource( 29 )]
+[node name="Ult Eye2" parent="Sprite/Animation/Wheel Chair/Body/UltEyes" index="1" instance=ExtResource( 33 )]
 
 position = Vector2( 36.5033, -43.4551 )
 rotation = 2.133
 
-[node name="Fire Particle" parent="Sprite/Animation/Wheel Chair/Body" index="14" instance=ExtResource( 30 )]
+[node name="Fire Particle" parent="Sprite/Animation/Wheel Chair/Body" index="14" instance=ExtResource( 34 )]
 
 visible = false
 position = Vector2( 30.992, -106.857 )
 rotation = 0.142412
 
+[node name="LeftWing" type="Node2D" parent="Sprite/Animation/Wheel Chair/Body" index="15"]
+
+editor/display_folded = true
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -76.9342, -34.847 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="w" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body/LeftWing" index="0"]
+
+position = Vector2( -116.586, 21.3114 )
+rotation = -0.469669
+texture = ExtResource( 35 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="i" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body/LeftWing" index="1"]
+
+position = Vector2( -81.8181, 10.312 )
+rotation = -0.384425
+texture = ExtResource( 36 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="n" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body/LeftWing" index="2"]
+
+position = Vector2( -42.3759, -0.916626 )
+rotation = -0.184182
+texture = ExtResource( 37 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="g" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body/LeftWing" index="3"]
+
+position = Vector2( 0, 12.7481 )
+texture = ExtResource( 38 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="RightWing" type="Node2D" parent="Sprite/Animation/Wheel Chair/Body" index="16"]
+
+editor/display_folded = true
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 83.016, 23.9371 )
+rotation = 0.197017
+scale = Vector2( -1, 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="w" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body/RightWing" index="0"]
+
+position = Vector2( -116.586, 21.3114 )
+rotation = -0.469669
+texture = ExtResource( 35 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="i" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body/RightWing" index="1"]
+
+position = Vector2( -81.8181, 10.312 )
+rotation = -0.384425
+texture = ExtResource( 36 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="n" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body/RightWing" index="2"]
+
+position = Vector2( -42.3759, -0.916626 )
+rotation = -0.184182
+texture = ExtResource( 37 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="g" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body/RightWing" index="3"]
+
+position = Vector2( 0, 12.7481 )
+texture = ExtResource( 38 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="Wheel Chair Big Wheel" type="Sprite" parent="Sprite/Animation/Wheel Chair" index="1"]
 
 position = Vector2( -82.237, 47.8675 )
-texture = ExtResource( 31 )
+texture = ExtResource( 39 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Small Wheel" type="RemoteTransform2D" parent="Sprite/Animation/Wheel Chair" index="2"]
@@ -9731,92 +13697,91 @@ update_position = true
 update_rotation = true
 update_scale = true
 
-[node name="Attack Icon" parent="Sprite/Animation/Wheel Chair" index="3" instance=ExtResource( 32 )]
+[node name="Attack Icon" parent="Sprite/Animation/Wheel Chair" index="3" instance=ExtResource( 40 )]
 
 position = Vector2( 8.34131, 4.05199 )
 scale = Vector2( 0.4, 0.4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Defense Icon" parent="Sprite/Animation/Wheel Chair" index="4" instance=ExtResource( 33 )]
+[node name="Defense Icon" parent="Sprite/Animation/Wheel Chair" index="4" instance=ExtResource( 41 )]
 
 position = Vector2( 50.8973, 20.255 )
 scale = Vector2( 0.4, 0.4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Confused Icon" parent="Sprite/Animation/Wheel Chair" index="5" instance=ExtResource( 34 )]
+[node name="Confused Icon" parent="Sprite/Animation/Wheel Chair" index="5" instance=ExtResource( 42 )]
 
 position = Vector2( -1.62823, -270.848 )
 scale = Vector2( 0.8, 0.8 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Slowed Icon" parent="Sprite/Animation/Wheel Chair" index="6" instance=ExtResource( 35 )]
+[node name="Slowed Icon" parent="Sprite/Animation/Wheel Chair" index="6" instance=ExtResource( 43 )]
 
 position = Vector2( -24.0352, -29.8382 )
 scale = Vector2( 0.4, 0.4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Ghost" type="Node2D" parent="Sprite/Animation" index="5"]
+[node name="Ghost" type="Node2D" parent="Sprite/Animation" index="7"]
 
-editor/display_folded = true
 modulate = Color( 1, 1, 1, 0 )
-scale = Vector2( 0.3, 0.3 )
+position = Vector2( 0, -1.43669 )
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
 [node name="Body" type="Sprite" parent="Sprite/Animation/Ghost" index="0"]
 
 editor/display_folded = true
 position = Vector2( 0, 16.287 )
-rotation = 0.0302009
-texture = ExtResource( 36 )
+rotation = 0.0302008
+texture = ExtResource( 44 )
 
 [node name="Hat" type="Sprite" parent="Sprite/Animation/Ghost/Body" index="0"]
 
 position = Vector2( 5.67438, -103.114 )
-rotation = -0.511206
-texture = ExtResource( 19 )
+rotation = -0.511207
+texture = ExtResource( 23 )
 
 [node name="LeftEye" type="Sprite" parent="Sprite/Animation/Ghost/Body" index="1"]
 
 position = Vector2( -14.1542, -32.7317 )
-texture = ExtResource( 37 )
+texture = ExtResource( 45 )
 
 [node name="RightEye" type="Sprite" parent="Sprite/Animation/Ghost/Body" index="2"]
 
 position = Vector2( 23.7655, -32.7317 )
-texture = ExtResource( 37 )
+texture = ExtResource( 45 )
 
 [node name="LeftPaw" type="Sprite" parent="Sprite/Animation/Ghost/Body" index="3"]
 
 position = Vector2( -18.9111, 36.4009 )
-texture = ExtResource( 38 )
+texture = ExtResource( 46 )
 
 [node name="RightPaw" type="Sprite" parent="Sprite/Animation/Ghost/Body" index="4"]
 
 position = Vector2( 26.4374, 36.4009 )
-texture = ExtResource( 38 )
+texture = ExtResource( 46 )
 
 [node name="Nose" type="Sprite" parent="Sprite/Animation/Ghost/Body" index="5"]
 
 position = Vector2( 0.543152, -2.62491 )
 rotation = -0.204603
-texture = ExtResource( 16 )
+texture = ExtResource( 20 )
 
 [node name="Mouth" type="Sprite" parent="Sprite/Animation/Ghost/Body" index="6"]
 
 position = Vector2( 2.27, 18.8168 )
 rotation = 2.87815
-texture = ExtResource( 17 )
+texture = ExtResource( 21 )
 
 [node name="Goatee" type="Sprite" parent="Sprite/Animation/Ghost/Body" index="7"]
 
 position = Vector2( 5.31744, 35.8097 )
 rotation = -0.306503
-texture = ExtResource( 18 )
+texture = ExtResource( 22 )
 
 [node name="Ripple" type="Sprite" parent="Sprite/Animation/Ghost/Body" index="8"]
 
 position = Vector2( -1.2767, 86.0284 )
-texture = ExtResource( 39 )
+texture = ExtResource( 47 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite/Animation/Ghost" index="1"]
 
@@ -9825,21 +13790,21 @@ autoplay = "Animate"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Animate = SubResource( 12 )
+anims/Animate = SubResource( 56 )
 blend_times = [  ]
 
-[node name="Speeded Icon" parent="Sprite/Animation" index="6" instance=ExtResource( 42 )]
+[node name="Speeded Icon" parent="Sprite/Animation" index="8" instance=ExtResource( 50 )]
 
 position = Vector2( -19.3261, 91.1091 )
 scale = Vector2( 0.6, 0.6 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="HorizontalSkillParticles" type="Particles2D" parent="Sprite/Animation" index="7"]
+[node name="HorizontalSkillParticles" type="Particles2D" parent="Sprite/Animation" index="9"]
 
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 67.3257, -35.1475 )
 z_index = 2
-emitting = true
+emitting = false
 amount = 60
 lifetime = 1.0
 one_shot = false
@@ -9852,16 +13817,20 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 31 )
-texture = ExtResource( 22 )
+process_material = SubResource( 18 )
+texture = ExtResource( 10 )
 normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Process Material", "Textures", "Visibility", "Z Index" ]
 
-[node name="HorizontalSkillShootPos" type="Position2D" parent="Sprite/Animation" index="8"]
+[node name="HorizontalSkillShootPos" type="Position2D" parent="Sprite/Animation" index="10"]
 
 position = Vector2( 67.4161, -34.7312 )
+
+[node name="UpSkillPuffSpawnPos" type="Position2D" parent="Sprite/Animation" index="11"]
+
+position = Vector2( 0, 117.447 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="1"]
 
@@ -9870,17 +13839,20 @@ autoplay = "Still"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Basic Attack" = SubResource( 14 )
-"anims/Basic Skill" = SubResource( 22 )
-anims/Die = SubResource( 13 )
-anims/Drink = SubResource( 10 )
-"anims/Horizontal Skill" = SubResource( 28 )
-anims/Idle = SubResource( 1 )
-anims/Jump = SubResource( 2 )
-"anims/Size Change" = SubResource( 11 )
-anims/Still = SubResource( 3 )
-anims/Stunned = SubResource( 4 )
-anims/Walk = SubResource( 5 )
+"anims/Basic Attack" = SubResource( 19 )
+"anims/Basic Skill" = SubResource( 20 )
+anims/Die = SubResource( 21 )
+"anims/Down Skill" = SubResource( 22 )
+anims/Drink = SubResource( 23 )
+"anims/Horizontal Skill" = SubResource( 24 )
+anims/Idle = SubResource( 25 )
+anims/Jump = SubResource( 26 )
+"anims/Size Change" = SubResource( 27 )
+anims/Still = SubResource( 28 )
+anims/Stunned = SubResource( 29 )
+anims/Ult = SubResource( 45 )
+"anims/Up Skill" = SubResource( 38 )
+anims/Walk = SubResource( 30 )
 blend_times = [  ]
 
 [node name="Number Spawn Pos" type="Position2D" parent="." index="4"]
@@ -9904,12 +13876,11 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorCheckArea" index="0"]
 
 visible = false
-shape = SubResource( 8 )
+shape = SubResource( 31 )
 
 [node name="GhostHitBox" type="Node2D" parent="." index="6"]
 
-editor/display_folded = true
-script = ExtResource( 45 )
+script = ExtResource( 53 )
 
 [node name="Node2D" type="Node2D" parent="GhostHitBox" index="0"]
 
@@ -9924,15 +13895,18 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
+collision_layer = 0
+collision_mask = 0
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GhostHitBox/Node2D/Area2D" index="0"]
 
 position = Vector2( 0, 44.126 )
-shape = SubResource( 9 )
+shape = SubResource( 32 )
 
-[node name="Health Bar" parent="." index="7" instance=ExtResource( 46 )]
+[node name="Health Bar" parent="." index="7" instance=ExtResource( 54 )]
 
 [connection signal="area_entered" from="Sprite/Animation/Wheel Chair/Body/Right Arm/Sword/AttackArea" to="Combo Handler" method="basic_attack_hit"]
 

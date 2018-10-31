@@ -244,13 +244,13 @@ func up_skill():
 
 		# Jump up and damage enemies with the pencil when the timer is on.
 		var jump_timer = cd_timer.new(UP_SKILL_DURATION, self, "up_skill_ended")
-		hero.register_timer("movement_skill", jump_timer)
+		hero.register_timer("interruptable_skill", jump_timer)
 	elif down_skill_can_resume:
 		# Resume from down skill.
 		resume_from_down_skill()
 
 func up_skill_ended():
-	hero.unregister_timer("movement_skill")
+	hero.unregister_timer("interruptable_skill")
 
 # Will be signalled by the hit box of up skill.
 func on_up_skill_hit(area):

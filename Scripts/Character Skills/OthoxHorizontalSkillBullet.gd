@@ -17,6 +17,8 @@ var knock_back_modifier
 var size
 var sequence
 
+var hit = false
+
 var textures = [
     preload("res://Graphics/Characters/Othox Codox/Letters/b.png"),
     preload("res://Graphics/Characters/Othox Codox/Letters/u.png"),
@@ -50,7 +52,7 @@ func _process(delta):
         queue_free()
 
 func on_enemy_hit(area):
-    if area.is_in_group("enemy"):
+    if !hit && area.is_in_group("enemy"):
         var enemy = area.get_node("../..")
         enemy.knocked_back(side * KNOCK_BACK_VEL_X * knock_back_modifier, -KNOCK_BACK_VEL_Y * knock_back_modifier, KNOCK_BACK_FADE_RATE * knock_back_modifier)
         enemy.damaged(int(rng.randi_range(DAMAGE_MIN, DAMAGE_MAX) * attack_modifier))
@@ -58,5 +60,6 @@ func on_enemy_hit(area):
         explode()
 
 func explode():
+    hit = true
     set_process(false)
     $AnimationPlayer.play("Explode")

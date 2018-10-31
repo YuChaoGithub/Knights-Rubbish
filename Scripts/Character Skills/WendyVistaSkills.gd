@@ -166,10 +166,10 @@ func up_skill():
         hero.jump_to_height(UP_SKILL_DISPLACEMENT)
 
         var jump_timer = cd_timer.new(UP_SKILL_DURATION, self, "up_skill_ended")
-        hero.register_timer("movement_skill", jump_timer)
+        hero.register_timer("interruptable_skill", jump_timer)
 
 func up_skill_ended():
-    hero.unregister_timer("movement_skill")
+    hero.unregister_timer("interruptable_skill")
 
 func on_up_skill_hit(area):
     if area.is_in_group("enemy"):

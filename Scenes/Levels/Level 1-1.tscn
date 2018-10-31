@@ -309,6 +309,7 @@ _sections_unfolded = [ "Cell", "Transform", "Visibility", "Z Index" ]
 
 [node name="BackgroundDeocrations" type="Node2D" parent="." index="3"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Visibility" ]
 
 [node name="1" type="Node2D" parent="BackgroundDeocrations" index="0"]
@@ -1784,6 +1785,7 @@ _sections_unfolded = [ "Cell", "Collision", "Visibility" ]
 
 [node name="Writings" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Jump" type="Node2D" parent="Writings" index="0"]
@@ -6335,6 +6337,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="PlatformDecorations" type="Node2D" parent="." index="6"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Ministry of Love" type="Node2D" parent="PlatformDecorations" index="0"]
@@ -7702,8 +7705,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
 
-editor/display_folded = true
-
 [node name="Pass Trigger 1" type="Position2D" parent="CameraChangingTriggers" index="0"]
 
 position = Vector2( 150, -150 )
@@ -7921,71 +7922,83 @@ position = Vector2( 23900, -400 )
 
 position = Vector2( 26600, -700 )
 
-[node name="Enemy Blocking Platform32" parent="OtherPlatforms" index="23" instance=ExtResource( 131 )]
+[node name="Enemy Blocking Platform41" parent="OtherPlatforms" index="23" instance=ExtResource( 131 )]
+
+position = Vector2( 26600, -800 )
+
+[node name="Enemy Blocking Platform42" parent="OtherPlatforms" index="24" instance=ExtResource( 131 )]
+
+position = Vector2( 26600, -900 )
+
+[node name="Enemy Blocking Platform43" parent="OtherPlatforms" index="25" instance=ExtResource( 131 )]
+
+position = Vector2( 26600, -1000 )
+
+[node name="Enemy Blocking Platform32" parent="OtherPlatforms" index="26" instance=ExtResource( 131 )]
 
 position = Vector2( 40000, -2150 )
 
-[node name="Enemy Blocking Platform33" parent="OtherPlatforms" index="24" instance=ExtResource( 131 )]
+[node name="Enemy Blocking Platform33" parent="OtherPlatforms" index="27" instance=ExtResource( 131 )]
 
 position = Vector2( 40000, -2250 )
 
-[node name="Enemy Blocking Platform34" parent="OtherPlatforms" index="25" instance=ExtResource( 131 )]
+[node name="Enemy Blocking Platform34" parent="OtherPlatforms" index="28" instance=ExtResource( 131 )]
 
 position = Vector2( 40000, -2350 )
 
-[node name="Enemy Blocking Platform35" parent="OtherPlatforms" index="26" instance=ExtResource( 131 )]
+[node name="Enemy Blocking Platform35" parent="OtherPlatforms" index="29" instance=ExtResource( 131 )]
 
 position = Vector2( 40000, -2450 )
 
-[node name="Enemy Blocking Platform36" parent="OtherPlatforms" index="27" instance=ExtResource( 131 )]
+[node name="Enemy Blocking Platform36" parent="OtherPlatforms" index="30" instance=ExtResource( 131 )]
 
 position = Vector2( 39400, -2150 )
 
-[node name="Enemy Blocking Platform37" parent="OtherPlatforms" index="28" instance=ExtResource( 131 )]
+[node name="Enemy Blocking Platform37" parent="OtherPlatforms" index="31" instance=ExtResource( 131 )]
 
 position = Vector2( 39400, -2250 )
 
-[node name="Enemy Blocking Platform38" parent="OtherPlatforms" index="29" instance=ExtResource( 131 )]
+[node name="Enemy Blocking Platform38" parent="OtherPlatforms" index="32" instance=ExtResource( 131 )]
 
 position = Vector2( 39400, -2350 )
 
-[node name="Enemy Blocking Platform39" parent="OtherPlatforms" index="30" instance=ExtResource( 131 )]
+[node name="Enemy Blocking Platform39" parent="OtherPlatforms" index="33" instance=ExtResource( 131 )]
 
 position = Vector2( 39400, -2450 )
 
-[node name="Enemy Blocking Platform40" parent="OtherPlatforms" index="31" instance=ExtResource( 131 )]
+[node name="Enemy Blocking Platform40" parent="OtherPlatforms" index="34" instance=ExtResource( 131 )]
 
 position = Vector2( 28750, -700 )
 
-[node name="Enemy Blocking Platform24" parent="OtherPlatforms" index="32" instance=ExtResource( 131 )]
+[node name="Enemy Blocking Platform24" parent="OtherPlatforms" index="35" instance=ExtResource( 131 )]
 
 position = Vector2( 30300, -800 )
 
-[node name="Enemy Blocking Platform25" parent="OtherPlatforms" index="33" instance=ExtResource( 131 )]
+[node name="Enemy Blocking Platform25" parent="OtherPlatforms" index="36" instance=ExtResource( 131 )]
 
 position = Vector2( 30300, -900 )
 
-[node name="Enemy Blocking Platform26" parent="OtherPlatforms" index="34" instance=ExtResource( 131 )]
+[node name="Enemy Blocking Platform26" parent="OtherPlatforms" index="37" instance=ExtResource( 131 )]
 
 position = Vector2( 30300, -1000 )
 
-[node name="Enemy Blocking Platform27" parent="OtherPlatforms" index="35" instance=ExtResource( 131 )]
+[node name="Enemy Blocking Platform27" parent="OtherPlatforms" index="38" instance=ExtResource( 131 )]
 
 position = Vector2( 30300, -1100 )
 
-[node name="Enemy Blocking Platform28" parent="OtherPlatforms" index="36" instance=ExtResource( 131 )]
+[node name="Enemy Blocking Platform28" parent="OtherPlatforms" index="39" instance=ExtResource( 131 )]
 
 position = Vector2( 33750, -1000 )
 
-[node name="Enemy Blocking Platform29" parent="OtherPlatforms" index="37" instance=ExtResource( 131 )]
+[node name="Enemy Blocking Platform29" parent="OtherPlatforms" index="40" instance=ExtResource( 131 )]
 
 position = Vector2( 33750, -1100 )
 
-[node name="Enemy Blocking Platform30" parent="OtherPlatforms" index="38" instance=ExtResource( 131 )]
+[node name="Enemy Blocking Platform30" parent="OtherPlatforms" index="41" instance=ExtResource( 131 )]
 
 position = Vector2( 33750, -1200 )
 
-[node name="Enemy Blocking Platform31" parent="OtherPlatforms" index="39" instance=ExtResource( 131 )]
+[node name="Enemy Blocking Platform31" parent="OtherPlatforms" index="42" instance=ExtResource( 131 )]
 
 position = Vector2( 33750, -1300 )
 
@@ -8023,8 +8036,6 @@ counter_for_spawned_mobs = NodePath("../../CameraChangingTriggers/Fort Defeated 
 enter_scene_path = "res://Scenes/Levels/Level 1-2.tscn"
 
 [node name="Enemies" type="Node2D" parent="." index="11"]
-
-editor/display_folded = true
 
 [node name="CD Punch" parent="Enemies" index="0" instance=ExtResource( 135 )]
 
@@ -8085,7 +8096,7 @@ activate_range_x = 1850
 
 [node name="Floopy" parent="Enemies" index="9" instance=ExtResource( 137 )]
 
-position = Vector2( 30900, -651.967 )
+position = Vector2( 33240, -950 )
 activate_range_x = 1850
 
 [node name="Batterio" parent="Enemies" index="10" instance=ExtResource( 138 )]
@@ -8400,7 +8411,7 @@ texture = ExtResource( 116 )
 
 [node name="Position2D" type="Position2D" parent="." index="14"]
 
-position = Vector2( 17050, -450 )
+position = Vector2( 29400, -450 )
 scale = Vector2( 10, 10 )
 _sections_unfolded = [ "Transform" ]
 
@@ -8412,13 +8423,13 @@ _sections_unfolded = [ "Transform" ]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_top_margin" binds= [ -0.1 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_bottom_limit" binds= [ -50 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_bottom_margin" binds= [ 1.1 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_left_limit" binds= [ 50 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_right_limit" binds= [ 3950 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_left_limit" binds= [ 50 ]]
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_bottom_limit" binds= [ -50 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 7" to="FollowingCamera" method="update_right_limit" binds= [ 100000000 ]]
 
@@ -8428,17 +8439,17 @@ _sections_unfolded = [ "Transform" ]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 2" to="FollowingCamera" method="update_left_margin" binds= [ 0.2 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 2" to="FollowingCamera" method="update_right_limit" binds= [ 10200 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 2" to="FollowingCamera" method="update_left_limit" binds= [ 7250 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 2" to="FollowingCamera" method="update_right_limit" binds= [ 10200 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 3" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 3" to="FollowingCamera" method="update_left_margin" binds= [ 0.2 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 3" to="FollowingCamera" method="update_right_limit" binds= [ 13550 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 3" to="FollowingCamera" method="update_left_limit" binds= [ 9950 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 3" to="FollowingCamera" method="update_right_limit" binds= [ 13550 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Count Trigger 1" to="FollowingCamera" method="update_right_margin" binds= [ 0.3 ]]
 
@@ -8448,9 +8459,9 @@ _sections_unfolded = [ "Transform" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.2 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger" to="FollowingCamera" method="update_right_limit" binds= [ 18650 ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger" to="FollowingCamera" method="update_left_limit" binds= [ 14350 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger" to="FollowingCamera" method="update_right_limit" binds= [ 18650 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger2" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
@@ -8460,9 +8471,9 @@ _sections_unfolded = [ "Transform" ]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 4" to="FollowingCamera" method="update_left_margin" binds= [ 0.25 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 4" to="FollowingCamera" method="update_right_limit" binds= [ 23500 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 4" to="FollowingCamera" method="update_left_limit" binds= [ 20200 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 4" to="FollowingCamera" method="update_right_limit" binds= [ 23500 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Count Trigger 3" to="FollowingCamera" method="update_right_margin" binds= [ 0.3 ]]
 
@@ -8472,19 +8483,19 @@ _sections_unfolded = [ "Transform" ]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 5" to="Enemies/CD Punch Spawner3" method="spawn_mob"]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 5" to="FollowingCamera" method="update_bottom_limit" binds= [ -450 ]]
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 5" to="Structures/Floopy Tower" method="activate"]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 5" to="FollowingCamera" method="update_right_limit" binds= [ 29400 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 5" to="Structures/Floopy Tower" method="activate"]
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 5" to="FollowingCamera" method="update_bottom_limit" binds= [ -450 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Fort Defeated Count Trigger" to="FollowingCamera" method="update_right_limit" binds= [ 1000000000 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Floopy Pass Trigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.2 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Floopy Pass Trigger" to="FollowingCamera" method="update_right_limit" binds= [ 33750 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/Floopy Pass Trigger" to="FollowingCamera" method="update_left_limit" binds= [ 30250 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/Floopy Pass Trigger" to="FollowingCamera" method="update_right_limit" binds= [ 33750 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Counter Trigger 5" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
@@ -8520,9 +8531,9 @@ _sections_unfolded = [ "Transform" ]
 
 [connection signal="defeated" from="Enemies/Mouse4" to="CameraChangingTriggers/Fort Defeated Count Trigger" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Floopy" to="Enemies/Floopy Spawner2" method="spawn_mob"]
-
 [connection signal="defeated" from="Enemies/Floopy" to="Enemies/Floopy Spawner1" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Floopy" to="Enemies/Floopy Spawner2" method="spawn_mob"]
 
 [connection signal="defeated" from="Enemies/Mouse5" to="CameraChangingTriggers/Mouse Defeated Count Trigger2" method="increment_count"]
 

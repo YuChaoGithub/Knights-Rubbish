@@ -49,6 +49,8 @@ var attack_modifier
 var knock_back_modifier
 var size
 
+var hit = false
+
 var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 
 onready var movement_pattern = preload("res://Scripts/Movements/StraightLineMovement.gd").new(side * SPEED_X, 0)
@@ -96,7 +98,7 @@ func _process(delta):
 	 	queue_free()
 
 func on_enemy_hit(area):
-	if area.is_in_group("enemy"):
+	if !hit && area.is_in_group("enemy"):
 		var enemy = area.get_node("../..")
 
 		match type:
@@ -112,4 +114,5 @@ func on_enemy_hit(area):
 		explode()
 
 func explode():
+	hit = true
 	$AnimationPlayer.play("Explode")

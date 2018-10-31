@@ -1,0 +1,16 @@
+const name = "Sirurueruerue Senyesuensuesue & Sugsesugsem Sosas"
+const id = 4
+const avatar = preload("res://Graphics/UI/Avatar/BroSS.png")
+const points = ["Versatile", "Less Damage", "Seeing Triples?"]
+const full_health = 250
+const ghost_health = 550
+const movement_speed = 400.0
+const jump_height = 300.0
+const time_to_jump_to_highest = 0.4
+const hurt_modulate_color = Color(1.0, 130.0 / 255.0, 130.0 / 255.0)
+const hurt_modulate_node_path  = ["Sprite/Animation/Sir/Body", "Sprite/Animation/Sug/Body"]
+const ult_eyes_node_path = "Sprite/Animation/UltEyes"
+const eyes_node_path = ["Sprite/Animation/Sug/Body/Face/Glasses", "Sprite/Animation/Sir/Body/Face/Left Eye", "Sprite/Animation/Sir/Body/Face/Right Eye"]
+const fire_particle_node_path = "Sprite/Animation/Fire Particle"
+const default_animator_path = "SugAnimator"
+const drink_sprite_path = "Sprite/Animation/Drink"

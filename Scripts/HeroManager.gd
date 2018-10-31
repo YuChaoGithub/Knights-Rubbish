@@ -9,7 +9,7 @@ var hero_scenes = [
 	preload("res://Scenes/Characters/Wendy Vista/Wendy Vista.tscn"),
 	preload("res://Scenes/Characters/Ranawato Plato/Ranawato Plato.tscn"),
 	preload("res://Scenes/Characters/Othox Codox/Othox Codox.tscn"),
-	preload("res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn"),
+	preload("res://Scenes/Characters/Bro SS/Bro SS.tscn"),
 	preload("res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn"),
 	preload("res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn"),
 	preload("res://Scenes/Characters/Keshia Erasia/Keshia Erasia.tscn"),
