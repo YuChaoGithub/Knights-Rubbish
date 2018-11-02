@@ -964,11 +964,11 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="Writings/Go4" method="activate"]
 
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="Writings/Go5" method="activate"]
+
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="FollowingCamera" method="update_right_limit" binds= [ 24750 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="FollowingCamera" method="update_top_limit" binds= [ -6350 ]]
-
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="Writings/Go5" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="Writings/Go6" method="activate"]
 

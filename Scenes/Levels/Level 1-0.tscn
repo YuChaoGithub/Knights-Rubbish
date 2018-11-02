@@ -14,8 +14,8 @@
 [ext_resource path="res://Graphics/UI/Avatar/Godotbos.png" type="Texture" id=12]
 [ext_resource path="res://Graphics/UI/Avatar/Eyemac.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Power Ups/Ult Stone.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Enemies/Computer Room/CD Punch.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Floopy.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Calcasio.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Enemies/Computer Room/CD Punch.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/UI/HeroPickerButton.tscn" type="PackedScene" id=18]
 
@@ -253,29 +253,27 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="PlatformDecorations" type="Node2D" parent="." index="7"]
 
+editor/display_folded = true
+
 [node name="Ult Stone" parent="PlatformDecorations" index="0" instance=ExtResource( 14 )]
 
 position = Vector2( 2200, -500 )
 
-[node name="CD Punch" parent="PlatformDecorations" index="1" instance=ExtResource( 15 )]
+[node name="Calcasio" parent="PlatformDecorations" index="1" instance=ExtResource( 15 )]
 
-position = Vector2( 1400, -300 )
+position = Vector2( 1350, -450 )
 
-[node name="CD Punch2" parent="PlatformDecorations" index="2" instance=ExtResource( 15 )]
+[node name="CD Punch" parent="PlatformDecorations" index="2" instance=ExtResource( 16 )]
 
-position = Vector2( 1800, -500 )
+position = Vector2( 1150, -300 )
 
-[node name="CD Punch3" parent="PlatformDecorations" index="3" instance=ExtResource( 15 )]
+[node name="CD Punch2" parent="PlatformDecorations" index="3" instance=ExtResource( 16 )]
 
-position = Vector2( 1050, -350 )
+position = Vector2( 800, -350 )
 
-[node name="CD Punch4" parent="PlatformDecorations" index="4" instance=ExtResource( 15 )]
+[node name="CD Punch3" parent="PlatformDecorations" index="4" instance=ExtResource( 16 )]
 
-position = Vector2( 1400, -500 )
-
-[node name="Floopy" parent="PlatformDecorations" index="5" instance=ExtResource( 16 )]
-
-position = Vector2( 2150, -350 )
+position = Vector2( 1700, -450 )
 
 [node name="ForegroundDecorations" type="Node2D" parent="." index="8"]
 

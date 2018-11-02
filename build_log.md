@@ -1040,7 +1040,12 @@ Comment: What a day. Tired.
 * Completed all of Othox's Skills.
 * Completed Drink, Die, Size Change animations of Bro SS.
 
+[2018.11.02]
+* Completed Basic Attack, Basic Skill, Down Skill of Bro SS.
+
 [Next]
+* Animation Ult Eyes in BroSS attacks.
+* Add white/black outlines for BroSS.
 * Implement characters: Bro SS. (Est. Before Nov. 5th)
 * Add ? character figure in hero changing scene.
 * Redesign Menu Scene.
