@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Scripts/UI/HeroChoosingScene.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/UI/Wooden Background.png" type="Texture" id=2]
@@ -9,22 +9,27 @@
 [ext_resource path="res://Graphics/UI/Avatar/Ranawato Plato.png" type="Texture" id=7]
 [ext_resource path="res://Graphics/UI/Avatar/OthoxCodox.png" type="Texture" id=8]
 [ext_resource path="res://Graphics/UI/Avatar/BroSS.png" type="Texture" id=9]
-[ext_resource path="res://Graphics/UI/Square Box.png" type="Texture" id=10]
-[ext_resource path="res://Graphics/UI/Check.png" type="Texture" id=11]
-[ext_resource path="res://Scripts/UI/HeroChoosingBox.gd" type="Script" id=12]
-[ext_resource path="res://Graphics/UI/Bottom Scrap 1.png" type="Texture" id=13]
-[ext_resource path="res://Graphics/UI/Thin Long Frame.png" type="Texture" id=14]
-[ext_resource path="res://Fonts/Grafipaint.tres" type="DynamicFont" id=15]
-[ext_resource path="res://Audio/paper_flip_01.wav" type="AudioStream" id=16]
-[ext_resource path="res://Graphics/UI/Bottom Scrap 2.png" type="Texture" id=17]
-[ext_resource path="res://Graphics/UI/Little Scrap.png" type="Texture" id=18]
-[ext_resource path="res://Graphics/UI/White Circular Frame.png" type="Texture" id=19]
-[ext_resource path="res://Scripts/UI/ButtonModulator.gd" type="Script" id=20]
-[ext_resource path="res://Graphics/UI/White Arrow.png" type="Texture" id=21]
-[ext_resource path="res://Graphics/UI/Cog.png" type="Texture" id=22]
-[ext_resource path="res://Audio/paper_flip_03.wav" type="AudioStream" id=23]
-[ext_resource path="res://Audio/paper_flip_05.wav" type="AudioStream" id=24]
-[ext_resource path="res://Audio/paper_flip_04.wav" type="AudioStream" id=25]
+[ext_resource path="res://Graphics/UI/Avatar/Sock.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/UI/Avatar/GladeosCakeos.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/UI/Avatar/WaitieChangie.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/UI/Avatar/GuanXi.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/UI/Avatar/LumieCandie.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/UI/Square Box.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/UI/Check.png" type="Texture" id=16]
+[ext_resource path="res://Scripts/UI/HeroChoosingBox.gd" type="Script" id=17]
+[ext_resource path="res://Graphics/UI/Bottom Scrap 1.png" type="Texture" id=18]
+[ext_resource path="res://Graphics/UI/Thin Long Frame.png" type="Texture" id=19]
+[ext_resource path="res://Fonts/Grafipaint.tres" type="DynamicFont" id=20]
+[ext_resource path="res://Audio/paper_flip_01.wav" type="AudioStream" id=21]
+[ext_resource path="res://Graphics/UI/Bottom Scrap 2.png" type="Texture" id=22]
+[ext_resource path="res://Graphics/UI/Little Scrap.png" type="Texture" id=23]
+[ext_resource path="res://Graphics/UI/White Circular Frame.png" type="Texture" id=24]
+[ext_resource path="res://Scripts/UI/ButtonModulator.gd" type="Script" id=25]
+[ext_resource path="res://Graphics/UI/White Arrow.png" type="Texture" id=26]
+[ext_resource path="res://Graphics/UI/Cog.png" type="Texture" id=27]
+[ext_resource path="res://Audio/paper_flip_03.wav" type="AudioStream" id=28]
+[ext_resource path="res://Audio/paper_flip_05.wav" type="AudioStream" id=29]
+[ext_resource path="res://Audio/paper_flip_04.wav" type="AudioStream" id=30]
 
 [sub_resource type="Animation" id=1]
 
@@ -621,11 +626,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 22.0
-margin_top = -500.0
-margin_right = 1383.0
-margin_bottom = 8.0
-rect_rotation = -17.1274
+margin_left = 136.0
+margin_top = -5.0
+margin_right = 1497.0
+margin_bottom = 503.0
 rect_scale = Vector2( 0.8, 0.8 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -872,7 +876,6 @@ _sections_unfolded = [ "Anchor", "Rect" ]
 
 [node name="6" type="Control" parent="HeroBox/HeroIcons" index="5"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -890,6 +893,7 @@ size_flags_vertical = 1
 
 [node name="Icon" type="TextureRect" parent="HeroBox/HeroIcons/6" index="0"]
 
+modulate = Color( 1, 1, 1, 0.392157 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -905,13 +909,38 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 5 )
+texture = ExtResource( 10 )
 stretch_mode = 0
-_sections_unfolded = [ "Anchor", "Rect" ]
+_sections_unfolded = [ "Anchor", "Rect", "Visibility" ]
+
+[node name="Label" type="Label" parent="HeroBox/HeroIcons/6" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -59.0
+margin_top = -34.0
+margin_right = 59.0
+margin_bottom = 39.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "coming
+soon"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="7" type="Control" parent="HeroBox/HeroIcons" index="6"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -929,6 +958,7 @@ size_flags_vertical = 1
 
 [node name="Icon" type="TextureRect" parent="HeroBox/HeroIcons/7" index="0"]
 
+self_modulate = Color( 1, 1, 1, 0.392157 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -944,13 +974,38 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 5 )
+texture = ExtResource( 11 )
 stretch_mode = 0
-_sections_unfolded = [ "Anchor", "Rect" ]
+_sections_unfolded = [ "Anchor", "Rect", "Visibility" ]
+
+[node name="Label" type="Label" parent="HeroBox/HeroIcons/7" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -52.0
+margin_top = -35.0
+margin_right = 66.0
+margin_bottom = 38.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "coming
+soon"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="8" type="Control" parent="HeroBox/HeroIcons" index="7"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -968,6 +1023,7 @@ size_flags_vertical = 1
 
 [node name="Icon" type="TextureRect" parent="HeroBox/HeroIcons/8" index="0"]
 
+modulate = Color( 1, 1, 1, 0.392157 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -983,13 +1039,38 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 5 )
+texture = ExtResource( 12 )
 stretch_mode = 0
-_sections_unfolded = [ "Anchor", "Rect" ]
+_sections_unfolded = [ "Anchor", "Rect", "Visibility" ]
+
+[node name="Label" type="Label" parent="HeroBox/HeroIcons/8" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -45.0
+margin_top = -35.0
+margin_right = 73.0
+margin_bottom = 38.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "coming
+soon"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="9" type="Control" parent="HeroBox/HeroIcons" index="8"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1007,6 +1088,7 @@ size_flags_vertical = 1
 
 [node name="Icon" type="TextureRect" parent="HeroBox/HeroIcons/9" index="0"]
 
+modulate = Color( 1, 1, 1, 0.392157 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1022,13 +1104,38 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 5 )
+texture = ExtResource( 13 )
 stretch_mode = 0
-_sections_unfolded = [ "Anchor", "Rect" ]
+_sections_unfolded = [ "Anchor", "Rect", "Visibility" ]
+
+[node name="Label" type="Label" parent="HeroBox/HeroIcons/9" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -51.0
+margin_top = -35.0
+margin_right = 67.0
+margin_bottom = 38.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "coming
+soon"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="10" type="Control" parent="HeroBox/HeroIcons" index="9"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1046,6 +1153,7 @@ size_flags_vertical = 1
 
 [node name="Icon" type="TextureRect" parent="HeroBox/HeroIcons/10" index="0"]
 
+modulate = Color( 1, 1, 1, 0.392157 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1061,9 +1169,35 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 5 )
+texture = ExtResource( 14 )
 stretch_mode = 0
-_sections_unfolded = [ "Anchor", "Rect" ]
+_sections_unfolded = [ "Anchor", "Rect", "Visibility" ]
+
+[node name="Label" type="Label" parent="HeroBox/HeroIcons/10" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -51.0
+margin_top = -35.0
+margin_right = 67.0
+margin_bottom = 38.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "coming
+soon"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts" ]
 
 [node name="BoxP2" type="Control" parent="HeroBox/HeroIcons" index="10"]
 
@@ -1102,7 +1236,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 15 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1149,7 +1283,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 11 )
+texture = ExtResource( 16 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1190,7 +1324,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 15 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1237,7 +1371,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 11 )
+texture = ExtResource( 16 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1249,9 +1383,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 11.0
-margin_top = 718.0
+margin_top = 404.0
 margin_right = 819.0
-margin_bottom = 1426.0
+margin_bottom = 1115.0
 rect_scale = Vector2( 0.78, 0.78 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1259,7 +1393,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 12 )
+script = ExtResource( 17 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="Paper" type="TextureRect" parent="SelectionBoxP1" index="0"]
@@ -1278,7 +1412,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 13 )
+texture = ExtResource( 18 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1450,7 +1584,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 11 )
+texture = ExtResource( 16 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect", "Visibility" ]
 
@@ -1488,7 +1622,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 14 )
+texture = ExtResource( 19 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1509,7 +1643,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 15 )
+custom_fonts/font = ExtResource( 20 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Press           key to select."
 percent_visible = 1.0
@@ -1557,7 +1691,7 @@ blend_times = [  ]
 
 [node name="LockAudioPlayer" type="AudioStreamPlayer" parent="SelectionBoxP1/AnimationPlayer" index="0"]
 
-stream = ExtResource( 16 )
+stream = ExtResource( 21 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1572,9 +1706,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 643.0
-margin_top = 723.0
+margin_top = 406.0
 margin_right = 1451.0
-margin_bottom = 1135.0
+margin_bottom = 818.0
 rect_scale = Vector2( 0.78, 0.78 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1582,7 +1716,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 12 )
+script = ExtResource( 17 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="Paper" type="TextureRect" parent="SelectionBoxP2" index="0"]
@@ -1601,7 +1735,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 17 )
+texture = ExtResource( 22 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1773,7 +1907,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 11 )
+texture = ExtResource( 16 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect", "Visibility" ]
 
@@ -1811,7 +1945,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 14 )
+texture = ExtResource( 19 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1832,7 +1966,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 15 )
+custom_fonts/font = ExtResource( 20 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Press           key to select."
 percent_visible = 1.0
@@ -1880,7 +2014,7 @@ blend_times = [  ]
 
 [node name="LockAudioPlayer" type="AudioStreamPlayer" parent="SelectionBoxP2/AnimationPlayer" index="0"]
 
-stream = ExtResource( 16 )
+stream = ExtResource( 21 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -1895,10 +2029,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 337.0
-margin_top = 723.0
-margin_right = 1145.0
-margin_bottom = 1431.0
+margin_left = 323.0
+margin_top = 405.0
+margin_right = 1131.0
+margin_bottom = 1116.0
 rect_scale = Vector2( 0.78, 0.78 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1906,7 +2040,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-script = ExtResource( 12 )
+script = ExtResource( 17 )
 _sections_unfolded = [ "Rect" ]
 
 [node name="Paper" type="TextureRect" parent="SelectionBoxSinglePlayer" index="0"]
@@ -1924,7 +2058,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 13 )
+texture = ExtResource( 18 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -2071,7 +2205,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 11 )
+texture = ExtResource( 16 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect", "Visibility" ]
 
@@ -2109,7 +2243,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 14 )
+texture = ExtResource( 19 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -2130,7 +2264,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 15 )
+custom_fonts/font = ExtResource( 20 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Press           key to select."
 percent_visible = 1.0
@@ -2177,7 +2311,7 @@ blend_times = [  ]
 
 [node name="LockAudioPlayer" type="AudioStreamPlayer" parent="SelectionBoxSinglePlayer/AnimationPlayer" index="0"]
 
-stream = ExtResource( 16 )
+stream = ExtResource( 21 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
@@ -2191,9 +2325,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -259.0
+margin_left = -108.0
 margin_top = 19.0
-margin_right = 241.0
+margin_right = 392.0
 margin_bottom = 358.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -2201,7 +2335,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 18 )
+texture = ExtResource( 23 )
 stretch_mode = 0
 _sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect" ]
 
@@ -2229,8 +2363,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 19 )
-script = ExtResource( 20 )
+texture_normal = ExtResource( 24 )
+script = ExtResource( 25 )
 _sections_unfolded = [ "Rect", "Visibility" ]
 hover_color = Color( 0.902344, 0.199851, 0.084898, 1 )
 press_color = Color( 0.746094, 0, 0, 1 )
@@ -2252,7 +2386,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 21 )
+texture = ExtResource( 26 )
 stretch_mode = 0
 _sections_unfolded = [ "Mouse" ]
 
@@ -2263,9 +2397,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -264.0
+margin_left = -110.0
 margin_top = 164.0
-margin_right = 237.0
+margin_right = 391.0
 margin_bottom = 503.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -2273,7 +2407,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 18 )
+texture = ExtResource( 23 )
 stretch_mode = 0
 _sections_unfolded = [ "Focus", "Hint", "Mouse", "Rect" ]
 
@@ -2300,8 +2434,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 22 )
-script = ExtResource( 20 )
+texture_normal = ExtResource( 27 )
+script = ExtResource( 25 )
 _sections_unfolded = [ "Rect", "Textures", "Visibility" ]
 hover_color = Color( 0.359375, 0.359375, 0.359375, 1 )
 press_color = Color( 0.226562, 0.226562, 0.226562, 1 )
@@ -2320,7 +2454,7 @@ blend_times = [  ]
 
 [node name="AnimationAudioPlayer1" type="AudioStreamPlayer" parent="AnimationPlayer" index="0"]
 
-stream = ExtResource( 23 )
+stream = ExtResource( 28 )
 volume_db = -5.0
 pitch_scale = 1.0
 autoplay = false
@@ -2329,7 +2463,7 @@ bus = "Master"
 
 [node name="AnimationAudioPlayer2" type="AudioStreamPlayer" parent="AnimationPlayer" index="1"]
 
-stream = ExtResource( 24 )
+stream = ExtResource( 29 )
 volume_db = -5.0
 pitch_scale = 1.0
 autoplay = false
@@ -2338,7 +2472,7 @@ bus = "Master"
 
 [node name="AnimationAudioPlayer3" type="AudioStreamPlayer" parent="AnimationPlayer" index="2"]
 
-stream = ExtResource( 25 )
+stream = ExtResource( 30 )
 volume_db = -5.0
 pitch_scale = 1.0
 autoplay = false
@@ -2738,7 +2872,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0, 0, 0 )
 _sections_unfolded = [ "Mouse", "Rect" ]
 
 [connection signal="pressed" from="BackButtonPaper/BackButton" to="." method="back_button_pressed"]

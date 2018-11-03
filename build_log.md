@@ -1043,12 +1043,13 @@ Comment: What a day. Tired.
 [2018.11.02]
 * Completed Basic Attack, Basic Skill, Down Skill of Bro SS.
 
+[2018.11.03]
+* Completed all skills of Bro SS.
+* Added "Coming Soon" labels in Hero Choosing Scene.
+
 [Next]
-* Animation Ult Eyes in BroSS attacks.
-* Add white/black outlines for BroSS.
-* Implement characters: Bro SS. (Est. Before Nov. 5th)
-* Add ? character figure in hero changing scene.
-* Redesign Menu Scene.
+* Level walk through (1P / 2P).
+* Redesign Menu Scene. (Local PVP [Coming Soon])
 * Add keyboard configuration scene if it's the first time entering the game. (Data persistence)
 * Make Gifs of characters' attack, post it on the project site. (Including the unreleased characters).
 * Preview video.

@@ -3,7 +3,7 @@ extends Node2D
 # All brothers' information. (0: Sug, 1: Sir, 2. BigBro)
 const JUMP_HEIGHT = 300.0
 const MOVEMENT_SPEEDS = [350.0, 250.0, 450.0]
-const JUMP_TIMES = [0.4, 0.6, 0.8]
+const JUMP_TIMES = [0.5, 0.6, 0.7]
 const ANIMATORS = ["SugAnimator", "SirAnimator", "BigBrotherAnimator"]
 onready var char_nodes = [
     $"../Sprite/Animation/Sug",
@@ -19,7 +19,7 @@ const SIR_BASIC_ATTACK_THROW_TIME = 0.5
 const BASIC_ATTACK_COOLDOWN = 0.15
 const BASIC_ATTACK_DAMAGE_MIN = 40
 const BASIC_ATTACK_DAMAGE_MAX = 60
-const BASIC_ATTACK_STUN_DURATION = 0.5
+const BASIC_ATTACK_STUN_DURATION = 1.0
 const BASIC_ATTACK_KNOCK_BACK_VEL_X = 300
 const BASIC_ATTACK_KNOCK_BACK_VEL_Y = 50
 const BASIC_ATTACK_KNOCK_BACK_FADE_RATE = 600
@@ -44,6 +44,27 @@ const BASIC_SKILL_SPEED_RATE = 1.5
 
 var basic_skill_targets = []
 
+# Horizontal  Skill.
+const SUG_HORIZONTAL_SKILL_DURATION = 0.4
+const SUG_HORIZONTAL_DASH_TIME = 0.2
+const SUG_HORIZONTAL_SKILL_COOLDOWN = 0.15
+const HORIZONTAL_SKILL_DAMAGE_MIN = 40
+const HORIZONTAL_SKILL_DAMAGE_MAX = 50
+const SUG_HORIZONTAL_SKILL_DISPLACEMENT_VEL_X = 800
+const SUG_HORIZONTAL_SKILL_DISPLACEMENT_VEL_Y = 50
+const SUG_HORIZONTAL_SKILL_DISPLACEMENT_VEL_FADE_RATE = 1000
+const SUG_HORIZONTAL_SKILL_KNOCK_BACK_VEL_X = 600
+const SUG_HORIZONTAL_SKILL_KNOCK_BACK_VEL_Y = 50
+const SUG_HORIZONTAL_SKILL_KNOCK_BACK_FADE_RATE = 1000
+const SIR_HORIZONTAL_SKILL_DURATION = 1.0
+const SIR_HORIZONTAL_SKILL_COOLDOWN = 0.15
+const SIR_HORIZONTAL_SKILL_SHOOT_TIME = 0.6
+const SIR_HORIZONTAL_SKILL_DISPLACEMENT_VEL_X = 700
+const SIR_HORIZONTAL_SKILL_DISPLACEMENT_VEL_Y = 700
+const SIR_HORIZONTAL_SKILL_DISPLACEMENT_FADE_RATE = 1000
+
+var sir_horizontal_skill_bullet = preload("res://Scenes/Characters/Bro SS/SirHorizontalSkill.tscn")
+
 # Down Skill.
 const DOWN_SKILL_DURATION = 1.5
 const DOWN_SKILL_SHOW_OTHER_CHAR_TIME = 1.1
@@ -51,6 +72,43 @@ const DOWN_SKILL_COOLDOWN = 0.3
 
 var down_skill_show_timer
 var transform_timer
+
+# Up Skill.
+const UP_SKILL_DURATION = 0.7
+const UP_SKILL_COOLDOWN = 0.2
+const UP_SKILL_DISPLACEMENT = 150
+const UP_SKILL_DAMAGE_MIN = 15
+const UP_SKILL_DAMAGE_MAX = 30
+const UP_SKILL_KNOCK_BACK_VEL_X = 300
+const UP_SKILL_KNOCK_BACK_VEL_Y = 250
+const UP_SKILL_KNOCK_BACK_FADE_RATE = 300
+const UP_SKILL_LANDING_DETECTION_DELAY_IN_MSEC = 250
+
+onready var up_skill_particles_spawn_pos = $"../Sprite/Animation/UpSkillParticlesSpawnPos"
+onready var up_skill_puff_spawn_pos = $"../Sprite/UpSkillPuffSpawnPos"
+var up_skill_puff = preload("res://Scenes/Particles/UpSkillPuffParticles.tscn")
+
+var up_skill_available = true
+var up_skill_available_timer = null
+var up_skill_timestamp = 0
+
+# Ult.
+const ULT_TRANSFORM_DURATION = 1.5
+const ULT_BIG_BRO_APPEAR_TIME = 1.3
+const ULT_DURATION = 12.0
+const END_ULT_DURATION = 1.5
+const ULT_DAMAGE_MIN = 250
+const ULT_DAMAGE_MAX = 500
+const ULT_KNOCK_BACK_VEL_X = 600
+const ULT_KNOCK_BACK_VEL_Y = 50
+const ULT_KNOCK_BACK_FADE_RATE = 1000
+
+var ult_start_explosion_particles = preload("res://Scenes/Particles/BroSSUltStartExplosion.tscn")
+var ult_explosion_particles = preload("res://Scenes/Particles/BroSSUltExplosion.tscn")
+
+var ult_show_big_bro_timer
+var ult_timer
+var char_before_ult
 
 onready var hero = get_node("..")
 onready var spawn_node = get_node("../..")
@@ -60,18 +118,29 @@ var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 
 func _ready():
     configure_char_visibility()
+    hero.connect("did_jump", self, "reset_up_skill_available")
 
 func configure_char_visibility():
     for index in range(char_nodes.size()):
         char_nodes[index].visible = (true if index == curr_char else false)
 
 func _process(delta):
-    pass
+    if hero.is_on_floor():
+        if !up_skill_available && OS.get_ticks_msec() - up_skill_timestamp > UP_SKILL_LANDING_DETECTION_DELAY_IN_MSEC && up_skill_available_timer == null:
+            up_skill_available_timer = cd_timer.new(UP_SKILL_COOLDOWN, self, "reset_up_skill_available")
 
+func reset_up_skill_available():
+    up_skill_available = true
+
+    if up_skill_available_timer != null:
+        up_skill_available_timer.destroy_timer()
+        up_skill_available_timer = null
+
+# Basic Attack:
 # Sug: Wields Sir, dealing damage, stunning enemies.
 # Sir: Throws Sug, dealing damage.
 func basic_attack():
-    if hero.status.can_move && hero.status.can_cast_skill:
+    if curr_char != BRO && hero.status.can_move && hero.status.can_cast_skill:
         hero.play_animation("Basic Attack")
 
         hero.set_status("animate_movement", false, BASIC_ATTACK_DURATION)
@@ -105,10 +174,11 @@ func sir_basic_attack_shoots():
 
     hero.unregister_timer("interruptable_skill")
 
+# Basic Skill:
 # Sug: Play music, deal damage and slow surrounding enemies.
 # Sir: Play music, heal and speed up surrounding heroes.
 func basic_skill():
-    if hero.status.can_move && hero.status.can_cast_skill:
+    if curr_char != BRO && hero.status.can_move && hero.status.can_cast_skill:
         hero.play_animation("Basic Skill")
 
         hero.set_status("animate_movement", false, BASIC_SKILL_DURATION)
@@ -145,15 +215,91 @@ func sir_basic_skill_hit(area):
 
         target_hero.healed(rng.randi_range(BASIC_SKILL_HEAL_MIN, BASIC_SKILL_HEAL_MAX))
 
+# Horizontal Skill:
+# Sug: Dash forward and attack.
+# Sir: Shoot and hop backwards.
 func horizontal_skill(side):
-    pass
+    if curr_char != BRO && hero.status.can_move && hero.status.can_cast_skill:
+        hero.change_sprite_facing(side)
 
+        hero.play_animation("Horizontal Skill")
+
+        if curr_char == SUG:
+            hero.set_status("animate_movement", false, SUG_HORIZONTAL_SKILL_DURATION)
+            hero.set_status("can_move", false, SUG_HORIZONTAL_SKILL_DURATION)
+            hero.set_status("can_cast_skill", false, SUG_HORIZONTAL_SKILL_DURATION + SUG_HORIZONTAL_SKILL_COOLDOWN)
+
+            var attack_timer = cd_timer.new(SUG_HORIZONTAL_DASH_TIME, self, "sug_horizontal_skill_dashes", side)
+            hero.register_timer("interruptable_skill", attack_timer)
+        else:
+            hero.set_status("animate_movement", false, SIR_HORIZONTAL_SKILL_DURATION)
+            hero.set_status("can_move", false, SIR_HORIZONTAL_SKILL_DURATION)
+            hero.set_status("can_cast_skill", false, SIR_HORIZONTAL_SKILL_DURATION + SIR_HORIZONTAL_SKILL_COOLDOWN)
+
+            var shoot_timer = cd_timer.new(SIR_HORIZONTAL_SKILL_SHOOT_TIME, self, "sir_horizontal_skill_shoots", side)
+            hero.register_timer("interruptable_skill", shoot_timer)
+
+func sug_horizontal_skill_dashes(side):
+    hero.knocked_back(side * SUG_HORIZONTAL_SKILL_DISPLACEMENT_VEL_X, -SUG_HORIZONTAL_SKILL_DISPLACEMENT_VEL_Y, SUG_HORIZONTAL_SKILL_DISPLACEMENT_VEL_FADE_RATE)
+    hero.unregister_timer("interruptable_skill")
+
+func sug_horizontal_skill_hit(area):
+    if area.is_in_group("enemy"):
+        var p = sug_basic_attack_particles.instance()
+        spawn_node.add_child(p)
+        p.global_position = sug_basic_attack_particles_spawn_pos.global_position
+
+        var enemy = area.get_node("../..")
+        enemy.knocked_back(sign(enemy.global_position.x - self.global_position.x) * SUG_HORIZONTAL_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -SUG_HORIZONTAL_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, SUG_HORIZONTAL_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
+        enemy.damaged(int(rng.randf_range(HORIZONTAL_SKILL_DAMAGE_MIN, HORIZONTAL_SKILL_DAMAGE_MAX) * hero.attack_modifier))
+
+func sir_horizontal_skill_shoots(side):
+    var bullet = sir_horizontal_skill_bullet.instance()
+    bullet.initialize(side, hero.attack_modifier, hero.enemy_knock_back_modifier, hero.size)
+    spawn_node.add_child(bullet)
+    bullet.global_position = sir_basic_attack_spawn_pos.global_position
+
+    hero.knocked_back(-side * SIR_HORIZONTAL_SKILL_DISPLACEMENT_VEL_X, -SIR_HORIZONTAL_SKILL_DISPLACEMENT_VEL_Y, SIR_HORIZONTAL_SKILL_DISPLACEMENT_FADE_RATE)
+    hero.unregister_timer("interruptable_skill")
+
+# Up Skill: Jump and deal damage upwards.
 func up_skill():
-    pass
+    if up_skill_available && hero.status.can_move && hero.status.can_cast_skill:
+        hero.play_animation("Up Skill")
+
+        if !hero.is_on_floor():
+            var p = up_skill_puff.instance()
+            spawn_node.add_child(p)
+            p.global_position = up_skill_puff_spawn_pos.global_position
+
+        up_skill_available = false
+        up_skill_timestamp = OS.get_ticks_msec()
+
+        hero.set_status("can_jump", false, UP_SKILL_DURATION)
+        hero.set_status("can_cast_skill", false, UP_SKILL_DURATION)
+        hero.set_status("animate_movement", false, UP_SKILL_DURATION)
+
+        hero.jump_to_height(UP_SKILL_DISPLACEMENT)
+
+        var jump_timer = cd_timer.new(UP_SKILL_DURATION, self, "up_skill_ended")
+        hero.register_timer("interruptable_skill", jump_timer)
+
+func up_skill_ended():
+    hero.unregister_timer("interruptable_skill")
+
+func up_skill_hit(area):
+    if area.is_in_group("enemy"):
+        var p = sug_basic_attack_particles.instance()
+        spawn_node.add_child(p)
+        p.global_position = up_skill_particles_spawn_pos.global_position
+
+        var enemy = area.get_node("../..")
+        enemy.damaged(int(rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX) * hero.attack_modifier))
+        enemy.knocked_back(sign(enemy.global_position.x - self.global_position.x) * UP_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -UP_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, UP_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
 
 # Down Skill: Switch between sug and sir. Invincible while switching.
 func down_skill():
-    if hero.status.can_move && hero.status.can_cast_skill:
+    if curr_char != BRO && hero.status.can_move && hero.status.can_cast_skill:
         hero.play_animation("Down Skill")
 
         hero.set_status("can_move", false, DOWN_SKILL_DURATION)
@@ -180,7 +326,58 @@ func transform_character(index):
     prev_animator.play("Still")
 
 func ult():
-    pass
+    if curr_char != BRO && hero.status.can_move && hero.status.can_cast_skill && hero.status.has_ult:
+        hero.status.has_ult = false
+        
+        hero.set_status("can_move", false, ULT_TRANSFORM_DURATION)
+        hero.set_status("can_jump", false, ULT_TRANSFORM_DURATION)
+        hero.set_status("can_cast_skill", false, ULT_TRANSFORM_DURATION)
+        hero.set_status("animate_movement", false, ULT_TRANSFORM_DURATION)
+        hero.set_status("invincible", true, ULT_TRANSFORM_DURATION)
+
+        hero.play_animation("Ult")
+        hero.release_ult()
+
+        char_before_ult = curr_char
+        curr_char = BRO
+        ult_timer = cd_timer.new(ULT_TRANSFORM_DURATION, self, "ult_transformed")
+
+func ult_transformed():
+    var p = ult_start_explosion_particles.instance()
+    spawn_node.add_child(p)
+    p.global_position = self.global_position
+
+    transform_character(curr_char)
+
+    hero.set_status("invincible", true, ULT_DURATION)
+
+    ult_timer = cd_timer.new(ULT_DURATION, self, "ult_ending")
+
+func ult_ending():
+    hero.play_animation("End Ult")
+
+    hero.set_status("can_move", false, END_ULT_DURATION)
+    hero.set_status("can_jump", false, END_ULT_DURATION)
+    hero.set_status("can_cast_skill", false, END_ULT_DURATION)
+    hero.set_status("animate_movement", false, END_ULT_DURATION)
+    hero.set_status("invincible", true, END_ULT_DURATION)
+    hero.set_status("no_movement", true, END_ULT_DURATION)
+
+    ult_timer = cd_timer.new(END_ULT_DURATION, self, "ult_ended")
+
+func ult_ended():
+    var p = ult_explosion_particles.instance()
+    spawn_node.add_child(p)
+    p.global_position = self.global_position
+
+    curr_char = char_before_ult
+    transform_character(curr_char)
+
+func ult_hit(area):
+    if area.is_in_group("enemy"):
+        var enemy = area.get_node("../..")
+        enemy.knocked_back(sign(enemy.global_position.x - self.global_position.x) * hero.enemy_knock_back_modifier * ULT_KNOCK_BACK_VEL_X, -ULT_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, ULT_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
+        enemy.damaged(int(rng.randf_range(ULT_DAMAGE_MIN, ULT_DAMAGE_MAX) * hero.attack_modifier))
 
 func cancel_all_skills():
     pass

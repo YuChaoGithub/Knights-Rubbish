@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 const ICONS_COL_COUNT = 5
-const ICONS_ROW_COUNT = 2
+const ICONS_ROW_COUNT = 1
 
 const ENTER_ANIMATION_DURATION = 1.5
 const LEAVE_ANIMATION_DURATION = 1.0

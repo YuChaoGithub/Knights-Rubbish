@@ -19,7 +19,7 @@
 [ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/UI/HeroPickerButton.tscn" type="PackedScene" id=18]
 
-[node name="Game Level" type="Node2D" index="0"]
+[node name="Game Level" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -253,11 +253,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="PlatformDecorations" type="Node2D" parent="." index="7"]
 
-editor/display_folded = true
-
 [node name="Ult Stone" parent="PlatformDecorations" index="0" instance=ExtResource( 14 )]
 
-position = Vector2( 2200, -500 )
+position = Vector2( 5709.26, -853.9 )
 
 [node name="Calcasio" parent="PlatformDecorations" index="1" instance=ExtResource( 15 )]
 
@@ -271,7 +269,27 @@ position = Vector2( 1150, -300 )
 
 position = Vector2( 800, -350 )
 
-[node name="CD Punch3" parent="PlatformDecorations" index="4" instance=ExtResource( 16 )]
+[node name="CD Punch4" parent="PlatformDecorations" index="4" instance=ExtResource( 16 )]
+
+position = Vector2( 2938.27, -593.864 )
+
+[node name="CD Punch5" parent="PlatformDecorations" index="5" instance=ExtResource( 16 )]
+
+position = Vector2( 3687.71, -766.353 )
+
+[node name="CD Punch6" parent="PlatformDecorations" index="6" instance=ExtResource( 16 )]
+
+position = Vector2( 4089.19, -813.936 )
+
+[node name="CD Punch7" parent="PlatformDecorations" index="7" instance=ExtResource( 16 )]
+
+position = Vector2( 3351.65, -662.265 )
+
+[node name="CD Punch8" parent="PlatformDecorations" index="8" instance=ExtResource( 16 )]
+
+position = Vector2( 2846.08, -567.098 )
+
+[node name="CD Punch3" parent="PlatformDecorations" index="9" instance=ExtResource( 16 )]
 
 position = Vector2( 1700, -450 )
 
