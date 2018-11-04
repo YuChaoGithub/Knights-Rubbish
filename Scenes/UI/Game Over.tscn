@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/UI/GameOverScene.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/UI/Scrap 1.png" type="Texture" id=2]
@@ -11,15 +11,19 @@
 [ext_resource path="res://Graphics/UI/Frame White.png" type="Texture" id=9]
 [ext_resource path="res://Scripts/UI/MouseOverAnimation.gd" type="Script" id=10]
 [ext_resource path="res://Graphics/Scrap Paper.png" type="Texture" id=11]
-[ext_resource path="res://Graphics/UI/Scrap 4.png" type="Texture" id=12]
-[ext_resource path="res://Fonts/scratchl.tres" type="DynamicFont" id=13]
+[ext_resource path="res://Audio/paper_flip_01.wav" type="AudioStream" id=12]
+[ext_resource path="res://Graphics/UI/Scrap 4.png" type="Texture" id=13]
+[ext_resource path="res://Fonts/scratchl.tres" type="DynamicFont" id=14]
+[ext_resource path="res://Audio/paper_flip_02.wav" type="AudioStream" id=15]
+[ext_resource path="res://Audio/paper_flip_03.wav" type="AudioStream" id=16]
+[ext_resource path="res://Audio/paper_flip_05.wav" type="AudioStream" id=17]
 
 [sub_resource type="Animation" id=1]
 
 resource_name = "Enter"
 length = 0.5
 loop = false
-step = 0.1
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("UI:rect_position")
 tracks/0/interp = 1
@@ -32,13 +36,25 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( -359, 10 ), Vector2( -62, 146 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
 
 [sub_resource type="Animation" id=2]
 
 resource_name = "Enter"
 length = 0.5
 loop = false
-step = 0.1
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("UI:rect_position")
 tracks/0/interp = 1
@@ -51,13 +67,25 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 1182, 579 ), Vector2( 1050, 292 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer2:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
 
 [sub_resource type="Animation" id=3]
 
 resource_name = "Enter"
 length = 0.4
 loop = false
-step = 0.1
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("UI:rect_position")
 tracks/0/interp = 1
@@ -70,13 +98,25 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 1433, 117 ), Vector2( 1344, 116 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer3:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
 
 [sub_resource type="Animation" id=4]
 
 resource_name = "Enter"
 length = 0.5
 loop = false
-step = 0.1
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("UI:rect_position")
 tracks/0/interp = 1
@@ -88,6 +128,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 188, 222 ), Vector2( 313, 279 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer4:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.25, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -275,6 +327,42 @@ tracks/14/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("AnimationPlayer/AudioStreamPlayer:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("AnimationPlayer/AudioStreamPlayer2:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("AnimationPlayer/AudioStreamPlayer3:playing")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -478,7 +566,7 @@ tracks/15/keys = {
 } ]
 }
 
-[node name="Game Over" type="CanvasLayer" index="0"]
+[node name="Game Over" type="CanvasLayer"]
 
 pause_mode = 2
 layer = 2
@@ -633,6 +721,7 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="Retry Scrap Paper" type="TextureRect" parent="ColorRect" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -711,7 +800,6 @@ _sections_unfolded = [ "Mouse", "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="Scrap 1" type="Control" parent="." index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1036,7 +1124,16 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Scrap 1" index="1"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Scrap 1" index="1"]
+
+stream = ExtResource( 12 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scrap 1" index="2"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -1048,7 +1145,6 @@ blend_times = [  ]
 
 [node name="Scrap 2" type="Control" parent="." index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1084,7 +1180,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 stretch_mode = 0
 
 [node name="Label" type="Label" parent="Scrap 2/UI" index="0"]
@@ -1105,7 +1201,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 13 )
+custom_fonts/font = ExtResource( 14 )
 custom_colors/font_color = Color( 0.133317, 0.581539, 0.71875, 1 )
 text = "WHYYYYYY"
 percent_visible = 1.0
@@ -1113,7 +1209,16 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Scrap 2" index="1"]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Scrap 2" index="1"]
+
+stream = ExtResource( 15 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scrap 2" index="2"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -1125,7 +1230,6 @@ blend_times = [  ]
 
 [node name="Scrap 3" type="Control" parent="." index="3"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1190,7 +1294,16 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Scrap 3" index="1"]
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Scrap 3" index="1"]
+
+stream = ExtResource( 16 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scrap 3" index="2"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -1202,7 +1315,6 @@ blend_times = [  ]
 
 [node name="Scrap 4" type="Control" parent="." index="4"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1269,7 +1381,16 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Scrap 4" index="1"]
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Scrap 4" index="1"]
+
+stream = ExtResource( 12 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scrap 4" index="2"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -1289,6 +1410,33 @@ playback_speed = 1.0
 anims/Enter = SubResource( 5 )
 anims/Quit = SubResource( 6 )
 blend_times = [  ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="AnimationPlayer" index="0"]
+
+stream = ExtResource( 16 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="AnimationPlayer" index="1"]
+
+stream = ExtResource( 17 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="AnimationPlayer" index="2"]
+
+stream = ExtResource( 17 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 [connection signal="pressed" from="ColorRect/Quit Scrap Paper/Quit Button" to="." method="quit_pressed"]
 

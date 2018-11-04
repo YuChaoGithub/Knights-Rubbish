@@ -1,21 +1,408 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scripts/UI/MainMenu.gd" type="Script" id=1]
-[ext_resource path="res://Graphics/UI/Menu Background.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/UI/Bar Frame 2 White.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/UI/ButtonModulator.gd" type="Script" id=4]
-[ext_resource path="res://Fonts/edosz.tres" type="DynamicFont" id=5]
-[ext_resource path="res://Graphics/UI/Bar Fram 1 White.png" type="Texture" id=6]
-[ext_resource path="res://Graphics/UI/Bar Frame 3 White.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/UI/Avatar/Keshia Erasia.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/UI/Avatar/Wendy Vista.png" type="Texture" id=9]
-[ext_resource path="res://Graphics/UI/Avatar/Amazlet.png" type="Texture" id=10]
-[ext_resource path="res://Graphics/UI/Avatar/Eyemac.png" type="Texture" id=11]
-[ext_resource path="res://Graphics/UI/Avatar/Godotbos.png" type="Texture" id=12]
-[ext_resource path="res://Graphics/UI/Avatar/Latortrans.png" type="Texture" id=13]
-[ext_resource path="res://Graphics/UI/Avatar/Radiogugu.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/UI/Wooden Background.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/UI/Sketchbook.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/UI/Bar Frame 2 White.png" type="Texture" id=4]
+[ext_resource path="res://Scripts/UI/ButtonModulator.gd" type="Script" id=5]
+[ext_resource path="res://Fonts/edosz.tres" type="DynamicFont" id=6]
+[ext_resource path="res://Graphics/UI/Bar Fram 1 White.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/UI/Bar Frame 3 White.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/UI/Avatar/Keshia Erasia.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/UI/Avatar/Wendy Vista.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/UI/Avatar/GladeosCakeos.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/UI/Avatar/GuanXi.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/UI/Avatar/LumieCandie.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/UI/Avatar/OthoxCodox.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/UI/Avatar/Ranawato Plato.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/UI/Avatar/Sock.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/UI/Avatar/WaitieChangie.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/UI/Avatar/BroSS.png" type="Texture" id=18]
+[ext_resource path="res://Graphics/UI/Avatar/Amazlet.png" type="Texture" id=19]
+[ext_resource path="res://Graphics/UI/Avatar/Eyemac.png" type="Texture" id=20]
+[ext_resource path="res://Graphics/UI/Avatar/Godotbos.png" type="Texture" id=21]
+[ext_resource path="res://Graphics/UI/Avatar/Latortrans.png" type="Texture" id=22]
+[ext_resource path="res://Graphics/UI/Avatar/Radiogugu.png" type="Texture" id=23]
+[ext_resource path="res://Graphics/UI/knights.png" type="Texture" id=24]
+[ext_resource path="res://Graphics/UI/rubbish.png" type="Texture" id=25]
+[ext_resource path="res://Graphics/Particles/Super Blurred Dot.png" type="Texture" id=26]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 4.png" type="Texture" id=27]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 3.png" type="Texture" id=28]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 1.png" type="Texture" id=29]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 5.png" type="Texture" id=30]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 4.png" type="Texture" id=31]
+[ext_resource path="res://Audio/paper_drop_01.wav" type="AudioStream" id=32]
+[ext_resource path="res://Audio/paper_drop_02.wav" type="AudioStream" id=33]
+[ext_resource path="res://Audio/paper_flip_long.wav" type="AudioStream" id=34]
 
-[node name="Menu" type="CanvasLayer"]
+[sub_resource type="Animation" id=1]
+
+resource_name = "Enter"
+length = 2.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Book:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.1, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 12, 753 ), Vector2( 12, 753 ), Vector2( 236, -36 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Book:rect_rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.1, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 51.3278, 51.3278, 17.522 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Trash/Trash3:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6, 1.8, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 224, -345 ), Vector2( 224, -345 ), Vector2( 188, 161 ), Vector2( 188, 161 ), Vector2( 113, 60 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Trash/Trash1:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2, 2, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1033, -244 ), Vector2( 937, 156 ), Vector2( 937, 156 ), Vector2( 951, 38 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Trash/Trash2:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 2, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1079, -377 ), Vector2( 1079, -377 ), Vector2( 922, 233 ), Vector2( 922, 233 ), Vector2( 1037, 115 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Trash/Trash4:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8, 2.1, 2.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1237, -126 ), Vector2( 1237, -126 ), Vector2( 1258, 627 ), Vector2( 1258, 627 ), Vector2( 1280, 671 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Trash/Trash5:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.6, 0.8, 2, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 801, -96 ), Vector2( 801, -96 ), Vector2( 717, 291 ), Vector2( 717, 291 ), Vector2( 684, 105 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Trash/Trash1:rect_scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.5, 0.5 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Trash/Trash2:rect_scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.5, 0.5 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Trash/Trash3:rect_scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.5, 0.5 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Trash/Trash4:rect_scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.5, 0.5 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("Trash/Trash5:rect_scale")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 0.5, 0.5 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("AnimationPlayer/PaperDrop1:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, true ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("AnimationPlayer/PaperDrop2:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 0.2, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("AnimationPlayer/PaperFlip:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 1.3, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("Trash/Shadow:rect_scale")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 1.25, 1.25 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("Trash/Shadow2:rect_scale")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 1.25, 1.25 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("Trash/Shadow3:rect_scale")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 1.25, 1.25 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("Trash/Shadow4:rect_scale")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 0.5, 0.5 ), Vector2( 1.25, 1.25 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Trash/Shadow5:rect_scale")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.3, 0.3 ), Vector2( 0.3, 0.3 ), Vector2( 0.7, 0.7 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Trash/Shadow5:modulate")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.588235 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Trash/Shadow4:modulate")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.588235 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Trash/Shadow3:modulate")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.588235 ) ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Trash/Shadow2:modulate")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.588235 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Trash/Shadow:modulate")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.588235 ) ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("Trash/Shadow:rect_position")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0, 1.8, 1.9, 2, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 117, 195 ), Vector2( 117, 195 ), Vector2( 95, 157 ), Vector2( 74, 123 ), Vector2( 50, 90 ) ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("Trash/Shadow2:rect_position")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0, 1.9, 2, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 690, 213 ), Vector2( 690, 213 ), Vector2( 708, 199 ), Vector2( 670, 22 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("Trash/Shadow3:rect_position")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0, 2, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 849, 192 ), Vector2( 849, 192 ), Vector2( 884, 72 ) ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("Trash/Shadow4:rect_position")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 0, 2, 2.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 906, 283 ), Vector2( 906, 283 ), Vector2( 1019, 166 ) ]
+}
+tracks/29/type = "value"
+tracks/29/path = NodePath("Trash/Shadow5:rect_position")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/keys = {
+"times": PoolRealArray( 0, 2.1, 2.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1157, 538 ), Vector2( 1157, 538 ), Vector2( 1179, 573 ) ]
+}
+
+[node name="Menu" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -30,8 +417,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 1280.0
-margin_bottom = 720.0
+margin_right = 640.0
+margin_bottom = 360.0
+rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -40,8 +428,30 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 2 )
 stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
 
-[node name="Single Player" type="TextureButton" parent="Background" index="0"]
+[node name="Book" type="TextureRect" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 12.0
+margin_top = 753.0
+margin_right = 1092.0
+margin_bottom = 1481.0
+rect_rotation = 51.3278
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 3 )
+stretch_mode = 0
+_sections_unfolded = [ "Focus", "Mouse", "Rect" ]
+
+[node name="Single Player" type="TextureButton" parent="Book" index="0"]
 
 editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
@@ -49,11 +459,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 430.0
-margin_top = 389.0
-margin_right = 1215.0
-margin_bottom = 589.0
-rect_rotation = -18.312
+margin_left = 366.0
+margin_top = 206.0
+margin_right = 1151.0
+margin_bottom = 406.0
+rect_rotation = -0.348739
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -66,13 +476,13 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 3 )
-script = ExtResource( 4 )
-_sections_unfolded = [ "Material", "Rect", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+texture_normal = ExtResource( 4 )
+script = ExtResource( 5 )
+_sections_unfolded = [ "Focus", "Material", "Rect", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 hover_color = Color( 0, 0.71875, 1, 1 )
 press_color = Color( 0, 0.179688, 1, 1 )
 
-[node name="Label" type="Label" parent="Background/Single Player" index="0"]
+[node name="Label" type="Label" parent="Book/Single Player" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -90,7 +500,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0.6, 0.6, 0.6, 1 )
 text = "I AM ALONE. I PLAY ALONE."
 percent_visible = 1.0
@@ -98,7 +508,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
 
-[node name="Coop" type="TextureButton" parent="Background" index="1"]
+[node name="Coop" type="TextureButton" parent="Book" index="1"]
 
 editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
@@ -106,11 +516,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 460.0
-margin_top = 484.0
-margin_right = 1245.0
-margin_bottom = 684.0
-rect_rotation = -18.312
+margin_left = 368.0
+margin_top = 300.0
+margin_right = 1153.0
+margin_bottom = 500.0
+rect_rotation = -0.504012
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -123,13 +533,13 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 3 )
-script = ExtResource( 4 )
+texture_normal = ExtResource( 4 )
+script = ExtResource( 5 )
 _sections_unfolded = [ "Material", "Rect", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 hover_color = Color( 0.200825, 0.996094, 0.306447, 1 )
 press_color = Color( 0.00239415, 0.445312, 0.0508383, 1 )
 
-[node name="Label" type="Label" parent="Background/Coop" index="0"]
+[node name="Label" type="Label" parent="Book/Coop" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -147,7 +557,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0.6, 0.6, 0.6, 1 )
 text = "LOCAL COOP (Recommended)"
 percent_visible = 1.0
@@ -155,7 +565,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Arena" type="TextureButton" parent="Background" index="2"]
+[node name="Arena" type="TextureButton" parent="Book" index="2"]
 
 editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
@@ -163,68 +573,11 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 519.0
-margin_top = 563.0
-margin_right = 1177.0
-margin_bottom = 763.0
-rect_rotation = -18.312
-rect_scale = Vector2( 0.5, 0.5 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 6 )
-script = ExtResource( 4 )
-_sections_unfolded = [ "Material", "Rect", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
-hover_color = Color( 0.90625, 0.650225, 0.0438508, 1 )
-press_color = Color( 0.4375, 0.297363, 0, 1 )
-
-[node name="Label" type="Label" parent="Background/Arena" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 58.0
-margin_top = 61.0
-margin_right = 427.0
-margin_bottom = 101.0
-rect_rotation = -0.928772
-rect_scale = Vector2( 2, 2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 5 )
-custom_colors/font_color = Color( 0.6, 0.6, 0.6, 1 )
-text = "2P FIGHT EACH OTHER"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
-
-[node name="I Quit" type="TextureButton" parent="Background" index="3"]
-
-editor/display_folded = true
-modulate = Color( 0, 0, 0, 1 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 615.0
-margin_top = 652.0
-margin_right = 997.0
-margin_bottom = 852.0
-rect_rotation = -15.2717
+margin_left = 396.0
+margin_top = 390.0
+margin_right = 1054.0
+margin_bottom = 590.0
+rect_rotation = -0.448552
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -238,12 +591,69 @@ enabled_focus_mode = 2
 shortcut = null
 group = null
 texture_normal = ExtResource( 7 )
-script = ExtResource( 4 )
+script = ExtResource( 5 )
+_sections_unfolded = [ "Material", "Rect", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
+hover_color = Color( 0.90625, 0.650225, 0.0438508, 1 )
+press_color = Color( 0.4375, 0.297363, 0, 1 )
+
+[node name="Label" type="Label" parent="Book/Arena" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 36.0
+margin_top = 77.0
+margin_right = 405.0
+margin_bottom = 117.0
+rect_rotation = -0.928772
+rect_scale = Vector2( 1.67, 1.67 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0.6, 0.6, 0.6, 1 )
+text = "local pvp (coming soon)"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="I Quit" type="TextureButton" parent="Book" index="3"]
+
+editor/display_folded = true
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 462.0
+margin_top = 488.0
+margin_right = 844.0
+margin_bottom = 688.0
+rect_rotation = 0.988275
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 8 )
+script = ExtResource( 5 )
 _sections_unfolded = [ "Material", "Rect", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 hover_color = Color( 1, 0.33871, 0.33871, 1 )
 press_color = Color( 1, 0, 0, 1 )
 
-[node name="Label" type="Label" parent="Background/I Quit" index="0"]
+[node name="Label" type="Label" parent="Book/I Quit" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -261,7 +671,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 5 )
+custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0.6, 0.6, 0.6, 1 )
 text = "I  Quit !"
 percent_visible = 1.0
@@ -269,7 +679,26 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Drawings" type="Control" parent="Background" index="4"]
+[node name="Drawings" type="Control" parent="Book" index="4"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -82.0
+margin_top = -134.0
+margin_right = -62.0
+margin_bottom = -114.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Heroes" type="Control" parent="Book/Drawings" index="0"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -285,55 +714,18 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="Heroes" type="Control" parent="Background/Drawings" index="0"]
+[node name="Keshia" type="TextureRect" parent="Book/Drawings/Heroes" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="Keshia" type="TextureRect" parent="Background/Drawings/Heroes" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 193.0
-margin_top = 580.0
-margin_right = 443.0
-margin_bottom = 830.0
+margin_left = 213.0
+margin_top = 524.0
+margin_right = 463.0
+margin_bottom = 774.0
 rect_rotation = -2.4057
-rect_scale = Vector2( 0.4, 0.4 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 8 )
-stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
-
-[node name="Wendy" type="TextureRect" parent="Background/Drawings/Heroes" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 322.0
-margin_top = 603.0
-margin_right = 572.0
-margin_bottom = 853.0
-rect_rotation = -15.7822
-rect_scale = Vector2( 0.4, 0.4 )
+rect_scale = Vector2( 0.2, 0.2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -344,33 +736,17 @@ texture = ExtResource( 9 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="Bosses" type="Control" parent="Background/Drawings" index="1"]
-
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="Amazlet" type="TextureRect" parent="Background/Drawings/Bosses" index="0"]
+[node name="Wendy" type="TextureRect" parent="Book/Drawings/Heroes" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1066.0
-margin_top = 241.0
-margin_right = 1316.0
-margin_bottom = 491.0
-rect_rotation = -21.6404
+margin_left = 368.0
+margin_top = 378.0
+margin_right = 618.0
+margin_bottom = 628.0
+rect_rotation = -15.7822
 rect_scale = Vector2( 0.2, 0.2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -382,17 +758,17 @@ texture = ExtResource( 10 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="eyeMac" type="TextureRect" parent="Background/Drawings/Bosses" index="1"]
+[node name="Wendy2" type="TextureRect" parent="Book/Drawings/Heroes" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1054.0
-margin_top = 309.0
-margin_right = 1304.0
-margin_bottom = 559.0
-rect_rotation = -21.6404
+margin_left = 360.0
+margin_top = 514.0
+margin_right = 610.0
+margin_bottom = 764.0
+rect_rotation = -35.6664
 rect_scale = Vector2( 0.2, 0.2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -404,17 +780,17 @@ texture = ExtResource( 11 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="Godotbos" type="TextureRect" parent="Background/Drawings/Bosses" index="2"]
+[node name="Wendy3" type="TextureRect" parent="Book/Drawings/Heroes" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 1143.0
-margin_top = 298.0
-margin_right = 1393.0
-margin_bottom = 548.0
-rect_rotation = -28.7829
+margin_left = 271.0
+margin_top = 463.0
+margin_right = 521.0
+margin_bottom = 713.0
+rect_rotation = -20.7594
 rect_scale = Vector2( 0.2, 0.2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -426,17 +802,17 @@ texture = ExtResource( 12 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="Latortrans" type="TextureRect" parent="Background/Drawings/Bosses" index="3"]
+[node name="Wendy4" type="TextureRect" parent="Book/Drawings/Heroes" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 992.0
-margin_top = 272.0
-margin_right = 1242.0
-margin_bottom = 522.0
-rect_rotation = -28.7829
+margin_left = 235.0
+margin_top = 625.0
+margin_right = 485.0
+margin_bottom = 875.0
+rect_rotation = -15.7822
 rect_scale = Vector2( 0.2, 0.2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -448,17 +824,17 @@ texture = ExtResource( 13 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="Radiogugu" type="TextureRect" parent="Background/Drawings/Bosses" index="4"]
+[node name="Wendy5" type="TextureRect" parent="Book/Drawings/Heroes" index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 982.0
-margin_top = 350.0
-margin_right = 1232.0
-margin_bottom = 600.0
-rect_rotation = -28.7829
+margin_left = 382.0
+margin_top = 716.0
+margin_right = 632.0
+margin_bottom = 966.0
+rect_rotation = -27.7237
 rect_scale = Vector2( 0.2, 0.2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -470,12 +846,550 @@ texture = ExtResource( 14 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
-[connection signal="pressed" from="Background/Single Player" to="." method="single_player_pressed"]
+[node name="Wendy6" type="TextureRect" parent="Book/Drawings/Heroes" index="6"]
 
-[connection signal="pressed" from="Background/Coop" to="." method="coop_pressed"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 330.0
+margin_top = 599.0
+margin_right = 580.0
+margin_bottom = 849.0
+rect_rotation = -15.7822
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 15 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
 
-[connection signal="pressed" from="Background/Arena" to="." method="arena_pressed"]
+[node name="Wendy7" type="TextureRect" parent="Book/Drawings/Heroes" index="7"]
 
-[connection signal="pressed" from="Background/I Quit" to="." method="quit_pressed"]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 236.0
+margin_top = 737.0
+margin_right = 486.0
+margin_bottom = 987.0
+rect_rotation = -24.9892
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 16 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Wendy8" type="TextureRect" parent="Book/Drawings/Heroes" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 165.0
+margin_top = 697.0
+margin_right = 415.0
+margin_bottom = 947.0
+rect_rotation = -15.7822
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 17 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Wendy9" type="TextureRect" parent="Book/Drawings/Heroes" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 170.0
+margin_top = 423.0
+margin_right = 420.0
+margin_bottom = 673.0
+rect_rotation = -6.6739
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 18 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Bosses" type="Control" parent="Book/Drawings" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Amazlet" type="TextureRect" parent="Book/Drawings/Bosses" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 892.0
+margin_top = 398.0
+margin_right = 1142.0
+margin_bottom = 648.0
+rect_rotation = -21.6404
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 19 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="eyeMac" type="TextureRect" parent="Book/Drawings/Bosses" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 928.0
+margin_top = 483.0
+margin_right = 1178.0
+margin_bottom = 733.0
+rect_rotation = -21.6404
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 20 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Godotbos" type="TextureRect" parent="Book/Drawings/Bosses" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1031.0
+margin_top = 530.0
+margin_right = 1281.0
+margin_bottom = 780.0
+rect_rotation = -28.7829
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 21 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Latortrans" type="TextureRect" parent="Book/Drawings/Bosses" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 892.0
+margin_top = 594.0
+margin_right = 1142.0
+margin_bottom = 844.0
+rect_rotation = -28.7829
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 22 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Radiogugu" type="TextureRect" parent="Book/Drawings/Bosses" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1038.0
+margin_top = 389.0
+margin_right = 1288.0
+margin_bottom = 639.0
+rect_rotation = 8.05532
+rect_scale = Vector2( 0.2, 0.2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 23 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Title" type="Control" parent="Book" index="5"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="TextureRect" type="TextureRect" parent="Book/Title" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 82.0
+margin_top = 65.0
+margin_right = 2446.0
+margin_bottom = 507.0
+rect_scale = Vector2( 0.19, 0.19 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 24 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="TextureRect2" type="TextureRect" parent="Book/Title" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 600.0
+margin_top = 66.0
+margin_right = 2964.0
+margin_bottom = 586.0
+rect_scale = Vector2( 0.19, 0.19 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 25 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Trash" type="Control" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Shadow" type="TextureRect" parent="Trash" index="0"]
+
+modulate = Color( 0, 0, 0, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 117.0
+margin_top = 195.0
+margin_right = 217.0
+margin_bottom = 295.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 48.8482, 55.9943 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 26 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="Shadow2" type="TextureRect" parent="Trash" index="1"]
+
+modulate = Color( 0, 0, 0, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 690.0
+margin_top = 213.0
+margin_right = 790.0
+margin_bottom = 313.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 51.3116, 53.2758 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 26 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="Shadow3" type="TextureRect" parent="Trash" index="2"]
+
+modulate = Color( 0, 0, 0, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 849.0
+margin_top = 192.0
+margin_right = 949.0
+margin_bottom = 292.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 48.7145, 50.3629 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 26 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="Shadow4" type="TextureRect" parent="Trash" index="3"]
+
+modulate = Color( 0, 0, 0, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 906.0
+margin_top = 283.0
+margin_right = 1006.0
+margin_bottom = 383.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 50.9531, 56.2052 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 26 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="Shadow5" type="TextureRect" parent="Trash" index="4"]
+
+modulate = Color( 0, 0, 0, 0 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1157.0
+margin_top = 538.0
+margin_right = 1257.0
+margin_bottom = 638.0
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 45.4208, 51.8143 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 26 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="Trash1" type="TextureRect" parent="Trash" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1033.0
+margin_top = -244.0
+margin_right = 1192.0
+margin_bottom = -44.0
+rect_rotation = 65.173
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 27 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Trash2" type="TextureRect" parent="Trash" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1079.0
+margin_top = -377.0
+margin_right = 1294.0
+margin_bottom = -177.0
+rect_rotation = 20.7111
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 28 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Trash3" type="TextureRect" parent="Trash" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 224.0
+margin_top = -345.0
+margin_right = 872.0
+margin_bottom = -145.0
+rect_rotation = 65.74
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 29 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Trash4" type="TextureRect" parent="Trash" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1237.0
+margin_top = -126.0
+margin_right = 1396.0
+margin_bottom = 577.0
+rect_rotation = 149.186
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 30 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Trash5" type="TextureRect" parent="Trash" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 801.0
+margin_top = -96.0
+margin_right = 960.0
+margin_bottom = 104.0
+rect_rotation = 236.503
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 31 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]
+
+root_node = NodePath("..")
+autoplay = "Enter"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Enter = SubResource( 1 )
+blend_times = [  ]
+
+[node name="PaperDrop1" type="AudioStreamPlayer" parent="AnimationPlayer" index="0"]
+
+stream = ExtResource( 32 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="PaperDrop2" type="AudioStreamPlayer" parent="AnimationPlayer" index="1"]
+
+stream = ExtResource( 33 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="PaperFlip" type="AudioStreamPlayer" parent="AnimationPlayer" index="2"]
+
+stream = ExtResource( 34 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[connection signal="pressed" from="Book/Single Player" to="." method="single_player_pressed"]
+
+[connection signal="pressed" from="Book/Coop" to="." method="coop_pressed"]
+
+[connection signal="pressed" from="Book/Arena" to="." method="arena_pressed"]
+
+[connection signal="pressed" from="Book/I Quit" to="." method="quit_pressed"]
 
 

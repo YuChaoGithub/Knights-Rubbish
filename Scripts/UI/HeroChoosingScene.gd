@@ -6,12 +6,20 @@ const ICONS_ROW_COUNT = 1
 const ENTER_ANIMATION_DURATION = 1.5
 const LEAVE_ANIMATION_DURATION = 1.0
 
+const AUDIO_VOLUME_DB = -5
+
+var hero_lock_sound = preload("res://Audio/button_click.wav")
+var hero_choosing_sound = preload("res://Audio/hero_choosing.wav")
+
+var lock_audio_player
+var choosing_audio_player
+
 var hero_infos = [
     preload("res://Scripts/Constants/KeshiaErasiaConstants.gd"),
     preload("res://Scripts/Constants/WendyVistaConstants.gd"),
     preload("res://Scripts/Constants/RanawatoPlatoConstants.gd"),
-    preload("res://Scripts/Constants/KeshiaErasiaConstants.gd"),
-    preload("res://Scripts/Constants/KeshiaErasiaConstants.gd"),
+    preload("res://Scripts/Constants/OthoxCodoxConstants.gd"),
+    preload("res://Scripts/Constants/BroSSConstants.gd"),
     preload("res://Scripts/Constants/KeshiaErasiaConstants.gd"),
     preload("res://Scripts/Constants/KeshiaErasiaConstants.gd"),
     preload("res://Scripts/Constants/KeshiaErasiaConstants.gd"),
@@ -49,6 +57,16 @@ onready var main_animator = $AnimationPlayer
 onready var countdown_animator = $CountdownBox/AnimationPlayer
 
 func _ready():
+    lock_audio_player = AudioStreamPlayer.new()
+    lock_audio_player.stream = hero_lock_sound
+    lock_audio_player.volume_db = AUDIO_VOLUME_DB
+    add_child(lock_audio_player)
+
+    choosing_audio_player = AudioStreamPlayer.new()
+    choosing_audio_player.stream = hero_choosing_sound
+    choosing_audio_player.volume_db = AUDIO_VOLUME_DB
+    add_child(choosing_audio_player)
+
     set_process(false)
 
     if player_count == 1:
@@ -90,8 +108,10 @@ func _process(delta):
             p1_locked = false
 
             if player_count == 1:
+                lock_audio_player.play()
                 single_player_paper.hero_deselected()
             else:
+                lock_audio_player.play()
                 p1_paper.hero_deselected()
 
             check_deselection()
@@ -100,8 +120,10 @@ func _process(delta):
             p1_locked = true
 
             if player_count == 1:
+                lock_audio_player.play()
                 single_player_paper.hero_selected()
             else:
+                lock_audio_player.play()
                 p1_paper.hero_selected()
 
             check_selection_complete()
@@ -121,12 +143,14 @@ func _process(delta):
         if Input.is_action_just_pressed("p2_attack"):
             if p2_locked:
                 selection_checkmark_p2.visible = false
+                lock_audio_player.play()
                 p2_paper.hero_deselected()
                 p2_locked = false
 
                 check_deselection()
             elif !(p1_locked && p1_selection == p2_selection):  # Cannot select the same hero.
                 selection_checkmark_p2.visible = true
+                lock_audio_player.play()
                 p2_paper.hero_selected()
                 p2_locked = true
 
@@ -138,6 +162,7 @@ func clamp_index_in_range(original, new):
     if new < 0 || new >= ICONS_COL_COUNT * ICONS_ROW_COUNT:
         return original
     else:
+        choosing_audio_player.play()
         return new
 
 func update_hero_selection_frames():
@@ -181,7 +206,13 @@ func back_button_pressed():
     leave_timer = cd_timer.new(LEAVE_ANIMATION_DURATION, self, "switch_back_to_original_scene")
 
 func setting_button_pressed():
-    add_child(key_setting_scene.instance())
+    var ks_scene = key_setting_scene.instance()
+    ks_scene.resume_scene = self
+    add_child(ks_scene)
+    set_process(false)
+
+func resume_current():
+    set_process(true)
 
 func switch_back_to_original_scene():
     get_node("/root/LoadingScene").load_previous_scene()

@@ -7,6 +7,8 @@ export(int, "Attack", "Skill", "Jump", "Ult", "Up", "Down", "Left", "Right") var
 const player_strings = ["p1", "p2"]
 const action_strings = ["attack", "skill", "jump", "ult", "up", "down", "left", "right"]
 
+const BUTTON_AUDIO_VOLUME = -5
+
 const KEY_STRING_MAP = {
     QuoteLeft = "Quote",
     Minus = "-",
@@ -33,7 +35,18 @@ onready var label = $Label
 var pending_input = false
 var action_key
 
+var click_sound = preload("res://Audio/button_click.wav")
+var hover_sound = preload("res://Audio/button_hover.wav")
+var success_sound = preload("res://Audio/success.wav")
+var error_sound = preload("res://Audio/error.wav")
+
+var audio_player
+
 func _ready():
+    audio_player = AudioStreamPlayer.new()
+    audio_player.volume_db = BUTTON_AUDIO_VOLUME
+    add_child(audio_player)
+
     # Remove if the mode doesn't match.
     if mode_index + 1 != get_node("/root/PlayerSettings").player_count:
         queue_free()
@@ -62,6 +75,8 @@ func _input(event):
         
         # Avoid mapping the same key to different actions.
         if event_string in $"../..".used_keys:
+            audio_player.stream = error_sound
+            audio_player.play()
             return
 
         # Configure label.
@@ -72,7 +87,13 @@ func _input(event):
         
         end_pending_input()
 
+        audio_player.stream = success_sound
+        audio_player.play()
+
 func on_mouse_entered():
+    audio_player.stream = hover_sound
+    audio_player.play()
+
     if !pending_input:
         modulate = HOVER_COLOR
 
@@ -81,6 +102,9 @@ func on_mouse_exited():
         modulate = ORIGINAL_COLOR
 
 func on_pressed():
+    audio_player.stream = click_sound
+    audio_player.play()
+
     if !pending_input:
         remove_old_events()
         start_pending_input()

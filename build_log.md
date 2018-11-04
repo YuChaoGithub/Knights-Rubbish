@@ -1047,10 +1047,15 @@ Comment: What a day. Tired.
 * Completed all skills of Bro SS.
 * Added "Coming Soon" labels in Hero Choosing Scene.
 
+[2018.11.04]
+* Redesigned Menu Scene.
+* Added audio for all UIs.
+* Fixed the bug that players could unexpectedly interact with UIs on the previous layers using Space/Enter key. (Due to Godot's default UI events)
+
 [Next]
+* Sound effects.
 * Level walk through (1P / 2P).
-* Redesign Menu Scene. (Local PVP [Coming Soon])
-* Add keyboard configuration scene if it's the first time entering the game. (Data persistence)
+* Import key config from the user's files.
 * Make Gifs of characters' attack, post it on the project site. (Including the unreleased characters).
 * Preview video.
 * Introduction article.
