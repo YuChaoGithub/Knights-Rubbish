@@ -62,6 +62,20 @@ onready var output_balls = {
 	stun = preload("res://Scenes/Enemies/Computer Room/Latortrans stun ball.tscn"),
 	hurt = preload("res://Scenes/Enemies/Computer Room/Latortrans hurt ball.tscn")
 }
+onready var input_ball_sounds = {
+	confuse = preload("res://Audio/latortrans_en_confusion.wav"),
+	slow = preload("res://Audio/latortrans_en_slow.wav"),
+	fire = preload("res://Audio/latortrans_en_fire.wav"),
+	stun = preload("res://Audio/latortrans_en_stun.wav"),
+	hurt = preload("res://Audio/latortrans_en_hurt.wav")
+}
+onready var output_ball_sounds = {
+	confuse = preload("res://Audio/latortrans_ch_confusion.wav"),
+	slow = preload("res://Audio/latortrans_ch_slow.wav"),
+	fire = preload("res://Audio/latortrans_ch_fire.wav"),
+	stun = preload("res://Audio/latortrans_ch_stun.wav"),
+	hurt = preload("res://Audio/latortrans_ch_hurt.wav")
+}
 onready var ball_spawn_pos = $"Output Pos"
 onready var spawn_node = $".."
 
@@ -72,6 +86,10 @@ var idle_timer = null
 var die_timer = null
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
+
+onready var left_audio_source = $Audio/LeftTube
+onready var right_audio_source = $Audio/RightTube
+onready var processing_audio = $Audio/Processing
 
 func activate():
 	ec.health_bar.show_health_bar()
@@ -113,23 +131,30 @@ func play_input_anim():
 
 	input_words[curr_attack].visible = true
 
+	right_audio_source.stream = input_ball_sounds[curr_attack]
+	right_audio_source.play()
+
 	ec.play_animation("Input")
 	ec.change_status(NONE)
 	status_timer = ec.cd_timer.new(INPUT_ANIMATION_DURATION, self, "change_status", PROCESS)
 
 func play_process_anim():
 	ec.play_animation("Processing")
-	# TODO: Speak the translated word.
+	processing_audio.play()
 	ec.change_status(NONE)
 	status_timer = ec.cd_timer.new(PROCESS_ANIMATION_DURATION, self, "change_status", OUTPUT)
 
 func play_output_anim():
 	ec.play_animation("Output")
+	processing_audio.stop()
 	ec.change_status(NONE)
 	status_timer = ec.cd_timer.new(OUTPUT_ANIMATION_FIRST_DURATION, self, "change_status", SHOOT)
 
 func shoot_ball():
 	ec.change_status(NONE)
+
+	left_audio_source.stream = output_ball_sounds[curr_attack]
+	left_audio_source.play()
 
 	for dir in ball_directions:
 		var new_ball = output_balls[curr_attack].instance()
@@ -190,6 +215,7 @@ func slowed(multiplier, duration):
 	return
 
 func die():
+	processing_audio.stop()
 	$TouchDamageArea.queue_free()
 	$Animation/Body/Input/InputAttackArea.queue_free()
 

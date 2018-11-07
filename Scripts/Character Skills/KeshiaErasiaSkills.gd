@@ -73,6 +73,10 @@ var ult_timer = null
 
 var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 
+# Audio.
+onready var bs_smash_audio = $"../Audio/BSSmash"
+onready var ult_shoot_audio = $"../Audio/UltShoot"
+
 func _ready():
 	# Jumping will always reset the availability of up skill.
 	hero.connect("did_jump", self, "reset_up_skill_available")
@@ -164,6 +168,8 @@ func basic_skill_falling():
 func basic_skill_strikes():
 	# Landing animation.
 	hero.play_animation("Basic Skill Landing")
+
+	bs_smash_audio.play()
 
 	# Set hero status timer.
 	hero.set_status("animate_movement", false, BASIC_SKILL_LAND_DURATION)
@@ -332,6 +338,7 @@ func ult():
 		ult_timer = cd_timer.new(ULT_FIRE_TIME, self, "fire_ult")
 
 func fire_ult():
+	ult_shoot_audio.play()
 	hero.release_ult()
 	hero.get_node("Ult Hit Box").global_position = hero.following_camera.global_position
 

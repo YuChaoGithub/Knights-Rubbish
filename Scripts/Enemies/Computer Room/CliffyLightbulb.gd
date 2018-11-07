@@ -11,13 +11,13 @@ const KNOCK_BACK_VEL_X = 300
 const KNOCK_BACK_VEL_Y = 300
 const KNOCK_BACK_FADE_RATE = 600
 
-const SPARK_SCALE = 2.0
-
 const LIFETIME = 8.0
 
 var timestamp = 0.0
 
 var movement_pattern
+
+onready var bounce_sound = $Bounce
 
 func _ready():
 	$AnimationPlayer.play("Blinking")
@@ -27,6 +27,8 @@ func initialize(dir_x):
 
 func _process(delta):
 	movement_pattern.move(delta)
+	if movement_pattern.bounced:
+		bounce_sound.play()
 
 	timestamp += delta
 	if timestamp > LIFETIME:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Canmera.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Canmera/Cannon Body.png" type="Texture" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Canmera/Face.png" type="Texture" id=6]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Canmera/Stand.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Audio/general_mob_hurt.wav" type="AudioStream" id=9]
+[ext_resource path="res://Audio/canmera_countdown.wav" type="AudioStream" id=10]
+[ext_resource path="res://Audio/canmera_shoot.wav" type="AudioStream" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -91,6 +94,30 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 3.47516, -21.5943 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../Audio/Beep:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.2, 1.2, 2.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../Audio/Shoot:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -476,25 +503,21 @@ offset = Vector2( -53.4752, -28.4057 )
 
 [node name="3" type="Sprite" parent="Animation/Stand Remote Transform/Body" index="0"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -104.884, -49.3829 )
 texture = ExtResource( 3 )
 
 [node name="2" type="Sprite" parent="Animation/Stand Remote Transform/Body" index="1"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -66.6761, -46.778 )
 texture = ExtResource( 4 )
 
 [node name="1" type="Sprite" parent="Animation/Stand Remote Transform/Body" index="2"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -39.2144, -42.1235 )
 texture = ExtResource( 5 )
 
 [node name="Face" type="Sprite" parent="Animation/Stand Remote Transform/Body" index="3"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -0.698181, -42.5889 )
 texture = ExtResource( 6 )
 
@@ -527,5 +550,40 @@ position = Vector2( -0.619324, -249.952 )
 [node name="Health Bar" parent="." index="2" instance=ExtResource( 8 )]
 
 position = Vector2( -4.34691, -291.09 )
+
+[node name="Audio" type="Node2D" parent="." index="3"]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 9 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Beep" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 10 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="Audio" index="2"]
+
+stream = ExtResource( 11 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

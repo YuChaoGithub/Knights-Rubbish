@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Floopy.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Floopy/blue floppy.png" type="Texture" id=2]
@@ -18,23 +18,26 @@
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=16]
 [ext_resource path="res://Graphics/Particles/Double Star.png" type="Texture" id=17]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Audio/floopy_hurt.wav" type="AudioStream" id=19]
+[ext_resource path="res://Audio/floopy_hey.wav" type="AudioStream" id=20]
+[ext_resource path="res://Audio/floopy_punch.wav" type="AudioStream" id=21]
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 65.4092, 99.1514 )
 
-[sub_resource type="RectangleShape2D" id=16]
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 63.8442, 89.5907 )
 
-[sub_resource type="RectangleShape2D" id=17]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8.0451, 20.2429 )
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=4]
 
 length = 0.8
 loop = false
@@ -484,7 +487,7 @@ tracks/36/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=5]
 
 length = 0.1
 loop = false
@@ -934,7 +937,7 @@ tracks/36/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=6]
 
 length = 0.3
 loop = false
@@ -1383,8 +1386,20 @@ tracks/36/keys = {
 "update": 1,
 "values": [ 1, 0 ]
 }
+tracks/37/type = "value"
+tracks/37/path = NodePath("../Audio/Punch:playing")
+tracks/37/interp = 1
+tracks/37/loop_wrap = true
+tracks/37/imported = false
+tracks/37/enabled = true
+tracks/37/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=7]
 
 length = 0.1
 loop = false
@@ -1834,7 +1849,7 @@ tracks/36/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=22]
+[sub_resource type="Animation" id=8]
 
 length = 1.5
 loop = true
@@ -2284,7 +2299,7 @@ tracks/36/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=9]
 
 length = 1.0
 loop = true
@@ -2734,31 +2749,31 @@ tracks/36/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Gradient" id=13]
+[sub_resource type="Gradient" id=10]
 
 offsets = PoolRealArray( 0, 0.319697, 1 )
 colors = PoolColorArray( 0.945312, 1, 0, 0.784314, 0.921875, 1, 0, 0.872222, 1, 0, 0, 1 )
 
-[sub_resource type="GradientTexture" id=14]
+[sub_resource type="GradientTexture" id=11]
 
 flags = 4
-gradient = SubResource( 13 )
+gradient = SubResource( 10 )
 width = 2048
 
-[sub_resource type="Curve" id=10]
+[sub_resource type="Curve" id=12]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0.555664 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0778809 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=11]
+[sub_resource type="CurveTexture" id=13]
 
 flags = 4
 width = 2048
-curve = SubResource( 10 )
+curve = SubResource( 12 )
 
-[sub_resource type="ParticlesMaterial" id=12]
+[sub_resource type="ParticlesMaterial" id=14]
 
 render_priority = 0
 trail_divisor = 1
@@ -2787,8 +2802,8 @@ angle = 80.0
 angle_random = 0.5
 scale = 1.0
 scale_random = 0.0
-scale_curve = SubResource( 11 )
-color_ramp = SubResource( 14 )
+scale_curve = SubResource( 13 )
+color_ramp = SubResource( 11 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -2813,7 +2828,7 @@ activate_range_y = 1500
 [node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="." index="0"]
 
 position = Vector2( 4.77008, -0.317993 )
-shape = SubResource( 15 )
+shape = SubResource( 1 )
 
 [node name="Animation" type="Node2D" parent="." index="1"]
 
@@ -2837,7 +2852,7 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area" index="0"]
 
 position = Vector2( 2.91506, 25.9704 )
-shape = SubResource( 16 )
+shape = SubResource( 2 )
 
 [node name="Body" type="Sprite" parent="Animation" index="1"]
 
@@ -2890,7 +2905,7 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Body/Left Arm/Left Forearm/Attack Area" index="0"]
 
 position = Vector2( -1.97216, 20.5879 )
-shape = SubResource( 17 )
+shape = SubResource( 3 )
 
 [node name="Left Fist" type="Sprite" parent="Animation/Body/Left Arm/Left Forearm" index="1"]
 
@@ -2952,12 +2967,12 @@ autoplay = "Still"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Die = SubResource( 18 )
-anims/Hurt = SubResource( 19 )
-anims/Punch = SubResource( 20 )
-anims/Still = SubResource( 21 )
-anims/Stunned = SubResource( 22 )
-anims/Walk = SubResource( 23 )
+anims/Die = SubResource( 4 )
+anims/Hurt = SubResource( 5 )
+anims/Punch = SubResource( 6 )
+anims/Still = SubResource( 7 )
+anims/Stunned = SubResource( 8 )
+anims/Walk = SubResource( 9 )
 blend_times = [  ]
 
 [node name="Number Spawn Pos" type="RemoteTransform2D" parent="Animation" index="3"]
@@ -2987,7 +3002,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 12 )
+process_material = SubResource( 14 )
 texture = ExtResource( 17 )
 normal_map = null
 h_frames = 1
@@ -3002,6 +3017,41 @@ position = Vector2( 2.7919, -149.134 )
 
 position = Vector2( -6.10351e-05, -84.763 )
 scale = Vector2( 0.96, 0.96 )
+
+[node name="Audio" type="Node2D" parent="." index="4"]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 19 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Hey" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 20 )
+volume_db = 0.0
+pitch_scale = 1.2
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Punch" type="AudioStreamPlayer2D" parent="Audio" index="2"]
+
+stream = ExtResource( 21 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="Animation/Body/Left Arm/Left Forearm/Attack Area" to="." method="on_attack_hit"]
 

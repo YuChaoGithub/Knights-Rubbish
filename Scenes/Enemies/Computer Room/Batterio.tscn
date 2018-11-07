@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Batterio.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Batterio/Particle.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Batterio/Laser Head.png" type="Texture" id=3]
+[ext_resource path="res://Audio/battorio_laser.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -250,6 +251,7 @@ off_duration = 2.0
 
 [node name="Left Laser" type="Sprite" parent="." index="0"]
 
+self_modulate = Color( 1, 1, 1, 0.196078 )
 position = Vector2( -21.2944, -701.133 )
 scale = Vector2( 1, 100 )
 z_index = 1
@@ -258,6 +260,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Right Laser" type="Sprite" parent="." index="1"]
 
+self_modulate = Color( 1, 1, 1, 0.196078 )
 position = Vector2( 28.9697, -699.979 )
 scale = Vector2( 1.12, 100 )
 z_index = 1
@@ -266,6 +269,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Laser Head Top" type="Sprite" parent="." index="2"]
 
+editor/display_folded = true
 position = Vector2( 5.35752, -1300.39 )
 rotation = 1.5708
 scale = Vector2( 2, 2 )
@@ -395,6 +399,17 @@ shadow_filter = 0
 shadow_filter_smooth = 0.0
 shadow_item_cull_mask = 1
 _sections_unfolded = [ "Range", "Shadow", "Transform", "Visibility" ]
+
+[node name="Beep" type="AudioStreamPlayer2D" parent="." index="8"]
+
+stream = ExtResource( 4 )
+volume_db = -15.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="Attack Area" to="." method="on_attack_hit"]
 

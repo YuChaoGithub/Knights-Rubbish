@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Latortrans.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Body.png" type="Texture" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://Fonts/SourceHanSerifTC.tres" type="DynamicFont" id=18]
 [ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Graphics/UI/Avatar/Latortrans.png" type="Texture" id=20]
+[ext_resource path="res://Audio/general_mob_hurt.wav" type="AudioStream" id=21]
+[ext_resource path="res://Audio/latortrans_processing.wav" type="AudioStream" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -3328,7 +3330,7 @@ extents = Vector2( 298.953, 324.931 )
 custom_solver_bias = 0.0
 extents = Vector2( 399.053, 55.018 )
 
-[node name="Latortrans" type="Node2D" index="0"]
+[node name="Latortrans" type="Node2D"]
 
 script = ExtResource( 1 )
 activate_range_x = 1500
@@ -3385,13 +3387,16 @@ texture = ExtResource( 4 )
 
 [node name="Left Eyebrow" type="Sprite" parent="Animation/Body/Face" index="1"]
 
+self_modulate = Color( 1, 0.984375, 0, 1 )
 position = Vector2( -26.5345, -64.9137 )
 texture = ExtResource( 5 )
 offset = Vector2( -2.08865, -3.24526 )
 
 [node name="Right Eyebrow" type="Sprite" parent="Animation/Body/Face" index="2"]
 
-position = Vector2( 23.4364, -62.427 )
+self_modulate = Color( 0.453125, 0.820557, 1, 1 )
+position = Vector2( 22.8575, -66.3349 )
+rotation = 0.166236
 texture = ExtResource( 6 )
 offset = Vector2( 1.69901, -5.99731 )
 
@@ -3402,11 +3407,13 @@ texture = ExtResource( 7 )
 
 [node name="Mouth" type="Sprite" parent="Animation/Body/Face" index="4"]
 
+self_modulate = Color( 0.851562, 0.521208, 0.0964661, 1 )
 position = Vector2( -0.223251, -17.9715 )
 texture = ExtResource( 8 )
 
 [node name="Right Eyeball" type="Sprite" parent="Animation/Body/Face" index="5"]
 
+self_modulate = Color( 0.843494, 0.376862, 0.910156, 1 )
 position = Vector2( 23.5526, -48.4448 )
 texture = ExtResource( 9 )
 
@@ -3419,8 +3426,8 @@ offset = Vector2( -29.051, 3.72842 )
 [node name="Input" type="Node2D" parent="Animation/Body" index="3"]
 
 editor/display_folded = true
-position = Vector2( 460, -4 )
-scale = Vector2( 1e-05, 1e-05 )
+visible = false
+position = Vector2( 243.184, -57.0315 )
 z_index = 1
 _sections_unfolded = [ "Transform", "Z Index" ]
 
@@ -3821,6 +3828,54 @@ position = Vector2( 0.867859, -234.094 )
 [node name="Health Bar" parent="." index="4" instance=ExtResource( 19 )]
 
 avatar_texture = ExtResource( 20 )
+
+[node name="Audio" type="Node2D" parent="." index="5"]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 21 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Processing" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 22 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="LeftTube" type="AudioStreamPlayer2D" parent="Audio" index="2"]
+
+position = Vector2( -405.718, -149.21 )
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="RightTube" type="AudioStreamPlayer2D" parent="Audio" index="3"]
+
+position = Vector2( 542.354, -174.358 )
+stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="Animation/Body/Input/InputAttackArea" to="." method="input_attack_hit"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Laserphone.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Laserphone/Laserphone.png" type="Texture" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scripts/Utils/DrawingNode.gd" type="Script" id=9]
 [ext_resource path="res://Scenes/Effects/LaserLight.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Audio/general_mob_hurt.wav" type="AudioStream" id=11]
+[ext_resource path="res://Audio/laserphone_laser.wav" type="AudioStream" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -1352,7 +1354,7 @@ tracks/17/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Laserphone" type="Node2D"]
+[node name="Laserphone" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 activate_range_x = 1500
@@ -1459,5 +1461,29 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 
 position = Vector2( 92.9464, 26.7332 )
 enabled = false
+
+[node name="Audio" type="Node2D" parent="." index="7"]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 11 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Laser" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 12 )
+volume_db = -7.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

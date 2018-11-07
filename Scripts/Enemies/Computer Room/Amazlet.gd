@@ -54,6 +54,11 @@ onready var spawn_node = $".."
 onready var android_spawn_pos = $"Android Spawn Pos"
 onready var frizbee_spawn_pos = $"Frizbee Spawn Pos"
 
+# Audio.
+onready var spawn_android_audio = $"Audio/SpawnAndroid"
+onready var toss_frizbee_audio = $"Audio/TossFrizbee"
+onready var hurt_audio = $"Audio/Hurt"
+
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
 func activate():
@@ -113,6 +118,8 @@ func spawn_android():
 	spawn_node.add_child(new_android)
 	new_android.global_position = android_spawn_pos.global_position
 
+	spawn_android_audio.play()
+
 	# Keep on spawning or go back to face.
 	ec.change_status(NONE)
 	android_spawn_count -= 1
@@ -138,6 +145,7 @@ func spawn_frizbee():
 func throw_frizbee():
 	frizbees.back().start_travel()
 	frizbees.pop_back()
+	toss_frizbee_audio.play()
 
 	var to_status = RESUME_FACE if frizbees.size() == 0 else THROW_FRIZBEE
 	ec.change_status(NONE)

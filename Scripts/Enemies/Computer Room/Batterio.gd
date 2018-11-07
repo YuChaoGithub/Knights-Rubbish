@@ -31,6 +31,8 @@ onready var animator = $AnimationPlayer
 onready var attack_collider = $"Attack Area"
 onready var hero_manager = $"../../HeroManager"
 
+onready var laser_audio = $Beep
+
 func _ready():
 	animator.play("Still")
 
@@ -64,12 +66,14 @@ func turn_laser_on():
 	change_status(NONE)
 	animator.play("Turn On")
 	attack_collider_on_sequence()
+	laser_audio.play()
 	status_timer = cd_timer.new(on_duration, self, "change_status", TURN_OFF)
 
 func turn_laser_off():
 	change_status(NONE)
 	animator.play("Turn Off")
 	end_attack_collider_sequence()
+	laser_audio.stop()
 	status_timer = cd_timer.new(off_duration, self, "change_status", WARNING)
 
 func attack_collider_on_sequence():

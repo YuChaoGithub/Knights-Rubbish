@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/EyeMac.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Shocked.png" type="Texture" id=2]
@@ -39,6 +39,15 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eyemac/Open Screen 3.png" type="Texture" id=37]
 [ext_resource path="res://Scenes/UI/Boss Health Bar.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Graphics/UI/Avatar/Eyemac.png" type="Texture" id=39]
+[ext_resource path="res://Audio/eyemac_hurt.wav" type="AudioStream" id=40]
+[ext_resource path="res://Audio/eyemac_dead.wav" type="AudioStream" id=41]
+[ext_resource path="res://Audio/eyemac_switch.wav" type="AudioStream" id=42]
+[ext_resource path="res://Audio/eyemac_pump_harddies.wav" type="AudioStream" id=43]
+[ext_resource path="res://Audio/calcasio_shoot.wav" type="AudioStream" id=44]
+[ext_resource path="res://Audio/eyemac_harddies_animation.wav" type="AudioStream" id=45]
+[ext_resource path="res://Audio/eyemac_music.wav" type="AudioStream" id=46]
+[ext_resource path="res://Audio/eyemac_rotate.wav" type="AudioStream" id=47]
+[ext_resource path="res://Audio/eyemac_shoot_mouse.wav" type="AudioStream" id=48]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -983,6 +992,18 @@ tracks/56/keys = {
 "args": [  ],
 "method": "screenshot"
 } ]
+}
+tracks/57/type = "value"
+tracks/57/path = NodePath("../Audio/Dead:playing")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=23]
@@ -6420,6 +6441,18 @@ tracks/56/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
+tracks/57/type = "value"
+tracks/57/path = NodePath("../Audio/HarddiesAnimation:playing")
+tracks/57/interp = 1
+tracks/57/loop_wrap = true
+tracks/57/imported = false
+tracks/57/enabled = true
+tracks/57/keys = {
+"times": PoolRealArray( 1.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=31]
 
@@ -7121,6 +7154,30 @@ tracks/57/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/58/type = "value"
+tracks/58/path = NodePath("../Audio/PumpHarddiesOpen:playing")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/keys = {
+"times": PoolRealArray( 0.45 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/59/type = "value"
+tracks/59/path = NodePath("../Audio/PumpHarddies:playing")
+tracks/59/interp = 1
+tracks/59/loop_wrap = true
+tracks/59/imported = false
+tracks/59/enabled = true
+tracks/59/keys = {
+"times": PoolRealArray( 1.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=32]
@@ -10469,7 +10526,7 @@ scale = Vector2( 1.75, 1.75 )
 [node name="Harddies" type="Sprite" parent="Animation" index="0"]
 
 visible = false
-position = Vector2( -0.688058, 19.2288 )
+position = Vector2( 1.85119, -330.019 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 2 )
 
@@ -10479,6 +10536,7 @@ position = Vector2( 2.46586, -328.724 )
 
 [node name="Screen" type="Sprite" parent="Animation" index="2"]
 
+editor/display_folded = true
 texture = ExtResource( 3 )
 
 [node name="Broken Screen" type="Sprite" parent="Animation/Screen" index="0"]
@@ -10872,7 +10930,7 @@ editor/display_folded = true
 [node name="Light2D" type="Light2D" parent="Animation/Screen/Pump Harddies Screen" index="0"]
 
 position = Vector2( 11.0494, -201.987 )
-enabled = false
+enabled = true
 editor_only = false
 texture = ExtResource( 23 )
 offset = Vector2( 0, 0 )
@@ -11099,5 +11157,106 @@ position = Vector2( 4.15442, -454.899 )
 [node name="Health Bar" parent="." index="2" instance=ExtResource( 38 )]
 
 avatar_texture = ExtResource( 39 )
+
+[node name="Audio" type="Node2D" parent="." index="3"]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 40 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Dead" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 41 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Switch" type="AudioStreamPlayer2D" parent="Audio" index="2"]
+
+stream = ExtResource( 42 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="PumpHarddies" type="AudioStreamPlayer2D" parent="Audio" index="3"]
+
+stream = ExtResource( 43 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="PumpHarddiesOpen" type="AudioStreamPlayer2D" parent="Audio" index="4"]
+
+stream = ExtResource( 44 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="HarddiesAnimation" type="AudioStreamPlayer2D" parent="Audio" index="5"]
+
+stream = ExtResource( 45 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Music" type="AudioStreamPlayer2D" parent="Audio" index="6"]
+
+stream = ExtResource( 46 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Rotate" type="AudioStreamPlayer2D" parent="Audio" index="7"]
+
+stream = ExtResource( 47 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="ShootMouse" type="AudioStreamPlayer2D" parent="Audio" index="8"]
+
+stream = ExtResource( 48 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

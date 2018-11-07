@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/HeroManager.gd" type="Script" id=2]
@@ -14,12 +14,14 @@
 [ext_resource path="res://Graphics/UI/Avatar/Godotbos.png" type="Texture" id=12]
 [ext_resource path="res://Graphics/UI/Avatar/Eyemac.png" type="Texture" id=13]
 [ext_resource path="res://Scenes/Power Ups/Ult Stone.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Calcasio.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Enemies/Computer Room/CD Punch.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/UI/HeroPickerButton.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Batterio.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Power Ups/Defense Potion.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Power Ups/SizeChangingLight.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Mouse.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/UI/HeroPickerButton.tscn" type="PackedScene" id=20]
 
-[node name="Game Level" type="Node2D"]
+[node name="Game Level" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -257,49 +259,41 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 position = Vector2( 5709.26, -853.9 )
 
-[node name="Calcasio" parent="PlatformDecorations" index="1" instance=ExtResource( 15 )]
+[node name="Batterio" parent="PlatformDecorations" index="1" instance=ExtResource( 15 )]
 
-position = Vector2( 1350, -450 )
+position = Vector2( 3306.55, -392.268 )
 
-[node name="CD Punch" parent="PlatformDecorations" index="2" instance=ExtResource( 16 )]
+[node name="Batterio2" parent="PlatformDecorations" index="2" instance=ExtResource( 15 )]
 
-position = Vector2( 1150, -300 )
+position = Vector2( 5899.83, -665.871 )
+activate_range_x = 6000
+on_duration = 1.0
+off_duration = 1.0
 
-[node name="CD Punch2" parent="PlatformDecorations" index="3" instance=ExtResource( 16 )]
+[node name="DefensivePotion" parent="PlatformDecorations" index="3" instance=ExtResource( 16 )]
 
-position = Vector2( 800, -350 )
+position = Vector2( 3874.57, -537.991 )
 
-[node name="CD Punch4" parent="PlatformDecorations" index="4" instance=ExtResource( 16 )]
+[node name="SizeChangingLight" parent="PlatformDecorations" index="4" instance=ExtResource( 17 )]
 
-position = Vector2( 2938.27, -593.864 )
+position = Vector2( 4442.59, -1540.21 )
 
-[node name="CD Punch5" parent="PlatformDecorations" index="5" instance=ExtResource( 16 )]
+[node name="SizeChangingLight2" parent="PlatformDecorations" index="5" instance=ExtResource( 17 )]
 
-position = Vector2( 3687.71, -766.353 )
+position = Vector2( 5391.29, -1555.08 )
+change_to = 0
 
-[node name="CD Punch6" parent="PlatformDecorations" index="6" instance=ExtResource( 16 )]
+[node name="Mouse" parent="PlatformDecorations" index="6" instance=ExtResource( 18 )]
 
-position = Vector2( 4089.19, -813.936 )
-
-[node name="CD Punch7" parent="PlatformDecorations" index="7" instance=ExtResource( 16 )]
-
-position = Vector2( 3351.65, -662.265 )
-
-[node name="CD Punch8" parent="PlatformDecorations" index="8" instance=ExtResource( 16 )]
-
-position = Vector2( 2846.08, -567.098 )
-
-[node name="CD Punch3" parent="PlatformDecorations" index="9" instance=ExtResource( 16 )]
-
-position = Vector2( 1700, -450 )
+position = Vector2( 1895.92, -299.353 )
 
 [node name="ForegroundDecorations" type="Node2D" parent="." index="8"]
 
 z_index = 1
 _sections_unfolded = [ "Z Index" ]
 
-[node name="PauseButton" parent="." index="9" instance=ExtResource( 17 )]
+[node name="PauseButton" parent="." index="9" instance=ExtResource( 19 )]
 
-[node name="HeroPickerButton" parent="." index="10" instance=ExtResource( 18 )]
+[node name="HeroPickerButton" parent="." index="10" instance=ExtResource( 20 )]
 
 

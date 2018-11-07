@@ -66,7 +66,7 @@ tracks/1/keys = {
 "values": [ 2.19, 0.01, 2.2, 0.01, 2.2, 0.01, 2.2, 0.01, 0.01 ]
 }
 
-[node name="Game Level" type="Node2D"]
+[node name="Game Level" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -383,25 +383,25 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/StartTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -2850 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/BossTrigger" to="BackgroundDecorations/Push Lever" method="queue_free"]
-
-[connection signal="passed" from="CameraChangingTriggers/BossTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 4800 ]]
-
-[connection signal="passed" from="CameraChangingTriggers/BossTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 1600 ]]
-
-[connection signal="passed" from="CameraChangingTriggers/BossTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -1400 ]]
+[connection signal="passed" from="CameraChangingTriggers/BossTrigger" to="BackgroundDecorations/Lightnings/AnimationPlayer" method="play" binds= [ "Strike" ]]
 
 [connection signal="passed" from="CameraChangingTriggers/BossTrigger" to="Enemies/Godotbos" method="activate"]
 
 [connection signal="passed" from="CameraChangingTriggers/BossTrigger" to="PlatformDecorations/Dot1" method="set_modulate" binds= [ Color( 1, 0, 0, 1 ) ]]
 
-[connection signal="passed" from="CameraChangingTriggers/BossTrigger" to="BackgroundDecorations/Lightnings/AnimationPlayer" method="play" binds= [ "Strike" ]]
+[connection signal="passed" from="CameraChangingTriggers/BossTrigger" to="BackgroundDecorations/Push Lever" method="queue_free"]
 
-[connection signal="count_reached" from="CameraChangingTriggers/BossClear" to="FollowingCamera" method="update_right_limit" binds= [ 6800 ]]
+[connection signal="passed" from="CameraChangingTriggers/BossTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 1600 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/BossTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 4800 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/BossTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -1400 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/BossClear" to="GoArrows" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/BossClear" to="PlatformDecorations/Dot2" method="set_modulate" binds= [ Color( 0, 1, 0.0390625, 1 ) ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/BossClear" to="GoArrows" method="activate"]
+[connection signal="count_reached" from="CameraChangingTriggers/BossClear" to="FollowingCamera" method="update_right_limit" binds= [ 6800 ]]
 
 [connection signal="defeated" from="Enemies/Godotbos" to="CameraChangingTriggers/BossClear" method="increment_count"]
 

@@ -9,12 +9,10 @@ const KNOCK_BACK_VEL_Y = 400
 const KNOCK_BACK_FADE_RATE = 1250
 
 const LIFETIME = 5
-const DIE_ANIMATION_DURATION = 0.4
 
 var lifetime_timestamp
 var movement_pattern
 var exploding = false
-var die_timer
 var dir_x
 
 onready var animator = $"Animation/AnimationPlayer"
@@ -41,7 +39,6 @@ func _process(delta):
 func explode():
 	exploding = true
 	animator.play("Explode")
-	die_timer = preload("res://Scripts/Utils/CountdownTimer.gd").new(DIE_ANIMATION_DURATION, self, "queue_free")
 
 func on_attack_hit(area):
 	if !exploding && area.is_in_group("hero"):

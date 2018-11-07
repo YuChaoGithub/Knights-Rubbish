@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/DarkEarspider.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Dark Earspider/Dark Earspider01.png" type="Texture" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Graphics/Characters/Bro SS/Sirurueruerue Stunned Eye.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Graphics/Particles/Dot.png" type="Texture" id=12]
+[ext_resource path="res://Audio/general_mob_hurt.wav" type="AudioStream" id=13]
+[ext_resource path="res://Audio/darkearspider_clip.wav" type="AudioStream" id=14]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -243,6 +245,18 @@ tracks/17/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 0 ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("../Audio/Clip:playing")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0.15 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -1133,6 +1147,30 @@ tracks/17/keys = {
 "update": 1,
 "values": [ 0 ]
 }
+tracks/18/type = "value"
+tracks/18/path = NodePath("../Audio/Hurt:playing")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("../Audio/Clip:playing")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=8]
 
@@ -1628,7 +1666,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Gravity", "Initial Velocity", "Scale", "Spread" ]
 
-[node name="Dark Earspider" type="Node2D"]
+[node name="Dark Earspider" type="Node2D" index="0"]
 
 z_index = 1
 script = ExtResource( 1 )
@@ -1751,6 +1789,30 @@ normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Process Material", "Textures", "Time", "Z Index" ]
+
+[node name="Audio" type="Node2D" parent="." index="4"]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 13 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Clip" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="Animation/Clap Attack Area" to="." method="clap_attack_hit"]
 

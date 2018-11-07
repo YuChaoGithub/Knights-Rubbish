@@ -40,6 +40,10 @@ var facing = -1
 
 onready var spawn_node = $".."
 
+# Audio.
+onready var bulb_toss_audio = $Audio/BulbToss
+onready var clip_toss_audio = $Audio/ClipToss
+
 # Bubble.
 var bubble = preload("res://Scenes/Enemies/Computer Room/Cliffy Light Bulb.tscn")
 onready var bubble_spawn_pos = $"Animation/Bubble Spawn Pos"
@@ -117,6 +121,8 @@ func shoot_bubble():
 	spawn_node.add_child(new_bubble)
 	new_bubble.global_position = bubble_spawn_pos.global_position
 
+	bulb_toss_audio.play()
+
 	status_timer = ec.cd_timer.new(SHOOT_BUBBLE_DURATION, self, "change_status", MOVE)
 
 func play_dart_anim():
@@ -143,6 +149,8 @@ func shoot_dart():
 		
 	for dart_instance in darts:
 		dart_instance.start_travel()
+
+	clip_toss_audio.play()
 
 	darts.clear()
 

@@ -85,6 +85,8 @@ onready var spawn_node = $".."
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
+onready var heal_audio = $Audio/Heal
+
 func activate():
 	ec.health_bar.show_health_bar()
 	ec.init_gravity_movement(GRAVITY)
@@ -246,6 +248,7 @@ func land_fire():
 func heal_up():
 	ec.play_animation("Heal")
 	ec.change_status(NONE)
+	heal_audio.play()
 
 	heal_timer = ec.cd_timer.new(HEAL_INTERVAL, self, "heal_tick")
 
@@ -258,6 +261,7 @@ func interrupt_heal():
 	if heal_timer != null:
 		heal_timer.destroy_timer()
 		heal_timer = null
+	heal_audio.stop()
 	ec.change_status(THROW_MINE_ANIM)
 
 func play_throw_mine_anim():
@@ -284,7 +288,7 @@ func damaged(val):
 	if curr_anim == "Heal":
 		interrupt_heal()
 	
-	ec.damaged(val, curr_anim == "Walk")
+	ec.damaged(val, curr_anim == "Walk" || curr_anim == "Still")
 
 func resume_from_damaged():
 	ec.resume_from_damaged()

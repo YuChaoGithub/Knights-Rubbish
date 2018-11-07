@@ -644,13 +644,13 @@ position = Vector2( 2350, -1300 )
 scale = Vector2( 10, 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[connection signal="count_reached" from="CameraChangingTriggers/CountdownFinished" to="Platform" method="set_modulate" binds= [ Color( 1, 1, 1, 1 ) ]]
-
-[connection signal="count_reached" from="CameraChangingTriggers/CountdownFinished" to="WhiteWall" method="set_modulate" binds= [ Color( 1, 1, 1, 1 ) ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/CountdownFinished" to="Enemies/Eye Mac" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/CountdownFinished" to="FollowingCamera" method="start_shake_effect"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/CountdownFinished" to="WhiteWall" method="set_modulate" binds= [ Color( 1, 1, 1, 1 ) ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/CountdownFinished" to="Platform" method="set_modulate" binds= [ Color( 1, 1, 1, 1 ) ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/BossCleared" to="Structures/AnimationPlayer" method="play" binds= [ "Door Drop" ]]
 

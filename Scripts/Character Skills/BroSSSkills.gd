@@ -10,6 +10,26 @@ onready var char_nodes = [
     $"../Sprite/Animation/Sir",
     $"../Sprite/Animation/Big Bro"
 ]
+var hurt_sounds = [
+    preload("res://Audio/bross_sug_hurt.wav"),
+    preload("res://Audio/bross_sir_hurt.wav"),
+    preload("res://Audio/bross_sir_hurt.wav")
+]
+var jump_sounds = [
+    preload("res://Audio/bross_sug_jump.wav"),
+    preload("res://Audio/bross_sir_jump.wav"),
+    preload("res://Audio/bross_bro_jump.wav")
+]
+var size_change_sounds = [
+    preload("res://Audio/bross_sug_size_change.wav"),
+    preload("res://Audio/bross_sir_size_change.wav"),
+    preload("res://Audio/bross_sir_size_change.wav")
+]
+var healed_sounds = [
+    preload("res://Audio/bross_sug_healed.wav"),
+    preload("res://Audio/bross_sir_healed.wav"),
+    preload("res://Audio/bross_sir_healed.wav")
+]
 enum {SUG, SIR, BRO}
 var curr_char = SUG
 
@@ -17,8 +37,8 @@ var curr_char = SUG
 const BASIC_ATTACK_DURATION = 0.8
 const SIR_BASIC_ATTACK_THROW_TIME = 0.5
 const BASIC_ATTACK_COOLDOWN = 0.15
-const BASIC_ATTACK_DAMAGE_MIN = 40
-const BASIC_ATTACK_DAMAGE_MAX = 60
+const BASIC_ATTACK_DAMAGE_MIN = 30
+const BASIC_ATTACK_DAMAGE_MAX = 45
 const BASIC_ATTACK_STUN_DURATION = 1.0
 const BASIC_ATTACK_KNOCK_BACK_VEL_X = 300
 const BASIC_ATTACK_KNOCK_BACK_VEL_Y = 50
@@ -44,12 +64,12 @@ const BASIC_SKILL_SPEED_RATE = 1.5
 
 var basic_skill_targets = []
 
-# Horizontal  Skill.
+# Horizontal Skill.
 const SUG_HORIZONTAL_SKILL_DURATION = 0.4
 const SUG_HORIZONTAL_DASH_TIME = 0.2
 const SUG_HORIZONTAL_SKILL_COOLDOWN = 0.15
-const HORIZONTAL_SKILL_DAMAGE_MIN = 40
-const HORIZONTAL_SKILL_DAMAGE_MAX = 50
+const HORIZONTAL_SKILL_DAMAGE_MIN = 25
+const HORIZONTAL_SKILL_DAMAGE_MAX = 40
 const SUG_HORIZONTAL_SKILL_DISPLACEMENT_VEL_X = 800
 const SUG_HORIZONTAL_SKILL_DISPLACEMENT_VEL_Y = 50
 const SUG_HORIZONTAL_SKILL_DISPLACEMENT_VEL_FADE_RATE = 1000
@@ -94,7 +114,6 @@ var up_skill_timestamp = 0
 
 # Ult.
 const ULT_TRANSFORM_DURATION = 1.5
-const ULT_BIG_BRO_APPEAR_TIME = 1.3
 const ULT_DURATION = 12.0
 const END_ULT_DURATION = 1.5
 const ULT_DAMAGE_MIN = 250
@@ -106,9 +125,12 @@ const ULT_KNOCK_BACK_FADE_RATE = 1000
 var ult_start_explosion_particles = preload("res://Scenes/Particles/BroSSUltStartExplosion.tscn")
 var ult_explosion_particles = preload("res://Scenes/Particles/BroSSUltExplosion.tscn")
 
-var ult_show_big_bro_timer
 var ult_timer
 var char_before_ult
+
+onready var bro_appear_audio = $"../Audio/BroAppear"
+onready var bro_exit_audio = $"../Audio/BroExit"
+onready var bro_background_audio = $"../Audio/BroBackground"
 
 onready var hero = get_node("..")
 onready var spawn_node = get_node("../..")
@@ -320,6 +342,12 @@ func transform_character(index):
     hero.gravity = 2 * JUMP_HEIGHT / pow(JUMP_TIMES[index], 2)
     hero.jump_speed = -hero.gravity * JUMP_TIMES[index]
 
+    # Audio.
+    hero.audio_players.hurt.stream = hurt_sounds[index]
+    hero.audio_players.jump.stream = jump_sounds[index]
+    hero.audio_players.size_change.stream = size_change_sounds[index]
+    hero.audio_players.healed.stream = healed_sounds[index]
+
     var prev_animator = hero.animator
     hero.animator = hero.get_node(ANIMATORS[index])
     configure_char_visibility()
@@ -349,12 +377,18 @@ func ult_transformed():
 
     transform_character(curr_char)
 
+    bro_appear_audio.play()
+    bro_background_audio.play()
+
     hero.set_status("invincible", true, ULT_DURATION)
 
     ult_timer = cd_timer.new(ULT_DURATION, self, "ult_ending")
 
 func ult_ending():
     hero.play_animation("End Ult")
+
+    bro_exit_audio.play()
+    bro_background_audio.stop()
 
     hero.set_status("can_move", false, END_ULT_DURATION)
     hero.set_status("can_jump", false, END_ULT_DURATION)

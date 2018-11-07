@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/ASCIIBomberBomb.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/ASCII Bomber/Bomb.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/Enemies/Computer Room/ASCII Bomber/B.png" type="Texture" id=3]
 [ext_resource path="res://Graphics/Enemies/Computer Room/ASCII Bomber/O.png" type="Texture" id=4]
 [ext_resource path="res://Graphics/Enemies/Computer Room/ASCII Bomber/M.png" type="Texture" id=5]
+[ext_resource path="res://Audio/ascii_bomb_beep.wav" type="AudioStream" id=6]
+[ext_resource path="res://Audio/ascii_bomb_explode.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -124,10 +126,34 @@ tracks/8/keys = {
 "update": 0,
 "values": [ Vector2( 12.9669, 3.82834 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Audio/Blink:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Audio/Explode:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=3]
 
-length = 0.4
+length = 1.2
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -237,6 +263,32 @@ tracks/8/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 12.9669, 3.82834 ), Vector2( 18.3739, 3.01047 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Audio/Explode:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/10/type = "method"
+tracks/10/path = NodePath("..")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 1.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -352,6 +404,30 @@ tracks/8/keys = {
 "update": 0,
 "values": [ Vector2( 12.9669, 3.82834 ) ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("../Audio/Explode:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("../Audio/Blink:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="RectangleShape2D" id=5]
 
@@ -380,6 +456,7 @@ scale = Vector2( 1.5, 1.5 )
 [node name="Bomb" type="Sprite" parent="Animation" index="0"]
 
 texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="BOOM" type="Node2D" parent="Animation" index="1"]
 
@@ -444,6 +521,30 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( -4.99435, 0.712364 )
 shape = SubResource( 5 )
+
+[node name="Audio" type="Node2D" parent="." index="3"]
+
+[node name="Blink" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 6 )
+volume_db = -20.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Explode" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 7 )
+volume_db = -20.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="Attack Area" to="." method="on_attack_hit"]
 

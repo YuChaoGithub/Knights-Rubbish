@@ -59,6 +59,8 @@ onready var rightpunch_particles = $"Animation/RightPunchParticles"
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
+onready var hit_audio = $Audio/Hit
+
 func activate():
 	ec.init_gravity_movement(GRAVITY)
 	ec.init_straight_line_movement(0, 0)
@@ -160,6 +162,8 @@ func on_right_attack_hit(area):
 		apply_attack(area.get_node(".."), -facing)
 
 func apply_attack(character, dir):
+	hit_audio.play()
+	
 	character.damaged(DAMAGE)
 	character.knocked_back(dir * KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 

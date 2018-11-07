@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/EeloPuncher.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Puncher/Left Forearm.png" type="Texture" id=2]
@@ -15,6 +15,10 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Puncher/Stunned Face.png" type="Texture" id=13]
 [ext_resource path="res://Graphics/Particles/Dot.png" type="Texture" id=14]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Audio/eelo_hurt.wav" type="AudioStream" id=16]
+[ext_resource path="res://Audio/eelo_ha_01.wav" type="AudioStream" id=17]
+[ext_resource path="res://Audio/eelo_ha_02.wav" type="AudioStream" id=18]
+[ext_resource path="res://Audio/eelo_hit.wav" type="AudioStream" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -2052,6 +2056,30 @@ tracks/32/keys = {
 "update": 1,
 "values": [ 0, 1, 0, 1, 0 ]
 }
+tracks/33/type = "value"
+tracks/33/path = NodePath("../Audio/Ha1:playing")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/keys = {
+"times": PoolRealArray( 0, 1.75 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/34/type = "value"
+tracks/34/path = NodePath("../Audio/Ha2:playing")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/keys = {
+"times": PoolRealArray( 0.4, 1.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
 
 [sub_resource type="Animation" id=11]
 
@@ -3259,31 +3287,31 @@ tracks/32/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Gradient" id=17]
+[sub_resource type="Gradient" id=14]
 
 offsets = PoolRealArray( 0, 0.522727, 1 )
 colors = PoolColorArray( 0, 0, 0, 1, 0, 1, 1, 1, 0, 0.507812, 1, 1 )
 
-[sub_resource type="GradientTexture" id=18]
+[sub_resource type="GradientTexture" id=15]
 
 flags = 4
-gradient = SubResource( 17 )
+gradient = SubResource( 14 )
 width = 2048
 
-[sub_resource type="Curve" id=14]
+[sub_resource type="Curve" id=16]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0.175293 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.0639648 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=15]
+[sub_resource type="CurveTexture" id=17]
 
 flags = 4
 width = 2048
-curve = SubResource( 14 )
+curve = SubResource( 16 )
 
-[sub_resource type="ParticlesMaterial" id=16]
+[sub_resource type="ParticlesMaterial" id=18]
 
 render_priority = 0
 trail_divisor = 1
@@ -3312,8 +3340,8 @@ angle = 0.0
 angle_random = 0.0
 scale = 1.0
 scale_random = 0.0
-scale_curve = SubResource( 15 )
-color_ramp = SubResource( 18 )
+scale_curve = SubResource( 17 )
+color_ramp = SubResource( 15 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -3323,7 +3351,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Color", "Gravity", "Initial Velocity", "Scale", "Spread" ]
 
-[node name="Eelo Puncher" type="KinematicBody2D" index="0"]
+[node name="Eelo Puncher" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
@@ -3538,7 +3566,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 16 )
+process_material = SubResource( 18 )
 texture = ExtResource( 14 )
 normal_map = null
 h_frames = 1
@@ -3563,7 +3591,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 16 )
+process_material = SubResource( 18 )
 texture = ExtResource( 14 )
 normal_map = null
 h_frames = 1
@@ -3578,6 +3606,52 @@ position = Vector2( 3.23474, -200.555 )
 
 position = Vector2( -1.53192, -115.562 )
 scale = Vector2( 0.88, 0.88 )
+
+[node name="Audio" type="Node2D" parent="." index="4"]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 16 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Ha1" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 17 )
+volume_db = 0.0
+pitch_scale = 0.7
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Ha2" type="AudioStreamPlayer2D" parent="Audio" index="2"]
+
+stream = ExtResource( 18 )
+volume_db = 0.0
+pitch_scale = 0.7
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="Audio" index="3"]
+
+stream = ExtResource( 19 )
+volume_db = 0.0
+pitch_scale = 0.5
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="Animation/Left Punch Area" to="." method="on_left_attack_hit"]
 

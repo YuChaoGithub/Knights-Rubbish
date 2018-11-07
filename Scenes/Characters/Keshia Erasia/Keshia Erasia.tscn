@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=85 format=2]
 
 [ext_resource path="res://Scripts/HeroCommon.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Character Skills/KeshiaErasiaSkills.gd" type="Script" id=2]
@@ -24,22 +24,37 @@
 [ext_resource path="res://Scenes/Power Ups/Confused Icon.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Graphics/Characters/Common/Power Up/Attack Potion.png" type="Texture" id=23]
 [ext_resource path="res://Scenes/Power Ups/Speeded Icon.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/1.png" type="Texture" id=25]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/2-1.png" type="Texture" id=26]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/4.png" type="Texture" id=25]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/2-4.png" type="Texture" id=26]
 [ext_resource path="res://Scenes/Particles/Puff.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Graphics/Particles/Square.png" type="Texture" id=28]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/2.png" type="Texture" id=29]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/3.png" type="Texture" id=30]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/4.png" type="Texture" id=31]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/2-2.png" type="Texture" id=32]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/2-3.png" type="Texture" id=33]
-[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/2-4.png" type="Texture" id=34]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/1.png" type="Texture" id=29]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/2.png" type="Texture" id=30]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/3.png" type="Texture" id=31]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/2-1.png" type="Texture" id=32]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/2-2.png" type="Texture" id=33]
+[ext_resource path="res://Graphics/Characters/Keshia Gome/BasicAttackTraces/2-3.png" type="Texture" id=34]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=35]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Petrified.png" type="Texture" id=36]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned mouth.png" type="Texture" id=37]
 [ext_resource path="res://Scenes/UI/Hero Health Bar.tscn" type="PackedScene" id=38]
 [ext_resource path="res://Graphics/Powerups/Ult Ball/Ball.png" type="Texture" id=39]
 [ext_resource path="res://Scripts/HeroGhost.gd" type="Script" id=40]
+[ext_resource path="res://Audio/keshia_hurt.wav" type="AudioStream" id=41]
+[ext_resource path="res://Audio/keshia_healed.wav" type="AudioStream" id=42]
+[ext_resource path="res://Audio/general_hero_jump.wav" type="AudioStream" id=43]
+[ext_resource path="res://Audio/hero_general_drink.wav" type="AudioStream" id=44]
+[ext_resource path="res://Audio/keshia_size_change.wav" type="AudioStream" id=45]
+[ext_resource path="res://Audio/keshia_ba_swipe_01.wav" type="AudioStream" id=46]
+[ext_resource path="res://Audio/keshia_ba_swipe_02.wav" type="AudioStream" id=47]
+[ext_resource path="res://Audio/keshia_bs_hop.wav" type="AudioStream" id=48]
+[ext_resource path="res://Audio/keshia_hs_explode.wav" type="AudioStream" id=49]
+[ext_resource path="res://Audio/keshia_hs_toss.wav" type="AudioStream" id=50]
+[ext_resource path="res://Audio/keshia_ds.wav" type="AudioStream" id=51]
+[ext_resource path="res://Audio/keshia_ds_drop.wav" type="AudioStream" id=52]
+[ext_resource path="res://Audio/keshia_us.wav" type="AudioStream" id=53]
+[ext_resource path="res://Audio/keshia_ult.wav" type="AudioStream" id=54]
+[ext_resource path="res://Audio/keshia_ult_shoot.wav" type="AudioStream" id=55]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -1085,7 +1100,7 @@ tracks/64/keys = {
 "times": PoolRealArray( 0, 0.1, 0.15, 0.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 25 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ) ]
+"values": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 25 ) ]
 }
 tracks/65/type = "value"
 tracks/65/path = NodePath("Animation/BasicAttackTrace2:texture")
@@ -1097,7 +1112,7 @@ tracks/65/keys = {
 "times": PoolRealArray( 0, 0.4, 0.45, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 26 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ) ]
+"values": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 26 ) ]
 }
 tracks/66/type = "value"
 tracks/66/path = NodePath("Animation/BasicAttackTrace2:modulate")
@@ -1110,6 +1125,30 @@ tracks/66/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("../Audio/BASwipe1:playing")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("../Audio/BASwipe2:playing")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0.45 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -1896,6 +1935,18 @@ tracks/64/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/65/type = "value"
+tracks/65/path = NodePath("../Audio/BSHop:playing")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -4327,6 +4378,30 @@ tracks/66/keys = {
 "update": 1,
 "values": [ false, true ]
 }
+tracks/67/type = "value"
+tracks/67/path = NodePath("../Audio/DSShout:playing")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0.25 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/68/type = "value"
+tracks/68/path = NodePath("../Audio/DSThump:playing")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=14]
 
@@ -5935,6 +6010,18 @@ tracks/67/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
+tracks/68/type = "value"
+tracks/68/path = NodePath("../Audio/Drink:playing")
+tracks/68/interp = 1
+tracks/68/loop_wrap = true
+tracks/68/imported = false
+tracks/68/enabled = true
+tracks/68/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=16]
 
@@ -6720,6 +6807,18 @@ tracks/64/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/65/type = "value"
+tracks/65/path = NodePath("../Audio/HSToss:playing")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0.55 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=17]
@@ -11437,6 +11536,18 @@ tracks/64/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
+tracks/65/type = "value"
+tracks/65/path = NodePath("../Audio/UltShout:playing")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=23]
 
@@ -12222,6 +12333,18 @@ tracks/64/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/65/type = "value"
+tracks/65/path = NodePath("../Audio/US:playing")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=24]
@@ -13228,7 +13351,7 @@ extents = Vector2( 70, 80 )
 custom_solver_bias = 0.0
 extents = Vector2( 79.7137, 95.9264 )
 
-[node name="Keshia Erasia" type="KinematicBody2D"]
+[node name="Keshia Erasia" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 0
@@ -13283,7 +13406,7 @@ _sections_unfolded = [ "Material", "Transform", "Visibility", "Z Index" ]
 [node name="Right Arm" type="Sprite" parent="Sprite" index="0"]
 
 position = Vector2( 88.0745, -39.3245 )
-rotation = -0.301277
+rotation = -0.881391
 scale = Vector2( 0.9, 0.9 )
 texture = ExtResource( 3 )
 offset = Vector2( -1.23269, 16.6908 )
@@ -13414,33 +13537,31 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Left Brow" type="Sprite" parent="Sprite/Animation/Body/Face" index="0"]
 
-position = Vector2( -21.4847, -31.2223 )
-rotation = 0.368736
+position = Vector2( -22.3623, -23.3092 )
 texture = ExtResource( 6 )
 
 [node name="Right Brow" type="Sprite" parent="Sprite/Animation/Body/Face" index="1"]
 
-position = Vector2( 27.7358, -35.534 )
-rotation = -0.338753
+position = Vector2( 29.2886, -26.3653 )
 texture = ExtResource( 7 )
 
 [node name="Left Eye" type="Sprite" parent="Sprite/Animation/Body/Face" index="2"]
 
-position = Vector2( -22.152, -25.8444 )
+position = Vector2( -24.4068, -11.8411 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 18 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Right Eye" type="Sprite" parent="Sprite/Animation/Body/Face" index="3"]
 
-position = Vector2( 27.3728, -29.8489 )
+position = Vector2( 30.1689, -12.2813 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 18 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Mouth" type="Sprite" parent="Sprite/Animation/Body/Face" index="4"]
 
-position = Vector2( 3.66161, 2.4598 )
+position = Vector2( 2.9665, 22.6168 )
 scale = Vector2( 0.9625, 0.9625 )
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Transform" ]
@@ -13464,14 +13585,14 @@ rotation = 1.59445
 
 editor/display_folded = true
 position = Vector2( 17.1454, 13.0277 )
-rotation = -0.666663
+rotation = 0.0334391
 texture = ExtResource( 3 )
 offset = Vector2( -1.72225, 17.8055 )
 
 [node name="Right Foot" type="Sprite" parent="Sprite/Animation/Body/Right Leg" index="0"]
 
 position = Vector2( -2.25239, 35.3849 )
-rotation = -0.750347
+rotation = -1.74882
 scale = Vector2( 1, 0.8 )
 texture = ExtResource( 3 )
 offset = Vector2( -2.55776, 16.1404 )
@@ -13481,14 +13602,13 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( -30.1975, 11.7395 )
-rotation = 0.525814
 texture = ExtResource( 3 )
 offset = Vector2( -1.72225, 17.8055 )
 
 [node name="Left Foot" type="Sprite" parent="Sprite/Animation/Body/Left Leg" index="0"]
 
 position = Vector2( -4.91125, 36.1676 )
-rotation = 2.19519
+rotation = 1.43815
 scale = Vector2( 1, 0.7 )
 texture = ExtResource( 3 )
 offset = Vector2( 1.79243, -17.9243 )
@@ -13497,8 +13617,8 @@ _sections_unfolded = [ "Offset", "Transform" ]
 [node name="Left Arm" type="Sprite" parent="Sprite/Animation/Body" index="7"]
 
 editor/display_folded = true
-position = Vector2( -47.6953, -77.0408 )
-rotation = -2.09717
+position = Vector2( -66.2904, -77.3851 )
+rotation = 0.759218
 texture = ExtResource( 3 )
 offset = Vector2( -1.99024, 18.262 )
 _sections_unfolded = [ "Transform" ]
@@ -13506,8 +13626,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Weapon" type="Sprite" parent="Sprite/Animation/Body/Left Arm" index="0"]
 
 editor/display_folded = true
-position = Vector2( 60.8076, 113.823 )
-rotation = 2.05434
+position = Vector2( 6.01704, -0.178232 )
+rotation = -0.846485
 scale = Vector2( 1.44, 1.44 )
 texture = ExtResource( 20 )
 offset = Vector2( 3.92352, -79.9531 )
@@ -13559,7 +13679,7 @@ shape = SubResource( 5 )
 
 editor/display_folded = true
 position = Vector2( -3.15459, 36.6928 )
-rotation = 2.82694
+rotation = 1.028
 scale = Vector2( 0.8, 0.8 )
 texture = ExtResource( 3 )
 offset = Vector2( 1.84393, -19.0845 )
@@ -13568,7 +13688,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Hand" type="Sprite" parent="Sprite/Animation/Body/Left Arm/Left Forearm" index="0"]
 
 position = Vector2( 3.23194, -39.9086 )
-rotation = -2.54404
+rotation = -2.92343
 texture = ExtResource( 21 )
 offset = Vector2( 6.49008, 6.4641 )
 _sections_unfolded = [ "Transform" ]
@@ -13576,8 +13696,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Weapon Remote Transform" type="RemoteTransform2D" parent="Sprite/Animation/Body/Left Arm/Left Forearm" index="1"]
 
 editor/display_folded = true
-position = Vector2( -46.1896, -116.423 )
-rotation = -0.772601
+position = Vector2( -33.5425, -33.6231 )
+rotation = -1.87448
 scale = Vector2( 1.8, 1.8 )
 remote_path = NodePath("../../Weapon")
 use_global_coordinates = true
@@ -13595,7 +13715,7 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 89.5015, -86.9088 )
-rotation = -0.301277
+rotation = -0.881391
 scale = Vector2( 0.9, 0.9 )
 remote_path = NodePath("../../../Right Arm")
 use_global_coordinates = true
@@ -13609,8 +13729,8 @@ __meta__ = {
 
 [node name="Right Forearm" type="Sprite" parent="Sprite/Animation/Body/Remote Right Arm" index="0"]
 
-position = Vector2( -2.48685, 37.4963 )
-rotation = -0.128972
+position = Vector2( -3.78853, 37.4229 )
+rotation = 1.51844
 scale = Vector2( 0.888889, 0.777778 )
 texture = ExtResource( 3 )
 offset = Vector2( -2.25615, 16.4975 )
@@ -13618,8 +13738,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Hand" type="Sprite" parent="Sprite/Animation/Body/Remote Right Arm/Right Forearm" index="0"]
 
-position = Vector2( -3.6006, 39.8685 )
-rotation = 1.92899
+position = Vector2( -3.54916, 37.1808 )
+rotation = 1.04371
 texture = ExtResource( 21 )
 offset = Vector2( 6.3133, 5.42676 )
 _sections_unfolded = [ "Transform" ]
@@ -13631,7 +13751,8 @@ position = Vector2( 1.45558, -231.081 )
 [node name="Drink" type="Sprite" parent="Sprite/Animation" index="2"]
 
 visible = false
-position = Vector2( 400.24, -195.5 )
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 955.499, -15.289 )
 rotation = -1.44474
 scale = Vector2( 1.4, 1.4 )
 texture = ExtResource( 23 )
@@ -13754,6 +13875,8 @@ position = Vector2( 0, -115.316 )
 [node name="Health Bar" parent="." index="5" instance=ExtResource( 38 )]
 
 [node name="Keshia Ult" type="Node2D" parent="." index="6"]
+
+editor/display_folded = true
 
 [node name="Sprite" type="Sprite" parent="Keshia Ult" index="0"]
 
@@ -13914,6 +14037,7 @@ shape = SubResource( 28 )
 
 [node name="GhostHitBox" type="Node2D" parent="." index="9"]
 
+editor/display_folded = true
 script = ExtResource( 40 )
 
 [node name="Node2D" type="Node2D" parent="GhostHitBox" index="0"]
@@ -13939,6 +14063,173 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GhostHitBox/Node2D/Area2D" index="0"]
 
 shape = SubResource( 29 )
+
+[node name="Audio" type="Node2D" parent="." index="10"]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 41 )
+volume_db = -5.0
+pitch_scale = 0.8
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Healed" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 42 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="Audio" index="2"]
+
+stream = ExtResource( 43 )
+volume_db = -7.0
+pitch_scale = 0.8
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Drink" type="AudioStreamPlayer2D" parent="Audio" index="3"]
+
+stream = ExtResource( 44 )
+volume_db = 0.0
+pitch_scale = 1.2
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="SizeChange" type="AudioStreamPlayer2D" parent="Audio" index="4"]
+
+stream = ExtResource( 45 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="BASwipe1" type="AudioStreamPlayer2D" parent="Audio" index="5"]
+
+stream = ExtResource( 46 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="BASwipe2" type="AudioStreamPlayer2D" parent="Audio" index="6"]
+
+stream = ExtResource( 47 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="BSHop" type="AudioStreamPlayer2D" parent="Audio" index="7"]
+
+stream = ExtResource( 48 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="BSSmash" type="AudioStreamPlayer2D" parent="Audio" index="8"]
+
+stream = ExtResource( 49 )
+volume_db = 0.0
+pitch_scale = 0.7
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="HSToss" type="AudioStreamPlayer2D" parent="Audio" index="9"]
+
+stream = ExtResource( 50 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="DSShout" type="AudioStreamPlayer2D" parent="Audio" index="10"]
+
+stream = ExtResource( 51 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="DSThump" type="AudioStreamPlayer2D" parent="Audio" index="11"]
+
+stream = ExtResource( 52 )
+volume_db = 0.0
+pitch_scale = 0.8
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="US" type="AudioStreamPlayer2D" parent="Audio" index="12"]
+
+stream = ExtResource( 53 )
+volume_db = 0.0
+pitch_scale = 1.1
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="UltShout" type="AudioStreamPlayer2D" parent="Audio" index="13"]
+
+stream = ExtResource( 54 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="UltShoot" type="AudioStreamPlayer2D" parent="Audio" index="14"]
+
+stream = ExtResource( 55 )
+volume_db = 5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="Sprite/Animation/Body/Left Arm/Weapon/Basic Attack Hit Box" to="Combo Handler" method="on_basic_attack_hit"]
 

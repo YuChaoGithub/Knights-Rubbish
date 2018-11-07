@@ -162,6 +162,14 @@ onready var status_icons = {
 	speeded = get_node(speeded_icon_path)
 }
 
+# Audio.
+onready var audio_players = {
+	hurt = $"Audio/Hurt",
+	jump = $"Audio/Jump",
+	size_change = $"Audio/SizeChange",
+	healed = $"Audio/Healed"
+}
+
 func _ready():
 	# Configure movement related variables.
 	recalculate_horizontal_movement_variables()
@@ -235,6 +243,8 @@ func update_movement(delta):
 		# Jumping.
 		if Input.is_action_pressed(action_strings.jump) && is_on_floor():
 			velocity.y += jump_speed
+
+			audio_players.jump.play()
 			
 			# Triggers events when jumping.
 			emit_signal("did_jump")
@@ -525,6 +535,7 @@ func change_to_size(type):
 	multiplied_by_multipliers(type)
 	start_size_tween(size_multipliers[type].size)
 	size_status = type
+	audio_players.size_change.play()
 
 func multiplied_by_multipliers(index):
 	var m = size_multipliers[index]
@@ -685,6 +696,9 @@ func damaged(val, randomness = true):
 		display_immune_text()
 		return
 
+	if !audio_players.hurt.playing:
+		audio_players.hurt.play()
+
 	# Apply modifier.
 	var rand_ratio = (1.0 + rng.randf_range(-DAMAGE_TAKEN_RAND_RATIO, DAMAGE_TAKEN_RAND_RATIO)) if randomness else 1
 	val = int(val * defense_modifier * rand_ratio)
@@ -695,7 +709,7 @@ func damaged(val, randomness = true):
 		for node_path in player_constants.hurt_modulate_node_path:
 			if curr_modulate == null:
 				curr_modulate = get_node(node_path).modulate
-			get_node(node_path).modulate = player_constants.hurt_modulate_color
+			get_node(node_path).self_modulate = player_constants.hurt_modulate_color
 
 		hurt_modulate_timer = countdown_timer.new(HURT_MODULATE_DURATION, self, "recover_modulate", curr_modulate)
 
@@ -708,7 +722,7 @@ func damaged(val, randomness = true):
 
 func recover_modulate(original_modulate):
 	for node_path in player_constants.hurt_modulate_node_path:
-		get_node(node_path).modulate = original_modulate
+		get_node(node_path).self_modulate = original_modulate
 	hurt_modulate_timer = null
 
 func ghost_damaged(val):
@@ -726,6 +740,9 @@ func healed(val):
 
 	health_system.change_health_by(val)
 	health_bar.set_health_bar(health_system.health)
+
+	if !audio_players.healed.playing:
+		audio_players.healed.play()
 
 	# Number indicator.
 	var num = number_indicator.instance()

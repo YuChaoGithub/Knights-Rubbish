@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Chromoghast.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Body.png" type="Texture" id=2]
@@ -11,6 +11,11 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Chromoghast/Right Hand.png" type="Texture" id=9]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Audio/chromoghast_hurt.wav" type="AudioStream" id=12]
+[ext_resource path="res://Audio/chromoghast_appear.wav" type="AudioStream" id=13]
+[ext_resource path="res://Audio/chromoghast_invis.wav" type="AudioStream" id=14]
+[ext_resource path="res://Audio/chromoghast_spin.wav" type="AudioStream" id=15]
+[ext_resource path="res://Audio/chromoghast_toss.wav" type="AudioStream" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -1367,6 +1372,30 @@ tracks/21/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/22/type = "value"
+tracks/22/path = NodePath("../Audio/Spin:playing")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("../Audio/Toss:playing")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 1.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=7]
 
@@ -1637,6 +1666,18 @@ tracks/21/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("../Audio/Invis:playing")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -1909,6 +1950,18 @@ tracks/21/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/22/type = "value"
+tracks/22/path = NodePath("../Audio/Appear:playing")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=9]
 
@@ -2180,11 +2233,13 @@ tracks/21/keys = {
 "values": [ Vector2( 0, 4.16677 ), Vector2( -2.13928, 35.8279 ) ]
 }
 
-[node name="Chromoghast" type="Node2D" index="0"]
+[node name="Chromoghast" type="Node2D"]
 
 script = ExtResource( 1 )
 activate_range_x = 1500
 activate_range_y = 1000
+left_limit = null
+right_limit = null
 
 [node name="Animation" type="Node2D" parent="." index="0"]
 
@@ -2293,5 +2348,62 @@ position = Vector2( -0.566376, -103.452 )
 [node name="Health Bar" parent="." index="2" instance=ExtResource( 11 )]
 
 position = Vector2( -1.84192, -156.252 )
+
+[node name="Audio" type="Node2D" parent="." index="3"]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 12 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Appear" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 13 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Invis" type="AudioStreamPlayer2D" parent="Audio" index="2"]
+
+stream = ExtResource( 14 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Spin" type="AudioStreamPlayer2D" parent="Audio" index="3"]
+
+stream = ExtResource( 15 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Toss" type="AudioStreamPlayer2D" parent="Audio" index="4"]
+
+stream = ExtResource( 16 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

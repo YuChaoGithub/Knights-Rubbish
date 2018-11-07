@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/ASCIIGunner.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/ASCII Gunner/Body.png" type="Texture" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/ASCII Gunner/Bullet 3.png" type="Texture" id=9]
 [ext_resource path="res://Graphics/Enemies/Computer Room/ASCII Bomber/Stunned Head.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Audio/ascii_hurt.wav" type="AudioStream" id=12]
+[ext_resource path="res://Audio/ascii_walk.wav" type="AudioStream" id=13]
+[ext_resource path="res://Audio/ascii_lean_forward.wav" type="AudioStream" id=14]
+[ext_resource path="res://Audio/ascii_gun_shoot.wav" type="AudioStream" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -944,6 +948,30 @@ tracks/26/keys = {
 "update": 1,
 "values": [ Vector2( 1, 1 ), Vector2( 2, 1 ), Vector2( 3.2, 1 ) ]
 }
+tracks/27/type = "value"
+tracks/27/path = NodePath("../Audio/Lean:playing")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/28/type = "value"
+tracks/28/path = NodePath("../Audio/Beep:playing")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/keys = {
+"times": PoolRealArray( 1.3, 1.5, 1.7, 1.9, 2.1, 2.3, 2.5, 2.7, 2.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, true, true, true, true, true, true, true ]
+}
 
 [sub_resource type="Animation" id=7]
 
@@ -1237,6 +1265,54 @@ tracks/23/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("../Audio/Hurt:playing")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("../Audio/Walk:playing")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("../Audio/Lean:playing")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("../Audio/Beep:playing")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -1826,6 +1902,18 @@ tracks/23/keys = {
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
+tracks/24/type = "value"
+tracks/24/path = NodePath("../Audio/Walk:playing")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
 
 [node name="ASCII Gunner" type="KinematicBody2D"]
 
@@ -1844,7 +1932,6 @@ shape = SubResource( 1 )
 
 [node name="Animation" type="Node2D" parent="." index="1"]
 
-editor/display_folded = true
 position = Vector2( -0.714249, 7.85673 )
 scale = Vector2( 2.2, 2.2 )
 
@@ -1870,34 +1957,29 @@ shape = SubResource( 2 )
 [node name="Body" type="Sprite" parent="Animation" index="1"]
 
 editor/display_folded = true
-rotation = -0.194262
 texture = ExtResource( 2 )
 
 [node name="Face" type="Sprite" parent="Animation/Body" index="0"]
 
-position = Vector2( -3.9461, -21.4129 )
-rotation = -0.31828
+position = Vector2( -0.519287, -21.1257 )
 texture = ExtResource( 3 )
 offset = Vector2( 0.519287, -10.2076 )
 
 [node name="Left Leg" type="Sprite" parent="Animation/Body" index="1"]
 
 position = Vector2( -9.76604, 14.4446 )
-rotation = 0.300478
 texture = ExtResource( 4 )
 offset = Vector2( -4.83119, 15.5293 )
 
 [node name="Right Leg" type="Sprite" parent="Animation/Body" index="2"]
 
-position = Vector2( 11.0976, 17.434 )
-rotation = -0.222238
+position = Vector2( 9.63777, 15.0181 )
 texture = ExtResource( 5 )
 offset = Vector2( 5.82765, 15.3364 )
 
 [node name="Gun" type="Sprite" parent="Animation/Body" index="3"]
 
-position = Vector2( -32.5882, -4.51472 )
-rotation = 0.189525
+position = Vector2( -24.7512, 0.897502 )
 texture = ExtResource( 6 )
 offset = Vector2( -9.34959, -3.39502 )
 
@@ -1925,26 +2007,28 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/ASCII Gunner Bullet/Attack Area" index="0"]
 
-position = Vector2( -159.849, -0.197497 )
-scale = Vector2( 3.2, 1 )
+position = Vector2( -55.1549, 0.146304 )
 shape = SubResource( 3 )
 
 [node name="Segments" type="Node2D" parent="Animation/ASCII Gunner Bullet" index="1"]
 
-position = Vector2( -54.4093, 0.256375 )
+position = Vector2( -48, 0 )
 _sections_unfolded = [ "Z Index" ]
 
 [node name="Part1" type="Sprite" parent="Animation/ASCII Gunner Bullet/Segments" index="0"]
 
+visible = false
 texture = ExtResource( 7 )
 
 [node name="Part2" type="Sprite" parent="Animation/ASCII Gunner Bullet/Segments" index="1"]
 
+visible = false
 position = Vector2( -92, 0 )
 texture = ExtResource( 8 )
 
 [node name="Part3" type="Sprite" parent="Animation/ASCII Gunner Bullet/Segments" index="2"]
 
+visible = false
 position = Vector2( -195, -1 )
 texture = ExtResource( 9 )
 
@@ -1970,6 +2054,52 @@ position = Vector2( -0.997253, -96.8199 )
 [node name="Health Bar" parent="." index="3" instance=ExtResource( 11 )]
 
 position = Vector2( 1.73059, -150.997 )
+
+[node name="Audio" type="Node2D" parent="." index="4"]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 12 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 13 )
+volume_db = -20.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Lean" type="AudioStreamPlayer2D" parent="Audio" index="2"]
+
+stream = ExtResource( 14 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Beep" type="AudioStreamPlayer2D" parent="Audio" index="3"]
+
+stream = ExtResource( 15 )
+volume_db = -15.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="Animation/ASCII Gunner Bullet/Attack Area" to="." method="on_attack_hit"]
 

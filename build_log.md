@@ -1051,15 +1051,24 @@ Comment: What a day. Tired.
 * Redesigned Menu Scene.
 * Added audio for all UIs.
 * Fixed the bug that players could unexpectedly interact with UIs on the previous layers using Space/Enter key. (Due to Godot's default UI events)
+Comment: Experiencing self-imposed crunches these weeks, haha!
 
-[Next]
-* Sound effects.
-* Level walk through (1P / 2P).
-* Import key config from the user's files.
-* Make Gifs of characters' attack, post it on the project site. (Including the unreleased characters).
-* Preview video.
-* Introduction article.
-(Est. Before Nov 23rd)
+[2018.11.05]
+* Recorded sound effects.
+
+[2018.11.06]
+* Completed recording sound effects.
+
+[2018.11.07]
+* Added 160 sound effects to the game. (Alphabetically: amazlet_acc.wav to mouse_open_lid.wav). Soooo tired, but rewarding.
+
+[Goals]
+* Nov 9: All sound effects added.
+* Nov 12: Level walk through (1P / 2P), record the gameplay!
+* Nov 15: Save and import key config from the user's files.
+* Nov 17: Make gifs of characters' attacks & skills, post it on the project site. (Including unreleased characters.)
+* Nov 21: Preview video.
+* Nov 23: Introducation article.
 
 To Do List:
 * Sound Effects & Background Music.

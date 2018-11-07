@@ -134,6 +134,12 @@ onready var eyeball = $"Animation/Screen/Eye/Eyeball"
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
+# Audio.
+onready var switch_audio = $Audio/Switch
+onready var music_audio = $Audio/Music
+onready var rotate_audio = $Audio/Rotate
+onready var shoot_mouse_audio = $Audio/ShootMouse
+
 func activate():
 	ec.health_bar.show_health_bar()
 	set_process(true)
@@ -231,6 +237,7 @@ func heart_disappear():
 
 	damage_area.remove_from_group("enemy")
 	
+	switch_audio.play()
 	status_timer = ec.cd_timer.new(HEART_DISAPPEAR_DURATION, self, "change_status", RNG_IDLE)
 
 func pump_up_appear():
@@ -264,6 +271,8 @@ func play_music():
 	ec.play_animation("Music Note Screen")
 	ec.change_status(NONE)
 
+	music_audio.play()
+
 	# Plugobra
 	var spawn_poses_x = []
 	for index in range(0, plugobra_spawn_poses.size() - 1):
@@ -296,6 +305,7 @@ func play_music():
 func music_disappear():
 	ec.play_animation("Music Note Disappear")
 	ec.change_status(NONE)
+	switch_audio.play()
 	status_timer = ec.cd_timer.new(MUSIC_DISAPPEAR_DURATION, self, "change_status", RNG_IDLE)
 
 func drop_appear():
@@ -317,17 +327,19 @@ func drop():
 
 	usb_bomb_count += 1
 
-	var to_status = DROP_APPEAR
-	if usb_bomb_count == USB_DROP_COUNT:
-		to_status = RNG_IDLE
-		usb_bomb_count = 0
-	
 	ec.change_status(NONE)
-	status_timer = ec.cd_timer.new(DROP_DURATION, self, "change_status", to_status)
+
+	if usb_bomb_count == USB_DROP_COUNT:
+		usb_bomb_count = 0
+		switch_audio.play()
+		status_timer = ec.cd_timer.new(DROP_DURATION, self, "change_status", RNG_IDLE)
+	else:
+		status_timer = ec.cd_timer.new(DROP_DURATION, self, "change_status", DROP_APPEAR)
 
 func shoot_appear():
 	ec.play_animation("Shoot Mouse Appear")
 	ec.change_status(NONE)
+	rotate_audio.play()
 	status_timer = ec.cd_timer.new(SHOOT_APPEAR_DURATION, self, "change_status", SHOOT)
 
 func shoot(delta):
@@ -341,8 +353,10 @@ func shoot(delta):
 func shoot_mouse_bullet(count):
 	if count < MOUSE_BULLET_COUNT:
 		spawn_mouse_bullet(Vector2(cos(mouse_cannon.rotation), sin(mouse_cannon.rotation)))
+		shoot_mouse_audio.play()
 		mouse_bullet_timer = ec.cd_timer.new(SHOOT_INTERVAL, self, "shoot_mouse_bullet", count + 1)
 	else:
+		rotate_audio.stop()
 		mouse_bullet_timer = null
 		ec.change_status(SHOOT_DISAPPEAR)
 
@@ -355,6 +369,7 @@ func spawn_mouse_bullet(direction):
 func shoot_disappear():
 	ec.play_animation("Shoot Mouse Disappear")
 	ec.change_status(NONE)
+	switch_audio.play()
 	status_timer = ec.cd_timer.new(SHOOT_DISAPPEAR_DURATION, self, "change_status", RNG_IDLE)
 
 func damaged(val):

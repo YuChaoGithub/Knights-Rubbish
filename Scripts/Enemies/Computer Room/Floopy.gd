@@ -54,6 +54,8 @@ var green_body_texture = preload("res://Graphics/Enemies/Computer Room/Floopy/gr
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
+onready var flee_audio = $Audio/Hey
+
 func _ready():
 	if ec.rng.randsign() == 1:
 		$"Animation/Body".set_texture(green_body_texture)
@@ -155,6 +157,7 @@ func init_flee():
 	ec.gravity_movement.dy = -FLEE_JUMP_SPEED
 
 	ec.change_status(FLEE)
+	flee_audio.play()
 	
 	status_timer = ec.cd_timer.new(ec.rng.randf_range(FLEE_DURATION_MIN, FLEE_DURATION_MAX), self, "change_status", MOVE)
 

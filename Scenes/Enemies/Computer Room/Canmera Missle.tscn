@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/CanmeraMissle.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Canmera/Missle.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/Particles/Super Blurred Dot.png" type="Texture" id=3]
 [ext_resource path="res://Graphics/Particles/Fire.png" type="Texture" id=4]
+[ext_resource path="res://Audio/canmera_bullet_Explode.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -66,7 +67,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=3]
 
-length = 0.5
+length = 1.2
 loop = false
 step = 0.05
 tracks/0/type = "value"
@@ -112,7 +113,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.5 ),
+"times": PoolRealArray( 1.2 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -130,6 +131,18 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -184,6 +197,18 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="RectangleShape2D" id=5]
@@ -255,7 +280,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Color", "Gravity", "Initial Velocity", "Scale", "Spread" ]
 
-[node name="Canmera Missle" type="KinematicBody2D" index="0"]
+[node name="Canmera Missle" type="KinematicBody2D"]
 
 scale = Vector2( 1.5, 1.5 )
 z_index = 1
@@ -356,6 +381,17 @@ normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Process Material", "Textures", "Time" ]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="6"]
+
+stream = ExtResource( 5 )
+volume_db = -15.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="Attack Area" to="." method="attack_hit"]
 

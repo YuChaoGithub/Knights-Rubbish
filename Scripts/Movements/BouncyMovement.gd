@@ -3,6 +3,7 @@ var gravity
 var bounciness
 
 var velocity
+var bounced = false
 
 func _init(physics_body, velocity, gravity, bounciness):
     self.physics_body = physics_body
@@ -15,5 +16,7 @@ func move(delta):
 
     if collision != null:
         velocity = velocity.bounce(collision.normal) * bounciness
+        bounced = true
     else:
         velocity.y += gravity * delta
+        bounced = false

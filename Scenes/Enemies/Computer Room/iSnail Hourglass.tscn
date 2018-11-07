@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/iSnailHourglass.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/iSnail/Hourglass.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/Particles/Dot.png" type="Texture" id=3]
+[ext_resource path="res://Audio/isnail_hourglass_explode.wav" type="AudioStream" id=4]
+[ext_resource path="res://Audio/isnail_hourglass_spin.wav" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 
@@ -91,6 +93,18 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Explode:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -253,6 +267,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Spin:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 1.4 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="CircleShape2D" id=4]
 
@@ -312,7 +338,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Gravity", "Initial Velocity", "Scale", "Spread" ]
 
-[node name="iSnail Hourglass" type="Node2D"]
+[node name="iSnail Hourglass" type="Node2D" index="0"]
 
 scale = Vector2( 1.5, 1.5 )
 z_index = 1
@@ -377,6 +403,28 @@ normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Process Material", "Textures", "Time" ]
+
+[node name="Explode" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 4 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Spin" type="AudioStreamPlayer2D" parent="." index="5"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="Attack Area" to="." method="on_attack_hit"]
 

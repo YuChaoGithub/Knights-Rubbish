@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Cliffy.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Cliffy/Note.png" type="Texture" id=2]
@@ -13,6 +13,10 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Cliffy/Eyebrow.png" type="Texture" id=11]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Audio/cliffy_hurt.wav" type="AudioStream" id=14]
+[ext_resource path="res://Audio/cliffy_bulb_toss.wav" type="AudioStream" id=15]
+[ext_resource path="res://Audio/cliffy_toss.wav" type="AudioStream" id=16]
+[ext_resource path="res://Audio/cliffy_clip_warning.wav" type="AudioStream" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -893,6 +897,18 @@ tracks/35/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0.0 ]
+}
+tracks/36/type = "value"
+tracks/36/path = NodePath("../Audio/ClipWarning:playing")
+tracks/36/interp = 1
+tracks/36/loop_wrap = true
+tracks/36/imported = false
+tracks/36/enabled = true
+tracks/36/keys = {
+"times": PoolRealArray( 0, 0.4, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, true, true ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -3159,6 +3175,7 @@ shape = SubResource( 1 )
 
 [node name="Note" type="Sprite" parent="Animation" index="5"]
 
+editor/display_folded = true
 texture = ExtResource( 2 )
 
 [node name="Talk Bubble" type="Sprite" parent="Animation/Note" index="0"]
@@ -3273,5 +3290,51 @@ position = Vector2( 7.04126, 1.56473 )
 [node name="Health Bar" parent="." index="2" instance=ExtResource( 13 )]
 
 position = Vector2( 2.62967, -246.137 )
+
+[node name="Audio" type="Node2D" parent="." index="3"]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 14 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="BulbToss" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 15 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="ClipToss" type="AudioStreamPlayer2D" parent="Audio" index="2"]
+
+stream = ExtResource( 16 )
+volume_db = -7.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="ClipWarning" type="AudioStreamPlayer2D" parent="Audio" index="3"]
+
+stream = ExtResource( 17 )
+volume_db = -15.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

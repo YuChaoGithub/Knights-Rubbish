@@ -944,11 +944,11 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -3000 ]]
 
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger" to="Writings/Go1" method="activate"]
+
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 16150 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -4800 ]]
-
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger" to="Writings/Go1" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger2" to="FollowingCamera" method="update_right_limit" binds= [ 18850 ]]
 
@@ -960,17 +960,17 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="FollowingCamera" method="update_top_limit" binds= [ -6150 ]]
 
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="Writings/Go4" method="activate"]
+
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="Writings/Go3" method="activate"]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="Writings/Go4" method="activate"]
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="Writings/Go6" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="Writings/Go5" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="FollowingCamera" method="update_right_limit" binds= [ 24750 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="FollowingCamera" method="update_top_limit" binds= [ -6350 ]]
-
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="Writings/Go6" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger5" to="FollowingCamera" method="update_right_limit" binds= [ 26650 ]]
 

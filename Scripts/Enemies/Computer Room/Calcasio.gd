@@ -42,6 +42,8 @@ var facing = -1
 var spawned_bullets = []
 var bullet_spawning_timer = null
 
+onready var typing_audio = $Audio/Type
+
 # Bullet spawn.
 var mt_timer = preload("res://Scripts/Utils/MultiTickTimer.gd")
 var bullet = preload("res://Scenes/Enemies/Computer Room/Calcasio Bullet.tscn")
@@ -110,6 +112,8 @@ func type_digit_bullets():
 func spawn_bullet():
     var digit = ec.rng.randi_range(TYPE_MIN_DIGIT, TYPE_MAX_DIGIT + 1)
     bullet_type_animator.play(str(digit))
+
+    typing_audio.play()
 
     var new_bullet = bullet.instance()
     new_bullet.initialize(digit, facing)

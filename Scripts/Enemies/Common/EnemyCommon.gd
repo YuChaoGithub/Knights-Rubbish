@@ -26,6 +26,7 @@ var sprites
 var is_kinematic_body
 var slowed_label
 var curr_anim_key = ""
+var hurt_audio
 
 var fade_in_timer = null
 
@@ -61,7 +62,8 @@ func _init(node, default_status = 0):
     self.sprites = node.get_node("Animation")
     self.is_kinematic_body = node.is_class("KinematicBody2D")
     self.slowed_label = preload("res://Scenes/Enemies/Enemy Slowed Icon.tscn").instance()
-    
+    self.hurt_audio = node.get_node("Audio/Hurt")
+
     # Slowed label.
     number_spawn_pos.add_child(slowed_label)
     slowed_label.visible = false
@@ -222,6 +224,10 @@ func damaged(val, play_hurt_animation = true):
     if (curr_anim_key == "Hurt" || play_hurt_animation) && curr_anim_key != "Stunned":
         play_animation("Hurt")
         hurt_timer = cd_timer.new(HURT_ANIM_DURATION, node, "resume_from_damaged")
+
+    # Audio.
+    if !hurt_audio.playing:
+        hurt_audio.play()
 
     # Show health bar.
     health_bar.set_health_bar_and_show(float(health_system.health) / float(health_system.full_health))

@@ -58,6 +58,8 @@ onready var drawing_node = $Drawing
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
+onready var laser_audio = $Audio/Laser
+
 func activate():
 	ec.init_straight_line_movement(0, 0)
 	set_process(true)
@@ -128,6 +130,7 @@ func laser_sequence_on():
 		color = LASER_COLOR,
 		width = LASER_THICKNESS
 	}
+	laser_audio.play()
 	laserlight.global_position = attack_target.global_position
 	laserlight.enabled = true
 	drawing_node.add_line(laser_line)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/ASCIIBomber.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/ASCII Bomber/Body.png" type="Texture" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/ASCII Bomber/Bomb.png" type="Texture" id=9]
 [ext_resource path="res://Graphics/Enemies/Computer Room/ASCII Bomber/Stunned Head.png" type="Texture" id=10]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Audio/ascii_hurt.wav" type="AudioStream" id=12]
+[ext_resource path="res://Audio/ascii_throw.wav" type="AudioStream" id=13]
+[ext_resource path="res://Audio/ascii_walk.wav" type="AudioStream" id=14]
+[ext_resource path="res://Audio/ascii_bomb_beep.wav" type="AudioStream" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -869,6 +873,54 @@ tracks/22/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/23/type = "value"
+tracks/23/path = NodePath("../Audio/Walk:playing")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("../Audio/Hurt:playing")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("../Audio/Throw:playing")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("../Audio/Beep:playing")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=6]
 
@@ -1470,6 +1522,30 @@ tracks/25/keys = {
 "update": 0,
 "values": [ 0.0, 0.0, 46.0996, 0.0 ]
 }
+tracks/26/type = "value"
+tracks/26/path = NodePath("../Audio/Throw:playing")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("../Audio/Beep:playing")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.5, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, true, true, true, true ]
+}
 
 [sub_resource type="Animation" id=8]
 
@@ -1752,8 +1828,20 @@ tracks/22/keys = {
 "update": 1,
 "values": [ false ]
 }
+tracks/23/type = "value"
+tracks/23/path = NodePath("../Audio/Walk:playing")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
 
-[node name="ASCII Bomber" type="KinematicBody2D" index="0"]
+[node name="ASCII Bomber" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
@@ -1871,5 +1959,51 @@ position = Vector2( 0.885254, -198.06 )
 [node name="Number Spawn Pos" type="Position2D" parent="." index="3"]
 
 position = Vector2( 0.211121, -147.348 )
+
+[node name="Audio" type="Node2D" parent="." index="4"]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 12 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Throw" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 13 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="Audio" index="2"]
+
+stream = ExtResource( 14 )
+volume_db = -25.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Beep" type="AudioStreamPlayer2D" parent="Audio" index="3"]
+
+stream = ExtResource( 15 )
+volume_db = -20.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

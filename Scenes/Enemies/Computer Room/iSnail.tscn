@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/ISnail.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/iSnail/Body Mouth Closed.png" type="Texture" id=2]
@@ -12,6 +12,8 @@
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Mouth.png" type="Texture" id=10]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=11]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Audio/isnail_hurt.wav" type="AudioStream" id=13]
+[ext_resource path="res://Audio/isnail_ah.wav" type="AudioStream" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -316,6 +318,18 @@ tracks/23/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 8 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("../Audio/Ah:playing")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -1789,7 +1803,7 @@ tracks/23/keys = {
 "values": [ ExtResource( 2 ) ]
 }
 
-[node name="iSnail" type="KinematicBody2D" index="0"]
+[node name="iSnail" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
@@ -1798,7 +1812,7 @@ collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 activate_range_x = 1600
-activate_range_x = 1600
+activate_range_y = 25000
 
 [node name="Movement Collision Shape 2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -1848,41 +1862,38 @@ update_scale = true
 
 [node name="Body" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform" index="0"]
 
-position = Vector2( 9.27492, 67.3069 )
-rotation = -0.0114343
+position = Vector2( 8.35617, 67.4381 )
+rotation = 0.019499
 texture = ExtResource( 2 )
 offset = Vector2( 30.1383, -42.194 )
 
 [node name="Left Eye" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform/Body" index="0"]
 
 position = Vector2( 48.6132, -96.8376 )
-rotation = -0.025807
 texture = ExtResource( 3 )
 offset = Vector2( -18.1988, -25.813 )
 
 [node name="Left Eyeball" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform/Body/Left Eye" index="0"]
 
-position = Vector2( -19.7004, -37.3466 )
+position = Vector2( -20.3106, -37.4498 )
 rotation = -0.019499
 texture = ExtResource( 4 )
 
 [node name="Right Eye" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform/Body" index="1"]
 
 position = Vector2( 64.9063, -96.8969 )
-rotation = -0.0272575
 texture = ExtResource( 5 )
 offset = Vector2( -3.6792, -30.3667 )
 
 [node name="Right Eyeball" type="Sprite" parent="Animation/Reverse Node/Tail Remote Transform/Body/Right Eye" index="0"]
 
-position = Vector2( -2.98156, -46.6785 )
+position = Vector2( -3.53, -46.6356 )
 rotation = -0.019499
 texture = ExtResource( 4 )
 
 [node name="Shell Remote Transform" type="RemoteTransform2D" parent="Animation/Reverse Node/Tail Remote Transform" index="1"]
 
-position = Vector2( -37.3775, 55.4696 )
-rotation = -0.00783778
+position = Vector2( -36.9797, 55.4696 )
 remote_path = NodePath("../../Shell")
 use_global_coordinates = true
 update_position = true
@@ -1897,8 +1908,7 @@ offset = Vector2( -54.814, 73.8286 )
 
 [node name="Shell" type="Sprite" parent="Animation/Reverse Node" index="2"]
 
-position = Vector2( -14.843, 53.1584 )
-rotation = -0.00783778
+position = Vector2( -14.4452, 53.1584 )
 texture = ExtResource( 7 )
 offset = Vector2( 6.49088, -49.0143 )
 
@@ -1924,5 +1934,29 @@ position = Vector2( -2.16318, -105.995 )
 [node name="Number Spawn Pos" type="Position2D" parent="." index="3"]
 
 position = Vector2( 0, -108.591 )
+
+[node name="Audio" type="Node2D" parent="." index="4"]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 13 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Ah" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 14 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

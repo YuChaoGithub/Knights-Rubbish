@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/EeloKicker.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Left Leg.png" type="Texture" id=2]
@@ -13,6 +13,10 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Eelo Kicker/Stunned Face.png" type="Texture" id=11]
 [ext_resource path="res://Graphics/Particles/Dot.png" type="Texture" id=12]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Audio/eelo_hurt.wav" type="AudioStream" id=14]
+[ext_resource path="res://Audio/eelo_ha_01.wav" type="AudioStream" id=15]
+[ext_resource path="res://Audio/eelo_ha_02.wav" type="AudioStream" id=16]
+[ext_resource path="res://Audio/eelo_hit.wav" type="AudioStream" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -621,6 +625,18 @@ tracks/23/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 1, 0 ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("../Audio/Ha1:playing")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -1799,6 +1815,18 @@ tracks/23/keys = {
 "update": 1,
 "values": [ 0 ]
 }
+tracks/24/type = "value"
+tracks/24/path = NodePath("../Audio/Ha2:playing")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=11]
 
@@ -2092,6 +2120,18 @@ tracks/23/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 0 ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("../Audio/Ha1:playing")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -2976,31 +3016,31 @@ tracks/23/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Gradient" id=18]
+[sub_resource type="Gradient" id=15]
 
 offsets = PoolRealArray( 0, 0.572727, 1 )
 colors = PoolColorArray( 0, 0, 0, 1, 0, 0.953125, 1, 1, 0, 0.953125, 1, 1 )
 
-[sub_resource type="GradientTexture" id=19]
+[sub_resource type="GradientTexture" id=16]
 
 flags = 4
-gradient = SubResource( 18 )
+gradient = SubResource( 15 )
 width = 2048
 
-[sub_resource type="Curve" id=15]
+[sub_resource type="Curve" id=17]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0, 0.0825195 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.00830078 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=16]
+[sub_resource type="CurveTexture" id=18]
 
 flags = 4
 width = 2048
-curve = SubResource( 15 )
+curve = SubResource( 17 )
 
-[sub_resource type="ParticlesMaterial" id=17]
+[sub_resource type="ParticlesMaterial" id=19]
 
 render_priority = 0
 trail_divisor = 1
@@ -3029,8 +3069,8 @@ angle = 0.0
 angle_random = 0.0
 scale = 1.0
 scale_random = 0.0
-scale_curve = SubResource( 16 )
-color_ramp = SubResource( 19 )
+scale_curve = SubResource( 18 )
+color_ramp = SubResource( 16 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -3040,7 +3080,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Gravity", "Initial Velocity", "Scale", "Spread" ]
 
-[node name="Eelo Kicker" type="KinematicBody2D" index="0"]
+[node name="Eelo Kicker" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
@@ -3082,48 +3122,46 @@ shape = SubResource( 2 )
 
 [node name="Left Leg" type="Sprite" parent="Animation" index="1"]
 
-position = Vector2( -22.5723, 84.8986 )
-rotation = -0.249304
-scale = Vector2( 1, 1 )
+position = Vector2( -13.1887, 87.7833 )
+rotation = -0.211606
 texture = ExtResource( 2 )
 offset = Vector2( -1.37547, 10.5142 )
 
 [node name="Left Thigh" type="Sprite" parent="Animation" index="2"]
 
-position = Vector2( -11.1885, 55.4405 )
-rotation = 0.278436
-scale = Vector2( 1, 1 )
+position = Vector2( -10.0851, 56.355 )
+rotation = 0.00810473
 texture = ExtResource( 3 )
 offset = Vector2( 0.0526185, 13.5829 )
 
 [node name="Left Foot" type="Sprite" parent="Animation" index="3"]
 
-position = Vector2( -20.0726, 108.907 )
-rotation = -0.200184
+position = Vector2( -11.5956, 111.869 )
+rotation = -0.0433346
 scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 offset = Vector2( -6.74521, 1.1897 )
 
 [node name="Right Leg" type="Sprite" parent="Animation" index="4"]
 
-position = Vector2( 20.545, 87.2295 )
-rotation = -0.602037
+position = Vector2( 15.8927, 88.2669 )
+rotation = -0.0500751
 scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 offset = Vector2( -0.481429, 9.83557 )
 
 [node name="Right Thigh" type="Sprite" parent="Animation" index="5"]
 
-position = Vector2( 8.94778, 55.6077 )
-rotation = -0.261637
+position = Vector2( 11.1942, 54.9149 )
+rotation = -0.0500751
 scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 offset = Vector2( 1.55377, 14.6066 )
 
 [node name="Right Foot" type="Sprite" parent="Animation" index="6"]
 
-position = Vector2( 32.8193, 106.185 )
-rotation = -0.458583
+position = Vector2( 16.9257, 111.377 )
+rotation = -0.0500751
 scale = Vector2( 1, 1 )
 texture = ExtResource( 4 )
 offset = Vector2( -6.56178, 1.61104 )
@@ -3131,8 +3169,7 @@ offset = Vector2( -6.56178, 1.61104 )
 [node name="Body" type="Sprite" parent="Animation" index="7"]
 
 editor/display_folded = true
-position = Vector2( -0.0918579, 0.0763984 )
-rotation = 0.0182387
+position = Vector2( 0, 0.797709 )
 texture = ExtResource( 7 )
 
 [node name="Face" type="Sprite" parent="Animation/Body" index="0"]
@@ -3143,7 +3180,7 @@ texture = ExtResource( 8 )
 [node name="Left Thigh Remote Transform" type="RemoteTransform2D" parent="Animation/Body" index="1"]
 
 position = Vector2( -10.0851, 55.5573 )
-rotation = 0.260197
+rotation = 0.00810473
 remote_path = NodePath("../../Left Thigh")
 use_global_coordinates = true
 update_position = true
@@ -3172,7 +3209,7 @@ shape = SubResource( 3 )
 [node name="Left Leg Remote Transform" type="RemoteTransform2D" parent="Animation/Body/Left Thigh Remote Transform" index="1"]
 
 position = Vector2( -2.84875, 31.4524 )
-rotation = -0.52774
+rotation = -0.219711
 remote_path = NodePath("../../../Left Leg")
 use_global_coordinates = true
 update_position = true
@@ -3182,7 +3219,7 @@ update_scale = true
 [node name="Left Foot Remote Transform" type="RemoteTransform2D" parent="Animation/Body/Left Thigh Remote Transform/Left Leg Remote Transform" index="0"]
 
 position = Vector2( -3.50114, 23.8827 )
-rotation = 0.0491202
+rotation = 0.168271
 remote_path = NodePath("../../../../Left Foot")
 use_global_coordinates = true
 update_position = true
@@ -3191,8 +3228,8 @@ update_scale = true
 
 [node name="Right Thigh Remote Transform" type="RemoteTransform2D" parent="Animation/Body" index="2"]
 
-position = Vector2( 10.0509, 55.3572 )
-rotation = -0.279876
+position = Vector2( 11.1942, 54.1172 )
+rotation = -0.0500751
 remote_path = NodePath("../../Right Thigh")
 use_global_coordinates = true
 update_position = true
@@ -3207,6 +3244,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 collision_layer = 0
+collision_mask = 0
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
@@ -3220,7 +3258,6 @@ shape = SubResource( 4 )
 [node name="Right Leg Remote Transform" type="RemoteTransform2D" parent="Animation/Body/Right Thigh Remote Transform" index="1"]
 
 position = Vector2( 3.02316, 33.5454 )
-rotation = -0.3404
 remote_path = NodePath("../../../Right Leg")
 use_global_coordinates = true
 update_position = true
@@ -3229,8 +3266,7 @@ update_scale = true
 
 [node name="Right Foot Remote Transform" type="RemoteTransform2D" parent="Animation/Body/Right Thigh Remote Transform/Right Leg Remote Transform" index="0"]
 
-position = Vector2( -0.618641, 22.574 )
-rotation = 0.143454
+position = Vector2( -0.125038, 23.1325 )
 remote_path = NodePath("../../../../Right Foot")
 use_global_coordinates = true
 update_position = true
@@ -3283,7 +3319,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 17 )
+process_material = SubResource( 19 )
 texture = ExtResource( 12 )
 normal_map = null
 h_frames = 1
@@ -3308,7 +3344,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 17 )
+process_material = SubResource( 19 )
 texture = ExtResource( 12 )
 normal_map = null
 h_frames = 1
@@ -3321,9 +3357,54 @@ position = Vector2( -0.430573, -201.523 )
 
 [node name="Number Spawn Pos" type="Position2D" parent="." index="3"]
 
-position = Vector2( 2.39817, -122.302 )
-rotation = 0.0182387
+position = Vector2( 0.530396, -120.743 )
 scale = Vector2( 0.88, 0.88 )
+
+[node name="Audio" type="Node2D" parent="." index="4"]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+pitch_scale = 1.4
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Ha1" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 15 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Ha2" type="AudioStreamPlayer2D" parent="Audio" index="2"]
+
+stream = ExtResource( 16 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="Audio" index="3"]
+
+stream = ExtResource( 17 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="Animation/Body/Left Thigh Remote Transform/Left Kick Area" to="." method="on_left_kick_hit"]
 

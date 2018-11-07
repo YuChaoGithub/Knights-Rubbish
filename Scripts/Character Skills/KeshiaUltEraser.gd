@@ -44,6 +44,8 @@ func _process(delta):
 func explode(target):
 	set_process(false)
 
+	$Explode.play()
+
 	sprite.visible = false
 	particles.emitting = true
 

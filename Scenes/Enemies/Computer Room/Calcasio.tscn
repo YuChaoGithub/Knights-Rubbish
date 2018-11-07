@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Calcasio.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Calcasio/Body.png" type="Texture" id=2]
@@ -16,6 +16,8 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Calcasio/Open4.png" type="Texture" id=14]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Calcasio/Open5.png" type="Texture" id=15]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Audio/general_mob_hurt.wav" type="AudioStream" id=17]
+[ext_resource path="res://Audio/calcasio_shoot.wav" type="AudioStream" id=18]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -3112,6 +3114,18 @@ tracks/64/keys = {
 "update": 1,
 "values": [ ExtResource( 2 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ]
 }
+tracks/65/type = "value"
+tracks/65/path = NodePath("../Audio/Shoot:playing")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=14]
 
@@ -3897,6 +3911,42 @@ tracks/64/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ ExtResource( 2 ) ]
+}
+tracks/65/type = "value"
+tracks/65/path = NodePath("../Audio/Shoot:playing")
+tracks/65/interp = 1
+tracks/65/loop_wrap = true
+tracks/65/imported = false
+tracks/65/enabled = true
+tracks/65/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/66/type = "value"
+tracks/66/path = NodePath("../Audio/Type:playing")
+tracks/66/interp = 1
+tracks/66/loop_wrap = true
+tracks/66/imported = false
+tracks/66/enabled = true
+tracks/66/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/67/type = "value"
+tracks/67/path = NodePath("../Audio/Hurt:playing")
+tracks/67/interp = 1
+tracks/67/loop_wrap = true
+tracks/67/imported = false
+tracks/67/enabled = true
+tracks/67/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -6473,7 +6523,7 @@ tracks/82/keys = {
 "values": [ ExtResource( 2 ) ]
 }
 
-[node name="Calcasio" type="KinematicBody2D" index="0"]
+[node name="Calcasio" type="KinematicBody2D"]
 
 scale = Vector2( 1.5, 1.5 )
 input_pickable = false
@@ -6490,8 +6540,6 @@ activate_range_y = 1500
 shape = SubResource( 1 )
 
 [node name="Animation" type="Node2D" parent="." index="1"]
-
-editor/display_folded = true
 
 [node name="Damage Area" type="Area2D" parent="Animation" index="0"]
 
@@ -6513,19 +6561,17 @@ shape = SubResource( 2 )
 
 [node name="Body" type="Sprite" parent="Animation" index="1"]
 
-position = Vector2( 0, -10.5425 )
+editor/display_folded = true
 texture = ExtResource( 2 )
 
 [node name="Left Brow" type="Sprite" parent="Animation/Body" index="0"]
 
 position = Vector2( -42.3287, -14.5839 )
-rotation = -0.108491
 texture = ExtResource( 3 )
 
 [node name="Right Brow" type="Sprite" parent="Animation/Body" index="1"]
 
-position = Vector2( 44.2902, -14.8137 )
-rotation = 0.0696752
+position = Vector2( 43.8831, -14.2709 )
 texture = ExtResource( 3 )
 
 [node name="Left Eye" type="Sprite" parent="Animation/Body" index="2"]
@@ -6577,91 +6623,91 @@ editor/display_folded = true
 
 [node name="1" type="Sprite" parent="Animation/Body/Head Dots" index="0"]
 
-self_modulate = Color( 0.030215, 0.789985, 0.847446, 1 )
+self_modulate = Color( 0, 0.929688, 1, 1 )
 position = Vector2( -41.5062, -172.281 )
 texture = ExtResource( 9 )
 
 [node name="2" type="Sprite" parent="Animation/Body/Head Dots" index="1"]
 
-self_modulate = Color( 0.101253, 0.498672, 0.672821, 1 )
+self_modulate = Color( 0.117188, 0.731018, 1, 1 )
 position = Vector2( -21.493, -172.66 )
 texture = ExtResource( 9 )
 
 [node name="3" type="Sprite" parent="Animation/Body/Head Dots" index="2"]
 
-self_modulate = Color( 0.0750696, 0.53424, 0.809742, 1 )
+self_modulate = Color( 0, 0.625, 1, 1 )
 position = Vector2( -0.438583, -172.862 )
 texture = ExtResource( 9 )
 
 [node name="4" type="Sprite" parent="Animation/Body/Head Dots" index="3"]
 
-self_modulate = Color( 0.289994, 0.322074, 0.803269, 1 )
+self_modulate = Color( 0.310181, 0.349876, 0.945312, 1 )
 position = Vector2( 20.5686, -173.596 )
 texture = ExtResource( 9 )
 
 [node name="5" type="Sprite" parent="Animation/Body/Head Dots" index="4"]
 
-self_modulate = Color( 0.0639702, 0.666539, 0.728874, 1 )
+self_modulate = Color( 0.086792, 0.847126, 0.925781, 1 )
 position = Vector2( 41.3218, -173.184 )
 texture = ExtResource( 9 )
 
 [node name="6" type="Sprite" parent="Animation/Body/Head Dots" index="5"]
 
-self_modulate = Color( 0.164225, 0.389796, 0.778547, 1 )
+self_modulate = Color( 0.196106, 0.465468, 0.929688, 1 )
 position = Vector2( -41.8727, -153.533 )
 texture = ExtResource( 9 )
 
 [node name="7" type="Sprite" parent="Animation/Body/Head Dots" index="6"]
 
-self_modulate = Color( 0.204261, 0.268904, 0.886719, 1 )
+self_modulate = Color( 0.131622, 0.727441, 0.886719, 1 )
 position = Vector2( -21.12, -154.268 )
 texture = ExtResource( 9 )
 
 [node name="8" type="Sprite" parent="Animation/Body/Head Dots" index="7"]
 
-self_modulate = Color( 0.211795, 0.614435, 0.801933, 1 )
+self_modulate = Color( 0.326889, 0.353578, 0.753906, 1 )
 position = Vector2( -0.734604, -155.186 )
 texture = ExtResource( 9 )
 
 [node name="9" type="Sprite" parent="Animation/Body/Head Dots" index="8"]
 
-self_modulate = Color( 0.198461, 0.64285, 0.798479, 1 )
+self_modulate = Color( 0.223633, 0.878807, 0.894531, 1 )
 position = Vector2( 20.2018, -154.635 )
 texture = ExtResource( 9 )
 
 [node name="10" type="Sprite" parent="Animation/Body/Head Dots" index="9"]
 
-self_modulate = Color( 0.19377, 0.752673, 0.923766, 1 )
+self_modulate = Color( 0.0516357, 0.574358, 0.734375, 1 )
 position = Vector2( 40.9545, -154.635 )
 texture = ExtResource( 9 )
 
 [node name="11" type="Sprite" parent="Animation/Body/Head Dots" index="10"]
 
-self_modulate = Color( 0.154782, 0.365973, 0.690033, 1 )
+self_modulate = Color( 0.241211, 0.584877, 0.8125, 1 )
 position = Vector2( -41.3218, -135.903 )
 texture = ExtResource( 9 )
 
 [node name="12" type="Sprite" parent="Animation/Body/Head Dots" index="11"]
 
-self_modulate = Color( 0.0734791, 0.441694, 0.830901, 1 )
+self_modulate = Color( 0, 0.929688, 1, 1 )
 position = Vector2( -20.5691, -135.168 )
 texture = ExtResource( 9 )
 
 [node name="13" type="Sprite" parent="Animation/Body/Head Dots" index="12"]
 
-self_modulate = Color( 0.184453, 0.629469, 0.823464, 1 )
+self_modulate = Color( 0.251923, 0.992188, 0.905438, 1 )
 position = Vector2( 0, -135.535 )
 texture = ExtResource( 9 )
 
 [node name="14" type="Sprite" parent="Animation/Body/Head Dots" index="13"]
 
-self_modulate = Color( 0.0368376, 0.444124, 0.729483, 1 )
+self_modulate = Color( 0.098465, 0.91402, 0.933594, 1 )
 position = Vector2( 20.3854, -136.086 )
 texture = ExtResource( 9 )
 
 [node name="15" type="Sprite" parent="Animation/Body/Head Dots" index="14"]
 
-self_modulate = Color( 0.1637, 0.443698, 0.840251, 1 )
+self_modulate = Color( 0.134583, 0.957031, 0.918479, 1 )
 position = Vector2( 40.9545, -135.903 )
 texture = ExtResource( 9 )
 
@@ -6787,6 +6833,41 @@ position = Vector2( -6.34208, -234.776 )
 
 [node name="Number Spawn Pos" type="Node2D" parent="." index="3"]
 
-position = Vector2( -1.05225, -165.606 )
+position = Vector2( -1.05225, -155.063 )
+
+[node name="Audio" type="Node2D" parent="." index="4"]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 17 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 18 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Type" type="AudioStreamPlayer2D" parent="Audio" index="2"]
+
+stream = ExtResource( 17 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

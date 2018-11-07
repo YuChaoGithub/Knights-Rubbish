@@ -67,6 +67,10 @@ onready var impassible_platform = $Platform
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
+# Audio.
+onready var shoot_audio = $Audio/Shoot
+onready var drop_audio = $Audio/Drop
+
 func activate():
 	ec.init_gravity_movement(GRAVITY)
 	ec.init_straight_line_movement(facing * SPEED_X, 0)
@@ -123,6 +127,7 @@ func play_toss_animation():
 func toss_ring():
 	ec.change_status(NONE)
 	spawn_two_rings()
+	shoot_audio.play()
 	status_timer = ec.cd_timer.new(STONED_ANIM_DURATION, self, "change_status", FALLING)
 
 func spawn_two_rings():
@@ -152,6 +157,7 @@ func fall_and_detect_landing(delta):
 	if ec.gravity_movement.is_landed:
 		for puff in droppuffs:
 			puff.emitting = true
+		drop_audio.play()
 		change_status(LANDED)
 
 func on_attack_hit(area):

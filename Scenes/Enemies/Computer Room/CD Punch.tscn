@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/CDPunch.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://Graphics/Characters/Bro SS/Big Bro Eyebrow.png" type="Texture" id=12]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=13]
 [ext_resource path="res://Graphics/Particles/Dot.png" type="Texture" id=14]
+[ext_resource path="res://Audio/cdpunch_walk.wav" type="AudioStream" id=15]
+[ext_resource path="res://Audio/cdpunch_punch.wav" type="AudioStream" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -190,6 +192,18 @@ tracks/12/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( -99, 0 ), Vector2( -129.714, -4.00543 ), Vector2( -145.063, -0.667572 ), Vector2( -157.417, 0.667572 ), Vector2( -172.106, 2.00272 ), Vector2( -185.79, 1.33514 ), Vector2( -183.79, 1.33514 ), Vector2( -174.095, 0 ), Vector2( -57.4116, -0.667572 ), Vector2( -157.412, -0.667573 ), Vector2( -142.398, -2.67029 ), Vector2( -130.373, -0.667572 ), Vector2( -127.373, -0.667572 ), Vector2( -100.662, -3.33786 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("../Audio/Punch:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -1163,19 +1177,31 @@ tracks/12/keys = {
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
 }
+tracks/13/type = "value"
+tracks/13/path = NodePath("../Audio/Hurt:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0.9, 1.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
 
-[sub_resource type="Curve" id=14]
+[sub_resource type="Curve" id=11]
 
 min_value = 0.0
 max_value = 1.0
 bake_resolution = 100
 _data = [ Vector2( 0.000747813, 0.0469339 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.168843 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=15]
+[sub_resource type="CurveTexture" id=12]
 
 flags = 4
 width = 2048
-curve = SubResource( 14 )
+curve = SubResource( 11 )
 
 [sub_resource type="ParticlesMaterial" id=13]
 
@@ -1207,7 +1233,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 1.0
 scale_random = 0.0
-scale_curve = SubResource( 15 )
+scale_curve = SubResource( 12 )
 color = Color( 0, 0, 0, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
@@ -1269,7 +1295,7 @@ offset = Vector2( -99.7217, -0.654175 )
 
 [node name="Eye" type="Sprite" parent="Animation/Body" index="0"]
 
-position = Vector2( -69.1391, -25.4349 )
+position = Vector2( -70, -25.4349 )
 rotation = 1.00317
 texture = ExtResource( 4 )
 
@@ -1292,7 +1318,7 @@ update_scale = true
 [node name="Attack Area" type="Area2D" parent="Animation" index="2"]
 
 editor/display_folded = true
-position = Vector2( -99, 0 )
+position = Vector2( -100.662, -3.33786 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -1352,6 +1378,30 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
 position = Vector2( 50.8802, 78.0164 )
 rotation = -0.531032
+
+[node name="Audio" type="Node2D" parent="." index="4"]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 15 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Punch" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 16 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="Animation/Attack Area" to="." method="on_attack_hit"]
 

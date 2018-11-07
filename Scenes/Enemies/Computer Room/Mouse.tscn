@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Mouse.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Enemies/Common/Mob Health Bar.tscn" type="PackedScene" id=2]
@@ -15,6 +15,10 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/CDPuncher/Die Eye.png" type="Texture" id=13]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Mouth.png" type="Texture" id=14]
 [ext_resource path="res://Graphics/Characters/Keshia Gome/Stunned Eyes.png" type="Texture" id=15]
+[ext_resource path="res://Audio/general_mob_hurt.wav" type="AudioStream" id=16]
+[ext_resource path="res://Audio/mouse_open_lid.wav" type="AudioStream" id=17]
+[ext_resource path="res://Audio/mouse_close.wav" type="AudioStream" id=18]
+[ext_resource path="res://Audio/mouse_mousy_slide.wav" type="AudioStream" id=19]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -655,6 +659,18 @@ tracks/51/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
+}
+tracks/52/type = "value"
+tracks/52/path = NodePath("../Audio/Close:playing")
+tracks/52/interp = 1
+tracks/52/loop_wrap = true
+tracks/52/imported = false
+tracks/52/enabled = true
+tracks/52/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -2571,6 +2587,30 @@ tracks/53/keys = {
 "update": 0,
 "values": [ -11.4265, -15.539 ]
 }
+tracks/54/type = "value"
+tracks/54/path = NodePath("../Audio/Open:playing")
+tracks/54/interp = 1
+tracks/54/loop_wrap = true
+tracks/54/imported = false
+tracks/54/enabled = true
+tracks/54/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/55/type = "value"
+tracks/55/path = NodePath("../Audio/Slide:playing")
+tracks/55/interp = 1
+tracks/55/loop_wrap = true
+tracks/55/imported = false
+tracks/55/enabled = true
+tracks/55/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=7]
 
@@ -4462,7 +4502,7 @@ tracks/51/keys = {
 "values": [ false ]
 }
 
-[node name="Mouse" type="KinematicBody2D" index="0"]
+[node name="Mouse" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
@@ -4695,5 +4735,51 @@ blend_times = [  ]
 
 position = Vector2( 0.620667, -74.8943 )
 scale = Vector2( 0.8, 0.8 )
+
+[node name="Audio" type="Node2D" parent="." index="4"]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 16 )
+volume_db = 1.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Open" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 17 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Close" type="AudioStreamPlayer2D" parent="Audio" index="2"]
+
+stream = ExtResource( 18 )
+volume_db = 10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Slide" type="AudioStreamPlayer2D" parent="Audio" index="3"]
+
+stream = ExtResource( 19 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 
