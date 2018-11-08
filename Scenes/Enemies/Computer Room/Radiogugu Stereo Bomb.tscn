@@ -1,11 +1,13 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/RadioguguStereoBomb.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Radiogugu/Stereo Bomb.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Radiogugu/Stereo Bomb Cautious Sign.png" type="Texture" id=3]
 [ext_resource path="res://Graphics/Particles/Fire 2.png" type="Texture" id=4]
+[ext_resource path="res://Audio/redearspider_beep.wav" type="AudioStream" id=5]
+[ext_resource path="res://Audio/sockute_explode.wav" type="AudioStream" id=6]
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 25.7693, 23.1944 )
@@ -74,9 +76,8 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Color", "Gravity", "Initial Velocity", "Scale", "Spread" ]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=7]
 
-resource_name = "Blink"
 length = 3.5
 loop = false
 step = 0.1
@@ -154,6 +155,30 @@ tracks/5/keys = {
 "update": 1,
 "values": [ 0, 1, 0 ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("Beep:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.3, 0.5, 0.7, 0.9, 1.1, 1.3, 1.5, 1.7, 1.9, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Explode:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="RectangleShape2D" id=8]
 
@@ -165,7 +190,7 @@ extents = Vector2( 249.445, 82.934 )
 custom_solver_bias = 0.0
 extents = Vector2( 187.481, 64.6429 )
 
-[node name="Radiogugu Stereo Bomb" type="KinematicBody2D"]
+[node name="Radiogugu Stereo Bomb" type="KinematicBody2D" index="0"]
 
 rotation = -0.161511
 scale = Vector2( 1.5, 1.5 )
@@ -179,7 +204,7 @@ _sections_unfolded = [ "Collision", "Transform", "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-shape = SubResource( 7 )
+shape = SubResource( 1 )
 
 [node name="Body" type="Sprite" parent="." index="1"]
 
@@ -222,7 +247,7 @@ autoplay = "Blink"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Blink = SubResource( 1 )
+anims/Blink = SubResource( 7 )
 blend_times = [  ]
 
 [node name="ExplosionArea" type="Area2D" parent="." index="5"]
@@ -248,6 +273,28 @@ shape = SubResource( 8 )
 
 position = Vector2( -0.00012207, -204.833 )
 shape = SubResource( 9 )
+
+[node name="Beep" type="AudioStreamPlayer2D" parent="." index="6"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Explode" type="AudioStreamPlayer2D" parent="." index="7"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="ExplosionArea" to="." method="attack_hit"]
 

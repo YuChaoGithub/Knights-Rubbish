@@ -18,7 +18,7 @@ export(int) var activate_range_y = 25000
 const MAX_HEALTH = 200
 
 # Attack.
-const ATTACK_RANGE_X = 350
+const ATTACK_RANGE_X = 300
 const ATTACK_RANGE_Y = 200
 const ATTACK_DAMAGE = 12
 const KNOCK_BACK_VEL_X = 750

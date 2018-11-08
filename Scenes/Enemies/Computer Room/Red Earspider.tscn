@@ -1,15 +1,18 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/RedEarspider.gd" type="Script" id=1]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Red Earspider/Red Earspider01.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Red Earspider/Red Earspider08.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Red Earspider/Red Earspider07.png" type="Texture" id=4]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Red Earspider/Red Earspider06.png" type="Texture" id=5]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Red Earspider/Red Earspider05.png" type="Texture" id=6]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Red Earspider/Red Earspider04.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Red Earspider/Red Earspider03.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/Enemies/Computer Room/Red Earspider/Red Earspider02.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Red Earspider/Red Earspider08.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Red Earspider/Red Earspider07.png" type="Texture" id=3]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Red Earspider/Red Earspider06.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Red Earspider/Red Earspider05.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Red Earspider/Red Earspider04.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Red Earspider/Red Earspider03.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Red Earspider/Red Earspider02.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/Enemies/Computer Room/Red Earspider/Red Earspider01.png" type="Texture" id=9]
 [ext_resource path="res://Graphics/Particles/Double Star.png" type="Texture" id=10]
+[ext_resource path="res://Audio/redearspider_beep.wav" type="AudioStream" id=11]
+[ext_resource path="res://Audio/redearspider_drop.wav" type="AudioStream" id=12]
+[ext_resource path="res://Audio/redearspider_explode.wav" type="AudioStream" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -37,7 +40,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 2 ) ]
+"values": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:position")
@@ -99,6 +102,30 @@ tracks/5/keys = {
 "update": 1,
 "values": [ 0 ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("../Beep:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.65, 0.95, 1.2, 1.45, 1.65, 1.85, 2, 2.15, 2.3, 2.45, 2.6, 2.75, 2.9, 3.05, 3.15, 3.25, 3.35, 3.45, 3.55, 3.6, 3.65, 3.7, 3.75, 3.8, 3.85, 3.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true, true ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../Explode:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=4]
 
@@ -115,7 +142,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:position")
@@ -193,7 +220,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 2 ) ]
+"values": [ ExtResource( 9 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:position")
@@ -255,6 +282,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [ 1, 0 ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("../Explode:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=6]
 
@@ -271,7 +310,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 2 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Body:position")
@@ -332,6 +371,42 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../Explode:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("../Beep:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("../Drop:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Gradient" id=7]
@@ -425,6 +500,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 collision_layer = 0
+collision_mask = 0
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
@@ -440,7 +516,6 @@ position = Vector2( -0.54007, 180.623 )
 
 [node name="Body" type="Sprite" parent="Animation" index="1"]
 
-self_modulate = Color( 1, 1, 1, 0.645882 )
 texture = ExtResource( 2 )
 offset = Vector2( 0, 200 )
 
@@ -479,6 +554,39 @@ normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
+
+[node name="Beep" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 11 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Drop" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 12 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Explode" type="AudioStreamPlayer2D" parent="." index="5"]
+
+stream = ExtResource( 13 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="Animation/Explosion Area" to="." method="explosion_attack_hit"]
 

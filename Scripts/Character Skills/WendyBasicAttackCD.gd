@@ -84,7 +84,7 @@ func _process(delta):
 	var collision = move_and_collide(movement_pattern.movement(delta))
 
 	# Destroy when touches a platform.
-	if gravity_movement.is_landed || collision != null:
+	if !hit && (gravity_movement.is_landed || collision != null):
 		gravity_movement.dy = 0
 		gravity_movement.gravity = 0
 		movement_pattern.dx *= SLIDE_RATIO

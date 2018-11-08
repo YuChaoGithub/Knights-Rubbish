@@ -20,6 +20,7 @@ const BASIC_SKILL_KNOCK_BACK_VEL_Y = 50
 const BASIC_SKILL_KNOCK_BACK_FADE_RATE = 1000
 
 # Down Skill
+const START_INVINCIBLE_TIME = 0.8
 const DOWN_SKILL_DURATION = 2.7
 const DOWN_SKILL_COOLDOWN = 0.1
 
@@ -59,6 +60,8 @@ const ULT_END_SHOOT_TIME = 3.0
 var ult_spoon = preload("res://Scenes/Characters/Ranawato Plato/RanawatoUltSpoon.tscn")
 var ult_interval
 var ult_timer
+
+onready var ult_toss_audio = $"../Audio/UltToss"
 
 var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 
@@ -223,6 +226,14 @@ func down_skill():
         hero.set_status("animate_movement", false, DOWN_SKILL_DURATION)
         hero.set_status("can_cast_skill", false, DOWN_SKILL_DURATION + DOWN_SKILL_COOLDOWN)
 
+        var invincible_timer = cd_timer.new(START_INVINCIBLE_TIME, self, "start_invincible")
+        hero.register_timer("interruptable_skill", invincible_timer)
+
+func start_invincible():
+    hero.unregister_timer("interruptable_skill")
+
+    hero.set_status("invincible", true, DOWN_SKILL_DURATION - START_INVINCIBLE_TIME)
+
 func ult():
     if hero.status.can_move && hero.status.has_ult &&  hero.status.can_cast_skill:
         hero.status.has_ult = false
@@ -242,6 +253,8 @@ func fire_ult(curr_count):
     spoon.initialize(hero.attack_modifier, hero.enemy_knock_back_modifier, hero.size)
     spawn_node.add_child(spoon)
     spoon.global_position = self.global_position
+
+    ult_toss_audio.play()
 
     if curr_count < ULT_SHOOT_TOTAL_SPOONS:
         ult_timer = cd_timer.new(ult_interval, self, "fire_ult", curr_count + 1)

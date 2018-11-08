@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scripts/Structures/Door.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Structure/Door/Door Frame.png" type="Texture" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://Graphics/Structure/Door/Door Debris 10.png" type="Texture" id=14]
 [ext_resource path="res://Graphics/Structure/Door/Door Debris 11.png" type="Texture" id=15]
 [ext_resource path="res://Graphics/Structure/Door/Door Crack.png" type="Texture" id=16]
+[ext_resource path="res://Audio/door_crack.wav" type="AudioStream" id=17]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -352,6 +353,18 @@ tracks/26/keys = {
 "update": 1,
 "values": [ 0, 32 ]
 }
+tracks/27/type = "value"
+tracks/27/path = NodePath("Explode:playing")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=3]
 
@@ -420,7 +433,7 @@ tracks/4/keys = {
 "values": [ 2 ]
 }
 
-[node name="Door Set" type="Node2D" index="0"]
+[node name="Door Set" type="Node2D"]
 
 position = Vector2( 40917.6, -2391.09 )
 script = ExtResource( 1 )
@@ -548,5 +561,16 @@ playback_speed = 1.0
 anims/Explode = SubResource( 2 )
 anims/Still = SubResource( 3 )
 blend_times = [  ]
+
+[node name="Explode" type="AudioStreamPlayer2D" parent="Door" index="4"]
+
+stream = ExtResource( 17 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

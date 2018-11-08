@@ -456,7 +456,7 @@ tracks/6/keys = {
 "values": [ 0.0, -21.4363 ]
 }
 
-[node name="Canmera" type="Node2D"]
+[node name="Canmera" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 activate_range_x = 3000
@@ -464,8 +464,9 @@ activate_range_y = 1000
 
 [node name="Animation" type="Node2D" parent="." index="0"]
 
-position = Vector2( -0.934082, -59.3628 )
+position = Vector2( -0.934082, 50 )
 scale = Vector2( 1.5, 1.5 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Damage Area" type="Area2D" parent="Animation" index="0"]
 
@@ -488,6 +489,7 @@ shape = SubResource( 1 )
 
 [node name="Stand Remote Transform" type="RemoteTransform2D" parent="Animation" index="1"]
 
+editor/display_folded = true
 remote_path = NodePath("../Stand")
 use_global_coordinates = true
 update_position = true

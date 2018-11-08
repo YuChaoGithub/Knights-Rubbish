@@ -29,6 +29,7 @@ var size
 var damage
 
 var particles = preload("res://Scenes/Particles/WendyHorizontalSkillParticles.tscn")
+var penetrate_audio = preload("res://Scenes/Characters/Wendy Vista/WendyPenetrateAudio.tscn")
 
 var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 
@@ -81,6 +82,10 @@ func on_enemy_hit(area):
 		emit_particles()
 
 func emit_particles():
+	var a = penetrate_audio.instance()
+	$"..".add_child(a)
+	a.global_position = self.global_position
+
 	var p = particles.instance()
 	$"..".add_child(p)
 	p.global_position = self.global_position

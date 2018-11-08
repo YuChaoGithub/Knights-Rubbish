@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Sonmera.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Sonmera/Body.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Sonmera/1.png" type="Texture" id=5]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Sonmera/Smile.png" type="Texture" id=6]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Sonmera/Flash.png" type="Texture" id=7]
+[ext_resource path="res://Audio/sonmera_countdown.wav" type="AudioStream" id=8]
+[ext_resource path="res://Audio/sonmera_shoot.wav" type="AudioStream" id=9]
 
 [sub_resource type="Animation" id=1]
 
@@ -73,6 +75,30 @@ tracks/4/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("../Countdown:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.5, 1.5, 2.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("../Shoot:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 3.6 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -142,7 +168,7 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=3]
 
 resource_name = "Blank"
 length = 0.1
@@ -179,11 +205,12 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="Sonmera" type="Node2D"]
+[node name="Sonmera" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 activate_range_x = 3000
 activate_range_y = 2000
+screen_capture_slot = -1
 
 [node name="Animation" type="Node2D" parent="." index="0"]
 
@@ -236,6 +263,7 @@ blend_times = [  ]
 
 [node name="Flashlight" type="CanvasLayer" parent="." index="1"]
 
+editor/display_folded = true
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -266,8 +294,30 @@ autoplay = "Blank"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Blank = SubResource( 5 )
+anims/Blank = SubResource( 3 )
 anims/Flash = SubResource( 4 )
 blend_times = [  ]
+
+[node name="Countdown" type="AudioStreamPlayer2D" parent="." index="2"]
+
+stream = ExtResource( 8 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Shoot" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 9 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

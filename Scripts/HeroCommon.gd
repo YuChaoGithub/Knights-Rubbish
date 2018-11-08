@@ -594,6 +594,7 @@ func speed_changed(args):
 	else:
 		number_indicator.instance().initialize(-5, SPEED_TEXT_COLOR, number_spawn_pos, self)
 		status_icons.speeded.visible = true
+		status_icons.speeded.get_node("Audio").play()
 		speeded_count += 1
 
 	speed_timers[speed_timer_label] = {

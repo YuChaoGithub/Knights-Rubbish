@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=74 format=2]
 
 [ext_resource path="res://Scripts/HeroCommon.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Character Skills/WendyVistaSkills.gd" type="Script" id=2]
@@ -34,6 +34,21 @@
 [ext_resource path="res://Scenes/Particles/Ult Stone Particles.tscn" type="PackedScene" id=32]
 [ext_resource path="res://Scenes/UI/Hero Health Bar.tscn" type="PackedScene" id=33]
 [ext_resource path="res://Scripts/HeroGhost.gd" type="Script" id=34]
+[ext_resource path="res://Audio/wendy_hurt.wav" type="AudioStream" id=35]
+[ext_resource path="res://Audio/wendy_healed.wav" type="AudioStream" id=36]
+[ext_resource path="res://Audio/wendy_jump.wav" type="AudioStream" id=37]
+[ext_resource path="res://Audio/wendy_size_change.wav" type="AudioStream" id=38]
+[ext_resource path="res://Audio/hero_general_drink.wav" type="AudioStream" id=39]
+[ext_resource path="res://Audio/wendy_ba_ah.wav" type="AudioStream" id=40]
+[ext_resource path="res://Audio/wendy_ba_chew.wav" type="AudioStream" id=41]
+[ext_resource path="res://Audio/wendy_bs.wav" type="AudioStream" id=42]
+[ext_resource path="res://Audio/wendy_ds.wav" type="AudioStream" id=43]
+[ext_resource path="res://Audio/wendy_hs_ah.wav" type="AudioStream" id=44]
+[ext_resource path="res://Audio/wendy_hs_chew.wav" type="AudioStream" id=45]
+[ext_resource path="res://Audio/wendy_ult_huh.wav" type="AudioStream" id=46]
+[ext_resource path="res://Audio/wendy_ult_ah.wav" type="AudioStream" id=47]
+[ext_resource path="res://Audio/wendy_ult_shoot.wav" type="AudioStream" id=48]
+[ext_resource path="res://Audio/wendy_us.wav" type="AudioStream" id=49]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -744,6 +759,30 @@ tracks/39/keys = {
 "update": 1,
 "values": [ 1 ]
 }
+tracks/40/type = "value"
+tracks/40/path = NodePath("../Audio/BAAh:playing")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/41/type = "value"
+tracks/41/path = NodePath("../Audio/BAChew:playing")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=10]
 
@@ -1229,6 +1268,18 @@ tracks/39/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 1 ]
+}
+tracks/40/type = "value"
+tracks/40/path = NodePath("../Audio/BS:playing")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=11]
@@ -2262,6 +2313,18 @@ tracks/41/keys = {
 "update": 1,
 "values": [ 0, 1 ]
 }
+tracks/42/type = "value"
+tracks/42/path = NodePath("../Audio/DS:playing")
+tracks/42/interp = 1
+tracks/42/loop_wrap = true
+tracks/42/imported = false
+tracks/42/enabled = true
+tracks/42/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=13]
 
@@ -2784,6 +2847,18 @@ tracks/42/keys = {
 "update": 1,
 "values": [ 1 ]
 }
+tracks/43/type = "value"
+tracks/43/path = NodePath("../Audio/Drink:playing")
+tracks/43/interp = 1
+tracks/43/loop_wrap = true
+tracks/43/imported = false
+tracks/43/enabled = true
+tracks/43/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=14]
 
@@ -3269,6 +3344,30 @@ tracks/39/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 1 ]
+}
+tracks/40/type = "value"
+tracks/40/path = NodePath("../Audio/HSAh:playing")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/41/type = "value"
+tracks/41/path = NodePath("../Audio/HSChew:playing")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/keys = {
+"times": PoolRealArray( 1.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=15]
@@ -6188,6 +6287,30 @@ tracks/39/keys = {
 "update": 1,
 "values": [ 1 ]
 }
+tracks/40/type = "value"
+tracks/40/path = NodePath("../Audio/UltAh:playing")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/41/type = "value"
+tracks/41/path = NodePath("../Audio/UltHuh:playing")
+tracks/41/interp = 1
+tracks/41/loop_wrap = true
+tracks/41/imported = false
+tracks/41/enabled = true
+tracks/41/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=21]
 
@@ -6673,6 +6796,18 @@ tracks/39/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ 1 ]
+}
+tracks/40/type = "value"
+tracks/40/path = NodePath("../Audio/US:playing")
+tracks/40/interp = 1
+tracks/40/loop_wrap = true
+tracks/40/imported = false
+tracks/40/enabled = true
+tracks/40/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=22]
@@ -7220,6 +7355,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Animation" type="Node2D" parent="Sprite" index="0"]
 
+editor/display_folded = true
 position = Vector2( 0, -20 )
 _sections_unfolded = [ "Transform" ]
 
@@ -7337,6 +7473,7 @@ texture = ExtResource( 9 )
 
 light_mask = 5
 position = Vector2( -19.6812, 77.6028 )
+rotation = 0.337304
 texture = ExtResource( 14 )
 offset = Vector2( -0.500076, 12.4878 )
 
@@ -7344,6 +7481,7 @@ offset = Vector2( -0.500076, 12.4878 )
 
 light_mask = 5
 position = Vector2( 19.522, 78.1469 )
+rotation = 0.0168476
 texture = ExtResource( 14 )
 offset = Vector2( -0.156494, 12.0443 )
 
@@ -7364,7 +7502,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 collision_layer = 0
-collision_mask = 0
+collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Audio Bus", "Collision" ]
@@ -7443,15 +7581,17 @@ position = Vector2( 51.9573, 15.9869 )
 [node name="Drink" type="Sprite" parent="Sprite/Animation" index="3"]
 
 visible = false
-position = Vector2( 75.8853, 40.3395 )
-rotation = -0.0386191
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 102.186, 86.4476 )
+rotation = -1.40283
 texture = ExtResource( 24 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="DownSkillHat" type="Sprite" parent="Sprite/Animation" index="4"]
 
 visible = false
-position = Vector2( -1.30359, -71.1389 )
+position = Vector2( 0.779113, 85.6584 )
+rotation = -0.129979
 texture = ExtResource( 8 )
 _sections_unfolded = [ "Visibility" ]
 
@@ -7610,6 +7750,173 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GhostHitBox/Node2D/Area2D" index="0"]
 
 shape = SubResource( 24 )
+
+[node name="Audio" type="Node2D" parent="." index="9"]
+
+[node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+
+stream = ExtResource( 35 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Healed" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+
+stream = ExtResource( 36 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="Audio" index="2"]
+
+stream = ExtResource( 37 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="SizeChange" type="AudioStreamPlayer2D" parent="Audio" index="3"]
+
+stream = ExtResource( 38 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Drink" type="AudioStreamPlayer2D" parent="Audio" index="4"]
+
+stream = ExtResource( 39 )
+volume_db = 0.0
+pitch_scale = 1.5
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="BAAh" type="AudioStreamPlayer2D" parent="Audio" index="5"]
+
+stream = ExtResource( 40 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="BAChew" type="AudioStreamPlayer2D" parent="Audio" index="6"]
+
+stream = ExtResource( 41 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="BS" type="AudioStreamPlayer2D" parent="Audio" index="7"]
+
+stream = ExtResource( 42 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="DS" type="AudioStreamPlayer2D" parent="Audio" index="8"]
+
+stream = ExtResource( 43 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="HSAh" type="AudioStreamPlayer2D" parent="Audio" index="9"]
+
+stream = ExtResource( 44 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="HSChew" type="AudioStreamPlayer2D" parent="Audio" index="10"]
+
+stream = ExtResource( 45 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="UltHuh" type="AudioStreamPlayer2D" parent="Audio" index="11"]
+
+stream = ExtResource( 46 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="UltAh" type="AudioStreamPlayer2D" parent="Audio" index="12"]
+
+stream = ExtResource( 47 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="UltShoot" type="AudioStreamPlayer2D" parent="Audio" index="13"]
+
+stream = ExtResource( 48 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="US" type="AudioStreamPlayer2D" parent="Audio" index="14"]
+
+stream = ExtResource( 49 )
+volume_db = 3.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="Sprite/Animation/Body/Hat/UpSkillArea" to="Combo Handler" method="on_up_skill_hit"]
 

@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Character Skills/GhostBall.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Particles/Blurred Dot.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/Particles/Fire 2.png" type="Texture" id=3]
 [ext_resource path="res://Graphics/Powerups/Ult Ball/Ball.png" type="Texture" id=4]
 [ext_resource path="res://Graphics/UI/Avatar/Ghost.png" type="Texture" id=5]
+[ext_resource path="res://Audio/ghost_ball.wav" type="AudioStream" id=6]
 
 [sub_resource type="Gradient" id=1]
 
@@ -121,7 +122,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Emission Shape", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Radial Accel", "Scale", "Spread" ]
 
-[node name="GhostBall" type="Node2D"]
+[node name="GhostBall" type="Node2D" index="0"]
 
 position = Vector2( 1668.69, -449.462 )
 scale = Vector2( 0.6, 0.6 )
@@ -205,5 +206,16 @@ position = Vector2( -5.46228, -31.0925 )
 scale = Vector2( 1.6, 1.6 )
 texture = ExtResource( 5 )
 _sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Ghostball" type="AudioStreamPlayer2D" parent="." index="5"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

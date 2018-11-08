@@ -16,6 +16,7 @@ onready var frame = $Frame
 onready var cover_frame = $CoverFrame
 onready var ban_sign = $BanSign
 onready var following_camera = $"../../FollowingCamera"
+onready var enter_audio = $Enter
 
 func _ready():
     deactivate()
@@ -28,6 +29,8 @@ func _process(delta):
 
 func hero_enter(hero):
     if is_active:
+        enter_audio.play()
+
         hero.set_status("can_move", false, HERO_FREEZE_DURATION)
         
         var lerper = parent_lerper.instance()

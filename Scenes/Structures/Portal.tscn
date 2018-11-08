@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Structures/Portal.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Structure/Portal Outline.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Graphics/Particles/Double Star.png" type="Texture" id=5]
 [ext_resource path="res://Graphics/UI/White Circular Frame.png" type="Texture" id=6]
 [ext_resource path="res://Graphics/UI/White Line.png" type="Texture" id=7]
+[ext_resource path="res://Audio/portal_enter.wav" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 
@@ -102,7 +103,7 @@ tracks/0/path = NodePath("CoverFrame:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/keys = {
 "times": PoolRealArray( 0, 1.1 ),
 "transitions": PoolRealArray( 1, 1 ),
@@ -131,7 +132,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CoverFrame" type="Sprite" parent="." index="1"]
 
-modulate = Color( 0, 0, 0, 0 )
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 2.08447, 2.08459 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 2 )
@@ -235,5 +236,16 @@ _sections_unfolded = [ "Collision" ]
 
 visible = false
 shape = SubResource( 8 )
+
+[node name="Enter" type="AudioStreamPlayer2D" parent="." index="8"]
+
+stream = ExtResource( 8 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

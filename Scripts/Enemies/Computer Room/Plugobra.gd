@@ -47,6 +47,8 @@ onready var rise_to_pos_y = self.global_position.y - RISE_LENGTH
 
 onready var ec = preload("res://Scripts/Enemies/Common/EnemyCommon.gd").new(self)
 
+onready var laser_audio = $Audio/Laser
+
 func activate():
 	ec.init_straight_line_movement(0, -RISE_SPEED_Y)
 	set_process(true)
@@ -112,6 +114,8 @@ func shoot_laser():
 	drawing_node.add_line(left_laser_line)
 	drawing_node.add_line(right_laser_line)
 	attack_target.damaged(DAMAGE, false)
+
+	laser_audio.play()
 
 	status_timer = ec.cd_timer.new(LASER_SHOW_DURATION, self, "change_status", STILL)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=2]
+[gd_scene load_steps=86 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/EyeMac.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Harddies/Shocked.png" type="Texture" id=2]
@@ -48,6 +48,7 @@
 [ext_resource path="res://Audio/eyemac_music.wav" type="AudioStream" id=46]
 [ext_resource path="res://Audio/eyemac_rotate.wav" type="AudioStream" id=47]
 [ext_resource path="res://Audio/eyemac_shoot_mouse.wav" type="AudioStream" id=48]
+[ext_resource path="res://Audio/sonmera_shoot.wav" type="AudioStream" id=49]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -1001,6 +1002,18 @@ tracks/57/imported = false
 tracks/57/enabled = true
 tracks/57/keys = {
 "times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/58/type = "value"
+tracks/58/path = NodePath("../Audio/ShootPhoto:playing")
+tracks/58/interp = 1
+tracks/58/loop_wrap = true
+tracks/58/imported = false
+tracks/58/enabled = true
+tracks/58/keys = {
+"times": PoolRealArray( 0.3 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
@@ -10510,7 +10523,7 @@ tracks/54/keys = {
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="Eye Mac" type="Node2D"]
+[node name="Eye Mac" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
@@ -11252,6 +11265,17 @@ area_mask = 1
 
 stream = ExtResource( 48 )
 volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="ShootPhoto" type="AudioStreamPlayer2D" parent="Audio" index="9"]
+
+stream = ExtResource( 49 )
+volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0

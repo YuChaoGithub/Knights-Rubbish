@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/WindyMeteory.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Windy Meteory/Frame.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Windy Meteory/Third Row.png" type="Texture" id=10]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Windy Meteory/Second Row.png" type="Texture" id=11]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Windy Meteory/First Row.png" type="Texture" id=12]
+[ext_resource path="res://Audio/windymeteory_tune.wav" type="AudioStream" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -797,6 +798,18 @@ tracks/31/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/32/type = "value"
+tracks/32/path = NodePath("../AudioStreamPlayer2D:playing")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=4]
 
@@ -1188,7 +1201,7 @@ tracks/31/keys = {
 "values": [ 0.0 ]
 }
 
-[node name="Windy Meteory" type="Node2D" index="0"]
+[node name="Windy Meteory" type="Node2D"]
 
 z_index = 1
 script = ExtResource( 1 )
@@ -1222,62 +1235,52 @@ texture = ExtResource( 2 )
 
 [node name="Yellow" type="Sprite" parent="Animation/Frame" index="0"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 26.9051, -28.3984 )
 texture = ExtResource( 3 )
 
 [node name="Greem" type="Sprite" parent="Animation/Frame" index="1"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 3.86991, 24.3252 )
 texture = ExtResource( 4 )
 
 [node name="Blue" type="Sprite" parent="Animation/Frame" index="2"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -37.7777, 13.084 )
 texture = ExtResource( 5 )
 
 [node name="Orange" type="Sprite" parent="Animation/Frame" index="3"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -14.374, -42.3847 )
 texture = ExtResource( 6 )
 
 [node name="Black Row" type="Sprite" parent="Animation/Frame" index="4"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -56.0127, -15.35 )
 texture = ExtResource( 7 )
 offset = Vector2( 0.544014, -1.0511 )
 
 [node name="Fifth Row" type="Sprite" parent="Animation/Frame/Black Row" index="0"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -20.6484, -5.65814 )
 texture = ExtResource( 8 )
 
 [node name="Forth Row" type="Sprite" parent="Animation/Frame/Black Row/Fifth Row" index="0"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -21.9295, -4.60705 )
 texture = ExtResource( 9 )
 
 [node name="Third Row" type="Sprite" parent="Animation/Frame/Black Row/Fifth Row/Forth Row" index="0"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -21.7452, -2.57994 )
 texture = ExtResource( 10 )
 
 [node name="Second Row" type="Sprite" parent="Animation/Frame/Black Row/Fifth Row/Forth Row/Third Row" index="0"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -18.6124, -6.26556 )
 texture = ExtResource( 11 )
 
 [node name="First Row" type="Sprite" parent="Animation/Frame/Black Row/Fifth Row/Forth Row/Third Row/Second Row" index="0"]
 
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -16.3673, -5.61367 )
 texture = ExtResource( 12 )
 offset = Vector2( 0.703354, 0.453803 )
@@ -1293,6 +1296,17 @@ anims/Appear = SubResource( 2 )
 anims/Dropping = SubResource( 3 )
 anims/Still = SubResource( 4 )
 blend_times = [  ]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="2"]
+
+stream = ExtResource( 13 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="Attack Area" to="." method="on_attack_hit"]
 

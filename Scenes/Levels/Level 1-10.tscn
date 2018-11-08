@@ -470,6 +470,7 @@ _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="Writings" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Z Index" ]
 
 [node name="Countdown Label1" parent="Writings" index="0" instance=ExtResource( 44 )]
@@ -1171,6 +1172,8 @@ position = Vector2( 8200, 1650 )
 
 [node name="Structures" type="Node2D" parent="." index="10"]
 
+editor/display_folded = true
+
 [node name="Main Menu Door" parent="Structures" index="0" instance=ExtResource( 75 )]
 
 position = Vector2( 20873.3, 3229.76 )
@@ -1387,7 +1390,6 @@ activate_range_y = 0
 [node name="Dark Earspider4" parent="Activate1" index="1" instance=ExtResource( 81 )]
 
 position = Vector2( 3850, -750 )
-_sections_unfolded = [ "Transform" ]
 activate_range_x = 0
 activate_range_y = 0
 left_bound = 3700
@@ -1396,7 +1398,6 @@ right_bound = 5500
 [node name="Dark Earspider5" parent="Activate1" index="2" instance=ExtResource( 81 )]
 
 position = Vector2( 5350, -750 )
-_sections_unfolded = [ "Transform" ]
 activate_range_x = 0
 activate_range_y = 0
 left_bound = 3700
@@ -1537,7 +1538,6 @@ drop_destination_y = 1650
 [node name="Dark Earspider6" parent="Activate3" index="2" instance=ExtResource( 81 )]
 
 position = Vector2( 9650, 750 )
-_sections_unfolded = [ "Transform" ]
 activate_range_x = 0
 activate_range_y = 0
 left_bound = 8750
@@ -1546,7 +1546,6 @@ right_bound = 10700
 [node name="Dark Earspider7" parent="Activate3" index="3" instance=ExtResource( 81 )]
 
 position = Vector2( 8950, 750 )
-_sections_unfolded = [ "Transform" ]
 activate_range_x = 0
 activate_range_y = 0
 left_bound = 8750
@@ -1555,7 +1554,6 @@ right_bound = 10700
 [node name="Dark Earspider8" parent="Activate3" index="4" instance=ExtResource( 81 )]
 
 position = Vector2( 10350, 750 )
-_sections_unfolded = [ "Transform" ]
 activate_range_x = 0
 activate_range_y = 0
 left_bound = 8750
@@ -1575,12 +1573,9 @@ activate_range_y = 0
 
 [node name="Enemies" type="Node2D" parent="." index="14"]
 
-editor/display_folded = true
-
 [node name="Dark Earspider" parent="Enemies" index="0" instance=ExtResource( 81 )]
 
 position = Vector2( 1200, -1350 )
-_sections_unfolded = [ "Transform" ]
 activate_range_y = 2000
 left_bound = 1050
 right_bound = 3150
@@ -1588,7 +1583,6 @@ right_bound = 3150
 [node name="Dark Earspider2" parent="Enemies" index="1" instance=ExtResource( 81 )]
 
 position = Vector2( 2050, -1350 )
-_sections_unfolded = [ "Transform" ]
 activate_range_y = 2000
 left_bound = 1050
 right_bound = 3150
@@ -1596,7 +1590,6 @@ right_bound = 3150
 [node name="Dark Earspider3" parent="Enemies" index="2" instance=ExtResource( 81 )]
 
 position = Vector2( 2950, -1350 )
-_sections_unfolded = [ "Transform" ]
 activate_range_x = 2000
 activate_range_y = 2000
 left_bound = 1050
@@ -1604,12 +1597,12 @@ right_bound = 3150
 
 [node name="Canmera" parent="Enemies" index="3" instance=ExtResource( 83 )]
 
-position = Vector2( 2597.71, -139.699 )
+position = Vector2( 2550, -250 )
 activate_range_y = 2000
 
 [node name="Canmera2" parent="Enemies" index="4" instance=ExtResource( 83 )]
 
-position = Vector2( 1747.83, -139.699 )
+position = Vector2( 1700, -250 )
 _sections_unfolded = [ "Transform" ]
 activate_range_y = 2000
 
@@ -2140,9 +2133,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="FollowingCamera" method="update_top_limit" binds= [ 600 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/RedPortalTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 10950 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/RedPortalTrigger1" to="Activate3" method="activate"]
+
+[connection signal="passed" from="CameraChangingTriggers/RedPortalTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 10950 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="FollowingCamera" method="update_right_limit" binds= [ 21250 ]]
 
@@ -2220,33 +2213,33 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Activate2/CD Punch4" to="Writings/Countdown Label3" method="tick"]
 
-[connection signal="defeated" from="Activate3/Laserphone12" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
-
 [connection signal="defeated" from="Activate3/Laserphone12" to="Writings/Countdown Label4" method="tick"]
 
-[connection signal="defeated" from="Activate3/Laserphone13" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
+[connection signal="defeated" from="Activate3/Laserphone12" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
 [connection signal="defeated" from="Activate3/Laserphone13" to="Writings/Countdown Label4" method="tick"]
 
-[connection signal="defeated" from="Activate3/Dark Earspider6" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
+[connection signal="defeated" from="Activate3/Laserphone13" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
 [connection signal="defeated" from="Activate3/Dark Earspider6" to="Writings/Countdown Label4" method="tick"]
 
-[connection signal="defeated" from="Activate3/Dark Earspider7" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
+[connection signal="defeated" from="Activate3/Dark Earspider6" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
 [connection signal="defeated" from="Activate3/Dark Earspider7" to="Writings/Countdown Label4" method="tick"]
 
-[connection signal="defeated" from="Activate3/Dark Earspider8" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
+[connection signal="defeated" from="Activate3/Dark Earspider7" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
 [connection signal="defeated" from="Activate3/Dark Earspider8" to="Writings/Countdown Label4" method="tick"]
 
-[connection signal="defeated" from="Activate3/CD Punch5" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
+[connection signal="defeated" from="Activate3/Dark Earspider8" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
 [connection signal="defeated" from="Activate3/CD Punch5" to="Writings/Countdown Label4" method="tick"]
 
-[connection signal="defeated" from="Activate3/CD Punch6" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
+[connection signal="defeated" from="Activate3/CD Punch5" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
 [connection signal="defeated" from="Activate3/CD Punch6" to="Writings/Countdown Label4" method="tick"]
+
+[connection signal="defeated" from="Activate3/CD Punch6" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Dark Earspider" to="CameraChangingTriggers/MobClearTrigger1" method="increment_count"]
 

@@ -26,7 +26,7 @@ enum { WAITING, COUNTDOWN }
 
 var status = WAITING
 var timer = null
-var damage_timer = null
+var landed = false
 
 var countdown_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var target_detection = preload("res://Scripts/Algorithms/TargetDetection.gd")
@@ -46,6 +46,9 @@ func _process(delta):
 
 	# Movement.
 	movement_type.move(delta)
+	if !landed && movement_type.is_landed:
+		landed = true
+		$Drop.play()
 
 	if status == COUNTDOWN && timer == null:
 		start_counting_down()

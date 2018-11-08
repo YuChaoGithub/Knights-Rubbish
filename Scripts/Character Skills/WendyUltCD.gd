@@ -54,7 +54,7 @@ func scale_tween_step(progress):
 func _process(delta):
     var collision = move_and_collide(movement_pattern.movement(delta))
 
-    if collision != null:
+    if !fading_out && collision != null:
         movement_pattern.dx = 0
         fade_out()
 
@@ -66,6 +66,8 @@ func _process(delta):
 
 func fade_out():
     float_particles.emitting = false
+
+    $Explode.play()
 
     var explosion = explosion_particles.instance()
     get_node("..").add_child(explosion)

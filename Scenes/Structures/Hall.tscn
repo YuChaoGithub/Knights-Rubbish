@@ -23,10 +23,13 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Collision" type="Node2D" parent="." index="1"]
 
+editor/display_folded = true
+
 [node name="CollisionArea" type="Area2D" parent="Collision" index="0" groups=[
 "door",
 ]]
 
+editor/display_folded = true
 position = Vector2( 14.5259, -248.15 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )

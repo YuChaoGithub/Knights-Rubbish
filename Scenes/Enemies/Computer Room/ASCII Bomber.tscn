@@ -1841,7 +1841,7 @@ tracks/23/keys = {
 "values": [ true, true ]
 }
 
-[node name="ASCII Bomber" type="KinematicBody2D"]
+[node name="ASCII Bomber" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 0
@@ -1987,7 +1987,7 @@ area_mask = 1
 [node name="Walk" type="AudioStreamPlayer2D" parent="Audio" index="2"]
 
 stream = ExtResource( 14 )
-volume_db = -25.0
+volume_db = -15.0
 pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0
@@ -1998,7 +1998,7 @@ area_mask = 1
 [node name="Beep" type="AudioStreamPlayer2D" parent="Audio" index="3"]
 
 stream = ExtResource( 15 )
-volume_db = -20.0
+volume_db = -10.0
 pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0

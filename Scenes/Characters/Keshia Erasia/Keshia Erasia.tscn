@@ -13351,7 +13351,7 @@ extents = Vector2( 70, 80 )
 custom_solver_bias = 0.0
 extents = Vector2( 79.7137, 95.9264 )
 
-[node name="Keshia Erasia" type="KinematicBody2D" index="0"]
+[node name="Keshia Erasia" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
@@ -13626,8 +13626,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Weapon" type="Sprite" parent="Sprite/Animation/Body/Left Arm" index="0"]
 
 editor/display_folded = true
-position = Vector2( 6.01704, -0.178232 )
-rotation = -0.846485
+position = Vector2( 6.01708, -0.17823 )
+rotation = -0.84648
 scale = Vector2( 1.44, 1.44 )
 texture = ExtResource( 20 )
 offset = Vector2( 3.92352, -79.9531 )
@@ -14065,6 +14065,8 @@ _sections_unfolded = [ "Collision" ]
 shape = SubResource( 29 )
 
 [node name="Audio" type="Node2D" parent="." index="10"]
+
+editor/display_folded = true
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
 

@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Fonts/edosz.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scripts/Structures/CountdownLabel.gd" type="Script" id=2]
+[ext_resource path="res://Audio/countdowntv_tick.wav" type="AudioStream" id=3]
+[ext_resource path="res://Audio/countdown_arrow.wav" type="AudioStream" id=4]
 
-[node name="Countdown Label" type="Label"]
+[node name="Countdown Label" type="Label" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -29,5 +31,27 @@ max_lines_visible = -1
 script = ExtResource( 2 )
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 total_count = 5
+
+[node name="Tick" type="AudioStreamPlayer2D" parent="." index="0"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Arrow" type="AudioStreamPlayer2D" parent="." index="1"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

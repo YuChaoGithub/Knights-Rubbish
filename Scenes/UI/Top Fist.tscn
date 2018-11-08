@@ -1,14 +1,15 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/TopFist.gd" type="Script" id=1]
-[ext_resource path="res://Graphics/UI/Hands/Fist 1.png" type="Texture" id=2]
+[ext_resource path="res://Graphics/UI/Hands/Fist 2.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/UI/Avatar/Keshia Erasia.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/UI/Hands/Fist 2.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/UI/Hands/Fist 1.png" type="Texture" id=4]
 [ext_resource path="res://Graphics/UI/Hands/Fist 3.png" type="Texture" id=5]
 [ext_resource path="res://Graphics/UI/Hands/Fist 4.png" type="Texture" id=6]
 [ext_resource path="res://Graphics/UI/Scrap 3.png" type="Texture" id=7]
 [ext_resource path="res://Graphics/UI/Arrow.png" type="Texture" id=8]
 [ext_resource path="res://Graphics/Particles/BlingStar.png" type="Texture" id=9]
+[ext_resource path="res://Audio/top_hand.wav" type="AudioStream" id=10]
 
 [sub_resource type="Animation" id=1]
 
@@ -26,7 +27,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ null, ExtResource( 2 ) ]
+"values": [ null, ExtResource( 4 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:position")
@@ -153,7 +154,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.05, 0.1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ]
+"values": [ ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Sprite:position")
@@ -253,6 +254,18 @@ tracks/8/keys = {
 "update": 1,
 "values": [ false, true ]
 }
+tracks/9/type = "value"
+tracks/9/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0.05 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Gradient" id=3]
 
@@ -319,7 +332,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Emission Shape", "Gravity", "Initial Velocity", "Scale", "Spread" ]
 
-[node name="Top Fist" type="Node2D"]
+[node name="Top Fist" type="Node2D" index="0"]
 
 z_index = 4
 script = ExtResource( 1 )
@@ -327,7 +340,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( -4.2688, -494.386 )
+position = Vector2( -0.719116, 7.30469 )
 texture = ExtResource( 2 )
 offset = Vector2( 7.73104, 296.463 )
 
@@ -403,5 +416,16 @@ normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform", "Z Index" ]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="6"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

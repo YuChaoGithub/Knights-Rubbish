@@ -1,14 +1,18 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Graphics/UI/Hands/Grab 1.png" type="Texture" id=1]
 [ext_resource path="res://Graphics/UI/Hands/Grab 2.png" type="Texture" id=2]
 [ext_resource path="res://Graphics/UI/Hands/Grab 3.png" type="Texture" id=3]
 [ext_resource path="res://Graphics/UI/Hands/Grab 4.png" type="Texture" id=4]
+[ext_resource path="res://Audio/bottom_grab.wav" type="AudioStream" id=5]
+[ext_resource path="res://Audio/thunder.wav" type="AudioStream" id=6]
+[ext_resource path="res://Audio/thunder_02.wav" type="AudioStream" id=7]
+[ext_resource path="res://Audio/thunder_03.wav" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 
 resource_name = "Grab"
-length = 0.8
+length = 1.5
 loop = false
 step = 0.05
 tracks/0/type = "value"
@@ -42,15 +46,63 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0.8 ),
+"times": PoolRealArray( 1.5 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
 "method": "queue_free"
 } ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Thunder1:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Thunder2:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.05 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Thunder3:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
-[node name="Bottom Grab" type="Node2D"]
+[node name="Bottom Grab" type="Node2D" index="0"]
 
 z_index = 4
 _sections_unfolded = [ "Visibility" ]
@@ -70,5 +122,49 @@ playback_default_blend_time = 0.0
 playback_speed = 1.0
 anims/Grab = SubResource( 1 )
 blend_times = [  ]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." index="2"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Thunder1" type="AudioStreamPlayer2D" parent="." index="3"]
+
+stream = ExtResource( 6 )
+volume_db = 5.0
+pitch_scale = 0.4
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Thunder2" type="AudioStreamPlayer2D" parent="." index="4"]
+
+stream = ExtResource( 7 )
+volume_db = 5.0
+pitch_scale = 0.4
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Thunder3" type="AudioStreamPlayer2D" parent="." index="5"]
+
+stream = ExtResource( 8 )
+volume_db = 5.0
+pitch_scale = 0.4
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 

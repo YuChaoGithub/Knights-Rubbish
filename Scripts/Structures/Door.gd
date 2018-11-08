@@ -5,6 +5,7 @@ export(String, FILE) var enter_scene_path
 const HERO_FADING_DURATION = 1.0
 
 var parent_lerper = preload("res://Scenes/Utils/Parent Opacity Lerper.tscn")
+var enter_door_audio = preload("res://Scenes/Characters/EnterDoorAudio.tscn")
 
 onready var collision_area = $Collision/CollisionArea
 
@@ -18,6 +19,10 @@ func break_open():
 
 func hero_enter(hero):
 	hero.status.can_move = false
+
+	var a = enter_door_audio.instance()
+	$"..".add_child(a)
+	a.global_position = self.global_position
 
 	var lerper = parent_lerper.instance()
 	lerper.initialize(hero.modulate.a, 0.0, HERO_FADING_DURATION, self, "switch_scene")

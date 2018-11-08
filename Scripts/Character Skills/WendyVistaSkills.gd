@@ -22,7 +22,7 @@ const UP_SKILL_DISPLACEMENT = 150
 const UP_SKILL_DAMAGE_MIN = 10
 const UP_SKILL_DAMAGE_MAX = 20
 const UP_SKILL_KNOCK_BACK_VEL_X = 300
-const UP_SKILL_KNOCK_BACK_VEL_Y = 250
+const UP_SKILL_KNOCK_BACK_VEL_Y = 200
 const UP_SKILL_KNOCK_BACK_FADE_RATE = 300
 const UP_SKILL_LANDING_DETECTION_DELAY_IN_MSEC = 250
 
@@ -57,6 +57,8 @@ var ult_cd = preload("res://Scenes/Characters/Wendy Vista/Wendy Ult CD.tscn")
 var up_skill_available = true
 var up_skill_available_timer = null
 var up_skill_timestamp = 0
+
+onready var ult_shoot_audio = $"../Audio/UltShoot"
 
 var ult_timer
 
@@ -186,7 +188,8 @@ func down_skill():
 
         hero.set_status("can_move", false, DOWN_SKILL_DURATION)
         hero.set_status("animate_movement", false, DOWN_SKILL_DURATION)
-        hero.set_status("can_cast_skill", false, DOWN_SKILL_DURATION + DOWN_SKILL_COOLDOWN) 
+        hero.set_status("can_cast_skill", false, DOWN_SKILL_DURATION + DOWN_SKILL_COOLDOWN)
+        hero.set_status("invincible", true, DOWN_SKILL_DURATION) 
 
 # ===
 # Ult: Shoot consecutive high damage CDs.
@@ -211,6 +214,8 @@ func start_firing_ult():
     ult_timer = multi_timer.new(true, ULT_FIRE_INTERVAL, ULT_FIRE_COUNT, self, "fire_ult", null, "end_ult")
 
 func fire_ult():
+    ult_shoot_audio.play()
+    
     var cd = ult_cd.instance()
     cd.initialize(hero.side, hero.attack_modifier, hero.enemy_knock_back_modifier, hero.size)
     spawn_node.add_child(cd)

@@ -574,8 +574,6 @@ enter_scene_path = "res://Scenes/Levels/Level 1-9.tscn"
 
 [node name="Enemies" type="Node2D" parent="." index="11"]
 
-editor/display_folded = true
-
 [node name="Calcasio2" parent="Enemies" index="0" instance=ExtResource( 54 )]
 
 position = Vector2( 4111.99, -450 )
@@ -586,12 +584,13 @@ position = Vector2( 6100, -450 )
 
 [node name="Canmera" parent="Enemies" index="2" instance=ExtResource( 55 )]
 
-position = Vector2( 5199.53, -142.922 )
+position = Vector2( 5200, -250 )
+_sections_unfolded = [ "Transform" ]
 activate_range_x = 2000
 
 [node name="Canmera14" parent="Enemies" index="3" instance=ExtResource( 55 )]
 
-position = Vector2( 4263.87, -142.922 )
+position = Vector2( 4250, -250 )
 activate_range_x = 2000
 activate_range_y = 2000
 
@@ -600,14 +599,12 @@ activate_range_y = 2000
 position = Vector2( 5200, -1175.55 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1250
-screen_capture_slot = -1
 
 [node name="Sonmera2" parent="Enemies" index="5" instance=ExtResource( 56 )]
 
 position = Vector2( 9550, -850 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1600
-screen_capture_slot = -1
 
 [node name="Calcasio5" parent="Enemies" index="6" instance=ExtResource( 54 )]
 
@@ -621,22 +618,22 @@ position = Vector2( 10650, -550 )
 
 [node name="Canmera4" parent="Enemies" index="8" instance=ExtResource( 55 )]
 
-position = Vector2( 8877.56, -244.566 )
+position = Vector2( 8850, -350 )
 activate_range_x = 2000
 
 [node name="Canmera5" parent="Enemies" index="9" instance=ExtResource( 55 )]
 
-position = Vector2( 9236.58, -243.943 )
+position = Vector2( 9200, -350 )
 activate_range_x = 2000
 
 [node name="Canmera6" parent="Enemies" index="10" instance=ExtResource( 55 )]
 
-position = Vector2( 9608.69, -243.943 )
+position = Vector2( 9600, -350 )
 activate_range_x = 2000
 
 [node name="Canmera7" parent="Enemies" index="11" instance=ExtResource( 55 )]
 
-position = Vector2( 10050.6, -243.943 )
+position = Vector2( 10000, -350 )
 activate_range_x = 2000
 
 [node name="Calcasio7" parent="Enemies" index="12" instance=ExtResource( 54 )]
@@ -654,32 +651,32 @@ position = Vector2( 15100, -550 )
 
 [node name="Canmera8" parent="Enemies" index="15" instance=ExtResource( 55 )]
 
-position = Vector2( 12934.2, -542.319 )
+position = Vector2( 12900, -650 )
 activate_range_x = 900
 
 [node name="Canmera9" parent="Enemies" index="16" instance=ExtResource( 55 )]
 
-position = Vector2( 13457.6, -242.772 )
+position = Vector2( 13450, -350 )
 activate_range_x = 1000
 
 [node name="Canmera10" parent="Enemies" index="17" instance=ExtResource( 55 )]
 
-position = Vector2( 13843.8, -545.611 )
+position = Vector2( 13850, -650 )
 activate_range_x = 1500
 
 [node name="Canmera11" parent="Enemies" index="18" instance=ExtResource( 55 )]
 
-position = Vector2( 14210.8, -545.611 )
+position = Vector2( 14150, -650 )
 activate_range_x = 1500
 
 [node name="Canmera13" parent="Enemies" index="19" instance=ExtResource( 55 )]
 
-position = Vector2( 14926.4, -244.549 )
+position = Vector2( 14900, -350 )
 activate_range_x = 2000
 
 [node name="Canmera12" parent="Enemies" index="20" instance=ExtResource( 55 )]
 
-position = Vector2( 12579.9, -544.033 )
+position = Vector2( 12550, -650 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 850
 
@@ -688,63 +685,54 @@ activate_range_x = 850
 position = Vector2( 12900, -1276.09 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1150
-screen_capture_slot = -1
 
 [node name="Sonmera4" parent="Enemies" index="22" instance=ExtResource( 56 )]
 
 position = Vector2( 13600, -1277.19 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1850
-screen_capture_slot = -1
 
 [node name="Sonmera5" parent="Enemies" index="23" instance=ExtResource( 56 )]
 
 position = Vector2( 14300, -1276.61 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1150
-screen_capture_slot = -1
 
 [node name="Sonmera6" parent="Enemies" index="24" instance=ExtResource( 56 )]
 
 position = Vector2( 16801.7, -1350 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1200
-screen_capture_slot = -1
 
 [node name="Sonmera9" parent="Enemies" index="25" instance=ExtResource( 56 )]
 
 position = Vector2( 16801.7, -1062.74 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1200
-screen_capture_slot = -1
 
 [node name="Sonmera7" parent="Enemies" index="26" instance=ExtResource( 56 )]
 
 position = Vector2( 17300, -1252.02 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1200
-screen_capture_slot = -1
 
 [node name="Sonmera10" parent="Enemies" index="27" instance=ExtResource( 56 )]
 
 position = Vector2( 17300, -959.97 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1200
-screen_capture_slot = -1
 
 [node name="Sonmera8" parent="Enemies" index="28" instance=ExtResource( 56 )]
 
 position = Vector2( 17800, -1385.11 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1300
-screen_capture_slot = -1
 
 [node name="Sonmera11" parent="Enemies" index="29" instance=ExtResource( 56 )]
 
 position = Vector2( 17800, -1099.44 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1300
-screen_capture_slot = -1
 
 [node name="Batterio" parent="Enemies" index="30" instance=ExtResource( 57 )]
 
@@ -807,69 +795,69 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/FirstMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 11150 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/SecondMobTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/SecondMobTrigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.37 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/SecondMobTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/SecondMobTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 7950 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/SecondMobClear" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/SecondMobClear" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/SecondMobClear" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/SecondMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 15450 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/ThirdMobTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/ThirdMobTrigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.37 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/ThirdMobTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/ThirdMobTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 11750 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/ThirdMobClear" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/ThirdMobClear" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/ThirdMobClear" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/ThirdMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 18750 ]]
 
-[connection signal="defeated" from="Enemies/Calcasio2" to="Writings/CountdownTV" method="tick"]
-
 [connection signal="defeated" from="Enemies/Calcasio2" to="CameraChangingTriggers/FirstMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Calcasio" to="Writings/CountdownTV" method="tick"]
+[connection signal="defeated" from="Enemies/Calcasio2" to="Writings/CountdownTV" method="tick"]
 
 [connection signal="defeated" from="Enemies/Calcasio" to="CameraChangingTriggers/FirstMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Canmera" to="Writings/CountdownTV" method="tick"]
+[connection signal="defeated" from="Enemies/Calcasio" to="Writings/CountdownTV" method="tick"]
 
 [connection signal="defeated" from="Enemies/Canmera" to="CameraChangingTriggers/FirstMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Canmera14" to="Writings/CountdownTV" method="tick"]
+[connection signal="defeated" from="Enemies/Canmera" to="Writings/CountdownTV" method="tick"]
 
 [connection signal="defeated" from="Enemies/Canmera14" to="CameraChangingTriggers/FirstMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Calcasio5" to="Writings/CountdownTV2" method="tick"]
+[connection signal="defeated" from="Enemies/Canmera14" to="Writings/CountdownTV" method="tick"]
 
 [connection signal="defeated" from="Enemies/Calcasio5" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Calcasio6" to="Writings/CountdownTV2" method="tick"]
+[connection signal="defeated" from="Enemies/Calcasio5" to="Writings/CountdownTV2" method="tick"]
 
 [connection signal="defeated" from="Enemies/Calcasio6" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Canmera4" to="Writings/CountdownTV2" method="tick"]
+[connection signal="defeated" from="Enemies/Calcasio6" to="Writings/CountdownTV2" method="tick"]
 
 [connection signal="defeated" from="Enemies/Canmera4" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Canmera5" to="Writings/CountdownTV2" method="tick"]
+[connection signal="defeated" from="Enemies/Canmera4" to="Writings/CountdownTV2" method="tick"]
 
 [connection signal="defeated" from="Enemies/Canmera5" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Canmera6" to="Writings/CountdownTV2" method="tick"]
+[connection signal="defeated" from="Enemies/Canmera5" to="Writings/CountdownTV2" method="tick"]
 
 [connection signal="defeated" from="Enemies/Canmera6" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Canmera7" to="Writings/CountdownTV2" method="tick"]
+[connection signal="defeated" from="Enemies/Canmera6" to="Writings/CountdownTV2" method="tick"]
 
 [connection signal="defeated" from="Enemies/Canmera7" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Canmera7" to="Writings/CountdownTV2" method="tick"]
 
 [connection signal="defeated" from="Enemies/Calcasio7" to="Writings/CountdownTV3" method="tick"]
 

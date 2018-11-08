@@ -1063,6 +1063,7 @@ Comment: Experiencing self-imposed crunches these weeks, haha!
 * Added 160 sound effects to the game. (Alphabetically: amazlet_acc.wav to mouse_open_lid.wav). Soooo tired, but rewarding.
 
 [Goals]
+* Purge unrelated files in git repo and on GitHub.
 * Nov 9: All sound effects added.
 * Nov 12: Level walk through (1P / 2P), record the gameplay!
 * Nov 15: Save and import key config from the user's files.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/SockuteLightningBall.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Sockute/Lightning Ball .png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Sockute/Lightning Ball 5.png" type="Texture" id=7]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Sockute/Lightning Ball 6.png" type="Texture" id=8]
 [ext_resource path="res://Graphics/Particles/Double Star.png" type="Texture" id=9]
+[ext_resource path="res://Audio/sockute_explode.wav" type="AudioStream" id=10]
+[ext_resource path="res://Audio/sockute_fireball.wav" type="AudioStream" id=11]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -144,6 +146,18 @@ tracks/4/keys = {
 "update": 1,
 "values": [ 1 ]
 }
+tracks/5/type = "value"
+tracks/5/path = NodePath("Explode:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
 
 [sub_resource type="Animation" id=8]
 
@@ -212,6 +226,18 @@ tracks/4/keys = {
 "args": [  ],
 "method": "queue_free"
 } ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Explode:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [sub_resource type="Animation" id=9]
@@ -392,6 +418,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Particles" type="Node2D" parent="." index="2"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Particles2D" type="Particles2D" parent="Particles" index="0"]
@@ -475,6 +502,28 @@ normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Process Material", "Textures", "Time" ]
+
+[node name="Explode" type="AudioStreamPlayer2D" parent="." index="5"]
+
+stream = ExtResource( 10 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="Fireball" type="AudioStreamPlayer2D" parent="." index="6"]
+
+stream = ExtResource( 11 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = true
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
 
 [connection signal="area_entered" from="Attack Area" to="." method="on_attack_hit"]
 

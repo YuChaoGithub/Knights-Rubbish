@@ -434,7 +434,7 @@ tracks/10/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 24.8153, 33.7439 )
 
-[node name="ASCII Bomber bomb" type="KinematicBody2D"]
+[node name="ASCII Bomber bomb" type="KinematicBody2D" index="0"]
 
 z_index = 1
 input_pickable = false
@@ -527,7 +527,7 @@ shape = SubResource( 5 )
 [node name="Blink" type="AudioStreamPlayer2D" parent="Audio" index="0"]
 
 stream = ExtResource( 6 )
-volume_db = -20.0
+volume_db = -10.0
 pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0
@@ -538,7 +538,7 @@ area_mask = 1
 [node name="Explode" type="AudioStreamPlayer2D" parent="Audio" index="1"]
 
 stream = ExtResource( 7 )
-volume_db = -20.0
+volume_db = -10.0
 pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0

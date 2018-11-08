@@ -1,20 +1,23 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/HeroManager.gd" type="Script" id=2]
 [ext_resource path="res://Tilesets/Dark Blue Wall.tres" type="TileSet" id=3]
 [ext_resource path="res://Graphics/Structure/Terminal Upgrade/Push Lever.png" type="Texture" id=4]
 [ext_resource path="res://Graphics/Effects/Lightning/background.png" type="Texture" id=5]
-[ext_resource path="res://Tilesets/Gray Floor.tres" type="TileSet" id=6]
-[ext_resource path="res://Graphics/Structure/Terminal Upgrade/Arrow.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/Particles/Dot.png" type="Texture" id=8]
-[ext_resource path="res://Scripts/Utils/MobActivator.gd" type="Script" id=9]
-[ext_resource path="res://Scenes/Structures/GoArrows.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=11]
-[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=12]
-[ext_resource path="res://Scenes/Structures/Terminal Upgrade.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Godotbos.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Audio/thunder.wav" type="AudioStream" id=6]
+[ext_resource path="res://Audio/thunder_02.wav" type="AudioStream" id=7]
+[ext_resource path="res://Audio/thunder_03.wav" type="AudioStream" id=8]
+[ext_resource path="res://Tilesets/Gray Floor.tres" type="TileSet" id=9]
+[ext_resource path="res://Graphics/Structure/Terminal Upgrade/Arrow.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/Particles/Dot.png" type="Texture" id=11]
+[ext_resource path="res://Scripts/Utils/MobActivator.gd" type="Script" id=12]
+[ext_resource path="res://Scenes/Structures/GoArrows.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=14]
+[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/Structures/Terminal Upgrade.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Godotbos.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=18]
 
 [sub_resource type="Animation" id=1]
 
@@ -65,6 +68,42 @@ tracks/1/keys = {
 "update": 0,
 "values": [ 2.19, 0.01, 2.2, 0.01, 2.2, 0.01, 2.2, 0.01, 0.01 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("AudioStreamPlayer2D2:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("AudioStreamPlayer2D3:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.3, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, true ]
+}
 
 [node name="Game Level" type="Node2D" index="0"]
 
@@ -110,8 +149,6 @@ tile_data = PoolIntArray( -458753, 0, 0, -524288, 0, 0, -524287, 0, 0, -524286, 
 _sections_unfolded = [ "Cell", "Collision", "Visibility" ]
 
 [node name="BackgroundDecorations" type="Node2D" parent="." index="3"]
-
-editor/display_folded = true
 
 [node name="Push Lever" type="Sprite" parent="BackgroundDecorations" index="0"]
 
@@ -198,10 +235,46 @@ playback_speed = 1.0
 anims/Strike = SubResource( 2 )
 blend_times = [  ]
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="BackgroundDecorations/Lightnings" index="3"]
+
+position = Vector2( 2551.41, -2154.72 )
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 0.6
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="BackgroundDecorations/Lightnings" index="4"]
+
+position = Vector2( 3865.7, -2196.71 )
+stream = ExtResource( 7 )
+volume_db = 0.0
+pitch_scale = 0.6
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="BackgroundDecorations/Lightnings" index="5"]
+
+position = Vector2( 3204.63, -3113.5 )
+stream = ExtResource( 8 )
+volume_db = 0.0
+pitch_scale = 0.6
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
 [node name="Platform" type="TileMap" parent="." index="4"]
 
 mode = 0
-tile_set = ExtResource( 6 )
+tile_set = ExtResource( 9 )
 cell_size = Vector2( 100, 100 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -229,7 +302,7 @@ _sections_unfolded = [ "Z Index" ]
 modulate = Color( 1, 0.0403226, 0.0403226, 1 )
 position = Vector2( 250, -350 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="PlatformDecorations" type="Node2D" parent="." index="6"]
@@ -238,70 +311,70 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 modulate = Color( 0, 1, 0.015625, 1 )
 position = Vector2( 1750, -1500 )
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Dot2" type="Sprite" parent="PlatformDecorations" index="1"]
 
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 4650, -1500 )
-texture = ExtResource( 8 )
+texture = ExtResource( 11 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="GoArrows" type="Node2D" parent="." index="7"]
 
 editor/display_folded = true
-script = ExtResource( 9 )
+script = ExtResource( 12 )
 
-[node name="Go1" parent="GoArrows" index="0" instance=ExtResource( 10 )]
+[node name="Go1" parent="GoArrows" index="0" instance=ExtResource( 13 )]
 
 position = Vector2( 2400, -2200 )
 
-[node name="Go2" parent="GoArrows" index="1" instance=ExtResource( 10 )]
+[node name="Go2" parent="GoArrows" index="1" instance=ExtResource( 13 )]
 
 position = Vector2( 2750, -2350 )
 
-[node name="Go3" parent="GoArrows" index="2" instance=ExtResource( 10 )]
+[node name="Go3" parent="GoArrows" index="2" instance=ExtResource( 13 )]
 
 position = Vector2( 2800, -2050 )
 
-[node name="Go4" parent="GoArrows" index="3" instance=ExtResource( 10 )]
+[node name="Go4" parent="GoArrows" index="3" instance=ExtResource( 13 )]
 
 position = Vector2( 3200, -2300 )
 
-[node name="Go5" parent="GoArrows" index="4" instance=ExtResource( 10 )]
+[node name="Go5" parent="GoArrows" index="4" instance=ExtResource( 13 )]
 
 position = Vector2( 3450, -2450 )
 
-[node name="Go6" parent="GoArrows" index="5" instance=ExtResource( 10 )]
+[node name="Go6" parent="GoArrows" index="5" instance=ExtResource( 13 )]
 
 position = Vector2( 3500, -2100 )
 
-[node name="Go7" parent="GoArrows" index="6" instance=ExtResource( 10 )]
+[node name="Go7" parent="GoArrows" index="6" instance=ExtResource( 13 )]
 
 position = Vector2( 3800, -1900 )
 
-[node name="Go8" parent="GoArrows" index="7" instance=ExtResource( 10 )]
+[node name="Go8" parent="GoArrows" index="7" instance=ExtResource( 13 )]
 
 position = Vector2( 4050, -2100 )
 
-[node name="Go9" parent="GoArrows" index="8" instance=ExtResource( 10 )]
+[node name="Go9" parent="GoArrows" index="8" instance=ExtResource( 13 )]
 
 position = Vector2( 4000, -2350 )
 
-[node name="Go10" parent="GoArrows" index="9" instance=ExtResource( 10 )]
+[node name="Go10" parent="GoArrows" index="9" instance=ExtResource( 13 )]
 
 position = Vector2( 4400, -2500 )
 
-[node name="Go11" parent="GoArrows" index="10" instance=ExtResource( 10 )]
+[node name="Go11" parent="GoArrows" index="10" instance=ExtResource( 13 )]
 
 position = Vector2( 4450, -2200 )
 
-[node name="Go12" parent="GoArrows" index="11" instance=ExtResource( 10 )]
+[node name="Go12" parent="GoArrows" index="11" instance=ExtResource( 13 )]
 
 position = Vector2( 4550, -1950 )
 
-[node name="Go13" parent="GoArrows" index="12" instance=ExtResource( 10 )]
+[node name="Go13" parent="GoArrows" index="12" instance=ExtResource( 13 )]
 
 position = Vector2( 4150, -1800 )
 
@@ -310,7 +383,7 @@ position = Vector2( 4150, -1800 )
 [node name="StartTrigger" type="Position2D" parent="CameraChangingTriggers" index="0"]
 
 position = Vector2( 150, -300 )
-script = ExtResource( 11 )
+script = ExtResource( 14 )
 _sections_unfolded = [ "Transform" ]
 range_x = 500
 range_y = 500
@@ -320,7 +393,7 @@ y_check = 0
 [node name="BossTrigger" type="Position2D" parent="CameraChangingTriggers" index="1"]
 
 position = Vector2( 3100, -1750 )
-script = ExtResource( 11 )
+script = ExtResource( 14 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 range_x = 1000
 range_y = 1000
@@ -329,7 +402,7 @@ y_check = 0
 
 [node name="BossClear" type="Node2D" parent="CameraChangingTriggers" index="2"]
 
-script = ExtResource( 12 )
+script = ExtResource( 15 )
 count_to_emit = 1
 
 [node name="OtherPlatforms" type="Node2D" parent="." index="9"]
@@ -338,14 +411,16 @@ count_to_emit = 1
 
 [node name="Structures" type="Node2D" parent="." index="11"]
 
-[node name="Terminal Upgrade" parent="Structures" index="0" instance=ExtResource( 13 )]
+editor/display_folded = true
+
+[node name="Terminal Upgrade" parent="Structures" index="0" instance=ExtResource( 16 )]
 
 position = Vector2( 6050, -2250 )
 enter_scene_path = "res://Scenes/Levels/Level 1-15.tscn"
 
 [node name="Enemies" type="Node2D" parent="." index="12"]
 
-[node name="Godotbos" parent="Enemies" index="0" instance=ExtResource( 14 )]
+[node name="Godotbos" parent="Enemies" index="0" instance=ExtResource( 17 )]
 
 position = Vector2( 3250, -3750 )
 kick_right_pos_path = NodePath("../RightKickPos")
@@ -373,7 +448,7 @@ position = Vector2( 3200, -1900 )
 z_index = 1
 _sections_unfolded = [ "Z Index" ]
 
-[node name="PauseButton" parent="." index="15" instance=ExtResource( 15 )]
+[node name="PauseButton" parent="." index="15" instance=ExtResource( 18 )]
 
 [node name="Position2D" type="Position2D" parent="." index="16"]
 
@@ -383,11 +458,11 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/StartTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -2850 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/BossTrigger" to="BackgroundDecorations/Lightnings/AnimationPlayer" method="play" binds= [ "Strike" ]]
-
 [connection signal="passed" from="CameraChangingTriggers/BossTrigger" to="Enemies/Godotbos" method="activate"]
 
 [connection signal="passed" from="CameraChangingTriggers/BossTrigger" to="PlatformDecorations/Dot1" method="set_modulate" binds= [ Color( 1, 0, 0, 1 ) ]]
+
+[connection signal="passed" from="CameraChangingTriggers/BossTrigger" to="BackgroundDecorations/Lightnings/AnimationPlayer" method="play" binds= [ "Strike" ]]
 
 [connection signal="passed" from="CameraChangingTriggers/BossTrigger" to="BackgroundDecorations/Push Lever" method="queue_free"]
 
@@ -397,11 +472,11 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/BossTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -1400 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/BossClear" to="GoArrows" method="activate"]
-
 [connection signal="count_reached" from="CameraChangingTriggers/BossClear" to="PlatformDecorations/Dot2" method="set_modulate" binds= [ Color( 0, 1, 0.0390625, 1 ) ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/BossClear" to="FollowingCamera" method="update_right_limit" binds= [ 6800 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/BossClear" to="GoArrows" method="activate"]
 
 [connection signal="defeated" from="Enemies/Godotbos" to="CameraChangingTriggers/BossClear" method="increment_count"]
 

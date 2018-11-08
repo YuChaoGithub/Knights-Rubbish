@@ -1,7 +1,7 @@
 const name = "Othox Codox"
 const id = 3
 const avatar = preload("res://Graphics/UI/Avatar/OthoxCodox.png")
-const points = ["Area Damage", "Slow", "Very Old"]
+const points = ["High Damage", "Slow", "Very Old"]
 const full_health = 300
 const ghost_health = 600
 const movement_speed = 200.0

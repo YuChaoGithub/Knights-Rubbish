@@ -68,8 +68,6 @@ var walk_back_dir = null
 var laser_target_left = null
 var laser_target_right = null
 
-onready var platform_layer = ProjectSettings.get_setting("layer_names/2d_physics/platform")
-
 onready var spawn_node = $".."
 
 # Drop Floopy.
@@ -344,6 +342,8 @@ func laser_sequence_off():
 func recover_laser_eyes():
 	cancel_laser_sequence()
 	ec.play_animation("Laser Recover")
+	laserlight1.enabled = false
+	laserlight2.enabled = false
 	ec.change_status(NONE)
 	status_timer = ec.cd_timer.new(LASER_RECOVER_ANIMATION_DURATION, self, "change_status", RANDOM_ROAM)
 
