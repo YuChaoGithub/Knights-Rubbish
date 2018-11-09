@@ -2,8 +2,9 @@ extends KinematicBody2D
 
 const SPEED_X = 2000
 
-const DAMAGE_MIN = 25
-const DAMAGE_MAX = 40
+const DAMAGE_MIN = 30
+const DAMAGE_MAX = 45
+const STUN_DURATION = 1.0
 
 const KNOCK_BACK_VEL_X = 600
 const KNOCK_BACK_VEL_Y = 50
@@ -52,6 +53,7 @@ func on_enemy_hit(area):
     if !hit && area.is_in_group("enemy"):
         var enemy = area.get_node("../..")
         enemy.knocked_back(side * KNOCK_BACK_VEL_X * knock_back_modifier, -KNOCK_BACK_VEL_Y * knock_back_modifier, KNOCK_BACK_FADE_RATE * knock_back_modifier)
+        enemy.stunned(STUN_DURATION)
         enemy.damaged(int(rng.randf_range(DAMAGE_MIN, DAMAGE_MAX) * attack_modifier))
     
         explode()

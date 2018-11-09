@@ -9,7 +9,7 @@
 
 resource_name = "Explode"
 length = 0.9
-loop = true
+loop = false
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:rotation_degrees")
@@ -221,7 +221,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Color", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Scale", "Spread" ]
 
-[node name="Chromoghast Shuriken" type="Node2D"]
+[node name="Chromoghast Shuriken" type="Node2D" index="0"]
 
 z_index = 1
 script = ExtResource( 1 )

@@ -10,6 +10,8 @@ const BASIC_ATTACK_KNOCK_BACK_VEL_Y = 50
 const BASIC_ATTACK_KNOCK_BACK_FADE_RATE = 1000
 const BASIC_ATTACK_STUN_DURATION = 1.5
 
+var basic_attack_targets = []
+
 # Basic Skill.
 const BASIC_SKILL_DURATION = 3.0
 const BASIC_SKILL_COOLDOWN = 0.15
@@ -91,6 +93,8 @@ func basic_attack():
         hero.set_status("can_move", false, BASIC_ATTACK_DURATION)
         hero.set_status("can_cast_skill", false, BASIC_ATTACK_DURATION + BASIC_ATTACK_COOLDOWN)
         
+        basic_attack_targets.clear()
+
         var strike_timer = cd_timer.new(BASIC_ATTACK_DURATION, self, "basic_attack_strikes")
         hero.register_timer("interruptable_skill", strike_timer)
 
@@ -100,10 +104,12 @@ func basic_attack_strikes():
 func basic_attack_hit(area):
     if area.is_in_group("enemy"):
         var enemy = area.get_node("../..")
-        var damage = rng.randi_range(BASIC_ATTACK_DAMAGE_MIN, BASIC_ATTACK_DAMAGE_MAX)
-        enemy.stunned(BASIC_ATTACK_STUN_DURATION)
-        enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * BASIC_ATTACK_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier,-BASIC_ATTACK_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, BASIC_ATTACK_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
-        enemy.damaged(int(damage * hero.attack_modifier))
+        if !(enemy in basic_attack_targets):
+            basic_attack_targets.push_back(enemy)
+            var damage = rng.randi_range(BASIC_ATTACK_DAMAGE_MIN, BASIC_ATTACK_DAMAGE_MAX)
+            enemy.stunned(BASIC_ATTACK_STUN_DURATION)
+            enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * BASIC_ATTACK_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier,-BASIC_ATTACK_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, BASIC_ATTACK_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
+            enemy.damaged(int(damage * hero.attack_modifier))
 
 func basic_skill():
     if hero.status.can_move && hero.status.can_cast_skill:

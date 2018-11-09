@@ -18,7 +18,7 @@ export(int) var activate_range_y = 2000
 const MAX_HEALTH = 200
 
 # Attack.
-const DAMAGE = 7
+const DAMAGE = 5
 const LASER_SHOW_DURATION = 0.2
 const LASER_INTERVAL = 2.5
 

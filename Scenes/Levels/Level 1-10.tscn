@@ -2121,9 +2121,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger1" to="FollowingCamera" method="update_top_limit" binds= [ -900 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/BluePortalTrigger1" to="Activate1" method="activate"]
-
 [connection signal="passed" from="CameraChangingTriggers/BluePortalTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 5950 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/BluePortalTrigger1" to="Activate1" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger2" to="FollowingCamera" method="update_top_limit" binds= [ -100 ]]
 
@@ -2133,15 +2133,15 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="FollowingCamera" method="update_top_limit" binds= [ 600 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/RedPortalTrigger1" to="Activate3" method="activate"]
-
 [connection signal="passed" from="CameraChangingTriggers/RedPortalTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 10950 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/RedPortalTrigger1" to="Activate3" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="FollowingCamera" method="update_right_limit" binds= [ 21250 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/BlackPortalTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 22500 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/BlackPortalTrigger1" to="FollowingCamera" method="update_top_limit" binds= [ 1300 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/BlackPortalTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 22500 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/BlackPortalTrigger2" to="FollowingCamera" method="update_top_limit" binds= [ 1900 ]]
 
@@ -2213,33 +2213,33 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Activate2/CD Punch4" to="Writings/Countdown Label3" method="tick"]
 
-[connection signal="defeated" from="Activate3/Laserphone12" to="Writings/Countdown Label4" method="tick"]
-
 [connection signal="defeated" from="Activate3/Laserphone12" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
-[connection signal="defeated" from="Activate3/Laserphone13" to="Writings/Countdown Label4" method="tick"]
+[connection signal="defeated" from="Activate3/Laserphone12" to="Writings/Countdown Label4" method="tick"]
 
 [connection signal="defeated" from="Activate3/Laserphone13" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
-[connection signal="defeated" from="Activate3/Dark Earspider6" to="Writings/Countdown Label4" method="tick"]
+[connection signal="defeated" from="Activate3/Laserphone13" to="Writings/Countdown Label4" method="tick"]
 
 [connection signal="defeated" from="Activate3/Dark Earspider6" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
-[connection signal="defeated" from="Activate3/Dark Earspider7" to="Writings/Countdown Label4" method="tick"]
+[connection signal="defeated" from="Activate3/Dark Earspider6" to="Writings/Countdown Label4" method="tick"]
 
 [connection signal="defeated" from="Activate3/Dark Earspider7" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
-[connection signal="defeated" from="Activate3/Dark Earspider8" to="Writings/Countdown Label4" method="tick"]
+[connection signal="defeated" from="Activate3/Dark Earspider7" to="Writings/Countdown Label4" method="tick"]
 
 [connection signal="defeated" from="Activate3/Dark Earspider8" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
-[connection signal="defeated" from="Activate3/CD Punch5" to="Writings/Countdown Label4" method="tick"]
+[connection signal="defeated" from="Activate3/Dark Earspider8" to="Writings/Countdown Label4" method="tick"]
 
 [connection signal="defeated" from="Activate3/CD Punch5" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
-[connection signal="defeated" from="Activate3/CD Punch6" to="Writings/Countdown Label4" method="tick"]
+[connection signal="defeated" from="Activate3/CD Punch5" to="Writings/Countdown Label4" method="tick"]
 
 [connection signal="defeated" from="Activate3/CD Punch6" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
+
+[connection signal="defeated" from="Activate3/CD Punch6" to="Writings/Countdown Label4" method="tick"]
 
 [connection signal="defeated" from="Enemies/Dark Earspider" to="CameraChangingTriggers/MobClearTrigger1" method="increment_count"]
 

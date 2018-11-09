@@ -27,6 +27,7 @@ var is_kinematic_body
 var slowed_label
 var curr_anim_key = ""
 var hurt_audio
+var dead = false
 
 var fade_in_timer = null
 
@@ -151,6 +152,9 @@ func change_and_refill_full_health(full_health):
     health_system.health = full_health
 
 func slowed(multiplier, duration):
+    if dead:
+        return
+
     var slow_timer = cd_timer.new(duration, node, "slowed_recover", slowed_timer_label)
     
     var movements = []
@@ -189,6 +193,9 @@ func slowed_recover(label):
         slowed_label.visible = false
 
 func knocked_back(vel_x, vel_y, fade_rate):
+    if dead:
+        return
+
     knock_back_dx = vel_x
     knock_back_dy = vel_y
     knock_back_fade_rate = fade_rate
@@ -208,6 +215,9 @@ func perform_knock_back_movement(delta):
         node.global_position += rel_movement
     
 func damaged(val, play_hurt_animation = true):
+    if dead:
+        return
+
     health_system.change_health_by(-val)
 
     # Damage number indicator.
@@ -238,6 +248,9 @@ func resume_from_damaged():
     hurt_timer = null
 
 func stunned(duration):
+    if dead:
+        return
+
     # Cancel hurt timer so that it won't recover to Still animation.
     if hurt_timer != null:
         hurt_timer.destroy_timer()
@@ -265,8 +278,7 @@ func display_immune_text():
     immune_text.initialize(-2, IMMUNE_TEXT_COLOR, number_spawn_pos, node)
 
 func healed(val):
-    # Dead already.
-    if health_system.health <= 0:
+    if dead:
         return
 
     health_system.change_health_by(val)
@@ -279,6 +291,8 @@ func healed(val):
     health_bar.set_health_bar_and_show(float(health_system.health) / float(health_system.full_health))
 
 func die():
+    dead = true
+
     slowed_label.visible = false
 
     # Can't be hurt any more.

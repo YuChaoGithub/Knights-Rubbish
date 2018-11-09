@@ -13,6 +13,8 @@ var timestamp = 0.0
 var dir
 var movement_pattern
 
+var hit = false
+
 func _ready():
 	$AnimationPlayer.play("Spinning")
 	
@@ -28,7 +30,9 @@ func _process(delta):
 		queue_free()
 
 func on_attack_hit(area):
-	if area.is_in_group("hero"):
+	if !hit && area.is_in_group("hero"):
+		hit = true
+
 		var character = area.get_node("..")
 		character.damaged(DAMAGE)
 		character.knocked_back(dir * KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)

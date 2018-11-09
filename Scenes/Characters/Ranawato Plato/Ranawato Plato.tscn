@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=2]
+[gd_scene load_steps=105 format=2]
 
 [ext_resource path="res://Scripts/HeroCommon.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Character Skills/RanawatoPlatoSkills.gd" type="Script" id=2]
@@ -544,29 +544,19 @@ _sections_unfolded = [ "Angle", "Angular Velocity", "Color", "Emission Shape", "
 [sub_resource type="RectangleShape2D" id=38]
 
 custom_solver_bias = 0.0
-extents = Vector2( 3.04562, 113.619 )
+extents = Vector2( 30.5058, 129.587 )
 
 [sub_resource type="RectangleShape2D" id=39]
 
 custom_solver_bias = 0.0
-extents = Vector2( 24.5636, 37.964 )
+extents = Vector2( 26.8019, 129.806 )
 
 [sub_resource type="RectangleShape2D" id=40]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 118.92 )
+extents = Vector2( 38.7811, 129.923 )
 
-[sub_resource type="RectangleShape2D" id=41]
-
-custom_solver_bias = 0.0
-extents = Vector2( 26.8019, 39.1098 )
-
-[sub_resource type="RectangleShape2D" id=42]
-
-custom_solver_bias = 0.0
-extents = Vector2( 24.2597, 36.7756 )
-
-[sub_resource type="Animation" id=43]
+[sub_resource type="Animation" id=41]
 
 length = 0.8
 loop = false
@@ -1244,7 +1234,7 @@ tracks/55/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=44]
+[sub_resource type="Animation" id=42]
 
 length = 1.85
 loop = false
@@ -1784,10 +1774,10 @@ tracks/44/loop_wrap = true
 tracks/44/imported = false
 tracks/44/enabled = true
 tracks/44/keys = {
-"times": PoolRealArray( 0, 0.51, 1.47 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.51, 0.6, 0.63, 0.75, 0.78, 0.9, 0.93, 1.02, 1.05, 1.14, 1.17, 1.26, 1.29, 1.38, 1.41, 1.47 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 2, 0 ]
+"values": [ 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0 ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/LeftSpoon/BasicSkillHitArea:collision_mask")
@@ -1796,10 +1786,10 @@ tracks/45/loop_wrap = true
 tracks/45/imported = false
 tracks/45/enabled = true
 tracks/45/keys = {
-"times": PoolRealArray( 0, 0.51, 1.47 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.51, 0.6, 0.63, 0.75, 0.78, 0.9, 0.93, 1.02, 1.05, 1.14, 1.17, 1.26, 1.29, 1.38, 1.41, 1.47 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 2, 0 ]
+"values": [ 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0 ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/LeftSpoon/Frame:modulate")
@@ -1994,7 +1984,7 @@ tracks/61/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=45]
+[sub_resource type="Animation" id=43]
 
 length = 1.5
 loop = false
@@ -2648,7 +2638,7 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=46]
+[sub_resource type="Animation" id=44]
 
 length = 2.7
 loop = false
@@ -3338,7 +3328,7 @@ tracks/56/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=47]
+[sub_resource type="Animation" id=45]
 
 length = 1.5
 loop = false
@@ -4028,7 +4018,7 @@ tracks/56/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=48]
+[sub_resource type="Animation" id=46]
 
 length = 1.5
 loop = false
@@ -4718,7 +4708,7 @@ tracks/56/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=49]
+[sub_resource type="Animation" id=47]
 
 length = 0.3
 loop = false
@@ -5384,7 +5374,7 @@ tracks/54/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=50]
+[sub_resource type="Animation" id=48]
 
 length = 0.1
 loop = false
@@ -6038,7 +6028,7 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=51]
+[sub_resource type="Animation" id=49]
 
 length = 0.1
 loop = false
@@ -6692,7 +6682,7 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=52]
+[sub_resource type="Animation" id=50]
 
 length = 0.1
 loop = false
@@ -7346,7 +7336,7 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=53]
+[sub_resource type="Animation" id=51]
 
 length = 2.0
 loop = true
@@ -8000,7 +7990,7 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=54]
+[sub_resource type="Animation" id=52]
 
 length = 0.1
 loop = false
@@ -8654,7 +8644,7 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=55]
+[sub_resource type="Animation" id=53]
 
 length = 1.0
 loop = true
@@ -9308,7 +9298,7 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="Animation" id=56]
+[sub_resource type="Animation" id=54]
 
 length = 3.5
 loop = false
@@ -9986,7 +9976,7 @@ tracks/55/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=57]
+[sub_resource type="Animation" id=55]
 
 length = 1.0
 loop = false
@@ -10586,10 +10576,10 @@ tracks/49/loop_wrap = true
 tracks/49/imported = false
 tracks/49/enabled = true
 tracks/49/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.4, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 2 ]
+"values": [ 0, 2, 0 ]
 }
 tracks/50/type = "value"
 tracks/50/path = NodePath("HorizontalSkillParticles:emitting")
@@ -10652,7 +10642,7 @@ tracks/54/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=58]
+[sub_resource type="Animation" id=56]
 
 length = 2.0
 loop = true
@@ -11306,12 +11296,12 @@ tracks/53/keys = {
 "values": [ false ]
 }
 
-[sub_resource type="RectangleShape2D" id=59]
+[sub_resource type="RectangleShape2D" id=57]
 
 custom_solver_bias = 0.0
 extents = Vector2( 68.3893, 105.259 )
 
-[sub_resource type="RectangleShape2D" id=60]
+[sub_resource type="RectangleShape2D" id=58]
 
 custom_solver_bias = 0.0
 extents = Vector2( 56.8438, 67.5532 )
@@ -11439,7 +11429,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Visibility" ]
 
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0, -20 )
-emitting = true
+emitting = false
 amount = 75
 lifetime = 2.0
 one_shot = false
@@ -11686,7 +11676,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Left Arm" type="Sprite" parent="Sprite/Animation/Body" index="1"]
 
 position = Vector2( -82.6986, 39.716 )
-rotation = -0.0202168
+rotation = 2.04582
 texture = ExtResource( 18 )
 offset = Vector2( -19.6845, 22.75 )
 _sections_unfolded = [ "Transform" ]
@@ -11695,6 +11685,7 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 82.6793, 37.4322 )
+rotation = -2.14901
 texture = ExtResource( 19 )
 offset = Vector2( 14.8241, 22.1265 )
 _sections_unfolded = [ "Transform" ]
@@ -11732,21 +11723,21 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 113.7, -12.4 )
-rotation = 0.127409
+position = Vector2( -522.069, -44.4248 )
+rotation = -0.818861
 texture = ExtResource( 24 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Face" type="Sprite" parent="Sprite/Animation/LeftSpoon" index="0"]
 
-self_modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 0, 0.75, 0.117188, 1 )
 position = Vector2( 0.904175, -78.8895 )
 texture = ExtResource( 25 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Frame" type="Sprite" parent="Sprite/Animation/LeftSpoon" index="1"]
 
-modulate = Color( 0, 1, 0.226562, 0 )
+modulate = Color( 0, 1, 0.226562, 0.75 )
 show_behind_parent = true
 texture = ExtResource( 26 )
 _sections_unfolded = [ "Visibility" ]
@@ -11776,7 +11767,7 @@ shape = SubResource( 32 )
 
 [node name="BasicSkillParticles" type="Particles2D" parent="Sprite/Animation/LeftSpoon" index="3"]
 
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 1, 1, 0.75 )
 show_behind_parent = true
 emitting = false
 amount = 100
@@ -11800,9 +11791,8 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Trans
 
 [node name="Spoon" type="Sprite" parent="Sprite/Animation" index="5"]
 
-editor/display_folded = true
-position = Vector2( 111.351, 5.39766 )
-rotation = -0.0152844
+position = Vector2( 2.84258, -256.899 )
+rotation = -0.0154184
 texture = ExtResource( 24 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -11822,14 +11812,10 @@ audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Animation/Spoon/BasicAttackHitArea" index="0"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/Animation/Spoon/BasicAttackHitArea" index="0"]
 
+position = Vector2( 0.740662, 12.0727 )
 shape = SubResource( 38 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/Animation/Spoon/BasicAttackHitArea" index="1"]
-
-position = Vector2( 2.61967, -69.556 )
-shape = SubResource( 39 )
 
 [node name="BasicSkillHitArea" type="Area2D" parent="Sprite/Animation/Spoon" index="1"]
 
@@ -11846,17 +11832,14 @@ audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Animation/Spoon/BasicSkillHitArea" index="0"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/Animation/Spoon/BasicSkillHitArea" index="0"]
 
-shape = SubResource( 40 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/Animation/Spoon/BasicSkillHitArea" index="1"]
-
-position = Vector2( -0.683182, -81.0722 )
-shape = SubResource( 41 )
+position = Vector2( -0.57296, 0.309996 )
+shape = SubResource( 39 )
 
 [node name="UpSkillHitArea" type="Area2D" parent="Sprite/Animation/Spoon" index="2"]
 
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -11870,12 +11853,12 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Animation/Spoon/UpSkillHitArea" index="0"]
 
-position = Vector2( -0.293396, -83.2904 )
-shape = SubResource( 42 )
+position = Vector2( -1.50375, -4.7963 )
+shape = SubResource( 40 )
 
 [node name="Face" type="Sprite" parent="Sprite/Animation/Spoon" index="3"]
 
-self_modulate = Color( 0, 0, 0, 1 )
+self_modulate = Color( 1, 0.679688, 0, 1 )
 position = Vector2( 1.91812, -79.4026 )
 texture = ExtResource( 25 )
 _sections_unfolded = [ "Visibility" ]
@@ -11886,14 +11869,14 @@ position = Vector2( -1.44019, -87.1546 )
 
 [node name="Frame" type="Sprite" parent="Sprite/Animation/Spoon" index="5"]
 
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 0.609375, 0, 1 )
 show_behind_parent = true
 texture = ExtResource( 26 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="BasicSkillParticles" type="Particles2D" parent="Sprite/Animation/Spoon" index="6"]
 
-modulate = Color( 1, 1, 1, 0 )
+modulate = Color( 1, 1, 1, 0.75 )
 show_behind_parent = true
 position = Vector2( 0.828575, 2.16834 )
 rotation = 0.0152844
@@ -11934,22 +11917,22 @@ autoplay = "Still"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Basic Attack" = SubResource( 43 )
-"anims/Basic Skill" = SubResource( 44 )
-anims/Die = SubResource( 45 )
-"anims/Down Skill" = SubResource( 46 )
-anims/Drink = SubResource( 47 )
-"anims/Horizontal Skill" = SubResource( 48 )
-"anims/Horizontal Skill Hit" = SubResource( 49 )
-anims/Idle = SubResource( 50 )
-anims/Jump = SubResource( 51 )
-"anims/Size Change" = SubResource( 52 )
-anims/Still = SubResource( 53 )
-anims/Still(copy) = SubResource( 54 )
-anims/Stunned = SubResource( 55 )
-anims/Ult = SubResource( 56 )
-"anims/Up Skill" = SubResource( 57 )
-anims/Walk = SubResource( 58 )
+"anims/Basic Attack" = SubResource( 41 )
+"anims/Basic Skill" = SubResource( 42 )
+anims/Die = SubResource( 43 )
+"anims/Down Skill" = SubResource( 44 )
+anims/Drink = SubResource( 45 )
+"anims/Horizontal Skill" = SubResource( 46 )
+"anims/Horizontal Skill Hit" = SubResource( 47 )
+anims/Idle = SubResource( 48 )
+anims/Jump = SubResource( 49 )
+"anims/Size Change" = SubResource( 50 )
+anims/Still = SubResource( 51 )
+anims/Still(copy) = SubResource( 52 )
+anims/Stunned = SubResource( 53 )
+anims/Ult = SubResource( 54 )
+"anims/Up Skill" = SubResource( 55 )
+anims/Walk = SubResource( 56 )
 blend_times = [  ]
 
 [node name="Number Spawn Pos" type="Position2D" parent="." index="4"]
@@ -11973,7 +11956,7 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DoorCheckArea" index="0"]
 
 visible = false
-shape = SubResource( 59 )
+shape = SubResource( 57 )
 
 [node name="GhostHitBox" type="Node2D" parent="." index="6"]
 
@@ -12001,7 +11984,7 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GhostHitBox/Node2D/Area2D" index="0"]
 
 visible = false
-shape = SubResource( 60 )
+shape = SubResource( 58 )
 
 [node name="Health Bar" parent="." index="7" instance=ExtResource( 30 )]
 

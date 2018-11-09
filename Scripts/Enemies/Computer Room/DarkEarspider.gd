@@ -151,7 +151,7 @@ func perform_random_movement(delta):
 	if !curr_rand_movement.movement_ended():
 		# Perform random movement sequence.
 		var final_pos = global_position + curr_rand_movement.movement(delta)
-		final_pos.x = clamp(final_pos.x, original_pos.x - left_bound, original_pos.x + left_bound)
+		final_pos.x = clamp(final_pos.x, left_bound, right_bound)
 		global_position = final_pos
 	else:
 		# Search for a new target and perform MOVE.

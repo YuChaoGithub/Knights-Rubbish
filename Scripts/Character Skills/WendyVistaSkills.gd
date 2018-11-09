@@ -19,8 +19,8 @@ const HORIZONTAL_SKILL_COOLDOWN = 0.1
 const UP_SKILL_DURATION = 0.7
 const UP_SKILL_COOLDOWN = 0.2
 const UP_SKILL_DISPLACEMENT = 150
-const UP_SKILL_DAMAGE_MIN = 10
-const UP_SKILL_DAMAGE_MAX = 20
+const UP_SKILL_DAMAGE_MIN = 30
+const UP_SKILL_DAMAGE_MAX = 40
 const UP_SKILL_KNOCK_BACK_VEL_X = 300
 const UP_SKILL_KNOCK_BACK_VEL_Y = 200
 const UP_SKILL_KNOCK_BACK_FADE_RATE = 300
@@ -57,6 +57,7 @@ var ult_cd = preload("res://Scenes/Characters/Wendy Vista/Wendy Ult CD.tscn")
 var up_skill_available = true
 var up_skill_available_timer = null
 var up_skill_timestamp = 0
+var up_skill_targets = []
 
 onready var ult_shoot_audio = $"../Audio/UltShoot"
 
@@ -165,6 +166,8 @@ func up_skill():
         hero.set_status("can_cast_skill", false, UP_SKILL_DURATION)
         hero.set_status("animate_movement", false, UP_SKILL_DURATION)
 
+        up_skill_targets.clear()
+
         hero.jump_to_height(UP_SKILL_DISPLACEMENT)
 
         var jump_timer = cd_timer.new(UP_SKILL_DURATION, self, "up_skill_ended")
@@ -176,8 +179,10 @@ func up_skill_ended():
 func on_up_skill_hit(area):
     if area.is_in_group("enemy"):
         var enemy = area.get_node("../..")
-        enemy.damaged(int(rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX) * hero.attack_modifier))
-        enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * UP_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -UP_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, UP_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
+        if !(enemy in up_skill_targets):
+            up_skill_targets.push_back(enemy)
+            enemy.damaged(int(rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX) * hero.attack_modifier))
+            enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * UP_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -UP_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, UP_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
 
 # ===
 # Down Skill: Shrink and hide in the hat.

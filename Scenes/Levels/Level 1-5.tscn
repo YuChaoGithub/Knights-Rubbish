@@ -110,7 +110,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.574219, 0.574219, 0.574219, 1 ) ]
 }
 
-[node name="Game Level" type="Node2D" index="0"]
+[node name="Game Level" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -3337,77 +3337,77 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/StartTrigger" to="FollowingCamera" method="update_bottom_margin" binds= [ 1.1 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/StartTrigger" to="FollowingCamera" method="update_top_margin" binds= [ -0.1 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/StartTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 3150 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/StartTrigger" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
+[connection signal="passed" from="CameraChangingTriggers/StartTrigger" to="FollowingCamera" method="update_top_margin" binds= [ -0.1 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/StartTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/StartTrigger" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/FirstPortalTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 5150 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/FirstMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 100000000 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/ShrinkLightTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 5150 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/ShrinkLightTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 10050 ]]
-
-[connection signal="passed" from="CameraChangingTriggers/ShrinkLightTrigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.3 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/ShrinkLightTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/ShrinkLightMobClear" to="FollowingCamera" method="update_bottom_limit" binds= [ -450 ]]
+[connection signal="passed" from="CameraChangingTriggers/ShrinkLightTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 5150 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/ShrinkLightTrigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.3 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/ShrinkLightMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 10450 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/ShrinkLightMobClear" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/ShrinkLightMobClear" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/LightBluePortalTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 5450 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/ShrinkLightMobClear" to="FollowingCamera" method="update_bottom_limit" binds= [ -450 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/LightBluePortalTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -1250 ]]
-
-[connection signal="passed" from="CameraChangingTriggers/LightBluePortalTrigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.7 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/ShrinkLightMobClear" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/LightBluePortalTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 1.1 ]]
 
+[connection signal="passed" from="CameraChangingTriggers/LightBluePortalTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -1250 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/LightBluePortalTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 5450 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/LightBluePortalTrigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.7 ]]
+
 [connection signal="passed" from="CameraChangingTriggers/HealFountainPlatformTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -1850 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/SecondFloorFirstMobTrigger" to="Enemies/EeloKickerSpawner2" method="spawn_mob"]
 
 [connection signal="passed" from="CameraChangingTriggers/SecondFloorFirstMobTrigger" to="Enemies/EeloPuncherSpawner2" method="spawn_mob"]
 
 [connection signal="passed" from="CameraChangingTriggers/SecondFloorFirstMobTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -2050 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/SecondFloorFirstMobTrigger" to="Enemies/EeloKickerSpawner2" method="spawn_mob"]
-
 [connection signal="count_reached" from="CameraChangingTriggers/SecondFloorFirstMobClear" to="FollowingCamera" method="update_left_limit" binds= [ 3650 ]]
-
-[connection signal="passed" from="CameraChangingTriggers/SecondFloorSecondMobTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 250 ]]
-
-[connection signal="passed" from="CameraChangingTriggers/SecondFloorSecondMobTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -2750 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/SecondFloorSecondMobTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 4050 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/SecondFloorSecondMobTrigger2" to="FollowingCamera" method="update_left_margin" binds= [ 0.55 ]]
+[connection signal="passed" from="CameraChangingTriggers/SecondFloorSecondMobTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -2750 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/SecondFloorSecondMobTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 250 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/SecondFloorSecondMobTrigger2" to="FollowingCamera" method="update_right_margin" binds= [ 0.75 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/SecondFloorSecondMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 4850 ]]
+[connection signal="passed" from="CameraChangingTriggers/SecondFloorSecondMobTrigger2" to="FollowingCamera" method="update_left_margin" binds= [ 0.55 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/SecondFloorSecondMobClear" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/SecondFloorSecondMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 4850 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/SecondFloorSecondMobClear" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/SecondFloorLastTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -3550 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/SecondFloorSecondMobClear" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/ThirdFloorFirstTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -4350 ]]
+[connection signal="passed" from="CameraChangingTriggers/SecondFloorLastTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -3550 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/ThirdFloorFirstTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 6750 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/ThirdFloorSecondTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 5150 ]]
+[connection signal="passed" from="CameraChangingTriggers/ThirdFloorFirstTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -4350 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/ThirdFloorSecondTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 10350 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/ThirdFloorSecondTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 5150 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/ThirdFloorSecondTrigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.3 ]]
 
@@ -3419,35 +3419,35 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/ToForthFloorTrigger2" to="FollowingCamera" method="update_bottom_limit" binds= [ -5850 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/ToForthFloorTrigger3" to="FollowingCamera" method="update_left_limit" binds= [ 7800.0 ]]
+[connection signal="passed" from="CameraChangingTriggers/ToForthFloorTrigger3" to="FollowingCamera" method="update_right_margin" binds= [ 1.1 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/ToForthFloorTrigger3" to="FollowingCamera" method="update_bottom_limit" binds= [ -6550 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/ToForthFloorTrigger3" to="FollowingCamera" method="update_left_margin" binds= [ 0.7 ]]
+[connection signal="passed" from="CameraChangingTriggers/ToForthFloorTrigger3" to="FollowingCamera" method="update_left_limit" binds= [ 7800.0 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/ToForthFloorTrigger3" to="FollowingCamera" method="update_right_margin" binds= [ 1.1 ]]
+[connection signal="passed" from="CameraChangingTriggers/ToForthFloorTrigger3" to="FollowingCamera" method="update_left_margin" binds= [ 0.7 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/BlackPortalMobClear" to="FollowingCamera" method="update_left_limit" binds= [ 4550 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/ForthFloorLeftTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 250 ]]
-
-[connection signal="passed" from="CameraChangingTriggers/ForthFloorLeftTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -7050 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/ForthFloorLeftTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 4950 ]]
-
-[connection signal="passed" from="CameraChangingTriggers/ForthFloorLeftTrigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.4 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/ForthFloorLeftTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 0.6 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/ForthFloorMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 7350 ]]
+[connection signal="passed" from="CameraChangingTriggers/ForthFloorLeftTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -7050 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/ForthFloorMobClear" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
+[connection signal="passed" from="CameraChangingTriggers/ForthFloorLeftTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 250 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/ForthFloorLeftTrigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.4 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/ForthFloorMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 7350 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/ForthFloorMobClear" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/ToFifthFloorTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 4350 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/ForthFloorMobClear" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/ToFifthFloorTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -7950 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/ToFifthFloorTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 4350 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/FifthFloorFirstTrigger" to="Enemies/EeloKickerSpawner7" method="spawn_mob"]
 
@@ -3455,9 +3455,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/FifthFloorMobClear" to="FollowingCamera" method="update_bottom_margin" binds= [ 0.3 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/FifthFloorMobClear" to="FollowingCamera" method="update_bottom_limit" binds= [ -8050 ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/FifthFloorMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 10400 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/FifthFloorMobClear" to="FollowingCamera" method="update_bottom_limit" binds= [ -8050 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/LastMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 10850 ]]
 
@@ -3475,9 +3475,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="completed" from="Enemies/EeloPuncherSpawner1" to="CameraChangingTriggers/FirstMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Puncher2" to="Enemies/EeloKickerSpawner1" method="spawn_mob"]
-
 [connection signal="defeated" from="Enemies/Eelo Puncher2" to="Writings/CountdownTV2" method="tick"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher2" to="Enemies/EeloKickerSpawner1" method="spawn_mob"]
 
 [connection signal="defeated" from="Enemies/Eelo Puncher3" to="CameraChangingTriggers/ShrinkLightMobClear" method="increment_count"]
 
@@ -3493,29 +3493,29 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Enemies/Eelo Puncher4" to="Enemies/EeloPuncherSpawner3" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Eelo Puncher5" to="Writings/CountdownTV4" method="tick"]
-
 [connection signal="defeated" from="Enemies/Eelo Puncher5" to="Enemies/EeloKickerSpawner3" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker2" to="Writings/CountdownTV4" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Puncher5" to="Writings/CountdownTV4" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker2" to="CameraChangingTriggers/SecondFloorSecondMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker3" to="Writings/CountdownTV4" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Kicker2" to="Writings/CountdownTV4" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker3" to="CameraChangingTriggers/SecondFloorSecondMobClear" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker3" to="Writings/CountdownTV4" method="tick"]
 
 [connection signal="completed" from="Enemies/EeloPuncherSpawner3" to="CameraChangingTriggers/SecondFloorSecondMobClear" method="increment_count"]
 
 [connection signal="completed" from="Enemies/EeloKickerSpawner3" to="CameraChangingTriggers/SecondFloorSecondMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker4" to="Enemies/EeloPuncherSpawner4" method="spawn_mob"]
-
 [connection signal="defeated" from="Enemies/Eelo Kicker4" to="Writings/CountdownTV5" method="tick"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker5" to="Enemies/EeloKickerSpawner4" method="spawn_mob"]
+[connection signal="defeated" from="Enemies/Eelo Kicker4" to="Enemies/EeloPuncherSpawner4" method="spawn_mob"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker5" to="Writings/CountdownTV5" method="tick"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker5" to="Enemies/EeloKickerSpawner4" method="spawn_mob"]
 
 [connection signal="defeated" from="Enemies/Eelo Puncher6" to="CameraChangingTriggers/ThirdFloorMobClear" method="increment_count"]
 
@@ -3545,25 +3545,25 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker7" to="CameraChangingTriggers/BlackPortalMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker8" to="Writings/CountdownTV7" method="tick"]
-
 [connection signal="defeated" from="Enemies/Eelo Kicker8" to="Enemies/EeloPuncherSpawner5" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker9" to="Writings/CountdownTV7" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Kicker8" to="Writings/CountdownTV7" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker9" to="CameraChangingTriggers/ForthFloorMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker10" to="Writings/CountdownTV7" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Kicker9" to="Writings/CountdownTV7" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker10" to="CameraChangingTriggers/ForthFloorMobClear" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Puncher10" to="Writings/CountdownTV7" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Kicker10" to="Writings/CountdownTV7" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Puncher10" to="Enemies/EeloKickerSpawner5" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Eelo Puncher11" to="Writings/CountdownTV7" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Puncher10" to="Writings/CountdownTV7" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Puncher11" to="Enemies/EeloKickerSpawner6" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher11" to="Writings/CountdownTV7" method="tick"]
 
 [connection signal="completed" from="Enemies/EeloKickerSpawner5" to="CameraChangingTriggers/ForthFloorMobClear" method="increment_count"]
 

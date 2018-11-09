@@ -9,6 +9,7 @@ const GRAVITY = 600
 
 const SPAWN_ANIMATION_DURATION = 0.7
 const SPAWN_ANIMATION_END_DURATION = 0.2
+const FLOOPY_FULL_HEALTH = 40
 
 var floopy = preload("res://Scenes/Enemies/Computer Room/Floopy.tscn")
 var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
@@ -61,6 +62,11 @@ func spawn_floopies():
 
 	spawn_node.add_child(left_floopy)
 	spawn_node.add_child(right_floopy)
+
+	left_floopy.ec.health_system.full_health = FLOOPY_FULL_HEALTH
+	right_floopy.ec.health_system.full_health = FLOOPY_FULL_HEALTH
+	left_floopy.ec.health_system.health = FLOOPY_FULL_HEALTH
+	right_floopy.ec.health_system.health = FLOOPY_FULL_HEALTH
 
 	left_floopy.global_position = left_spawn_pos.global_position
 	right_floopy.global_position = right_spawn_pos.global_position

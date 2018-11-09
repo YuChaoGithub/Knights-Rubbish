@@ -3,7 +3,7 @@ extends Node2D
 const SPEED = 2000
 const LIFETIME = 2
 
-const DAMAGE = 30
+const DAMAGE = 25
 const SLOW_DURATION = 5
 const SLOW_RATE = 0.5
 const KNOCK_BACK_VEL_X = 150

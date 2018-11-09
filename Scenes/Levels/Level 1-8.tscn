@@ -63,7 +63,7 @@
 [ext_resource path="res://Scenes/Power Ups/Healing Potion.tscn" type="PackedScene" id=61]
 [ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=62]
 
-[node name="Game Level" type="Node2D" index="0"]
+[node name="Game Level" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -795,69 +795,69 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/FirstMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 11150 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/SecondMobTrigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.37 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/SecondMobTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/SecondMobTrigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.37 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/SecondMobTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 7950 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/SecondMobClear" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/SecondMobClear" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/SecondMobClear" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/SecondMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 15450 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/ThirdMobTrigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.37 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/ThirdMobTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/ThirdMobTrigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.37 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/ThirdMobTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 11750 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/ThirdMobClear" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/ThirdMobClear" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/ThirdMobClear" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/ThirdMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 18750 ]]
 
-[connection signal="defeated" from="Enemies/Calcasio2" to="CameraChangingTriggers/FirstMobClear" method="increment_count"]
-
 [connection signal="defeated" from="Enemies/Calcasio2" to="Writings/CountdownTV" method="tick"]
 
-[connection signal="defeated" from="Enemies/Calcasio" to="CameraChangingTriggers/FirstMobClear" method="increment_count"]
+[connection signal="defeated" from="Enemies/Calcasio2" to="CameraChangingTriggers/FirstMobClear" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Calcasio" to="Writings/CountdownTV" method="tick"]
 
-[connection signal="defeated" from="Enemies/Canmera" to="CameraChangingTriggers/FirstMobClear" method="increment_count"]
+[connection signal="defeated" from="Enemies/Calcasio" to="CameraChangingTriggers/FirstMobClear" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Canmera" to="Writings/CountdownTV" method="tick"]
 
-[connection signal="defeated" from="Enemies/Canmera14" to="CameraChangingTriggers/FirstMobClear" method="increment_count"]
+[connection signal="defeated" from="Enemies/Canmera" to="CameraChangingTriggers/FirstMobClear" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Canmera14" to="Writings/CountdownTV" method="tick"]
 
-[connection signal="defeated" from="Enemies/Calcasio5" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
+[connection signal="defeated" from="Enemies/Canmera14" to="CameraChangingTriggers/FirstMobClear" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Calcasio5" to="Writings/CountdownTV2" method="tick"]
 
-[connection signal="defeated" from="Enemies/Calcasio6" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
+[connection signal="defeated" from="Enemies/Calcasio5" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Calcasio6" to="Writings/CountdownTV2" method="tick"]
 
-[connection signal="defeated" from="Enemies/Canmera4" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
+[connection signal="defeated" from="Enemies/Calcasio6" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Canmera4" to="Writings/CountdownTV2" method="tick"]
 
-[connection signal="defeated" from="Enemies/Canmera5" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
+[connection signal="defeated" from="Enemies/Canmera4" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Canmera5" to="Writings/CountdownTV2" method="tick"]
 
-[connection signal="defeated" from="Enemies/Canmera6" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
+[connection signal="defeated" from="Enemies/Canmera5" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Canmera6" to="Writings/CountdownTV2" method="tick"]
 
-[connection signal="defeated" from="Enemies/Canmera7" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
+[connection signal="defeated" from="Enemies/Canmera6" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Canmera7" to="Writings/CountdownTV2" method="tick"]
+
+[connection signal="defeated" from="Enemies/Canmera7" to="CameraChangingTriggers/SecondMobClear" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Calcasio7" to="Writings/CountdownTV3" method="tick"]
 

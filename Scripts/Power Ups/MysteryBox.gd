@@ -20,6 +20,8 @@ var scenes = [
 var timer
 var activated = false
 
+var broken = false
+
 onready var enemy_layer = ProjectSettings.get_setting("layer_names/2d_physics/enemy")
 onready var damage_area = $"Animation/Damage Area"
 onready var hero_manager = $"../../HeroManager"
@@ -47,7 +49,9 @@ func _process(delta):
 		damage_area.set_collision_layer_bit(enemy_layer, true)
 
 func damaged(val):
-	open_box()
+	if !broken:
+		broken = true
+		open_box()
 
 func knocked_back(vel_x, vel_y, x_fade_rate):
 	pass

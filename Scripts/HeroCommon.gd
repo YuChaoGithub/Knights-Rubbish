@@ -709,7 +709,7 @@ func damaged(val, randomness = true):
 		var curr_modulate = null
 		for node_path in player_constants.hurt_modulate_node_path:
 			if curr_modulate == null:
-				curr_modulate = get_node(node_path).modulate
+				curr_modulate = get_node(node_path).self_modulate
 			get_node(node_path).self_modulate = player_constants.hurt_modulate_color
 
 		hurt_modulate_timer = countdown_timer.new(HURT_MODULATE_DURATION, self, "recover_modulate", curr_modulate)

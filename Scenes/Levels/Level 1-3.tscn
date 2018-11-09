@@ -253,7 +253,7 @@ tracks/3/keys = {
 "values": [ true, true, true, true, true ]
 }
 
-[node name="Game Level" type="Node2D" index="0"]
+[node name="Game Level" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -5070,67 +5070,67 @@ position = Vector2( 800, -2600 )
 scale = Vector2( 10, 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 1.1 ]]
-
-[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
-
-[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_top_margin" binds= [ 0.6 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_bottom_margin" binds= [ 1.1 ]]
-
-[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 50 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 2650 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -1550 ]]
+[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_top_margin" binds= [ 0.6 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 1.1 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -50 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/OrangePortal" to="FollowingCamera" method="update_top_limit" binds= [ -2300 ]]
+[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_left_limit" binds= [ 50 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -1550 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/OrangePortal" to="FollowingCamera" method="update_bottom_limit" binds= [ -850 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/GreenPortal" to="FollowingCamera" method="update_top_limit" binds= [ -2850 ]]
+[connection signal="passed" from="CameraChangingTriggers/OrangePortal" to="FollowingCamera" method="update_top_limit" binds= [ -2300 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/GreenPortal" to="FollowingCamera" method="update_bottom_limit" binds= [ -1450 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/RedPortal" to="FollowingCamera" method="update_top_limit" binds= [ -3650 ]]
+[connection signal="passed" from="CameraChangingTriggers/GreenPortal" to="FollowingCamera" method="update_top_limit" binds= [ -2850 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/RedPortal" to="FollowingCamera" method="update_bottom_limit" binds= [ -2250 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/HealingMachine" to="FollowingCamera" method="update_top_limit" binds= [ -4350 ]]
+[connection signal="passed" from="CameraChangingTriggers/RedPortal" to="FollowingCamera" method="update_top_limit" binds= [ -3650 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/HealingMachine" to="FollowingCamera" method="update_bottom_limit" binds= [ -2850 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/FirstEnemyClearTrigger" to="FollowingCamera" method="update_top_margin" binds= [ 0.8 ]]
+[connection signal="passed" from="CameraChangingTriggers/HealingMachine" to="FollowingCamera" method="update_top_limit" binds= [ -4350 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/FirstEnemyClearTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -4700 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/FirstEnemyClearTrigger" to="FollowingCamera" method="update_top_margin" binds= [ 0.8 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/FirstEnemyClearTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -4250 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/PreDiveragePath" to="FollowingCamera" method="update_top_limit" binds= [ -5650 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/FirstEnemyClearTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -4700 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/DivergePathTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -6650 ]]
+[connection signal="passed" from="CameraChangingTriggers/PreDiveragePath" to="FollowingCamera" method="update_top_limit" binds= [ -5650 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/DivergePathTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -5250 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/FlatEnemyPlatformTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -7350 ]]
+[connection signal="passed" from="CameraChangingTriggers/DivergePathTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -6650 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/FlatEnemyPlatformTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -5950 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/FlatEnemyPlatformTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -7350 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/FlatEnemyPlatformClear" to="FollowingCamera" method="update_bottom_margin" binds= [ 0.9 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/FlatEnemyPlatformClear" to="FollowingCamera" method="update_top_limit" binds= [ -7700 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/ResumeSizePlatformTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -8650 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/ResumeSizePlatformTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -7250 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/ResumeSizePlatformTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -8650 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/LastTrigger" to="FollowingCamera" method="update_top_margin" binds= [ 0.5 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/LastTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -10650 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/LastTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -8150 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/LastTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -10650 ]]
 
 [connection signal="defeated" from="Enemies/Mouse" to="CameraChangingTriggers/FirstEnemyClearTrigger" method="increment_count"]
 

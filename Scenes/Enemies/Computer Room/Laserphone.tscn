@@ -16,7 +16,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 36.7821, 74.0288 )
+extents = Vector2( 50.2101, 74.0288 )
 
 [sub_resource type="Animation" id=2]
 
@@ -1354,7 +1354,7 @@ tracks/17/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[node name="Laserphone" type="Node2D" index="0"]
+[node name="Laserphone" type="Node2D"]
 
 script = ExtResource( 1 )
 activate_range_x = 1500
@@ -1363,12 +1363,12 @@ drop_destination_y = null
 
 [node name="Animation" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
-position = Vector2( -13.534, 0 )
 scale = Vector2( -1, 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Damage Area" type="Area2D" parent="Animation" index="0"]
 
+position = Vector2( 0.353146, 0 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -1382,7 +1382,7 @@ _sections_unfolded = [ "Collision" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Animation/Damage Area" index="0"]
 
-position = Vector2( 4.75192, -2.77197 )
+position = Vector2( -1.25199, -2.77197 )
 shape = SubResource( 1 )
 
 [node name="Body" type="Sprite" parent="Animation" index="1"]
@@ -1437,7 +1437,7 @@ blend_times = [  ]
 
 [node name="Silk Attach Pos" type="Position2D" parent="." index="1"]
 
-position = Vector2( 0.193619, -77.6196 )
+position = Vector2( 14.4554, -77.6196 )
 
 [node name="Number Spawn Pos" type="Position2D" parent="." index="2"]
 
@@ -1449,7 +1449,7 @@ position = Vector2( 5.36334, -108.935 )
 
 [node name="Laser Pos" type="Position2D" parent="." index="4"]
 
-position = Vector2( -35.5956, 0 )
+position = Vector2( -2.21148, 5.93496 )
 
 [node name="Drawing" type="Node2D" parent="." index="5"]
 

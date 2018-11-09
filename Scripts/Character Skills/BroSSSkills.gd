@@ -39,7 +39,6 @@ const SIR_BASIC_ATTACK_THROW_TIME = 0.5
 const BASIC_ATTACK_COOLDOWN = 0.15
 const BASIC_ATTACK_DAMAGE_MIN = 30
 const BASIC_ATTACK_DAMAGE_MAX = 45
-const BASIC_ATTACK_STUN_DURATION = 1.0
 const BASIC_ATTACK_KNOCK_BACK_VEL_X = 300
 const BASIC_ATTACK_KNOCK_BACK_VEL_Y = 50
 const BASIC_ATTACK_KNOCK_BACK_FADE_RATE = 600
@@ -53,8 +52,8 @@ onready var sir_basic_attack_spawn_pos = $"../Sprite/Animation/Sir/Sug"
 # Basic Skill.
 const BASIC_SKILL_DURATION = 3.0
 const BASIC_SKILL_COOLDOWN = 0.2
-const BASIC_SKILL_DAMAGE_MIN = 2
-const BASIC_SKILL_DAMAGE_MAX = 5
+const BASIC_SKILL_DAMAGE_MIN = 5
+const BASIC_SKILL_DAMAGE_MAX = 10
 const BASIC_SKILL_HEAL_MIN = 1
 const BASIC_SKILL_HEAL_MAX = 3
 const BASIC_SKILL_SLOW_DURATION = 3.0
@@ -68,8 +67,8 @@ var basic_skill_targets = []
 const SUG_HORIZONTAL_SKILL_DURATION = 0.4
 const SUG_HORIZONTAL_DASH_TIME = 0.2
 const SUG_HORIZONTAL_SKILL_COOLDOWN = 0.15
-const HORIZONTAL_SKILL_DAMAGE_MIN = 25
-const HORIZONTAL_SKILL_DAMAGE_MAX = 40
+const HORIZONTAL_SKILL_DAMAGE_MIN = 30
+const HORIZONTAL_SKILL_DAMAGE_MAX = 45
 const SUG_HORIZONTAL_SKILL_DISPLACEMENT_VEL_X = 800
 const SUG_HORIZONTAL_SKILL_DISPLACEMENT_VEL_Y = 50
 const SUG_HORIZONTAL_SKILL_DISPLACEMENT_VEL_FADE_RATE = 1000
@@ -97,8 +96,8 @@ var transform_timer
 const UP_SKILL_DURATION = 0.7
 const UP_SKILL_COOLDOWN = 0.2
 const UP_SKILL_DISPLACEMENT = 150
-const UP_SKILL_DAMAGE_MIN = 15
-const UP_SKILL_DAMAGE_MAX = 30
+const UP_SKILL_DAMAGE_MIN = 30
+const UP_SKILL_DAMAGE_MAX = 45
 const UP_SKILL_KNOCK_BACK_VEL_X = 300
 const UP_SKILL_KNOCK_BACK_VEL_Y = 200
 const UP_SKILL_KNOCK_BACK_FADE_RATE = 300
@@ -108,6 +107,7 @@ onready var up_skill_particles_spawn_pos = $"../Sprite/Animation/UpSkillParticle
 onready var up_skill_puff_spawn_pos = $"../Sprite/UpSkillPuffSpawnPos"
 var up_skill_puff = preload("res://Scenes/Particles/UpSkillPuffParticles.tscn")
 
+var up_skill_targets = []
 var up_skill_available = true
 var up_skill_available_timer = null
 var up_skill_timestamp = 0
@@ -185,7 +185,6 @@ func sug_basic_attack_hit(area):
 
         var enemy = area.get_node("../..")
         enemy.knocked_back(sign(enemy.global_position.x - self.global_position.x) * BASIC_ATTACK_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -BASIC_ATTACK_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, BASIC_ATTACK_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
-        enemy.stunned(BASIC_ATTACK_STUN_DURATION)
         enemy.damaged(int(rng.randi_range(BASIC_ATTACK_DAMAGE_MIN, BASIC_ATTACK_DAMAGE_MAX) * hero.attack_modifier))
 
 func sir_basic_attack_shoots():
@@ -297,6 +296,8 @@ func up_skill():
         up_skill_available = false
         up_skill_timestamp = OS.get_ticks_msec()
 
+        up_skill_targets.clear()
+
         hero.set_status("can_jump", false, UP_SKILL_DURATION)
         hero.set_status("can_cast_skill", false, UP_SKILL_DURATION)
         hero.set_status("animate_movement", false, UP_SKILL_DURATION)
@@ -311,13 +312,16 @@ func up_skill_ended():
 
 func up_skill_hit(area):
     if area.is_in_group("enemy"):
-        var p = sug_basic_attack_particles.instance()
-        spawn_node.add_child(p)
-        p.global_position = up_skill_particles_spawn_pos.global_position
-
         var enemy = area.get_node("../..")
-        enemy.damaged(int(rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX) * hero.attack_modifier))
-        enemy.knocked_back(sign(enemy.global_position.x - self.global_position.x) * UP_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -UP_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, UP_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
+        if !(enemy in up_skill_targets):
+            var p = sug_basic_attack_particles.instance()
+            spawn_node.add_child(p)
+            p.global_position = up_skill_particles_spawn_pos.global_position
+
+            up_skill_targets.push_back(enemy)
+
+            enemy.damaged(int(rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX) * hero.attack_modifier))
+            enemy.knocked_back(sign(enemy.global_position.x - self.global_position.x) * UP_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -UP_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, UP_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
 
 # Down Skill: Switch between sug and sir. Invincible while switching.
 func down_skill():

@@ -8,7 +8,7 @@ const SCALE_INIT = 0.2
 const SCALE_FINAL = 1.0
 const SCALE_DURATION = 0.3
 
-const DAMAGE = 100
+const DAMAGE = 1000
 
 const KNOCK_BACK_VEL_X = 300
 const KNOCK_BACK_VEL_Y = 50

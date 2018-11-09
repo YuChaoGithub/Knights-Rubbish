@@ -1062,18 +1062,31 @@ Comment: Experiencing self-imposed crunches these weeks, haha!
 [2018.11.07]
 * Added 160 sound effects to the game. (Alphabetically: amazlet_acc.wav to mouse_open_lid.wav). Soooo tired, but rewarding.
 
+[2018.11.08]
+* Added all sound effects to the game.
+* Tested the game in 1P and fixed bugs.
+
+[2018.11.09]
+* Playtested the full game.
+* Fixed the bug that Darkearspider often teleports while performing random movement.
+* Expand the range of Laserphone's hitbox.
+* Fixed the bug that the hero's `self_modulate` wouldn't recover if it is being hit while stunned.
+* Rebalanced the heroes.
+* Adjusted the difficulties of levels.
+* Fixed the bug that `die()` will be called multiple times if the mob was damaged multiple times within in a frame.
+* Deleted unused image files in the repository.
+* Recorded all the skills of the heroes.
+
 [Goals]
-* Purge unrelated files in git repo and on GitHub.
-* Nov 9: All sound effects added.
-* Nov 12: Level walk through (1P / 2P), record the gameplay!
-* Nov 15: Save and import key config from the user's files.
-* Nov 17: Make gifs of characters' attacks & skills, post it on the project site. (Including unreleased characters.)
-* Nov 21: Preview video.
-* Nov 23: Introducation article.
+* Nov 11: Make gifs of characters' attacks & skills, post it on the project site (inculding unreleased heroes). Level walk through (2P), record the gameplay!
+* Nov 12: Save and import key config from the user's files.
+* Nov 15: Preview video.
+* Nov 16: Introducation article.
+* Dec 30: Steam store ready to go.
 
 To Do List:
-* Sound Effects & Background Music.
 **Alpha Version [Ver 0.1] Publishing**
+* Background Music.
 (Steam early access)
 * New characters * 5.
 
