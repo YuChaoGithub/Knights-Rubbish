@@ -82,7 +82,7 @@
 [ext_resource path="res://Scenes/Power Ups/Attack Potion.tscn" type="PackedScene" id=80]
 [ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=81]
 
-[node name="Game Level" type="Node2D" index="0"]
+[node name="Game Level" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -1353,9 +1353,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger2" to="FollowingCamera" method="update_top_limit" binds= [ -5650 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/PortalPassTrigger2" to="Activator2" method="activate"]
-
 [connection signal="passed" from="CameraChangingTriggers/PortalPassTrigger2" to="FollowingCamera" method="update_top_limit" binds= [ -4900 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/PortalPassTrigger2" to="Activator2" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="FollowingCamera" method="update_top_limit" binds= [ -4300 ]]
 

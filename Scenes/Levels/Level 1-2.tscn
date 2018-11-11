@@ -203,7 +203,7 @@ tracks/0/keys = {
 "values": [ true, false, true, false, true ]
 }
 
-[node name="Game Level" type="Node2D" index="0"]
+[node name="Game Level" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -5300,13 +5300,13 @@ position = Vector2( 6150, -150 )
 scale = Vector2( 10, 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -50 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 3450 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/PortalTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 5250 ]]
+[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_bottom_limit" binds= [ -50 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/PortalTrigger1" to="FollowingCamera" method="update_left_limit" binds= [ 2650 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/PortalTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 5250 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/PortalTrigger2" to="FollowingCamera" method="update_right_margin" binds= [ 0.6 ]]
 
@@ -5332,9 +5332,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/OpenGroundPortal" to="FollowingCamera" method="update_right_limit" binds= [ 100000000 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/LatortransDoorStep" to="FollowingCamera" method="update_right_limit" binds= [ 24650 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/LatortransDoorStep" to="FollowingCamera" method="update_left_limit" binds= [ 21950 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/LatortransDoorStep" to="FollowingCamera" method="update_right_limit" binds= [ 24650 ]]
 
 [connection signal="defeated" from="Enemies/Floopy" to="Enemies/FloopySpawnPoint" method="spawn_mob"]
 

@@ -1077,6 +1077,12 @@ Comment: Experiencing self-imposed crunches these weeks, haha!
 * Deleted unused image files in the repository.
 * Recorded all the skills of the heroes.
 
+[2018.11.11]
+* Recorded all heroes' combos and uploaded them on Youtube.
+* Wrote lores and set up the project page on my blog.
+* Updated readme.
+Comment: Video editting is so tiring, time-consuming yet fun.
+
 [Goals]
 * Nov 11: Make gifs of characters' attacks & skills, post it on the project site (inculding unreleased heroes). Level walk through (2P), record the gameplay!
 * Nov 12: Save and import key config from the user's files.

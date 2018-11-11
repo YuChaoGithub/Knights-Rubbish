@@ -432,6 +432,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Book" type="TextureRect" parent="." index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1059,7 +1060,387 @@ texture = ExtResource( 23 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="Title" type="Control" parent="Book" index="5"]
+[node name="Drawings2" type="Control" parent="Book" index="5"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -82.0
+margin_top = -134.0
+margin_right = -62.0
+margin_bottom = -114.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Heroes" type="Control" parent="Book/Drawings2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Keshia" type="TextureRect" parent="Book/Drawings2/Heroes" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 272.0
+margin_top = 332.0
+margin_right = 522.0
+margin_bottom = 582.0
+rect_rotation = -2.4057
+rect_scale = Vector2( 0.4, 0.4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 9 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Wendy" type="TextureRect" parent="Book/Drawings2/Heroes" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 420.0
+margin_top = 365.0
+margin_right = 670.0
+margin_bottom = 615.0
+rect_rotation = -15.7822
+rect_scale = Vector2( 0.4, 0.4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 10 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Wendy2" type="TextureRect" parent="Book/Drawings2/Heroes" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 446.0
+margin_top = 528.0
+margin_right = 696.0
+margin_bottom = 778.0
+rect_rotation = -35.6664
+rect_scale = Vector2( 0.4, 0.4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 11 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Wendy3" type="TextureRect" parent="Book/Drawings2/Heroes" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 317.0
+margin_top = 498.0
+margin_right = 567.0
+margin_bottom = 748.0
+rect_rotation = -20.7594
+rect_scale = Vector2( 0.4, 0.4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 12 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Wendy4" type="TextureRect" parent="Book/Drawings2/Heroes" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 193.0
+margin_top = 567.0
+margin_right = 443.0
+margin_bottom = 817.0
+rect_rotation = -15.7822
+rect_scale = Vector2( 0.4, 0.4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 13 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Wendy5" type="TextureRect" parent="Book/Drawings2/Heroes" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 548.0
+margin_top = 674.0
+margin_right = 798.0
+margin_bottom = 924.0
+rect_rotation = -27.7237
+rect_scale = Vector2( 0.4, 0.4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 14 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Wendy6" type="TextureRect" parent="Book/Drawings2/Heroes" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 415.0
+margin_top = 660.0
+margin_right = 665.0
+margin_bottom = 910.0
+rect_rotation = -15.7822
+rect_scale = Vector2( 0.4, 0.4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 15 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Wendy7" type="TextureRect" parent="Book/Drawings2/Heroes" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 300.0
+margin_top = 650.0
+margin_right = 550.0
+margin_bottom = 900.0
+rect_rotation = -24.9892
+rect_scale = Vector2( 0.4, 0.4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 16 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Wendy8" type="TextureRect" parent="Book/Drawings2/Heroes" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 165.0
+margin_top = 697.0
+margin_right = 415.0
+margin_bottom = 947.0
+rect_rotation = -15.7822
+rect_scale = Vector2( 0.4, 0.4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 17 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Wendy9" type="TextureRect" parent="Book/Drawings2/Heroes" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 170.0
+margin_top = 423.0
+margin_right = 420.0
+margin_bottom = 673.0
+rect_rotation = -6.6739
+rect_scale = Vector2( 0.4, 0.4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 18 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Bosses" type="Control" parent="Book/Drawings2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="Amazlet" type="TextureRect" parent="Book/Drawings2/Bosses" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 631.0
+margin_top = 379.0
+margin_right = 881.0
+margin_bottom = 629.0
+rect_rotation = -21.6404
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 19 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="eyeMac" type="TextureRect" parent="Book/Drawings2/Bosses" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 907.0
+margin_top = 383.0
+margin_right = 1157.0
+margin_bottom = 633.0
+rect_rotation = -21.6404
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 20 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Godotbos" type="TextureRect" parent="Book/Drawings2/Bosses" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 939.0
+margin_top = 530.0
+margin_right = 1189.0
+margin_bottom = 780.0
+rect_rotation = -28.7829
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 21 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Latortrans" type="TextureRect" parent="Book/Drawings2/Bosses" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 627.0
+margin_top = 560.0
+margin_right = 877.0
+margin_bottom = 810.0
+rect_rotation = -28.7829
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 22 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Radiogugu" type="TextureRect" parent="Book/Drawings2/Bosses" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 820.0
+margin_top = 461.0
+margin_right = 1070.0
+margin_bottom = 711.0
+rect_rotation = 8.05532
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 23 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Title" type="Control" parent="Book" index="6"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -1117,8 +1498,56 @@ texture = ExtResource( 25 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
+[node name="TextureRect" type="TextureRect" parent="Book" index="7"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 468.0
+margin_top = 207.0
+margin_right = 718.0
+margin_bottom = 457.0
+rect_scale = Vector2( 0.8, 0.8 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 18 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Label" type="Label" parent="Book" index="8"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 189.0
+margin_top = 416.0
+margin_right = 945.0
+margin_bottom = 451.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Sirurueruerue Senyesuensuesue & Sugsesugsem Sosas"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Size Flags", "custom_colors", "custom_fonts" ]
+
 [node name="Trash" type="Control" parent="." index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1292,7 +1721,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 224.0
 margin_top = -345.0
-margin_right = 872.0
+margin_right = 874.0
 margin_bottom = -145.0
 rect_rotation = 65.74
 rect_pivot_offset = Vector2( 0, 0 )
@@ -1314,7 +1743,7 @@ anchor_bottom = 0.0
 margin_left = 1237.0
 margin_top = -126.0
 margin_right = 1396.0
-margin_bottom = 577.0
+margin_bottom = 578.0
 rect_rotation = 149.186
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
