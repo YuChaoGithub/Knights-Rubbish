@@ -5,7 +5,7 @@ const HEAL_NUMBER_COLOR = Color(0.0, 100.0 / 255.0, 0.0)
 const STUNNED_TEXT_COLOR = Color(1.0, 1.0, 0.0)
 const IMMUNE_TEXT_COLOR = Color(255.0 / 255.0, 200.0 / 255.0, 0.0 / 255.0)
 const HURT_ANIM_DURATION = 0.3
-const HEALTH_MULTIPLIER_PER_PLAYER = 1
+const HEALTH_MULTIPLIER_PER_PLAYER = 0.6
 
 # Some commonly used scripts.
 var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")

@@ -170,7 +170,7 @@ func movement_ended():
 	ec.change_status(to_status)
 
 func get_health_percentage():
-	return float(ec.health_system.health) / float(MAX_HEALTH)
+	return float(ec.health_system.health) / float(ec.health_system.full_health)
 
 func play_slow_bomb_anim():
 	ec.play_animation("Watch Out")

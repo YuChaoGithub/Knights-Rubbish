@@ -11,11 +11,13 @@ onready var enemy_layer = ProjectSettings.get_setting("layer_names/2d_physics/en
 
 func activate():
     $Node2D/Area2D.set_collision_layer_bit(enemy_layer, true)
+    $"../Damage Area".remove_from_group("hero")
 
     ghost_ball_timer = multi_timer.new(false, GHOST_BALL_INTERVAL, 1000000000, self, "fire_ghost_ball")
 
 func deactivate():
     $Node2D/Area2D.set_collision_layer_bit(enemy_layer, false)
+    $"../Damage Area".add_to_group("hero")
 
     ghost_ball_timer.destroy_timer()
 

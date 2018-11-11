@@ -1081,14 +1081,32 @@ Comment: Experiencing self-imposed crunches these weeks, haha!
 * Recorded all heroes' combos and uploaded them on Youtube.
 * Wrote lores and set up the project page on my blog.
 * Updated readme.
+* Playtested 2P with my brother. Still tons of bug...sigh.
+* Decreased the multiplier of enemies health to 0.6 from 1.0 (times the player count).
+* Removed all the "to be continued text".
+* Fixed the bug that Ranawato teleports to the other side of amazlet.
+* Audio are now muted when pausing.
+* Bug fix: Darkearspider no longer climbs higher than its original position when being damaged.
+* Adjusted ghost health: Keshia from 500 to 550. Bro SS from 550 to 650.
+* Adjusted size multipliers: Shrinking (Attack: from 0.75 to 0.9, Damage Taken: from 1.2 to 1.1, Self Knockback: from 1.5 to 1.25, Enemy Knockback: from 0.5 to 0.75).
+* Made Amazlet and Latortrans' touch damage a cycle so that players couldn't stand right on them and attack.
+* Ghost Heroes will no longer block enemies attacks.
 Comment: Video editting is so tiring, time-consuming yet fun.
+
+[Next]
+* All triggers should check only x or y.
+* Change all enemies to activate-based.
+* Rebalance heroes' skills damage. (Nerf: Plato's BS. Othox's HS, BS. BroSS's Ult. Sug's BS. Buff: Keshia's Ult. Othox's BA.)
 
 [Goals]
 * Nov 11: Make gifs of characters' attacks & skills, post it on the project site (inculding unreleased heroes). Level walk through (2P), record the gameplay!
-* Nov 12: Save and import key config from the user's files.
-* Nov 15: Preview video.
-* Nov 16: Introducation article.
-* Dec 30: Steam store ready to go.
+* Nov 12: Bug fix.
+* Nov 13: Save and import key config from the user's files.
+* Nov 15: Mac & Windows build (ver 0.1).
+* Nov 16: Preview video.
+* Nov 17: Itch.io page.
+* Nov 21: Introducation article.
+* Dec 31: Steam store ready to go.
 
 To Do List:
 **Alpha Version [Ver 0.1] Publishing**

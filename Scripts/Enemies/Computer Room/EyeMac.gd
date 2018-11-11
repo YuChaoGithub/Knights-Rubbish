@@ -382,7 +382,7 @@ func damaged(val):
 	crack_screen_according_to_health()
 
 func crack_screen_according_to_health():
-	var index = floor(float(ec.health_system.health) / float(MAX_HEALTH + 1) * screen_crack_textures.size())
+	var index = floor(float(ec.health_system.health) / float(ec.health_system.full_health + 1) * screen_crack_textures.size())
 	screen_crack.texture = screen_crack_textures[index]
 
 func resume_from_damaged():

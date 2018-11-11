@@ -166,7 +166,7 @@ func rng_step_while_standing():
 	status_timer = ec.cd_timer.new(RNG_STANDING_DURATION, self, "change_status", to_status)
 
 func get_health_percentage():
-	return float(ec.health_system.health) / float(MAX_HEALTH)
+	return float(ec.health_system.health) / float(ec.health_system.full_health)
 
 func kick_move(delta):
 	ec.play_animation("Walk")

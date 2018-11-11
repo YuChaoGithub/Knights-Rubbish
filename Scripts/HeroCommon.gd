@@ -99,7 +99,7 @@ var action_strings
 enum { DWARF = 0, NORMAL = 1, GIANT = 2 }
 var size_status = NORMAL
 var size_multipliers = [
-	{size = 0.5, attack = 0.75, defense = 1.2,  self_knock_back = 1.5, enemy_knock_back = 0.5},
+	{size = 0.5, attack = 0.9, defense = 1.1,  self_knock_back = 1.25, enemy_knock_back = 0.75},
 	{size = 1.0, attack = 1.0,  defense = 1.0,  self_knock_back = 1.0, enemy_knock_back = 1.0},
 	{size = 1.5, attack = 1.5,  defense = 0.75, self_knock_back = 0.5, enemy_knock_back = 2.0}
 ]

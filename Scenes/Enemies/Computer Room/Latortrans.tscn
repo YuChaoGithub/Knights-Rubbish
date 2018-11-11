@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scripts/Enemies/Computer Room/Latortrans.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Latortrans/Body.png" type="Texture" id=2]
@@ -3330,7 +3330,26 @@ extents = Vector2( 298.953, 324.931 )
 custom_solver_bias = 0.0
 extents = Vector2( 399.053, 55.018 )
 
-[node name="Latortrans" type="Node2D"]
+[sub_resource type="Animation" id=13]
+
+resource_name = "Animate"
+length = 6.0
+loop = true
+step = 0.03
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:collision_mask")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 5.94 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 1, 0 ]
+}
+
+[node name="Latortrans" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 activate_range_x = 1500
@@ -3342,7 +3361,6 @@ scale = Vector2( 3, 3 )
 
 [node name="Damage Area" type="Area2D" parent="Animation" index="0"]
 
-editor/display_folded = true
 visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -3704,6 +3722,8 @@ blend_times = [  ]
 
 [node name="Words" type="Node2D" parent="Animation" index="3"]
 
+editor/display_folded = true
+
 [node name="Doomed" type="Label" parent="Animation/Words" index="0"]
 
 anchor_left = 0.0
@@ -3796,7 +3816,6 @@ _sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
 
 [node name="TouchDamageArea" type="Area2D" parent="." index="1"]
 
-editor/display_folded = true
 visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -3817,6 +3836,16 @@ shape = SubResource( 11 )
 position = Vector2( -2.68121, 267.232 )
 shape = SubResource( 12 )
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TouchDamageArea" index="2"]
+
+root_node = NodePath("..")
+autoplay = "Animate"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Animate = SubResource( 13 )
+blend_times = [  ]
+
 [node name="Output Pos" type="Position2D" parent="." index="2"]
 
 position = Vector2( -387.544, -152.29 )
@@ -3830,6 +3859,8 @@ position = Vector2( 0.867859, -234.094 )
 avatar_texture = ExtResource( 20 )
 
 [node name="Audio" type="Node2D" parent="." index="5"]
+
+editor/display_folded = true
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
 

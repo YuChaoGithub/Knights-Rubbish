@@ -1,0 +1,294 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/HeroManager.gd" type="Script" id=2]
+[ext_resource path="res://Tilesets/White Wall.tres" type="TileSet" id=3]
+[ext_resource path="res://Graphics/background/Level 1/Trash Can.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 1.png" type="Texture" id=5]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 2.png" type="Texture" id=6]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 3.png" type="Texture" id=7]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 4.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 5.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 1.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 2.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 3.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 4.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 5.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 6.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Structures/Door.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Fonts/edosz.tres" type="DynamicFont" id=17]
+[ext_resource path="res://Tilesets/Wooden Floor.tres" type="TileSet" id=18]
+[ext_resource path="res://Scenes/UI/HeroPickerButton.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/UI/LevelPickerButtonSet.tscn" type="PackedScene" id=20]
+
+[node name="Game Level" type="Node2D"]
+
+position = Vector2( 1.88977, -10.0159 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="FollowingCamera" parent="." index="0" instance=ExtResource( 1 )]
+
+position = Vector2( 1318.11, -749.984 )
+z_index = 1
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", "Z Index" ]
+drag_margin_top = -0.1
+drag_margin_bottom = 1.1
+right_limit = 4500
+left_limit = 50
+bottom_limit = -50
+
+[node name="HeroManager" type="Position2D" parent="." index="1"]
+
+position = Vector2( 898.11, -439.984 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="WhiteWall" type="TileMap" parent="." index="2"]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 500, 500 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 0
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -262146, 0, 0, -262145, 0, 0, -327680, 0, 0, -327679, 0, 0, -327678, 0, 0, -327677, 0, 0, -327676, 0, 0, -327675, 0, 0, -327674, 0, 0, -327673, 0, 0, -327672, 0, 0, -327671, 0, 0, -196610, 0, 0, -196609, 0, 65537, -262144, 0, 4, -262143, 0, 1, -262142, 0, 65540, -262141, 0, 2, -262140, 0, 3, -262139, 0, 1, -262138, 0, 4, -262137, 0, 65537, -262136, 0, 4, -262135, 0, 0, -131074, 0, 0, -131073, 0, 65536, -196608, 0, 65537, -196607, 0, 65539, -196606, 0, 65537, -196605, 0, 65540, -196604, 0, 65538, -196603, 0, 1, -196602, 0, 3, -196601, 0, 4, -196600, 0, 65537, -196599, 0, 0, -65538, 0, 0, -65537, 0, 65539, -131072, 0, 3, -131071, 0, 65538, -131070, 0, 65540, -131069, 0, 65537, -131068, 0, 4, -131067, 0, 1, -131066, 0, 65540, -131065, 0, 2, -131064, 0, 65539, -131063, 0, 0, -2, 0, 0, -1, 0, 2, -65536, 0, 65539, -65535, 0, 3, -65534, 0, 65537, -65533, 0, 65540, -65532, 0, 65540, -65531, 0, 0, -65530, 0, 65536, -65529, 0, 65536, -65528, 0, 2, -65527, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 9, 0, 5 )
+_sections_unfolded = [ "Cell", "Collision" ]
+
+[node name="BackgroundDecorations" type="Node2D" parent="." index="3"]
+
+[node name="Trash Can" type="Sprite" parent="BackgroundDecorations" index="0"]
+
+position = Vector2( 690, -640 )
+texture = ExtResource( 4 )
+
+[node name="Trash Can2" type="Sprite" parent="BackgroundDecorations" index="1"]
+
+position = Vector2( 1498.11, -639.984 )
+texture = ExtResource( 4 )
+
+[node name="Paper 1" type="Sprite" parent="BackgroundDecorations" index="2"]
+
+position = Vector2( 451.464, -185.301 )
+rotation = 1.60867
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 2" type="Sprite" parent="BackgroundDecorations" index="3"]
+
+position = Vector2( 887.716, -163.398 )
+rotation = 1.98031
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 3" type="Sprite" parent="BackgroundDecorations" index="4"]
+
+position = Vector2( 1325.02, -182.994 )
+rotation = 2.74849
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 4" type="Sprite" parent="BackgroundDecorations" index="5"]
+
+position = Vector2( 1678.5, -185.415 )
+rotation = 1.62636
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 5" type="Sprite" parent="BackgroundDecorations" index="6"]
+
+position = Vector2( 1545.38, -176.542 )
+rotation = 1.96636
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 6" type="Sprite" parent="BackgroundDecorations" index="7"]
+
+position = Vector2( 2465.88, -180.103 )
+rotation = 2.09341
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 7" type="Sprite" parent="BackgroundDecorations" index="8"]
+
+position = Vector2( 182.553, -217.94 )
+rotation = 1.65659
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 8" type="Sprite" parent="BackgroundDecorations" index="9"]
+
+position = Vector2( 651.254, -171.277 )
+rotation = -1.25845
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 12 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 9" type="Sprite" parent="BackgroundDecorations" index="10"]
+
+position = Vector2( 1250.12, -189.987 )
+rotation = -1.45834
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 10" type="Sprite" parent="BackgroundDecorations" index="11"]
+
+position = Vector2( 2879.58, -195.77 )
+rotation = 0.0883502
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 14 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Paper 11" type="Sprite" parent="BackgroundDecorations" index="12"]
+
+position = Vector2( 1791.11, -171.79 )
+rotation = 1.57291
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 15 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Doors" type="Node2D" parent="." index="4"]
+
+editor/display_folded = true
+
+[node name="Level 1 Door" parent="Doors" index="0" instance=ExtResource( 16 )]
+
+editor/display_folded = true
+position = Vector2( 2202.88, -439.984 )
+enter_scene_path = "res://Scenes/Levels/Level 1-0.tscn"
+
+[node name="Label" type="Label" parent="Doors/Level 1 Door" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -135.0
+margin_top = -466.0
+margin_right = -42.0
+margin_bottom = -431.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 17 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Level 1"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Platform" type="TileMap" parent="." index="5"]
+
+mode = 0
+tile_set = ExtResource( 18 )
+cell_size = Vector2( 100, 100 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 0
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 4
+collision_mask = 0
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -917506, 0, 196609, -917505, 0, 0, -851970, 0, 65542, -851969, 0, 131075, -786434, 0, 1, -786433, 0, 6, -720898, 0, 65542, -720897, 0, 6, -655362, 0, 65542, -655361, 0, 6, -589826, 0, 65542, -589825, 0, 131075, -524290, 0, 1, -524289, 0, 131075, -458754, 0, 65542, -458753, 0, 6, -393218, 0, 1, -393217, 0, 6, -327682, 0, 1, -327681, 0, 6, -262146, 0, 1, -262145, 0, 6, -196610, 0, 65542, -196609, 0, 131075, -131074, 0, 1, -131073, 0, 6, -65538, 0, 1, -65537, 0, 2, -131072, 0, 196612, -131071, 0, 131077, -131070, 0, 131077, -131069, 0, 131076, -131068, 0, 131077, -131067, 0, 131076, -131066, 0, 131077, -131065, 0, 3, -131064, 0, 131076, -131063, 0, 131076, -131062, 0, 3, -131061, 0, 131076, -131060, 0, 196613, -131059, 0, 196613, -131058, 0, 131076, -131057, 0, 3, -131056, 0, 196612, -131055, 0, 3, -131054, 0, 131077, -131053, 0, 196612, -131052, 0, 131077, -131051, 0, 131077, -131050, 0, 131077, -131049, 0, 3, -131048, 0, 131076, -131047, 0, 3, -131046, 0, 131076, -131045, 0, 131077, -131044, 0, 131077, -131043, 0, 196612, -131042, 0, 131076, -131041, 0, 131076, -131040, 0, 131077, -131039, 0, 3, -131038, 0, 131077, -131037, 0, 131076, -131036, 0, 196613, -131035, 0, 196612, -131034, 0, 131077, -131033, 0, 0, -2, 0, 1, -1, 0, 65541, -65536, 0, 4, -65535, 0, 4, -65534, 0, 65541, -65533, 0, 65541, -65532, 0, 65538, -65531, 0, 4, -65530, 0, 5, -65529, 0, 65540, -65528, 0, 65538, -65527, 0, 65538, -65526, 0, 5, -65525, 0, 65540, -65524, 0, 65541, -65523, 0, 65538, -65522, 0, 5, -65521, 0, 65541, -65520, 0, 5, -65519, 0, 65541, -65518, 0, 65538, -65517, 0, 65540, -65516, 0, 65541, -65515, 0, 5, -65514, 0, 4, -65513, 0, 4, -65512, 0, 65541, -65511, 0, 65538, -65510, 0, 65540, -65509, 0, 65538, -65508, 0, 65538, -65507, 0, 65540, -65506, 0, 5, -65505, 0, 4, -65504, 0, 65540, -65503, 0, 4, -65502, 0, 65540, -65501, 0, 65538, -65500, 0, 65541, -65499, 0, 65541, -65498, 0, 65540, -65497, 0, 131075, 65534, 0, 131072, 65535, 0, 196614, 0, 0, 196614, 1, 0, 196614, 2, 0, 131073, 3, 0, 196614, 4, 0, 131078, 5, 0, 131078, 6, 0, 131078, 7, 0, 196614, 8, 0, 196614, 9, 0, 131078, 10, 0, 131073, 11, 0, 131078, 12, 0, 131078, 13, 0, 196614, 14, 0, 131073, 15, 0, 196614, 16, 0, 131078, 17, 0, 131078, 18, 0, 131073, 19, 0, 131078, 20, 0, 196614, 21, 0, 196614, 22, 0, 196614, 23, 0, 131073, 24, 0, 196614, 25, 0, 131078, 26, 0, 131078, 27, 0, 131078, 28, 0, 131073, 29, 0, 196614, 30, 0, 196614, 31, 0, 196614, 32, 0, 196614, 33, 0, 131073, 34, 0, 196614, 35, 0, 196614, 36, 0, 131073, 37, 0, 131073, 38, 0, 131073, 39, 0, 196611 )
+_sections_unfolded = [ "Cell", "Collision" ]
+
+[node name="Writings" type="Node2D" parent="." index="6"]
+
+_sections_unfolded = [ "Z Index" ]
+
+[node name="Label" type="Label" parent="Writings" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2508.0
+margin_top = -580.0
+margin_right = 2997.0
+margin_bottom = -507.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 17 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "There are only 1 level in the game because why not?"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Label2" type="Label" parent="Writings" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 3988.0
+margin_top = -130.0
+margin_right = 4242.0
+margin_bottom = -95.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 17 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "Don't jump"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="PlatformDecorations" type="Node2D" parent="." index="7"]
+
+[node name="ForegroundDecorations" type="Node2D" parent="." index="8"]
+
+z_index = 1
+_sections_unfolded = [ "Z Index" ]
+
+[node name="HeroPickerButton" parent="." index="9" instance=ExtResource( 19 )]
+
+[node name="LevelPickerButtonSet" parent="." index="10" instance=ExtResource( 20 )]
+
+[node name="Position2D" type="Position2D" parent="." index="11"]
+
+position = Vector2( 4500, 0 )
+scale = Vector2( 10, 10 )
+_sections_unfolded = [ "Transform" ]
+
+

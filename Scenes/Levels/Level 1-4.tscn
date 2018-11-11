@@ -3452,9 +3452,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker4" to="Writings/CountdownTV2" method="tick"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker4" to="Enemies/EeloKickerSpawner3" method="spawn_mob"]
-
 [connection signal="defeated" from="Enemies/Eelo Kicker4" to="Enemies/EeloKickerSpawner2" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker4" to="Enemies/EeloKickerSpawner3" method="spawn_mob"]
 
 [connection signal="completed" from="Enemies/EeloKickerSpawner2" to="Enemies/EeloKickerSpawner5" method="spawn_mob"]
 
@@ -3512,9 +3512,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker11" to="Enemies/EeloPuncherSpawn5" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Eelo Puncher4" to="CameraChangingTriggers/LastDoubleDeckMob" method="increment_count"]
-
 [connection signal="defeated" from="Enemies/Eelo Puncher4" to="Writings/CountdownTV5" method="tick"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher4" to="CameraChangingTriggers/LastDoubleDeckMob" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Eelo Puncher5" to="Writings/CountdownTV5" method="tick"]
 

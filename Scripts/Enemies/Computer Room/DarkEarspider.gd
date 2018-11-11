@@ -134,13 +134,15 @@ func clap_attack_hit(area):
 
 func climb_up(delta):
 	ec.play_animation("Still")
-	movement_type.set_velocity(0, -SPEED_Y)
-	global_position += movement_type.movement(delta)
 
 	# Back to the original y position. Start random horizontal movement.
 	if global_position.y <= original_pos.y:
 		search_for_target()
 		ec.change_status(RANDOM_MOVEMENT)
+		return
+
+	movement_type.set_velocity(0, -SPEED_Y)
+	global_position += movement_type.movement(delta)
 
 func perform_random_movement(delta):
 	ec.play_animation("Swing")

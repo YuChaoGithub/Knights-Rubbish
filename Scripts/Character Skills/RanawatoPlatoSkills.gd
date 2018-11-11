@@ -49,6 +49,7 @@ const HORIZONTAL_SKILL_COOLDOWN = 0.1
 const HORIZONTAL_SKILL_DAMAGE = 70
 const HORIZONTAL_SKILL_STUN_DURATION = 2.5
 const HORIZONTAL_SKILL_HIT_DURATION = 0.3
+const HORIZONTAL_SKILL_TELEPORT_BIAS = Vector2(-0.001, -0.001)
 var horizontal_skill_spoon = preload("res://Scenes/Characters/Ranawato Plato/RanawatoHorizontalSkillSpoon.tscn")
 var horizontal_skill_blink_particles = preload("res://Scenes/Particles/RanawatoHorizontalBlinkParticles.tscn")
 onready var horizontal_skill_spawn_pos = $"../Sprite/Animation/HorizontalSkillSpawnPos"
@@ -185,7 +186,7 @@ func horizontal_skill_hit(enemy):
     enemy.stunned(HORIZONTAL_SKILL_STUN_DURATION)
     enemy.damaged(int(HORIZONTAL_SKILL_DAMAGE * hero.attack_modifier))
 
-    hero.global_position = enemy.global_position
+    hero.global_position = enemy.global_position + HORIZONTAL_SKILL_TELEPORT_BIAS
 
     hero.play_animation("Horizontal Skill Hit")
     hero.set_status("animate_movement", false, HORIZONTAL_SKILL_HIT_DURATION)

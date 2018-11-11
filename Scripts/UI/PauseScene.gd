@@ -8,6 +8,7 @@ var key_setting_scene = preload("res://Scenes/UI/Key Setting Scene.tscn")
 var confirm_panel = preload("res://Scenes/UI/Confirm Panel.tscn")
 
 func _ready():
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
 	get_tree().paused = true
 
 func settings_pressed():
@@ -43,5 +44,6 @@ func do_nothing():
 func play_quit_animation():
 	get_tree().paused = false
 
+	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), false)
 	# queue_free() will be called in the Quit animation.
 	$ColorRect/AnimationPlayer.play("Quit")

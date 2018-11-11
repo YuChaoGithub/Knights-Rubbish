@@ -157,13 +157,12 @@ func resume_face():
 	status_timer = ec.cd_timer.new(RESUME_FACE_ANIM_DURATION, self, "change_status", FACE)
 
 func spawn_num_according_to_health(min_count, max_count):
-	return int(lerp(float(min_count), float(max_count), 1.0 - (float(ec.health_system.health) / float(MAX_HEALTH))))
+	return int(lerp(float(min_count), float(max_count), 1.0 - (float(ec.health_system.health) / float(ec.health_system.full_health))))
 
 func touch_attack_hit(area):
 	if area.is_in_group("hero"):
 		var character = area.get_node("..")
-		var knock_back_dir = -1 if character.global_position.x < global_position.x else 1
-		character.knocked_back(knock_back_dir * KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
+		character.knocked_back(-KNOCK_BACK_VEL_X, KNOCK_BACK_VEL_Y, KNOCK_BACK_FADE_RATE)
 		character.damaged(TOUCH_DAMAGE)
 
 func damaged(val):

@@ -1666,7 +1666,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Color", "Gravity", "Initial Velocity", "Scale", "Spread" ]
 
-[node name="Dark Earspider" type="Node2D" index="0"]
+[node name="Dark Earspider" type="Node2D"]
 
 z_index = 1
 script = ExtResource( 1 )
@@ -1791,6 +1791,8 @@ v_frames = 1
 _sections_unfolded = [ "Process Material", "Textures", "Time", "Z Index" ]
 
 [node name="Audio" type="Node2D" parent="." index="4"]
+
+editor/display_folded = true
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
 

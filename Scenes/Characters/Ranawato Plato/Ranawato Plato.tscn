@@ -10576,10 +10576,10 @@ tracks/49/loop_wrap = true
 tracks/49/imported = false
 tracks/49/enabled = true
 tracks/49/keys = {
-"times": PoolRealArray( 0, 0.4, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ 0, 2, 0 ]
+"values": [ 2, 0 ]
 }
 tracks/50/type = "value"
 tracks/50/path = NodePath("HorizontalSkillParticles:emitting")
@@ -11306,7 +11306,7 @@ extents = Vector2( 68.3893, 105.259 )
 custom_solver_bias = 0.0
 extents = Vector2( 56.8438, 67.5532 )
 
-[node name="Ranawato Plato Sprites" type="KinematicBody2D"]
+[node name="Ranawato Plato Sprites" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 0
@@ -11676,7 +11676,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Left Arm" type="Sprite" parent="Sprite/Animation/Body" index="1"]
 
 position = Vector2( -82.6986, 39.716 )
-rotation = 2.04582
+rotation = -0.0202168
 texture = ExtResource( 18 )
 offset = Vector2( -19.6845, 22.75 )
 _sections_unfolded = [ "Transform" ]
@@ -11685,7 +11685,6 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 82.6793, 37.4322 )
-rotation = -2.14901
 texture = ExtResource( 19 )
 offset = Vector2( 14.8241, 22.1265 )
 _sections_unfolded = [ "Transform" ]
@@ -11791,8 +11790,8 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Trans
 
 [node name="Spoon" type="Sprite" parent="Sprite/Animation" index="5"]
 
-position = Vector2( 2.84258, -256.899 )
-rotation = -0.0154184
+position = Vector2( 111.351, 5.39766 )
+rotation = -0.0152844
 texture = ExtResource( 24 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -11858,7 +11857,7 @@ shape = SubResource( 40 )
 
 [node name="Face" type="Sprite" parent="Sprite/Animation/Spoon" index="3"]
 
-self_modulate = Color( 1, 0.679688, 0, 1 )
+self_modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 1.91812, -79.4026 )
 texture = ExtResource( 25 )
 _sections_unfolded = [ "Visibility" ]
@@ -11869,7 +11868,7 @@ position = Vector2( -1.44019, -87.1546 )
 
 [node name="Frame" type="Sprite" parent="Sprite/Animation/Spoon" index="5"]
 
-modulate = Color( 1, 0.609375, 0, 1 )
+modulate = Color( 1, 1, 1, 0 )
 show_behind_parent = true
 texture = ExtResource( 26 )
 _sections_unfolded = [ "Visibility" ]

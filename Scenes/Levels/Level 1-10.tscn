@@ -101,7 +101,7 @@
 [ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 4.png" type="Texture" id=99]
 [ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=100]
 
-[node name="Game Level" type="Node2D" index="0"]
+[node name="Game Level" type="Node2D"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -1064,8 +1064,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
 
-editor/display_folded = true
-
 [node name="FirstTrigger" type="Position2D" parent="CameraChangingTriggers" index="0"]
 
 position = Vector2( 500, -150 )
@@ -1088,7 +1086,7 @@ script = ExtResource( 72 )
 _sections_unfolded = [ "Transform" ]
 range_x = 1000
 range_y = 1000
-x_check = 2
+x_check = 0
 y_check = 2
 
 [node name="MobClearTrigger2" type="Node2D" parent="CameraChangingTriggers" index="3"]
@@ -1103,7 +1101,7 @@ script = ExtResource( 72 )
 _sections_unfolded = [ "Transform" ]
 range_x = 1000
 range_y = 1000
-x_check = 2
+x_check = 0
 y_check = 2
 
 [node name="OrangePortalTrigger2" type="Position2D" parent="CameraChangingTriggers" index="5"]
@@ -1114,7 +1112,7 @@ _sections_unfolded = [ "Transform" ]
 range_x = 1000
 range_y = 1000
 x_check = 2
-y_check = 2
+y_check = 0
 
 [node name="MobClearTrigger3" type="Node2D" parent="CameraChangingTriggers" index="6"]
 
@@ -1128,7 +1126,7 @@ script = ExtResource( 72 )
 _sections_unfolded = [ "Transform" ]
 range_x = 1000
 range_y = 1000
-x_check = 2
+x_check = 0
 y_check = 2
 
 [node name="MobClearTrigger4" type="Node2D" parent="CameraChangingTriggers" index="8"]
@@ -1143,7 +1141,7 @@ script = ExtResource( 72 )
 _sections_unfolded = [ "Transform" ]
 range_x = 1000
 range_y = 1000
-x_check = 2
+x_check = 0
 y_check = 2
 
 [node name="BlackPortalTrigger2" type="Position2D" parent="CameraChangingTriggers" index="10"]
@@ -1153,7 +1151,7 @@ script = ExtResource( 72 )
 _sections_unfolded = [ "Transform" ]
 range_x = 1000
 range_y = 1000
-x_check = 2
+x_check = 0
 y_check = 2
 
 [node name="OtherPlatforms" type="Node2D" parent="." index="8"]
@@ -1171,8 +1169,6 @@ position = Vector2( 4500, 800 )
 position = Vector2( 8200, 1650 )
 
 [node name="Structures" type="Node2D" parent="." index="10"]
-
-editor/display_folded = true
 
 [node name="Main Menu Door" parent="Structures" index="0" instance=ExtResource( 75 )]
 
@@ -2133,15 +2129,15 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="FollowingCamera" method="update_top_limit" binds= [ 600 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/RedPortalTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 10950 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/RedPortalTrigger1" to="Activate3" method="activate"]
+
+[connection signal="passed" from="CameraChangingTriggers/RedPortalTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 10950 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger4" to="FollowingCamera" method="update_right_limit" binds= [ 21250 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/BlackPortalTrigger1" to="FollowingCamera" method="update_top_limit" binds= [ 1300 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/BlackPortalTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 22500 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/BlackPortalTrigger1" to="FollowingCamera" method="update_top_limit" binds= [ 1300 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/BlackPortalTrigger2" to="FollowingCamera" method="update_top_limit" binds= [ 1900 ]]
 
