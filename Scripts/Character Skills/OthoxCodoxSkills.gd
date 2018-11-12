@@ -3,8 +3,8 @@ extends Node2D
 # Basic Attack.
 const BASIC_ATTACK_DURATION = 3.0
 const BASIC_ATTACK_COOLDOWN = 0.1
-const BASIC_ATTACK_DAMAGE_MIN = 65
-const BASIC_ATTACK_DAMAGE_MAX = 80
+const BASIC_ATTACK_DAMAGE_MIN = 130
+const BASIC_ATTACK_DAMAGE_MAX = 150
 const BASIC_ATTACK_KNOCK_BACK_VEL_X = 500
 const BASIC_ATTACK_KNOCK_BACK_VEL_Y = 50
 const BASIC_ATTACK_KNOCK_BACK_FADE_RATE = 1000
@@ -17,7 +17,7 @@ const BASIC_SKILL_DURATION = 3.0
 const BASIC_SKILL_COOLDOWN = 0.15
 const BASIC_SKILL_RAIN_TIME = 1.5
 const BASIC_SKILL_RAIN_COUNT = 60
-const BASIC_SKILL_RANGE = 600
+const BASIC_SKILL_RANGE = 400
 
 var basic_skill_rain = preload("res://Scenes/Characters/Othox Codox/OthoxBasicSkillRain.tscn")
 onready var following_camera = $"../../FollowingCamera"
@@ -66,6 +66,17 @@ var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 onready var hero = $".."
 onready var spawn_node = $"../.."
+
+onready var audios_to_stop_when_stunned = [
+    $"../Audio/Drink",
+    $"../Audio/BABling",
+    $"../Audio/BAHoop",
+    $"../Audio/BSRain",
+    $"../Audio/DS",
+    $"../Audio/HSFlame",
+    $"../Audio/HSShoot",
+    $"../Audio/US"
+]
 
 func _ready():
     basic_skill_interval = (BASIC_SKILL_DURATION - BASIC_SKILL_RAIN_TIME) / BASIC_SKILL_RAIN_COUNT

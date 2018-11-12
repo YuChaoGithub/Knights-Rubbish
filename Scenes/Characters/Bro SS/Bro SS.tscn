@@ -29498,7 +29498,7 @@ tracks/55/keys = {
 custom_solver_bias = 0.0
 extents = Vector2( 54.2952, 101.081 )
 
-[node name="Bro SS Sprites" type="KinematicBody2D"]
+[node name="Bro SS Sprites" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 0
@@ -29518,7 +29518,6 @@ confused_icon_path = NodePath("Sprite/Animation/Confused Icon")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-visible = false
 position = Vector2( 2.40442, 34.6059 )
 shape = SubResource( 1 )
 

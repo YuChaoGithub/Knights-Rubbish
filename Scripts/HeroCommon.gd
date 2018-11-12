@@ -99,7 +99,7 @@ var action_strings
 enum { DWARF = 0, NORMAL = 1, GIANT = 2 }
 var size_status = NORMAL
 var size_multipliers = [
-	{size = 0.5, attack = 0.9, defense = 1.1,  self_knock_back = 1.25, enemy_knock_back = 0.75},
+	{size = 0.5, attack = 0.85, defense = 1.1,  self_knock_back = 1.25, enemy_knock_back = 0.75},
 	{size = 1.0, attack = 1.0,  defense = 1.0,  self_knock_back = 1.0, enemy_knock_back = 1.0},
 	{size = 1.5, attack = 1.5,  defense = 0.75, self_knock_back = 0.5, enemy_knock_back = 2.0}
 ]
@@ -624,6 +624,8 @@ func stunned(duration):
 	if status.invincible || status.cc_immune || status.dead:
 		return
 
+	mute_all_skill_sounds()
+
 	# Spawn stunned text.
 	var stunned_text = number_indicator.instance()
 	stunned_text.initialize(-1, STUNNED_TEXT_COLOR, number_spawn_pos, self)
@@ -750,6 +752,9 @@ func healed(val):
 	num.initialize(val, HEAL_NUMBER_COLOR, number_spawn_pos, self)
 
 func die():
+	mute_all_skill_sounds()
+	interrupt_skills()
+
 	status.dead = true
 
 	# Discard unused ult.
@@ -802,3 +807,7 @@ func reset_alpha_and_teleport_to_position(pos):
 	add_child(lerper)
 	
 	global_position = pos
+
+func mute_all_skill_sounds():
+	for audio in combo_handler.audios_to_stop_when_stunned:
+		audio.stop()

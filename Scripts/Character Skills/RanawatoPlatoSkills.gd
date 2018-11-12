@@ -15,7 +15,7 @@ onready var basic_attack_particles_spawn_pos = $"../Sprite/Animation/Spoon/Basic
 # Basic Skill
 const BASIC_SKILL_DURATION = 1.85
 const BASIC_SKILL_COOLDOWN = 0.2
-const BASIC_SKILL_DAMAGE = 30
+const BASIC_SKILL_DAMAGE = 20
 const BASIC_SKILL_KNOCK_BACK_VEL_X = 500
 const BASIC_SKILL_KNOCK_BACK_VEL_Y = 50
 const BASIC_SKILL_KNOCK_BACK_FADE_RATE = 1000
@@ -28,7 +28,7 @@ const DOWN_SKILL_COOLDOWN = 0.1
 const UP_SKILL_DURATION = 1.3
 const UP_SKILL_COOLDOWN = 0.2
 const UP_SKILL_DISPLACEMENT = 150
-const UP_SKILL_DAMAGE = 50
+const UP_SKILL_DAMAGE = 30
 const UP_SKILL_KNOCK_BACK_VEL_X = 300
 const UP_SKILL_KNOCK_BACK_VEL_Y = 200
 const UP_SKILL_KNOCK_BACK_FADE_RATE = 300
@@ -46,7 +46,7 @@ onready var up_skill_puff_spawn_pos = $"../Sprite/Animation/UpSkillPuffSpawnPos"
 const HORIZONTAL_SKILL_TOSS_TIME = 0.7
 const HORIZONTAL_SKILL_DURATION = 1.5
 const HORIZONTAL_SKILL_COOLDOWN = 0.1
-const HORIZONTAL_SKILL_DAMAGE = 70
+const HORIZONTAL_SKILL_DAMAGE = 50
 const HORIZONTAL_SKILL_STUN_DURATION = 2.5
 const HORIZONTAL_SKILL_HIT_DURATION = 0.3
 const HORIZONTAL_SKILL_TELEPORT_BIAS = Vector2(-0.001, -0.001)
@@ -72,6 +72,17 @@ var strike_timer = null
 
 onready var hero = $".."
 onready var spawn_node = $"../.."
+
+onready var audios_to_stop_when_stunned = [
+    $"../Audio/Drink",
+    $"../Audio/BATone",
+    $"../Audio/BA",
+    $"../Audio/BS",
+    $"../Audio/BSTone",
+    $"../Audio/DS",
+    $"../Audio/HSTone",
+    $"../Audio/US"
+]
 
 func _ready():
     ult_interval = (ULT_END_SHOOT_TIME - ULT_SHOOT_TIME) / ULT_SHOOT_TOTAL_SPOONS

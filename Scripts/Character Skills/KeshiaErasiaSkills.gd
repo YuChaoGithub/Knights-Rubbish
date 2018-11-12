@@ -26,8 +26,8 @@ const HORIZONTAL_SKILL_COOLDOWN = 0.15
 const UP_SKILL_DURATION = 0.7
 const UP_SKILL_COOLDOWN = 0.2
 const UP_SKILL_DISPLACEMENT = 150.0
-const UP_SKILL_DAMAGE_MIN = 40
-const UP_SKILL_DAMAGE_MAX = 50
+const UP_SKILL_DAMAGE_MIN = 35
+const UP_SKILL_DAMAGE_MAX = 45
 const UP_SKILL_KNOCK_BACK_VEL_X = 300
 const UP_SKILL_KNOCK_BACK_VEL_Y = 200
 const UP_SKILL_KNOCK_BACK_FADE_RATE = 500
@@ -76,6 +76,13 @@ var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
 # Audio.
 onready var bs_smash_audio = $"../Audio/BSSmash"
 onready var ult_shoot_audio = $"../Audio/UltShoot"
+onready var audios_to_stop_when_stunned = [
+	$"../Audio/BASwipe1",
+	$"../Audio/BASwipe2",
+	$"../Audio/BSHop",
+	$"../Audio/HSToss",
+	$"../Audio/Drink"
+]
 
 func _ready():
 	# Jumping will always reset the availability of up skill.
@@ -340,7 +347,9 @@ func ult():
 func fire_ult():
 	ult_shoot_audio.play()
 	hero.release_ult()
-	hero.get_node("Ult Hit Box").global_position = hero.following_camera.global_position
+	var ult_hit_box = hero.get_node("Ult Hit Box")
+	ult_hit_box.scale = Vector2(1, 1) / hero.size_multipliers[hero.size_status].size
+	ult_hit_box.global_position = hero.following_camera.global_position
 
 func ult_hit(area):
 	if area.is_in_group("enemy"):

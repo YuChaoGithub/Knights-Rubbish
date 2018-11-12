@@ -5,8 +5,8 @@ const STAY_TIME = 0.2
 const KNOCK_BACK_VEL_X = 400
 const KNOCK_BACK_VEL_Y = 200
 const KNOCK_BACK_FADE_RATE = 800
-const DAMAGE_MIN = 300
-const DAMAGE_MAX = 500
+const DAMAGE_MIN = 350
+const DAMAGE_MAX = 550
 const PARTICLE_DURATION = 3
 
 var char_pos

@@ -206,6 +206,7 @@ _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="Writings" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Z Index" ]
 
 [node name="CountdownTV" parent="Writings" index="0" instance=ExtResource( 19 )]
@@ -1473,6 +1474,8 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="PlatformDecorations" type="Node2D" parent="." index="6"]
 
+editor/display_folded = true
+
 [node name="BlankDoor" parent="PlatformDecorations" index="0" instance=ExtResource( 22 )]
 
 position = Vector2( 607.346, -641.991 )
@@ -1535,8 +1538,6 @@ position = Vector2( 11097.1, -637.676 )
 texture = ExtResource( 32 )
 
 [node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
-
-editor/display_folded = true
 
 [node name="FirstTrigger" type="Position2D" parent="CameraChangingTriggers" index="0"]
 
@@ -1612,6 +1613,7 @@ position = Vector2( 9150, -200 )
 
 position = Vector2( 12200, -900 )
 enter_scene_path = "res://Scenes/Levels/Level 1-8.tscn"
+available = true
 
 [node name="Enemies" type="Node2D" parent="." index="11"]
 
@@ -1665,7 +1667,7 @@ position = Vector2( 8700, -450 )
 
 position = Vector2( 10550, -873.479 )
 _sections_unfolded = [ "Transform" ]
-activate_range_x = 800
+activate_range_x = 600
 screen_capture_slot = 0
 
 [node name="PowerUps" type="Node2D" parent="." index="12"]
@@ -1733,9 +1735,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 0.2 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 11950 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
 [connection signal="defeated" from="Enemies/Calcasio" to="CameraChangingTriggers/MobClearTrigger" method="increment_count"]
 

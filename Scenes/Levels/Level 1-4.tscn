@@ -2545,6 +2545,7 @@ change_to = 2
 
 position = Vector2( 25448.1, -1089.98 )
 enter_scene_path = "res://Scenes/Levels/Level 1-5.tscn"
+available = true
 
 [node name="BlankDoor" parent="Structures" index="2" instance=ExtResource( 82 )]
 
@@ -3414,23 +3415,23 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/DoubleDeckEnter" to="FollowingCamera" method="update_right_margin" binds= [ 0.6 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/DoubleDeckEnter" to="FollowingCamera" method="update_left_margin" binds= [ 0.4 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/DoubleDeckEnter" to="FollowingCamera" method="update_left_limit" binds= [ 11850 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/DoubleDeckEnter" to="FollowingCamera" method="update_left_margin" binds= [ 0.4 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckFirstMob" to="FollowingCamera" method="update_right_margin" binds= [ 0.3 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckFirstMob" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckFirstMob" to="FollowingCamera" method="update_right_limit" binds= [ 18850 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckFirstMob" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckSecondMob" to="FollowingCamera" method="update_right_limit" binds= [ 22850 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/LastDoubleDeckEnter" to="FollowingCamera" method="update_right_margin" binds= [ 0.6 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/LastDoubleDeckEnter" to="FollowingCamera" method="update_left_margin" binds= [ 0.4 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/LastDoubleDeckEnter" to="FollowingCamera" method="update_left_limit" binds= [ 18850 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/LastDoubleDeckEnter" to="FollowingCamera" method="update_left_margin" binds= [ 0.4 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/LastDoubleDeckMob" to="FollowingCamera" method="update_right_limit" binds= [ 25750 ]]
 
@@ -3450,11 +3451,11 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="completed" from="Enemies/EeloKickerSpawner10" to="CameraChangingTriggers/Well" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker4" to="Writings/CountdownTV2" method="tick"]
-
 [connection signal="defeated" from="Enemies/Eelo Kicker4" to="Enemies/EeloKickerSpawner2" method="spawn_mob"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker4" to="Enemies/EeloKickerSpawner3" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker4" to="Writings/CountdownTV2" method="tick"]
 
 [connection signal="completed" from="Enemies/EeloKickerSpawner2" to="Enemies/EeloKickerSpawner5" method="spawn_mob"]
 
@@ -3464,25 +3465,25 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="completed" from="Enemies/EeloKickerSpawner5" to="CameraChangingTriggers/PortraitMob" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker6" to="Writings/CountdownTV3" method="tick"]
-
 [connection signal="defeated" from="Enemies/Eelo Kicker6" to="Enemies/EeloKickerSpawner7" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker7" to="Writings/CountdownTV3" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Kicker6" to="Writings/CountdownTV3" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker7" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker14" to="Writings/CountdownTV3" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Kicker7" to="Writings/CountdownTV3" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker14" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker13" to="Writings/CountdownTV3" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Kicker14" to="Writings/CountdownTV3" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker13" to="Enemies/EeloKickerSpawner6" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker8" to="Writings/CountdownTV3" method="tick"]
+[connection signal="defeated" from="Enemies/Eelo Kicker13" to="Writings/CountdownTV3" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker8" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker8" to="Writings/CountdownTV3" method="tick"]
 
 [connection signal="completed" from="Enemies/EeloKickerSpawner6" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
 
@@ -3512,9 +3513,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker11" to="Enemies/EeloPuncherSpawn5" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Eelo Puncher4" to="Writings/CountdownTV5" method="tick"]
-
 [connection signal="defeated" from="Enemies/Eelo Puncher4" to="CameraChangingTriggers/LastDoubleDeckMob" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher4" to="Writings/CountdownTV5" method="tick"]
 
 [connection signal="defeated" from="Enemies/Eelo Puncher5" to="Writings/CountdownTV5" method="tick"]
 

@@ -1093,19 +1093,34 @@ Comment: Experiencing self-imposed crunches these weeks, haha!
 * Ghost Heroes will no longer block enemies attacks.
 Comment: Video editting is so tiring, time-consuming yet fun.
 
+[2018.11.12]
+* Decreased Godot's standing time.
+* Added a linkable Logo in the start menu.
+* Deleted the arena button in the start menu.
+* Made key configuration persistent between games.
+* Now further levels will be locked before the previous ones are completed.
+* Ranawato's Horizontal Skill will now be cancelled if it flies off the screen.
+* Now `PassingTrigger.gd` checks for all heroes instead of only the min/max positioned one.
+* Now P1 and P2 have different choosing audio in the Hero Choosing Scene.
+* Attack sounds will now be muted when interrupted.
+* Dying will now interrupt skills.
+* Use "Health multiplier for coop" instead of "Health multiplier per players" for mob health.
+* Added Splash Screen.
+* Check and reset (if neccessary) all triggers carefully in all levels. Tested (1P only).
+* Fixed the bug that Keshia's ult isn't fullscreen when he is shrinked or gianted.
+* Rebalanced heroes. Generally, nerf Plato, Othox and Big Brother.
+* Adjusted size multipliers: Shrinking (Attack: from 0.9 to 0.85).
+
 [Next]
-* All triggers should check only x or y.
-* Change all enemies to activate-based.
 * Rebalance heroes' skills damage. (Nerf: Plato's BS. Othox's HS, BS. BroSS's Ult. Sug's BS. Buff: Keshia's Ult. Othox's BA.)
 
 [Goals]
-* Nov 11: Make gifs of characters' attacks & skills, post it on the project site (inculding unreleased heroes). Level walk through (2P), record the gameplay!
-* Nov 12: Bug fix.
-* Nov 13: Save and import key config from the user's files.
-* Nov 15: Mac & Windows build (ver 0.1).
-* Nov 16: Preview video.
-* Nov 17: Itch.io page.
-* Nov 21: Introducation article.
+* Nov 13: 1P full play through test.
+* Nov 16: Trailer.
+* Nov 18: 2P full play through test.
+* Nov 20: Mac & Windows build (ver 0.1).
+* Nov 22: Itch.io page.
+* Nov 23: Introducation article.
 * Dec 31: Steam store ready to go.
 
 To Do List:

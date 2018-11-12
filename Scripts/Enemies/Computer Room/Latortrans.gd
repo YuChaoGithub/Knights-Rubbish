@@ -219,6 +219,10 @@ func die():
 	$TouchDamageArea.queue_free()
 	$Animation/Body/Input/InputAttackArea.queue_free()
 
+	var user_data = get_node("/root/UserDataSingleton")
+	user_data.level_available.amazlet = 1
+	user_data.save_level_data()
+
 	ec.die()
 	ec.health_bar.drop_health_bar()
 	set_process(false)

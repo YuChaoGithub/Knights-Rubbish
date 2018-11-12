@@ -6,8 +6,8 @@ const BASIC_ATTACK_COOLDOWN = 0.2
 
 const BASIC_SKILL_DURATION = 0.8
 const BASIC_SKILL_COOLDOWN = 0.35
-const BASIC_SKILL_DAMAGE_MIN = 5
-const BASIC_SKILL_DAMAGE_MAX = 10
+const BASIC_SKILL_DAMAGE_MIN = 10
+const BASIC_SKILL_DAMAGE_MAX = 15
 const BASIC_SKILL_KNOCK_BACK_VEL_X = 1200
 const BASIC_SKILL_KNOCK_BACK_VEL_Y = 50
 const BASIC_SKILL_KNOCK_BACK_FADE_RATE = 1400
@@ -60,6 +60,13 @@ var up_skill_timestamp = 0
 var up_skill_targets = []
 
 onready var ult_shoot_audio = $"../Audio/UltShoot"
+onready var audios_to_stop_when_stunned = [
+    $"../Audio/Drink",
+    $"../Audio/BAAh",
+    $"../Audio/BAChew",
+    $"../Audio/HSAh",
+    $"../Audio/HSChew"
+]
 
 var ult_timer
 

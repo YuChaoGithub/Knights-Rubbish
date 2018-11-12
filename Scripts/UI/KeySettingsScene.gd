@@ -38,5 +38,7 @@ func confirm_button_pressed():
         resume_scene.resume_current()
         resume_scene = null
 
+    get_node("/root/Initializer").save_key_config()
+
     # queue_free() will be called in this animation.
     animator.play("Leave")

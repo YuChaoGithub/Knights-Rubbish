@@ -1774,10 +1774,10 @@ tracks/44/loop_wrap = true
 tracks/44/imported = false
 tracks/44/enabled = true
 tracks/44/keys = {
-"times": PoolRealArray( 0, 0.51, 0.6, 0.63, 0.75, 0.78, 0.9, 0.93, 1.02, 1.05, 1.14, 1.17, 1.26, 1.29, 1.38, 1.41, 1.47 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.51, 0.6, 0.69, 0.78, 0.87, 0.96, 1.05, 1.14, 1.23, 1.32, 1.41, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0 ]
+"values": [ 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0 ]
 }
 tracks/45/type = "value"
 tracks/45/path = NodePath("Animation/LeftSpoon/BasicSkillHitArea:collision_mask")
@@ -1786,10 +1786,10 @@ tracks/45/loop_wrap = true
 tracks/45/imported = false
 tracks/45/enabled = true
 tracks/45/keys = {
-"times": PoolRealArray( 0, 0.51, 0.6, 0.63, 0.75, 0.78, 0.9, 0.93, 1.02, 1.05, 1.14, 1.17, 1.26, 1.29, 1.38, 1.41, 1.47 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.51, 0.6, 0.69, 0.78, 0.87, 0.96, 1.05, 1.14, 1.23, 1.32, 1.41, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0 ]
+"values": [ 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0, 2, 0 ]
 }
 tracks/46/type = "value"
 tracks/46/path = NodePath("Animation/LeftSpoon/Frame:modulate")
@@ -11675,8 +11675,9 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Left Arm" type="Sprite" parent="Sprite/Animation/Body" index="1"]
 
-position = Vector2( -82.6986, 39.716 )
+position = Vector2( -84.9758, 32.8843 )
 rotation = -0.0202168
+scale = Vector2( -1, 1 )
 texture = ExtResource( 18 )
 offset = Vector2( -19.6845, 22.75 )
 _sections_unfolded = [ "Transform" ]
@@ -11685,6 +11686,7 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 82.6793, 37.4322 )
+scale = Vector2( -1, 1 )
 texture = ExtResource( 19 )
 offset = Vector2( 14.8241, 22.1265 )
 _sections_unfolded = [ "Transform" ]
@@ -11722,21 +11724,20 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -522.069, -44.4248 )
-rotation = -0.818861
+position = Vector2( 1.41948, -13.1752 )
 texture = ExtResource( 24 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Face" type="Sprite" parent="Sprite/Animation/LeftSpoon" index="0"]
 
-self_modulate = Color( 0, 0.75, 0.117188, 1 )
+self_modulate = Color( 0, 1, 0.15625, 1 )
 position = Vector2( 0.904175, -78.8895 )
 texture = ExtResource( 25 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Frame" type="Sprite" parent="Sprite/Animation/LeftSpoon" index="1"]
 
-modulate = Color( 0, 1, 0.226562, 0.75 )
+modulate = Color( 0, 1, 0.226562, 1 )
 show_behind_parent = true
 texture = ExtResource( 26 )
 _sections_unfolded = [ "Visibility" ]
@@ -11766,9 +11767,9 @@ shape = SubResource( 32 )
 
 [node name="BasicSkillParticles" type="Particles2D" parent="Sprite/Animation/LeftSpoon" index="3"]
 
-modulate = Color( 1, 1, 1, 0.75 )
+modulate = Color( 1, 1, 1, 0 )
 show_behind_parent = true
-emitting = false
+emitting = true
 amount = 100
 lifetime = 0.7
 one_shot = false
@@ -11790,7 +11791,7 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Trans
 
 [node name="Spoon" type="Sprite" parent="Sprite/Animation" index="5"]
 
-position = Vector2( 111.351, 5.39766 )
+position = Vector2( 39.0673, 11.1703 )
 rotation = -0.0152844
 texture = ExtResource( 24 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -11875,11 +11876,11 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="BasicSkillParticles" type="Particles2D" parent="Sprite/Animation/Spoon" index="6"]
 
-modulate = Color( 1, 1, 1, 0.75 )
+modulate = Color( 1, 1, 1, 0 )
 show_behind_parent = true
 position = Vector2( 0.828575, 2.16834 )
 rotation = 0.0152844
-emitting = false
+emitting = true
 amount = 100
 lifetime = 0.7
 one_shot = false
@@ -12091,7 +12092,7 @@ area_mask = 1
 [node name="DS" type="AudioStreamPlayer2D" parent="Audio" index="9"]
 
 stream = ExtResource( 40 )
-volume_db = -15.0
+volume_db = -7.0
 pitch_scale = 1.0
 autoplay = false
 max_distance = 2000.0

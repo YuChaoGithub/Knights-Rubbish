@@ -1,4 +1,4 @@
-[gd_scene load_steps=153 format=2]
+[gd_scene load_steps=154 format=2]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/HeroManager.gd" type="Script" id=2]
@@ -137,17 +137,18 @@
 [ext_resource path="res://Scenes/Power Ups/Healing Machine.tscn" type="PackedScene" id=135]
 [ext_resource path="res://Scenes/Structures/Floopy Tower.tscn" type="PackedScene" id=136]
 [ext_resource path="res://Scenes/Structures/Door.tscn" type="PackedScene" id=137]
-[ext_resource path="res://Scenes/Enemies/Computer Room/CD Punch.tscn" type="PackedScene" id=138]
+[ext_resource path="res://Scripts/Utils/MobActivator.gd" type="Script" id=138]
 [ext_resource path="res://Scenes/Enemies/Computer Room/Mouse.tscn" type="PackedScene" id=139]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Floopy.tscn" type="PackedScene" id=140]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Batterio.tscn" type="PackedScene" id=141]
-[ext_resource path="res://Scripts/Utils/RepeatingSpawner.gd" type="Script" id=142]
-[ext_resource path="res://Scenes/Power Ups/Healing Potion.tscn" type="PackedScene" id=143]
-[ext_resource path="res://Scenes/Power Ups/Defense Potion.tscn" type="PackedScene" id=144]
-[ext_resource path="res://Scenes/Power Ups/Attack Potion.tscn" type="PackedScene" id=145]
-[ext_resource path="res://Scenes/Power Ups/Ult Stone.tscn" type="PackedScene" id=146]
-[ext_resource path="res://Scenes/Power Ups/Speed Potion.tscn" type="PackedScene" id=147]
-[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=148]
+[ext_resource path="res://Scenes/Enemies/Computer Room/CD Punch.tscn" type="PackedScene" id=140]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Floopy.tscn" type="PackedScene" id=141]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Batterio.tscn" type="PackedScene" id=142]
+[ext_resource path="res://Scripts/Utils/RepeatingSpawner.gd" type="Script" id=143]
+[ext_resource path="res://Scenes/Power Ups/Healing Potion.tscn" type="PackedScene" id=144]
+[ext_resource path="res://Scenes/Power Ups/Defense Potion.tscn" type="PackedScene" id=145]
+[ext_resource path="res://Scenes/Power Ups/Attack Potion.tscn" type="PackedScene" id=146]
+[ext_resource path="res://Scenes/Power Ups/Ult Stone.tscn" type="PackedScene" id=147]
+[ext_resource path="res://Scenes/Power Ups/Speed Potion.tscn" type="PackedScene" id=148]
+[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=149]
 
 [sub_resource type="Animation" id=1]
 
@@ -318,7 +319,7 @@ tracks/0/keys = {
 "values": [ true, false ]
 }
 
-[node name="Game Level" type="Node2D"]
+[node name="Game Level" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Z Index" ]
 
@@ -1836,6 +1837,7 @@ _sections_unfolded = [ "Cell", "Collision", "Visibility" ]
 
 [node name="Writings" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Jump" type="Node2D" parent="Writings" index="0"]
@@ -1883,6 +1885,8 @@ texture = ExtResource( 85 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Gold, Treasures & Adventures" type="Node2D" parent="Writings" index="1"]
+
+editor/display_folded = true
 
 [node name="Adventures" type="Label" parent="Writings/Gold, Treasures & Adventures" index="0"]
 
@@ -2476,8 +2480,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Attack Tutorial" type="Node2D" parent="Writings" index="6"]
 
-editor/display_folded = true
-
 [node name="Tips" type="Sprite" parent="Writings/Attack Tutorial" index="0"]
 
 position = Vector2( 8839.4, -1403.94 )
@@ -2612,7 +2614,33 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Skill Frame 2" type="Sprite" parent="Writings/Attack Tutorial" index="8"]
+[node name="SKILL2" type="Label" parent="Writings/Attack Tutorial" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8338.0
+margin_top = -789.0
+margin_right = 8681.0
+margin_bottom = -754.0
+rect_rotation = 2.85152
+rect_scale = Vector2( 2.5, 2.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 88 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Kill All enemies to pass"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Skill Frame 2" type="Sprite" parent="Writings/Attack Tutorial" index="9"]
 
 position = Vector2( 9315.86, -1159.83 )
 rotation = 0.162863
@@ -2620,7 +2648,7 @@ scale = Vector2( 0.65, 0.5 )
 texture = ExtResource( 83 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="SKILL 2" type="Label" parent="Writings/Attack Tutorial" index="9"]
+[node name="SKILL 2" type="Label" parent="Writings/Attack Tutorial" index="10"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2646,7 +2674,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Skill Frame 3" type="Sprite" parent="Writings/Attack Tutorial" index="10"]
+[node name="Skill Frame 3" type="Sprite" parent="Writings/Attack Tutorial" index="11"]
 
 position = Vector2( 9298.37, -944.934 )
 rotation = 3.26511
@@ -2654,7 +2682,7 @@ scale = Vector2( 0.65, 0.5 )
 texture = ExtResource( 83 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="SKILL 3" type="Label" parent="Writings/Attack Tutorial" index="11"]
+[node name="SKILL 3" type="Label" parent="Writings/Attack Tutorial" index="12"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2680,7 +2708,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="+" type="Sprite" parent="Writings/Attack Tutorial" index="12"]
+[node name="+" type="Sprite" parent="Writings/Attack Tutorial" index="13"]
 
 position = Vector2( 9100.19, -1178.44 )
 rotation = -0.0909756
@@ -2688,7 +2716,7 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 90 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="+2" type="Sprite" parent="Writings/Attack Tutorial" index="13"]
+[node name="+2" type="Sprite" parent="Writings/Attack Tutorial" index="14"]
 
 position = Vector2( 9100.59, -944.502 )
 rotation = -0.0882247
@@ -2696,7 +2724,7 @@ scale = Vector2( 0.4, 0.4 )
 texture = ExtResource( 90 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Left Frame" type="Sprite" parent="Writings/Attack Tutorial" index="14"]
+[node name="Left Frame" type="Sprite" parent="Writings/Attack Tutorial" index="15"]
 
 position = Vector2( 8903.96, -1158.84 )
 rotation = -0.157019
@@ -2704,7 +2732,7 @@ scale = Vector2( 0.65, 0.5 )
 texture = ExtResource( 83 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="LEFT" type="Label" parent="Writings/Attack Tutorial" index="15"]
+[node name="LEFT" type="Label" parent="Writings/Attack Tutorial" index="16"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2730,7 +2758,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Right Frame" type="Sprite" parent="Writings/Attack Tutorial" index="16"]
+[node name="Right Frame" type="Sprite" parent="Writings/Attack Tutorial" index="17"]
 
 position = Vector2( 8901.23, -956.655 )
 rotation = 0.166826
@@ -2738,7 +2766,7 @@ scale = Vector2( 0.65, 0.5 )
 texture = ExtResource( 83 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="RIGHT" type="Label" parent="Writings/Attack Tutorial" index="17"]
+[node name="RIGHT" type="Label" parent="Writings/Attack Tutorial" index="18"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -5024,8 +5052,6 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="Words" type="Node2D" parent="Writings" index="12"]
 
-editor/display_folded = true
-
 [node name="Rawwww" type="Label" parent="Writings/Words" index="0"]
 
 anchor_left = 0.0
@@ -5188,12 +5214,12 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 31623.0
-margin_top = -1549.0
-margin_right = 31758.0
-margin_bottom = -1509.0
+margin_left = 31687.0
+margin_top = -1469.0
+margin_right = 31822.0
+margin_bottom = -1429.0
 rect_rotation = 13.4344
-rect_scale = Vector2( 10, 10 )
+rect_scale = Vector2( 7, 7 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -5214,12 +5240,12 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 32712.0
-margin_top = -1543.0
-margin_right = 32847.0
-margin_bottom = -1503.0
+margin_left = 32806.0
+margin_top = -1451.0
+margin_right = 32941.0
+margin_bottom = -1411.0
 rect_rotation = -8.99352
-rect_scale = Vector2( 10, 10 )
+rect_scale = Vector2( 7, 7 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -5557,7 +5583,7 @@ margin_top = -1302.0
 margin_right = 31248.0
 margin_bottom = -1262.0
 rect_rotation = 45.1176
-rect_scale = Vector2( 8, 8 )
+rect_scale = Vector2( 7, 7 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -6314,9 +6340,12 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="PlatformDecorations" type="Node2D" parent="." index="6"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Ministry of Love" type="Node2D" parent="PlatformDecorations" index="0"]
+
+editor/display_folded = true
 
 [node name="Trash Can" type="Sprite" parent="PlatformDecorations/Ministry of Love" index="0"]
 
@@ -6334,6 +6363,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="Billboard" type="Sprite" parent="PlatformDecorations/Ministry of Love" index="2"]
 
+editor/display_folded = true
 position = Vector2( 1007.38, -227.735 )
 rotation = -3.3961
 scale = Vector2( 0.5, 0.5 )
@@ -6720,14 +6750,17 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Adventure Land" type="Node2D" parent="PlatformDecorations" index="2"]
 
+editor/display_folded = true
 position = Vector2( 2803.13, 900.616 )
 
 [node name="Cover Paper" type="Node2D" parent="PlatformDecorations/Adventure Land" index="0"]
 
+editor/display_folded = true
 position = Vector2( -173.48, -269.267 )
 
 [node name="Cover Paper" type="Sprite" parent="PlatformDecorations/Adventure Land/Cover Paper" index="0"]
 
+editor/display_folded = true
 position = Vector2( 2884.79, -1459.84 )
 rotation = 0.159609
 scale = Vector2( 0.5, 0.5 )
@@ -6808,6 +6841,7 @@ area_mask = 1
 
 [node name="Light" type="Sprite" parent="PlatformDecorations/Adventure Land" index="1"]
 
+editor/display_folded = true
 position = Vector2( 2785.66, -1169.2 )
 rotation = 0.501526
 texture = ExtResource( 117 )
@@ -6985,6 +7019,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 4649.26, -1735.98 )
 rotation = 0.133514
 texture = ExtResource( 112 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Trash Bag 10" type="Sprite" parent="PlatformDecorations/Adventure Land" index="18"]
 
@@ -7727,19 +7762,19 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 position = Vector2( 150, -150 )
 script = ExtResource( 132 )
 _sections_unfolded = [ "Transform" ]
-range_x = 1000
+range_x = 2500
 range_y = 1000
 x_check = 2
 y_check = 0
 
 [node name="Pass Trigger 7" type="Position2D" parent="CameraChangingTriggers" index="1"]
 
-position = Vector2( 2830, -750 )
+position = Vector2( 2850, -900 )
 script = ExtResource( 132 )
 _sections_unfolded = [ "Transform" ]
 range_x = 1000
 range_y = 1000
-x_check = 2
+x_check = 0
 y_check = 1
 
 [node name="Pass Trigger 8" type="Position2D" parent="CameraChangingTriggers" index="2"]
@@ -7747,7 +7782,7 @@ y_check = 1
 position = Vector2( 5300, -150 )
 script = ExtResource( 132 )
 _sections_unfolded = [ "Transform" ]
-range_x = 1000
+range_x = 2500
 range_y = 1000
 x_check = 2
 y_check = 0
@@ -7756,7 +7791,7 @@ y_check = 0
 
 position = Vector2( 7850, -750 )
 script = ExtResource( 132 )
-range_x = 1000
+range_x = 2500
 range_y = 1000
 x_check = 2
 y_check = 0
@@ -7765,7 +7800,7 @@ y_check = 0
 
 position = Vector2( 10650, -750 )
 script = ExtResource( 132 )
-range_x = 1000
+range_x = 2500
 range_y = 1000
 x_check = 2
 y_check = 0
@@ -7792,7 +7827,7 @@ position = Vector2( 20950, -250 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 132 )
 _sections_unfolded = [ "Transform" ]
-range_x = 1000
+range_x = 2500
 range_y = 2000
 x_check = 2
 y_check = 0
@@ -7807,32 +7842,22 @@ count_to_emit = 5
 position = Vector2( 25850, -550 )
 script = ExtResource( 132 )
 _sections_unfolded = [ "Transform" ]
-range_x = 1000
+range_x = 2500
 range_y = 1000
 x_check = 2
-y_check = 1
+y_check = 0
 
 [node name="Fort Defeated Count Trigger" type="Node2D" parent="CameraChangingTriggers" index="11"]
 
 script = ExtResource( 133 )
 count_to_emit = 4
 
-[node name="Floopy Pass Trigger" type="Position2D" parent="CameraChangingTriggers" index="12"]
-
-position = Vector2( 31300, -650 )
-script = ExtResource( 132 )
-_sections_unfolded = [ "Transform" ]
-range_x = 1000
-range_y = 1000
-x_check = 2
-y_check = 0
-
-[node name="Enemy Defeated Counter Trigger 5" type="Node2D" parent="CameraChangingTriggers" index="13"]
+[node name="Enemy Defeated Counter Trigger 5" type="Node2D" parent="CameraChangingTriggers" index="12"]
 
 script = ExtResource( 133 )
 count_to_emit = 2
 
-[node name="Pass Trigger 6" type="Position2D" parent="CameraChangingTriggers" index="14"]
+[node name="Pass Trigger 6" type="Position2D" parent="CameraChangingTriggers" index="13"]
 
 position = Vector2( 35000, -850 )
 script = ExtResource( 132 )
@@ -8041,47 +8066,67 @@ position = Vector2( 29900, -1000 )
 
 [node name="Structures" type="Node2D" parent="." index="10"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="Floopy Tower" parent="Structures" index="0" instance=ExtResource( 136 )]
 
-position = Vector2( 28070.4, -1120.96 )
+position = Vector2( 28392.1, -1166.36 )
 counter_for_spawned_mobs = NodePath("../../CameraChangingTriggers/Fort Defeated Count Trigger")
 
 [node name="Door Set" parent="Structures" index="1" instance=ExtResource( 137 )]
 
 enter_scene_path = "res://Scenes/Levels/Level 1-2.tscn"
+available = true
 
-[node name="Enemies" type="Node2D" parent="." index="11"]
+[node name="Activator" type="Node2D" parent="." index="11"]
 
-[node name="CD Punch" parent="Enemies" index="0" instance=ExtResource( 138 )]
+script = ExtResource( 138 )
+
+[node name="Mouse5" parent="Activator" index="0" instance=ExtResource( 139 )]
+
+position = Vector2( 17950.7, -698.525 )
+_sections_unfolded = [ "Collision", "Transform" ]
+activate_range_x = 0
+activate_range_y = 0
+
+[node name="Mouse6" parent="Activator" index="1" instance=ExtResource( 139 )]
+
+position = Vector2( 18350.7, -699.263 )
+_sections_unfolded = [ "Collision", "Transform" ]
+activate_range_x = 0
+activate_range_y = 0
+
+[node name="Enemies" type="Node2D" parent="." index="12"]
+
+[node name="CD Punch" parent="Enemies" index="0" instance=ExtResource( 140 )]
 
 position = Vector2( 9400, -700 )
 _sections_unfolded = [ "Collision", "Transform" ]
-activate_range_x = 1300
+activate_range_x = 1900
 activate_range_y = 1500
 
-[node name="CD Punch2" parent="Enemies" index="1" instance=ExtResource( 138 )]
+[node name="CD Punch2" parent="Enemies" index="1" instance=ExtResource( 140 )]
 
 position = Vector2( 12000, -400 )
 _sections_unfolded = [ "Collision", "Transform" ]
-activate_range_x = 1700
+activate_range_x = 1900
 activate_range_y = 1500
 
-[node name="CD Punch3" parent="Enemies" index="2" instance=ExtResource( 138 )]
+[node name="CD Punch3" parent="Enemies" index="2" instance=ExtResource( 140 )]
 
 position = Vector2( 12950, -400 )
 _sections_unfolded = [ "Collision", "Transform" ]
-activate_range_x = 2000
+activate_range_x = 2100
 activate_range_y = 1500
 
-[node name="CD Punch5" parent="Enemies" index="3" instance=ExtResource( 138 )]
+[node name="CD Punch5" parent="Enemies" index="3" instance=ExtResource( 140 )]
 
 position = Vector2( 22801.4, -700 )
 activate_range_x = 2000
 activate_range_y = 2000
 
-[node name="CD Punch6" parent="Enemies" index="4" instance=ExtResource( 138 )]
+[node name="CD Punch6" parent="Enemies" index="4" instance=ExtResource( 140 )]
 
 position = Vector2( 20900, -700 )
 _sections_unfolded = [ "Collision", "Transform" ]
@@ -8111,88 +8156,76 @@ activate_range_y = 2500
 position = Vector2( 29100, -600 )
 activate_range_x = 1850
 
-[node name="Floopy" parent="Enemies" index="9" instance=ExtResource( 140 )]
+[node name="Floopy" parent="Enemies" index="9" instance=ExtResource( 141 )]
 
 position = Vector2( 33240, -950 )
 activate_range_x = 1850
 
-[node name="Batterio" parent="Enemies" index="10" instance=ExtResource( 141 )]
+[node name="Batterio" parent="Enemies" index="10" instance=ExtResource( 142 )]
 
 position = Vector2( 33908.7, -848.063 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="Batterio2" parent="Enemies" index="11" instance=ExtResource( 141 )]
+[node name="Batterio2" parent="Enemies" index="11" instance=ExtResource( 142 )]
 
 position = Vector2( 34289.3, -848.063 )
 scale = Vector2( 0.75, 0.75 )
 
-[node name="Batterio3" parent="Enemies" index="12" instance=ExtResource( 141 )]
+[node name="Batterio3" parent="Enemies" index="12" instance=ExtResource( 142 )]
 
 position = Vector2( 35099.7, -651.03 )
 
-[node name="Batterio4" parent="Enemies" index="13" instance=ExtResource( 141 )]
+[node name="Batterio4" parent="Enemies" index="13" instance=ExtResource( 142 )]
 
 position = Vector2( 35196.9, -650.773 )
 
-[node name="Batterio5" parent="Enemies" index="14" instance=ExtResource( 141 )]
+[node name="Batterio5" parent="Enemies" index="14" instance=ExtResource( 142 )]
 
 position = Vector2( 36800, -901.93 )
 
-[node name="Batterio6" parent="Enemies" index="15" instance=ExtResource( 141 )]
+[node name="Batterio6" parent="Enemies" index="15" instance=ExtResource( 142 )]
 
 position = Vector2( 37297.7, -903.989 )
 
-[node name="Batterio7" parent="Enemies" index="16" instance=ExtResource( 141 )]
+[node name="Batterio7" parent="Enemies" index="16" instance=ExtResource( 142 )]
 
 position = Vector2( 37800.2, -1047.48 )
 
-[node name="Batterio8" parent="Enemies" index="17" instance=ExtResource( 141 )]
+[node name="Batterio8" parent="Enemies" index="17" instance=ExtResource( 142 )]
 
 position = Vector2( 38542, -1260.9 )
 
-[node name="Batterio9" parent="Enemies" index="18" instance=ExtResource( 141 )]
+[node name="Batterio9" parent="Enemies" index="18" instance=ExtResource( 142 )]
 
 position = Vector2( 38892.7, -1387.69 )
 
-[node name="Batterio10" parent="Enemies" index="19" instance=ExtResource( 141 )]
+[node name="Batterio10" parent="Enemies" index="19" instance=ExtResource( 142 )]
 
 position = Vector2( 39397.8, -1558.85 )
 
-[node name="Batterio11" parent="Enemies" index="20" instance=ExtResource( 141 )]
+[node name="Batterio11" parent="Enemies" index="20" instance=ExtResource( 142 )]
 
 position = Vector2( 39849.2, -1548.26 )
 
-[node name="Floopy5" parent="Enemies" index="21" instance=ExtResource( 140 )]
+[node name="Floopy5" parent="Enemies" index="21" instance=ExtResource( 141 )]
 
 position = Vector2( 39700, -2150 )
 
-[node name="Mouse5" parent="Enemies" index="22" instance=ExtResource( 139 )]
-
-position = Vector2( 17950.7, -698.525 )
-_sections_unfolded = [ "Collision", "Transform" ]
-activate_range_x = 900
-
-[node name="Mouse6" parent="Enemies" index="23" instance=ExtResource( 139 )]
-
-position = Vector2( 18350.7, -699.263 )
-_sections_unfolded = [ "Collision", "Transform" ]
-activate_range_x = 1300
-
-[node name="Mouse7" parent="Enemies" index="24" instance=ExtResource( 139 )]
+[node name="Mouse7" parent="Enemies" index="22" instance=ExtResource( 139 )]
 
 position = Vector2( 16400, -800 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 2000
 
-[node name="Mouse8" parent="Enemies" index="25" instance=ExtResource( 139 )]
+[node name="Mouse8" parent="Enemies" index="23" instance=ExtResource( 139 )]
 
 position = Vector2( 16350, -200 )
 activate_range_x = 2000
 
-[node name="CD Punch Spawner" type="Position2D" parent="Enemies" index="26"]
+[node name="CD Punch Spawner" type="Position2D" parent="Enemies" index="24"]
 
 position = Vector2( 20050, -300 )
-script = ExtResource( 142 )
+script = ExtResource( 143 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/CD Punch.tscn"
 activate_range_x = 3000
@@ -8201,10 +8234,10 @@ spawn_delay = 0.75
 total_count = 1
 countdownTVHooked = null
 
-[node name="CD Punch Spawner2" type="Position2D" parent="Enemies" index="27"]
+[node name="CD Punch Spawner2" type="Position2D" parent="Enemies" index="25"]
 
 position = Vector2( 23650, -300 )
-script = ExtResource( 142 )
+script = ExtResource( 143 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/CD Punch.tscn"
 activate_range_x = 3000
@@ -8213,10 +8246,10 @@ spawn_delay = 0.75
 total_count = 2
 countdownTVHooked = null
 
-[node name="Mouse Spawner" type="Position2D" parent="Enemies" index="28"]
+[node name="Mouse Spawner" type="Position2D" parent="Enemies" index="26"]
 
 position = Vector2( 21050, -600 )
-script = ExtResource( 142 )
+script = ExtResource( 143 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/Mouse.tscn"
 activate_range_x = 3000
@@ -8225,10 +8258,10 @@ spawn_delay = 0.75
 total_count = 1
 countdownTVHooked = null
 
-[node name="Mouse Spawner2" type="Position2D" parent="Enemies" index="29"]
+[node name="Mouse Spawner2" type="Position2D" parent="Enemies" index="27"]
 
 position = Vector2( 22650, -600 )
-script = ExtResource( 142 )
+script = ExtResource( 143 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/Mouse.tscn"
 activate_range_x = 3000
@@ -8237,10 +8270,10 @@ spawn_delay = 0.75
 total_count = 1
 countdownTVHooked = null
 
-[node name="CD Punch Spawner3" type="Position2D" parent="Enemies" index="30"]
+[node name="CD Punch Spawner3" type="Position2D" parent="Enemies" index="28"]
 
 position = Vector2( 28250, -700 )
-script = ExtResource( 142 )
+script = ExtResource( 143 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/CD Punch.tscn"
 activate_range_x = 3000
@@ -8249,74 +8282,75 @@ spawn_delay = 3.0
 total_count = -1
 countdownTVHooked = null
 
-[node name="Floopy Spawner1" type="Position2D" parent="Enemies" index="31"]
+[node name="Floopy Spawner1" type="Position2D" parent="Enemies" index="29"]
 
 position = Vector2( 32500, -1000 )
-script = ExtResource( 142 )
+script = ExtResource( 143 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/Floopy.tscn"
 activate_range_x = 3000
 activate_range_y = 3000
 spawn_delay = 0.5
-total_count = 3
+total_count = 1
 countdownTVHooked = null
 
-[node name="Floopy Spawner2" type="Position2D" parent="Enemies" index="32"]
+[node name="Floopy Spawner2" type="Position2D" parent="Enemies" index="30"]
 
 position = Vector2( 33550, -1100 )
-script = ExtResource( 142 )
+script = ExtResource( 143 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/Floopy.tscn"
 activate_range_x = 3000
 activate_range_y = 3000
 spawn_delay = 0.5
-total_count = 3
+total_count = 2
 countdownTVHooked = null
 
-[node name="PowerUps" type="Node2D" parent="." index="12"]
+[node name="PowerUps" type="Node2D" parent="." index="13"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
-[node name="HealPotion" parent="PowerUps" index="0" instance=ExtResource( 143 )]
+[node name="HealPotion" parent="PowerUps" index="0" instance=ExtResource( 144 )]
 
 position = Vector2( 13250, -450 )
 activate_range_x = 2500
 
-[node name="HealPotion2" parent="PowerUps" index="1" instance=ExtResource( 143 )]
+[node name="HealPotion2" parent="PowerUps" index="1" instance=ExtResource( 144 )]
 
 position = Vector2( 13450, -450 )
 activate_range_x = 2500
 
-[node name="DefensivePotion" parent="PowerUps" index="2" instance=ExtResource( 144 )]
+[node name="DefensivePotion" parent="PowerUps" index="2" instance=ExtResource( 145 )]
 
 position = Vector2( 15650, -250 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 1400
 
-[node name="HealPotion3" parent="PowerUps" index="3" instance=ExtResource( 143 )]
+[node name="HealPotion3" parent="PowerUps" index="3" instance=ExtResource( 144 )]
 
 position = Vector2( 19600, -450 )
 
-[node name="Hyper Potion" parent="PowerUps" index="4" instance=ExtResource( 145 )]
+[node name="Hyper Potion" parent="PowerUps" index="4" instance=ExtResource( 146 )]
 
 position = Vector2( 25050, -350 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 
-[node name="DefensivePotion2" parent="PowerUps" index="5" instance=ExtResource( 144 )]
+[node name="DefensivePotion2" parent="PowerUps" index="5" instance=ExtResource( 145 )]
 
 position = Vector2( 24650, -350 )
 
-[node name="Ult Stone" parent="PowerUps" index="6" instance=ExtResource( 146 )]
+[node name="Ult Stone" parent="PowerUps" index="6" instance=ExtResource( 147 )]
 
 position = Vector2( 21894.5, -342.582 )
 _sections_unfolded = [ "Transform" ]
 activate_range_x = 1850
 
-[node name="Speed Potion" parent="PowerUps" index="7" instance=ExtResource( 147 )]
+[node name="Speed Potion" parent="PowerUps" index="7" instance=ExtResource( 148 )]
 
 position = Vector2( 34100, -950 )
 
-[node name="ForgroundDecorations" type="Node2D" parent="." index="13"]
+[node name="ForgroundDecorations" type="Node2D" parent="." index="14"]
 
 editor/display_folded = true
 z_index = 1
@@ -8427,75 +8461,77 @@ position = Vector2( 19866.7, -159.486 )
 rotation = -0.839159
 texture = ExtResource( 119 )
 
-[node name="Position2D" type="Position2D" parent="." index="14"]
+[node name="Position2D" type="Position2D" parent="." index="15"]
 
-position = Vector2( 17072, -747.283 )
+position = Vector2( 29850, -950 )
 scale = Vector2( 10, 10 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="PauseButton" parent="." index="15" instance=ExtResource( 148 )]
-
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_left_limit" binds= [ 50 ]]
-
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_right_limit" binds= [ 3950 ]]
+[node name="PauseButton" parent="." index="16" instance=ExtResource( 149 )]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_bottom_limit" binds= [ -50 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_right_margin" binds= [ 0.3 ]]
-
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_top_margin" binds= [ -0.1 ]]
 
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_right_margin" binds= [ 0.3 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_right_limit" binds= [ 3950 ]]
+
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_bottom_margin" binds= [ 1.1 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_left_limit" binds= [ 50 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 1" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 7" to="FollowingCamera" method="update_right_limit" binds= [ 100000000 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 8" to="PlatformDecorations/Adventure Land/Cover Paper/Cover Paper/AnimationPlayer" method="play" binds= [ "Fall" ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 2" to="FollowingCamera" method="update_left_limit" binds= [ 7250 ]]
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 2" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 2" to="FollowingCamera" method="update_right_limit" binds= [ 10200 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 2" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 2" to="FollowingCamera" method="update_left_limit" binds= [ 7250 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 2" to="FollowingCamera" method="update_left_margin" binds= [ 0.2 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 3" to="FollowingCamera" method="update_left_limit" binds= [ 9950 ]]
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 3" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 3" to="FollowingCamera" method="update_right_limit" binds= [ 13550 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 3" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 3" to="FollowingCamera" method="update_left_limit" binds= [ 9950 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 3" to="FollowingCamera" method="update_left_margin" binds= [ 0.2 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Count Trigger 1" to="FollowingCamera" method="update_right_limit" binds= [ 17050 ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Count Trigger 1" to="FollowingCamera" method="update_right_margin" binds= [ 0.3 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Count Trigger 1" to="FollowingCamera" method="update_right_limit" binds= [ 17050 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Count Trigger 1" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger" to="FollowingCamera" method="update_left_limit" binds= [ 14350 ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger" to="FollowingCamera" method="update_right_limit" binds= [ 18650 ]]
 
+[connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger" to="FollowingCamera" method="update_left_limit" binds= [ 14350 ]]
+
 [connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.2 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger" to="Activator" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger2" to="FollowingCamera" method="update_right_limit" binds= [ 1000000000 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Mouse Defeated Count Trigger2" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 4" to="FollowingCamera" method="update_left_limit" binds= [ 20200 ]]
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 4" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 4" to="FollowingCamera" method="update_right_limit" binds= [ 23500 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 4" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 4" to="FollowingCamera" method="update_left_limit" binds= [ 20200 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 4" to="FollowingCamera" method="update_left_margin" binds= [ 0.25 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Count Trigger 3" to="FollowingCamera" method="update_right_limit" binds= [ 10000000 ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Count Trigger 3" to="FollowingCamera" method="update_right_margin" binds= [ 0.3 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Count Trigger 3" to="FollowingCamera" method="update_right_limit" binds= [ 10000000 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Count Trigger 3" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
@@ -8503,33 +8539,33 @@ _sections_unfolded = [ "Transform" ]
 
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 5" to="Enemies/CD Punch Spawner3" method="spawn_mob"]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 5" to="FollowingCamera" method="update_right_limit" binds= [ 29400 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 5" to="FollowingCamera" method="update_bottom_limit" binds= [ -450 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/Fort Defeated Count Trigger" to="FollowingCamera" method="update_right_limit" binds= [ 1000000000 ]]
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 5" to="FollowingCamera" method="update_right_limit" binds= [ 29400 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Floopy Pass Trigger" to="FollowingCamera" method="update_left_limit" binds= [ 30250 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/Fort Defeated Count Trigger" to="FollowingCamera" method="update_right_limit" binds= [ 33750 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Floopy Pass Trigger" to="FollowingCamera" method="update_right_limit" binds= [ 33750 ]]
-
-[connection signal="passed" from="CameraChangingTriggers/Floopy Pass Trigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.2 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/Fort Defeated Count Trigger" to="FollowingCamera" method="update_left_margin" binds= [ 0.25 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Counter Trigger 5" to="FollowingCamera" method="update_right_limit" binds= [ 41250 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/Enemy Defeated Counter Trigger 5" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 6" to="FollowingCamera" method="update_top_limit" binds= [ -2800 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/Pass Trigger 6" to="FollowingCamera" method="update_top_margin" binds= [ 0.4 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/Pass Trigger 6" to="FollowingCamera" method="update_top_limit" binds= [ -2800 ]]
 
 [connection signal="destroyed" from="Structures/Floopy Tower" to="OtherPlatforms/Enemy Blocking Platform40" method="queue_free"]
 
 [connection signal="destroyed" from="Structures/Floopy Tower" to="Enemies/CD Punch Spawner3" method="stop_further_spawning"]
 
-[connection signal="defeated" from="Enemies/CD Punch" to="FollowingCamera" method="update_right_limit" binds= [ 1000000000 ]]
+[connection signal="defeated" from="Activator/Mouse5" to="CameraChangingTriggers/Mouse Defeated Count Trigger2" method="increment_count"]
+
+[connection signal="defeated" from="Activator/Mouse6" to="CameraChangingTriggers/Mouse Defeated Count Trigger2" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/CD Punch" to="FollowingCamera" method="update_right_margin" binds= [ 0.3 ]]
+
+[connection signal="defeated" from="Enemies/CD Punch" to="FollowingCamera" method="update_right_limit" binds= [ 1000000000 ]]
 
 [connection signal="defeated" from="Enemies/CD Punch" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
@@ -8552,10 +8588,6 @@ _sections_unfolded = [ "Transform" ]
 [connection signal="defeated" from="Enemies/Floopy" to="Enemies/Floopy Spawner1" method="spawn_mob"]
 
 [connection signal="defeated" from="Enemies/Floopy" to="Enemies/Floopy Spawner2" method="spawn_mob"]
-
-[connection signal="defeated" from="Enemies/Mouse5" to="CameraChangingTriggers/Mouse Defeated Count Trigger2" method="increment_count"]
-
-[connection signal="defeated" from="Enemies/Mouse6" to="CameraChangingTriggers/Mouse Defeated Count Trigger2" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Mouse7" to="CameraChangingTriggers/Mouse Defeated Count Trigger" method="increment_count"]
 

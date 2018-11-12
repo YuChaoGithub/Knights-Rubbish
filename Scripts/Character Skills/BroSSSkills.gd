@@ -52,8 +52,8 @@ onready var sir_basic_attack_spawn_pos = $"../Sprite/Animation/Sir/Sug"
 # Basic Skill.
 const BASIC_SKILL_DURATION = 3.0
 const BASIC_SKILL_COOLDOWN = 0.2
-const BASIC_SKILL_DAMAGE_MIN = 5
-const BASIC_SKILL_DAMAGE_MAX = 10
+const BASIC_SKILL_DAMAGE_MIN = 2
+const BASIC_SKILL_DAMAGE_MAX = 6
 const BASIC_SKILL_HEAL_MIN = 1
 const BASIC_SKILL_HEAL_MAX = 3
 const BASIC_SKILL_SLOW_DURATION = 3.0
@@ -116,8 +116,8 @@ var up_skill_timestamp = 0
 const ULT_TRANSFORM_DURATION = 1.5
 const ULT_DURATION = 12.0
 const END_ULT_DURATION = 1.5
-const ULT_DAMAGE_MIN = 250
-const ULT_DAMAGE_MAX = 500
+const ULT_DAMAGE_MIN = 135
+const ULT_DAMAGE_MAX = 140
 const ULT_KNOCK_BACK_VEL_X = 600
 const ULT_KNOCK_BACK_VEL_Y = 50
 const ULT_KNOCK_BACK_FADE_RATE = 1000
@@ -137,6 +137,20 @@ onready var spawn_node = get_node("../..")
 
 var cd_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
 var rng = preload("res://Scripts/Utils/RandomNumberGenerator.gd")
+
+onready var audios_to_stop_when_stunned = [
+    $"../Audio/SirBASpin",
+    $"../Audio/SirBAToss",
+    $"../Audio/SirBSSong",
+    $"../Audio/SirHSLean",
+    $"../Audio/SirHSShoot",
+    $"../Audio/SirUS",
+    $"../Audio/SugBA",
+    $"../Audio/SugBSSong",
+    $"../Audio/SugHSDash",
+    $"../Audio/SugUS",
+    $"../Audio/Drink"
+]
 
 func _ready():
     configure_char_visibility()

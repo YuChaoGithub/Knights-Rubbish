@@ -1,9 +1,9 @@
 const name = "Sirurueruerue Senyesuensuesue & Sugsesugsem Sosas"
 const id = 4
 const avatar = preload("res://Graphics/UI/Avatar/BroSS.png")
-const points = ["Versatile", "Complex", "Seeing Triples?"]
-const full_health = 280
-const ghost_health = 650
+const points = ["Versatile", "Complex", "Read our names"]
+const full_health = 272
+const ghost_health = 644
 const movement_speed = 350.0
 const jump_height = 300.0
 const time_to_jump_to_highest = 0.5

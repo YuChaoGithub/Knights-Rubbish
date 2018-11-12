@@ -36,15 +36,15 @@ const ATTACK_WALK_SPEED = 500
 const RANDOM_MOVEMENT_MIN_STEPS = 3
 const RANDOM_MOVEMENT_MAX_STEPS = 4
 const RANDOM_MOVEMENT_MIN_TIME_PER_STEP = 0.6
-const RANDOM_MOVEMENT_MAX_TIME_PER_STEP = 1
+const RANDOM_MOVEMENT_MAX_TIME_PER_STEP = 0.8
 
 # Animation.
 const PREPARE_SHOOT_DURATION = 1.0
 const PREPARE_THROW_DURATION = 1.2
 const COMPLETE_THROW_DURATION = 1.3
-const RNG_STANDING_DURATION = 2.0
-const KICK_STAND_DURATION = 1.5
-const PRE_SPEED_WALK_STAND_DURATION = 2.5
+const RNG_STANDING_DURATION = 0.5
+const KICK_STAND_DURATION = 1.0
+const PRE_SPEED_WALK_STAND_DURATION = 1.0
 const SHOOT_DURATION = 3.2
 const SHOOT_LANDING_DURATION = 2.0
 
@@ -308,5 +308,10 @@ func slowed(multiplier, duration):
 
 func die():
 	ec.die()
+
+	var user_data = get_node("/root/UserDataSingleton")
+	user_data.level_available.eyemac = 1
+	user_data.save_level_data()
+
 	emit_signal("defeated")
 	ec.health_bar.drop_health_bar()

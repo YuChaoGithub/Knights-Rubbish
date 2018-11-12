@@ -1,39 +1,42 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Scripts/UI/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/UI/Wooden Background.png" type="Texture" id=2]
-[ext_resource path="res://Graphics/UI/Sketchbook.png" type="Texture" id=3]
-[ext_resource path="res://Graphics/UI/Bar Frame 2 White.png" type="Texture" id=4]
-[ext_resource path="res://Scripts/UI/ButtonModulator.gd" type="Script" id=5]
-[ext_resource path="res://Fonts/edosz.tres" type="DynamicFont" id=6]
-[ext_resource path="res://Graphics/UI/Bar Fram 1 White.png" type="Texture" id=7]
-[ext_resource path="res://Graphics/UI/Bar Frame 3 White.png" type="Texture" id=8]
-[ext_resource path="res://Graphics/UI/Avatar/Keshia Erasia.png" type="Texture" id=9]
-[ext_resource path="res://Graphics/UI/Avatar/Wendy Vista.png" type="Texture" id=10]
-[ext_resource path="res://Graphics/UI/Avatar/GladeosCakeos.png" type="Texture" id=11]
-[ext_resource path="res://Graphics/UI/Avatar/GuanXi.png" type="Texture" id=12]
-[ext_resource path="res://Graphics/UI/Avatar/LumieCandie.png" type="Texture" id=13]
-[ext_resource path="res://Graphics/UI/Avatar/OthoxCodox.png" type="Texture" id=14]
-[ext_resource path="res://Graphics/UI/Avatar/Ranawato Plato.png" type="Texture" id=15]
-[ext_resource path="res://Graphics/UI/Avatar/Sock.png" type="Texture" id=16]
-[ext_resource path="res://Graphics/UI/Avatar/WaitieChangie.png" type="Texture" id=17]
-[ext_resource path="res://Graphics/UI/Avatar/BroSS.png" type="Texture" id=18]
-[ext_resource path="res://Graphics/UI/Avatar/Amazlet.png" type="Texture" id=19]
-[ext_resource path="res://Graphics/UI/Avatar/Eyemac.png" type="Texture" id=20]
-[ext_resource path="res://Graphics/UI/Avatar/Godotbos.png" type="Texture" id=21]
-[ext_resource path="res://Graphics/UI/Avatar/Latortrans.png" type="Texture" id=22]
-[ext_resource path="res://Graphics/UI/Avatar/Radiogugu.png" type="Texture" id=23]
-[ext_resource path="res://Graphics/UI/knights.png" type="Texture" id=24]
-[ext_resource path="res://Graphics/UI/rubbish.png" type="Texture" id=25]
-[ext_resource path="res://Graphics/Particles/Super Blurred Dot.png" type="Texture" id=26]
-[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 4.png" type="Texture" id=27]
-[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 3.png" type="Texture" id=28]
-[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 1.png" type="Texture" id=29]
-[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 5.png" type="Texture" id=30]
-[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 4.png" type="Texture" id=31]
-[ext_resource path="res://Audio/paper_drop_01.wav" type="AudioStream" id=32]
-[ext_resource path="res://Audio/paper_drop_02.wav" type="AudioStream" id=33]
-[ext_resource path="res://Audio/paper_flip_long.wav" type="AudioStream" id=34]
+[ext_resource path="res://Fonts/SourceHanSerifTC.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Graphics/UI/Sketchbook.png" type="Texture" id=4]
+[ext_resource path="res://Graphics/UI/Bar Frame 2 White.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/UI/ButtonModulator.gd" type="Script" id=6]
+[ext_resource path="res://Fonts/edosz.tres" type="DynamicFont" id=7]
+[ext_resource path="res://Graphics/UI/Bar Fram 1 White.png" type="Texture" id=8]
+[ext_resource path="res://Graphics/UI/Bar Frame 3 White.png" type="Texture" id=9]
+[ext_resource path="res://Graphics/UI/Avatar/Keshia Erasia.png" type="Texture" id=10]
+[ext_resource path="res://Graphics/UI/Avatar/Wendy Vista.png" type="Texture" id=11]
+[ext_resource path="res://Graphics/UI/Avatar/GladeosCakeos.png" type="Texture" id=12]
+[ext_resource path="res://Graphics/UI/Avatar/GuanXi.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/UI/Avatar/LumieCandie.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/UI/Avatar/OthoxCodox.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/UI/Avatar/Ranawato Plato.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/UI/Avatar/Sock.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/UI/Avatar/WaitieChangie.png" type="Texture" id=18]
+[ext_resource path="res://Graphics/UI/Avatar/BroSS.png" type="Texture" id=19]
+[ext_resource path="res://Graphics/UI/Avatar/Amazlet.png" type="Texture" id=20]
+[ext_resource path="res://Graphics/UI/Avatar/Eyemac.png" type="Texture" id=21]
+[ext_resource path="res://Graphics/UI/Avatar/Godotbos.png" type="Texture" id=22]
+[ext_resource path="res://Graphics/UI/Avatar/Latortrans.png" type="Texture" id=23]
+[ext_resource path="res://Graphics/UI/Avatar/Radiogugu.png" type="Texture" id=24]
+[ext_resource path="res://Graphics/UI/knights.png" type="Texture" id=25]
+[ext_resource path="res://Graphics/UI/rubbish.png" type="Texture" id=26]
+[ext_resource path="res://Graphics/UI/2018 Shine Right Logo High Def.png" type="Texture" id=27]
+[ext_resource path="res://Scripts/UI/GotoURLOnPress.gd" type="Script" id=28]
+[ext_resource path="res://Graphics/Particles/Super Blurred Dot.png" type="Texture" id=29]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 4.png" type="Texture" id=30]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 3.png" type="Texture" id=31]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 1.png" type="Texture" id=32]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 5.png" type="Texture" id=33]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 4.png" type="Texture" id=34]
+[ext_resource path="res://Audio/paper_drop_01.wav" type="AudioStream" id=35]
+[ext_resource path="res://Audio/paper_drop_02.wav" type="AudioStream" id=36]
+[ext_resource path="res://Audio/paper_flip_long.wav" type="AudioStream" id=37]
 
 [sub_resource type="Animation" id=1]
 
@@ -413,6 +416,7 @@ script = ExtResource( 1 )
 
 [node name="Background" type="TextureRect" parent="." index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -430,9 +434,233 @@ texture = ExtResource( 2 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
+[node name="Label" type="Label" parent="Background" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 299.0
+margin_top = 60.0
+margin_right = 582.0
+margin_bottom = 104.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.909804, 0.780392, 0.639216, 1 )
+text = "I'm sorry for us"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="Label2" type="Label" parent="Background" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 286.0
+margin_top = 90.0
+margin_right = 715.0
+margin_bottom = 134.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.905882, 0.788235, 0.647059, 1 )
+text = "The rubbish drifts"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="Label3" type="Label" parent="Background" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 314.0
+margin_top = 119.0
+margin_right = 743.0
+margin_bottom = 163.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.909804, 0.784314, 0.658824, 1 )
+text = "on earth"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="Label4" type="Label" parent="Background" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 308.0
+margin_top = 146.0
+margin_right = 737.0
+margin_bottom = 190.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.890196, 0.772549, 0.65098, 1 )
+text = "Growing up"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="Label5" type="Label" parent="Background" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 325.0
+margin_top = 173.0
+margin_right = 754.0
+margin_bottom = 217.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.882353, 0.772549, 0.643137, 1 )
+text = "Like germs"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="Label6" type="Label" parent="Background" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 276.0
+margin_top = 203.0
+margin_right = 705.0
+margin_bottom = 247.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.870588, 0.752941, 0.635294, 1 )
+text = "But that is what"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="Label7" type="Label" parent="Background" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 277.0
+margin_top = 233.0
+margin_right = 706.0
+margin_bottom = 277.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.85098, 0.737255, 0.615686, 1 )
+text = "we are worth"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="Label8" type="Label" parent="Background" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 273.0
+margin_top = 278.0
+margin_right = 702.0
+margin_bottom = 322.0
+rect_scale = Vector2( 0.35, 0.35 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.85098, 0.737255, 0.615686, 1 )
+text = "Stop this aweful poem now!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
+[node name="Label9" type="Label" parent="Background" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 276.0
+margin_top = 303.0
+margin_right = 705.0
+margin_bottom = 347.0
+rect_scale = Vector2( 0.35, 0.35 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0.85098, 0.737255, 0.615686, 1 )
+text = "Ok. I'm sorry."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
+
 [node name="Book" type="TextureRect" parent="." index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -448,7 +676,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 stretch_mode = 0
 _sections_unfolded = [ "Focus", "Mouse", "Rect" ]
 
@@ -460,10 +688,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 366.0
-margin_top = 206.0
-margin_right = 1151.0
-margin_bottom = 406.0
+margin_left = 371.0
+margin_top = 230.0
+margin_right = 1156.0
+margin_bottom = 430.0
 rect_rotation = -0.348739
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -477,8 +705,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
-script = ExtResource( 5 )
+texture_normal = ExtResource( 5 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Focus", "Material", "Rect", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 hover_color = Color( 0, 0.71875, 1, 1 )
 press_color = Color( 0, 0.179688, 1, 1 )
@@ -501,7 +729,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.6, 0.6, 0.6, 1 )
 text = "I AM ALONE. I PLAY ALONE."
 percent_visible = 1.0
@@ -517,10 +745,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 368.0
-margin_top = 300.0
-margin_right = 1153.0
-margin_bottom = 500.0
+margin_left = 373.0
+margin_top = 324.0
+margin_right = 1158.0
+margin_bottom = 524.0
 rect_rotation = -0.504012
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -534,8 +762,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 4 )
-script = ExtResource( 5 )
+texture_normal = ExtResource( 5 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Material", "Rect", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 hover_color = Color( 0.200825, 0.996094, 0.306447, 1 )
 press_color = Color( 0.00239415, 0.445312, 0.0508383, 1 )
@@ -558,7 +786,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.6, 0.6, 0.6, 1 )
 text = "LOCAL COOP (Recommended)"
 percent_visible = 1.0
@@ -568,7 +796,7 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="Arena" type="TextureButton" parent="Book" index="2"]
 
-editor/display_folded = true
+visible = false
 modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.0
 anchor_top = 0.0
@@ -591,8 +819,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 7 )
-script = ExtResource( 5 )
+texture_normal = ExtResource( 8 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Material", "Rect", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 hover_color = Color( 0.90625, 0.650225, 0.0438508, 1 )
 press_color = Color( 0.4375, 0.297363, 0, 1 )
@@ -615,7 +843,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.6, 0.6, 0.6, 1 )
 text = "local pvp (coming soon)"
 percent_visible = 1.0
@@ -631,10 +859,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 462.0
-margin_top = 488.0
-margin_right = 844.0
-margin_bottom = 688.0
+margin_left = 465.0
+margin_top = 466.0
+margin_right = 847.0
+margin_bottom = 666.0
 rect_rotation = 0.988275
 rect_scale = Vector2( 0.5, 0.5 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -648,8 +876,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 8 )
-script = ExtResource( 5 )
+texture_normal = ExtResource( 9 )
+script = ExtResource( 6 )
 _sections_unfolded = [ "Material", "Rect", "Textures", "Theme", "Visibility", "custom_colors", "custom_constants", "custom_fonts", "custom_styles" ]
 hover_color = Color( 1, 0.33871, 0.33871, 1 )
 press_color = Color( 1, 0, 0, 1 )
@@ -672,7 +900,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0.6, 0.6, 0.6, 1 )
 text = "I  Quit !"
 percent_visible = 1.0
@@ -701,7 +929,6 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Heroes" type="Control" parent="Book/Drawings" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -733,7 +960,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -755,7 +982,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -777,7 +1004,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -799,7 +1026,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -809,10 +1036,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 235.0
-margin_top = 625.0
-margin_right = 485.0
-margin_bottom = 875.0
+margin_left = 175.0
+margin_top = 621.0
+margin_right = 425.0
+margin_bottom = 871.0
 rect_rotation = -15.7822
 rect_scale = Vector2( 0.2, 0.2 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -821,7 +1048,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -831,19 +1058,19 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 382.0
-margin_top = 716.0
-margin_right = 632.0
-margin_bottom = 966.0
+margin_left = 426.0
+margin_top = 636.0
+margin_right = 676.0
+margin_bottom = 886.0
 rect_rotation = -27.7237
-rect_scale = Vector2( 0.2, 0.2 )
+rect_scale = Vector2( 0.25, 0.25 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -858,29 +1085,7 @@ margin_top = 599.0
 margin_right = 580.0
 margin_bottom = 849.0
 rect_rotation = -15.7822
-rect_scale = Vector2( 0.2, 0.2 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 15 )
-stretch_mode = 0
-_sections_unfolded = [ "Rect" ]
-
-[node name="Wendy7" type="TextureRect" parent="Book/Drawings/Heroes" index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 236.0
-margin_top = 737.0
-margin_right = 486.0
-margin_bottom = 987.0
-rect_rotation = -24.9892
-rect_scale = Vector2( 0.2, 0.2 )
+rect_scale = Vector2( 0.25, 0.25 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -891,18 +1096,18 @@ texture = ExtResource( 16 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="Wendy8" type="TextureRect" parent="Book/Drawings/Heroes" index="8"]
+[node name="Wendy7" type="TextureRect" parent="Book/Drawings/Heroes" index="7"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 165.0
-margin_top = 697.0
-margin_right = 415.0
-margin_bottom = 947.0
-rect_rotation = -15.7822
-rect_scale = Vector2( 0.2, 0.2 )
+margin_left = 374.0
+margin_top = 740.0
+margin_right = 624.0
+margin_bottom = 990.0
+rect_rotation = -24.9892
+rect_scale = Vector2( 0.25, 0.25 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -913,17 +1118,17 @@ texture = ExtResource( 17 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
-[node name="Wendy9" type="TextureRect" parent="Book/Drawings/Heroes" index="9"]
+[node name="Wendy8" type="TextureRect" parent="Book/Drawings/Heroes" index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 170.0
-margin_top = 423.0
-margin_right = 420.0
-margin_bottom = 673.0
-rect_rotation = -6.6739
+margin_left = 271.0
+margin_top = 680.0
+margin_right = 521.0
+margin_bottom = 930.0
+rect_rotation = -15.7822
 rect_scale = Vector2( 0.2, 0.2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -932,6 +1137,28 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 texture = ExtResource( 18 )
+stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Wendy9" type="TextureRect" parent="Book/Drawings/Heroes" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 168.0
+margin_top = 410.0
+margin_right = 418.0
+margin_bottom = 660.0
+rect_rotation = -6.6739
+rect_scale = Vector2( 0.3, 0.3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 19 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -956,19 +1183,19 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 892.0
-margin_top = 398.0
-margin_right = 1142.0
-margin_bottom = 648.0
+margin_left = 882.0
+margin_top = 369.0
+margin_right = 1132.0
+margin_bottom = 619.0
 rect_rotation = -21.6404
-rect_scale = Vector2( 0.2, 0.2 )
+rect_scale = Vector2( 0.25, 0.25 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -983,14 +1210,14 @@ margin_top = 483.0
 margin_right = 1178.0
 margin_bottom = 733.0
 rect_rotation = -21.6404
-rect_scale = Vector2( 0.2, 0.2 )
+rect_scale = Vector2( 0.25, 0.25 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1005,14 +1232,14 @@ margin_top = 530.0
 margin_right = 1281.0
 margin_bottom = 780.0
 rect_rotation = -28.7829
-rect_scale = Vector2( 0.2, 0.2 )
+rect_scale = Vector2( 0.25, 0.25 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 21 )
+texture = ExtResource( 22 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1027,14 +1254,14 @@ margin_top = 594.0
 margin_right = 1142.0
 margin_bottom = 844.0
 rect_rotation = -28.7829
-rect_scale = Vector2( 0.2, 0.2 )
+rect_scale = Vector2( 0.25, 0.25 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 22 )
+texture = ExtResource( 23 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1049,14 +1276,14 @@ margin_top = 389.0
 margin_right = 1288.0
 margin_bottom = 639.0
 rect_rotation = 8.05532
-rect_scale = Vector2( 0.2, 0.2 )
+rect_scale = Vector2( 0.25, 0.25 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1113,7 +1340,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 9 )
+texture = ExtResource( 10 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1135,7 +1362,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 10 )
+texture = ExtResource( 11 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1157,7 +1384,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1179,7 +1406,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 12 )
+texture = ExtResource( 13 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1201,7 +1428,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 13 )
+texture = ExtResource( 14 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1223,7 +1450,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 14 )
+texture = ExtResource( 15 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1245,7 +1472,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1267,7 +1494,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 16 )
+texture = ExtResource( 17 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1289,7 +1516,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1311,7 +1538,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1348,7 +1575,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 19 )
+texture = ExtResource( 20 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1370,7 +1597,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1392,7 +1619,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 21 )
+texture = ExtResource( 22 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1414,7 +1641,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 22 )
+texture = ExtResource( 23 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1436,7 +1663,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1473,7 +1700,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 24 )
+texture = ExtResource( 25 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1494,7 +1721,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 25 )
+texture = ExtResource( 26 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1516,7 +1743,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1537,13 +1764,41 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Sirurueruerue Senyesuensuesue & Sugsesugsem Sosas"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "Size Flags", "custom_colors", "custom_fonts" ]
+
+[node name="Logo" type="TextureButton" parent="Book" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 69.0
+margin_top = 590.0
+margin_right = 1093.0
+margin_bottom = 1130.0
+rect_rotation = 1.40369
+rect_scale = Vector2( 0.18, 0.18 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 27 )
+script = ExtResource( 28 )
+_sections_unfolded = [ "Mouse", "Rect", "Textures" ]
+url = "http://shinerightstudio.com/"
 
 [node name="Trash" type="Control" parent="." index="2"]
 
@@ -1579,7 +1834,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 26 )
+texture = ExtResource( 29 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect", "Visibility" ]
 
@@ -1601,7 +1856,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 26 )
+texture = ExtResource( 29 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect", "Visibility" ]
 
@@ -1623,7 +1878,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 26 )
+texture = ExtResource( 29 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect", "Visibility" ]
 
@@ -1645,7 +1900,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 26 )
+texture = ExtResource( 29 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect", "Visibility" ]
 
@@ -1667,7 +1922,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 26 )
+texture = ExtResource( 29 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect", "Visibility" ]
 
@@ -1688,7 +1943,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 27 )
+texture = ExtResource( 30 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1709,7 +1964,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 28 )
+texture = ExtResource( 31 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1721,7 +1976,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 224.0
 margin_top = -345.0
-margin_right = 874.0
+margin_right = 902.0
 margin_bottom = -145.0
 rect_rotation = 65.74
 rect_pivot_offset = Vector2( 0, 0 )
@@ -1730,7 +1985,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 29 )
+texture = ExtResource( 32 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1743,7 +1998,7 @@ anchor_bottom = 0.0
 margin_left = 1237.0
 margin_top = -126.0
 margin_right = 1396.0
-margin_bottom = 578.0
+margin_bottom = 585.0
 rect_rotation = 149.186
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1751,7 +2006,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 30 )
+texture = ExtResource( 33 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1772,7 +2027,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 31 )
+texture = ExtResource( 34 )
 stretch_mode = 0
 _sections_unfolded = [ "Rect" ]
 
@@ -1788,7 +2043,7 @@ blend_times = [  ]
 
 [node name="PaperDrop1" type="AudioStreamPlayer" parent="AnimationPlayer" index="0"]
 
-stream = ExtResource( 32 )
+stream = ExtResource( 35 )
 volume_db = -5.0
 pitch_scale = 1.0
 autoplay = false
@@ -1797,7 +2052,7 @@ bus = "Master"
 
 [node name="PaperDrop2" type="AudioStreamPlayer" parent="AnimationPlayer" index="1"]
 
-stream = ExtResource( 33 )
+stream = ExtResource( 36 )
 volume_db = -5.0
 pitch_scale = 1.0
 autoplay = false
@@ -1806,7 +2061,7 @@ bus = "Master"
 
 [node name="PaperFlip" type="AudioStreamPlayer" parent="AnimationPlayer" index="2"]
 
-stream = ExtResource( 34 )
+stream = ExtResource( 37 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

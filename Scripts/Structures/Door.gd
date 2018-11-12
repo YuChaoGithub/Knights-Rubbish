@@ -1,6 +1,7 @@
 extends Node2D
 
 export(String, FILE) var enter_scene_path
+export(bool) var available = true
 
 const HERO_FADING_DURATION = 1.0
 
@@ -13,6 +14,9 @@ func _ready():
 	collision_area.add_to_group("enemy")
 
 func break_open():
+	if !available:
+		return
+		
 	collision_area.remove_from_group("enemy")
 	collision_area.add_to_group("door")
 	$Door/AnimationPlayer.play("Explode")

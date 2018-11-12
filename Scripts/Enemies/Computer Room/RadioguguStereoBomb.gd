@@ -5,9 +5,9 @@ const GRAVITY = 600
 const DAMAGE_PER_TICK = 12
 const TIME_PER_TICK = 1.0
 const TOTAL_TICKS = 4
-const KNOCK_BACK_VEL_X = 2000
-const KNOCK_BACK_FADE_RATE = 5000
-const KNOCK_BACK_VEL_Y = 3000
+const KNOCK_BACK_VEL_X = 1000
+const KNOCK_BACK_FADE_RATE = 2500
+const KNOCK_BACK_VEL_Y = 1000
 
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
 

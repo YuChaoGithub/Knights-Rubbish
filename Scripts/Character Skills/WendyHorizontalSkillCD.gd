@@ -8,8 +8,8 @@ const SCALE_INIT = 0.2
 const SCALE_FINAL = 0.8
 const SCALE_DURATION = 0.6
 
-const INIT_DAMAGE_MIN = 80
-const INIT_DAMAGE_MAX = 90
+const INIT_DAMAGE_MIN = 90
+const INIT_DAMAGE_MAX = 100
 const DAMAGE_MIN = 20
 const DAMAGE_REDUCE_RATE = 0.7
 

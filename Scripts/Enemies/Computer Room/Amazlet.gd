@@ -182,6 +182,10 @@ func die():
 	ec.die()
 	ec.health_bar.drop_health_bar()
 
+	var user_data = get_node("/root/UserDataSingleton")
+	user_data.level_available.radiogugu = 1
+	user_data.save_level_data()
+
 	emit_signal("defeated")
 
 	# Disable touch damage.

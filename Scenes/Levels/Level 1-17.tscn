@@ -20,7 +20,7 @@
 [ext_resource path="res://Scenes/Power Ups/Attack Potion.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=19]
 
-[node name="Game Level" type="Node2D"]
+[node name="Game Level" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -131,8 +131,6 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
 
-editor/display_folded = true
-
 [node name="FirstTrigger" type="Position2D" parent="CameraChangingTriggers" index="0"]
 
 position = Vector2( 550, -1100 )
@@ -205,6 +203,7 @@ position = Vector2( 9000, -700 )
 
 position = Vector2( 17200, -495.223 )
 enter_scene_path = "res://Scenes/Levels/Level 1-18.tscn"
+available = true
 
 [node name="Batterios" type="Node2D" parent="." index="11"]
 
@@ -366,12 +365,12 @@ activate_range_y = 0
 
 [node name="Harddies3" parent="Enemies4" index="3" instance=ExtResource( 14 )]
 
-position = Vector2( 9750, -1050 )
+position = Vector2( 10500, -1250 )
 _sections_unfolded = [ "Collision", "Transform", "collision" ]
 activate_range_x = 0
 activate_range_y = 0
 left_limit = 9400
-right_limit = 9950
+right_limit = 10600
 
 [node name="Harddies4" parent="Enemies4" index="4" instance=ExtResource( 14 )]
 
@@ -475,9 +474,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/PassTrigger2" to="Enemies2" method="activate"]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger2" to="Enemies3" method="activate"]
-
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger2" to="FollowingCamera" method="update_right_limit" binds= [ 8550 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger2" to="Enemies3" method="activate"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="FollowingCamera" method="update_right_limit" binds= [ 11750 ]]
 

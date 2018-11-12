@@ -7,12 +7,13 @@ const ENTER_ANIMATION_DURATION = 1.5
 const LEAVE_ANIMATION_DURATION = 1.0
 
 const AUDIO_VOLUME_DB = -5
+const PLAYER_2_AUDIO_PITCH = 0.8
 
 var hero_lock_sound = preload("res://Audio/button_click.wav")
 var hero_choosing_sound = preload("res://Audio/hero_choosing.wav")
 
 var lock_audio_player
-var choosing_audio_player
+var choosing_audio_player = [null, null]
 
 var hero_infos = [
     preload("res://Scripts/Constants/KeshiaErasiaConstants.gd"),
@@ -62,10 +63,16 @@ func _ready():
     lock_audio_player.volume_db = AUDIO_VOLUME_DB
     add_child(lock_audio_player)
 
-    choosing_audio_player = AudioStreamPlayer.new()
-    choosing_audio_player.stream = hero_choosing_sound
-    choosing_audio_player.volume_db = AUDIO_VOLUME_DB
-    add_child(choosing_audio_player)
+    choosing_audio_player[0] = AudioStreamPlayer.new()
+    choosing_audio_player[0].stream = hero_choosing_sound
+    choosing_audio_player[0].volume_db = AUDIO_VOLUME_DB
+    add_child(choosing_audio_player[0])
+
+    choosing_audio_player[1] = AudioStreamPlayer.new()
+    choosing_audio_player[1].stream = hero_choosing_sound
+    choosing_audio_player[1].volume_db = AUDIO_VOLUME_DB
+    choosing_audio_player[1].pitch_scale = PLAYER_2_AUDIO_PITCH
+    add_child(choosing_audio_player[1])
 
     set_process(false)
 
@@ -94,13 +101,13 @@ func _process(delta):
     # P1.
     if !p1_locked:
         if Input.is_action_just_pressed("p1_up"):
-            p1_selection = clamp_index_in_range(p1_selection, p1_selection - ICONS_COL_COUNT)
+            p1_selection = clamp_index_in_range(p1_selection, p1_selection - ICONS_COL_COUNT, 0)
         elif Input.is_action_just_pressed("p1_down"):
-            p1_selection = clamp_index_in_range(p1_selection, p1_selection + ICONS_COL_COUNT)
+            p1_selection = clamp_index_in_range(p1_selection, p1_selection + ICONS_COL_COUNT, 0)
         elif Input.is_action_just_pressed("p1_left"):
-            p1_selection = clamp_index_in_range(p1_selection, p1_selection - 1)
+            p1_selection = clamp_index_in_range(p1_selection, p1_selection - 1, 0)
         elif Input.is_action_just_pressed("p1_right"):
-            p1_selection = clamp_index_in_range(p1_selection, p1_selection + 1)
+            p1_selection = clamp_index_in_range(p1_selection, p1_selection + 1, 0)
 
     if Input.is_action_just_pressed("p1_attack"):
         if p1_locked:
@@ -132,13 +139,13 @@ func _process(delta):
     if player_count > 1:
         if !p2_locked:
             if Input.is_action_just_pressed("p2_up"):
-                p2_selection = clamp_index_in_range(p2_selection, p2_selection - ICONS_COL_COUNT)
+                p2_selection = clamp_index_in_range(p2_selection, p2_selection - ICONS_COL_COUNT, 1)
             elif Input.is_action_just_pressed("p2_down"):
-                p2_selection = clamp_index_in_range(p2_selection, p2_selection + ICONS_COL_COUNT)
+                p2_selection = clamp_index_in_range(p2_selection, p2_selection + ICONS_COL_COUNT, 1)
             elif Input.is_action_just_pressed("p2_left"):
-                p2_selection = clamp_index_in_range(p2_selection, p2_selection - 1)
+                p2_selection = clamp_index_in_range(p2_selection, p2_selection - 1, 1)
             elif Input.is_action_just_pressed("p2_right"):
-                p2_selection = clamp_index_in_range(p2_selection, p2_selection + 1)
+                p2_selection = clamp_index_in_range(p2_selection, p2_selection + 1, 1)
 
         if Input.is_action_just_pressed("p2_attack"):
             if p2_locked:
@@ -158,11 +165,12 @@ func _process(delta):
 
     update_hero_selection_frames()
 
-func clamp_index_in_range(original, new):
+# Well, I shouldn't do this, but the choosing sound will be played here.
+func clamp_index_in_range(original, new, player_index):
     if new < 0 || new >= ICONS_COL_COUNT * ICONS_ROW_COUNT:
         return original
     else:
-        choosing_audio_player.play()
+        choosing_audio_player[player_index].play()
         return new
 
 func update_hero_selection_frames():

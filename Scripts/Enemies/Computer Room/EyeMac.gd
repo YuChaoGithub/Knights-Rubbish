@@ -406,5 +406,10 @@ func screenshot():
 
 func die():
 	ec.die()
+
+	var user_data = get_node("/root/UserDataSingleton")
+	user_data.level_available.realfake = 1
+	user_data.save_level_data()
+
 	emit_signal("defeated")
 	ec.health_bar.drop_health_bar()

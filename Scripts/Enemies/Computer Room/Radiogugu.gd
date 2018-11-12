@@ -383,6 +383,11 @@ func knocked_back(vel_x, vel_y, fade_rate):
 func die():
 	spawn_stereo_bombs()
 	ec.die()
+
+	var user_data = get_node("/root/UserDataSingleton")
+	user_data.level_available.godotbos = 1
+	user_data.save_level_data()
+
 	emit_signal("defeated")
 	ec.health_bar.drop_health_bar()
 	cancel_laser_sequence()

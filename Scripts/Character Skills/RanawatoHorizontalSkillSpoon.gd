@@ -13,6 +13,7 @@ var hit = false
 
 var timestamp = 0.0
 
+onready var following_camera = $"../FollowingCamera"
 onready var movement_pattern = preload("res://Scripts/Movements/StraightLineMovement.gd").new(side * SPEED_X, 0)
 onready var gravity_movement = preload("res://Scripts/Movements/GravityMovement.gd").new(self, GRAVITY)
 
@@ -29,13 +30,15 @@ func _process(delta):
     gravity_movement.move(delta)
     var collision = move_and_collide(movement_pattern.movement(delta))
     
-    if gravity_movement.is_landed || collision != null:
+    if gravity_movement.is_landed || collision != null || !following_camera.in_camera_view(self.global_position):
         movement_pattern.dx *= SLIP_RATIO
         gravity_movement.dy = 0
         gravity_movement.gravity = 0
 
         $AnimationPlayer.play("Fade")
         combo_handler.horizontal_skill_cancelled()
+
+        set_process(false)
 
     timestamp += delta
     if timestamp >= TOTAL_LIFE_TIME:

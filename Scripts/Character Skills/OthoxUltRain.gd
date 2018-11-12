@@ -2,8 +2,8 @@ extends Node2D
 
 const SPEED_Y = 1500
 
-const DAMAGE_MIN = 10
-const DAMAGE_MAX = 90
+const DAMAGE_MIN = 20
+const DAMAGE_MAX = 60
 const LIFE_TIME = 1.0
 
 var attack_modifier

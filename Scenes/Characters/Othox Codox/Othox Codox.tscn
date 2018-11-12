@@ -13251,7 +13251,7 @@ extents = Vector2( 59.2229, 156.89 )
 custom_solver_bias = 0.0
 extents = Vector2( 56.6272, 108.611 )
 
-[node name="Othox Codox Sprites" type="KinematicBody2D"]
+[node name="Othox Codox Sprites" type="KinematicBody2D" index="0"]
 
 input_pickable = false
 collision_layer = 0
@@ -13271,7 +13271,6 @@ confused_icon_path = NodePath("Sprite/Animation/Wheel Chair/Confused Icon")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-visible = false
 position = Vector2( 0, 38.81 )
 shape = SubResource( 1 )
 

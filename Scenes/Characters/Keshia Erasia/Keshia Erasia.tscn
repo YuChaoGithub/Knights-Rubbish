@@ -13998,7 +13998,6 @@ blend_times = [  ]
 
 [node name="Ult Hit Box" type="Area2D" parent="." index="7"]
 
-editor/display_folded = true
 visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -14009,11 +14008,10 @@ collision_layer = 0
 collision_mask = 0
 audio_bus_override = false
 audio_bus_name = "Master"
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ult Hit Box" index="0"]
 
-visible = false
 shape = SubResource( 27 )
 
 [node name="DoorCheckArea" type="Area2D" parent="." index="8"]

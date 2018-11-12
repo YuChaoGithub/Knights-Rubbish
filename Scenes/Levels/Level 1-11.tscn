@@ -76,15 +76,15 @@
 [ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=74]
 [ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=75]
 [ext_resource path="res://Scenes/Platforms/Enemy Blocking Platform.tscn" type="PackedScene" id=76]
-[ext_resource path="res://Scenes/Power Ups/Healing Machine.tscn" type="PackedScene" id=77]
-[ext_resource path="res://Scenes/Structures/Portal.tscn" type="PackedScene" id=78]
-[ext_resource path="res://Fonts/edosz.tres" type="DynamicFont" id=79]
-[ext_resource path="res://Graphics/Structure/Portal Outline.png" type="Texture" id=80]
-[ext_resource path="res://Scenes/Structures/Light.tscn" type="PackedScene" id=81]
-[ext_resource path="res://Scenes/Structures/Computer Screen.tscn" type="PackedScene" id=82]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Radiogugu Stereo Bomb.tscn" type="PackedScene" id=83]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Radiogugu.tscn" type="PackedScene" id=84]
-[ext_resource path="res://Scenes/Power Ups/Defense Potion.tscn" type="PackedScene" id=85]
+[ext_resource path="res://Scenes/Structures/Portal.tscn" type="PackedScene" id=77]
+[ext_resource path="res://Fonts/edosz.tres" type="DynamicFont" id=78]
+[ext_resource path="res://Graphics/Structure/Portal Outline.png" type="Texture" id=79]
+[ext_resource path="res://Scenes/Structures/Light.tscn" type="PackedScene" id=80]
+[ext_resource path="res://Scenes/Structures/Computer Screen.tscn" type="PackedScene" id=81]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Radiogugu Stereo Bomb.tscn" type="PackedScene" id=82]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Radiogugu.tscn" type="PackedScene" id=83]
+[ext_resource path="res://Scenes/Power Ups/Defense Potion.tscn" type="PackedScene" id=84]
+[ext_resource path="res://Scenes/Power Ups/Healing Potion.tscn" type="PackedScene" id=85]
 [ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=86]
 
 [sub_resource type="Animation" id=1]
@@ -106,7 +106,7 @@ tracks/0/keys = {
 "values": [ Color( 0.523438, 0.493607, 0.448862, 1 ), Color( 0, 1, 0.179688, 1 ) ]
 }
 
-[node name="Game Level" type="Node2D"]
+[node name="Game Level" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -480,6 +480,7 @@ _sections_unfolded = [ "Cell", "Collision", "Visibility" ]
 
 [node name="Writings" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Z Index" ]
 
 [node name="You do it to yourself" type="Label" parent="Writings" index="0"]
@@ -534,6 +535,7 @@ _sections_unfolded = [ "Hint", "Rect", "custom_colors", "custom_fonts", "custom_
 
 [node name="White Arrow" type="Sprite" parent="Writings" index="2"]
 
+editor/display_folded = true
 modulate = Color( 0.523438, 0.493607, 0.448862, 1 )
 position = Vector2( 2400, -600 )
 scale = Vector2( 0.5, 0.5 )
@@ -946,19 +948,19 @@ editor/display_folded = true
 
 [node name="BlackFrameTrigger" type="Position2D" parent="CameraChangingTriggers" index="0"]
 
-position = Vector2( 800, -2250 )
+position = Vector2( 950, -2550 )
 script = ExtResource( 74 )
-range_x = 500
-range_y = 500
+range_x = 1000
+range_y = 1000
 x_check = 1
 y_check = 2
 
 [node name="BlueFrameTrigger" type="Position2D" parent="CameraChangingTriggers" index="1"]
 
-position = Vector2( 1500, -1600 )
+position = Vector2( 1500, -1750 )
 script = ExtResource( 74 )
-range_x = 500
-range_y = 500
+range_x = 1000
+range_y = 1000
 x_check = 0
 y_check = 2
 
@@ -989,15 +991,11 @@ position = Vector2( 2700, -400 )
 
 [node name="HealingMachines" type="Node2D" parent="." index="9"]
 
-[node name="Healing Machine" parent="HealingMachines" index="0" instance=ExtResource( 77 )]
-
-modulate = Color( 0.578125, 0.578125, 0.578125, 1 )
-position = Vector2( 2440, -900 )
-_sections_unfolded = [ "Visibility" ]
-
 [node name="Structures" type="Node2D" parent="." index="10"]
 
-[node name="BlackPortal1" parent="Structures" index="0" instance=ExtResource( 78 )]
+editor/display_folded = true
+
+[node name="BlackPortal1" parent="Structures" index="0" instance=ExtResource( 77 )]
 
 editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
@@ -1023,14 +1021,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 79 )
+custom_fonts/font = ExtResource( 78 )
 text = "1"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="BlackPortal2" parent="Structures" index="1" instance=ExtResource( 78 )]
+[node name="BlackPortal2" parent="Structures" index="1" instance=ExtResource( 77 )]
 
 editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
@@ -1056,14 +1054,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 79 )
+custom_fonts/font = ExtResource( 78 )
 text = "2"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="BlackPortal3" parent="Structures" index="2" instance=ExtResource( 78 )]
+[node name="BlackPortal3" parent="Structures" index="2" instance=ExtResource( 77 )]
 
 editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
@@ -1089,14 +1087,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 79 )
+custom_fonts/font = ExtResource( 78 )
 text = "1"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="BlackPortal4" parent="Structures" index="3" instance=ExtResource( 78 )]
+[node name="BlackPortal4" parent="Structures" index="3" instance=ExtResource( 77 )]
 
 editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
@@ -1122,14 +1120,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 79 )
+custom_fonts/font = ExtResource( 78 )
 text = "2"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="BlackPortal5" parent="Structures" index="4" instance=ExtResource( 78 )]
+[node name="BlackPortal5" parent="Structures" index="4" instance=ExtResource( 77 )]
 
 editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
@@ -1155,14 +1153,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 79 )
+custom_fonts/font = ExtResource( 78 )
 text = "2"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="BlackPortal6" parent="Structures" index="5" instance=ExtResource( 78 )]
+[node name="BlackPortal6" parent="Structures" index="5" instance=ExtResource( 77 )]
 
 editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
@@ -1188,14 +1186,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 79 )
+custom_fonts/font = ExtResource( 78 )
 text = "1"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="BlackPortal7" parent="Structures" index="6" instance=ExtResource( 78 )]
+[node name="BlackPortal7" parent="Structures" index="6" instance=ExtResource( 77 )]
 
 editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
@@ -1221,14 +1219,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 79 )
+custom_fonts/font = ExtResource( 78 )
 text = "3"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="BlackPortal8" parent="Structures" index="7" instance=ExtResource( 78 )]
+[node name="BlackPortal8" parent="Structures" index="7" instance=ExtResource( 77 )]
 
 editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
@@ -1254,14 +1252,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 79 )
+custom_fonts/font = ExtResource( 78 )
 text = "3"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="BlackPortal9" parent="Structures" index="8" instance=ExtResource( 78 )]
+[node name="BlackPortal9" parent="Structures" index="8" instance=ExtResource( 77 )]
 
 editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
@@ -1287,14 +1285,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 79 )
+custom_fonts/font = ExtResource( 78 )
 text = "1"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="BlackPortal10" parent="Structures" index="9" instance=ExtResource( 78 )]
+[node name="BlackPortal10" parent="Structures" index="9" instance=ExtResource( 77 )]
 
 editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
@@ -1320,14 +1318,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 79 )
+custom_fonts/font = ExtResource( 78 )
 text = "2"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="BlackPortal11" parent="Structures" index="10" instance=ExtResource( 78 )]
+[node name="BlackPortal11" parent="Structures" index="10" instance=ExtResource( 77 )]
 
 editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
@@ -1353,14 +1351,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 79 )
+custom_fonts/font = ExtResource( 78 )
 text = "0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="BlackPortal12" parent="Structures" index="11" instance=ExtResource( 78 )]
+[node name="BlackPortal12" parent="Structures" index="11" instance=ExtResource( 77 )]
 
 editor/display_folded = true
 modulate = Color( 0, 0, 0, 1 )
@@ -1385,7 +1383,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 79 )
+custom_fonts/font = ExtResource( 78 )
 text = "X"
 percent_visible = 1.0
 lines_skipped = 0
@@ -1397,10 +1395,10 @@ _sections_unfolded = [ "Rect", "custom_fonts" ]
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 750, -2150 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 80 )
+texture = ExtResource( 79 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="BluePortal" parent="Structures" index="13" instance=ExtResource( 78 )]
+[node name="BluePortal" parent="Structures" index="13" instance=ExtResource( 77 )]
 
 modulate = Color( 0, 0.0859375, 1, 1 )
 position = Vector2( 550, -2150 )
@@ -1412,45 +1410,46 @@ destination_node_path = NodePath("../BluePortalFrame")
 modulate = Color( 0.125, 0, 1, 1 )
 position = Vector2( 1500, -1500 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 80 )
+texture = ExtResource( 79 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="LightRight2" parent="Structures" index="15" instance=ExtResource( 81 )]
+[node name="LightRight2" parent="Structures" index="15" instance=ExtResource( 80 )]
 
 position = Vector2( 2517.9, -1392.27 )
 rotation = -0.366681
 scale = Vector2( -1.5, 1.5 )
 
-[node name="Computer Screen" parent="Structures" index="16" instance=ExtResource( 82 )]
+[node name="Computer Screen" parent="Structures" index="16" instance=ExtResource( 81 )]
 
 position = Vector2( 7818.71, -670.686 )
 enter_scene_path = "res://Scenes/Levels/Level 1-12.tscn"
+available = true
 
 [node name="Enemies" type="Node2D" parent="." index="11"]
 
 editor/display_folded = true
 
-[node name="Radiogugu Stereo Bomb" parent="Enemies" index="0" instance=ExtResource( 83 )]
+[node name="Radiogugu Stereo Bomb" parent="Enemies" index="0" instance=ExtResource( 82 )]
 
 position = Vector2( 2355.48, -2501.37 )
 
-[node name="Radiogugu Stereo Bomb2" parent="Enemies" index="1" instance=ExtResource( 83 )]
+[node name="Radiogugu Stereo Bomb2" parent="Enemies" index="1" instance=ExtResource( 82 )]
 
 position = Vector2( 2346.03, -3192.95 )
 
-[node name="Radiogugu Stereo Bomb3" parent="Enemies" index="2" instance=ExtResource( 83 )]
+[node name="Radiogugu Stereo Bomb3" parent="Enemies" index="2" instance=ExtResource( 82 )]
 
 position = Vector2( 1488.18, -3179.72 )
 
-[node name="Radiogugu Stereo Bomb4" parent="Enemies" index="3" instance=ExtResource( 83 )]
+[node name="Radiogugu Stereo Bomb4" parent="Enemies" index="3" instance=ExtResource( 82 )]
 
 position = Vector2( 683.103, -3175.1 )
 
-[node name="Radiogugu Stereo Bomb5" parent="Enemies" index="4" instance=ExtResource( 83 )]
+[node name="Radiogugu Stereo Bomb5" parent="Enemies" index="4" instance=ExtResource( 82 )]
 
 position = Vector2( 674.704, -2480.61 )
 
-[node name="Radiogugu" parent="Enemies" index="5" instance=ExtResource( 84 )]
+[node name="Radiogugu" parent="Enemies" index="5" instance=ExtResource( 83 )]
 
 position = Vector2( 1550, -700 )
 activate_range_x = 0
@@ -1458,9 +1457,21 @@ activate_range_y = 0
 
 [node name="PowerUps" type="Node2D" parent="." index="12"]
 
-[node name="DefensivePotion" parent="PowerUps" index="0" instance=ExtResource( 85 )]
+[node name="DefensivePotion" parent="PowerUps" index="0" instance=ExtResource( 84 )]
 
 position = Vector2( 450, -350 )
+
+[node name="HealPotion" parent="PowerUps" index="1" instance=ExtResource( 85 )]
+
+position = Vector2( 2550, -350 )
+
+[node name="HealPotion2" parent="PowerUps" index="2" instance=ExtResource( 85 )]
+
+position = Vector2( 2400, -350 )
+
+[node name="HealPotion3" parent="PowerUps" index="3" instance=ExtResource( 85 )]
+
+position = Vector2( 2250, -350 )
 
 [node name="ForegroundDecorations" type="Node2D" parent="." index="13"]
 
@@ -1477,15 +1488,15 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/BlackFrameTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -2500 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/BlueFrameTrigger" to="Enemies/Radiogugu" method="activate"]
-
 [connection signal="passed" from="CameraChangingTriggers/BlueFrameTrigger" to="FollowingCamera" method="update_top_limit" binds= [ -1700 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/RadioguguClearTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 8500 ]]
+[connection signal="passed" from="CameraChangingTriggers/BlueFrameTrigger" to="Enemies/Radiogugu" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/RadioguguClearTrigger" to="Writings/White Arrow/AnimationPlayer" method="play" binds= [ "Animate" ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/RadioguguClearTrigger" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/RadioguguClearTrigger" to="Writings/White Arrow/AnimationPlayer" method="play" binds= [ "Animate" ]]
+[connection signal="count_reached" from="CameraChangingTriggers/RadioguguClearTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 8500 ]]
 
 [connection signal="defeated" from="Enemies/Radiogugu" to="CameraChangingTriggers/RadioguguClearTrigger" method="increment_count"]
 
