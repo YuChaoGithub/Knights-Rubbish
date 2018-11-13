@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Power Ups/PowerUpCommon.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Particles/Giant Dwaft Potion Particles.tscn" type="PackedScene" id=2]
@@ -15,6 +15,25 @@ extents = Vector2( 85.1433, 92.5582 )
 custom_solver_bias = 0.0
 extents = Vector2( 83.9538, 93.5413 )
 
+[sub_resource type="Animation" id=3]
+
+resource_name = "Animate"
+length = 0.3
+loop = true
+step = 0.03
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.27 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
 [node name="Giant Potion" type="KinematicBody2D" index="0"]
 
 input_pickable = false
@@ -30,7 +49,6 @@ activate_range_y = 2000
 
 visible = false
 position = Vector2( 3.81079, -80.6741 )
-scale = Vector2( 1, 1 )
 
 [node name="Movement Collision Shape" type="CollisionShape2D" parent="." index="1"]
 
@@ -39,7 +57,6 @@ shape = SubResource( 1 )
 
 [node name="Trigger Area" type="Area2D" parent="." index="2"]
 
-editor/display_folded = true
 position = Vector2( 5.54932, -95.0325 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -56,6 +73,16 @@ _sections_unfolded = [ "Collision" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger Area" index="0"]
 
 shape = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Trigger Area" index="1"]
+
+root_node = NodePath("..")
+autoplay = "Animate"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Animate = SubResource( 3 )
+blend_times = [  ]
 
 [node name="Sprite" type="Sprite" parent="." index="3"]
 

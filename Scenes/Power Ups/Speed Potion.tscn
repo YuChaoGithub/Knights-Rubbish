@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Power Ups/PowerUpCommon.gd" type="Script" id=1]
 [ext_resource path="res://Graphics/Particles/Dot.png" type="Texture" id=2]
@@ -6,18 +6,18 @@
 [ext_resource path="res://Graphics/Powerups/Speed Potion.png" type="Texture" id=4]
 [ext_resource path="res://Graphics/Powerups/Speed Up Arrow.png" type="Texture" id=5]
 
-[sub_resource type="Gradient" id=7]
+[sub_resource type="Gradient" id=1]
 
 offsets = PoolRealArray( 0.268868, 1 )
 colors = PoolColorArray( 0, 1, 1, 1, 1, 1, 1, 0 )
 
-[sub_resource type="GradientTexture" id=8]
+[sub_resource type="GradientTexture" id=2]
 
 flags = 4
-gradient = SubResource( 7 )
+gradient = SubResource( 1 )
 width = 2048
 
-[sub_resource type="ParticlesMaterial" id=9]
+[sub_resource type="ParticlesMaterial" id=3]
 
 render_priority = 0
 trail_divisor = 1
@@ -47,7 +47,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 0.15
 scale_random = 0.2
-color_ramp = SubResource( 8 )
+color_ramp = SubResource( 2 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -63,6 +63,25 @@ custom_solver_bias = 0.0
 extents = Vector2( 59.7552, 106.861 )
 
 [sub_resource type="Animation" id=5]
+
+resource_name = "Animate"
+length = 0.3
+loop = true
+step = 0.03
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.27 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[sub_resource type="Animation" id=6]
 
 length = 1.0
 loop = true
@@ -104,7 +123,7 @@ tracks/2/keys = {
 "values": [ Color( 0, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 0, 1, 1, 1 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=7]
 
 custom_solver_bias = 0.0
 extents = Vector2( 51.2523, 97.4869 )
@@ -138,7 +157,7 @@ fract_delta = true
 visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 9 )
+process_material = SubResource( 3 )
 texture = ExtResource( 2 )
 normal_map = null
 h_frames = 1
@@ -164,6 +183,16 @@ _sections_unfolded = [ "Collision" ]
 
 position = Vector2( 2.77805, -64.4987 )
 shape = SubResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Trigger Area" index="1"]
+
+root_node = NodePath("..")
+autoplay = "Animate"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Animate = SubResource( 5 )
+blend_times = [  ]
 
 [node name="Sprite" type="Sprite" parent="." index="2"]
 
@@ -200,13 +229,13 @@ autoplay = "Anim"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/Anim = SubResource( 5 )
+anims/Anim = SubResource( 6 )
 blend_times = [  ]
 
 [node name="Movement Collision Shape" type="CollisionShape2D" parent="." index="3"]
 
 position = Vector2( 2.9113, -100.073 )
-shape = SubResource( 6 )
+shape = SubResource( 7 )
 
 [connection signal="area_entered" from="Trigger Area" to="Trigger Area" method="on_area_entered"]
 

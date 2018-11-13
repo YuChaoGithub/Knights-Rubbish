@@ -3,8 +3,8 @@ extends Node2D
 # Basic Attack.
 const BASIC_ATTACK_DURATION = 3.0
 const BASIC_ATTACK_COOLDOWN = 0.1
-const BASIC_ATTACK_DAMAGE_MIN = 130
-const BASIC_ATTACK_DAMAGE_MAX = 150
+const BASIC_ATTACK_DAMAGE_MIN = 100
+const BASIC_ATTACK_DAMAGE_MAX = 130
 const BASIC_ATTACK_KNOCK_BACK_VEL_X = 500
 const BASIC_ATTACK_KNOCK_BACK_VEL_Y = 50
 const BASIC_ATTACK_KNOCK_BACK_FADE_RATE = 1000
@@ -85,7 +85,7 @@ func _ready():
 
 func _process(delta):
     if hero.is_on_floor():
-        if !up_skill_available && OS.get_ticks_msec() - up_skill_timestamp > UP_SKILL_LANDING_DETECTION_DELAY_IN_MSEC && up_skill_available == null:
+        if !up_skill_available && OS.get_ticks_msec() - up_skill_timestamp > UP_SKILL_LANDING_DETECTION_DELAY_IN_MSEC && up_skill_available_timer == null:
             up_skill_available_timer = cd_timer.new(UP_SKILL_COOLDOWN, self, "reset_up_skill_available")
 
 func reset_up_skill_available():
@@ -195,6 +195,9 @@ func up_skill():
         hero.set_status("can_jump", false, UP_SKILL_DURATION)
         hero.set_status("can_cast_skill", false, UP_SKILL_DURATION)
         hero.set_status("animate_movement", false,  UP_SKILL_DURATION)
+
+        up_skill_available = false
+        up_skill_timestamp = OS.get_ticks_msec()
 
         hero.jump_to_height(UP_SKILL_DISPLACEMENT)
 

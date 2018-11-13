@@ -12,18 +12,18 @@
 [ext_resource path="res://Graphics/Particles/Puff.png" type="Texture" id=10]
 [ext_resource path="res://Graphics/Characters/Othox Codox/Body.png" type="Texture" id=11]
 [ext_resource path="res://Graphics/Characters/Othox Codox/Small Wheel.png" type="Texture" id=12]
-[ext_resource path="res://Graphics/Characters/Common/Power Up/Attack Potion.png" type="Texture" id=13]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Wheel Chair.png" type="Texture" id=14]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Eye.png" type="Texture" id=15]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Left Wrinkle.png" type="Texture" id=16]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Right Wrinkle.png" type="Texture" id=17]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Left Brow.png" type="Texture" id=18]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Right Brow.png" type="Texture" id=19]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Nose.png" type="Texture" id=20]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Mouth.png" type="Texture" id=21]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Goatee.png" type="Texture" id=22]
-[ext_resource path="res://Graphics/Characters/Othox Codox/Hat.png" type="Texture" id=23]
-[ext_resource path="res://Graphics/Particles/Plus.png" type="Texture" id=24]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Wheel Chair.png" type="Texture" id=13]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Eye.png" type="Texture" id=14]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Left Wrinkle.png" type="Texture" id=15]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Right Wrinkle.png" type="Texture" id=16]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Left Brow.png" type="Texture" id=17]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Right Brow.png" type="Texture" id=18]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Nose.png" type="Texture" id=19]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Mouth.png" type="Texture" id=20]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Goatee.png" type="Texture" id=21]
+[ext_resource path="res://Graphics/Characters/Othox Codox/Hat.png" type="Texture" id=22]
+[ext_resource path="res://Graphics/Particles/Plus.png" type="Texture" id=23]
+[ext_resource path="res://Graphics/Characters/Common/Power Up/Attack Potion.png" type="Texture" id=24]
 [ext_resource path="res://Graphics/Characters/Othox Codox/Left Arm.png" type="Texture" id=25]
 [ext_resource path="res://Graphics/Characters/Othox Codox/Right Arm.png" type="Texture" id=26]
 [ext_resource path="res://Graphics/Characters/Othox Codox/Letters/s.png" type="Texture" id=27]
@@ -1195,7 +1195,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -1207,10 +1207,10 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/53/type = "value"
-tracks/53/path = NodePath("Animation/Drink:visible")
+tracks/53/path = NodePath("Animation/Wheel Chair/Body/Drink:visible")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/imported = false
@@ -2317,7 +2317,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -2329,10 +2329,10 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/53/type = "value"
-tracks/53/path = NodePath("Animation/Drink:visible")
+tracks/53/path = NodePath("Animation/Wheel Chair/Body/Drink:visible")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/imported = false
@@ -3214,7 +3214,7 @@ tracks/52/keys = {
 "values": [ ExtResource( 51 ) ]
 }
 tracks/53/type = "value"
-tracks/53/path = NodePath("Animation/Drink:visible")
+tracks/53/path = NodePath("Animation/Wheel Chair/Body/Drink:visible")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/imported = false
@@ -4105,7 +4105,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -4117,10 +4117,10 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/53/type = "value"
-tracks/53/path = NodePath("Animation/Drink:visible")
+tracks/53/path = NodePath("Animation/Wheel Chair/Body/Drink:visible")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/imported = false
@@ -4987,7 +4987,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -4999,10 +4999,10 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/53/type = "value"
-tracks/53/path = NodePath("Animation/Drink:visible")
+tracks/53/path = NodePath("Animation/Wheel Chair/Body/Drink:visible")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/imported = false
@@ -5014,7 +5014,7 @@ tracks/53/keys = {
 "values": [ true, false ]
 }
 tracks/54/type = "value"
-tracks/54/path = NodePath("Animation/Drink:position")
+tracks/54/path = NodePath("Animation/Wheel Chair/Body/Drink:position")
 tracks/54/interp = 1
 tracks/54/loop_wrap = true
 tracks/54/imported = false
@@ -5023,10 +5023,10 @@ tracks/54/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 1, 1.1, 1.2, 1.3, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 52.5501, -43.8821 ), Vector2( 68.586, -66.6358 ), Vector2( 73.3806, -93.588 ), Vector2( 62.2836, -109.344 ), Vector2( 45.7691, -117.516 ), Vector2( 27.0876, -111.601 ), Vector2( 27.0876, -111.601 ), Vector2( 58.2722, -114.512 ), Vector2( 73.2408, -98.7117 ), Vector2( 81.5568, -50.0638 ), Vector2( 87.7937, 94.6325 ) ]
+"values": [ Vector2( 72.9794, 39.1971 ), Vector2( 83.908, 23.5936 ), Vector2( 78.1474, 3.4512 ), Vector2( 67.7314, -11.2833 ), Vector2( 51.2169, -16.3909 ), Vector2( 34.5784, -12.5189 ), Vector2( 34.5784, -12.5189 ), Vector2( 50.0922, -12.8649 ), Vector2( 67.4347, -14.4932 ), Vector2( 79.7953, 50.0666 ), Vector2( 96.5328, 184.594 ) ]
 }
 tracks/55/type = "value"
-tracks/55/path = NodePath("Animation/Drink:rotation_degrees")
+tracks/55/path = NodePath("Animation/Wheel Chair/Body/Drink:rotation_degrees")
 tracks/55/interp = 1
 tracks/55/loop_wrap = true
 tracks/55/imported = false
@@ -5035,7 +5035,7 @@ tracks/55/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 1, 1.1, 1.2, 1.3, 1.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 24.6155, 27.7398, -8.5167, -44.7732, -81.0297, -117.286, -117.286, -83.3615, -49.7774, -5.65188, -5.65188 ]
+"values": [ 24.6155, 27.7398, -8.5167, -44.7732, -81.0297, -117.286, -117.286, -80.285, -52.6675, -7.1865, -5.65188 ]
 }
 tracks/56/type = "value"
 tracks/56/path = NodePath("Animation/Ghost:modulate")
@@ -5893,7 +5893,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -5905,10 +5905,10 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/53/type = "value"
-tracks/53/path = NodePath("Animation/Drink:visible")
+tracks/53/path = NodePath("Animation/Wheel Chair/Body/Drink:visible")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/imported = false
@@ -6799,7 +6799,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -6811,10 +6811,10 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/53/type = "value"
-tracks/53/path = NodePath("Animation/Drink:visible")
+tracks/53/path = NodePath("Animation/Wheel Chair/Body/Drink:visible")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/imported = false
@@ -7669,7 +7669,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -7681,10 +7681,10 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/53/type = "value"
-tracks/53/path = NodePath("Animation/Drink:visible")
+tracks/53/path = NodePath("Animation/Wheel Chair/Body/Drink:visible")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/imported = false
@@ -8539,7 +8539,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -8551,10 +8551,10 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/53/type = "value"
-tracks/53/path = NodePath("Animation/Drink:visible")
+tracks/53/path = NodePath("Animation/Wheel Chair/Body/Drink:visible")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/imported = false
@@ -9409,7 +9409,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -9421,10 +9421,10 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/53/type = "value"
-tracks/53/path = NodePath("Animation/Drink:visible")
+tracks/53/path = NodePath("Animation/Wheel Chair/Body/Drink:visible")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/imported = false
@@ -10294,7 +10294,7 @@ tracks/52/keys = {
 "values": [ ExtResource( 52 ) ]
 }
 tracks/53/type = "value"
-tracks/53/path = NodePath("Animation/Drink:visible")
+tracks/53/path = NodePath("Animation/Wheel Chair/Body/Drink:visible")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/imported = false
@@ -11150,7 +11150,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -11162,10 +11162,10 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/53/type = "value"
-tracks/53/path = NodePath("Animation/Drink:visible")
+tracks/53/path = NodePath("Animation/Wheel Chair/Body/Drink:visible")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/imported = false
@@ -12068,7 +12068,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -12080,10 +12080,10 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/53/type = "value"
-tracks/53/path = NodePath("Animation/Drink:visible")
+tracks/53/path = NodePath("Animation/Wheel Chair/Body/Drink:visible")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/imported = false
@@ -12998,7 +12998,7 @@ tracks/51/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/52/type = "value"
 tracks/52/path = NodePath("Animation/Wheel Chair/Body/Right Eye:texture")
@@ -13010,10 +13010,10 @@ tracks/52/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 15 ) ]
+"values": [ ExtResource( 14 ) ]
 }
 tracks/53/type = "value"
-tracks/53/path = NodePath("Animation/Drink:visible")
+tracks/53/path = NodePath("Animation/Wheel Chair/Body/Drink:visible")
 tracks/53/interp = 1
 tracks/53/loop_wrap = true
 tracks/53/imported = false
@@ -13251,7 +13251,7 @@ extents = Vector2( 59.2229, 156.89 )
 custom_solver_bias = 0.0
 extents = Vector2( 56.6272, 108.611 )
 
-[node name="Othox Codox Sprites" type="KinematicBody2D" index="0"]
+[node name="Othox Codox Sprites" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
@@ -13419,7 +13419,7 @@ _sections_unfolded = [ "Visibility" ]
 [node name="K" type="Particles2D" parent="Sprite/Animation/UltParticles" index="0"]
 
 rotation = -1.5708
-emitting = true
+emitting = false
 amount = 20
 lifetime = 2.0
 one_shot = false
@@ -13442,7 +13442,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 [node name="I" type="Particles2D" parent="Sprite/Animation/UltParticles" index="1"]
 
 rotation = -1.5708
-emitting = true
+emitting = false
 amount = 20
 lifetime = 2.0
 one_shot = false
@@ -13465,7 +13465,7 @@ _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 [node name="L" type="Particles2D" parent="Sprite/Animation/UltParticles" index="2"]
 
 rotation = -1.5708
-emitting = true
+emitting = false
 amount = 40
 lifetime = 2.0
 one_shot = false
@@ -13523,23 +13523,13 @@ texture = ExtResource( 12 )
 offset = Vector2( 0.602219, 0.471329 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="Drink" type="Sprite" parent="Sprite/Animation" index="5"]
+[node name="Wheel Chair" type="Sprite" parent="Sprite/Animation" index="5"]
 
-visible = false
-position = Vector2( 87.7937, 94.6325 )
-rotation = -0.0986439
 texture = ExtResource( 13 )
-_sections_unfolded = [ "Visibility" ]
-
-[node name="Wheel Chair" type="Sprite" parent="Sprite/Animation" index="6"]
-
-editor/display_folded = true
-texture = ExtResource( 14 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Body" type="RemoteTransform2D" parent="Sprite/Animation/Wheel Chair" index="0"]
 
-editor/display_folded = true
 position = Vector2( -6.88864, -99.4379 )
 remote_path = NodePath("../../Body")
 use_global_coordinates = true
@@ -13551,57 +13541,56 @@ update_scale = true
 
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 3.00605, -49.2059 )
-texture = ExtResource( 15 )
+texture = ExtResource( 14 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Right Eye" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="1"]
 
 modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 36.9669, -38.4186 )
-texture = ExtResource( 15 )
+texture = ExtResource( 14 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Left Wrinkle" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="2"]
 
 position = Vector2( -11.1154, -5.74422 )
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 
 [node name="Right Wrinkle" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="3"]
 
 position = Vector2( 30.4383, 5.0019 )
-texture = ExtResource( 17 )
+texture = ExtResource( 16 )
 
 [node name="Left Eyebrow" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="4"]
 
 position = Vector2( 1.62183, -53.2707 )
-texture = ExtResource( 18 )
+texture = ExtResource( 17 )
 
 [node name="Right Eyebrow" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="5"]
 
 position = Vector2( 38.9234, -42.2653 )
-texture = ExtResource( 19 )
+texture = ExtResource( 18 )
 
 [node name="Nose" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="6"]
 
 position = Vector2( 12.6003, -21.957 )
-texture = ExtResource( 20 )
+texture = ExtResource( 19 )
 
 [node name="Mouth" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="7"]
 
 position = Vector2( 9.74373, -0.458313 )
-rotation = 3.08588
-texture = ExtResource( 21 )
+texture = ExtResource( 20 )
 
 [node name="Beard" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="8"]
 
 position = Vector2( 6.00408, 17.3764 )
-texture = ExtResource( 22 )
+texture = ExtResource( 21 )
 
 [node name="Hat" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="9"]
 
 editor/display_folded = true
 position = Vector2( 31.9925, -94.2244 )
-texture = ExtResource( 23 )
+texture = ExtResource( 22 )
 
 [node name="DownSkillParticles" type="Particles2D" parent="Sprite/Animation/Wheel Chair/Body/Hat" index="0"]
 
@@ -13621,20 +13610,28 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 18 )
-texture = ExtResource( 24 )
+texture = ExtResource( 23 )
 normal_map = null
 h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Process Material", "Textures", "Time", "Transform" ]
 
-[node name="Left Arm" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="10"]
+[node name="Drink" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="10"]
+
+visible = false
+position = Vector2( 96.5328, 184.594 )
+rotation = -0.0986439
+texture = ExtResource( 24 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Left Arm" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="11"]
 
 position = Vector2( -44.0386, 0.138672 )
 texture = ExtResource( 25 )
 offset = Vector2( 28.238, 18.4983 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Right Arm" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="11"]
+[node name="Right Arm" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="12"]
 
 editor/display_folded = true
 position = Vector2( 49.4514, 15.1539 )
@@ -13731,12 +13728,12 @@ position = Vector2( 146.924, 6.96516 )
 rotation = 0.0328896
 shape = SubResource( 25 )
 
-[node name="Wrinkles" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="12"]
+[node name="Wrinkles" type="Sprite" parent="Sprite/Animation/Wheel Chair/Body" index="13"]
 
 position = Vector2( 25.2521, -68.9185 )
 texture = ExtResource( 32 )
 
-[node name="UltEyes" type="Node2D" parent="Sprite/Animation/Wheel Chair/Body" index="13"]
+[node name="UltEyes" type="Node2D" parent="Sprite/Animation/Wheel Chair/Body" index="14"]
 
 editor/display_folded = true
 visible = false
@@ -13750,13 +13747,13 @@ position = Vector2( 4.4073, -51.3847 )
 position = Vector2( 36.5033, -43.4551 )
 rotation = 2.133
 
-[node name="Fire Particle" parent="Sprite/Animation/Wheel Chair/Body" index="14" instance=ExtResource( 34 )]
+[node name="Fire Particle" parent="Sprite/Animation/Wheel Chair/Body" index="15" instance=ExtResource( 34 )]
 
 visible = false
 position = Vector2( 30.992, -106.857 )
 rotation = 0.142412
 
-[node name="LeftWing" type="Node2D" parent="Sprite/Animation/Wheel Chair/Body" index="15"]
+[node name="LeftWing" type="Node2D" parent="Sprite/Animation/Wheel Chair/Body" index="16"]
 
 editor/display_folded = true
 modulate = Color( 1, 1, 1, 0 )
@@ -13791,7 +13788,7 @@ position = Vector2( 0, 12.7481 )
 texture = ExtResource( 38 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="RightWing" type="Node2D" parent="Sprite/Animation/Wheel Chair/Body" index="16"]
+[node name="RightWing" type="Node2D" parent="Sprite/Animation/Wheel Chair/Body" index="17"]
 
 editor/display_folded = true
 modulate = Color( 1, 1, 1, 0 )
@@ -13866,7 +13863,7 @@ position = Vector2( -24.0352, -29.8382 )
 scale = Vector2( 0.4, 0.4 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Ghost" type="Node2D" parent="Sprite/Animation" index="7"]
+[node name="Ghost" type="Node2D" parent="Sprite/Animation" index="6"]
 
 editor/display_folded = true
 modulate = Color( 1, 1, 1, 0 )
@@ -13884,7 +13881,7 @@ texture = ExtResource( 44 )
 
 position = Vector2( 5.67438, -103.114 )
 rotation = -0.511207
-texture = ExtResource( 23 )
+texture = ExtResource( 22 )
 
 [node name="LeftEye" type="Sprite" parent="Sprite/Animation/Ghost/Body" index="1"]
 
@@ -13910,19 +13907,19 @@ texture = ExtResource( 46 )
 
 position = Vector2( 0.543152, -2.62491 )
 rotation = -0.204603
-texture = ExtResource( 20 )
+texture = ExtResource( 19 )
 
 [node name="Mouth" type="Sprite" parent="Sprite/Animation/Ghost/Body" index="6"]
 
 position = Vector2( 2.27, 18.8168 )
 rotation = 2.87815
-texture = ExtResource( 21 )
+texture = ExtResource( 20 )
 
 [node name="Goatee" type="Sprite" parent="Sprite/Animation/Ghost/Body" index="7"]
 
 position = Vector2( 5.31744, 35.8097 )
 rotation = -0.306503
-texture = ExtResource( 22 )
+texture = ExtResource( 21 )
 
 [node name="Ripple" type="Sprite" parent="Sprite/Animation/Ghost/Body" index="8"]
 
@@ -13939,13 +13936,13 @@ playback_speed = 1.0
 anims/Animate = SubResource( 26 )
 blend_times = [  ]
 
-[node name="Speeded Icon" parent="Sprite/Animation" index="8" instance=ExtResource( 50 )]
+[node name="Speeded Icon" parent="Sprite/Animation" index="7" instance=ExtResource( 50 )]
 
 position = Vector2( -19.3261, 91.1091 )
 scale = Vector2( 0.6, 0.6 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="HorizontalSkillParticles" type="Particles2D" parent="Sprite/Animation" index="9"]
+[node name="HorizontalSkillParticles" type="Particles2D" parent="Sprite/Animation" index="8"]
 
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 67.3257, -35.1475 )
@@ -13970,11 +13967,11 @@ h_frames = 1
 v_frames = 1
 _sections_unfolded = [ "Process Material", "Textures", "Visibility", "Z Index" ]
 
-[node name="HorizontalSkillShootPos" type="Position2D" parent="Sprite/Animation" index="10"]
+[node name="HorizontalSkillShootPos" type="Position2D" parent="Sprite/Animation" index="9"]
 
 position = Vector2( 67.4161, -34.7312 )
 
-[node name="UpSkillPuffSpawnPos" type="Position2D" parent="Sprite/Animation" index="11"]
+[node name="UpSkillPuffSpawnPos" type="Position2D" parent="Sprite/Animation" index="10"]
 
 position = Vector2( 0, 117.447 )
 
@@ -14056,6 +14053,8 @@ shape = SubResource( 47 )
 [node name="Health Bar" parent="." index="7" instance=ExtResource( 54 )]
 
 [node name="Audio" type="Node2D" parent="." index="8"]
+
+editor/display_folded = true
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
 

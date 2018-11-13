@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=2]
+[gd_scene load_steps=104 format=2]
 
 [ext_resource path="res://Scripts/HeroCommon.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Character Skills/RanawatoPlatoSkills.gd" type="Script" id=2]
@@ -469,12 +469,7 @@ tracks/2/keys = {
 [sub_resource type="RectangleShape2D" id=31]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 121.419 )
-
-[sub_resource type="RectangleShape2D" id=32]
-
-custom_solver_bias = 0.0
-extents = Vector2( 28.8316, 40.2729 )
+extents = Vector2( 55.4762, 144.552 )
 
 [sub_resource type="Gradient" id=33]
 
@@ -549,7 +544,7 @@ extents = Vector2( 30.5058, 129.587 )
 [sub_resource type="RectangleShape2D" id=39]
 
 custom_solver_bias = 0.0
-extents = Vector2( 26.8019, 129.806 )
+extents = Vector2( 69.4884, 158.731 )
 
 [sub_resource type="RectangleShape2D" id=40]
 
@@ -1024,7 +1019,7 @@ tracks/38/loop_wrap = true
 tracks/38/imported = false
 tracks/38/enabled = true
 tracks/38/keys = {
-"times": PoolRealArray( 0, 0.35, 0.7 ),
+"times": PoolRealArray( 0, 0.25, 0.7 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 2, 0 ]
@@ -9978,9 +9973,9 @@ tracks/55/keys = {
 
 [sub_resource type="Animation" id=55]
 
-length = 1.0
+length = 0.5
 loop = false
-step = 0.1
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("Animation/Body/Face/Left Eye:position")
 tracks/0/interp = 1
@@ -10096,7 +10091,7 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 0.25 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 82.6793, 37.4322 ), Vector2( 82.6793, 37.4322 ) ]
@@ -10108,7 +10103,7 @@ tracks/10/loop_wrap = true
 tracks/10/imported = false
 tracks/10/enabled = true
 tracks/10/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 0.25 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, -123.129 ]
@@ -10132,7 +10127,7 @@ tracks/12/loop_wrap = true
 tracks/12/imported = false
 tracks/12/enabled = true
 tracks/12/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.5, 0.6, 1 ),
+"times": PoolRealArray( 0, 0.05, 0.1, 0.25, 0.3, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 111.351, 5.39766 ), Vector2( 87.4044, -24.8898 ), Vector2( 63.4578, -55.1773 ), Vector2( -8.38203, -146.04 ), Vector2( -23.1985, -168.212 ), Vector2( 2.84258, -256.899 ) ]
@@ -10144,7 +10139,7 @@ tracks/13/loop_wrap = true
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.5, 0.6, 1 ),
+"times": PoolRealArray( 0, 0.05, 0.1, 0.25, 0.3, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ -0.875733, -10.284, -4.83291, -10.7687, -16.3559, -0.88341 ]
@@ -10204,7 +10199,7 @@ tracks/18/loop_wrap = true
 tracks/18/imported = false
 tracks/18/enabled = true
 tracks/18/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 0.25 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( -82.6986, 39.716 ), Vector2( -82.6986, 39.716 ) ]
@@ -10216,7 +10211,7 @@ tracks/19/loop_wrap = true
 tracks/19/imported = false
 tracks/19/enabled = true
 tracks/19/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
+"times": PoolRealArray( 0, 0.25, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ -1.15834, -1.15834, 117.217 ]
@@ -10336,7 +10331,7 @@ tracks/29/loop_wrap = true
 tracks/29/imported = false
 tracks/29/enabled = true
 tracks/29/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
+"times": PoolRealArray( 0, 0.3, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 0.679688, 0, 1 ) ]
@@ -10468,7 +10463,7 @@ tracks/40/loop_wrap = true
 tracks/40/imported = false
 tracks/40/enabled = true
 tracks/40/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
+"times": PoolRealArray( 0, 0.25, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 0, 0, 1 ), Color( 1, 0.609375, 0, 1 ) ]
@@ -10576,7 +10571,7 @@ tracks/49/loop_wrap = true
 tracks/49/imported = false
 tracks/49/enabled = true
 tracks/49/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ 2, 0 ]
@@ -11306,7 +11301,7 @@ extents = Vector2( 68.3893, 105.259 )
 custom_solver_bias = 0.0
 extents = Vector2( 56.8438, 67.5532 )
 
-[node name="Ranawato Plato Sprites" type="KinematicBody2D" index="0"]
+[node name="Ranawato Plato Sprites" type="KinematicBody2D"]
 
 input_pickable = false
 collision_layer = 0
@@ -11675,9 +11670,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Left Arm" type="Sprite" parent="Sprite/Animation/Body" index="1"]
 
-position = Vector2( -84.9758, 32.8843 )
+position = Vector2( -82.6986, 39.716 )
 rotation = -0.0202168
-scale = Vector2( -1, 1 )
 texture = ExtResource( 18 )
 offset = Vector2( -19.6845, 22.75 )
 _sections_unfolded = [ "Transform" ]
@@ -11686,7 +11680,6 @@ _sections_unfolded = [ "Transform" ]
 
 editor/display_folded = true
 position = Vector2( 82.6793, 37.4322 )
-scale = Vector2( -1, 1 )
 texture = ExtResource( 19 )
 offset = Vector2( 14.8241, 22.1265 )
 _sections_unfolded = [ "Transform" ]
@@ -11722,7 +11715,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="LeftSpoon" type="Sprite" parent="Sprite/Animation" index="4"]
 
-editor/display_folded = true
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 1.41948, -13.1752 )
 texture = ExtResource( 24 )
@@ -11744,7 +11736,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="BasicSkillHitArea" type="Area2D" parent="Sprite/Animation/LeftSpoon" index="2"]
 
-editor/display_folded = true
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -11760,16 +11752,11 @@ _sections_unfolded = [ "Collision" ]
 
 shape = SubResource( 31 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite/Animation/LeftSpoon/BasicSkillHitArea" index="1"]
-
-position = Vector2( -1.3141, -80.8176 )
-shape = SubResource( 32 )
-
 [node name="BasicSkillParticles" type="Particles2D" parent="Sprite/Animation/LeftSpoon" index="3"]
 
 modulate = Color( 1, 1, 1, 0 )
 show_behind_parent = true
-emitting = true
+emitting = false
 amount = 100
 lifetime = 0.7
 one_shot = false
@@ -11791,7 +11778,7 @@ _sections_unfolded = [ "Drawing", "Process Material", "Textures", "Time", "Trans
 
 [node name="Spoon" type="Sprite" parent="Sprite/Animation" index="5"]
 
-position = Vector2( 39.0673, 11.1703 )
+position = Vector2( 111.351, 5.39766 )
 rotation = -0.0152844
 texture = ExtResource( 24 )
 _sections_unfolded = [ "Transform", "Visibility" ]
@@ -11819,7 +11806,6 @@ shape = SubResource( 38 )
 
 [node name="BasicSkillHitArea" type="Area2D" parent="Sprite/Animation/Spoon" index="1"]
 
-editor/display_folded = true
 visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -11846,7 +11832,7 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 collision_layer = 0
-collision_mask = 0
+collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
@@ -11880,7 +11866,7 @@ modulate = Color( 1, 1, 1, 0 )
 show_behind_parent = true
 position = Vector2( 0.828575, 2.16834 )
 rotation = 0.0152844
-emitting = true
+emitting = false
 amount = 100
 lifetime = 0.7
 one_shot = false

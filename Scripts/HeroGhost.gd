@@ -10,6 +10,9 @@ var ghost_ball_timer
 onready var enemy_layer = ProjectSettings.get_setting("layer_names/2d_physics/enemy")
 
 func activate():
+    if get_node("/root/PlayerSettings").player_count <= 1:
+        return
+
     $Node2D/Area2D.set_collision_layer_bit(enemy_layer, true)
     $"../Damage Area".remove_from_group("hero")
 

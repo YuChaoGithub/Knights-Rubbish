@@ -1356,9 +1356,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/PortalPassTrigger2" to="FollowingCamera" method="update_top_limit" binds= [ -4850 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="FollowingCamera" method="update_top_limit" binds= [ -4300 ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="Activator3" method="activate"]
+
+[connection signal="count_reached" from="CameraChangingTriggers/MobClearTrigger3" to="FollowingCamera" method="update_top_limit" binds= [ -4300 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/PortalPassTrigger3" to="FollowingCamera" method="update_top_limit" binds= [ -3450 ]]
 
@@ -1372,49 +1372,49 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/PortalPassTrigger5" to="FollowingCamera" method="update_top_limit" binds= [ -600 ]]
 
-[connection signal="defeated" from="Activator/Dark Earspider3" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
-
 [connection signal="defeated" from="Activator/Dark Earspider3" to="Writings/Countdown Label2" method="tick"]
 
-[connection signal="defeated" from="Activator/Dark Earspider4" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
+[connection signal="defeated" from="Activator/Dark Earspider3" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
 
 [connection signal="defeated" from="Activator/Dark Earspider4" to="Writings/Countdown Label2" method="tick"]
 
-[connection signal="defeated" from="Activator/Canmera2" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
+[connection signal="defeated" from="Activator/Dark Earspider4" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
 
 [connection signal="defeated" from="Activator/Canmera2" to="Writings/Countdown Label2" method="tick"]
 
-[connection signal="defeated" from="Activator/Canmera3" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
+[connection signal="defeated" from="Activator/Canmera2" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
 
 [connection signal="defeated" from="Activator/Canmera3" to="Writings/Countdown Label2" method="tick"]
 
-[connection signal="defeated" from="Activator/Mouse" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
+[connection signal="defeated" from="Activator/Canmera3" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
 
 [connection signal="defeated" from="Activator/Mouse" to="Writings/Countdown Label2" method="tick"]
 
-[connection signal="defeated" from="Activator/Floopy" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
+[connection signal="defeated" from="Activator/Mouse" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
 
 [connection signal="defeated" from="Activator/Floopy" to="Writings/Countdown Label2" method="tick"]
 
-[connection signal="defeated" from="Activator2/Laserphone" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
+[connection signal="defeated" from="Activator/Floopy" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
 
 [connection signal="defeated" from="Activator2/Laserphone" to="Writings/Countdown Label3" method="tick"]
 
-[connection signal="defeated" from="Activator2/Laserphone2" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
+[connection signal="defeated" from="Activator2/Laserphone" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
 [connection signal="defeated" from="Activator2/Laserphone2" to="Writings/Countdown Label3" method="tick"]
 
-[connection signal="defeated" from="Activator2/Canmera4" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
+[connection signal="defeated" from="Activator2/Laserphone2" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
 [connection signal="defeated" from="Activator2/Canmera4" to="Writings/Countdown Label3" method="tick"]
 
-[connection signal="defeated" from="Activator2/Mouse2" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
+[connection signal="defeated" from="Activator2/Canmera4" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
 [connection signal="defeated" from="Activator2/Mouse2" to="Writings/Countdown Label3" method="tick"]
 
-[connection signal="defeated" from="Activator2/Dark Earspider5" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
+[connection signal="defeated" from="Activator2/Mouse2" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
 [connection signal="defeated" from="Activator2/Dark Earspider5" to="Writings/Countdown Label3" method="tick"]
+
+[connection signal="defeated" from="Activator2/Dark Earspider5" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
 [connection signal="defeated" from="Activator3/Mouse3" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
@@ -1480,16 +1480,16 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Activator4/Floopy5" to="Writings/Countdown Label5" method="tick"]
 
-[connection signal="defeated" from="Enemies/Dark Earspider" to="CameraChangingTriggers/FirstMobClearTrigger" method="increment_count"]
-
 [connection signal="defeated" from="Enemies/Dark Earspider" to="Writings/Countdown Label1" method="tick"]
 
-[connection signal="defeated" from="Enemies/Dark Earspider2" to="CameraChangingTriggers/FirstMobClearTrigger" method="increment_count"]
+[connection signal="defeated" from="Enemies/Dark Earspider" to="CameraChangingTriggers/FirstMobClearTrigger" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Dark Earspider2" to="Writings/Countdown Label1" method="tick"]
 
-[connection signal="defeated" from="Enemies/Canmera" to="CameraChangingTriggers/FirstMobClearTrigger" method="increment_count"]
+[connection signal="defeated" from="Enemies/Dark Earspider2" to="CameraChangingTriggers/FirstMobClearTrigger" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Canmera" to="Writings/Countdown Label1" method="tick"]
+
+[connection signal="defeated" from="Enemies/Canmera" to="CameraChangingTriggers/FirstMobClearTrigger" method="increment_count"]
 
 

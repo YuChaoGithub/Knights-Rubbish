@@ -103,7 +103,7 @@
 [ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 1.png" type="Texture" id=101]
 [ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=102]
 
-[node name="Game Level" type="Node2D"]
+[node name="Game Level" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -2394,133 +2394,245 @@ count_to_emit = 5
 
 [node name="Enemy Blocking Platform" parent="OtherPlatforms" index="0" instance=ExtResource( 78 )]
 
-position = Vector2( 8698.11, -139.984 )
+position = Vector2( 8700, -150 )
 
 [node name="Enemy Blocking Platform2" parent="OtherPlatforms" index="1" instance=ExtResource( 78 )]
 
-position = Vector2( 8698.11, -239.984 )
+position = Vector2( 8700, -250 )
 
-[node name="Enemy Blocking Platform3" parent="OtherPlatforms" index="2" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform61" parent="OtherPlatforms" index="2" instance=ExtResource( 78 )]
 
-position = Vector2( 11398.1, -139.984 )
+position = Vector2( 8700, -350 )
 
-[node name="Enemy Blocking Platform4" parent="OtherPlatforms" index="3" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform3" parent="OtherPlatforms" index="3" instance=ExtResource( 78 )]
 
-position = Vector2( 11398.1, -239.984 )
+position = Vector2( 11400, -150 )
 
-[node name="Enemy Blocking Platform5" parent="OtherPlatforms" index="4" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform4" parent="OtherPlatforms" index="4" instance=ExtResource( 78 )]
+
+position = Vector2( 11400, -250 )
+
+[node name="Enemy Blocking Platform5" parent="OtherPlatforms" index="5" instance=ExtResource( 78 )]
 
 position = Vector2( 11700, -150 )
 
-[node name="Enemy Blocking Platform6" parent="OtherPlatforms" index="5" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform6" parent="OtherPlatforms" index="6" instance=ExtResource( 78 )]
 
 position = Vector2( 11700, -250 )
 
-[node name="Enemy Blocking Platform7" parent="OtherPlatforms" index="6" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform59" parent="OtherPlatforms" index="7" instance=ExtResource( 78 )]
+
+position = Vector2( 11700, -350 )
+
+[node name="Enemy Blocking Platform60" parent="OtherPlatforms" index="8" instance=ExtResource( 78 )]
+
+position = Vector2( 11400, -350 )
+
+[node name="Enemy Blocking Platform7" parent="OtherPlatforms" index="9" instance=ExtResource( 78 )]
 
 position = Vector2( 11800, -850 )
 
-[node name="Enemy Blocking Platform8" parent="OtherPlatforms" index="7" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform8" parent="OtherPlatforms" index="10" instance=ExtResource( 78 )]
 
 position = Vector2( 11800, -950 )
 
-[node name="Enemy Blocking Platform9" parent="OtherPlatforms" index="8" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform57" parent="OtherPlatforms" index="11" instance=ExtResource( 78 )]
+
+position = Vector2( 11800, -1050 )
+
+[node name="Enemy Blocking Platform58" parent="OtherPlatforms" index="12" instance=ExtResource( 78 )]
+
+position = Vector2( 11800, -1150 )
+
+[node name="Enemy Blocking Platform9" parent="OtherPlatforms" index="13" instance=ExtResource( 78 )]
 
 position = Vector2( 15300, -150 )
 
-[node name="Enemy Blocking Platform10" parent="OtherPlatforms" index="9" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform10" parent="OtherPlatforms" index="14" instance=ExtResource( 78 )]
 
 position = Vector2( 15300, -250 )
 
-[node name="Enemy Blocking Platform11" parent="OtherPlatforms" index="10" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform11" parent="OtherPlatforms" index="15" instance=ExtResource( 78 )]
 
 position = Vector2( 15500, -150 )
 
-[node name="Enemy Blocking Platform12" parent="OtherPlatforms" index="11" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform12" parent="OtherPlatforms" index="16" instance=ExtResource( 78 )]
 
-position = Vector2( 15500, -250 )
+position = Vector2( 15501, -250 )
 
-[node name="Enemy Blocking Platform13" parent="OtherPlatforms" index="12" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform13" parent="OtherPlatforms" index="17" instance=ExtResource( 78 )]
 
 position = Vector2( 16250, -1000 )
 
-[node name="Enemy Blocking Platform14" parent="OtherPlatforms" index="13" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform14" parent="OtherPlatforms" index="18" instance=ExtResource( 78 )]
 
 position = Vector2( 16250, -900 )
 
-[node name="Enemy Blocking Platform15" parent="OtherPlatforms" index="14" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform15" parent="OtherPlatforms" index="19" instance=ExtResource( 78 )]
 
 position = Vector2( 17700, -850 )
 
-[node name="Enemy Blocking Platform16" parent="OtherPlatforms" index="15" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform16" parent="OtherPlatforms" index="20" instance=ExtResource( 78 )]
 
 position = Vector2( 17700, -950 )
 
-[node name="Enemy Blocking Platform27" parent="OtherPlatforms" index="16" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform17" parent="OtherPlatforms" index="21" instance=ExtResource( 78 )]
+
+position = Vector2( 17700, -1050 )
+
+[node name="Enemy Blocking Platform47" parent="OtherPlatforms" index="22" instance=ExtResource( 78 )]
+
+position = Vector2( 17700, -1150 )
+
+[node name="Enemy Blocking Platform48" parent="OtherPlatforms" index="23" instance=ExtResource( 78 )]
+
+position = Vector2( 17700, -1250 )
+
+[node name="Enemy Blocking Platform27" parent="OtherPlatforms" index="24" instance=ExtResource( 78 )]
 
 position = Vector2( 18850, -1000 )
 
-[node name="Enemy Blocking Platform29" parent="OtherPlatforms" index="17" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform29" parent="OtherPlatforms" index="25" instance=ExtResource( 78 )]
 
 position = Vector2( 18950, -1000 )
 
-[node name="Enemy Blocking Platform30" parent="OtherPlatforms" index="18" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform30" parent="OtherPlatforms" index="26" instance=ExtResource( 78 )]
 
 position = Vector2( 18950, -900 )
 
-[node name="Enemy Blocking Platform28" parent="OtherPlatforms" index="19" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform28" parent="OtherPlatforms" index="27" instance=ExtResource( 78 )]
 
 position = Vector2( 18850, -900 )
 
-[node name="Enemy Blocking Platform18" parent="OtherPlatforms" index="20" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform18" parent="OtherPlatforms" index="28" instance=ExtResource( 78 )]
 
 position = Vector2( 18900, -200 )
 
-[node name="Enemy Blocking Platform19" parent="OtherPlatforms" index="21" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform19" parent="OtherPlatforms" index="29" instance=ExtResource( 78 )]
 
 position = Vector2( 19900, -150 )
 
-[node name="Enemy Blocking Platform20" parent="OtherPlatforms" index="22" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform20" parent="OtherPlatforms" index="30" instance=ExtResource( 78 )]
 
 position = Vector2( 19900, -250 )
 
-[node name="Enemy Blocking Platform21" parent="OtherPlatforms" index="23" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform49" parent="OtherPlatforms" index="31" instance=ExtResource( 78 )]
+
+position = Vector2( 19900, -350 )
+
+[node name="Enemy Blocking Platform50" parent="OtherPlatforms" index="32" instance=ExtResource( 78 )]
+
+position = Vector2( 19900, -450 )
+
+[node name="Enemy Blocking Platform51" parent="OtherPlatforms" index="33" instance=ExtResource( 78 )]
+
+position = Vector2( 18900, -300 )
+
+[node name="Enemy Blocking Platform52" parent="OtherPlatforms" index="34" instance=ExtResource( 78 )]
+
+position = Vector2( 18900, -400 )
+
+[node name="Enemy Blocking Platform21" parent="OtherPlatforms" index="35" instance=ExtResource( 78 )]
 
 position = Vector2( 21000, -850 )
 
-[node name="Enemy Blocking Platform22" parent="OtherPlatforms" index="24" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform22" parent="OtherPlatforms" index="36" instance=ExtResource( 78 )]
 
 position = Vector2( 21000, -950 )
 
-[node name="Enemy Blocking Platform25" parent="OtherPlatforms" index="25" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform23" parent="OtherPlatforms" index="37" instance=ExtResource( 78 )]
+
+position = Vector2( 21000, -1050 )
+
+[node name="Enemy Blocking Platform24" parent="OtherPlatforms" index="38" instance=ExtResource( 78 )]
+
+position = Vector2( 21000, -1150 )
+
+[node name="Enemy Blocking Platform45" parent="OtherPlatforms" index="39" instance=ExtResource( 78 )]
+
+position = Vector2( 21000, -1250 )
+
+[node name="Enemy Blocking Platform46" parent="OtherPlatforms" index="40" instance=ExtResource( 78 )]
+
+position = Vector2( 21000, -1350 )
+
+[node name="Enemy Blocking Platform25" parent="OtherPlatforms" index="41" instance=ExtResource( 78 )]
 
 position = Vector2( 22700, -850 )
 
-[node name="Enemy Blocking Platform26" parent="OtherPlatforms" index="26" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform26" parent="OtherPlatforms" index="42" instance=ExtResource( 78 )]
 
 position = Vector2( 22700, -950 )
 
-[node name="Enemy Blocking Platform31" parent="OtherPlatforms" index="27" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform40" parent="OtherPlatforms" index="43" instance=ExtResource( 78 )]
+
+position = Vector2( 22700, -1050 )
+
+[node name="Enemy Blocking Platform41" parent="OtherPlatforms" index="44" instance=ExtResource( 78 )]
+
+position = Vector2( 22700, -1150 )
+
+[node name="Enemy Blocking Platform42" parent="OtherPlatforms" index="45" instance=ExtResource( 78 )]
+
+position = Vector2( 22700, -1250 )
+
+[node name="Enemy Blocking Platform43" parent="OtherPlatforms" index="46" instance=ExtResource( 78 )]
+
+position = Vector2( 22700, -1350 )
+
+[node name="Enemy Blocking Platform44" parent="OtherPlatforms" index="47" instance=ExtResource( 78 )]
+
+position = Vector2( 22100, -1350 )
+
+[node name="Enemy Blocking Platform31" parent="OtherPlatforms" index="48" instance=ExtResource( 78 )]
 
 position = Vector2( 22100, -950 )
 
-[node name="Enemy Blocking Platform32" parent="OtherPlatforms" index="28" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform37" parent="OtherPlatforms" index="49" instance=ExtResource( 78 )]
+
+position = Vector2( 22100, -1050 )
+
+[node name="Enemy Blocking Platform38" parent="OtherPlatforms" index="50" instance=ExtResource( 78 )]
+
+position = Vector2( 22100, -1150 )
+
+[node name="Enemy Blocking Platform39" parent="OtherPlatforms" index="51" instance=ExtResource( 78 )]
+
+position = Vector2( 22100, -1250 )
+
+[node name="Enemy Blocking Platform32" parent="OtherPlatforms" index="52" instance=ExtResource( 78 )]
 
 position = Vector2( 22100, -850 )
 
-[node name="Enemy Blocking Platform33" parent="OtherPlatforms" index="29" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform33" parent="OtherPlatforms" index="53" instance=ExtResource( 78 )]
 
 position = Vector2( 22100, -150 )
 
-[node name="Enemy Blocking Platform34" parent="OtherPlatforms" index="30" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform34" parent="OtherPlatforms" index="54" instance=ExtResource( 78 )]
 
 position = Vector2( 22100, -250 )
 
-[node name="Enemy Blocking Platform35" parent="OtherPlatforms" index="31" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform53" parent="OtherPlatforms" index="55" instance=ExtResource( 78 )]
+
+position = Vector2( 22100, -350 )
+
+[node name="Enemy Blocking Platform54" parent="OtherPlatforms" index="56" instance=ExtResource( 78 )]
+
+position = Vector2( 22100, -450 )
+
+[node name="Enemy Blocking Platform55" parent="OtherPlatforms" index="57" instance=ExtResource( 78 )]
+
+position = Vector2( 21900, -350 )
+
+[node name="Enemy Blocking Platform56" parent="OtherPlatforms" index="58" instance=ExtResource( 78 )]
+
+position = Vector2( 21900, -450 )
+
+[node name="Enemy Blocking Platform35" parent="OtherPlatforms" index="59" instance=ExtResource( 78 )]
 
 position = Vector2( 21900, -250 )
 
-[node name="Enemy Blocking Platform36" parent="OtherPlatforms" index="32" instance=ExtResource( 78 )]
+[node name="Enemy Blocking Platform36" parent="OtherPlatforms" index="60" instance=ExtResource( 78 )]
 
 position = Vector2( 21900, -150 )
 
@@ -2598,46 +2710,60 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 [node name="GreenPortal2-1" parent="Structures" index="9" instance=ExtResource( 83 )]
 
 modulate = Color( 0, 0.570312, 0.115845, 1 )
-position = Vector2( 15950, -450 )
+position = Vector2( 15750, -450 )
 destination_node_path = NodePath("../GreenPortal2-2")
 
-[node name="GreenPortal2-2" parent="Structures" index="10" instance=ExtResource( 83 )]
+[node name="RedPortal" parent="Structures" index="10" instance=ExtResource( 83 )]
+
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 16000, -450 )
+destination_node_path = NodePath("../RedFrame")
+
+[node name="RedFrame" type="Sprite" parent="Structures" index="11"]
+
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 16450, -450 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 84 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="GreenPortal2-2" parent="Structures" index="12" instance=ExtResource( 83 )]
 
 modulate = Color( 0, 0.570312, 0.115845, 1 )
 position = Vector2( 13900, -1150 )
 destination_node_path = NodePath("../GreenPortal2-1")
 
-[node name="BluePortal2-1" parent="Structures" index="11" instance=ExtResource( 83 )]
+[node name="BluePortal2-1" parent="Structures" index="13" instance=ExtResource( 83 )]
 
 modulate = Color( 0, 0.320312, 1, 1 )
 position = Vector2( 18600, -450 )
 destination_node_path = NodePath("../BluePortal2-2")
 
-[node name="BluePortal2-2" parent="Structures" index="12" instance=ExtResource( 83 )]
+[node name="BluePortal2-2" parent="Structures" index="14" instance=ExtResource( 83 )]
 
 modulate = Color( 0, 0.320312, 1, 1 )
 position = Vector2( 16600, -1150 )
 destination_node_path = NodePath("../BluePortal2-1")
 
-[node name="OrangePortal2-1" parent="Structures" index="13" instance=ExtResource( 83 )]
+[node name="OrangePortal2-1" parent="Structures" index="15" instance=ExtResource( 83 )]
 
 modulate = Color( 1, 0.65625, 0, 1 )
-position = Vector2( 16600, -450 )
+position = Vector2( 16700, -450 )
 destination_node_path = NodePath("../OrangePortal2-2")
 
-[node name="OrangePortal2-2" parent="Structures" index="14" instance=ExtResource( 83 )]
+[node name="OrangePortal2-2" parent="Structures" index="16" instance=ExtResource( 83 )]
 
 modulate = Color( 1, 0.65625, 0, 1 )
 position = Vector2( 18600, -1150 )
 destination_node_path = NodePath("../OrangePortal2-1")
 
-[node name="RedPortal1-1" parent="Structures" index="15" instance=ExtResource( 83 )]
+[node name="RedPortal1-1" parent="Structures" index="17" instance=ExtResource( 83 )]
 
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 21100, -1150 )
 destination_node_path = NodePath("../RedFrame1")
 
-[node name="RedFrame1" type="Sprite" parent="Structures" index="16"]
+[node name="RedFrame1" type="Sprite" parent="Structures" index="18"]
 
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 19700, -350 )
@@ -2645,39 +2771,39 @@ scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 84 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="GreenPortal3-1" parent="Structures" index="17" instance=ExtResource( 83 )]
+[node name="GreenPortal3-1" parent="Structures" index="19" instance=ExtResource( 83 )]
 
 modulate = Color( 0, 0.609375, 0.209473, 1 )
 position = Vector2( 20700, -1150 )
 destination_node_path = NodePath("../GreenPortal3-2")
 
-[node name="GreenPortal3-2" parent="Structures" index="18" instance=ExtResource( 83 )]
+[node name="GreenPortal3-2" parent="Structures" index="20" instance=ExtResource( 83 )]
 
 modulate = Color( 0, 0.609375, 0.209473, 1 )
 position = Vector2( 22300, -450 )
 destination_node_path = NodePath("../GreenPortal3-1")
 
-[node name="SizeChangingLight2" parent="Structures" index="19" instance=ExtResource( 80 )]
+[node name="SizeChangingLight2" parent="Structures" index="21" instance=ExtResource( 80 )]
 
 position = Vector2( 7348.8, -1084.39 )
 scale = Vector2( 0.7, 0.7 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="SizeChangingLight3" parent="Structures" index="20" instance=ExtResource( 80 )]
+[node name="SizeChangingLight3" parent="Structures" index="22" instance=ExtResource( 80 )]
 
 position = Vector2( 17300, -1050 )
 scale = Vector2( 0.7, 0.7 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 change_to = 2
 
-[node name="SizeChangingLight4" parent="Structures" index="21" instance=ExtResource( 80 )]
+[node name="SizeChangingLight4" parent="Structures" index="23" instance=ExtResource( 80 )]
 
 position = Vector2( 24367.8, -1293.06 )
 rotation = -0.40565
 scale = Vector2( 0.7, 0.7 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="SizeChangingLight5" parent="Structures" index="22" instance=ExtResource( 80 )]
+[node name="SizeChangingLight5" parent="Structures" index="24" instance=ExtResource( 80 )]
 
 position = Vector2( 24675.2, -1266.21 )
 rotation = 0.666773
@@ -3403,9 +3529,9 @@ position = Vector2( 16850, -850 )
 scale = Vector2( 10, 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[connection signal="passed" from="CameraChangingTriggers/First" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/First" to="FollowingCamera" method="update_right_limit" binds= [ 3950 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/First" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/FirstMob" to="FollowingCamera" method="update_right_limit" binds= [ 6450 ]]
 
@@ -3413,23 +3539,23 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/PortraitMob" to="FollowingCamera" method="update_right_limit" binds= [ 16250 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/DoubleDeckEnter" to="FollowingCamera" method="update_right_margin" binds= [ 0.6 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/DoubleDeckEnter" to="FollowingCamera" method="update_left_limit" binds= [ 11850 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/DoubleDeckEnter" to="FollowingCamera" method="update_right_margin" binds= [ 0.6 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/DoubleDeckEnter" to="FollowingCamera" method="update_left_margin" binds= [ 0.4 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckFirstMob" to="FollowingCamera" method="update_right_margin" binds= [ 0.3 ]]
-
 [connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckFirstMob" to="FollowingCamera" method="update_right_limit" binds= [ 18850 ]]
+
+[connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckFirstMob" to="FollowingCamera" method="update_right_margin" binds= [ 0.3 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckFirstMob" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckSecondMob" to="FollowingCamera" method="update_right_limit" binds= [ 22850 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/LastDoubleDeckEnter" to="FollowingCamera" method="update_right_margin" binds= [ 0.6 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/LastDoubleDeckEnter" to="FollowingCamera" method="update_left_limit" binds= [ 18850 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/LastDoubleDeckEnter" to="FollowingCamera" method="update_right_margin" binds= [ 0.6 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/LastDoubleDeckEnter" to="FollowingCamera" method="update_left_margin" binds= [ 0.4 ]]
 
@@ -3451,11 +3577,11 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="completed" from="Enemies/EeloKickerSpawner10" to="CameraChangingTriggers/Well" method="increment_count"]
 
+[connection signal="defeated" from="Enemies/Eelo Kicker4" to="Writings/CountdownTV2" method="tick"]
+
 [connection signal="defeated" from="Enemies/Eelo Kicker4" to="Enemies/EeloKickerSpawner2" method="spawn_mob"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker4" to="Enemies/EeloKickerSpawner3" method="spawn_mob"]
-
-[connection signal="defeated" from="Enemies/Eelo Kicker4" to="Writings/CountdownTV2" method="tick"]
 
 [connection signal="completed" from="Enemies/EeloKickerSpawner2" to="Enemies/EeloKickerSpawner5" method="spawn_mob"]
 
@@ -3465,25 +3591,25 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="completed" from="Enemies/EeloKickerSpawner5" to="CameraChangingTriggers/PortraitMob" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker6" to="Enemies/EeloKickerSpawner7" method="spawn_mob"]
-
 [connection signal="defeated" from="Enemies/Eelo Kicker6" to="Writings/CountdownTV3" method="tick"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker7" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
+[connection signal="defeated" from="Enemies/Eelo Kicker6" to="Enemies/EeloKickerSpawner7" method="spawn_mob"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker7" to="Writings/CountdownTV3" method="tick"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker14" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
+[connection signal="defeated" from="Enemies/Eelo Kicker7" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker14" to="Writings/CountdownTV3" method="tick"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker13" to="Enemies/EeloKickerSpawner6" method="spawn_mob"]
+[connection signal="defeated" from="Enemies/Eelo Kicker14" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker13" to="Writings/CountdownTV3" method="tick"]
 
-[connection signal="defeated" from="Enemies/Eelo Kicker8" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
+[connection signal="defeated" from="Enemies/Eelo Kicker13" to="Enemies/EeloKickerSpawner6" method="spawn_mob"]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker8" to="Writings/CountdownTV3" method="tick"]
+
+[connection signal="defeated" from="Enemies/Eelo Kicker8" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
 
 [connection signal="completed" from="Enemies/EeloKickerSpawner6" to="CameraChangingTriggers/DoubleDeckFirstMob" method="increment_count"]
 
@@ -3493,9 +3619,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker9" to="Enemies/EeloPuncherSpawn2" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Eelo Puncher3" to="Writings/CountdownTV4" method="tick"]
-
 [connection signal="defeated" from="Enemies/Eelo Puncher3" to="Enemies/EeloPuncherSpawn" method="spawn_mob"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher3" to="Writings/CountdownTV4" method="tick"]
 
 [connection signal="completed" from="Enemies/EeloPuncherSpawn" to="CameraChangingTriggers/DoubleDeckSecondMob" method="increment_count"]
 
@@ -3513,9 +3639,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker11" to="Enemies/EeloPuncherSpawn5" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Eelo Puncher4" to="CameraChangingTriggers/LastDoubleDeckMob" method="increment_count"]
-
 [connection signal="defeated" from="Enemies/Eelo Puncher4" to="Writings/CountdownTV5" method="tick"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher4" to="CameraChangingTriggers/LastDoubleDeckMob" method="increment_count"]
 
 [connection signal="defeated" from="Enemies/Eelo Puncher5" to="Writings/CountdownTV5" method="tick"]
 

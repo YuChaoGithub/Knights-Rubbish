@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/HeroManager.gd" type="Script" id=2]
@@ -18,22 +18,23 @@
 [ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Android.png" type="Texture" id=16]
 [ext_resource path="res://Graphics/UI/White Line.png" type="Texture" id=17]
 [ext_resource path="res://Graphics/Enemies/Computer Room/Amazlet/Wifi.png" type="Texture" id=18]
-[ext_resource path="res://Scenes/Structures/BlankDoor.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Graphics/background/General Decoration/Stain 3.png" type="Texture" id=20]
-[ext_resource path="res://Graphics/background/General Decoration/Stain 7.png" type="Texture" id=21]
-[ext_resource path="res://Graphics/background/General Decoration/Crack 2.png" type="Texture" id=22]
-[ext_resource path="res://Graphics/background/General Decoration/Crack 7.png" type="Texture" id=23]
-[ext_resource path="res://Graphics/background/General Decoration/Crack 8.png" type="Texture" id=24]
-[ext_resource path="res://Graphics/background/General Decoration/Crack 5.png" type="Texture" id=25]
-[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=26]
-[ext_resource path="res://Scenes/Platforms/Enemy Blocking Platform.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Scenes/Structures/Door.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Scenes/Structures/Portal.tscn" type="PackedScene" id=29]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Amazlet.tscn" type="PackedScene" id=30]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Sockute.tscn" type="PackedScene" id=31]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Mouse.tscn" type="PackedScene" id=32]
-[ext_resource path="res://Scripts/Utils/RepeatingSpawner.gd" type="Script" id=33]
-[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=34]
+[ext_resource path="res://Graphics/UI/Avatar/Radiogugu.png" type="Texture" id=19]
+[ext_resource path="res://Scenes/Structures/BlankDoor.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 3.png" type="Texture" id=21]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 7.png" type="Texture" id=22]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 2.png" type="Texture" id=23]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 7.png" type="Texture" id=24]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 8.png" type="Texture" id=25]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 5.png" type="Texture" id=26]
+[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=27]
+[ext_resource path="res://Scenes/Platforms/Enemy Blocking Platform.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Structures/Door.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scenes/Structures/Portal.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Amazlet.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Sockute.tscn" type="PackedScene" id=32]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Mouse.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Scripts/Utils/RepeatingSpawner.gd" type="Script" id=34]
+[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=35]
 
 [node name="Game Level" type="Node2D"]
 
@@ -41,7 +42,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="FollowingCamera" parent="." index="0" instance=ExtResource( 1 )]
 
-position = Vector2( 1450, -800 )
+position = Vector2( 1450, -750 )
 z_index = 1
 _sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Offset", "Smoothing", "Z Index" ]
 drag_margin_right = 0.3
@@ -84,7 +85,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Plug 1" type="Sprite" parent="BackgroundDecorations" index="0"]
 
-position = Vector2( 3650, -500 )
+position = Vector2( 3400, -500 )
 texture = ExtResource( 4 )
 
 [node name="Hole 1" type="Sprite" parent="BackgroundDecorations" index="1"]
@@ -94,13 +95,14 @@ texture = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="BackgroundDecorations" index="2"]
 
-position = Vector2( 2936.2, -1398.43 )
+position = Vector2( 2832.1, -1398.43 )
 rotation = 0.0302911
 texture = ExtResource( 6 )
 
 [node name="Trash Can" type="Sprite" parent="BackgroundDecorations" index="3"]
 
-position = Vector2( 2902.55, -844.204 )
+editor/display_folded = true
+position = Vector2( 2800, -850 )
 scale = Vector2( 1, 1.03 )
 texture = ExtResource( 7 )
 _sections_unfolded = [ "Transform" ]
@@ -153,11 +155,12 @@ collision_layer = 4
 collision_mask = 0
 occluder_light_mask = 1
 format = 1
-tile_data = PoolIntArray( -720895, 0, 196609, -720894, 0, 196613, -720893, 0, 3, -720892, 0, 196612, -720891, 0, 131077, -720890, 0, 131077, -720889, 0, 3, -720888, 0, 0, -655359, 0, 1, -655358, 0, 65539, -655357, 0, 196614, -655356, 0, 196614, -655355, 0, 131078, -655354, 0, 131078, -655353, 0, 131074, -655352, 0, 6, -589823, 0, 65542, -589822, 0, 6, -589817, 0, 65542, -589816, 0, 6, -524287, 0, 1, -524286, 0, 6, -524281, 0, 1, -524280, 0, 131075, -458751, 0, 65542, -458750, 0, 131075, -458745, 0, 1, -458744, 0, 6, -458741, 0, 196609, -458740, 0, 196612, -458739, 0, 196612, -458738, 0, 131077, -458737, 0, 196613, -458736, 0, 131077, -458735, 0, 196612, -458734, 0, 131076, -458733, 0, 0, -393215, 0, 1, -393214, 0, 131075, -393209, 0, 131072, -393208, 0, 196611, -393205, 0, 131072, -393204, 0, 196614, -393203, 0, 131073, -393202, 0, 131078, -393201, 0, 131073, -393200, 0, 131073, -393199, 0, 196614, -393198, 0, 131073, -393197, 0, 196611, -327679, 0, 1, -327678, 0, 6, -262143, 0, 1, -262142, 0, 131075, -262118, 0, 196609, -262117, 0, 196612, -262116, 0, 196612, -262115, 0, 3, -262114, 0, 3, -262113, 0, 0, -196607, 0, 65542, -196606, 0, 6, -196582, 0, 1, -196581, 0, 5, -196580, 0, 65538, -196579, 0, 65541, -196578, 0, 5, -196577, 0, 131075, -196568, 0, 196609, -196567, 0, 3, -196566, 0, 196613, -196565, 0, 196612, -196564, 0, 0, -131072, 0, 196609, -131071, 0, 65537, -131070, 0, 2, -131069, 0, 131076, -131068, 0, 131077, -131067, 0, 131076, -131066, 0, 131077, -131065, 0, 3, -131064, 0, 131076, -131063, 0, 131076, -131062, 0, 3, -131061, 0, 131076, -131060, 0, 196613, -131059, 0, 196613, -131058, 0, 131076, -131057, 0, 3, -131056, 0, 131077, -131055, 0, 196612, -131054, 0, 196612, -131053, 0, 131077, -131052, 0, 3, -131051, 0, 196612, -131050, 0, 131076, -131049, 0, 3, -131048, 0, 131076, -131047, 0, 3, -131046, 0, 65537, -131045, 0, 4, -131044, 0, 65540, -131043, 0, 4, -131042, 0, 65540, -131041, 0, 2, -131040, 0, 196612, -131039, 0, 196613, -131038, 0, 131077, -131037, 0, 131077, -131036, 0, 196613, -131035, 0, 196612, -131034, 0, 131077, -131033, 0, 196613, -131032, 0, 65537, -131031, 0, 5, -131030, 0, 65540, -131029, 0, 5, -131028, 0, 131075, -65536, 0, 131072, -65535, 0, 196614, -65534, 0, 131073, -65533, 0, 131078, -65532, 0, 131078, -65531, 0, 196614, -65530, 0, 131073, -65529, 0, 196614, -65528, 0, 131073, -65527, 0, 131073, -65526, 0, 131078, -65525, 0, 131078, -65524, 0, 131073, -65523, 0, 131073, -65522, 0, 196614, -65521, 0, 196614, -65520, 0, 196614, -65519, 0, 131078, -65518, 0, 196614, -65517, 0, 131078, -65516, 0, 196614, -65515, 0, 131073, -65514, 0, 131078, -65513, 0, 131073, -65512, 0, 196614, -65511, 0, 196614, -65510, 0, 131073, -65509, 0, 196614, -65508, 0, 131078, -65507, 0, 196614, -65506, 0, 131078, -65505, 0, 131073, -65504, 0, 131078, -65503, 0, 131078, -65502, 0, 131073, -65501, 0, 131073, -65500, 0, 131078, -65499, 0, 131078, -65498, 0, 196614, -65497, 0, 131073, -65496, 0, 131078, -65495, 0, 131078, -65494, 0, 131073, -65493, 0, 131073, -65492, 0, 196611 )
+tile_data = PoolIntArray( -720895, 0, 196609, -720894, 0, 196613, -720893, 0, 3, -720892, 0, 196612, -720891, 0, 131077, -720890, 0, 131077, -720889, 0, 3, -720888, 0, 0, -655359, 0, 1, -655358, 0, 65539, -655357, 0, 196614, -655356, 0, 196614, -655355, 0, 131078, -655354, 0, 131078, -655353, 0, 131074, -655352, 0, 6, -589823, 0, 65542, -589822, 0, 6, -589817, 0, 65542, -589816, 0, 6, -524287, 0, 1, -524286, 0, 6, -524281, 0, 1, -524280, 0, 131075, -458751, 0, 65542, -458750, 0, 131075, -458745, 0, 1, -458744, 0, 6, -458741, 0, 196609, -458740, 0, 196612, -458739, 0, 196612, -458738, 0, 131077, -458737, 0, 196613, -458736, 0, 131077, -458735, 0, 196612, -458734, 0, 131076, -458733, 0, 0, -393215, 0, 1, -393214, 0, 131075, -393209, 0, 131072, -393208, 0, 196611, -393205, 0, 131072, -393204, 0, 196614, -393203, 0, 131073, -393202, 0, 131078, -393201, 0, 131073, -393200, 0, 131073, -393199, 0, 196614, -393198, 0, 131073, -393197, 0, 196611, -327679, 0, 1, -327678, 0, 6, -262143, 0, 1, -262142, 0, 131075, -262119, 0, 196609, -262118, 0, 3, -262117, 0, 196612, -262116, 0, 196612, -262115, 0, 3, -262114, 0, 0, -196607, 0, 65542, -196606, 0, 6, -196583, 0, 65542, -196582, 0, 65541, -196581, 0, 5, -196580, 0, 65538, -196579, 0, 65541, -196578, 0, 6, -196568, 0, 196609, -196567, 0, 3, -196566, 0, 196613, -196565, 0, 196612, -196564, 0, 0, -131072, 0, 196609, -131071, 0, 65537, -131070, 0, 2, -131069, 0, 131076, -131068, 0, 131077, -131067, 0, 131076, -131066, 0, 131077, -131065, 0, 131076, -131064, 0, 131077, -131063, 0, 196613, -131062, 0, 3, -131061, 0, 131076, -131060, 0, 196613, -131059, 0, 196613, -131058, 0, 131076, -131057, 0, 3, -131056, 0, 131077, -131055, 0, 196612, -131054, 0, 196612, -131053, 0, 131077, -131052, 0, 3, -131051, 0, 196612, -131050, 0, 131076, -131049, 0, 3, -131048, 0, 3, -131047, 0, 65537, -131046, 0, 4, -131045, 0, 4, -131044, 0, 65540, -131043, 0, 4, -131042, 0, 131075, -131035, 0, 196609, -131034, 0, 131077, -131033, 0, 196613, -131032, 0, 65537, -131031, 0, 5, -131030, 0, 65540, -131029, 0, 5, -131028, 0, 131075, -65536, 0, 131072, -65535, 0, 196614, -65534, 0, 131073, -65533, 0, 131078, -65532, 0, 131078, -65531, 0, 196614, -65530, 0, 131073, -65529, 0, 196614, -65528, 0, 196614, -65527, 0, 131073, -65526, 0, 131073, -65525, 0, 131078, -65524, 0, 131073, -65523, 0, 131073, -65522, 0, 196614, -65521, 0, 196614, -65520, 0, 196614, -65519, 0, 131078, -65518, 0, 196614, -65517, 0, 131078, -65516, 0, 196614, -65515, 0, 131073, -65514, 0, 131078, -65513, 0, 131073, -65512, 0, 196614, -65511, 0, 196614, -65510, 0, 131073, -65509, 0, 196614, -65508, 0, 131078, -65507, 0, 196614, -65506, 0, 196611, -65499, 0, 131072, -65498, 0, 196614, -65497, 0, 131073, -65496, 0, 131078, -65495, 0, 131078, -65494, 0, 131073, -65493, 0, 131073, -65492, 0, 196611 )
 _sections_unfolded = [ "Cell", "Collision" ]
 
 [node name="Writings" type="Node2D" parent="." index="5"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Z Index" ]
 
 [node name="Praise" type="Label" parent="Writings" index="0"]
@@ -253,9 +256,18 @@ scale = Vector2( 1, 0.5 )
 texture = ExtResource( 17 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
+[node name="Sprite3" type="Sprite" parent="Writings" index="4"]
+
+position = Vector2( 4249.31, -1036.93 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 19 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="PlatformDecorations" type="Node2D" parent="." index="6"]
 
-[node name="BlankDoor" parent="PlatformDecorations" index="0" instance=ExtResource( 19 )]
+editor/display_folded = true
+
+[node name="BlankDoor" parent="PlatformDecorations" index="0" instance=ExtResource( 20 )]
 
 position = Vector2( 500.443, -445.077 )
 scale = Vector2( 0.6, 0.6 )
@@ -264,36 +276,36 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 [node name="Stain 3" type="Sprite" parent="PlatformDecorations" index="1"]
 
 position = Vector2( 800, -958.723 )
-texture = ExtResource( 20 )
+texture = ExtResource( 21 )
 
 [node name="Stain 7" type="Sprite" parent="PlatformDecorations" index="2"]
 
-position = Vector2( 3000, -200 )
+position = Vector2( 2898.3, -196.744 )
 rotation = -0.640145
-texture = ExtResource( 21 )
+texture = ExtResource( 22 )
 
 [node name="Crack 2" type="Sprite" parent="PlatformDecorations" index="3"]
 
-position = Vector2( 2690.14, -289.936 )
-texture = ExtResource( 22 )
+position = Vector2( 2588.44, -286.68 )
+texture = ExtResource( 23 )
 
 [node name="Crack 7" type="Sprite" parent="PlatformDecorations" index="4"]
 
-position = Vector2( 2965.33, -297.311 )
+position = Vector2( 2863.63, -294.055 )
 rotation = -1.29988
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 
 [node name="Crack 8" type="Sprite" parent="PlatformDecorations" index="5"]
 
-position = Vector2( 3103.96, -278.927 )
+position = Vector2( 3002.26, -275.671 )
 rotation = 2.99354
-texture = ExtResource( 24 )
+texture = ExtResource( 25 )
 
 [node name="Crack 5" type="Sprite" parent="PlatformDecorations" index="6"]
 
-position = Vector2( 2823.29, -290.935 )
+position = Vector2( 2721.59, -287.679 )
 rotation = 0.354532
-texture = ExtResource( 25 )
+texture = ExtResource( 26 )
 
 [node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
 
@@ -302,7 +314,7 @@ editor/display_folded = true
 [node name="FirstTrigger" type="Position2D" parent="CameraChangingTriggers" index="0"]
 
 position = Vector2( 450, -150 )
-script = ExtResource( 26 )
+script = ExtResource( 27 )
 range_x = 500
 range_y = 1000
 x_check = 2
@@ -312,27 +324,27 @@ y_check = 0
 
 editor/display_folded = true
 
-[node name="Enemy Blocking Platform" parent="OtherPlatforms" index="0" instance=ExtResource( 27 )]
+[node name="Enemy Blocking Platform" parent="OtherPlatforms" index="0" instance=ExtResource( 28 )]
 
 position = Vector2( 1100, -650 )
 
-[node name="Enemy Blocking Platform5" parent="OtherPlatforms" index="1" instance=ExtResource( 27 )]
+[node name="Enemy Blocking Platform5" parent="OtherPlatforms" index="1" instance=ExtResource( 28 )]
 
-position = Vector2( 800, -200 )
+position = Vector2( 1100, -200 )
 
-[node name="Enemy Blocking Platform6" parent="OtherPlatforms" index="2" instance=ExtResource( 27 )]
+[node name="Enemy Blocking Platform6" parent="OtherPlatforms" index="2" instance=ExtResource( 28 )]
 
-position = Vector2( 800, -300 )
+position = Vector2( 1100, -300 )
 
-[node name="Enemy Blocking Platform2" parent="OtherPlatforms" index="3" instance=ExtResource( 27 )]
+[node name="Enemy Blocking Platform2" parent="OtherPlatforms" index="3" instance=ExtResource( 28 )]
 
 position = Vector2( 1100, -750 )
 
-[node name="Enemy Blocking Platform3" parent="OtherPlatforms" index="4" instance=ExtResource( 27 )]
+[node name="Enemy Blocking Platform3" parent="OtherPlatforms" index="4" instance=ExtResource( 28 )]
 
 position = Vector2( 2000, -650 )
 
-[node name="Enemy Blocking Platform4" parent="OtherPlatforms" index="5" instance=ExtResource( 27 )]
+[node name="Enemy Blocking Platform4" parent="OtherPlatforms" index="5" instance=ExtResource( 28 )]
 
 position = Vector2( 2000, -750 )
 
@@ -340,19 +352,19 @@ position = Vector2( 2000, -750 )
 
 [node name="Structures" type="Node2D" parent="." index="10"]
 
-[node name="Door1-1" parent="Structures" index="0" instance=ExtResource( 28 )]
+[node name="Door1-1" parent="Structures" index="0" instance=ExtResource( 29 )]
 
 position = Vector2( 4247.84, -594.664 )
 enter_scene_path = "res://Scenes/Levels/Level 1-7.tscn"
 available = true
 
-[node name="Portal" parent="Structures" index="1" instance=ExtResource( 29 )]
+[node name="Portal" parent="Structures" index="1" instance=ExtResource( 30 )]
 
 position = Vector2( 1300, -350 )
 scale = Vector2( 0.8, 0.8 )
 destination_node_path = NodePath("../Portal2")
 
-[node name="Portal2" parent="Structures" index="2" instance=ExtResource( 29 )]
+[node name="Portal2" parent="Structures" index="2" instance=ExtResource( 30 )]
 
 position = Vector2( 1550, -1300 )
 scale = Vector2( 0.8, 0.8 )
@@ -360,29 +372,29 @@ destination_node_path = NodePath("../Portal")
 
 [node name="Enemies" type="Node2D" parent="." index="11"]
 
-[node name="Amazlet" parent="Enemies" index="0" instance=ExtResource( 30 )]
+[node name="Amazlet" parent="Enemies" index="0" instance=ExtResource( 31 )]
 
-position = Vector2( 2547.01, -846.298 )
+position = Vector2( 2450, -850 )
 activate_range_x = 1700
 
-[node name="Sockute" parent="Enemies" index="1" instance=ExtResource( 31 )]
+[node name="Sockute" parent="Enemies" index="1" instance=ExtResource( 32 )]
 
 position = Vector2( 1550, -1000 )
 activate_range_y = 2000
 activate_interval = 7.0
 
-[node name="Mouse" parent="Enemies" index="2" instance=ExtResource( 32 )]
+[node name="Mouse" parent="Enemies" index="2" instance=ExtResource( 33 )]
 
-position = Vector2( 1600, -200 )
+position = Vector2( 2350, -200 )
 
-[node name="Mouse2" parent="Enemies" index="3" instance=ExtResource( 32 )]
+[node name="Mouse2" parent="Enemies" index="3" instance=ExtResource( 33 )]
 
 position = Vector2( 1600, -700 )
 
 [node name="MouseSpawner" type="Position2D" parent="Enemies" index="4"]
 
 position = Vector2( 1600, -400 )
-script = ExtResource( 33 )
+script = ExtResource( 34 )
 mob_path = "res://Scenes/Enemies/Computer Room/Mouse.tscn"
 activate_range_x = 3000
 activate_range_y = 3000
@@ -393,7 +405,7 @@ countdownTVHooked = null
 [node name="MouseSpawner2" type="Position2D" parent="Enemies" index="5"]
 
 position = Vector2( 1600, -700 )
-script = ExtResource( 33 )
+script = ExtResource( 34 )
 mob_path = "res://Scenes/Enemies/Computer Room/Mouse.tscn"
 activate_range_x = 3000
 activate_range_y = 3000
@@ -408,21 +420,21 @@ countdownTVHooked = null
 z_index = 1
 _sections_unfolded = [ "Z Index" ]
 
-[node name="PauseButton" parent="." index="14" instance=ExtResource( 34 )]
+[node name="PauseButton" parent="." index="14" instance=ExtResource( 35 )]
 
 [node name="Position2D" type="Position2D" parent="." index="15"]
 
-position = Vector2( 1800, -1150 )
+position = Vector2( 3750, -200 )
 scale = Vector2( 10, 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 3450 ]]
+[connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 3750 ]]
+
+[connection signal="defeated" from="Enemies/Amazlet" to="Enemies/MouseSpawner2" method="stop_further_spawning"]
 
 [connection signal="defeated" from="Enemies/Amazlet" to="FollowingCamera" method="update_right_limit" binds= [ 4450 ]]
 
 [connection signal="defeated" from="Enemies/Amazlet" to="Enemies/MouseSpawner" method="stop_further_spawning"]
-
-[connection signal="defeated" from="Enemies/Amazlet" to="Enemies/MouseSpawner2" method="stop_further_spawning"]
 
 [connection signal="defeated" from="Enemies/Mouse" to="Enemies/MouseSpawner" method="spawn_mob"]
 

@@ -2,7 +2,7 @@ extends Node2D
 
 const SPEED = 600
 
-const STUN_DURATION = 5
+const STUN_DURATION = 3
 const DAMAGE = 10
 
 const LIFETIME = 6

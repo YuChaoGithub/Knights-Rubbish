@@ -21,7 +21,7 @@ enum { NONE, RANDOM_ROAM, SLOW_BOMB_ANIM, THROW_SLOW_BOMB, WAIT_SLOW_BOMB_FREED,
 export(int) var activate_range_x = 1000
 export(int) var activate_range_y = 1000
 
-const MAX_HEALTH = 4444
+const MAX_HEALTH = 5555
 
 # Attack.
 const SINGLE_SCRATCH_DAMAGE = 15

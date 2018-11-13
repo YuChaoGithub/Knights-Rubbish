@@ -1111,6 +1111,23 @@ Comment: Video editting is so tiring, time-consuming yet fun.
 * Rebalanced heroes. Generally, nerf Plato, Othox and Big Brother.
 * Adjusted size multipliers: Shrinking (Attack: from 0.9 to 0.85).
 
+[2018.11.13]
+* Adjusted size multiplier: Gianted (Enemy Knockback: from 2.0 to 1.4).
+* Made some of the enemy-only walls higher so that they won't be knocked off the platform.
+* Adjusted Plato's basic attack hit box.
+* Decreased the stun duration of Latortrans.
+* Bug fix: Hero Ghost Box will no longer take effect if in single player mode.
+* Rearranged the most annoying level: Level 1-5. Damning bug creeping one.
+* Falling off the cliff will now interrupt all skill sounds.
+* Added checkpoint labels.
+* Rearranged Amazlet's level so that the crown is visible.
+* Make potions' collider turning off and on quickly so that the heroes wouldn't need to leave and enter the powerup to consume it in certain situations.
+* Added a collapsible "Pause, Keysettings" hint in Level Picker.
+* Relayered Othox's drink animation so that the bottle won't appear in the back of his mouth.
+* Refactored Laserphone's code.
+* Fixed a bug with Plato and Othox Up Skills. (The cooldown & landing detection isn't correct.)
+* P1 level play test to Godotbos level. Fixed trigger & enemy activation bugs.
+
 [Next]
 * Rebalance heroes' skills damage. (Nerf: Plato's BS. Othox's HS, BS. BroSS's Ult. Sug's BS. Buff: Keshia's Ult. Othox's BA.)
 

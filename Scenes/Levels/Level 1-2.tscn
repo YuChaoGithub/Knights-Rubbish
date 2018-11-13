@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=2]
+[gd_scene load_steps=132 format=2]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/HeroManager.gd" type="Script" id=2]
@@ -69,65 +69,66 @@
 [ext_resource path="res://Graphics/UI/White Plus.png" type="Texture" id=67]
 [ext_resource path="res://Graphics/UI/White Line.png" type="Texture" id=68]
 [ext_resource path="res://Graphics/UI/Scrap 3.png" type="Texture" id=69]
-[ext_resource path="res://Graphics/background/Bags/Bag.png" type="Texture" id=70]
-[ext_resource path="res://Graphics/background/Bags/Trash Bag 3.png" type="Texture" id=71]
-[ext_resource path="res://Graphics/background/Bags/Trash Bag 1.png" type="Texture" id=72]
-[ext_resource path="res://Graphics/background/Bags/Trash Bag 2.png" type="Texture" id=73]
-[ext_resource path="res://Graphics/background/General Decoration/Hole 10.png" type="Texture" id=74]
-[ext_resource path="res://Graphics/background/General Decoration/Eyes in Hole.png" type="Texture" id=75]
-[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 3.png" type="Texture" id=76]
-[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 5.png" type="Texture" id=77]
-[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 2.png" type="Texture" id=78]
-[ext_resource path="res://Graphics/background/Bags/Trash Bag 4.png" type="Texture" id=79]
-[ext_resource path="res://Graphics/background/General Decoration/Plank with Screws.png" type="Texture" id=80]
-[ext_resource path="res://Graphics/background/General Decoration/Hole 9.png" type="Texture" id=81]
-[ext_resource path="res://Graphics/background/General Decoration/Crack 9.png" type="Texture" id=82]
-[ext_resource path="res://Graphics/background/General Decoration/Stain 8.png" type="Texture" id=83]
-[ext_resource path="res://Graphics/background/General Decoration/Crack 1.png" type="Texture" id=84]
-[ext_resource path="res://Scenes/Particles/BlingBling.tscn" type="PackedScene" id=85]
-[ext_resource path="res://Graphics/UI/Scrap 2.png" type="Texture" id=86]
-[ext_resource path="res://Graphics/UI/Scrap 4.png" type="Texture" id=87]
-[ext_resource path="res://Graphics/UI/Top Scrap.png" type="Texture" id=88]
-[ext_resource path="res://Graphics/UI/Scrap 1.png" type="Texture" id=89]
-[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 4.png" type="Texture" id=90]
-[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 1.png" type="Texture" id=91]
-[ext_resource path="res://Graphics/background/General Decoration/Stain 1.png" type="Texture" id=92]
-[ext_resource path="res://Graphics/background/General Decoration/Stain 11.png" type="Texture" id=93]
-[ext_resource path="res://Graphics/background/General Decoration/Stain 15.png" type="Texture" id=94]
-[ext_resource path="res://Graphics/background/General Decoration/Stain 14.png" type="Texture" id=95]
-[ext_resource path="res://Graphics/background/General Decoration/Hole 12.png" type="Texture" id=96]
-[ext_resource path="res://Graphics/background/General Decoration/Hole 7.png" type="Texture" id=97]
-[ext_resource path="res://Graphics/background/General Decoration/Hole 8.png" type="Texture" id=98]
-[ext_resource path="res://Graphics/background/General Decoration/Crack 3.png" type="Texture" id=99]
-[ext_resource path="res://Graphics/background/General Decoration/Crack 6.png" type="Texture" id=100]
-[ext_resource path="res://Graphics/background/General Decoration/Crack 10.png" type="Texture" id=101]
-[ext_resource path="res://Graphics/background/General Decoration/Plank with Tapes.png" type="Texture" id=102]
-[ext_resource path="res://Graphics/background/General Decoration/Stain 18.png" type="Texture" id=103]
-[ext_resource path="res://Graphics/background/Tapes/Tape 1.png" type="Texture" id=104]
-[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 5.png" type="Texture" id=105]
-[ext_resource path="res://Graphics/background/General Decoration/Hole 6.png" type="Texture" id=106]
-[ext_resource path="res://Graphics/background/General Decoration/Stain 19.png" type="Texture" id=107]
-[ext_resource path="res://Graphics/background/General Decoration/Stain 3.png" type="Texture" id=108]
-[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 4.png" type="Texture" id=109]
-[ext_resource path="res://Graphics/background/General Decoration/Crack 5.png" type="Texture" id=110]
-[ext_resource path="res://Graphics/background/General Decoration/Stain 27.png" type="Texture" id=111]
-[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=112]
-[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=113]
-[ext_resource path="res://Scenes/Platforms/Enemy Blocking Platform.tscn" type="PackedScene" id=114]
-[ext_resource path="res://Scenes/Power Ups/Healing Machine.tscn" type="PackedScene" id=115]
-[ext_resource path="res://Scenes/Structures/Portal.tscn" type="PackedScene" id=116]
-[ext_resource path="res://Scenes/Structures/Door.tscn" type="PackedScene" id=117]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Batterio.tscn" type="PackedScene" id=118]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Floopy.tscn" type="PackedScene" id=119]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Mouse.tscn" type="PackedScene" id=120]
-[ext_resource path="res://Scenes/Enemies/Computer Room/CD Punch.tscn" type="PackedScene" id=121]
-[ext_resource path="res://Scripts/Utils/RepeatingSpawner.gd" type="Script" id=122]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Latortrans.tscn" type="PackedScene" id=123]
-[ext_resource path="res://Scenes/Power Ups/Ult Stone.tscn" type="PackedScene" id=124]
-[ext_resource path="res://Scenes/Power Ups/Speed Potion.tscn" type="PackedScene" id=125]
-[ext_resource path="res://Scenes/Power Ups/Attack Potion.tscn" type="PackedScene" id=126]
-[ext_resource path="res://Scenes/Power Ups/Defense Potion.tscn" type="PackedScene" id=127]
-[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=128]
+[ext_resource path="res://Graphics/UI/Avatar/Amazlet.png" type="Texture" id=70]
+[ext_resource path="res://Graphics/background/Bags/Bag.png" type="Texture" id=71]
+[ext_resource path="res://Graphics/background/Bags/Trash Bag 3.png" type="Texture" id=72]
+[ext_resource path="res://Graphics/background/Bags/Trash Bag 1.png" type="Texture" id=73]
+[ext_resource path="res://Graphics/background/Bags/Trash Bag 2.png" type="Texture" id=74]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 10.png" type="Texture" id=75]
+[ext_resource path="res://Graphics/background/General Decoration/Eyes in Hole.png" type="Texture" id=76]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 3.png" type="Texture" id=77]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 5.png" type="Texture" id=78]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 2.png" type="Texture" id=79]
+[ext_resource path="res://Graphics/background/Bags/Trash Bag 4.png" type="Texture" id=80]
+[ext_resource path="res://Graphics/background/General Decoration/Plank with Screws.png" type="Texture" id=81]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 9.png" type="Texture" id=82]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 9.png" type="Texture" id=83]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 8.png" type="Texture" id=84]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 1.png" type="Texture" id=85]
+[ext_resource path="res://Scenes/Particles/BlingBling.tscn" type="PackedScene" id=86]
+[ext_resource path="res://Graphics/UI/Scrap 2.png" type="Texture" id=87]
+[ext_resource path="res://Graphics/UI/Scrap 4.png" type="Texture" id=88]
+[ext_resource path="res://Graphics/UI/Top Scrap.png" type="Texture" id=89]
+[ext_resource path="res://Graphics/UI/Scrap 1.png" type="Texture" id=90]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Paper 4.png" type="Texture" id=91]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 1.png" type="Texture" id=92]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 1.png" type="Texture" id=93]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 11.png" type="Texture" id=94]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 15.png" type="Texture" id=95]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 14.png" type="Texture" id=96]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 12.png" type="Texture" id=97]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 7.png" type="Texture" id=98]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 8.png" type="Texture" id=99]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 3.png" type="Texture" id=100]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 6.png" type="Texture" id=101]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 10.png" type="Texture" id=102]
+[ext_resource path="res://Graphics/background/General Decoration/Plank with Tapes.png" type="Texture" id=103]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 18.png" type="Texture" id=104]
+[ext_resource path="res://Graphics/background/Tapes/Tape 1.png" type="Texture" id=105]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 5.png" type="Texture" id=106]
+[ext_resource path="res://Graphics/background/General Decoration/Hole 6.png" type="Texture" id=107]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 19.png" type="Texture" id=108]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 3.png" type="Texture" id=109]
+[ext_resource path="res://Graphics/background/Tissue and Papers/Tissue 4.png" type="Texture" id=110]
+[ext_resource path="res://Graphics/background/General Decoration/Crack 5.png" type="Texture" id=111]
+[ext_resource path="res://Graphics/background/General Decoration/Stain 27.png" type="Texture" id=112]
+[ext_resource path="res://Scripts/PassingTrigger.gd" type="Script" id=113]
+[ext_resource path="res://Scripts/Utils/CounterSignalEmitter.gd" type="Script" id=114]
+[ext_resource path="res://Scenes/Platforms/Enemy Blocking Platform.tscn" type="PackedScene" id=115]
+[ext_resource path="res://Scenes/Power Ups/Healing Machine.tscn" type="PackedScene" id=116]
+[ext_resource path="res://Scenes/Structures/Portal.tscn" type="PackedScene" id=117]
+[ext_resource path="res://Scenes/Structures/Door.tscn" type="PackedScene" id=118]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Batterio.tscn" type="PackedScene" id=119]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Floopy.tscn" type="PackedScene" id=120]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Mouse.tscn" type="PackedScene" id=121]
+[ext_resource path="res://Scenes/Enemies/Computer Room/CD Punch.tscn" type="PackedScene" id=122]
+[ext_resource path="res://Scripts/Utils/RepeatingSpawner.gd" type="Script" id=123]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Latortrans.tscn" type="PackedScene" id=124]
+[ext_resource path="res://Scenes/Power Ups/Ult Stone.tscn" type="PackedScene" id=125]
+[ext_resource path="res://Scenes/Power Ups/Speed Potion.tscn" type="PackedScene" id=126]
+[ext_resource path="res://Scenes/Power Ups/Attack Potion.tscn" type="PackedScene" id=127]
+[ext_resource path="res://Scenes/Power Ups/Defense Potion.tscn" type="PackedScene" id=128]
+[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=129]
 
 [sub_resource type="Animation" id=1]
 
@@ -1119,6 +1120,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="UltimateTimerSaver" type="Node2D" parent="Writings" index="1"]
 
+editor/display_folded = true
 position = Vector2( 17634.8, -1216.46 )
 
 [node name="The" type="Label" parent="Writings/UltimateTimerSaver" index="0"]
@@ -1268,6 +1270,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Maslows" type="Node2D" parent="Writings" index="2"]
 
+editor/display_folded = true
 position = Vector2( 5169.65, -615.101 )
 
 [node name="Maslows" type="Label" parent="Writings/Maslows" index="0"]
@@ -1297,6 +1300,7 @@ _sections_unfolded = [ "Rect", "Theme", "Visibility", "custom_fonts" ]
 
 [node name="BrrapPew" type="Node2D" parent="Writings" index="3"]
 
+editor/display_folded = true
 position = Vector2( 6377.82, -1240.13 )
 
 [node name="Brrap" type="Label" parent="Writings/BrrapPew" index="0"]
@@ -1435,6 +1439,7 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="HealingTunnle" type="Node2D" parent="Writings" index="4"]
 
+editor/display_folded = true
 position = Vector2( 9230.43, -882.862 )
 
 [node name="Go" type="Label" parent="Writings/HealingTunnle" index="0"]
@@ -1829,6 +1834,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="PreLatortransGround" type="Node2D" parent="Writings" index="5"]
 
+editor/display_folded = true
 position = Vector2( 20565.1, -822.94 )
 
 [node name="Heal" type="Label" parent="Writings/PreLatortransGround" index="0"]
@@ -2913,6 +2919,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Exclaimation" type="Node2D" parent="Writings" index="6"]
 
+editor/display_folded = true
 position = Vector2( 24200, -1000 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
@@ -3255,6 +3262,13 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
+[node name="Sprite" type="Sprite" parent="Writings" index="7"]
+
+position = Vector2( 25250, -1387.87 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 70 )
+_sections_unfolded = [ "Transform" ]
+
 [node name="PlatformDecorations" type="Node2D" parent="." index="6"]
 
 editor/display_folded = true
@@ -3267,14 +3281,14 @@ editor/display_folded = true
 [node name="Bag" type="Sprite" parent="PlatformDecorations/First" index="0"]
 
 position = Vector2( 247.303, -320.943 )
-texture = ExtResource( 70 )
+texture = ExtResource( 71 )
 
 [node name="Bag2" type="Sprite" parent="PlatformDecorations/First" index="1"]
 
 position = Vector2( 1411.73, -277.331 )
 rotation = 0.0141982
 scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 71 )
+texture = ExtResource( 72 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Bag3" type="Sprite" parent="PlatformDecorations/First" index="2"]
@@ -3282,7 +3296,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 1728.99, -320.658 )
 rotation = 0.11068
 scale = Vector2( 2, 2 )
-texture = ExtResource( 72 )
+texture = ExtResource( 73 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Bag4" type="Sprite" parent="PlatformDecorations/First" index="3"]
@@ -3290,7 +3304,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 1616.28, -292.021 )
 rotation = 0.0376431
 scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 73 )
+texture = ExtResource( 74 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Second" type="Node2D" parent="PlatformDecorations" index="1"]
@@ -3303,7 +3317,7 @@ position = Vector2( 3958.24, -361.515 )
 position = Vector2( -5.05493, 43.809 )
 rotation = 0.232219
 scale = Vector2( 2, 2 )
-texture = ExtResource( 74 )
+texture = ExtResource( 75 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Crack 7" type="Sprite" parent="PlatformDecorations/Second" index="1"]
@@ -3319,7 +3333,7 @@ _sections_unfolded = [ "Transform" ]
 editor/display_folded = true
 position = Vector2( -20.8762, 63.3068 )
 scale = Vector2( 3, 3 )
-texture = ExtResource( 75 )
+texture = ExtResource( 76 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlatformDecorations/Second/Eyes in Hole" index="0"]
@@ -3336,7 +3350,7 @@ blend_times = [  ]
 
 position = Vector2( 624.835, -532.692 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 76 )
+texture = ExtResource( 77 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 4" type="Sprite" parent="PlatformDecorations/Second" index="4"]
@@ -3344,7 +3358,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 1093.78, -531.042 )
 rotation = 0.208051
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 77 )
+texture = ExtResource( 78 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 5" type="Sprite" parent="PlatformDecorations/Second" index="5"]
@@ -3352,105 +3366,105 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -528.365, -499.981 )
 rotation = -1.44502
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 78 )
+texture = ExtResource( 79 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Trash Bag 2" type="Sprite" parent="PlatformDecorations/Second" index="6"]
 
 position = Vector2( 1196.26, 172.876 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 73 )
+texture = ExtResource( 74 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Trash Bag 3" type="Sprite" parent="PlatformDecorations/Second" index="7"]
 
 position = Vector2( 1276, 172.847 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 73 )
+texture = ExtResource( 74 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Trash Bag 4" type="Sprite" parent="PlatformDecorations/Second" index="8"]
 
 position = Vector2( 1354.57, 173.322 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 73 )
+texture = ExtResource( 74 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Trash Bag 5" type="Sprite" parent="PlatformDecorations/Second" index="9"]
 
 position = Vector2( 1431.36, 173.196 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 73 )
+texture = ExtResource( 74 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Trash Bag 6" type="Sprite" parent="PlatformDecorations/Second" index="10"]
 
 position = Vector2( 1392.16, 98.0012 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 73 )
+texture = ExtResource( 74 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Trash Bag 7" type="Sprite" parent="PlatformDecorations/Second" index="11"]
 
 position = Vector2( 1312.35, 98.1387 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 73 )
+texture = ExtResource( 74 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Trash Bag 8" type="Sprite" parent="PlatformDecorations/Second" index="12"]
 
 position = Vector2( 1234.85, 96.6421 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 73 )
+texture = ExtResource( 74 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Trash Bag 9" type="Sprite" parent="PlatformDecorations/Second" index="13"]
 
 position = Vector2( 1273.36, 21.4485 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 73 )
+texture = ExtResource( 74 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Trash Bag 10" type="Sprite" parent="PlatformDecorations/Second" index="14"]
 
 position = Vector2( 1349.98, 21.5861 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 73 )
+texture = ExtResource( 74 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Trash Bag 11" type="Sprite" parent="PlatformDecorations/Second" index="15"]
 
 position = Vector2( 1309.7, -54.0168 )
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 73 )
+texture = ExtResource( 74 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Trash Bag 12" type="Sprite" parent="PlatformDecorations/Second" index="16"]
 
 position = Vector2( 1310.39, -139.358 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 79 )
+texture = ExtResource( 80 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Eyes in Hole2" type="Sprite" parent="PlatformDecorations/Second" index="17"]
 
 position = Vector2( 1308.9, 111.001 )
 rotation = 0.180702
-texture = ExtResource( 75 )
+texture = ExtResource( 76 )
 
 [node name="Plank with Screws" type="Sprite" parent="PlatformDecorations/Second" index="18"]
 
 position = Vector2( 1931.26, -362.136 )
 rotation = 0.620895
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 80 )
+texture = ExtResource( 81 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Hole 9" type="Sprite" parent="PlatformDecorations/Second" index="19"]
 
 position = Vector2( 1274.67, -1032.03 )
 rotation = 0.714478
-texture = ExtResource( 81 )
+texture = ExtResource( 82 )
 
 [node name="Crack 4" type="Sprite" parent="PlatformDecorations/Second" index="20"]
 
@@ -3464,12 +3478,12 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 2071.21, -70.1843 )
 rotation = -1.66932
-texture = ExtResource( 82 )
+texture = ExtResource( 83 )
 
 [node name="Stain 8" type="Sprite" parent="PlatformDecorations/Second" index="22"]
 
 position = Vector2( 2077.3, 67.3401 )
-texture = ExtResource( 83 )
+texture = ExtResource( 84 )
 
 [node name="DoubleDeck" type="Node2D" parent="PlatformDecorations" index="2"]
 
@@ -3480,7 +3494,7 @@ position = Vector2( 7583.79, -948.764 )
 
 position = Vector2( 987.688, 715.122 )
 rotation = 0.100023
-texture = ExtResource( 72 )
+texture = ExtResource( 73 )
 
 [node name="Crack 2" type="Sprite" parent="PlatformDecorations/DoubleDeck" index="1"]
 
@@ -3490,7 +3504,7 @@ texture = ExtResource( 13 )
 [node name="Crack 3" type="Sprite" parent="PlatformDecorations/DoubleDeck" index="2"]
 
 position = Vector2( -1535.87, 745.964 )
-texture = ExtResource( 84 )
+texture = ExtResource( 85 )
 
 [node name="HealingTunnle" type="Node2D" parent="PlatformDecorations" index="3"]
 
@@ -3501,52 +3515,52 @@ position = Vector2( 9915.68, -609.447 )
 
 position = Vector2( 535.38, -325.963 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 70 )
+texture = ExtResource( 71 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Bag2" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="1"]
 
 position = Vector2( -647.951, -280.545 )
 scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 73 )
+texture = ExtResource( 74 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Bag3" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="2"]
 
 position = Vector2( 532.722, -728.927 )
-texture = ExtResource( 79 )
+texture = ExtResource( 80 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Bag4" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="3"]
 
 position = Vector2( -160.017, -625.658 )
 rotation = 0.111518
-texture = ExtResource( 72 )
+texture = ExtResource( 73 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="BlingBling" parent="PlatformDecorations/HealingTunnle" index="4" instance=ExtResource( 85 )]
+[node name="BlingBling" parent="PlatformDecorations/HealingTunnle" index="4" instance=ExtResource( 86 )]
 
 position = Vector2( 544.927, -345.082 )
 scale = Vector2( 0.8, 0.8 )
 _sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
-[node name="BlingBling2" parent="PlatformDecorations/HealingTunnle" index="5" instance=ExtResource( 85 )]
+[node name="BlingBling2" parent="PlatformDecorations/HealingTunnle" index="5" instance=ExtResource( 86 )]
 
 position = Vector2( 545.912, -785.119 )
 _sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
-[node name="BlingBling3" parent="PlatformDecorations/HealingTunnle" index="6" instance=ExtResource( 85 )]
+[node name="BlingBling3" parent="PlatformDecorations/HealingTunnle" index="6" instance=ExtResource( 86 )]
 
 position = Vector2( -643.435, -292.132 )
 _sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
-[node name="BlingBling4" parent="PlatformDecorations/HealingTunnle" index="7" instance=ExtResource( 85 )]
+[node name="BlingBling4" parent="PlatformDecorations/HealingTunnle" index="7" instance=ExtResource( 86 )]
 
 position = Vector2( -167.181, -707.888 )
 scale = Vector2( 0.8, 0.8 )
 _sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Transform", "Visibility" ]
 
-[node name="BlingBling5" parent="PlatformDecorations/HealingTunnle" index="8" instance=ExtResource( 85 )]
+[node name="BlingBling5" parent="PlatformDecorations/HealingTunnle" index="8" instance=ExtResource( 86 )]
 
 position = Vector2( -961.322, -739.622 )
 scale = Vector2( 0.6, 0.6 )
@@ -3557,7 +3571,7 @@ _sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Tran
 position = Vector2( -664.361, -485.48 )
 rotation = 0.035446
 scale = Vector2( 0.4, 0.2 )
-texture = ExtResource( 86 )
+texture = ExtResource( 87 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="PriceTag2" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="10"]
@@ -3565,7 +3579,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -89.7832, -580.54 )
 rotation = -0.496239
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 87 )
+texture = ExtResource( 88 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="PriceTag3" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="11"]
@@ -3582,7 +3596,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 position = Vector2( 531.676, -869.983 )
 rotation = 0.00340561
 scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 88 )
+texture = ExtResource( 89 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="PriceTag5" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="13"]
@@ -3590,7 +3604,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -889.452, -836.135 )
 rotation = 0.199394
 scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 89 )
+texture = ExtResource( 90 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Label" type="Label" parent="PlatformDecorations/HealingTunnle" index="14"]
@@ -3752,7 +3766,7 @@ _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts" ]
 position = Vector2( 840.989, 219.248 )
 rotation = -0.747931
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 90 )
+texture = ExtResource( 91 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 5" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="21"]
@@ -3760,7 +3774,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 522.675, 244.15 )
 rotation = -1.19345
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 91 )
+texture = ExtResource( 92 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 6" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="22"]
@@ -3774,7 +3788,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Stain 1" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="23"]
 
 position = Vector2( -445.519, 473.061 )
-texture = ExtResource( 92 )
+texture = ExtResource( 93 )
 
 [node name="Stain 11" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="24"]
 
@@ -3782,7 +3796,7 @@ modulate = Color( 0.769531, 0.395109, 0.395109, 1 )
 position = Vector2( -290.438, -348.121 )
 rotation = -0.326709
 scale = Vector2( 3, 3 )
-texture = ExtResource( 93 )
+texture = ExtResource( 94 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Stain 12" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="25"]
@@ -3816,7 +3830,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 modulate = Color( 0.417969, 0.2659, 0.143817, 1 )
 position = Vector2( 925.79, -860.019 )
 rotation = 0.0247512
-texture = ExtResource( 94 )
+texture = ExtResource( 95 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Stain 16" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="29"]
@@ -3824,7 +3838,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 modulate = Color( 0.753906, 0.443642, 0.194556, 1 )
 position = Vector2( 953.26, -862.485 )
 rotation = 0.0420908
-texture = ExtResource( 95 )
+texture = ExtResource( 96 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Hole 12" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="30"]
@@ -3832,13 +3846,13 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 position = Vector2( 871.069, -570.317 )
 rotation = 0.515512
 scale = Vector2( 2, 2 )
-texture = ExtResource( 96 )
+texture = ExtResource( 97 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Hole 7" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="31"]
 
 position = Vector2( -328.651, -856.563 )
-texture = ExtResource( 97 )
+texture = ExtResource( 98 )
 
 [node name="Hole 1" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="32"]
 
@@ -3848,12 +3862,12 @@ texture = ExtResource( 34 )
 [node name="Hole 8" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="33"]
 
 position = Vector2( -1042.02, -416.818 )
-texture = ExtResource( 98 )
+texture = ExtResource( 99 )
 
 [node name="Crack 9" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="34"]
 
 position = Vector2( 188.964, 359.3 )
-texture = ExtResource( 82 )
+texture = ExtResource( 83 )
 
 [node name="Crack 7" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="35"]
 
@@ -3864,7 +3878,7 @@ texture = ExtResource( 38 )
 [node name="Crack 1" type="Sprite" parent="PlatformDecorations/HealingTunnle" index="36"]
 
 position = Vector2( 630.239, 478.628 )
-texture = ExtResource( 84 )
+texture = ExtResource( 85 )
 
 [node name="EnemyTunnle" type="Node2D" parent="PlatformDecorations" index="4"]
 
@@ -3883,7 +3897,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -328.307, 477.65 )
 rotation = 0.455919
-texture = ExtResource( 99 )
+texture = ExtResource( 100 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Crack 4" type="Sprite" parent="PlatformDecorations/EnemyTunnle" index="2"]
@@ -3904,34 +3918,34 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 142.995, 605.95 )
 rotation = 3.43192
-texture = ExtResource( 100 )
+texture = ExtResource( 101 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Crack 7" type="Sprite" parent="PlatformDecorations/EnemyTunnle" index="5"]
 
 position = Vector2( 231.757, 297.427 )
 rotation = 6.15904
-texture = ExtResource( 82 )
+texture = ExtResource( 83 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Crack 10" type="Sprite" parent="PlatformDecorations/EnemyTunnle" index="6"]
 
 position = Vector2( 60.8438, 374.363 )
 rotation = -1.41522
-texture = ExtResource( 101 )
+texture = ExtResource( 102 )
 
 [node name="Crack 11" type="Sprite" parent="PlatformDecorations/EnemyTunnle" index="7"]
 
 position = Vector2( 996.182, 516.698 )
 rotation = -1.41522
-texture = ExtResource( 84 )
+texture = ExtResource( 85 )
 
 [node name="Plank with Tapes" type="Sprite" parent="PlatformDecorations/EnemyTunnle" index="8"]
 
 position = Vector2( 215.379, -363.197 )
 rotation = 1.36726
 scale = Vector2( 0.7, 0.7 )
-texture = ExtResource( 102 )
+texture = ExtResource( 103 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Tape 3" type="Sprite" parent="PlatformDecorations/EnemyTunnle" index="9"]
@@ -3947,7 +3961,7 @@ _sections_unfolded = [ "Transform" ]
 modulate = Color( 0.761719, 0.585622, 0.0573337, 1 )
 position = Vector2( -846.559, 459.987 )
 rotation = -2.71591
-texture = ExtResource( 103 )
+texture = ExtResource( 104 )
 _sections_unfolded = [ "Visibility" ]
 
 [node name="Stain 21" type="Sprite" parent="PlatformDecorations/EnemyTunnle" index="11"]
@@ -3969,7 +3983,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Tape 1" type="Sprite" parent="PlatformDecorations/EnemyTunnle" index="13"]
 
 position = Vector2( -517.809, -432.017 )
-texture = ExtResource( 104 )
+texture = ExtResource( 105 )
 
 [node name="Tape 4" type="Sprite" parent="PlatformDecorations/EnemyTunnle" index="14"]
 
@@ -3987,7 +4001,7 @@ texture = ExtResource( 64 )
 position = Vector2( 1148.65, -395.063 )
 rotation = 0.155715
 scale = Vector2( 2, 2 )
-texture = ExtResource( 81 )
+texture = ExtResource( 82 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Stain 5" type="Sprite" parent="PlatformDecorations/EnemyTunnle" index="17"]
@@ -4003,7 +4017,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -811.109, 180.05 )
 rotation = 2.10804
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 78 )
+texture = ExtResource( 79 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 3" type="Sprite" parent="PlatformDecorations/EnemyTunnle" index="19"]
@@ -4019,7 +4033,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 1030.2, 176.96 )
 rotation = 3.18126
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 105 )
+texture = ExtResource( 106 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 5" type="Sprite" parent="PlatformDecorations/EnemyTunnle" index="21"]
@@ -4027,7 +4041,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 1389.33, 173.813 )
 rotation = 1.19508
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 91 )
+texture = ExtResource( 92 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 6" type="Sprite" parent="PlatformDecorations/EnemyTunnle" index="22"]
@@ -4035,7 +4049,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 35.8242, 778.934 )
 rotation = 4.26776
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 77 )
+texture = ExtResource( 78 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="PortalFalling" type="Node2D" parent="PlatformDecorations" index="5"]
@@ -4048,7 +4062,7 @@ position = Vector2( 16861.8, -919.269 )
 position = Vector2( -2000.66, -518.451 )
 rotation = 0.100947
 scale = Vector2( 2, 2 )
-texture = ExtResource( 100 )
+texture = ExtResource( 101 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Hole 6" type="Sprite" parent="PlatformDecorations/PortalFalling" index="1"]
@@ -4056,7 +4070,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -2166.97, 0.976746 )
 rotation = 1.1061
 scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 106 )
+texture = ExtResource( 107 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Hole 2" type="Sprite" parent="PlatformDecorations/PortalFalling" index="2"]
@@ -4069,13 +4083,13 @@ texture = ExtResource( 52 )
 modulate = Color( 0.407642, 0.0265667, 0.429688, 1 )
 position = Vector2( -1372.3, -28.2829 )
 scale = Vector2( 1.8, 1.8 )
-texture = ExtResource( 107 )
+texture = ExtResource( 108 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Stain 3" type="Sprite" parent="PlatformDecorations/PortalFalling" index="4"]
 
 position = Vector2( -1147.72, -539.32 )
-texture = ExtResource( 108 )
+texture = ExtResource( 109 )
 
 [node name="Stain 11" type="Sprite" parent="PlatformDecorations/PortalFalling" index="5"]
 
@@ -4083,7 +4097,7 @@ modulate = Color( 0.433594, 0.191154, 0.191154, 1 )
 position = Vector2( -333.994, 460.182 )
 rotation = 2.84771
 scale = Vector2( 2, 2 )
-texture = ExtResource( 93 )
+texture = ExtResource( 94 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Stain 25" type="Sprite" parent="PlatformDecorations/PortalFalling" index="6"]
@@ -4106,7 +4120,7 @@ texture = ExtResource( 42 )
 position = Vector2( -927.24, 731.506 )
 rotation = 0.182002
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 77 )
+texture = ExtResource( 78 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 6" type="Sprite" parent="PlatformDecorations/PortalFalling" index="9"]
@@ -4114,7 +4128,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -1534.21, -146.721 )
 rotation = -1.20808
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 91 )
+texture = ExtResource( 92 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 7" type="Sprite" parent="PlatformDecorations/PortalFalling" index="10"]
@@ -4122,7 +4136,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -1459.48, 743.942 )
 rotation = 0.0425897
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 105 )
+texture = ExtResource( 106 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 8" type="Sprite" parent="PlatformDecorations/PortalFalling" index="11"]
@@ -4138,7 +4152,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -590.958, -159.45 )
 rotation = 2.78402
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 76 )
+texture = ExtResource( 77 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 10" type="Sprite" parent="PlatformDecorations/PortalFalling" index="13"]
@@ -4162,7 +4176,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 1987.61, -166.532 )
 rotation = 4.7491
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 109 )
+texture = ExtResource( 110 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 13" type="Sprite" parent="PlatformDecorations/PortalFalling" index="16"]
@@ -4170,7 +4184,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 983.467, 553.457 )
 rotation = 4.68743
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 78 )
+texture = ExtResource( 79 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 14" type="Sprite" parent="PlatformDecorations/PortalFalling" index="17"]
@@ -4199,7 +4213,7 @@ position = Vector2( 20565.1, -822.94 )
 position = Vector2( -1431.53, 636.977 )
 rotation = 1.63211
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 90 )
+texture = ExtResource( 91 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 5" type="Sprite" parent="PlatformDecorations/PreLatortransGround" index="1"]
@@ -4207,7 +4221,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -309.316, 650.752 )
 rotation = 1.15733
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 91 )
+texture = ExtResource( 92 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 6" type="Sprite" parent="PlatformDecorations/PreLatortransGround" index="2"]
@@ -4227,19 +4241,19 @@ position = Vector2( 23361, -787.753 )
 
 position = Vector2( 221.463, 36.0419 )
 rotation = 1.83207
-texture = ExtResource( 99 )
+texture = ExtResource( 100 )
 
 [node name="Crack 5" type="Sprite" parent="PlatformDecorations/Latortrans" index="1"]
 
 position = Vector2( -258.23, 14.3283 )
 rotation = 2.49741
-texture = ExtResource( 110 )
+texture = ExtResource( 111 )
 
 [node name="Crack 4" type="Sprite" parent="PlatformDecorations/Latortrans" index="2"]
 
 position = Vector2( 221.463, 36.0419 )
 rotation = 1.83207
-texture = ExtResource( 99 )
+texture = ExtResource( 100 )
 
 [node name="Crack 7" type="Sprite" parent="PlatformDecorations/Latortrans" index="3"]
 
@@ -4260,7 +4274,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -15.1855, -17.0989 )
 rotation = -0.778879
 scale = Vector2( 0.6, 0.6 )
-texture = ExtResource( 82 )
+texture = ExtResource( 83 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Crack 1" type="Sprite" parent="PlatformDecorations/Latortrans" index="6"]
@@ -4268,7 +4282,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 120.01, 0.643188 )
 rotation = -0.989273
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 84 )
+texture = ExtResource( 85 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Crack 2" type="Sprite" parent="PlatformDecorations/Latortrans" index="7"]
@@ -4292,7 +4306,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 759.15, 535.409 )
 rotation = 0.241938
 scale = Vector2( 2, 2 )
-texture = ExtResource( 96 )
+texture = ExtResource( 97 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Hole 13" type="Sprite" parent="PlatformDecorations/Latortrans" index="10"]
@@ -4300,7 +4314,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 1917.52, 322.253 )
 rotation = -0.0995576
 scale = Vector2( 2, 2 )
-texture = ExtResource( 97 )
+texture = ExtResource( 98 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Tape 3" type="Sprite" parent="PlatformDecorations/Latortrans" index="11"]
@@ -4324,7 +4338,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 1893.44, 318.967 )
 rotation = -0.619249
 scale = Vector2( 0.7, 0.8 )
-texture = ExtResource( 104 )
+texture = ExtResource( 105 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Crack 10" type="Sprite" parent="PlatformDecorations/Latortrans" index="14"]
@@ -4340,7 +4354,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 position = Vector2( 1622.14, 585.787 )
 rotation = -0.731514
 scale = Vector2( 2, 2 )
-texture = ExtResource( 74 )
+texture = ExtResource( 75 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Plank with Screws" type="Sprite" parent="PlatformDecorations/Latortrans" index="16"]
@@ -4348,7 +4362,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 position = Vector2( 1595.11, 276.844 )
 rotation = -0.928835
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 80 )
+texture = ExtResource( 81 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Stain 20" type="Sprite" parent="PlatformDecorations/Latortrans" index="17"]
@@ -4379,7 +4393,7 @@ modulate = Color( 0.209947, 0.339844, 0.157132, 1 )
 position = Vector2( 976.703, 599.394 )
 rotation = 0.60373
 scale = Vector2( 1.25, 1.25 )
-texture = ExtResource( 111 )
+texture = ExtResource( 112 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Stain 25" type="Sprite" parent="PlatformDecorations/Latortrans" index="21"]
@@ -4396,7 +4410,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 modulate = Color( 0.613281, 0.136834, 0.136834, 1 )
 position = Vector2( 642.654, 427.138 )
 scale = Vector2( 1.6, 1.6 )
-texture = ExtResource( 107 )
+texture = ExtResource( 108 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
@@ -4406,7 +4420,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="FirstTrigger" type="Position2D" parent="CameraChangingTriggers" index="0"]
 
 position = Vector2( 650, -150 )
-script = ExtResource( 112 )
+script = ExtResource( 113 )
 _sections_unfolded = [ "Transform" ]
 range_x = 1000
 range_y = 1000
@@ -4416,7 +4430,7 @@ y_check = 0
 [node name="PortalTrigger1" type="Position2D" parent="CameraChangingTriggers" index="1"]
 
 position = Vector2( 2750, -850 )
-script = ExtResource( 112 )
+script = ExtResource( 113 )
 _sections_unfolded = [ "Transform" ]
 range_x = 600
 range_y = 600
@@ -4426,7 +4440,7 @@ y_check = 1
 [node name="PortalTrigger2" type="Position2D" parent="CameraChangingTriggers" index="2"]
 
 position = Vector2( 4550, -750 )
-script = ExtResource( 112 )
+script = ExtResource( 113 )
 _sections_unfolded = [ "Transform" ]
 range_x = 600
 range_y = 600
@@ -4435,13 +4449,13 @@ y_check = 2
 
 [node name="DoubleDeckedMobClear" type="Node2D" parent="CameraChangingTriggers" index="3"]
 
-script = ExtResource( 113 )
+script = ExtResource( 114 )
 count_to_emit = 3
 
 [node name="HealingMachineTunnle" type="Position2D" parent="CameraChangingTriggers" index="4"]
 
 position = Vector2( 9200, -350 )
-script = ExtResource( 112 )
+script = ExtResource( 113 )
 _sections_unfolded = [ "Transform" ]
 range_x = 500
 range_y = 1000
@@ -4450,13 +4464,13 @@ y_check = 0
 
 [node name="TunnleMobClear" type="Node2D" parent="CameraChangingTriggers" index="5"]
 
-script = ExtResource( 113 )
+script = ExtResource( 114 )
 count_to_emit = 4
 
 [node name="PortalChamber" type="Position2D" parent="CameraChangingTriggers" index="6"]
 
 position = Vector2( 14950, -850 )
-script = ExtResource( 112 )
+script = ExtResource( 113 )
 _sections_unfolded = [ "Transform" ]
 range_x = 600
 range_y = 600
@@ -4466,7 +4480,7 @@ y_check = 2
 [node name="PortalCliff" type="Position2D" parent="CameraChangingTriggers" index="7"]
 
 position = Vector2( 16750, -1050 )
-script = ExtResource( 112 )
+script = ExtResource( 113 )
 _sections_unfolded = [ "Transform" ]
 range_x = 600
 range_y = 600
@@ -4476,7 +4490,7 @@ y_check = 0
 [node name="OpenGroundPortal" type="Position2D" parent="CameraChangingTriggers" index="8"]
 
 position = Vector2( 18850, -950 )
-script = ExtResource( 112 )
+script = ExtResource( 113 )
 _sections_unfolded = [ "Transform" ]
 range_x = 600
 range_y = 600
@@ -4486,7 +4500,7 @@ y_check = 2
 [node name="LatortransDoorStep" type="Position2D" parent="CameraChangingTriggers" index="9"]
 
 position = Vector2( 21850, -450 )
-script = ExtResource( 112 )
+script = ExtResource( 113 )
 _sections_unfolded = [ "Transform" ]
 range_x = 600
 range_y = 600
@@ -4495,57 +4509,57 @@ y_check = 0
 
 [node name="OtherPlatforms" type="Node2D" parent="." index="8"]
 
-[node name="Enemy Blocking Platform" parent="OtherPlatforms" index="0" instance=ExtResource( 114 )]
+[node name="Enemy Blocking Platform" parent="OtherPlatforms" index="0" instance=ExtResource( 115 )]
 
 position = Vector2( 11400, -750 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Enemy Blocking Platform2" parent="OtherPlatforms" index="1" instance=ExtResource( 114 )]
+[node name="Enemy Blocking Platform2" parent="OtherPlatforms" index="1" instance=ExtResource( 115 )]
 
 position = Vector2( 11400, -850 )
 
-[node name="Enemy Blocking Platform3" parent="OtherPlatforms" index="2" instance=ExtResource( 114 )]
+[node name="Enemy Blocking Platform3" parent="OtherPlatforms" index="2" instance=ExtResource( 115 )]
 
 position = Vector2( 11400, -950 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Enemy Blocking Platform4" parent="OtherPlatforms" index="3" instance=ExtResource( 114 )]
+[node name="Enemy Blocking Platform4" parent="OtherPlatforms" index="3" instance=ExtResource( 115 )]
 
 position = Vector2( 14300, -1000 )
 
-[node name="Enemy Blocking Platform16" parent="OtherPlatforms" index="4" instance=ExtResource( 114 )]
+[node name="Enemy Blocking Platform16" parent="OtherPlatforms" index="4" instance=ExtResource( 115 )]
 
 position = Vector2( 14300, -800 )
 
-[node name="Enemy Blocking Platform17" parent="OtherPlatforms" index="5" instance=ExtResource( 114 )]
+[node name="Enemy Blocking Platform17" parent="OtherPlatforms" index="5" instance=ExtResource( 115 )]
 
 position = Vector2( 14300, -900 )
 
-[node name="Enemy Blocking Platform7" parent="OtherPlatforms" index="6" instance=ExtResource( 114 )]
+[node name="Enemy Blocking Platform7" parent="OtherPlatforms" index="6" instance=ExtResource( 115 )]
 
 position = Vector2( 23900, -450 )
 
-[node name="Enemy Blocking Platform8" parent="OtherPlatforms" index="7" instance=ExtResource( 114 )]
+[node name="Enemy Blocking Platform8" parent="OtherPlatforms" index="7" instance=ExtResource( 115 )]
 
 position = Vector2( 23900, -550 )
 
-[node name="Enemy Blocking Platform11" parent="OtherPlatforms" index="8" instance=ExtResource( 114 )]
+[node name="Enemy Blocking Platform11" parent="OtherPlatforms" index="8" instance=ExtResource( 115 )]
 
 position = Vector2( 23500, -150 )
 
-[node name="Enemy Blocking Platform12" parent="OtherPlatforms" index="9" instance=ExtResource( 114 )]
+[node name="Enemy Blocking Platform12" parent="OtherPlatforms" index="9" instance=ExtResource( 115 )]
 
 position = Vector2( 23500, -250 )
 
-[node name="Enemy Blocking Platform15" parent="OtherPlatforms" index="10" instance=ExtResource( 114 )]
+[node name="Enemy Blocking Platform15" parent="OtherPlatforms" index="10" instance=ExtResource( 115 )]
 
 position = Vector2( 23500, -350 )
 
-[node name="Enemy Blocking Platform13" parent="OtherPlatforms" index="11" instance=ExtResource( 114 )]
+[node name="Enemy Blocking Platform13" parent="OtherPlatforms" index="11" instance=ExtResource( 115 )]
 
 position = Vector2( 23200, -150 )
 
-[node name="Enemy Blocking Platform14" parent="OtherPlatforms" index="12" instance=ExtResource( 114 )]
+[node name="Enemy Blocking Platform14" parent="OtherPlatforms" index="12" instance=ExtResource( 115 )]
 
 position = Vector2( 23200, -250 )
 
@@ -4553,282 +4567,281 @@ position = Vector2( 23200, -250 )
 
 editor/display_folded = true
 
-[node name="Healing Machine" parent="HealingMachines" index="0" instance=ExtResource( 115 )]
+[node name="Healing Machine" parent="HealingMachines" index="0" instance=ExtResource( 116 )]
 
 position = Vector2( 10000, -550 )
 
-[node name="Healing Machine2" parent="HealingMachines" index="1" instance=ExtResource( 115 )]
+[node name="Healing Machine2" parent="HealingMachines" index="1" instance=ExtResource( 116 )]
 
 position = Vector2( 18300, -1250 )
 
-[node name="Healing Machine3" parent="HealingMachines" index="2" instance=ExtResource( 115 )]
+[node name="Healing Machine3" parent="HealingMachines" index="2" instance=ExtResource( 116 )]
 
 position = Vector2( 20000, -400 )
 
-[node name="Healing Machine4" parent="HealingMachines" index="3" instance=ExtResource( 115 )]
+[node name="Healing Machine4" parent="HealingMachines" index="3" instance=ExtResource( 116 )]
 
 position = Vector2( 24200, -650 )
 
 [node name="Structures" type="Node2D" parent="." index="10"]
 
-editor/display_folded = true
-
-[node name="BluePortal1-1" parent="Structures" index="0" instance=ExtResource( 116 )]
+[node name="BluePortal1-1" parent="Structures" index="0" instance=ExtResource( 117 )]
 
 modulate = Color( 0.134409, 0.533392, 1, 1 )
 position = Vector2( 3050, -350 )
 destination_node_path = NodePath("../BluePortal1-2")
 
-[node name="BluePortal1-2" parent="Structures" index="1" instance=ExtResource( 116 )]
+[node name="BluePortal1-2" parent="Structures" index="1" instance=ExtResource( 117 )]
 
 modulate = Color( 0.134409, 0.533392, 1, 1 )
 position = Vector2( 3050, -1050 )
 destination_node_path = NodePath("../BluePortal1-1")
 
-[node name="OrangePortal1-1" parent="Structures" index="2" instance=ExtResource( 116 )]
+[node name="OrangePortal1-1" parent="Structures" index="2" instance=ExtResource( 117 )]
 
 modulate = Color( 1, 0.459006, 0.134409, 1 )
 position = Vector2( 4850, -1050 )
 destination_node_path = NodePath("../OrangePortal1-2")
 
-[node name="OrangePortal1-2" parent="Structures" index="3" instance=ExtResource( 116 )]
+[node name="OrangePortal1-2" parent="Structures" index="3" instance=ExtResource( 117 )]
 
 modulate = Color( 1, 0.459006, 0.134409, 1 )
 position = Vector2( 4850, -350 )
 destination_node_path = NodePath("../OrangePortal1-1")
 
-[node name="GreenPortal1-1" parent="Structures" index="4" instance=ExtResource( 116 )]
+[node name="GreenPortal1-1" parent="Structures" index="4" instance=ExtResource( 117 )]
 
 modulate = Color( 0.0365295, 0.667969, 0, 1 )
 position = Vector2( 5650, -350 )
 destination_node_path = NodePath("../GreenPortal1-2")
 
-[node name="GreenPortal1-2" parent="Structures" index="5" instance=ExtResource( 116 )]
+[node name="GreenPortal1-2" parent="Structures" index="5" instance=ExtResource( 117 )]
 
 modulate = Color( 0.0365295, 0.667969, 0, 1 )
 position = Vector2( 5650, -1050 )
 destination_node_path = NodePath("../GreenPortal1-1")
 
-[node name="BluePortal2-1" parent="Structures" index="6" instance=ExtResource( 116 )]
+[node name="BluePortal2-1" parent="Structures" index="6" instance=ExtResource( 117 )]
 
 modulate = Color( 0, 0.48584, 0.777344, 1 )
 position = Vector2( 8350, -1300 )
 destination_node_path = NodePath("../BluePortal2-2")
 
-[node name="BluePortal2-2" parent="Structures" index="7" instance=ExtResource( 116 )]
+[node name="BluePortal2-2" parent="Structures" index="7" instance=ExtResource( 117 )]
 
 modulate = Color( 0, 0.48584, 0.777344, 1 )
 position = Vector2( 6400, -400 )
 destination_node_path = NodePath("../BluePortal2-1")
 
-[node name="OrangePortal2-1" parent="Structures" index="8" instance=ExtResource( 116 )]
+[node name="OrangePortal2-1" parent="Structures" index="8" instance=ExtResource( 117 )]
 
 modulate = Color( 0.867188, 0.528442, 0, 1 )
 position = Vector2( 7850, -1300 )
 destination_node_path = NodePath("../OrangePortal2-2")
 
-[node name="OrangePortal2-2" parent="Structures" index="9" instance=ExtResource( 116 )]
+[node name="OrangePortal2-2" parent="Structures" index="9" instance=ExtResource( 117 )]
 
 modulate = Color( 0.867188, 0.528442, 0, 1 )
 position = Vector2( 7600, -400 )
 destination_node_path = NodePath("../OrangePortal2-1")
 
-[node name="GreenPortal2-1" parent="Structures" index="10" instance=ExtResource( 116 )]
+[node name="GreenPortal2-1" parent="Structures" index="10" instance=ExtResource( 117 )]
 
 modulate = Color( 0, 0.867188, 0.0541992, 1 )
 position = Vector2( 7350, -1300 )
 destination_node_path = NodePath("../GreenPortal2-2")
 
-[node name="GreenPortal2-2" parent="Structures" index="11" instance=ExtResource( 116 )]
+[node name="GreenPortal2-2" parent="Structures" index="11" instance=ExtResource( 117 )]
 
 modulate = Color( 0, 0.867188, 0.0541992, 1 )
 position = Vector2( 8400, -400 )
 destination_node_path = NodePath("../GreenPortal2-1")
 
-[node name="BluePortal3-1" parent="Structures" index="12" instance=ExtResource( 116 )]
+[node name="BluePortal3-1" parent="Structures" index="12" instance=ExtResource( 117 )]
 
 modulate = Color( 0.33871, 0.550529, 1, 1 )
 position = Vector2( 12250, -950 )
 destination_node_path = NodePath("../BluePortal3-2")
 
-[node name="BluePortal3-2" parent="Structures" index="13" instance=ExtResource( 116 )]
+[node name="BluePortal3-2" parent="Structures" index="13" instance=ExtResource( 117 )]
 
 modulate = Color( 0.33871, 0.550529, 1, 1 )
 position = Vector2( 13500, -950 )
 destination_node_path = NodePath("../BluePortal3-1")
 
-[node name="OrangePortal3-1" parent="Structures" index="14" instance=ExtResource( 116 )]
+[node name="OrangePortal3-1" parent="Structures" index="14" instance=ExtResource( 117 )]
 
 modulate = Color( 0.933594, 0.51299, 0.0652512, 1 )
 position = Vector2( 12750, -950 )
 destination_node_path = NodePath("../OrangePortal3-2")
 
-[node name="OrangePortal3-2" parent="Structures" index="15" instance=ExtResource( 116 )]
+[node name="OrangePortal3-2" parent="Structures" index="15" instance=ExtResource( 117 )]
 
 modulate = Color( 0.933594, 0.51299, 0.0652512, 1 )
 position = Vector2( 12750, -350 )
 destination_node_path = NodePath("../OrangePortal3-1")
 
-[node name="RedPortal1-1" parent="Structures" index="16" instance=ExtResource( 116 )]
+[node name="RedPortal1-1" parent="Structures" index="16" instance=ExtResource( 117 )]
 
 modulate = Color( 0.933594, 0.0652512, 0.0652512, 1 )
 position = Vector2( 14500, -350 )
 destination_node_path = NodePath("../RedPortal1-2")
 
-[node name="RedPortal1-2" parent="Structures" index="17" instance=ExtResource( 116 )]
+[node name="RedPortal1-2" parent="Structures" index="17" instance=ExtResource( 117 )]
 
 modulate = Color( 0.933594, 0.0652512, 0.0652512, 1 )
 position = Vector2( 15100, -1250 )
 destination_node_path = NodePath("../RedPortal1-1")
 
-[node name="PurplePortal1-1" parent="Structures" index="18" instance=ExtResource( 116 )]
+[node name="PurplePortal1-1" parent="Structures" index="18" instance=ExtResource( 117 )]
 
 modulate = Color( 0.59375, 0, 1, 1 )
 position = Vector2( 15500, -1250 )
 destination_node_path = NodePath("../PurplePortal1-2")
 
-[node name="PurplePortal1-2" parent="Structures" index="19" instance=ExtResource( 116 )]
+[node name="PurplePortal1-2" parent="Structures" index="19" instance=ExtResource( 117 )]
 
 modulate = Color( 0.59375, 0, 1, 1 )
 position = Vector2( 15200, -500 )
 destination_node_path = NodePath("../PurplePortal1-1")
 
-[node name="PinkPortal1-1" parent="Structures" index="20" instance=ExtResource( 116 )]
+[node name="PinkPortal1-1" parent="Structures" index="20" instance=ExtResource( 117 )]
 
 modulate = Color( 0.945312, 0, 1, 1 )
 position = Vector2( 16200, -500 )
 destination_node_path = NodePath("../PinkPortal1-2")
 
-[node name="PinkPortal1-2" parent="Structures" index="21" instance=ExtResource( 116 )]
+[node name="PinkPortal1-2" parent="Structures" index="21" instance=ExtResource( 117 )]
 
 modulate = Color( 0.945312, 0, 1, 1 )
 position = Vector2( 16050, -1250 )
 destination_node_path = NodePath("../PinkPortal1-1")
 
-[node name="BrownPortal1-1" parent="Structures" index="22" instance=ExtResource( 116 )]
+[node name="BrownPortal1-1" parent="Structures" index="22" instance=ExtResource( 117 )]
 
 modulate = Color( 0.558594, 0.379763, 0.249265, 1 )
 position = Vector2( 17900, -1250 )
 destination_node_path = NodePath("../BrownPortal1-2")
 
-[node name="BrownPortal1-2" parent="Structures" index="23" instance=ExtResource( 116 )]
+[node name="BrownPortal1-2" parent="Structures" index="23" instance=ExtResource( 117 )]
 
 modulate = Color( 0.558594, 0.379763, 0.249265, 1 )
 position = Vector2( 17400, -1250 )
 destination_node_path = NodePath("../BrownPortal1-1")
 
-[node name="BluePortal4-1" parent="Structures" index="24" instance=ExtResource( 116 )]
+[node name="BluePortal4-1" parent="Structures" index="24" instance=ExtResource( 117 )]
 
 modulate = Color( 0, 0.554688, 1, 1 )
 position = Vector2( 19000, -1250 )
 destination_node_path = NodePath("../BluePortal4-2")
 
-[node name="BluePortal4-2" parent="Structures" index="25" instance=ExtResource( 116 )]
+[node name="BluePortal4-2" parent="Structures" index="25" instance=ExtResource( 117 )]
 
 modulate = Color( 0, 0.554688, 1, 1 )
 position = Vector2( 16850, -750 )
 destination_node_path = NodePath("../BluePortal4-1")
 
-[node name="GreenPortal3-1" parent="Structures" index="26" instance=ExtResource( 116 )]
+[node name="GreenPortal3-1" parent="Structures" index="26" instance=ExtResource( 117 )]
 
 modulate = Color( 0.0872803, 0.859375, 0, 1 )
 position = Vector2( 18627, -350 )
 destination_node_path = NodePath("../GreenPortal3-2")
 
-[node name="GreenPortal3-2" parent="Structures" index="27" instance=ExtResource( 116 )]
+[node name="GreenPortal3-2" parent="Structures" index="27" instance=ExtResource( 117 )]
 
 modulate = Color( 0.0872803, 0.859375, 0, 1 )
 position = Vector2( 19050, -700 )
 destination_node_path = NodePath("../GreenPortal3-1")
 
-[node name="RedPortal2-1" parent="Structures" index="28" instance=ExtResource( 116 )]
+[node name="RedPortal2-1" parent="Structures" index="28" instance=ExtResource( 117 )]
 
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 22500, -350 )
 scale = Vector2( 0.75, 0.75 )
 destination_node_path = NodePath("../RedPortal2-2")
 
-[node name="RedPortal2-2" parent="Structures" index="29" instance=ExtResource( 116 )]
+[node name="RedPortal2-2" parent="Structures" index="29" instance=ExtResource( 117 )]
 
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 24200, -1150 )
 scale = Vector2( 0.75, 0.75 )
 destination_node_path = NodePath("../RedPortal2-1")
 
-[node name="BrownPortal2-1" parent="Structures" index="30" instance=ExtResource( 116 )]
+[node name="BrownPortal2-1" parent="Structures" index="30" instance=ExtResource( 117 )]
 
 modulate = Color( 0.484375, 0.264506, 0.205729, 1 )
 position = Vector2( 23350, -250 )
 scale = Vector2( 0.75, 0.75 )
 destination_node_path = NodePath("../BrownPortal2-2")
 
-[node name="BrownPortal2-2" parent="Structures" index="31" instance=ExtResource( 116 )]
+[node name="BrownPortal2-2" parent="Structures" index="31" instance=ExtResource( 117 )]
 
 modulate = Color( 0.484375, 0.264506, 0.205729, 1 )
 position = Vector2( 23900, -650 )
 scale = Vector2( 0.75, 0.75 )
 destination_node_path = NodePath("../BrownPortal2-1")
 
-[node name="PinkPortal2-1" parent="Structures" index="32" instance=ExtResource( 116 )]
+[node name="PinkPortal2-1" parent="Structures" index="32" instance=ExtResource( 117 )]
 
 modulate = Color( 1, 0, 0.960938, 1 )
 position = Vector2( 24500, -650 )
 scale = Vector2( 0.75, 0.75 )
 destination_node_path = NodePath("../PinkPortal2-2")
 
-[node name="PinkPortal2-2" parent="Structures" index="33" instance=ExtResource( 116 )]
+[node name="PinkPortal2-2" parent="Structures" index="33" instance=ExtResource( 117 )]
 
 modulate = Color( 1, 0, 0.960938, 1 )
 position = Vector2( 22500, -1150 )
 scale = Vector2( 0.75, 0.75 )
 destination_node_path = NodePath("../PinkPortal2-1")
 
-[node name="Door Set" parent="Structures" index="34" instance=ExtResource( 117 )]
+[node name="Door Set" parent="Structures" index="34" instance=ExtResource( 118 )]
 
-position = Vector2( 25244.2, -1094.7 )
+position = Vector2( 25250, -1027.35 )
+scale = Vector2( 0.8, 0.8 )
 _sections_unfolded = [ "Transform" ]
 enter_scene_path = "res://Scenes/Levels/Level 1-3.tscn"
 available = true
 
 [node name="Enemies" type="Node2D" parent="." index="11"]
 
-[node name="Batterio" parent="Enemies" index="0" instance=ExtResource( 118 )]
+[node name="Batterio" parent="Enemies" index="0" instance=ExtResource( 119 )]
 
 position = Vector2( 5348.55, -875.911 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Batterio2" parent="Enemies" index="1" instance=ExtResource( 118 )]
+[node name="Batterio2" parent="Enemies" index="1" instance=ExtResource( 119 )]
 
 position = Vector2( 5348.55, -927.884 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Batterio3" parent="Enemies" index="2" instance=ExtResource( 118 )]
+[node name="Batterio3" parent="Enemies" index="2" instance=ExtResource( 119 )]
 
 position = Vector2( 5348.55, -978.739 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Batterio4" parent="Enemies" index="3" instance=ExtResource( 118 )]
+[node name="Batterio4" parent="Enemies" index="3" instance=ExtResource( 119 )]
 
 position = Vector2( 5348.55, -1029.46 )
 rotation = 1.5708
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Floopy" parent="Enemies" index="4" instance=ExtResource( 119 )]
+[node name="Floopy" parent="Enemies" index="4" instance=ExtResource( 120 )]
 
 position = Vector2( 7050, -250 )
 activate_range_x = 900
 activate_range_y = 1000
 
-[node name="Mouse" parent="Enemies" index="5" instance=ExtResource( 120 )]
+[node name="Mouse" parent="Enemies" index="5" instance=ExtResource( 121 )]
 
 position = Vector2( 7550, -200 )
 activate_range_x = 500
 activate_range_y = 1000
 
-[node name="CD Punch" parent="Enemies" index="6" instance=ExtResource( 121 )]
+[node name="CD Punch" parent="Enemies" index="6" instance=ExtResource( 122 )]
 
 position = Vector2( 8250, -300 )
 _sections_unfolded = [ "Collision", "Transform" ]
@@ -4837,7 +4850,7 @@ activate_range_x = 2000
 [node name="FloopySpawnPoint" type="Position2D" parent="Enemies" index="7"]
 
 position = Vector2( 7050, -300 )
-script = ExtResource( 122 )
+script = ExtResource( 123 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/Floopy.tscn"
 activate_range_x = 3000
@@ -4849,7 +4862,7 @@ countdownTVHooked = null
 [node name="CDPunchSpawnPoint" type="Position2D" parent="Enemies" index="8"]
 
 position = Vector2( 8050, -300 )
-script = ExtResource( 122 )
+script = ExtResource( 123 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/CD Punch.tscn"
 activate_range_x = 3000
@@ -4858,20 +4871,20 @@ spawn_delay = 1.5
 total_count = 2
 countdownTVHooked = null
 
-[node name="Floopy2" parent="Enemies" index="9" instance=ExtResource( 119 )]
+[node name="Floopy2" parent="Enemies" index="9" instance=ExtResource( 120 )]
 
 position = Vector2( 12450, -850 )
 activate_range_x = 1400
 
-[node name="Floopy4" parent="Enemies" index="10" instance=ExtResource( 119 )]
+[node name="Floopy4" parent="Enemies" index="10" instance=ExtResource( 120 )]
 
 position = Vector2( 12750, -250 )
 
-[node name="Mouse2" parent="Enemies" index="11" instance=ExtResource( 120 )]
+[node name="Mouse2" parent="Enemies" index="11" instance=ExtResource( 121 )]
 
 position = Vector2( 13050, -800 )
 
-[node name="Floopy3" parent="Enemies" index="12" instance=ExtResource( 119 )]
+[node name="Floopy3" parent="Enemies" index="12" instance=ExtResource( 120 )]
 
 position = Vector2( 13700, -850 )
 activate_range_x = 1900
@@ -4879,7 +4892,7 @@ activate_range_x = 1900
 [node name="FloopySpawnPoint2" type="Position2D" parent="Enemies" index="13"]
 
 position = Vector2( 14100, -850 )
-script = ExtResource( 122 )
+script = ExtResource( 123 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/Floopy.tscn"
 activate_range_x = 3000
@@ -4891,7 +4904,7 @@ countdownTVHooked = null
 [node name="MouseSpawnPoint" type="Position2D" parent="Enemies" index="14"]
 
 position = Vector2( 12500, -850 )
-script = ExtResource( 122 )
+script = ExtResource( 123 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/Mouse.tscn"
 activate_range_x = 3000
@@ -4900,102 +4913,102 @@ spawn_delay = 1.0
 total_count = 1
 countdownTVHooked = null
 
-[node name="Batterio5" parent="Enemies" index="15" instance=ExtResource( 118 )]
+[node name="Batterio5" parent="Enemies" index="15" instance=ExtResource( 119 )]
 
 position = Vector2( 15158.3, -148.479 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Batterio6" parent="Enemies" index="16" instance=ExtResource( 118 )]
+[node name="Batterio6" parent="Enemies" index="16" instance=ExtResource( 119 )]
 
 position = Vector2( 15252.8, -148.479 )
 scale = Vector2( 0.5, 0.5 )
 
-[node name="Batterio7" parent="Enemies" index="17" instance=ExtResource( 118 )]
+[node name="Batterio7" parent="Enemies" index="17" instance=ExtResource( 119 )]
 
 position = Vector2( 15629.9, -148.479 )
 scale = Vector2( 0.5, 0.5 )
 on_duration = 1.5
 off_duration = 1.5
 
-[node name="Batterio8" parent="Enemies" index="18" instance=ExtResource( 118 )]
+[node name="Batterio8" parent="Enemies" index="18" instance=ExtResource( 119 )]
 
 position = Vector2( 15837.5, -148.479 )
 scale = Vector2( 0.5, 0.5 )
 on_duration = 1.25
 off_duration = 1.25
 
-[node name="Batterio9" parent="Enemies" index="19" instance=ExtResource( 118 )]
+[node name="Batterio9" parent="Enemies" index="19" instance=ExtResource( 119 )]
 
 position = Vector2( 16142.1, -148.479 )
 scale = Vector2( 0.5, 0.5 )
 on_duration = 1.0
 off_duration = 0.8
 
-[node name="Batterio10" parent="Enemies" index="20" instance=ExtResource( 118 )]
+[node name="Batterio10" parent="Enemies" index="20" instance=ExtResource( 119 )]
 
 position = Vector2( 16250, -150 )
 scale = Vector2( 0.5, 0.5 )
 on_duration = 1.0
 off_duration = 1.0
 
-[node name="Batterio11" parent="Enemies" index="21" instance=ExtResource( 118 )]
+[node name="Batterio11" parent="Enemies" index="21" instance=ExtResource( 119 )]
 
 position = Vector2( 17866.4, -250 )
 scale = Vector2( 0.5, 0.5 )
 on_duration = 1.5
 off_duration = 1.0
 
-[node name="Batterio12" parent="Enemies" index="22" instance=ExtResource( 118 )]
+[node name="Batterio12" parent="Enemies" index="22" instance=ExtResource( 119 )]
 
 position = Vector2( 17917.5, -250 )
 scale = Vector2( 0.5, 0.5 )
 on_duration = 1.5
 off_duration = 1.0
 
-[node name="Batterio13" parent="Enemies" index="23" instance=ExtResource( 118 )]
+[node name="Batterio13" parent="Enemies" index="23" instance=ExtResource( 119 )]
 
 position = Vector2( 18724.6, -52.1761 )
 scale = Vector2( 0.5, 0.5 )
 on_duration = 1.0
 
-[node name="Batterio14" parent="Enemies" index="24" instance=ExtResource( 118 )]
+[node name="Batterio14" parent="Enemies" index="24" instance=ExtResource( 119 )]
 
 position = Vector2( 18673.8, -52.1761 )
 scale = Vector2( 0.5, 0.5 )
 on_duration = 1.0
 
-[node name="Batterio15" parent="Enemies" index="25" instance=ExtResource( 118 )]
+[node name="Batterio15" parent="Enemies" index="25" instance=ExtResource( 119 )]
 
 position = Vector2( 18622.2, -53.1648 )
 scale = Vector2( 0.5, 0.5 )
 on_duration = 1.0
 
-[node name="Batterio16" parent="Enemies" index="26" instance=ExtResource( 118 )]
+[node name="Batterio16" parent="Enemies" index="26" instance=ExtResource( 119 )]
 
 position = Vector2( 23919.7, -147.806 )
 scale = Vector2( 0.575, 0.575 )
 on_duration = 1.0
 
-[node name="Batterio18" parent="Enemies" index="27" instance=ExtResource( 118 )]
+[node name="Batterio18" parent="Enemies" index="27" instance=ExtResource( 119 )]
 
 position = Vector2( 23892, -973.602 )
 rotation = 1.5708
 scale = Vector2( 0.444, 0.444 )
 off_duration = 1.0
 
-[node name="CD Punch2" parent="Enemies" index="28" instance=ExtResource( 121 )]
+[node name="CD Punch2" parent="Enemies" index="28" instance=ExtResource( 122 )]
 
 position = Vector2( 22850, -300 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_x = 700
 
-[node name="Floopy5" parent="Enemies" index="29" instance=ExtResource( 119 )]
+[node name="Floopy5" parent="Enemies" index="29" instance=ExtResource( 120 )]
 
 position = Vector2( 23750, -250 )
 activate_range_x = 1700
 activate_range_y = 1700
 
-[node name="Mouse3" parent="Enemies" index="30" instance=ExtResource( 120 )]
+[node name="Mouse3" parent="Enemies" index="30" instance=ExtResource( 121 )]
 
 position = Vector2( 24200, -500 )
 _sections_unfolded = [ "Collision", "Transform" ]
@@ -5004,7 +5017,7 @@ activate_range_x = 2100
 [node name="MouseSpawner" type="Position2D" parent="Enemies" index="31"]
 
 position = Vector2( 24200, -500 )
-script = ExtResource( 122 )
+script = ExtResource( 123 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/Mouse.tscn"
 activate_range_x = 3000
@@ -5016,7 +5029,7 @@ countdownTVHooked = null
 [node name="CDPunchSpawner" type="Position2D" parent="Enemies" index="32"]
 
 position = Vector2( 22850, -300 )
-script = ExtResource( 122 )
+script = ExtResource( 123 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/CD Punch.tscn"
 activate_range_x = 3000
@@ -5028,7 +5041,7 @@ countdownTVHooked = null
 [node name="FloopySpawner" type="Position2D" parent="Enemies" index="33"]
 
 position = Vector2( 23750, -250 )
-script = ExtResource( 122 )
+script = ExtResource( 123 )
 _sections_unfolded = [ "Transform" ]
 mob_path = "res://Scenes/Enemies/Computer Room/Floopy.tscn"
 activate_range_x = 3000
@@ -5037,7 +5050,7 @@ spawn_delay = 1.5
 total_count = -1
 countdownTVHooked = null
 
-[node name="Latortrans" parent="Enemies" index="34" instance=ExtResource( 123 )]
+[node name="Latortrans" parent="Enemies" index="34" instance=ExtResource( 124 )]
 
 position = Vector2( 23367.6, -1108.48 )
 rotation = 0.0144937
@@ -5049,23 +5062,23 @@ activate_range_x = 1300
 
 editor/display_folded = true
 
-[node name="Ult Stone" parent="PowerUps" index="0" instance=ExtResource( 124 )]
+[node name="Ult Stone" parent="PowerUps" index="0" instance=ExtResource( 125 )]
 
 position = Vector2( 6750, -1250 )
 
-[node name="Speed Potion" parent="PowerUps" index="1" instance=ExtResource( 125 )]
+[node name="Speed Potion" parent="PowerUps" index="1" instance=ExtResource( 126 )]
 
 position = Vector2( 18700, -1050 )
 
-[node name="Hyper Potion" parent="PowerUps" index="2" instance=ExtResource( 126 )]
+[node name="Hyper Potion" parent="PowerUps" index="2" instance=ExtResource( 127 )]
 
 position = Vector2( 20900, -250 )
 
-[node name="DefensivePotion" parent="PowerUps" index="3" instance=ExtResource( 127 )]
+[node name="DefensivePotion" parent="PowerUps" index="3" instance=ExtResource( 128 )]
 
 position = Vector2( 21200, -250 )
 
-[node name="Speed Potion2" parent="PowerUps" index="4" instance=ExtResource( 125 )]
+[node name="Speed Potion2" parent="PowerUps" index="4" instance=ExtResource( 126 )]
 
 position = Vector2( 21500, -250 )
 
@@ -5085,7 +5098,7 @@ position = Vector2( 3242.08, -928.564 )
 position = Vector2( -283.925, 49.1839 )
 rotation = -1.53874
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 109 )
+texture = ExtResource( 110 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="HealingTunnle" type="Node2D" parent="ForegroundDecorations" index="1"]
@@ -5103,7 +5116,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( -671.841, -70.0005 )
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 104 )
+texture = ExtResource( 105 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Tape 2" type="Sprite" parent="ForegroundDecorations/HealingTunnle" index="2"]
@@ -5127,7 +5140,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 204.438, 195.462 )
 rotation = 0.170701
 scale = Vector2( 0.35, 0.35 )
-texture = ExtResource( 105 )
+texture = ExtResource( 106 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 8" type="Sprite" parent="ForegroundDecorations/HealingTunnle" index="5"]
@@ -5135,7 +5148,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 1278.55, 185.953 )
 rotation = 4.76287
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 109 )
+texture = ExtResource( 110 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="EnemyTunnle" type="Node2D" parent="ForegroundDecorations" index="2"]
@@ -5156,7 +5169,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -77.3242, 760.933 )
 rotation = 1.26338
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 91 )
+texture = ExtResource( 92 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 4" type="Sprite" parent="ForegroundDecorations/EnemyTunnle" index="2"]
@@ -5164,7 +5177,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -12.416, 763.109 )
 rotation = 2.7325
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 76 )
+texture = ExtResource( 77 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 5" type="Sprite" parent="ForegroundDecorations/EnemyTunnle" index="3"]
@@ -5188,7 +5201,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -107.316, 163.728 )
 rotation = 2.87649
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 76 )
+texture = ExtResource( 77 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="PortalFalling" type="Node2D" parent="ForegroundDecorations" index="3"]
@@ -5208,7 +5221,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -1412.6, 744.307 )
 rotation = 1.59646
 scale = Vector2( 0.3, 0.3 )
-texture = ExtResource( 90 )
+texture = ExtResource( 91 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Tissue 4" type="Sprite" parent="ForegroundDecorations/PortalFalling" index="2"]
@@ -5240,7 +5253,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 270.861, 752.622 )
 rotation = 4.32859
 scale = Vector2( 0.35, 0.35 )
-texture = ExtResource( 77 )
+texture = ExtResource( 78 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Tissue 8" type="Sprite" parent="ForegroundDecorations/PortalFalling" index="6"]
@@ -5248,7 +5261,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( 876.209, -160.035 )
 rotation = 6.43302
 scale = Vector2( 0.35, 0.35 )
-texture = ExtResource( 105 )
+texture = ExtResource( 106 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Tissue 9" type="Sprite" parent="ForegroundDecorations/PortalFalling" index="7"]
@@ -5269,7 +5282,7 @@ position = Vector2( 20565.1, -822.94 )
 position = Vector2( -1257.07, 649.042 )
 rotation = 2.73755
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 76 )
+texture = ExtResource( 77 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 4" type="Sprite" parent="ForegroundDecorations/PreLatortransGround" index="1"]
@@ -5285,7 +5298,7 @@ _sections_unfolded = [ "Transform" ]
 position = Vector2( -18.5117, 657.623 )
 rotation = 4.33782
 scale = Vector2( 0.4, 0.4 )
-texture = ExtResource( 77 )
+texture = ExtResource( 78 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Paper 6" type="Sprite" parent="ForegroundDecorations/PreLatortransGround" index="3"]
@@ -5300,7 +5313,7 @@ _sections_unfolded = [ "Transform" ]
 
 position = Vector2( 23361, -787.753 )
 
-[node name="PauseButton" parent="." index="14" instance=ExtResource( 128 )]
+[node name="PauseButton" parent="." index="14" instance=ExtResource( 129 )]
 
 [node name="Position2D" type="Position2D" parent="." index="15"]
 
@@ -5312,37 +5325,37 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/FirstTrigger" to="FollowingCamera" method="update_right_limit" binds= [ 3450 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/PortalTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 5250 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/PortalTrigger1" to="FollowingCamera" method="update_left_limit" binds= [ 2650 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/PortalTrigger2" to="FollowingCamera" method="update_right_margin" binds= [ 0.6 ]]
+[connection signal="passed" from="CameraChangingTriggers/PortalTrigger1" to="FollowingCamera" method="update_right_limit" binds= [ 5250 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/PortalTrigger2" to="FollowingCamera" method="update_right_limit" binds= [ 8650 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckedMobClear" to="FollowingCamera" method="update_right_margin" binds= [ 0.2 ]]
+[connection signal="passed" from="CameraChangingTriggers/PortalTrigger2" to="FollowingCamera" method="update_right_margin" binds= [ 0.6 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckedMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 14050 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/HealingMachineTunnle" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckedMobClear" to="FollowingCamera" method="update_right_margin" binds= [ 0.2 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/TunnleMobClear" to="FollowingCamera" method="update_right_margin" binds= [ 0.2 ]]
+[connection signal="passed" from="CameraChangingTriggers/HealingMachineTunnle" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/TunnleMobClear" to="FollowingCamera" method="update_right_limit" binds= [ 15750 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/PortalChamber" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/TunnleMobClear" to="FollowingCamera" method="update_right_margin" binds= [ 0.2 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/PortalChamber" to="FollowingCamera" method="update_right_limit" binds= [ 19250 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/PortalCliff" to="FollowingCamera" method="update_right_margin" binds= [ 0.2 ]]
+[connection signal="passed" from="CameraChangingTriggers/PortalChamber" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/OpenGroundPortal" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
+[connection signal="passed" from="CameraChangingTriggers/PortalCliff" to="FollowingCamera" method="update_right_margin" binds= [ 0.2 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/OpenGroundPortal" to="FollowingCamera" method="update_right_limit" binds= [ 100000000 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/LatortransDoorStep" to="FollowingCamera" method="update_right_limit" binds= [ 24650 ]]
+[connection signal="passed" from="CameraChangingTriggers/OpenGroundPortal" to="FollowingCamera" method="update_right_margin" binds= [ 0.5 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/LatortransDoorStep" to="FollowingCamera" method="update_left_limit" binds= [ 21950 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/LatortransDoorStep" to="FollowingCamera" method="update_right_limit" binds= [ 24650 ]]
 
 [connection signal="defeated" from="Enemies/Floopy" to="Enemies/FloopySpawnPoint" method="spawn_mob"]
 
@@ -5372,9 +5385,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Enemies/Mouse3" to="Enemies/MouseSpawner" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Latortrans" to="FollowingCamera" method="update_right_margin" binds= [ 0.25 ]]
-
 [connection signal="defeated" from="Enemies/Latortrans" to="FollowingCamera" method="update_right_limit" binds= [ 25750 ]]
+
+[connection signal="defeated" from="Enemies/Latortrans" to="FollowingCamera" method="update_right_margin" binds= [ 0.25 ]]
 
 [connection signal="defeated" from="Enemies/Latortrans" to="FollowingCamera" method="update_left_margin" binds= [ 0.1 ]]
 

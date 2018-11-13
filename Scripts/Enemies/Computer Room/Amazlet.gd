@@ -18,7 +18,7 @@ export(int) var activate_range_y = 1000
 
 enum { NONE, FACE, ANDROID_ANIM, SPAWN_ANDROID, FRIZBEE_ANIM, SPAWN_FRIZBEE, THROW_FRIZBEE, RESUME_FACE }
 
-const MAX_HEALTH = 3000
+const MAX_HEALTH = 3500
 
 # Attack.
 const TOUCH_DAMAGE = 50

@@ -17,7 +17,7 @@ enum { NONE, IDLE, INPUT, PROCESS, OUTPUT, SHOOT }
 export(int) var activate_range_x = 1500
 export(int) var activate_range_y = 1500
 
-const MAX_HEALTH = 2500
+const MAX_HEALTH = 3000
 
 # Touch Damage.
 const TOUCH_DAMAGE = 10

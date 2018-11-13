@@ -101,7 +101,7 @@ var size_status = NORMAL
 var size_multipliers = [
 	{size = 0.5, attack = 0.85, defense = 1.1,  self_knock_back = 1.25, enemy_knock_back = 0.75},
 	{size = 1.0, attack = 1.0,  defense = 1.0,  self_knock_back = 1.0, enemy_knock_back = 1.0},
-	{size = 1.5, attack = 1.5,  defense = 0.75, self_knock_back = 0.5, enemy_knock_back = 2.0}
+	{size = 1.5, attack = 1.5,  defense = 0.75, self_knock_back = 0.5, enemy_knock_back = 1.4}
 ]
 
 var countdown_timer = preload("res://Scripts/Utils/CountdownTimer.gd")
@@ -294,6 +294,7 @@ func falls_off():
 	following_camera.cam_lock_semaphore += 1
 
 	combo_handler.cancel_all_skills()
+	mute_all_skill_sounds()
 	interrupt_skills()
 
 	visible = false

@@ -13,4 +13,4 @@ const ult_eyes_node_path = "Sprite/Animation/Wheel Chair/Body/UltEyes"
 const eyes_node_path = ["Sprite/Animation/Wheel Chair/Body/Left Eye", "Sprite/Animation/Wheel Chair/Body/Right Eye"]
 const fire_particle_node_path = "Sprite/Animation/Wheel Chair/Body/Fire Particle"
 const default_animator_path = "Sprite/AnimationPlayer"
-const drink_sprite_path = "Sprite/Animation/Drink"
+const drink_sprite_path = "Sprite/Animation/Wheel Chair/Body/Drink"

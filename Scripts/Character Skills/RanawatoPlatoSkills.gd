@@ -25,7 +25,8 @@ const START_INVINCIBLE_TIME = 0.8
 const DOWN_SKILL_DURATION = 2.7
 const DOWN_SKILL_COOLDOWN = 0.1
 
-const UP_SKILL_DURATION = 1.3
+# Up Skill
+const UP_SKILL_DURATION = 1.0
 const UP_SKILL_COOLDOWN = 0.2
 const UP_SKILL_DISPLACEMENT = 150
 const UP_SKILL_DAMAGE = 30
@@ -219,6 +220,9 @@ func up_skill():
         hero.set_status("animate_movement", false, UP_SKILL_DURATION)
 
         up_skill_targets.clear()
+
+        up_skill_available = false
+        up_skill_timestamp = OS.get_ticks_msec()
 
         hero.jump_to_height(UP_SKILL_DISPLACEMENT)
 

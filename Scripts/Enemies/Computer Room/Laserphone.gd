@@ -47,6 +47,7 @@ var attack_target = null
 var attack_timer = null
 var status_timer = null
 var die_timer = null
+var laser_count = 0
 
 onready var laserlight = $"LaserLight"
 
@@ -112,14 +113,15 @@ func drop_down(delta):
 func play_turn_on_animation():
 	ec.play_animation("Turn On")
 	ec.change_status(NONE)
+	laser_count = 0
 	status_timer = ec.cd_timer.new(TURN_ON_ANIMATION_DURATION, self, "change_status", LASER)
 
 func shoot_laser():
-	laser_sequence_on()
+	status_timer = null
 	ec.change_status(NONE)
-	status_timer = ec.cd_timer.new((LASER_SHOW_DURATION + LASER_HIDE_DURATION) * ATTACK_COUNT, self, "change_status", TURN_OFF)
+	attack_timer = ec.cd_timer.new(LASER_SHOW_DURATION, self, "laser_hit")
 
-func laser_sequence_on():
+func laser_hit():
 	attack_target = ec.target_detect.get_nearest(self, ec.hero_manager.heroes)
 
 	var from = laser_pos.global_position - global_position
@@ -135,12 +137,18 @@ func laser_sequence_on():
 	laserlight.enabled = true
 	drawing_node.add_line(laser_line)
 	attack_target.damaged(DAMAGE, false)
-	attack_timer = ec.cd_timer.new(LASER_SHOW_DURATION, self, "laser_sequence_off")
+	laser_count += 1
+	attack_timer = ec.cd_timer.new(LASER_SHOW_DURATION, self, "laser_off")
 
-func laser_sequence_off():
+func laser_off():
 	drawing_node.clear_all()
 	laserlight.enabled = false
-	attack_timer = ec.cd_timer.new(LASER_HIDE_DURATION, self, "laser_sequence_on")
+
+	if laser_count < ATTACK_COUNT:
+		attack_timer = ec.cd_timer.new(LASER_HIDE_DURATION, self, "shoot_laser")
+	else:
+		cancel_attack_sequence()
+		status_timer = ec.cd_timer.new(LASER_HIDE_DURATION, self, "play_turn_off_animation")
 
 func play_turn_off_animation():
 	cancel_attack_sequence()
