@@ -13,6 +13,9 @@ onready var collision_area = $Collision/CollisionArea
 func _ready():
 	collision_area.add_to_group("enemy")
 
+func activate_door():
+	available = true
+
 func break_open():
 	if !available:
 		return

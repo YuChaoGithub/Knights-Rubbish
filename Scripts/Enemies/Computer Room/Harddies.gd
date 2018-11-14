@@ -21,12 +21,12 @@ export(int) var activate_range_y = 2000
 export(int) var left_limit
 export(int) var right_limit
 
-const MAX_HEALTH = 200
-const STONED_MAX_HEALTH = 700
+const MAX_HEALTH = 150
+const STONED_MAX_HEALTH = 600
 
 # Attack.
 const RING_SPAWN_OFFSET = 150
-const DAMAGE = 99
+const DAMAGE = 66
 const KNOCK_BACK_VEL_X = 1000
 const KNOCK_BACK_FADE_RATE = 1500
 const KNOCK_BACK_VEL_Y= 0
@@ -36,8 +36,8 @@ const SPEED_X = 200
 const GRAVITY = 600
 const RANDOM_MOVEMENT_MIN_STEPS = 3
 const RANDOM_MOVEMENT_MAX_STEPS = 6
-const RANDOM_MOVEMENT_MIN_TIME_PER_STEP = 0.5
-const RANDOM_MOVEMENT_MAX_TIME_PER_STEP = 2
+const RANDOM_MOVEMENT_MIN_TIME_PER_STEP = 1.0
+const RANDOM_MOVEMENT_MAX_TIME_PER_STEP = 2.0
 
 # Animation.
 const DIE_ANIMATION_DURATION = 0.8
@@ -45,6 +45,7 @@ const STONED_DIE_ANIMATION_DURATION = 0.5
 const TOSS_ANIM_DURATION = 2.0
 const STONED_ANIM_DURATION = 1.0
 
+var health_changed = false
 var attack_target = null
 var status_timer = null
 var die_timer = null
@@ -149,8 +150,10 @@ func spawn_two_rings():
 func fall_and_detect_landing(delta):
 	ec.play_animation("Stiff")
 
-	if ec.health_system.full_health != STONED_MAX_HEALTH:
-		ec.change_and_refill_full_health(STONED_MAX_HEALTH)
+	if !health_changed:
+		var percentage = float(ec.health_system.health) / float(ec.health_system.full_health)
+		ec.health_system.full_health = int(STONED_MAX_HEALTH * (ec.HEALTH_MULTIPLIER_FOR_COOP if get_node("/root/PlayerSettings").heroes_chosen.size() > 1 else 1))
+		ec.health_system.health = int(ec.health_system.full_health * percentage)
 
 	ec.perform_gravity_movement(delta)
 

@@ -999,7 +999,7 @@ tracks/77/keys = {
 "values": [ 0 ]
 }
 tracks/78/type = "value"
-tracks/78/path = NodePath("HealParticles:emitting")
+tracks/78/path = NodePath("RightShootParticles:emitting")
 tracks/78/interp = 1
 tracks/78/loop_wrap = true
 tracks/78/imported = false
@@ -1011,7 +1011,7 @@ tracks/78/keys = {
 "values": [ false ]
 }
 tracks/79/type = "value"
-tracks/79/path = NodePath("HealParticles:visible")
+tracks/79/path = NodePath("LeftShootParticles:emitting")
 tracks/79/interp = 1
 tracks/79/loop_wrap = true
 tracks/79/imported = false
@@ -1023,36 +1023,12 @@ tracks/79/keys = {
 "values": [ false ]
 }
 tracks/80/type = "value"
-tracks/80/path = NodePath("RightShootParticles:emitting")
+tracks/80/path = NodePath("Particles2D:modulate")
 tracks/80/interp = 1
 tracks/80/loop_wrap = true
 tracks/80/imported = false
 tracks/80/enabled = true
 tracks/80/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/81/type = "value"
-tracks/81/path = NodePath("LeftShootParticles:emitting")
-tracks/81/interp = 1
-tracks/81/loop_wrap = true
-tracks/81/imported = false
-tracks/81/enabled = true
-tracks/81/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/82/type = "value"
-tracks/82/path = NodePath("Particles2D:modulate")
-tracks/82/interp = 1
-tracks/82/loop_wrap = true
-tracks/82/imported = false
-tracks/82/enabled = true
-tracks/82/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -2025,19 +2001,19 @@ tracks/79/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/80/type = "value"
-tracks/80/path = NodePath("HealParticles:emitting")
+tracks/80/path = NodePath("RightShootParticles:emitting")
 tracks/80/interp = 1
 tracks/80/loop_wrap = true
 tracks/80/imported = false
 tracks/80/enabled = true
 tracks/80/keys = {
-"times": PoolRealArray( 0 ),
+"times": PoolRealArray( 0.1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/81/type = "value"
-tracks/81/path = NodePath("HealParticles:visible")
+tracks/81/path = NodePath("LeftShootParticles:emitting")
 tracks/81/interp = 1
 tracks/81/loop_wrap = true
 tracks/81/imported = false
@@ -2046,39 +2022,15 @@ tracks/81/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/82/type = "value"
-tracks/82/path = NodePath("RightShootParticles:emitting")
+tracks/82/path = NodePath("Particles2D:modulate")
 tracks/82/interp = 1
 tracks/82/loop_wrap = true
 tracks/82/imported = false
 tracks/82/enabled = true
 tracks/82/keys = {
-"times": PoolRealArray( 0.1 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/83/type = "value"
-tracks/83/path = NodePath("LeftShootParticles:emitting")
-tracks/83/interp = 1
-tracks/83/loop_wrap = true
-tracks/83/imported = false
-tracks/83/enabled = true
-tracks/83/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/84/type = "value"
-tracks/84/path = NodePath("Particles2D:modulate")
-tracks/84/interp = 1
-tracks/84/loop_wrap = true
-tracks/84/imported = false
-tracks/84/enabled = true
-tracks/84/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -3051,7 +3003,7 @@ tracks/79/keys = {
 "values": [ Vector2( 0, 0 ) ]
 }
 tracks/80/type = "value"
-tracks/80/path = NodePath("HealParticles:emitting")
+tracks/80/path = NodePath("RightShootParticles:emitting")
 tracks/80/interp = 1
 tracks/80/loop_wrap = true
 tracks/80/imported = false
@@ -3063,7 +3015,7 @@ tracks/80/keys = {
 "values": [ false ]
 }
 tracks/81/type = "value"
-tracks/81/path = NodePath("HealParticles:visible")
+tracks/81/path = NodePath("LeftShootParticles:emitting")
 tracks/81/interp = 1
 tracks/81/loop_wrap = true
 tracks/81/imported = false
@@ -3075,36 +3027,12 @@ tracks/81/keys = {
 "values": [ false ]
 }
 tracks/82/type = "value"
-tracks/82/path = NodePath("RightShootParticles:emitting")
+tracks/82/path = NodePath("Particles2D:modulate")
 tracks/82/interp = 1
 tracks/82/loop_wrap = true
 tracks/82/imported = false
 tracks/82/enabled = true
 tracks/82/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/83/type = "value"
-tracks/83/path = NodePath("LeftShootParticles:emitting")
-tracks/83/interp = 1
-tracks/83/loop_wrap = true
-tracks/83/imported = false
-tracks/83/enabled = true
-tracks/83/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/84/type = "value"
-tracks/84/path = NodePath("Particles2D:modulate")
-tracks/84/interp = 1
-tracks/84/loop_wrap = true
-tracks/84/imported = false
-tracks/84/enabled = true
-tracks/84/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -4077,7 +4005,7 @@ tracks/79/keys = {
 "values": [ Vector2( 51.4309, 2.47857 ) ]
 }
 tracks/80/type = "value"
-tracks/80/path = NodePath("HealParticles:emitting")
+tracks/80/path = NodePath("RightShootParticles:emitting")
 tracks/80/interp = 1
 tracks/80/loop_wrap = true
 tracks/80/imported = false
@@ -4089,7 +4017,7 @@ tracks/80/keys = {
 "values": [ false ]
 }
 tracks/81/type = "value"
-tracks/81/path = NodePath("HealParticles:visible")
+tracks/81/path = NodePath("LeftShootParticles:emitting")
 tracks/81/interp = 1
 tracks/81/loop_wrap = true
 tracks/81/imported = false
@@ -4101,7 +4029,7 @@ tracks/81/keys = {
 "values": [ false ]
 }
 tracks/82/type = "value"
-tracks/82/path = NodePath("RightShootParticles:emitting")
+tracks/82/path = NodePath("Particles2D:modulate")
 tracks/82/interp = 1
 tracks/82/loop_wrap = true
 tracks/82/imported = false
@@ -4109,40 +4037,16 @@ tracks/82/enabled = true
 tracks/82/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/83/type = "value"
-tracks/83/path = NodePath("LeftShootParticles:emitting")
+tracks/83/path = NodePath("../Audio/Kick:playing")
 tracks/83/interp = 1
 tracks/83/loop_wrap = true
 tracks/83/imported = false
 tracks/83/enabled = true
 tracks/83/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/84/type = "value"
-tracks/84/path = NodePath("Particles2D:modulate")
-tracks/84/interp = 1
-tracks/84/loop_wrap = true
-tracks/84/imported = false
-tracks/84/enabled = true
-tracks/84/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/85/type = "value"
-tracks/85/path = NodePath("../Audio/Kick:playing")
-tracks/85/interp = 1
-tracks/85/loop_wrap = true
-tracks/85/imported = false
-tracks/85/enabled = true
-tracks/85/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -5116,7 +5020,7 @@ tracks/79/keys = {
 "values": [ Vector2( 1.5, 1 ) ]
 }
 tracks/80/type = "value"
-tracks/80/path = NodePath("HealParticles:visible")
+tracks/80/path = NodePath("RightShootParticles:emitting")
 tracks/80/interp = 1
 tracks/80/loop_wrap = true
 tracks/80/imported = false
@@ -5128,7 +5032,7 @@ tracks/80/keys = {
 "values": [ false ]
 }
 tracks/81/type = "value"
-tracks/81/path = NodePath("RightShootParticles:emitting")
+tracks/81/path = NodePath("LeftShootParticles:emitting")
 tracks/81/interp = 1
 tracks/81/loop_wrap = true
 tracks/81/imported = false
@@ -5140,24 +5044,12 @@ tracks/81/keys = {
 "values": [ false ]
 }
 tracks/82/type = "value"
-tracks/82/path = NodePath("LeftShootParticles:emitting")
+tracks/82/path = NodePath("Particles2D:modulate")
 tracks/82/interp = 1
 tracks/82/loop_wrap = true
 tracks/82/imported = false
 tracks/82/enabled = true
 tracks/82/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/83/type = "value"
-tracks/83/path = NodePath("Particles2D:modulate")
-tracks/83/interp = 1
-tracks/83/loop_wrap = true
-tracks/83/imported = false
-tracks/83/enabled = true
-tracks/83/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -6178,7 +6070,7 @@ tracks/83/keys = {
 "values": [ Vector2( 1.5, 1 ) ]
 }
 tracks/84/type = "value"
-tracks/84/path = NodePath("HealParticles:visible")
+tracks/84/path = NodePath("RightShootParticles:emitting")
 tracks/84/interp = 1
 tracks/84/loop_wrap = true
 tracks/84/imported = false
@@ -6187,10 +6079,10 @@ tracks/84/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
 tracks/85/type = "value"
-tracks/85/path = NodePath("RightShootParticles:emitting")
+tracks/85/path = NodePath("LeftShootParticles:emitting")
 tracks/85/interp = 1
 tracks/85/loop_wrap = true
 tracks/85/imported = false
@@ -6202,60 +6094,48 @@ tracks/85/keys = {
 "values": [ true ]
 }
 tracks/86/type = "value"
-tracks/86/path = NodePath("LeftShootParticles:emitting")
+tracks/86/path = NodePath("RightShootParticles:modulate")
 tracks/86/interp = 1
 tracks/86/loop_wrap = true
 tracks/86/imported = false
 tracks/86/enabled = true
 tracks/86/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/87/type = "value"
-tracks/87/path = NodePath("RightShootParticles:modulate")
-tracks/87/interp = 1
-tracks/87/loop_wrap = true
-tracks/87/imported = false
-tracks/87/enabled = true
-tracks/87/keys = {
 "times": PoolRealArray( 0, 0.1, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
 }
-tracks/88/type = "value"
-tracks/88/path = NodePath("LeftShootParticles:modulate")
-tracks/88/interp = 1
-tracks/88/loop_wrap = true
-tracks/88/imported = false
-tracks/88/enabled = true
-tracks/88/keys = {
+tracks/87/type = "value"
+tracks/87/path = NodePath("LeftShootParticles:modulate")
+tracks/87/interp = 1
+tracks/87/loop_wrap = true
+tracks/87/imported = false
+tracks/87/enabled = true
+tracks/87/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
-tracks/89/type = "value"
-tracks/89/path = NodePath("Particles2D:modulate")
-tracks/89/interp = 1
-tracks/89/loop_wrap = true
-tracks/89/imported = false
-tracks/89/enabled = true
-tracks/89/keys = {
+tracks/88/type = "value"
+tracks/88/path = NodePath("Particles2D:modulate")
+tracks/88/interp = 1
+tracks/88/loop_wrap = true
+tracks/88/imported = false
+tracks/88/enabled = true
+tracks/88/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ) ]
 }
-tracks/90/type = "value"
-tracks/90/path = NodePath("../Audio/Shoot:playing")
-tracks/90/interp = 1
-tracks/90/loop_wrap = true
-tracks/90/imported = false
-tracks/90/enabled = true
-tracks/90/keys = {
+tracks/89/type = "value"
+tracks/89/path = NodePath("../Audio/Shoot:playing")
+tracks/89/interp = 1
+tracks/89/loop_wrap = true
+tracks/89/imported = false
+tracks/89/enabled = true
+tracks/89/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
@@ -7228,7 +7108,7 @@ tracks/79/keys = {
 "values": [ Vector2( 1.5, 1 ) ]
 }
 tracks/80/type = "value"
-tracks/80/path = NodePath("HealParticles:visible")
+tracks/80/path = NodePath("RightShootParticles:emitting")
 tracks/80/interp = 1
 tracks/80/loop_wrap = true
 tracks/80/imported = false
@@ -7240,7 +7120,7 @@ tracks/80/keys = {
 "values": [ false ]
 }
 tracks/81/type = "value"
-tracks/81/path = NodePath("RightShootParticles:emitting")
+tracks/81/path = NodePath("LeftShootParticles:emitting")
 tracks/81/interp = 1
 tracks/81/loop_wrap = true
 tracks/81/imported = false
@@ -7252,24 +7132,12 @@ tracks/81/keys = {
 "values": [ false ]
 }
 tracks/82/type = "value"
-tracks/82/path = NodePath("LeftShootParticles:emitting")
+tracks/82/path = NodePath("Particles2D:modulate")
 tracks/82/interp = 1
 tracks/82/loop_wrap = true
 tracks/82/imported = false
 tracks/82/enabled = true
 tracks/82/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/83/type = "value"
-tracks/83/path = NodePath("Particles2D:modulate")
-tracks/83/interp = 1
-tracks/83/loop_wrap = true
-tracks/83/imported = false
-tracks/83/enabled = true
-tracks/83/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -8242,7 +8110,7 @@ tracks/79/keys = {
 "values": [ Vector2( 1.5, 1 ) ]
 }
 tracks/80/type = "value"
-tracks/80/path = NodePath("HealParticles:visible")
+tracks/80/path = NodePath("RightShootParticles:emitting")
 tracks/80/interp = 1
 tracks/80/loop_wrap = true
 tracks/80/imported = false
@@ -8254,7 +8122,7 @@ tracks/80/keys = {
 "values": [ false ]
 }
 tracks/81/type = "value"
-tracks/81/path = NodePath("RightShootParticles:emitting")
+tracks/81/path = NodePath("LeftShootParticles:emitting")
 tracks/81/interp = 1
 tracks/81/loop_wrap = true
 tracks/81/imported = false
@@ -8266,7 +8134,7 @@ tracks/81/keys = {
 "values": [ false ]
 }
 tracks/82/type = "value"
-tracks/82/path = NodePath("LeftShootParticles:emitting")
+tracks/82/path = NodePath("Particles2D:modulate")
 tracks/82/interp = 1
 tracks/82/loop_wrap = true
 tracks/82/imported = false
@@ -8274,28 +8142,16 @@ tracks/82/enabled = true
 tracks/82/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/83/type = "value"
-tracks/83/path = NodePath("Particles2D:modulate")
+tracks/83/path = NodePath("../Audio/Throw:playing")
 tracks/83/interp = 1
 tracks/83/loop_wrap = true
 tracks/83/imported = false
 tracks/83/enabled = true
 tracks/83/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
-}
-tracks/84/type = "value"
-tracks/84/path = NodePath("../Audio/Throw:playing")
-tracks/84/interp = 1
-tracks/84/loop_wrap = true
-tracks/84/imported = false
-tracks/84/enabled = true
-tracks/84/keys = {
 "times": PoolRealArray( 1.1 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
@@ -9268,7 +9124,7 @@ tracks/79/keys = {
 "values": [ Vector2( -6.81613, 1.85891 ) ]
 }
 tracks/80/type = "value"
-tracks/80/path = NodePath("HealParticles:visible")
+tracks/80/path = NodePath("RightShootParticles:emitting")
 tracks/80/interp = 1
 tracks/80/loop_wrap = true
 tracks/80/imported = false
@@ -9280,7 +9136,7 @@ tracks/80/keys = {
 "values": [ false ]
 }
 tracks/81/type = "value"
-tracks/81/path = NodePath("RightShootParticles:emitting")
+tracks/81/path = NodePath("LeftShootParticles:emitting")
 tracks/81/interp = 1
 tracks/81/loop_wrap = true
 tracks/81/imported = false
@@ -9292,7 +9148,7 @@ tracks/81/keys = {
 "values": [ false ]
 }
 tracks/82/type = "value"
-tracks/82/path = NodePath("LeftShootParticles:emitting")
+tracks/82/path = NodePath("Particles2D:modulate")
 tracks/82/interp = 1
 tracks/82/loop_wrap = true
 tracks/82/imported = false
@@ -9300,40 +9156,28 @@ tracks/82/enabled = true
 tracks/82/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 tracks/83/type = "value"
-tracks/83/path = NodePath("Particles2D:modulate")
+tracks/83/path = NodePath("../Audio/Walk2:playing")
 tracks/83/interp = 1
 tracks/83/loop_wrap = true
 tracks/83/imported = false
 tracks/83/enabled = true
 tracks/83/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ) ]
-}
-tracks/84/type = "value"
-tracks/84/path = NodePath("../Audio/Walk2:playing")
-tracks/84/interp = 1
-tracks/84/loop_wrap = true
-tracks/84/imported = false
-tracks/84/enabled = true
-tracks/84/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/85/type = "value"
-tracks/85/path = NodePath("../Audio/Walk1:playing")
-tracks/85/interp = 1
-tracks/85/loop_wrap = true
-tracks/85/imported = false
-tracks/85/enabled = true
-tracks/85/keys = {
+tracks/84/type = "value"
+tracks/84/path = NodePath("../Audio/Walk1:playing")
+tracks/84/interp = 1
+tracks/84/loop_wrap = true
+tracks/84/imported = false
+tracks/84/enabled = true
+tracks/84/keys = {
 "times": PoolRealArray( 0, 0.3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
@@ -9356,7 +9200,7 @@ width = 2048
 render_priority = 0
 trail_divisor = 1
 emission_shape = 2
-emission_box_extents = Vector3( 1, 200, 1 )
+emission_box_extents = Vector3( 1, 60, 1 )
 flag_align_y = false
 flag_rotate_y = false
 flag_disable_z = true
@@ -9779,10 +9623,9 @@ position = Vector2( -88.7303, -179.598 )
 
 [node name="HealParticles" type="Particles2D" parent="Animation" index="6"]
 
-visible = false
 rotation = -1.58209
-emitting = true
-amount = 50
+emitting = false
+amount = 10
 lifetime = 3.0
 one_shot = false
 preprocess = 1.4
@@ -9916,6 +9759,8 @@ position = Vector2( 648.77, -694.664 )
 avatar_texture = ExtResource( 30 )
 
 [node name="Audio" type="Node2D" parent="." index="12"]
+
+editor/display_folded = true
 
 [node name="Hurt" type="AudioStreamPlayer2D" parent="Audio" index="0"]
 

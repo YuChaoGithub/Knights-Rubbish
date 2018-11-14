@@ -1,13 +1,13 @@
 extends KinematicBody2D
 
-const SPEED_X = 1000
+const SPEED_X = 600
 const DAMAGE_MIN = 40
 const DAMAGE_MAX = 60
 const KNOCK_BACK_VEL_X = 200
 const KNOCK_BACK_VEL_Y = 50
 const KNOCK_BACK_FADE_RATE = 500
 
-const LIFETIME = 6.0
+const LIFETIME = 4.3
 
 var timestamp = 0.0
 

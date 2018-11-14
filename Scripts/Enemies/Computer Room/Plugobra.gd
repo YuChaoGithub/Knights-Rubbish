@@ -15,7 +15,7 @@ enum { NONE, RISE, STILL, LASER }
 export(int) var activate_range_x = 2000
 export(int) var activate_range_y = 2000
 
-const MAX_HEALTH = 200
+const MAX_HEALTH = 150
 
 # Attack.
 const DAMAGE = 5

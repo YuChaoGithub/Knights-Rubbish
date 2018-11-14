@@ -15,12 +15,12 @@ export(int) var activate_range_y = 1000
 
 enum { NONE, ROAM, ATTACK }
 
-const MAX_HEALTH = 350
+const MAX_HEALTH = 300
 
 # Attack.
 const ATTACK_RANGE_X = 1150
 const ATTACK_RANGE_Y = 150
-const DAMAGE = 5
+const DAMAGE = 3
 const KNOCK_BACK_VEL_X = 50
 const KNOCK_BACK_VEL_Y = 50
 const KNOCK_BACK_FADE_RATE = 150

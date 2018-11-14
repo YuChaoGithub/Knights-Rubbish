@@ -1128,11 +1128,16 @@ Comment: Video editting is so tiring, time-consuming yet fun.
 * Fixed a bug with Plato and Othox Up Skills. (The cooldown & landing detection isn't correct.)
 * P1 level play test to Godotbos level. Fixed trigger & enemy activation bugs.
 
-[Next]
-* Rebalance heroes' skills damage. (Nerf: Plato's BS. Othox's HS, BS. BroSS's Ult. Sug's BS. Buff: Keshia's Ult. Othox's BA.)
+[2018.11.14]
+* Nerf ASCII Bomb and Gun's damage.
+* Reworked Godotobos, so that it will heal and attack when its HP is below 40%.
+* Windy Meteory now will not fall if the nearest hero is in hand.
+* The door of the last level now can only be smashed open when it is fully landed.
+* Now Harddies' health percentage will persist between flying form and stiff form.
+* Fixed a weird bug that Clockworkfox's activate timer will be cancelled twice.
+* Did another 1P play-test. Seemed ready to publish.
 
 [Goals]
-* Nov 13: 1P full play through test.
 * Nov 16: Trailer.
 * Nov 18: 2P full play through test.
 * Nov 20: Mac & Windows build (ver 0.1).

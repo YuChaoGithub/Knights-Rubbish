@@ -12,7 +12,7 @@ export(int) var activate_range_x = 800
 export(int) var activate_range_y = 1000
 export(float) var still_interval = 2.5
 
-const MAX_HEALTH = 800
+const MAX_HEALTH = 450
 
 # Attack.
 const DAMAGE = 10
@@ -101,7 +101,7 @@ func slowed(multiplier, duration):
 	return
 
 func die():
-	cancel_activate_timer()
 	ec.die()
+	cancel_activate_timer()
 	emit_signal("defeated")
 	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

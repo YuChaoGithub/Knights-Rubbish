@@ -10,7 +10,7 @@ const KNOCK_BACK_VEL_X = 600
 const KNOCK_BACK_VEL_Y = 50
 const KNOCK_BACK_FADE_RATE = 1000
 
-const LIFE_TIME = 6.0
+const LIFE_TIME = 1.3
 
 var timestamp = 0.0
 

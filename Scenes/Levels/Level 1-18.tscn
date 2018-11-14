@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scenes/Utils/Following Camera.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/HeroManager.gd" type="Script" id=2]
@@ -20,12 +20,14 @@
 [ext_resource path="res://Scenes/Structures/Door.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Graphics/Magnet.png" type="Texture" id=19]
 [ext_resource path="res://Graphics/UI/Line.png" type="Texture" id=20]
-[ext_resource path="res://Scenes/Enemies/Computer Room/Eye Mac.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Scenes/Power Ups/Mystery Box.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Graphics/Particles/Double Star.png" type="Texture" id=23]
-[ext_resource path="res://Fonts/SourceHanSerifTC.tres" type="DynamicFont" id=24]
-[ext_resource path="res://Graphics/Structure/PortalWhite.png" type="Texture" id=25]
-[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Graphics/Structure/Door/Door.png" type="Texture" id=21]
+[ext_resource path="res://Graphics/Structure/Door/Door Frame.png" type="Texture" id=22]
+[ext_resource path="res://Scenes/Enemies/Computer Room/Eye Mac.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Power Ups/Mystery Box.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Graphics/Particles/Double Star.png" type="Texture" id=25]
+[ext_resource path="res://Fonts/SourceHanSerifTC.tres" type="DynamicFont" id=26]
+[ext_resource path="res://Graphics/Structure/PortalWhite.png" type="Texture" id=27]
+[ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=28]
 
 [sub_resource type="Animation" id=1]
 
@@ -104,6 +106,44 @@ tracks/5/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ 89.657, 89.657, 96.3201, 91.3913, 92.4025, 96.3828, 87.2386, 92.5021, 88.9844, 90.019, 90.019 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Door Set/Door Cover:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 10.8, 12.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.0585938, 0.0585938, 0.0585938, 0.392157 ), Color( 0.0585938, 0.0585938, 0.0585938, 0.392157 ), Color( 0.0497647, 0.0585938, 0.0585938, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Door Set/Door Cover2:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 10.8, 12.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.0580744, 0.0585938, 0.0585938, 0.392157 ), Color( 0.0580744, 0.0585938, 0.0585938, 0.392157 ), Color( 0.0580744, 0.0585938, 0.0585938, 0 ) ]
+}
+tracks/8/type = "method"
+tracks/8/path = NodePath("Door Set")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 12.5 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "activate_door"
+} ]
 }
 
 [sub_resource type="Gradient" id=2]
@@ -494,16 +534,16 @@ position = Vector2( 2700, -300 )
 
 [node name="Structures" type="Node2D" parent="." index="10"]
 
-editor/display_folded = true
-
 [node name="Door Set" parent="Structures" index="0" instance=ExtResource( 18 )]
 
 position = Vector2( 570.367, -2840.5 )
+_sections_unfolded = [ "Visibility" ]
 enter_scene_path = "res://Scenes/Levels/To be continued Scene.tscn"
-available = true
+available = false
 
 [node name="Magnet" type="Sprite" parent="Structures/Door Set" index="0"]
 
+editor/display_folded = true
 position = Vector2( -9.18835, -420.722 )
 rotation = 0.0154749
 scale = Vector2( 0.7, 0.7 )
@@ -517,6 +557,24 @@ position = Vector2( -4.11835, -421.135 )
 rotation = 1.56481
 scale = Vector2( 2, 0.2 )
 texture = ExtResource( 20 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Door Cover" type="Sprite" parent="Structures/Door Set" index="4"]
+
+modulate = Color( 0.0585938, 0.0585938, 0.0585938, 0.392157 )
+position = Vector2( 3.57153, 8.38486 )
+rotation = 0.00332758
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 21 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Door Cover2" type="Sprite" parent="Structures/Door Set" index="5"]
+
+modulate = Color( 0.0580744, 0.0585938, 0.0585938, 0.392157 )
+position = Vector2( 3.40698, -0.0350342 )
+rotation = 0.00332758
+scale = Vector2( 0.7, 0.7 )
+texture = ExtResource( 22 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Structures" index="1"]
@@ -533,7 +591,7 @@ blend_times = [  ]
 
 editor/display_folded = true
 
-[node name="Eye Mac" parent="Enemies" index="0" instance=ExtResource( 21 )]
+[node name="Eye Mac" parent="Enemies" index="0" instance=ExtResource( 23 )]
 
 position = Vector2( 1350, -750 )
 activate_range_x = 0
@@ -551,14 +609,14 @@ position = Vector2( 1550, -150 )
 
 editor/display_folded = true
 
-[node name="Mystery Box" parent="PowerUps" index="0" instance=ExtResource( 22 )]
+[node name="Mystery Box" parent="PowerUps" index="0" instance=ExtResource( 24 )]
 
 position = Vector2( 450, -200 )
 additional_spawn_1 = "res://Scenes/Power Ups/Ult Stone.tscn"
 additional_spawn_2 = "res://Scenes/Power Ups/Giant Potion.tscn"
 additional_spawn_3 = "res://Scenes/Power Ups/Giant Potion.tscn"
 
-[node name="Mystery Box4" parent="PowerUps" index="1" instance=ExtResource( 22 )]
+[node name="Mystery Box4" parent="PowerUps" index="1" instance=ExtResource( 24 )]
 
 position = Vector2( 2250, -200 )
 additional_spawn_1 = "res://Scenes/Power Ups/Giant Potion.tscn"
@@ -588,7 +646,7 @@ visibility_rect = Rect2( -100, -100, 200, 200 )
 local_coords = true
 draw_order = 0
 process_material = SubResource( 6 )
-texture = ExtResource( 23 )
+texture = ExtResource( 25 )
 normal_map = null
 h_frames = 1
 v_frames = 1
@@ -618,7 +676,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 24 )
+custom_fonts/font = ExtResource( 26 )
 text = "1"
 align = 1
 valign = 1
@@ -633,7 +691,7 @@ modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 1350, -850 )
 rotation = 4.71239
 scale = Vector2( 0.5, 0.5 )
-texture = ExtResource( 25 )
+texture = ExtResource( 27 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Countdown" index="2"]
@@ -646,7 +704,7 @@ playback_speed = 1.0
 anims/Animate = SubResource( 7 )
 blend_times = [  ]
 
-[node name="PauseButton" parent="." index="15" instance=ExtResource( 26 )]
+[node name="PauseButton" parent="." index="15" instance=ExtResource( 28 )]
 
 [node name="Position2D" type="Position2D" parent="." index="16"]
 
@@ -656,11 +714,11 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/CountdownFinished" to="Enemies/Eye Mac" method="activate"]
 
+[connection signal="count_reached" from="CameraChangingTriggers/CountdownFinished" to="Platform" method="set_modulate" binds= [ Color( 1, 1, 1, 1 ) ]]
+
 [connection signal="count_reached" from="CameraChangingTriggers/CountdownFinished" to="FollowingCamera" method="start_shake_effect"]
 
 [connection signal="count_reached" from="CameraChangingTriggers/CountdownFinished" to="WhiteWall" method="set_modulate" binds= [ Color( 1, 1, 1, 1 ) ]]
-
-[connection signal="count_reached" from="CameraChangingTriggers/CountdownFinished" to="Platform" method="set_modulate" binds= [ Color( 1, 1, 1, 1 ) ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/BossCleared" to="Structures/AnimationPlayer" method="play" binds= [ "Door Drop" ]]
 

@@ -6,7 +6,7 @@ const DAMAGE = 20
 const SLOW_RATE = 0.2
 const SLOW_DURATION = 1.2
 
-const LIFETIME = 15.0
+const LIFETIME = 20.0
 
 var timestamp = 0.0
 

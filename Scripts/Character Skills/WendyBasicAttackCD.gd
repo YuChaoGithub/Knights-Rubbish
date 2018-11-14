@@ -24,7 +24,7 @@ const KNOCK_BACK_VEL_X = 450
 const KNOCK_BACK_VEL_Y = 50
 const KNOCK_BACK_FADE_RATE = 900
 
-const LIFE_TIME = 8.0
+const LIFE_TIME = 4.3
 
 enum { STUN, SLOW, KNOCK_BACK }
 

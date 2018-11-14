@@ -13,7 +13,7 @@ enum { NONE, MOVE, SPIT, SPIT_INTERVAL }
 export(int) var activate_range_x = 25000
 export(int) var activate_range_y = 25000
 
-const MAX_HEALTH = 400
+const MAX_HEALTH = 350
 
 # Movement.
 const SPEED_X = 50

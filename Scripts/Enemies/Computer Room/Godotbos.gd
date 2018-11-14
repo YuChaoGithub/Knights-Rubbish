@@ -24,8 +24,9 @@ const KICK_DAMAGE = 35
 const KICK_KNOCK_BACK_VEL_X = 2500
 const KICK_KNOCK_BACK_VEL_Y = 0
 const KICK_KNOCK_BACK_FADE_RATE = 2000
-const HEAL_INTERVAL = 0.25
-const HEAL_AMOUNT = 50
+const HEAL_INTERVAL = 1.0
+const HEAL_AMOUNT = 5
+const HEAL_BELOW_PERCENTAGE = 0.4
 const KICK_DURATION = 1.5
 const KICK_SPEED_X = 2000
 
@@ -56,7 +57,6 @@ var status_timer = null
 var heal_timer = null
 var kick_timestamp = null
 var kicked_targets = []
-var mine_thrown = false
 var facing = -1
 
 # Roaming pos.
@@ -80,6 +80,8 @@ onready var missle_land_poses = [
 # Flaggomine.
 var flaggomine = preload("res://Scenes/Enemies/Computer Room/Godotbos Mine.tscn")
 onready var mine_spawn_pos = $"Animation/Mine Throw Pos"
+
+onready var heal_particles = $Animation/HealParticles
 
 onready var spawn_node = $".."
 
@@ -120,8 +122,6 @@ func _process(delta):
 				fire_landing_pause()
 			FIRE_LAND:
 				land_fire()
-			HEAL:
-				heal_up()
 			THROW_MINE_ANIM:
 				play_throw_mine_anim()
 			THROW_MINE:
@@ -155,13 +155,12 @@ func movement_ended():
 func rng_step_while_standing():
 	ec.play_animation("Still")
 	ec.change_status(NONE)
-
-	# 1 - health percentage, HEAL.
-	var to_status = HEAL if randf() > get_health_percentage() else null
 	
-	# Remaining: 50% KICK. 50% SHOOT.
-	if to_status == null:
-		to_status = KICK_MOVE if randf() < KICK_MOVE_PERCENTAGE else MOVE_TO_CENTER
+	if get_health_percentage() < HEAL_BELOW_PERCENTAGE && heal_timer == null:
+		start_healing()
+
+	# 50% KICK. 50% SHOOT.
+	var to_status = KICK_MOVE if randf() < KICK_MOVE_PERCENTAGE else MOVE_TO_CENTER
 
 	status_timer = ec.cd_timer.new(RNG_STANDING_DURATION, self, "change_status", to_status)
 
@@ -245,24 +244,13 @@ func land_fire():
 
 	ec.change_status(THROW_MINE_ANIM)
 
-func heal_up():
-	ec.play_animation("Heal")
-	ec.change_status(NONE)
-	heal_audio.play()
-
-	heal_timer = ec.cd_timer.new(HEAL_INTERVAL, self, "heal_tick")
+func start_healing():
+	heal_particles.emitting = true
+	heal_tick()
 
 func heal_tick():
-	heal_timer = null
-	healed(HEAL_AMOUNT)
+	ec.healed(HEAL_AMOUNT)
 	heal_timer = ec.cd_timer.new(HEAL_INTERVAL, self, "heal_tick")
-
-func interrupt_heal():
-	if heal_timer != null:
-		heal_timer.destroy_timer()
-		heal_timer = null
-	heal_audio.stop()
-	ec.change_status(THROW_MINE_ANIM)
 
 func play_throw_mine_anim():
 	ec.play_animation("Throw")
@@ -285,8 +273,6 @@ func throw_mine():
 
 func damaged(val):
 	var curr_anim = ec.animator.current_animation
-	if curr_anim == "Heal":
-		interrupt_heal()
 	
 	ec.damaged(val, curr_anim == "Walk" || curr_anim == "Still")
 
@@ -294,8 +280,7 @@ func resume_from_damaged():
 	ec.resume_from_damaged()
 
 func stunned(duration):
-	if ec.animator.current_animation == "Heal":
-		interrupt_heal()
+	pass
 
 func healed(val):
 	ec.healed(val)
@@ -308,6 +293,8 @@ func slowed(multiplier, duration):
 
 func die():
 	ec.die()
+
+	heal_particles.emitting = false
 
 	var user_data = get_node("/root/UserDataSingleton")
 	user_data.level_available.eyemac = 1

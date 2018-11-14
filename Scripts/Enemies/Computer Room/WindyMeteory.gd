@@ -47,7 +47,7 @@ func _process(delta):
 		if !activated && distance_x < APPEAR_RANGE:
 			animator.play("Appear")
 			activated = true
-		elif distance_x < DROP_RANGE:
+		elif distance_x < DROP_RANGE && !target.status.fallen_off:
 			animator.play("Dropping")
 			start_falling = true
 
