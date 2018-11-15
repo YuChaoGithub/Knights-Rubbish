@@ -40,3 +40,5 @@ func screen_capture(slot):
     img.flip_y()
 
     img.save_png("user://screenshot" + str(slot) + ".png")
+    
+    get_node("/root/Steamworks").increment_stat("photo_taken")

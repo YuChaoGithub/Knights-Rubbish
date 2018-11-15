@@ -170,6 +170,8 @@ onready var audio_players = {
 	healed = $"Audio/Healed"
 }
 
+onready var steam_works = get_node("/root/Steamworks")
+
 func _ready():
 	# Configure movement related variables.
 	recalculate_horizontal_movement_variables()
@@ -290,6 +292,8 @@ func update_movement(delta):
 # Falls off the bottom of the screen.
 func falls_off():
 	status.fallen_off = true
+	
+	steam_works.increment_stat("drop_off")
 
 	following_camera.cam_lock_semaphore += 1
 
@@ -717,6 +721,8 @@ func damaged(val, randomness = true):
 
 		hurt_modulate_timer = countdown_timer.new(HURT_MODULATE_DURATION, self, "recover_modulate", curr_modulate)
 
+	steam_works.increment_stat("damage_taken", val)
+
 	# Number indicator.
 	var num = number_indicator.instance()
 	num.initialize(val, DAMAGE_NUMBER_COLOR, number_spawn_pos, self)
@@ -741,9 +747,13 @@ func ghost_damaged(val):
 func healed(val):
 	if status.dead:
 		return
+		
+	var original_health = health_system.health
 
 	health_system.change_health_by(val)
 	health_bar.set_health_bar(health_system.health)
+	
+	steam_works.increment_stat("hp_healed", health_system.health - original_health)
 
 	if !audio_players.healed.playing:
 		audio_players.healed.play()
@@ -777,6 +787,8 @@ func die():
 
 func revive():
 	animator.play_backwards("Die")
+	
+	steam_works.increment_stat("ghost_revived")
 
 	add_child(lightning.instance())
 

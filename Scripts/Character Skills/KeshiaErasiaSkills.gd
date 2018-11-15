@@ -84,6 +84,8 @@ onready var audios_to_stop_when_stunned = [
 	$"../Audio/Drink"
 ]
 
+onready var steam_works = get_node("/root/Steamworks")
+
 func _ready():
 	# Jumping will always reset the availability of up skill.
 	hero.connect("did_jump", self, "reset_up_skill_available")
@@ -134,9 +136,10 @@ func on_basic_attack_hit(area):
 	if area.is_in_group("enemy"):
 		# Damage the enemy.
 		var enemy_node = area.get_node("../..")
-		var damage = rng.randi_range(BASIC_ATTACK_DAMAGE_MIN, BASIC_ATTACK_DAMAGE_MAX)
+		var damage = int(rng.randi_range(BASIC_ATTACK_DAMAGE_MIN, BASIC_ATTACK_DAMAGE_MAX) * hero.attack_modifier)
 		enemy_node.knocked_back(sign(enemy_node.global_position.x - global_position.x) * BASIC_ATTACK_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier,-BASIC_ATTACK_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, BASIC_ATTACK_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
-		enemy_node.damaged(int(damage * hero.attack_modifier))
+		enemy_node.damaged(damage)
+		steam_works.increment_stat("damage_dealt", damage)
 
 # ===========
 # Basic Skill: Hop, when it hits the ground, stun enemies around.
@@ -188,10 +191,11 @@ func basic_skill_strikes():
 func on_basic_skill_hit(area):
 	if area.is_in_group("enemy"):
 		var enemy = area.get_node("../..")
-		var damage = rng.randi_range(BASIC_SKILL_DAMAGE_MIN, BASIC_SKILL_DAMAGE_MAX)
+		var damage = int(rng.randi_range(BASIC_SKILL_DAMAGE_MIN, BASIC_SKILL_DAMAGE_MAX) * hero.attack_modifier)
 		enemy.stunned(BASIC_SKILL_STUN_DURATION)
 		enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * BASIC_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier,-BASIC_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, BASIC_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)		
-		enemy.damaged(int(damage * hero.attack_modifier))
+		enemy.damaged(damage)
+		steam_works.increment_stat("damage_dealt", damage)
 
 # ================
 # Horizontal Skill: Short range poke. (toss the pencil).
@@ -274,10 +278,11 @@ func on_up_skill_hit(area):
 			$"../..".add_child(p)
 			p.global_position = up_skill_particles_spawn_pos.global_position
 
-			var damage = rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX)
+			var damage = int(rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX) * hero.attack_modifier)
 			var enemy = area.get_node("../..")
 			enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * UP_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier,-UP_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, UP_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
-			enemy.damaged(int(damage * hero.attack_modifier))
+			enemy.damaged(damage)
+			steam_works.increment_stat("damage_dealt", damage)
 			up_skill_targets.push_back(area)
 	
 # ==========
@@ -294,6 +299,8 @@ func down_skill():
 		hero.status.animate_movement = false
 		hero.status.can_cast_skill = false
 		hero.defense_modifier *= DOWN_SKILL_DEFENSE_MODIFIER
+		
+		get_node("/root/Steamworks").increment_stat("down_skill")
 
 		# Can resume after the timer is up.
 		down_skill_timer = cd_timer.new(DOWN_SKILL_DURATION + DOWN_SKILL_RESUME_COOLDOWN, self, "set_down_skill_can_resume")
@@ -341,6 +348,8 @@ func ult():
 
 		hero.get_node("Keshia Ult/AnimationPlayer").play("Forming Circle")
 		hero.play_animation("Ult")
+		
+		get_node("/root/Steamworks").ult_cast()
 
 		ult_timer = cd_timer.new(ULT_FIRE_TIME, self, "fire_ult")
 

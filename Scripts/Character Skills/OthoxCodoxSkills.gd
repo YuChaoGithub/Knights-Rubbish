@@ -117,10 +117,11 @@ func basic_attack_hit(area):
         var enemy = area.get_node("../..")
         if !(enemy in basic_attack_targets):
             basic_attack_targets.push_back(enemy)
-            var damage = rng.randi_range(BASIC_ATTACK_DAMAGE_MIN, BASIC_ATTACK_DAMAGE_MAX)
+            var damage = int(hero.attack_modifier * rng.randi_range(BASIC_ATTACK_DAMAGE_MIN, BASIC_ATTACK_DAMAGE_MAX))
             enemy.stunned(BASIC_ATTACK_STUN_DURATION)
             enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * BASIC_ATTACK_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier,-BASIC_ATTACK_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, BASIC_ATTACK_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
-            enemy.damaged(int(damage * hero.attack_modifier))
+            enemy.damaged(damage)
+            get_node("/root/Steamworks").increment_stat("damage_dealt", damage)
 
 func basic_skill():
     if hero.status.can_move && hero.status.can_cast_skill:
@@ -217,6 +218,8 @@ func down_skill():
         hero.set_status("can_move", false, DOWN_SKILL_DURATION)
         hero.set_status("can_cast_skill", false, DOWN_SKILL_DURATION + DOWN_SKILL_COOLDOWN)
 
+        get_node("/root/Steamworks").increment_stat("down_skill")
+
         var heal_timer = cd_timer.new(DOWN_SKILL_HEAL_TIME, self, "down_skill_cast")
         hero.register_timer("interruptable_skill", heal_timer)
 
@@ -234,6 +237,8 @@ func ult():
         hero.set_status("can_cast_skill", false, ULT_DURATION)
         hero.set_status("animate_movement", false, ULT_DURATION)
         hero.set_status("invincible", true, ULT_DURATION)
+
+        get_node("/root/Steamworks").ult_cast()
 
         hero.play_animation("Ult")
         ult_timer = cd_timer.new(ULT_START_RAIN_TIME, self, "ult_rains", 0)

@@ -228,3 +228,5 @@ func die():
 	set_process(false)
 	
 	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "emit_signal", "defeated")
+	
+	get_node("/root/Steamworks").increment_stat("translator_killed")

@@ -291,7 +291,7 @@ func knocked_back(vel_x, vel_y, fade_rate):
 func slowed(multiplier, duration):
 	return
 
-func die():
+func die():	
 	ec.die()
 
 	heal_particles.emitting = false
@@ -302,3 +302,5 @@ func die():
 
 	emit_signal("defeated")
 	ec.health_bar.drop_health_bar()
+	
+	get_node("/root/Steamworks").increment_stat("robot_killed")

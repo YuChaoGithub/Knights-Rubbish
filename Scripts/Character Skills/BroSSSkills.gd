@@ -152,6 +152,8 @@ onready var audios_to_stop_when_stunned = [
     $"../Audio/Drink"
 ]
 
+onready var steam_works = get_node("/root/Steamworks")
+
 func _ready():
     configure_char_visibility()
     hero.connect("did_jump", self, "reset_up_skill_available")
@@ -198,8 +200,10 @@ func sug_basic_attack_hit(area):
         p.global_position = sug_basic_attack_particles_spawn_pos.global_position
 
         var enemy = area.get_node("../..")
+        var damage = int(rng.randi_range(BASIC_ATTACK_DAMAGE_MIN, BASIC_ATTACK_DAMAGE_MAX) * hero.attack_modifier)
         enemy.knocked_back(sign(enemy.global_position.x - self.global_position.x) * BASIC_ATTACK_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -BASIC_ATTACK_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, BASIC_ATTACK_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
-        enemy.damaged(int(rng.randi_range(BASIC_ATTACK_DAMAGE_MIN, BASIC_ATTACK_DAMAGE_MAX) * hero.attack_modifier))
+        enemy.damaged(damage)
+        steam_works.increment_stat("damage_dealt", damage)
 
 func sir_basic_attack_shoots():
     var sug = sir_basic_attack_sug.instance()
@@ -235,7 +239,9 @@ func sug_basic_skill_hit(area):
             enemy.slowed(BASIC_SKILL_SLOW_RATE, BASIC_SKILL_SLOW_DURATION)
             basic_skill_targets.push_back(enemy)
 
-        enemy.damaged(int(rng.randi_range(BASIC_SKILL_DAMAGE_MIN, BASIC_SKILL_DAMAGE_MAX) * hero.attack_modifier))
+        var damage = int(rng.randi_range(BASIC_SKILL_DAMAGE_MIN, BASIC_SKILL_DAMAGE_MAX) * hero.attack_modifier)
+        enemy.damaged(damage)
+        steam_works.increment_stat("damage_dealt", damage)
 
 func sir_basic_skill_hit(area):
     if area.is_in_group("hero"):
@@ -285,8 +291,10 @@ func sug_horizontal_skill_hit(area):
         p.global_position = sug_basic_attack_particles_spawn_pos.global_position
 
         var enemy = area.get_node("../..")
+        var damage = int(rng.randf_range(HORIZONTAL_SKILL_DAMAGE_MIN, HORIZONTAL_SKILL_DAMAGE_MAX) * hero.attack_modifier)
         enemy.knocked_back(sign(enemy.global_position.x - self.global_position.x) * SUG_HORIZONTAL_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -SUG_HORIZONTAL_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, SUG_HORIZONTAL_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
-        enemy.damaged(int(rng.randf_range(HORIZONTAL_SKILL_DAMAGE_MIN, HORIZONTAL_SKILL_DAMAGE_MAX) * hero.attack_modifier))
+        enemy.damaged(damage)
+        steam_works.increment_stat("damage_dealt", damage)
 
 func sir_horizontal_skill_shoots(side):
     var bullet = sir_horizontal_skill_bullet.instance()
@@ -334,8 +342,10 @@ func up_skill_hit(area):
 
             up_skill_targets.push_back(enemy)
 
-            enemy.damaged(int(rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX) * hero.attack_modifier))
+            var damage = int(rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX) * hero.attack_modifier)
+            enemy.damaged(damage)
             enemy.knocked_back(sign(enemy.global_position.x - self.global_position.x) * UP_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -UP_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, UP_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
+            steam_works.increment_stat("damage_dealt", damage)
 
 # Down Skill: Switch between sug and sir. Invincible while switching.
 func down_skill():
@@ -347,6 +357,8 @@ func down_skill():
         hero.set_status("can_cast_skill", false, DOWN_SKILL_DURATION + DOWN_SKILL_COOLDOWN)
         hero.set_status("invincible", true, DOWN_SKILL_DURATION)
     
+        steam_works.increment_stat("down_skill")
+
         curr_char = (SIR if curr_char == SUG else SUG)
         down_skill_show_timer = cd_timer.new(DOWN_SKILL_SHOW_OTHER_CHAR_TIME, self, "show_other_character", curr_char)
         transform_timer = cd_timer.new(DOWN_SKILL_DURATION, self, "transform_character", curr_char)
@@ -383,6 +395,8 @@ func ult():
 
         hero.play_animation("Ult")
         hero.release_ult()
+
+        steam_works.ult_cast()
 
         char_before_ult = curr_char
         curr_char = BRO
@@ -428,8 +442,10 @@ func ult_ended():
 func ult_hit(area):
     if area.is_in_group("enemy"):
         var enemy = area.get_node("../..")
+        var damage = int(rng.randf_range(ULT_DAMAGE_MIN, ULT_DAMAGE_MAX) * hero.attack_modifier)
         enemy.knocked_back(sign(enemy.global_position.x - self.global_position.x) * hero.enemy_knock_back_modifier * ULT_KNOCK_BACK_VEL_X, -ULT_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, ULT_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
-        enemy.damaged(int(rng.randf_range(ULT_DAMAGE_MIN, ULT_DAMAGE_MAX) * hero.attack_modifier))
+        enemy.damaged(damage)
+        steam_works.increment_stat("damage_dealt", damage)
 
 func cancel_all_skills():
     pass

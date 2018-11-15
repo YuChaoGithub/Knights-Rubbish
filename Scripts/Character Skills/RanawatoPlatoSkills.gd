@@ -85,6 +85,8 @@ onready var audios_to_stop_when_stunned = [
     $"../Audio/US"
 ]
 
+onready var steam_works = get_node("/root/Steamworks")
+
 func _ready():
     ult_interval = (ULT_END_SHOOT_TIME - ULT_SHOOT_TIME) / ULT_SHOOT_TOTAL_SPOONS
     hero.connect("did_jump", self, "reset_up_skill_available")
@@ -124,8 +126,10 @@ func basic_attack_hit(area):
         if !(enemy_node in basic_attack_targets):
             spawn_spoon_particles()
             basic_attack_targets.push_back(enemy_node)
+            var damage = int(BASIC_ATTACK_DAMAGE * hero.attack_modifier)
             enemy_node.knocked_back(sign(enemy_node.global_position.x - global_position.x) * BASIC_ATTACK_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -BASIC_ATTACK_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, BASIC_ATTACK_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
-            enemy_node.damaged(int(BASIC_ATTACK_DAMAGE * hero.attack_modifier))
+            enemy_node.damaged(damage)
+            steam_works.increment_stat("damage_dealt", damage)
 
 func spawn_spoon_particles():
     var p = basic_attack_hit_particles.instance()
@@ -155,8 +159,10 @@ func basic_skill_strikes():
 func basic_skill_hit(area):
     if area.is_in_group("enemy"):
         var enemy = area.get_node("../..")
+        var damage = int(BASIC_SKILL_DAMAGE * hero.attack_modifier)
         enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * BASIC_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -BASIC_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, BASIC_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
-        enemy.damaged(int(BASIC_SKILL_DAMAGE * hero.attack_modifier))
+        enemy.damaged(damage)
+        steam_works.increment_stat("damage_dealt", damage)
 
 # Horizontal Skill: Shoot a spoon. If it hits an enemy, teleport to the enemy and stun it.
 func horizontal_skill(side):
@@ -195,8 +201,10 @@ func horizontal_skill_hit(enemy):
     spawn_node.add_child(p)
     p.global_position = self.global_position
     
+    var damage = int(HORIZONTAL_SKILL_DAMAGE * hero.attack_modifier)
     enemy.stunned(HORIZONTAL_SKILL_STUN_DURATION)
-    enemy.damaged(int(HORIZONTAL_SKILL_DAMAGE * hero.attack_modifier))
+    enemy.damaged(damage)
+    steam_works.increment_stat("damage_dealt", damage)
 
     hero.global_position = enemy.global_position + HORIZONTAL_SKILL_TELEPORT_BIAS
 
@@ -238,8 +246,10 @@ func up_skill_hit(area):
         if !(enemy in up_skill_targets):
             spawn_spoon_particles()
             up_skill_targets.push_back(enemy)
-            enemy.damaged(int(UP_SKILL_DAMAGE * hero.attack_modifier))
+            var damage = int(UP_SKILL_DAMAGE * hero.attack_modifier)
+            enemy.damaged(damage)
             enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * UP_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -UP_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, UP_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
+            steam_works.increment_stat("damage_dealt", damage)
 
 # After a short delay, become invisible.
 func down_skill():
@@ -249,6 +259,8 @@ func down_skill():
         hero.set_status("can_move", false, DOWN_SKILL_DURATION)
         hero.set_status("animate_movement", false, DOWN_SKILL_DURATION)
         hero.set_status("can_cast_skill", false, DOWN_SKILL_DURATION + DOWN_SKILL_COOLDOWN)
+
+        get_node("/root/Steamworks").increment_stat("down_skill")
 
         var invincible_timer = cd_timer.new(START_INVINCIBLE_TIME, self, "start_invincible")
         hero.register_timer("interruptable_skill", invincible_timer)
@@ -268,6 +280,8 @@ func ult():
         hero.set_status("animate_movement", false, ULT_DURATION)
         hero.set_status("invincible", true, ULT_DURATION)
         hero.set_status("no_movement", true, ULT_DURATION)
+
+        get_node("/root/Steamworks").ult_cast()
 
         hero.play_animation("Ult")
         ult_timer = cd_timer.new(ULT_SHOOT_TIME, self, "fire_ult", 0)

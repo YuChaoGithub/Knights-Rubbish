@@ -413,3 +413,5 @@ func die():
 
 	emit_signal("defeated")
 	ec.health_bar.drop_health_bar()
+	
+	get_node("/root/Steamworks").eyemac_defeated()

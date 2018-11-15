@@ -194,6 +194,8 @@ func die():
 	# Remove the frizbees (if any).
 	for f in frizbees:
 		f.queue_free()
+		
+	get_node("/root/Steamworks").increment_stat("tablet_killed")
 
 func stunned(duration):
 	pass

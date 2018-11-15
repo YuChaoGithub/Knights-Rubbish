@@ -1142,6 +1142,12 @@ Comment: Video editting is so tiring, time-consuming yet fun.
 * Created artworks for Steam Store.
 * Branched for Steam distribution.
 
+***Steam Build**
+
+* Toggling Steam overlay will pause the game.
+* Integrated achievements. Tired.
+* Can't find a way to generate customized template, asking on Reddit. Hope to get an answer soon.
+
 
 [Goals]
 * Nov 18: 2P full play through test.

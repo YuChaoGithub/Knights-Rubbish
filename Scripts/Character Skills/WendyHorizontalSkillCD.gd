@@ -76,8 +76,9 @@ func on_enemy_hit(area):
 		var enemy = area.get_node("../..")
 		enemy.knocked_back(side * KNOCK_BACK_VEL_X * knock_back_modifier, -KNOCK_BACK_VEL_Y * knock_back_modifier, KNOCK_BACK_FADE_RATE * knock_back_modifier)
 		enemy.damaged(damage)
+		get_node("/root/Steamworks").increment_stat("damage_dealt", damage)
 		
-		damage = max(damage * DAMAGE_REDUCE_RATE, DAMAGE_MIN * attack_modifier)
+		damage = int(max(damage * DAMAGE_REDUCE_RATE, DAMAGE_MIN * attack_modifier))
 
 		emit_particles()
 

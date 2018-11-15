@@ -26,6 +26,8 @@ func set_curr_scene_as_next_scene():
     next_scene_path = scene_path_stack.back()
 
 func load_scene(path):
+    get_node("/root/Steamworks").store_stats()
+	
     scene_path_stack.push_back(path)
     goto_scene(path)
 

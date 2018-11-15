@@ -56,7 +56,9 @@ func _process(delta):
 # Will be signalled when it hits an enemy.
 func on_enemy_hit(area):
 	if !hit && area.is_in_group("enemy"):
-		area.get_node("../..").damaged(int(damage * attack_modifier))
+		var the_damage = int(damage * attack_modifier)
+		area.get_node("../..").damaged(the_damage)
+		get_node("/root/Steamworks").increment_stat("damage_dealt", the_damage)
 
 		fade_out()
 

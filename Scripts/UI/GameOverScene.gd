@@ -1,7 +1,16 @@
 extends CanvasLayer
 
+var timestamp = 0.0
+
 func _ready():
 	get_tree().paused = true
+	get_node("/root/Steamworks").increment_stat("gameover")
+	
+func _process(delta):
+	timestamp += delta
+	if timestamp >= 60.0:
+		timestamp -= 60.0
+		get_node("/root/Steamworks").increment_stat("stay_in_gameover")
 
 func retry_pressed():
 	get_node("/root/LoadingScene").reload_curr_scene()

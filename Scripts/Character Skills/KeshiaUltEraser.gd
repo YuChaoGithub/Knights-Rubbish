@@ -49,7 +49,9 @@ func explode(target):
 	sprite.visible = false
 	particles.emitting = true
 
-	target.damaged(rng.randi_range(DAMAGE_MIN, DAMAGE_MAX))
+	var damage = rng.randi_range(DAMAGE_MIN, DAMAGE_MAX)
+	target.damaged(damage)
+	get_node("/root/Steamworks").increment_stat("damage_dealt", damage)
 	
 	var sign_x = sign(target.global_position.x - char_pos.x)
 	var sign_y = sign(target.global_position.y - char_pos.y)

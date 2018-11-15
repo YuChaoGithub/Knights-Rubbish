@@ -127,8 +127,10 @@ func basic_skill():
 func basic_skill_hit(area):
     if area.is_in_group("enemy"):
         var enemy = area.get_node("../..")
-        enemy.damaged(hero.attack_modifier * rng.randi_range(BASIC_SKILL_DAMAGE_MIN, BASIC_SKILL_DAMAGE_MAX))
+        var damage = int(hero.attack_modifier * rng.randi_range(BASIC_SKILL_DAMAGE_MIN, BASIC_SKILL_DAMAGE_MAX))
+        enemy.damaged(damage)
         enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * BASIC_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -BASIC_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, BASIC_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
+        get_node("/root/Steamworks").increment_stat("damage_dealt", damage)
 
 # ===
 # Horizontal Skill: Shoot a piercing CD.
@@ -188,8 +190,10 @@ func on_up_skill_hit(area):
         var enemy = area.get_node("../..")
         if !(enemy in up_skill_targets):
             up_skill_targets.push_back(enemy)
-            enemy.damaged(int(rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX) * hero.attack_modifier))
+            var damage = int(rng.randi_range(UP_SKILL_DAMAGE_MIN, UP_SKILL_DAMAGE_MAX) * hero.attack_modifier)
+            enemy.damaged(damage)
             enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * UP_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -UP_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, UP_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
+            get_node("/root/Steamworks").increment_stat("damage_dealt", damage)
 
 # ===
 # Down Skill: Shrink and hide in the hat.
@@ -197,6 +201,8 @@ func on_up_skill_hit(area):
 func down_skill():
     if hero.status.can_move && hero.status.can_cast_skill:
         hero.play_animation("Down Skill")
+
+        get_node("/root/Steamworks").increment_stat("down_skill")
 
         hero.set_status("can_move", false, DOWN_SKILL_DURATION)
         hero.set_status("animate_movement", false, DOWN_SKILL_DURATION)
@@ -217,6 +223,8 @@ func ult():
         hero.set_status("animate_movement", false, total_duration)
         hero.set_status("invincible", true, total_duration)
         hero.set_status("no_movement", true, total_duration)
+        
+        get_node("/root/Steamworks").ult_cast()
 
         hero.play_animation("Ult")
         hero.get_node("Ult").visible = true

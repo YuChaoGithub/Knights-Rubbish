@@ -10,10 +10,9 @@ var confirm_panel = preload("res://Scenes/UI/Confirm Panel.tscn")
 func _ready():
 	AudioServer.set_bus_mute(AudioServer.get_bus_index("Master"), true)
 	get_tree().paused = true
-
-func settings_pressed():
-	add_child(key_setting_scene.instance())
-
+	
+	get_node("/root/Steamworks").increment_stat("paused")
+	
 func info_pressed():
 	add_child(combo_tutorial_scene.instance())
 

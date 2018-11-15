@@ -229,3 +229,4 @@ func die():
 	emit_signal("defeated")
 	ec.die()
 	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
+	get_node("/root/Steamworks").eelo_killed()

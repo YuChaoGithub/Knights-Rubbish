@@ -380,7 +380,7 @@ func slowed(multiplier, duration):
 func knocked_back(vel_x, vel_y, fade_rate):
 	return
 
-func die():
+func die():	
 	spawn_stereo_bombs()
 	ec.die()
 
@@ -392,3 +392,5 @@ func die():
 	ec.health_bar.drop_health_bar()
 	cancel_laser_sequence()
 	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")
+	
+	get_node("/root/Steamworks").increment_stat("radio_killed")
