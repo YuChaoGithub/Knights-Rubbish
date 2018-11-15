@@ -1137,22 +1137,19 @@ Comment: Video editting is so tiring, time-consuming yet fun.
 * Fixed a weird bug that Clockworkfox's activate timer will be cancelled twice.
 * Did another 1P play-test. Seemed ready to publish.
 
+[2018.11.15]
+* Changed app icon.
+* Created artworks for Steam Store.
+* Branched for Steam distribution.
+
+
 [Goals]
-* Nov 16: Trailer.
 * Nov 18: 2P full play through test.
-* Nov 20: Mac & Windows build (ver 0.1).
-* Nov 22: Itch.io page.
-* Nov 23: Introducation article.
+* Steam SDK (Achievements).
+* Mac & Windows build (ver 0.1).
+* Trailer.
+* Introducation article.
+* (Nov 30 complete the items ubove)
+* Steam trading card.
 * Dec 31: Steam store ready to go.
-
-To Do List:
-**Alpha Version [Ver 0.1] Publishing**
-* Background Music.
-(Steam early access)
-* New characters * 5.
-
-Sound Effects:
-Lock Sound, Character Choose Sound, Jump, Mobs, Character Skills.
-
-Unfixed Bugs:
-Polishing:
+* Background music.
