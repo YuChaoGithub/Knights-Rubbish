@@ -127,7 +127,7 @@ func basic_skill():
 func basic_skill_hit(area):
     if area.is_in_group("enemy"):
         var enemy = area.get_node("../..")
-        enemy.damaged(hero.attack_modifier * rng.randi_range(BASIC_SKILL_DAMAGE_MIN, BASIC_SKILL_DAMAGE_MAX))
+        enemy.damaged(int(hero.attack_modifier * rng.randi_range(BASIC_SKILL_DAMAGE_MIN, BASIC_SKILL_DAMAGE_MAX)))
         enemy.knocked_back(sign(enemy.global_position.x - global_position.x) * BASIC_SKILL_KNOCK_BACK_VEL_X * hero.enemy_knock_back_modifier, -BASIC_SKILL_KNOCK_BACK_VEL_Y * hero.enemy_knock_back_modifier, BASIC_SKILL_KNOCK_BACK_FADE_RATE * hero.enemy_knock_back_modifier)
 
 # ===

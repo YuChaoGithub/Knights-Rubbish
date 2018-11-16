@@ -1142,6 +1142,11 @@ Comment: Video editting is so tiring, time-consuming yet fun.
 * Created artworks for Steam Store.
 * Branched for Steam distribution.
 
+[2018.11.16]
+* Renamed project name to Knights Rubbish.
+* Set Fullscreen on open.
+* Bug fix: Wendy Basic Skill and Horizontal Skill now deals integer damage.
+* Updated icon to 512px version.
 
 [Goals]
 * Nov 18: 2P full play through test.
