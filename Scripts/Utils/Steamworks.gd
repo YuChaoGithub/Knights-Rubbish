@@ -5,18 +5,6 @@ var stats_received_success = false
 var hero_complete_stat_names = ["keshia_completed", "wendy_completed", "ranawato_completed", "othox_completed", "bross_completed"]
 
 func _ready():
-	var date = OS.get_date()
-	if date.month == 11 && date.day == 24:
-		set_achievement("BIRTHDAY")
-	elif date.month == 2 && date.day == 29:
-		set_achievement("FEB_TWO_NINE")
-	elif date.month == 2 && date.day == 14:
-		set_achievement("VALENTINE")
-	elif date.weekday == 5 && date.day == 13:
-		set_achievement("FRIDAY_THIRTIETH")
-		
-	set_achievement("GIFT")
-    
 	# return
 	
 	if Steam.restartAppIfNecessary(980440):
@@ -37,10 +25,24 @@ func set_achievement(name):
 		return
 		
 	Steam.setAchievement(name)
-	
+    
+func set_starting_achievements():
+	var date = OS.get_date()
+	if date.month == 11 && date.day == 24:
+		set_achievement("BIRTHDAY")
+	elif date.month == 2 && date.day == 29:
+		set_achievement("FEB_TWO_NINE")
+	elif date.month == 2 && date.day == 14:
+		set_achievement("VALENTINE")
+	elif date.weekday == 5 && date.day == 13:
+		set_achievement("FRIDAY_THIRTEENTH")
+		
+	set_achievement("GIFT")
+
 func stats_received(game_id, result, user_id):
 	if result == 1:
 		stats_received_success = true
+		set_starting_achievements()
 	else:
 		print("Failed to receive stats: Error Code ", result)
 	
