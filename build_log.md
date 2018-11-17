@@ -1148,9 +1148,14 @@ Comment: Video editting is so tiring, time-consuming yet fun.
 * Bug fix: Wendy Basic Skill and Horizontal Skill now deals integer damage.
 * Updated icon to 512px version.
 
+[2018.11.17]
+* 2P play-test with my brother. (Second time).
+* Adjusted the difficulty of level 1-16.
+* Fixed following camera bugs in level 1-15.
+* Adjusted the hitbox activate time for Keshia's BA.
+* Bug Fix: The "I give up" button now works correctly in game over scene.
+
 [Goals]
-* Nov 18: 2P full play through test.
-* Steam SDK (Achievements).
 * Mac & Windows build (ver 0.1).
 * Trailer.
 * Introducation article.

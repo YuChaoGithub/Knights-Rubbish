@@ -102,6 +102,5 @@ func slowed(multiplier, duration):
 
 func die():
 	ec.die()
-	cancel_activate_timer()
 	emit_signal("defeated")
 	die_timer = ec.cd_timer.new(DIE_ANIMATION_DURATION, self, "queue_free")

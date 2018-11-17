@@ -29,8 +29,10 @@ func time_out():
 		parent.call(time_out_func_name, args)
 
 	timer.queue_free()
+	timer = null
 
 # Stop the timer and remove it from parent.
 func destroy_timer():
-	timer.stop()
-	timer.queue_free()
+	if timer != null:
+		timer.stop()
+		timer.queue_free()

@@ -82,7 +82,7 @@
 [ext_resource path="res://Scenes/Power Ups/Attack Potion.tscn" type="PackedScene" id=80]
 [ext_resource path="res://Scenes/UI/Pause Button.tscn" type="PackedScene" id=81]
 
-[node name="Game Level" type="Node2D"]
+[node name="Game Level" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -1318,12 +1318,12 @@ position = Vector2( 400, -1550 )
 
 [node name="Mystery Box" parent="PowerUps" index="5" instance=ExtResource( 79 )]
 
-position = Vector2( 1800, -100 )
+position = Vector2( 1800, -92.7394 )
 activate_range_y = 500
 
 [node name="Mystery Box2" parent="PowerUps" index="6" instance=ExtResource( 79 )]
 
-position = Vector2( 950, -100 )
+position = Vector2( 950, -93.7766 )
 _sections_unfolded = [ "Collision", "Transform" ]
 activate_range_y = 500
 
@@ -1372,49 +1372,49 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="passed" from="CameraChangingTriggers/PortalPassTrigger5" to="FollowingCamera" method="update_top_limit" binds= [ -600 ]]
 
-[connection signal="defeated" from="Activator/Dark Earspider3" to="Writings/Countdown Label2" method="tick"]
-
 [connection signal="defeated" from="Activator/Dark Earspider3" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
 
-[connection signal="defeated" from="Activator/Dark Earspider4" to="Writings/Countdown Label2" method="tick"]
+[connection signal="defeated" from="Activator/Dark Earspider3" to="Writings/Countdown Label2" method="tick"]
 
 [connection signal="defeated" from="Activator/Dark Earspider4" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
 
-[connection signal="defeated" from="Activator/Canmera2" to="Writings/Countdown Label2" method="tick"]
+[connection signal="defeated" from="Activator/Dark Earspider4" to="Writings/Countdown Label2" method="tick"]
 
 [connection signal="defeated" from="Activator/Canmera2" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
 
-[connection signal="defeated" from="Activator/Canmera3" to="Writings/Countdown Label2" method="tick"]
+[connection signal="defeated" from="Activator/Canmera2" to="Writings/Countdown Label2" method="tick"]
 
 [connection signal="defeated" from="Activator/Canmera3" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
 
-[connection signal="defeated" from="Activator/Mouse" to="Writings/Countdown Label2" method="tick"]
+[connection signal="defeated" from="Activator/Canmera3" to="Writings/Countdown Label2" method="tick"]
 
 [connection signal="defeated" from="Activator/Mouse" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
 
-[connection signal="defeated" from="Activator/Floopy" to="Writings/Countdown Label2" method="tick"]
+[connection signal="defeated" from="Activator/Mouse" to="Writings/Countdown Label2" method="tick"]
 
 [connection signal="defeated" from="Activator/Floopy" to="CameraChangingTriggers/MobClearTrigger2" method="increment_count"]
 
-[connection signal="defeated" from="Activator2/Laserphone" to="Writings/Countdown Label3" method="tick"]
+[connection signal="defeated" from="Activator/Floopy" to="Writings/Countdown Label2" method="tick"]
 
 [connection signal="defeated" from="Activator2/Laserphone" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
-[connection signal="defeated" from="Activator2/Laserphone2" to="Writings/Countdown Label3" method="tick"]
+[connection signal="defeated" from="Activator2/Laserphone" to="Writings/Countdown Label3" method="tick"]
 
 [connection signal="defeated" from="Activator2/Laserphone2" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
-[connection signal="defeated" from="Activator2/Canmera4" to="Writings/Countdown Label3" method="tick"]
+[connection signal="defeated" from="Activator2/Laserphone2" to="Writings/Countdown Label3" method="tick"]
 
 [connection signal="defeated" from="Activator2/Canmera4" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
-[connection signal="defeated" from="Activator2/Mouse2" to="Writings/Countdown Label3" method="tick"]
+[connection signal="defeated" from="Activator2/Canmera4" to="Writings/Countdown Label3" method="tick"]
 
 [connection signal="defeated" from="Activator2/Mouse2" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
 
-[connection signal="defeated" from="Activator2/Dark Earspider5" to="Writings/Countdown Label3" method="tick"]
+[connection signal="defeated" from="Activator2/Mouse2" to="Writings/Countdown Label3" method="tick"]
 
 [connection signal="defeated" from="Activator2/Dark Earspider5" to="CameraChangingTriggers/MobClearTrigger3" method="increment_count"]
+
+[connection signal="defeated" from="Activator2/Dark Earspider5" to="Writings/Countdown Label3" method="tick"]
 
 [connection signal="defeated" from="Activator3/Mouse3" to="CameraChangingTriggers/MobClearTrigger4" method="increment_count"]
 
@@ -1480,16 +1480,16 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Activator4/Floopy5" to="Writings/Countdown Label5" method="tick"]
 
-[connection signal="defeated" from="Enemies/Dark Earspider" to="Writings/Countdown Label1" method="tick"]
-
 [connection signal="defeated" from="Enemies/Dark Earspider" to="CameraChangingTriggers/FirstMobClearTrigger" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Dark Earspider2" to="Writings/Countdown Label1" method="tick"]
+[connection signal="defeated" from="Enemies/Dark Earspider" to="Writings/Countdown Label1" method="tick"]
 
 [connection signal="defeated" from="Enemies/Dark Earspider2" to="CameraChangingTriggers/FirstMobClearTrigger" method="increment_count"]
 
-[connection signal="defeated" from="Enemies/Canmera" to="Writings/Countdown Label1" method="tick"]
+[connection signal="defeated" from="Enemies/Dark Earspider2" to="Writings/Countdown Label1" method="tick"]
 
 [connection signal="defeated" from="Enemies/Canmera" to="CameraChangingTriggers/FirstMobClearTrigger" method="increment_count"]
+
+[connection signal="defeated" from="Enemies/Canmera" to="Writings/Countdown Label1" method="tick"]
 
 
