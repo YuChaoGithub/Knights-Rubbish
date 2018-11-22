@@ -1155,11 +1155,7 @@ Comment: Video editting is so tiring, time-consuming yet fun.
 * Adjusted the hitbox activate time for Keshia's BA.
 * Bug Fix: The "I give up" button now works correctly in game over scene.
 
-[Goals]
+[2018.11.18-23]
+* Completed Steamworks configurations and graphics.
 * Mac & Windows build (ver 0.1).
-* Trailer.
-* Introducation article.
-* (Nov 30 complete the items ubove)
-* Steam trading card.
-* Dec 31: Steam store ready to go.
-* Background music.
+* Steam Store page ready to go.
