@@ -1159,3 +1159,6 @@ Comment: Video editting is so tiring, time-consuming yet fun.
 * Completed Steamworks configurations and graphics.
 * Mac & Windows build (ver 0.1).
 * Steam Store page ready to go.
+
+Build Notes:
+For Mac Steam Build, tick the full screen checkbox!
