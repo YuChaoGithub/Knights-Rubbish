@@ -1170,5 +1170,8 @@ Comment: Video editting is so tiring, time-consuming yet fun.
 * Bug Fix: Users couldn't go to Key Settings Scene through Pause Scene.
 * Now the game will automatically be paused when activating Steam Overlay.
 
+[2018.11.29]
+* Bug Fix: Camera stuck in Level 1-5.
+
 Build Notes:
 For Mac Steam Build, tick the full screen checkbox!
