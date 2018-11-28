@@ -13,6 +13,9 @@ func _ready():
 	
 	get_node("/root/Steamworks").increment_stat("paused")
 	
+func settings_pressed():
+	add_child(key_setting_scene.instance())
+
 func info_pressed():
 	add_child(combo_tutorial_scene.instance())
 

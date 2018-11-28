@@ -6,7 +6,7 @@ func _ready():
 	$ScrapPaper/PauseButton.connect("pressed", self, "pause_pressed")
 	
 	if Steam.isSteamRunning():
-		Steam.connect("overlay_toggled", self, "pause_pressed")
+		Steam.connect("_overlay_toggled", self, "pause_pressed")
 
 func pause_pressed():
 	if !get_tree().paused:

@@ -1166,5 +1166,9 @@ Comment: Video editting is so tiring, time-consuming yet fun.
 * Mac & Windows build (ver 0.1).
 * Steam Store page ready to go.
 
+[2018.11.28]
+* Bug Fix: Users couldn't go to Key Settings Scene through Pause Scene.
+* Now the game will automatically be paused when activating Steam Overlay.
+
 Build Notes:
 For Mac Steam Build, tick the full screen checkbox!
