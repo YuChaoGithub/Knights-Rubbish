@@ -1160,5 +1160,8 @@ Comment: Video editting is so tiring, time-consuming yet fun.
 * Mac & Windows build (ver 0.1).
 * Steam Store page ready to go.
 
+[2018.11.29]
+* Bug Fix: Camera stuck in Level 1-5.
+
 Build Notes:
 For Mac Steam Build, tick the full screen checkbox!
