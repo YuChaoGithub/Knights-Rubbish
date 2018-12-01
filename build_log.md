@@ -1173,5 +1173,8 @@ Comment: Video editting is so tiring, time-consuming yet fun.
 [2018.11.29]
 * Bug Fix: Camera stuck in Level 1-5.
 
+[2018.12.01]
+* Fixed a goddamn bug: I mistyped "Light bulb" to "Light Bulb" (The exported game is case sensitive.)
+
 Build Notes:
 For Mac Steam Build, tick the full screen checkbox!
