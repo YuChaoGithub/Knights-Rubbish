@@ -45,7 +45,7 @@ onready var bulb_toss_audio = $Audio/BulbToss
 onready var clip_toss_audio = $Audio/ClipToss
 
 # Bubble.
-var bubble = preload("res://Scenes/Enemies/Computer Room/Cliffy Light Bulb.tscn")
+var bubble = preload("res://Scenes/Enemies/Computer Room/Cliffy Lightbulb.tscn")
 onready var bubble_spawn_pos = $"Animation/Bubble Spawn Pos"
 
 # Dart.
