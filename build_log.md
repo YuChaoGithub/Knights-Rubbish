@@ -1166,5 +1166,8 @@ Comment: Video editting is so tiring, time-consuming yet fun.
 [2018.12.01]
 * Fixed a goddamn bug: I mistyped "Light bulb" to "Light Bulb" (The exported game is case sensitive.)
 
+[2018.12.07]
+* Bug Fix: Players will no longer get stuck on the upper platform of Level 1-4.
+
 Build Notes:
 For Mac Steam Build, tick the full screen checkbox!

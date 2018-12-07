@@ -2330,8 +2330,6 @@ texture = ExtResource( 64 )
 
 [node name="CameraChangingTriggers" type="Node2D" parent="." index="7"]
 
-editor/display_folded = true
-
 [node name="First" type="Position2D" parent="CameraChangingTriggers" index="0"]
 
 position = Vector2( 750, -150 )
@@ -2391,6 +2389,8 @@ script = ExtResource( 77 )
 count_to_emit = 5
 
 [node name="OtherPlatforms" type="Node2D" parent="." index="8"]
+
+editor/display_folded = true
 
 [node name="Enemy Blocking Platform" parent="OtherPlatforms" index="0" instance=ExtResource( 78 )]
 
@@ -2730,7 +2730,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 [node name="GreenPortal2-2" parent="Structures" index="12" instance=ExtResource( 83 )]
 
 modulate = Color( 0, 0.570312, 0.115845, 1 )
-position = Vector2( 13900, -1150 )
+position = Vector2( 15400, -1100 )
 destination_node_path = NodePath("../GreenPortal2-1")
 
 [node name="BluePortal2-1" parent="Structures" index="13" instance=ExtResource( 83 )]
@@ -2812,6 +2812,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Enemies" type="Node2D" parent="." index="11"]
 
+editor/display_folded = true
 _sections_unfolded = [ "Transform" ]
 
 [node name="HealingFountains" type="Node2D" parent="Enemies" index="0"]
@@ -3529,9 +3530,9 @@ position = Vector2( 16850, -850 )
 scale = Vector2( 10, 10 )
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[connection signal="passed" from="CameraChangingTriggers/First" to="FollowingCamera" method="update_right_limit" binds= [ 3950 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/First" to="FollowingCamera" method="update_right_margin" binds= [ 0.4 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/First" to="FollowingCamera" method="update_right_limit" binds= [ 3950 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/FirstMob" to="FollowingCamera" method="update_right_limit" binds= [ 6450 ]]
 
@@ -3539,25 +3540,25 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="count_reached" from="CameraChangingTriggers/PortraitMob" to="FollowingCamera" method="update_right_limit" binds= [ 16250 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/DoubleDeckEnter" to="FollowingCamera" method="update_left_limit" binds= [ 11850 ]]
-
 [connection signal="passed" from="CameraChangingTriggers/DoubleDeckEnter" to="FollowingCamera" method="update_right_margin" binds= [ 0.6 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/DoubleDeckEnter" to="FollowingCamera" method="update_left_margin" binds= [ 0.4 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckFirstMob" to="FollowingCamera" method="update_right_limit" binds= [ 18850 ]]
+[connection signal="passed" from="CameraChangingTriggers/DoubleDeckEnter" to="FollowingCamera" method="update_left_limit" binds= [ 11850 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckFirstMob" to="FollowingCamera" method="update_right_margin" binds= [ 0.3 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckFirstMob" to="FollowingCamera" method="update_left_margin" binds= [ -0.1 ]]
 
-[connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckSecondMob" to="FollowingCamera" method="update_right_limit" binds= [ 22850 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckFirstMob" to="FollowingCamera" method="update_right_limit" binds= [ 18850 ]]
 
-[connection signal="passed" from="CameraChangingTriggers/LastDoubleDeckEnter" to="FollowingCamera" method="update_left_limit" binds= [ 18850 ]]
+[connection signal="count_reached" from="CameraChangingTriggers/DoubleDeckSecondMob" to="FollowingCamera" method="update_right_limit" binds= [ 22850 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/LastDoubleDeckEnter" to="FollowingCamera" method="update_right_margin" binds= [ 0.6 ]]
 
 [connection signal="passed" from="CameraChangingTriggers/LastDoubleDeckEnter" to="FollowingCamera" method="update_left_margin" binds= [ 0.4 ]]
+
+[connection signal="passed" from="CameraChangingTriggers/LastDoubleDeckEnter" to="FollowingCamera" method="update_left_limit" binds= [ 18850 ]]
 
 [connection signal="count_reached" from="CameraChangingTriggers/LastDoubleDeckMob" to="FollowingCamera" method="update_right_limit" binds= [ 25750 ]]
 
@@ -3619,9 +3620,9 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [connection signal="defeated" from="Enemies/Eelo Kicker9" to="Enemies/EeloPuncherSpawn2" method="spawn_mob"]
 
-[connection signal="defeated" from="Enemies/Eelo Puncher3" to="Enemies/EeloPuncherSpawn" method="spawn_mob"]
-
 [connection signal="defeated" from="Enemies/Eelo Puncher3" to="Writings/CountdownTV4" method="tick"]
+
+[connection signal="defeated" from="Enemies/Eelo Puncher3" to="Enemies/EeloPuncherSpawn" method="spawn_mob"]
 
 [connection signal="completed" from="Enemies/EeloPuncherSpawn" to="CameraChangingTriggers/DoubleDeckSecondMob" method="increment_count"]
 
