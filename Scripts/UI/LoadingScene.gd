@@ -47,7 +47,7 @@ func goto_scene(path):
 
     loader = ResourceLoader.load_interactive(path)
     if loader == null:
-        show_error()
+        print("unable to load scene", path)
         return
     set_process(true)
 
@@ -77,7 +77,7 @@ func _process(delta):
         elif result == OK:
             pass
         else:
-            show_error()
+            print("unable to load scene")
             loader = null
             break
 
